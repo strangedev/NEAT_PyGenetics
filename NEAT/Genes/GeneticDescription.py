@@ -1,82 +1,67 @@
-from Nodes import InputNode
-from Nodes import OutputNode
-from Nodes import HiddenNode
-from Connections import Connection
+from NEAT.Nodes import InputNode
+from NEAT.Nodes import OutputNode
+from NEAT.Nodes import HiddenNode
+from NEAT.Connections import Connection
 
 
 class GeneticDescription():
 
-    def __init__(self, population):
-
-        self.population = population
+    def __init__(self):
 
         self.connections = dict({})  # src -> Connection
 
-        self.input_nodes = set({})  # labels only
+        self.input_nodes = set({})  # nodes only
         self.output_nodes = set({})
         self.hidden_nodes = set({})
 
-    def add_input(self, label):
+    def add_input(self, node):
 
-        new_node = InputNode.InputNode(label)
-        self.nodes.input_nodes.add(new_node)
+        new_node = InputNode.InputNode(node)
+        self.input_nodes.add(new_node)
 
-    def add_inputs(self, labels):
+    def add_inputs(self, nodes):
 
-        for label in labels:
+        for node in nodes:
 
-            self.add_input.add(label)
+            self.add_input(node)
 
-    def add_output(self, label):
+    def add_output(self, node):
 
-        new_node = OutputNode.OutputNode(label)
-        self.nodes.output_nodes.add(new_node)
+        new_node = OutputNode.OutputNode(node)
+        self.output_nodes.add(new_node)
 
-    def add_outputs(self, labels):
+    def add_outputs(self, nodes):
 
-        for label in labels:
+        for node in nodes:
 
-            self.add_output(label)
+            self.add_output(node)
 
-    def add_hidden_node(self, label):
+    def add_hidden_node(self, node):
 
-        new_node = HiddenNode.HiddenNode(label)
+        new_node = HiddenNode.HiddenNode(node)
         self.hidden_nodes.add(new_node)
 
-    def add_hidden_nodes(self, labels):
+    def add_hidden_nodes(self, nodes):
 
-        for label in labels:
+        for node in nodes:
 
-            self.add_hidden_node(label)
+            self.add_hidden_node(node)
 
     def init_from_template(self, template):
 
-        self.add_inputs(template.input_labels)
-        self.add_outputs(template.output_labels)
+        self.add_inputs(template.input_nodes)
+        self.add_outputs(template.output_nodes)
 
-    def add_connection(self, src, target, weight, enabled=True):
+    def add_connection(self, src, target, weight, innovation, enabled=True):
 
-        innovation = self.population.next_innovation()
-        conn = Connection.Connection(src, target, weight, innovation, enabled)
+        conn = Connection.NetworkConnection(
+            src, target, weight, innovation, enabled)
 
-        if not self.connections[src]:
+        if src not in self.connections.keys():
             self.connections[src] = []
 
         self.connections[src].append(conn)
 
-    def mutate_add_connection(self):
-
-        pass
-
-    def mutate_add_node(self):
-
-        pass
-
-    def get_connections(self, node):
-
-        label = node
-
-        if not type(node) == int:
-            label = node.label
+    def get_connections(self, label):
 
         return self.connections[label]

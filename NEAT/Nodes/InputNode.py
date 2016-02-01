@@ -1,7 +1,7 @@
-from Nodes import NetworkNode
+from NEAT.Nodes import NetworkNode
 
 
-class InputNode(NetworkNode):
+class InputNode(NetworkNode.NetworkNode):
 
     def __init__(self, label):
 

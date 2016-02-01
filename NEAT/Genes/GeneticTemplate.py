@@ -1,33 +1,33 @@
 
 class GeneticTemplate():
 
-    def __init__(self, input_labels=None, output_labels=None):
+    def __init__(self, input_nodes=None, output_nodes=None):
 
-        if not input_labels:
-            input_labels = set({})
+        if not input_nodes:
+            input_nodes = set({})
 
-        if not output_labels:
-            output_labels = set({})
+        if not output_nodes:
+            output_nodes = set({})
 
-        self.input_labels = set(input_labels)
-        self.output_labels = set(output_labels)
+        self.input_nodes = set(input_nodes)
+        self.output_nodes = set(output_nodes)
 
-    def add_input(self, label):
+    def add_input(self, node):
 
-        self.input_labels.add(label)
+        self.input_nodes.add(node)
 
-    def add_output(self, label):
+    def add_output(self, node):
 
-        self.output_labels.add(label)
+        self.output_nodes.add(node)
 
-    def add_inputs(self, labels):
+    def add_inputs(self, nodes):
 
-        for label in labels:
+        for node in nodes:
 
-            self.add_input(label)
+            self.add_input(node)
 
-    def add_outputs(self, labels):
+    def add_outputs(self, nodes):
 
-        for label in labels:
+        for node in nodes:
 
-            self.add_output(label)
+            self.add_output(node)
