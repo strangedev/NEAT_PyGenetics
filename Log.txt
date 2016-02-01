@@ -1,0 +1,5 @@
+IDEA:
+    
+    The idea is to implement a version of the NEAT algorithm using python.
+    The first version will be tested by using a simulation (PyCreatures) which was originally based on the wator-simulation.
+    It provides an envronment in which entities are able to move around and keep track of various data on the environment and their own state.

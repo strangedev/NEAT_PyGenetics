@@ -1,0 +1,11 @@
+DONE:
+
+    GeneticTemplate.py
+
+WHAT IT IS & WHERE YOU'LL FIND IT:
+
+    GeneticTemplate.py:
+
+        Data structure, specifies in- /outputs for neural networks
+
+        

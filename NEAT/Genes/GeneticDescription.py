@@ -6,36 +6,63 @@ from Connections import Connection
 
 class GeneticDescription():
 
-    def __init__(self):
+    def __init__(self, population):
 
-        self.nodes = {}
-        self.connections = {}
+        self.population = population
 
-        self.nodes.input_nodes = []
-        self.nodes.output_nodes = []
-        self.nodes.hidden_nodes = []
+        self.connections = dict({})  # src -> Connection
 
-    def init_inputs(self, labels):
+        self.input_nodes = set({})  # labels only
+        self.output_nodes = set({})
+        self.hidden_nodes = set({})
 
-        pass
+    def add_input(self, label):
 
-    def init_outputs(self, labels):
+        new_node = InputNode.InputNode(label)
+        self.nodes.input_nodes.add(new_node)
 
-        pass
+    def add_inputs(self, labels):
 
-    def _m_add_node(self, node):
-        """
-        Only adds node, contains no logic
-        """
+        for label in labels:
 
-        pass
+            self.add_input.add(label)
 
-    def _m_add_connection(self, connection):
-        """
-        Only adds connection, contains no logic
-        """
+    def add_output(self, label):
 
-        pass
+        new_node = OutputNode.OutputNode(label)
+        self.nodes.output_nodes.add(new_node)
+
+    def add_outputs(self, labels):
+
+        for label in labels:
+
+            self.add_output(label)
+
+    def add_hidden_node(self, label):
+
+        new_node = HiddenNode.HiddenNode(label)
+        self.hidden_nodes.add(new_node)
+
+    def add_hidden_nodes(self, labels):
+
+        for label in labels:
+
+            self.add_hidden_node(label)
+
+    def init_from_template(self, template):
+
+        self.add_inputs(template.input_labels)
+        self.add_outputs(template.output_labels)
+
+    def add_connection(self, src, target, weight, enabled=True):
+
+        innovation = self.population.next_innovation()
+        conn = Connection.Connection(src, target, weight, innovation, enabled)
+
+        if not self.connections[src]:
+            self.connections[src] = []
+
+        self.connections[src].append(conn)
 
     def mutate_add_connection(self):
 
@@ -44,3 +71,12 @@ class GeneticDescription():
     def mutate_add_node(self):
 
         pass
+
+    def get_connections(self, node):
+
+        label = node
+
+        if not type(node) == int:
+            label = node.label
+
+        return self.connections[label]

@@ -7,4 +7,13 @@ class Population():
 
     def __init__(self):
 
-        pass
+        self.individuals = []
+        self.gene_map = {}
+
+        self._next_innovation = 0
+
+    @property
+    def next_innovation(self):
+
+        self._next_innovation += 1
+        return self._next_innovation
