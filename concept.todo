@@ -57,6 +57,7 @@ MachineLearning:
         Storage oriented structure:
             List of tuples of gene-id and gene-weight. Extremely storage effi-
             cient and easy to mutate/breed.
+          ☐ disabled flag
           ☐ Small storage requirement
           ☐ Easily breedable
           ☐ Easily mutateable
@@ -100,6 +101,24 @@ MachineLearning:
           ☐ nodes with an out-degree of 0 are useless and can simply be removed
         ☐ If analysis includes modification, it has to modify the storage-structure too!
           ☐ So there actually needs to be a way to apply patches to the storage or to convert analysis-structure to storage-structure
+    Fitness Analysis / Reproduction:
+      ☐ Fitness is evaluated after each simulation
+      ☐ Fixed population size /
+      ☐ lowest performing individuals in a given cluster are removed (ratio? tbd)
+      ☐ after clustering: lowest performing clusters are removed (ratio^2)
+        ☐ criteria for removing clusters:
+          ☐ Consistent low performance over time (tracking?)
+          ☐ Only if fitness difference is significant (threshold?)
+          ☐ If too many clusters exist / cluster size is too small?
+        ☐ new clusters can be created on removal by inter-breeding top performing clusters
+      ☐ when individuals are removed, the difference in actual and desired cluster size is refilled by inbreeding ô.ô
+        ☐ 2 options for reproduction:
+          ☐ I  - Mutation of a single genome
+          ☐ II - Breeding of 2 genomes
+        ☐ Probability ratio of options?
+          ☐ Idea 1: Partially defined function consisting of log for low x values / linear func for higher x values (Interval sizes?)
+            ☐ Rationale: Mutations should be encouraged in lower generations in order to establish genetic diversity / network complexity
+             ☐ linear func should never reach d/dx = 0, in order to keep mutation going
     Breeder:
       Breeds two Genomes into a new one.
       ☐ Detect, if two Genomes are compatible

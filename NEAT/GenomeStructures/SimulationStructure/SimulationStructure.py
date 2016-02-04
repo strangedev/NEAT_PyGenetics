@@ -1,6 +1,10 @@
-git class SimulationGenome(object):
+from typing import Iterable, Tuple
+
+
+class SimulationGenome(object):
     def __init__(
             self,
+            id: int,
             input_layer=None,
             output_layer=None,
             hidden_layer=None,
@@ -14,12 +18,13 @@ git class SimulationGenome(object):
          Subset of hidden_layer.
         :return SimulationGenome:
         """
+        self.id = id
         self.input_layer = input_layer or {}
         self.output_layer = output_layer or {}
         self.hidden_layer = hidden_layer or []
         self.cycle_nodes = cycle_nodes or []
 
-    def set_input(self, inputs: list[tuple[str, int]]) -> None:
+    def set_input(self, inputs: Iterable[Tuple[str, int]]) -> None:
         for label, value in inputs:
             self.input_layer[label].set_value(value)
 
