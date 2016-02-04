@@ -1,4 +1,4 @@
-(>^_^)> NEAT PyGenetics <(^_^<)
+(>^\_^)> NEAT PyGenetics <(^\_^<)
 ================
 
 
