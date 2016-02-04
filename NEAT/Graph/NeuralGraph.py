@@ -4,7 +4,7 @@ from NEAT.Nodes import HiddenNode
 from NEAT.Connections import Connection
 
 
-class GeneticDescription():
+class NeuralGraph():
 
     def __init__(self):
 

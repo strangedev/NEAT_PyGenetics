@@ -1,5 +1,5 @@
 
-class GeneticTemplate():
+class GraphTemplate():
 
     def __init__(self, input_nodes=None, output_nodes=None):
 
