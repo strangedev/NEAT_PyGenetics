@@ -1,7 +1,9 @@
-from NEAT.GenomeStructures.SimulationStructure import SimulationStructure
+from NEAT.GenomeStructures.SimulationStructure import SimulationGenome
 
-class StorageStructure(object):
+class StorageGenome(object):
     """
+    This is BS -> Rework
+
     A data structure for storing genome information in a
     compact way.
     It stores genome information as tuple:
@@ -10,7 +12,7 @@ class StorageStructure(object):
 
     def __init__(
             self,
-            genome: SimulationStructure.SimulationGenome=None
+            genome: SimulationGenome.SimulationGenome=None
     ):
         """
         TODO: augment default constructor
@@ -21,7 +23,7 @@ class StorageStructure(object):
 
     def add_genome(
             self,
-            genome: SimulationStructure.SimulationGenome
+            genome: SimulationGenome.SimulationGenome
     ) -> None:
         """
         Initializes self with structure of a given genome.
