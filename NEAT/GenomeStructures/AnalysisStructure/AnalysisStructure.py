@@ -1,6 +1,6 @@
 from NEAT.GenomeStructures.SimulationStructure import SimulationStructure
 from NEAT.GenomeStructures.SimulationStructure import SimulationNodes
-from NEAT.GenomeStructures.StorageStructures import
+from NEAT.GenomeStructures.StorageStructure import StorageStructure
 
 class AnalysisStructure(object):
 
