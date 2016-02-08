@@ -10,7 +10,7 @@ from NEAT.GenomeStructures.SimulationStructure import SimulationNodes
 from NEAT.GenomeStructures.StorageStructure import StorageGenome
 
 
-class AnalysisGenome(object, Generic[GenomeStructure]):
+class AnalysisGenome(Generic[GenomeStructure]):
     """
     Data structure used for analysing genome graphs.
     It uses an adjacency list representation of the genome graph
@@ -22,10 +22,10 @@ class AnalysisGenome(object, Generic[GenomeStructure]):
             other_structure: GenomeStructure=None
     ) -> None:
 
-        self.__edges = {} # type: Dict[str, List[str]]
-        self.__dag = {} # type: Dict[str, List[str]]
+        self.__edges = {} # type: Dict[str, List[Tuple[str, int]]]
+        self.__dag_edges = {} # type: Dict[str, List[Tuple[str, int]]]
         self.__predecessors = {} # type: Dict[str, List[str]]
-        self.__reverse_edges = set({}) # type: Set[Tuple[str, str]]
+        self.__reverse_edges = set({}) # type: Set[Tuple[str, str, int]]
         self.__reverse_predecessors = {} # type: Dict[str, List[str]]
 
         if other_structure:
@@ -33,10 +33,18 @@ class AnalysisGenome(object, Generic[GenomeStructure]):
             structure_class = other_structure.__class__
 
             if structure_class == "SimulationGenome":
-                self.init_from_simulation_structure(other_structure)
-            elif structure_class == "StorageGenome":
-                self.init_from_storage_structure(other_structure)
 
+                self.init_from_simulation_structure(other_structure)
+                self.analyse()
+
+            elif structure_class == "StorageGenome":
+
+                self.init_from_storage_structure(other_structure)
+                self.analyse()
+
+    def __add_edge(self, source: str, target: str, id: int) -> None:
+
+        pass
 
     def init_from_storage_structure(
             self,
@@ -50,6 +58,10 @@ class AnalysisGenome(object, Generic[GenomeStructure]):
             self,
             other_structure: SimulationGenome.SimulationGenome
     ) -> None:
+
+        pass
+
+    def analyse(self) -> None:
 
         pass
 
@@ -75,5 +87,7 @@ class AnalysisGenome(object, Generic[GenomeStructure]):
         :return: A list of cycle node labels.
         """
         pass
+
+
 
 

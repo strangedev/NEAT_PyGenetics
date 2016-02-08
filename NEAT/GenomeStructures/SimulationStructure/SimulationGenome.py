@@ -2,7 +2,7 @@ from typing import Iterable, Tuple, Generic
 
 from NEAT.GenomeStructures.TH_GenomeStructure import GenomeStructure
 
-class SimulationGenome(object, Generic[GenomeStructure]):
+class SimulationGenome(Generic[GenomeStructure]):
     def __init__(
             self,
             id: int,
