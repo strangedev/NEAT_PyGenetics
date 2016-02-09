@@ -11,6 +11,9 @@ class Node(object):
          written when starting a simulation-step.
         :return:
         """
+        if initial_value < 0 or initial_value > 1:
+            raise ValueError("SimulationNodes.Node's initial_value has to be "
+                             .join("in the interval [0,1]."))
         self.successors = []  # type: List[Node]
         self.weights = {}  # type: Dict[Node, float]
         self.initial_value = initial_value
@@ -24,9 +27,14 @@ class Node(object):
         Adds a successor_node to the list of stored successors.
         :param successor_node: A new node to be added as a successor
         :param weight: The weight of the edge to the new node
+        :raises: ValueError, if the weight of the given nodes is not in the
+        interval [0,1].
         :raises: Exception, if the given successor_node already exists in the
          stored list of successors.
         """
+        if weight < 0 or weight > 1:
+            raise ValueError("Successor weight has to be in the interval "
+                             .join("[0,1]."))
         if successor_node not in self.successors:
             self.successors.append(successor_node)
             self.weights[successor_node] = weight
@@ -41,6 +49,10 @@ class Node(object):
         """
         Adds multiple successor_nodes to the list.
         :param successor_nodes:
+        :raises: ValueError, if the weight of one of the given nodes is not in
+         the interval [0,1].
+        :raises: Exception, if one of the given nodes already exists in the
+         stored list of successors.
         :return:
         """
         for successor_node, weight in successor_nodes:
@@ -90,6 +102,8 @@ class CycleNode(Node):
         Adds a cycle successor to the list. Throws an Exception otherwise.
         :param successor_node:
         :param weight:
+        :raises: ValueError, if the weight of the given nodes is not in the
+         interval [0,1].
         :raises: Exception, if the given successor_node already exists in the
          stored list of successors.
         :return:
@@ -110,6 +124,10 @@ class CycleNode(Node):
         """
         Adds multiple successor_nodes to the list.
         :param successor_nodes:
+        :raises: ValueError, if the weight of one of the given nodes is not in
+         the interval [0,1].
+        :raises: Exception, if one of the given nodes already exists in the
+         stored list of successors.
         :return:
         """
         for successor_node, weight in successor_nodes:
