@@ -1,12 +1,12 @@
 """
 AnalysisGenome module
 """
-from typing import Tuple, List, Dict, Set, Generic
+
+
 import copy
+from typing import List, Dict, Set, Generic
 from NEAT.GenomeStructures.TH_GenomeStructure import GenomeStructure
 from NEAT.GenomeStructures.AnalysisStructure import AnalysisResult
-from NEAT.GenomeStructures.SimulationStructure import SimulationGenome
-from NEAT.GenomeStructures.SimulationStructure import SimulationNodes
 from NEAT.GenomeStructures.StorageStructure import StorageGenome
 
 
@@ -29,17 +29,17 @@ class AnalysisGenome(Generic[GenomeStructure]):
         self._working_edges = dict({})  # type: Dict[str, List[str]]
         self._working_nodes = set({})  # type: Set[str]
         self._result = AnalysisResult.AnalysisResult()
-        self._colors = dict({})
+        self._colors = dict({})  # type: Dict[str, int]
         self._predecessors = dict({})  # do I even need this?
         self._nodes_top_sorted = []  # type: List[str]
         self._analysis_has_finished = False  # type: bool
-        self._graph_initialized = False  # type: bool
+        self._graph_initialised = False  # type: bool
 
         if other_structure:
             self.init_from_storage_structure(other_structure)
             self.analyse()
 
-    def _add_node(self, label: str):
+    def _add_node(self, label: str) -> None:
 
         self._nodes.add(label)
 
@@ -49,14 +49,32 @@ class AnalysisGenome(Generic[GenomeStructure]):
 
         :param source: The label of the outgoing node.
         :param target: The label of the incoming node
-        :param id:
-        :return:
+        :return: None
         """
 
         if not source in self._edges.keys():
             self._edges[source] = [target]
 
         elif not target in self._edges[source]:
+            self._edges[source].append(target)
+
+    def _add_cycle_node(self, label: str) -> None:
+
+        self._cycle_nodes.add(label)
+
+    def _add_cycle_edge(self, source: str, target: str) -> None:
+        """
+        Adds a cycle-edge to the working graph.
+
+        :param source: The label of the outgoing node.
+        :param target: The label of the incoming node
+        :return: None
+        """
+
+        if not source in self._cycle_edges.keys():
+            self._edges[source] = [target]
+
+        elif not target in self._cycle_edges[source]:
             self._edges[source].append(target)
 
     def init_from_storage_structure(
@@ -77,7 +95,7 @@ class AnalysisGenome(Generic[GenomeStructure]):
         :return: None
         """
 
-        if not self._graph_initialized:
+        if not self._graph_initialised:
             raise Exception("Analysis called before graph was initialized")
 
         # Algo:
@@ -152,7 +170,15 @@ class AnalysisGenome(Generic[GenomeStructure]):
         :return: None
         """
 
-        pass
+        for node in self._working_nodes:
+            self._colors[node] = 0
+            self._predecessors[node] = None
+
+        for node in self._working_nodes:
+
+            if self._colors[node] == 0:
+                self._dfs_visit(node)
+
 
     def _dfs_visit(self, node: str) -> None:
         """
@@ -163,7 +189,22 @@ class AnalysisGenome(Generic[GenomeStructure]):
         :return: None
         """
 
-        pass
+        self._colors[node] = 1  # node is discovered
+
+        for neighbor in self._working_edges[node]:
+
+            if self._colors[neighbor] == 0:
+
+                self._predecessors[neighbor] = node
+                self._dfs_visit(neighbor)
+
+            if self._colors[neighbor] == 1:  # Grey indicates back edge
+
+                self._add_cycle_node(node)
+                self._add_cycle_edge(node, neighbor)
+
+        self._colors[node] = 2  # no more neighbors, node is finished
+        self._nodes_top_sorted.insert(0, node)
 
 
     @property
