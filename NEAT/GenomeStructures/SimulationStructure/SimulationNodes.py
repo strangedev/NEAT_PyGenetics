@@ -62,9 +62,11 @@ class Node(object):
         """
         Adds the currently stored value multiplied with the specific weights
         to each successor.
-        Some sort of transformation function should be applied here.
         :return:
         """
+        # TODO: Some sort of transformation function should be applied here, to
+        # transform the stored value after it is complete and before advancing
+        # in the simulation.
         for successor in self.successors:
             successor.add_value(self.value * self.weights[successor])
 
