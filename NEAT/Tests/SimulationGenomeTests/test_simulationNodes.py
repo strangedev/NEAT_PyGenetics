@@ -83,9 +83,9 @@ class TestSimulationCycleNode(unittest.TestCase):
         """
         Adds the same node multiple times to another node and expects it to
         raise an Exception.
-        TODO: Specify type of Exception.
         :return:
         """
+        # TODO: Specify type of Exception.
         test_node = Node()
         add_node = Node()
         with self.assertRaises(Exception):
