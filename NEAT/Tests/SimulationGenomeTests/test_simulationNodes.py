@@ -119,3 +119,42 @@ class TestSimulationCycleNode(unittest.TestCase):
 
         with self.assertRaises(Exception):
             test_node.add_successors(node_list)
+
+    def test_fireNode(self):
+        """
+        Generates a list of nodes and weights, and a test node and their initial
+        value. Then adds the list as successors to the node and calls fire.
+        Checks that all values are calculated correctly.
+        Also checks that firing multiple times sums the values.
+        :return:
+        """
+        # TODO: check for transformation function
+        value_list = [self.rand.uniform(0, 1) for _ in range(100)]
+        node_list = [(Node(), val) for val in value_list]
+        test_node = Node(0.5)
+        test_node.add_successors(node_list)
+
+        # Creates a copy of the node list and manually calculates their values
+        # after firing the test node
+        fired_node_list = node_list.copy()
+        for node, value in fired_node_list:
+            node.add_value(0.5 * value)
+
+        test_node.fire()
+        self.assertListEqual(node_list, fired_node_list)
+
+        # manually calculates values again
+        for node, value in fired_node_list:
+            node.add_value(0.5 * value)
+
+        test_node.fire()
+        self.assertListEqual(node_list, fired_node_list)
+
+    def test_addValueToNode(self):
+        """
+        Tests, that add_value simply adds a given value to the stored value.
+        :return:
+        """
+        node = Node()
+        node.add_value(0.2)
+        self.assertEqual(0.2, node.value)
