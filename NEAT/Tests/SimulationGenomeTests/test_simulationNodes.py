@@ -41,6 +41,27 @@ class TestSimulationCycleNode(unittest.TestCase):
                 self.assertEqual(val, node.initial_value)
                 self.assertEqual(val, node.value)
 
+    def test_resetNode(self):
+        """
+        Tests, that resetting a node returns its value to zero.
+        :return:
+        """
+        node = Node()
+        node.value = 0.7
+        node.reset()
+        self.assertEqual(0, node.value)
+
+    def test_resetNodeWithInitialValue(self):
+        """
+        Tests, that resetting a node that was initialized with a value returns
+        its value to that initial value.
+        :return:
+        """
+        node_with_initial_value = Node(0.2)
+        node_with_initial_value.value = 0.5
+        node_with_initial_value.reset()
+        self.assertEqual(0.2, node_with_initial_value.value)
+
     def test_addSuccessor(self):
         """
         Generates 100 random values from -1 to 2. Creates new nodes for every
