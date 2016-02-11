@@ -2,4 +2,5 @@ from unittest import TestCase
 
 
 class TestAnalysisResult(TestCase):
-  pass
+  def test_clear(self):
+    self.fail()
