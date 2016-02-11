@@ -1,4 +1,7 @@
-class MainDirector(object):
+from NEAT.Director.Director import Director
+
+
+class MainDirector(Director):
     def __init__(self, **kwargs):
         """
         :param kwargs:
@@ -22,9 +25,15 @@ class MainDirector(object):
         #   checks if simulation exists, raises exception if not
         #   checks if simulation is compatible, raises exception if not
         #   checks if simulation is configured, raises exception if not
+        #   loads configuration from config file inside simulation
 
         # class containing huge configuration object, potentially just json no-
         # tation
+        # should contain:
+        # - selection_parameters
+        # - decision_making_parameters (contains e.g. max population size)
+        # - clustering_parameters
+        # - discarding_parameters
         self.config = NEAT.config
 
         # database connection is a connection to an arbitrary database that is
@@ -75,10 +84,14 @@ class MainDirector(object):
         self.mutator = NEAT.Generator.Mutator(
             self.genome_repository
         )
+        # analyst analyzes a given genome and creates an AnalysisResult based on
+        # it
+        self.analyst = NEAT.Analyst.GenomeAnalyst()
         # clusterer divides all existing and active genomes in clusters aka spe-
         # cies
         self.clusterer = NEAT.Analyst.GenomeClusterer(
-            self.genome_repository
+            self.genome_repository,
+            self.config.clustering_parameters
         )
 
     def run(self):
@@ -90,19 +103,23 @@ class MainDirector(object):
         # Simulation.given_simulation.config
 
         while True:
-            if self.genome_repository.population_size > self.config.max_population_size:
-                self.discard_phase()
-
             if self.decision_maker.inter_cluster_breeding_time():
-                cluster_one, cluster_two = self.selector.select_clusters_for_combination()
-                self.combination_phase(cluster_one, cluster_two)
+                self.discard_phase(clusters=True)
+                self.combination_phase()
             else:
                 while not self.decision_maker.is_cluster_time():
-                    self.generation_phase(self.decision_maker.breed_or_mutate())
+                    self.generation_phase(mode=self.decision_maker.breed_or_mutate())
 
+            # after new genomes have been produced, be it through breeding, mu-
+            # tation or inter cluster breeding, they have to be reclustered
             self.cluster_phase()
 
-    def generation_phase(self, mode):
+            if self.decision_maker.population_too_big():
+                self.discard_phase()
+            # at the end of this loop we are always at less or equal the max
+            # population size
+
+    def generation_phase(self, mode, genome=None, genome_two=None):
         """
         generates a new genome via mutation/breeding
         then analyzes, simulates and stores the new genome
@@ -110,25 +127,49 @@ class MainDirector(object):
         :param mode: breed or mutate?
         :return:
         """
-        pass
+        new_genome = None
+        if mode == 'breed':
+            if genome is None or genome_two is None:
+                genome, genome_two = self.selector.select_genomes_for_breeding()
+            new_genome = self.breeder.breed_genomes(genome, genome_two)
+        elif mode == 'mutate':
+            if genome is None:
+                genome = self.selector.select_genome_for_mutation()
+            new_genome = self.mutator.mutate_genome(genome)
+        else:
+            return
+        analysis_result = self.analyst.analyze_genome(new_genome)
+        new_genome.analysis_result = analysis_result
+        self.genome_repository.add_genome(new_genome)
 
-    def combination_phase(self, cluester_one, cluster_two):
+    def combination_phase(self):
         """
         combinates two clusters
         :return:
         """
-        pass
+        cluster_one, cluster_two = self.selector.select_clusters_for_combination()
+        for genome_one, genome_two in self.selector.select_cluster_combinations(cluster_one, cluster_two):
+            self.generation_phase(mode='breed', genome=genome_one, genome_two=genome_two)
+        # now interbreed cluster_one and cluster_two
 
     def cluster_phase(self):
         """
         clusters all currently stored genomes
         :return:
         """
+        self.clusterer.cluster_genomes()
         pass
 
-    def discard_phase(self):
+    def discard_phase(self, clusters=False):
         """
         discards a number of genomes
+        :param clusters: True, if the lowest X clusters should be discarded,
+                         False, if the lowest X% of genomes should be discarded
         :return:
         """
-        pass
+        if clusters:
+            for cluster in self.decision_maker.select_clusters_for_discarding():
+                self.genome_repository.discard_genomes_by_cluster(cluster)
+        else:
+            for genome in self.decision_maker.select_genomes_for_discarding():
+                self.genome_repository.discard_genome(genome)
