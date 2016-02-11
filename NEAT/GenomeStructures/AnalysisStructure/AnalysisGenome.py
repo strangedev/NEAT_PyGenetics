@@ -7,13 +7,8 @@ import copy
 from typing import List, Dict, Set, Generic
 from NEAT.GenomeStructures.TH_GenomeStructure import GenomeStructure
 from NEAT.GenomeStructures.AnalysisStructure import AnalysisResult
+from NEAT.GenomeStructures.StorageStructure import StorageGenome
 
-
-#  from NEAT.GenomeStructures.StorageStructure import StorageGenome
-
-class StorageGenome:
-
-    StorageGenome = None
 
 class AnalysisGenome(Generic[GenomeStructure]):
     """

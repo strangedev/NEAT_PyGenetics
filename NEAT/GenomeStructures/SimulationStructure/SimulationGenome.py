@@ -9,8 +9,8 @@ class SimulationGenome(Generic[GenomeStructure]):
     def __init__(
             self,
             genome_id: int,
-            input_layer: Dict[str: Node],
-            output_layer: Dict[str: Node],
+            input_layer: Dict[str, Node],
+            output_layer: Dict[str, Node],
             hidden_layer: Iterable[Node],
             cycle_nodes: Iterable[CycleNode]
     ) -> None:
@@ -38,7 +38,7 @@ class SimulationGenome(Generic[GenomeStructure]):
             self.input_layer[label].value = value
 
     @property
-    def output(self) -> Dict[str: float]:
+    def output(self) -> Dict[str, float]:
         """
         :return: Dict of output nodes' label:value
         """
@@ -47,7 +47,7 @@ class SimulationGenome(Generic[GenomeStructure]):
     def calculate_step(
             self,
             inputs: Iterable[Tuple[str, float]]
-    ) -> Dict[str: float]:
+    ) -> Dict[str, float]:
         """
         :param inputs: List of tuples of the form (node_label, value)
         :return: Dict of output node labels and their current values.
