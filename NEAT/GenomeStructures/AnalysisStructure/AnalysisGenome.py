@@ -7,8 +7,13 @@ import copy
 from typing import List, Dict, Set, Generic
 from NEAT.GenomeStructures.TH_GenomeStructure import GenomeStructure
 from NEAT.GenomeStructures.AnalysisStructure import AnalysisResult
-from NEAT.GenomeStructures.StorageStructure import StorageGenome
 
+
+#  from NEAT.GenomeStructures.StorageStructure import StorageGenome
+
+class StorageGenome:
+
+    StorageGenome = None
 
 class AnalysisGenome(Generic[GenomeStructure]):
     """
@@ -72,10 +77,10 @@ class AnalysisGenome(Generic[GenomeStructure]):
         """
 
         if not source in self._cycle_edges.keys():
-            self._edges[source] = [target]
+            self._cycle_edges[source] = [target]
 
         elif not target in self._cycle_edges[source]:
-            self._edges[source].append(target)
+            self._cycle_edges[source].append(target)
 
     def init_from_storage_structure(
             self,
@@ -179,7 +184,6 @@ class AnalysisGenome(Generic[GenomeStructure]):
             if self._colors[node] == 0:
                 self._dfs_visit(node)
 
-
     def _dfs_visit(self, node: str) -> None:
         """
         Main DFS method. Separated from _dfs because of the possibility of
@@ -205,7 +209,6 @@ class AnalysisGenome(Generic[GenomeStructure]):
 
         self._colors[node] = 2  # no more neighbors, node is finished
         self._nodes_top_sorted.insert(0, node)
-
 
     @property
     def result(self) -> AnalysisResult.AnalysisResult:
