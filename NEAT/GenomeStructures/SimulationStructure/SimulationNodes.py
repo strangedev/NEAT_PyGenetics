@@ -147,6 +147,9 @@ class CycleNode(Node):
                 self.memory_value * self.cycle_weights[cycle_successor]
             )
 
-    def reset(self) -> None:
+    def preserve_memory(self) -> None:
+        """
+        Copies the current value into the memory_value.
+        :return:
+        """
         self.memory_value = self.value
-        super().reset()

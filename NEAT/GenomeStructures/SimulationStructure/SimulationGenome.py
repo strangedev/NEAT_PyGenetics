@@ -66,4 +66,7 @@ class SimulationGenome(Generic[GenomeStructure]):
         for node in self.hidden_layer:
             node.fire()
 
+        for node in self.cycle_nodes:
+            node.preserve_memory()
+
         return self.output
