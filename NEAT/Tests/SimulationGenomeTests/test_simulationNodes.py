@@ -1,9 +1,9 @@
 import unittest
 from unittest.mock import MagicMock
 from random import Random
-from NEAT.GenomeStructures.SimulationStructure.SimulationNodes import Node
-from NEAT.GenomeStructures.SimulationStructure.SimulationNodes import CycleNode
 from fractions import Fraction
+
+from NEAT.GenomeStructures.SimulationStructure.SimulationNodes import Node
 
 
 class TestSimulationNode(unittest.TestCase):
@@ -154,4 +154,4 @@ class TestSimulationNode(unittest.TestCase):
         """
         node = Node()
         node.add_value(Fraction(1, 5))
-        self.assertEqual(0.2, node.value)
+        self.assertEqual(Fraction(1, 5), node.value)

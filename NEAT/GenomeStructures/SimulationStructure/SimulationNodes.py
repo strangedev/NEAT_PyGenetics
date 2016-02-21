@@ -20,10 +20,11 @@ class Node(object):
         self.initial_value = initial_value
         self.value = initial_value
 
-    def add_successor(self,
-                      successor_node: 'Node',
-                      weight: Fraction
-                      ) -> None:
+    def add_successor(
+            self,
+            successor_node: 'Node',
+            weight: Fraction
+    ) -> None:
         """
         Adds a successor_node to the list of stored successors.
         :param successor_node: A new node to be added as a successor
@@ -45,8 +46,10 @@ class Node(object):
                             .join(" is already present in Node ")
                             .join(str(self)).join("."))
 
-    def add_successors(self,
-                       successor_nodes: Iterable[Tuple['Node', Fraction]]) -> None:
+    def add_successors(
+            self,
+            successor_nodes: Iterable[Tuple['Node', Fraction]]
+    ) -> None:
         """
         Adds multiple successor_nodes to the list.
         :param successor_nodes:
@@ -88,7 +91,11 @@ class Node(object):
 
 
 class CycleNode(Node):
-    def __init__(self, initial_memory_value: Fraction, initial_value: Fraction = Fraction(0)):
+    def __init__(
+            self,
+            initial_memory_value: Fraction,
+            initial_value: Fraction = Fraction(0)
+    ):
         """
         Unlike in Node here the initial_value is mandatory. It is used for the
         first step of firing the cycle edges.
@@ -100,7 +107,8 @@ class CycleNode(Node):
         self.cycle_weights = {}  # type: Dict[Node, Fraction]
         self.memory_value = initial_memory_value
 
-    def add_cycle_successor(self, successor_node: Node, weight: Fraction) -> None:
+    def add_cycle_successor(self, successor_node: Node,
+                            weight: Fraction) -> None:
         """
         Adds a cycle successor to the list. Throws an Exception otherwise.
         :param successor_node:

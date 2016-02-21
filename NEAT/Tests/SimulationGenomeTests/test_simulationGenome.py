@@ -31,7 +31,10 @@ class TestSimulationGenome(unittest.TestCase):
 
         hidden_layer[0].add_successor(output_layer['output_1'], Fraction(6, 10))
         hidden_layer[1].add_successor(output_layer['output_1'], Fraction(8, 10))
-        input_layer['input_2'].add_successor(output_layer['output_2'], Fraction(9, 10))
+        input_layer['input_2'].add_successor(
+            output_layer['output_2'],
+            Fraction(9, 10)
+        )
         hidden_layer[1].add_successor(output_layer['output_2'], Fraction(5, 10))
 
         gen = SimulationGenome(
