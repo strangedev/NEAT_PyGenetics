@@ -56,12 +56,12 @@ class SimulationGenome(Generic[GenomeStructure]):
 
         for node in self.hidden_layer:
             node.reset()
-        for node in self.output_layer:
+        for node in self.output_layer.values():
             node.reset()
 
         for node in self.cycle_nodes:
             node.fire_cycles()
-        for node in self.input_layer:
+        for node in self.input_layer.values():
             node.fire()
         for node in self.hidden_layer:
             node.fire()
