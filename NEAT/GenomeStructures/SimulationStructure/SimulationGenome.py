@@ -1,4 +1,5 @@
 from typing import Tuple, Generic, Dict, List
+from fractions import Fraction
 
 from NEAT.GenomeStructures.TH_GenomeStructure import GenomeStructure
 from NEAT.GenomeStructures.SimulationStructure.SimulationNodes import Node
@@ -31,14 +32,14 @@ class SimulationGenome(Generic[GenomeStructure]):
 
     def set_input(
             self,
-            inputs: List[Tuple[str, float]]
+            inputs: List[Tuple[str, Fraction]]
     ) -> None:
 
         for label, value in inputs:
             self.input_layer[label].value = value
 
     @property
-    def output(self) -> Dict[str, float]:
+    def output(self) -> Dict[str, Fraction]:
         """
         :return: Dict of output nodes' label:value
         """
@@ -46,8 +47,8 @@ class SimulationGenome(Generic[GenomeStructure]):
 
     def calculate_step(
             self,
-            inputs: List[Tuple[str, float]]
-    ) -> Dict[str, float]:
+            inputs: List[Tuple[str, Fraction]]
+    ) -> Dict[str, Fraction]:
         """
         :param inputs: List of tuples of the form (node_label, value)
         :return: Dict of output node labels and their current values.

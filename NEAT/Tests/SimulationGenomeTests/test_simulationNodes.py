@@ -3,13 +3,10 @@ from unittest.mock import MagicMock
 from random import Random
 from NEAT.GenomeStructures.SimulationStructure.SimulationNodes import Node
 from NEAT.GenomeStructures.SimulationStructure.SimulationNodes import CycleNode
+from fractions import Fraction
 
 
 class TestSimulationNode(unittest.TestCase):
-    pass
-
-
-class TestSimulationCycleNode(unittest.TestCase):
     def setUp(self):
         self.rand = Random()
         self.rand.seed(1337)
@@ -35,9 +32,9 @@ class TestSimulationCycleNode(unittest.TestCase):
         for val in [self.rand.uniform(-1, 2) for _ in range(100)]:
             if val < 0 or val > 1:
                 with self.assertRaises(ValueError):
-                    Node(val)
+                    Node(Fraction.from_float(val))
             else:
-                node = Node(val)
+                node = Node(Fraction.from_float(val))
                 self.assertEqual(val, node.initial_value)
                 self.assertEqual(val, node.value)
 
@@ -47,7 +44,7 @@ class TestSimulationCycleNode(unittest.TestCase):
         :return:
         """
         node = Node()
-        node.value = 0.7
+        node.value = Fraction(7, 10)
         node.reset()
         self.assertEqual(0, node.value)
 
@@ -57,10 +54,10 @@ class TestSimulationCycleNode(unittest.TestCase):
         its value to that initial value.
         :return:
         """
-        node_with_initial_value = Node(0.2)
-        node_with_initial_value.value = 0.5
+        node_with_initial_value = Node(Fraction(1, 5))
+        node_with_initial_value.value = Fraction(1, 2)
         node_with_initial_value.reset()
-        self.assertEqual(0.2, node_with_initial_value.value)
+        self.assertEqual(Fraction(1, 5), node_with_initial_value.value)
 
     def test_addSuccessor(self):
         """
@@ -75,9 +72,9 @@ class TestSimulationCycleNode(unittest.TestCase):
             new_node = Node()
             if val < 0 or val > 1:
                 with self.assertRaises(ValueError):
-                    test_node.add_successor(new_node, val)
+                    test_node.add_successor(new_node, Fraction.from_float(val))
             else:
-                test_node.add_successor(new_node, val)
+                test_node.add_successor(new_node, Fraction.from_float(val))
 
     def test_addSuccessorThatAlreadyExists(self):
         """
@@ -89,8 +86,8 @@ class TestSimulationCycleNode(unittest.TestCase):
         test_node = Node()
         add_node = Node()
         with self.assertRaises(Exception):
-            test_node.add_successor(add_node, 0)
-            test_node.add_successor(add_node, 0)
+            test_node.add_successor(add_node, Fraction(0))
+            test_node.add_successor(add_node, Fraction(0))
 
     def test_addSuccessors(self):
         """
@@ -100,7 +97,7 @@ class TestSimulationCycleNode(unittest.TestCase):
         """
         test_node = Node()
         test_node.add_successor = MagicMock()
-        node_list = [(Node(), 0) for _ in range(10)]
+        node_list = [(Node(), Fraction(0)) for _ in range(10)]
         test_node.add_successors(node_list)
         for elem in node_list:
             self.assertIn((elem,), test_node.add_successor.call_args_list)
@@ -113,9 +110,9 @@ class TestSimulationCycleNode(unittest.TestCase):
         """
         test_node = Node()
         duplicate_node = Node()
-        node_list = [(duplicate_node, 0)]
-        node_list.extend([(Node(), 0) for _ in range(10)])
-        node_list.append((duplicate_node, 0))
+        node_list = [(duplicate_node, Fraction(0))]
+        node_list.extend([(Node(), Fraction(0)) for _ in range(10)])
+        node_list.append((duplicate_node, Fraction(0)))
 
         with self.assertRaises(Exception):
             test_node.add_successors(node_list)
@@ -130,8 +127,8 @@ class TestSimulationCycleNode(unittest.TestCase):
         """
         # TODO: check for transformation function
         value_list = [self.rand.uniform(0, 1) for _ in range(100)]
-        node_list = [(Node(), val) for val in value_list]
-        test_node = Node(0.5)
+        node_list = [(Node(), Fraction.from_float(val)) for val in value_list]
+        test_node = Node(Fraction(1, 2))
         test_node.add_successors(node_list)
 
         # Creates a copy of the node list and manually calculates their values
@@ -156,5 +153,5 @@ class TestSimulationCycleNode(unittest.TestCase):
         :return:
         """
         node = Node()
-        node.add_value(0.2)
+        node.add_value(Fraction(1, 5))
         self.assertEqual(0.2, node.value)

@@ -1,4 +1,5 @@
 from typing import Dict, List
+from fractions import Fraction
 import unittest
 from NEAT.GenomeStructures.SimulationStructure.SimulationGenome \
     import SimulationGenome
@@ -21,17 +22,17 @@ class TestSimulationGenome(unittest.TestCase):
         output_layer['output_2'] = Node()
 
         hidden_layer.append(Node())
-        input_layer['input_1'].add_successor(hidden_layer[0], 0.2)
-        input_layer['input_2'].add_successor(hidden_layer[0], 0.7)
+        input_layer['input_1'].add_successor(hidden_layer[0], Fraction(2, 10))
+        input_layer['input_2'].add_successor(hidden_layer[0], Fraction(7, 10))
 
         hidden_layer.append(Node())
-        input_layer['input_1'].add_successor(hidden_layer[1], 0.1)
-        input_layer['input_3'].add_successor(hidden_layer[1], 0.3)
+        input_layer['input_1'].add_successor(hidden_layer[1], Fraction(1, 10))
+        input_layer['input_3'].add_successor(hidden_layer[1], Fraction(3, 10))
 
-        hidden_layer[0].add_successor(output_layer['output_1'], 0.6)
-        hidden_layer[1].add_successor(output_layer['output_1'], 0.8)
-        input_layer['input_2'].add_successor(output_layer['output_2'], 0.9)
-        hidden_layer[1].add_successor(output_layer['output_2'], 0.5)
+        hidden_layer[0].add_successor(output_layer['output_1'], Fraction(6, 10))
+        hidden_layer[1].add_successor(output_layer['output_1'], Fraction(8, 10))
+        input_layer['input_2'].add_successor(output_layer['output_2'], Fraction(9, 10))
+        hidden_layer[1].add_successor(output_layer['output_2'], Fraction(5, 10))
 
         gen = SimulationGenome(
             0,
@@ -42,13 +43,13 @@ class TestSimulationGenome(unittest.TestCase):
         )
 
         result = gen.calculate_step([
-            ('input_1', 0.5),
-            ('input_2', 0.5),
-            ('input_3', 0.5)
+            ('input_1', Fraction(5, 10)),
+            ('input_2', Fraction(5, 10)),
+            ('input_3', Fraction(5, 10))
         ])  # type: Dict[str, float]
 
-        self.assertEqual(0.43, result['output_1'])
-        self.assertEqual(0.55, result['output_2'])
+        self.assertEqual(Fraction(43, 100), result['output_1'])
+        self.assertEqual(Fraction(55, 100), result['output_2'])
 
     def test_basicExampleWithCycles(self):
         input_layer = {}  # type: Dict[str, Node]
@@ -63,21 +64,21 @@ class TestSimulationGenome(unittest.TestCase):
         output_layer['output_2'] = Node()
 
         hidden_layer.append(Node())
-        input_layer['input_1'].add_successor(hidden_layer[0], 0.7)
-        input_layer['input_2'].add_successor(hidden_layer[0], 0.3)
+        input_layer['input_1'].add_successor(hidden_layer[0], Fraction(7, 10))
+        input_layer['input_2'].add_successor(hidden_layer[0], Fraction(3, 10))
 
         hidden_layer.append(Node())
-        input_layer['input_1'].add_successor(hidden_layer[1], 0.6)
-        hidden_layer[0].add_successor(hidden_layer[1], 0.4)
+        input_layer['input_1'].add_successor(hidden_layer[1], Fraction(6, 10))
+        hidden_layer[0].add_successor(hidden_layer[1], Fraction(4, 10))
 
-        single_cycle_node = CycleNode(0.74)
+        single_cycle_node = CycleNode(Fraction(74, 100))
         hidden_layer.append(single_cycle_node)
         cycle_nodes.append(single_cycle_node)
-        hidden_layer[1].add_successor(hidden_layer[2], 0.3)
-        single_cycle_node.add_cycle_successor(hidden_layer[0], 0.6)
+        hidden_layer[1].add_successor(hidden_layer[2], Fraction(3, 10))
+        single_cycle_node.add_cycle_successor(hidden_layer[0], Fraction(6, 10))
 
-        hidden_layer[1].add_successor(output_layer['output_1'], 0.7)
-        hidden_layer[2].add_successor(output_layer['output_2'], 0.5)
+        hidden_layer[1].add_successor(output_layer['output_1'], Fraction(7, 10))
+        hidden_layer[2].add_successor(output_layer['output_2'], Fraction(5, 10))
 
         gen = SimulationGenome(
             1,
@@ -88,12 +89,12 @@ class TestSimulationGenome(unittest.TestCase):
         )
 
         result = gen.calculate_step([
-            ('input_1', 0.5),
-            ('input_2', 0.5)
+            ('input_1', Fraction(5, 10)),
+            ('input_2', Fraction(5, 10))
         ])
         print(result)
         print(single_cycle_node.memory_value)
 
-        self.assertEqual(0.47431999999999996, result['output_1'])
-        self.assertEqual(0.10164, result['output_2'])
-        self.assertEqual(0.20328, single_cycle_node.memory_value)
+        self.assertEqual(Fraction(5929, 12500), result['output_1'])
+        self.assertEqual(Fraction(2541, 25000), result['output_2'])
+        self.assertEqual(Fraction(2541, 12500), single_cycle_node.memory_value)
