@@ -149,4 +149,4 @@ class CycleNode(Node):
 
     def reset(self) -> None:
         self.memory_value = self.value
-        self.value = self.initial_value
+        super().reset()
