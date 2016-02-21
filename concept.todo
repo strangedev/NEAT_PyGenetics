@@ -20,6 +20,16 @@ MachineLearning:
     criteria will probably consist of their age, their fitness and the success-
     fullness of their offspring.
   Components:
+    Config-File:
+      The config file contains configurable basic values.
+      ☐ Population Size
+      ☐ Cluster count
+      ☐ Simulation Name
+        Reference to the module that is used for the simulation
+      ☐ List of input Nodes of the form [(label, id)]
+      ☐ List of output Nodes of the form [(label, id)]
+        These ids are used to globally identify input or output nodes.
+        These ids are not available for use in breeding.
     Gene:
       ☐ Start Node
       ☐ Target Node
@@ -77,14 +87,10 @@ MachineLearning:
               maybe not necessary? maybe the last stored value can be reused under some condition as some sort of memory
               resets the currently stored value
               resets done to false
-            ☐ isDone()
             ☐ addValue(long double)
               called by predecessors with their value * weight
-              ☐ sets done to true, after all neighbours have communicated their value
             ☐ neighbours()
               a iterable list of neighbour/weight tuples
-              ☐ after communicating with all neighbours calls reset()
-                This enables wave-like traversal of the Genome
             ☐ Input nodes are manually started and not resetted
             ☐ Output nodes are manually resetted and not started
       Coherency analysis:
