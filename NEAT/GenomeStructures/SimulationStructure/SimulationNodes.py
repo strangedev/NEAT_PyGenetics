@@ -119,6 +119,9 @@ class CycleNode(Node):
          stored list of successors.
         :return:
         """
+        if weight < 0 or weight > 1:
+            raise ValueError("Successor weight has to be in the interval "
+                             .join("[0,1]."))
         if successor_node not in self.cycle_successors:
             self.cycle_successors.append(successor_node)
             self.cycle_weights[successor_node] = weight
