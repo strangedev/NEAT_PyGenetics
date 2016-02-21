@@ -1,4 +1,4 @@
-from typing import Iterable, Tuple, Generic, Dict
+from typing import Tuple, Generic, Dict, List
 
 from NEAT.GenomeStructures.TH_GenomeStructure import GenomeStructure
 from NEAT.GenomeStructures.SimulationStructure.SimulationNodes import Node
@@ -11,8 +11,8 @@ class SimulationGenome(Generic[GenomeStructure]):
             genome_id: int,
             input_layer: Dict[str, Node],
             output_layer: Dict[str, Node],
-            hidden_layer: Iterable[Node],
-            cycle_nodes: Iterable[CycleNode]
+            hidden_layer: List[Node],
+            cycle_nodes: List[CycleNode]
     ) -> None:
         """
         :param genome_id: The genome's global id.
@@ -31,7 +31,7 @@ class SimulationGenome(Generic[GenomeStructure]):
 
     def set_input(
             self,
-            inputs: Iterable[Tuple[str, float]]
+            inputs: List[Tuple[str, float]]
     ) -> None:
 
         for label, value in inputs:
@@ -46,7 +46,7 @@ class SimulationGenome(Generic[GenomeStructure]):
 
     def calculate_step(
             self,
-            inputs: Iterable[Tuple[str, float]]
+            inputs: List[Tuple[str, float]]
     ) -> Dict[str, float]:
         """
         :param inputs: List of tuples of the form (node_label, value)
