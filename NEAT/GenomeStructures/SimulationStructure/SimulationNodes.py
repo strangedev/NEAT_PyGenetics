@@ -87,7 +87,7 @@ class Node(object):
 
 
 class CycleNode(Node):
-    def __init__(self, initial_value: float):
+    def __init__(self, initial_memory_value: float, initial_value: float = 0):
         """
         Unlike in Node here the initial_value is mandatory. It is used for the
         first step of firing the cycle edges.
@@ -97,7 +97,7 @@ class CycleNode(Node):
         super().__init__(initial_value)
         self.cycle_successors = []  # type: List[Node]
         self.cycle_weights = {}  # type: Dict[Node, float]
-        self.memory_value = initial_value
+        self.memory_value = initial_memory_value
 
     def add_cycle_successor(self, successor_node: Node, weight: float) -> None:
         """
