@@ -42,7 +42,7 @@ class SimulationGenome(Generic[GenomeStructure]):
         """
         :return: Dict of output nodes' label:value
         """
-        return {label: node.value for label, node in self.output_layer}
+        return {label: node.value for label, node in self.output_layer.items()}
 
     def calculate_step(
             self,
