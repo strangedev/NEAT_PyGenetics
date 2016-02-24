@@ -24,11 +24,11 @@ class SimulationGenome(Generic[GenomeStructure]):
          Subset of hidden_layer.
         :return SimulationGenome:
         """
-        self.genome_id = genome_id
-        self.input_layer = input_layer if input_layer else {}
-        self.output_layer = output_layer if output_layer else {}
-        self.hidden_layer = hidden_layer if hidden_layer else []
-        self.cycle_nodes = cycle_nodes if cycle_nodes else []
+        self._genome_id = genome_id
+        self._input_layer = input_layer if input_layer else {}
+        self._output_layer = output_layer if output_layer else {}
+        self._hidden_layer = hidden_layer if hidden_layer else []
+        self._cycle_nodes = cycle_nodes if cycle_nodes else []
 
     def set_input(
             self,
@@ -36,14 +36,14 @@ class SimulationGenome(Generic[GenomeStructure]):
     ) -> None:
 
         for label, value in inputs:
-            self.input_layer[label].value = value
+            self._input_layer[label].value = value
 
     @property
     def output(self) -> Dict[str, Fraction]:
         """
         :return: Dict of output nodes' label:value
         """
-        return {label: node.value for label, node in self.output_layer.items()}
+        return {label: node.value for label, node in self._output_layer.items()}
 
     def calculate_step(
             self,
@@ -55,19 +55,19 @@ class SimulationGenome(Generic[GenomeStructure]):
         """
         self.set_input(inputs)
 
-        for node in self.hidden_layer:
+        for node in self._hidden_layer:
             node.reset()
-        for node in self.output_layer.values():
+        for node in self._output_layer.values():
             node.reset()
 
-        for node in self.cycle_nodes:
+        for node in self._cycle_nodes:
             node.fire_cycles()
-        for node in self.input_layer.values():
+        for node in self._input_layer.values():
             node.fire()
-        for node in self.hidden_layer:
+        for node in self._hidden_layer:
             node.fire()
 
-        for node in self.cycle_nodes:
+        for node in self._cycle_nodes:
             node.preserve_memory()
 
         return self.output

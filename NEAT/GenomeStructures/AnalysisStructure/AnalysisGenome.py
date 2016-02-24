@@ -38,7 +38,7 @@ class AnalysisGenome(Generic[GenomeStructure]):
         self._gene_repository = gene_repository
 
         if storage_structure is not None:
-            self.init_from_storage_structure(storage_structure)
+            self._init_from_storage_structure(storage_structure)
 
     def _add_node(self, node_id: int) -> None:
         """
@@ -86,7 +86,7 @@ class AnalysisGenome(Generic[GenomeStructure]):
             self._edges[source].append(target)
             self._add_node(target)
 
-    def init_from_storage_structure(
+    def _init_from_storage_structure(
             self,
             storage_structure: StorageGenome
     ) -> None:
