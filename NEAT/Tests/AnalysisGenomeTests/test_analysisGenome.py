@@ -8,7 +8,9 @@ class TestAnalysisGenome(TestCase):
     def test__add_node(self):
         self.mock_gene_repository = MockGeneRepository()
         self.storage_genome = StorageGenome()
-        ana = AnalysisGenome.AnalysisGenome(self.mock_gene_repository, self.storage_genome)
+        ana = AnalysisGenome.AnalysisGenome(
+            self.mock_gene_repository,
+            self.storage_genome)
         self.assertSetEqual(ana._nodes, set({}))
 
         ana._add_node(6)
@@ -20,7 +22,9 @@ class TestAnalysisGenome(TestCase):
     def test__add_edge(self):
         self.mock_gene_repository = MockGeneRepository()
         self.storage_genome = StorageGenome()
-        ana = AnalysisGenome.AnalysisGenome(self.mock_gene_repository, self.storage_genome)
+        ana = AnalysisGenome.AnalysisGenome(
+            self.mock_gene_repository,
+            self.storage_genome)
         self.assertDictEqual(ana._edges, {})
 
         ana._add_node(1)
@@ -32,16 +36,20 @@ class TestAnalysisGenome(TestCase):
     def test__add_edge_without_preadded_nodes(self):
         self.mock_gene_repository = MockGeneRepository()
         self.storage_genome = StorageGenome()
-        ana = AnalysisGenome.AnalysisGenome(self.mock_gene_repository, self.storage_genome)
+        ana = AnalysisGenome.AnalysisGenome(
+            self.mock_gene_repository,
+            self.storage_genome)
         self.assertDictEqual(ana._edges, {})
 
-        ana._add_edge(1,2)
+        ana._add_edge(1, 2)
         self.assertDictEqual(ana._edges, {1: [2]})
 
     def test__add_edge_with_preadded_source_node(self):
         self.mock_gene_repository = MockGeneRepository()
         self.storage_genome = StorageGenome()
-        ana = AnalysisGenome.AnalysisGenome(self.mock_gene_repository, self.storage_genome)
+        ana = AnalysisGenome.AnalysisGenome(
+            self.mock_gene_repository,
+            self.storage_genome)
         self.assertDictEqual(ana._edges, {})
 
         ana._add_node(1)
@@ -55,7 +63,9 @@ class TestAnalysisGenome(TestCase):
     def test__add_input_node(self):
         self.mock_gene_repository = MockGeneRepository()
         self.storage_genome = StorageGenome()
-        ana = AnalysisGenome.AnalysisGenome(self.mock_gene_repository, self.storage_genome)
+        ana = AnalysisGenome.AnalysisGenome(
+            self.mock_gene_repository,
+            self.storage_genome)
         self.assertDictEqual(ana._input_nodes, {})
 
         ana._add_input_node(1, "A")
@@ -64,7 +74,9 @@ class TestAnalysisGenome(TestCase):
     def test_add_output_node(self):
         self.mock_gene_repository = MockGeneRepository()
         self.storage_genome = StorageGenome()
-        ana = AnalysisGenome.AnalysisGenome(self.mock_gene_repository, self.storage_genome)
+        ana = AnalysisGenome.AnalysisGenome(
+            self.mock_gene_repository,
+            self.storage_genome)
         self.assertDictEqual(ana._output_nodes, {})
 
         ana._add_output_node(1, "A")
