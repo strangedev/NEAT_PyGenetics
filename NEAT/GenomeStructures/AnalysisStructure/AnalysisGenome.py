@@ -103,7 +103,7 @@ class AnalysisGenome(Generic[GenomeStructure]):
         for node_label, node_id in storage_structure.outputs.items():
             self._add_output_node(node_id, node_label)
 
-        for gene_id in storage_structure.genes:
+        for gene_id, _, _ in storage_structure.genes:
             head, tail = self._gene_repository.get_node_ids_from_gene(gene_id)
             self._add_edge(head, tail)
 
