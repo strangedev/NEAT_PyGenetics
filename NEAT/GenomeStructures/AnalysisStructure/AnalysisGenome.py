@@ -77,6 +77,14 @@ class AnalysisGenome(Generic[GenomeStructure]):
         self._graph_initialised = True
 
     @property
+    def input_nodes(self) -> Dict[str, int]:
+        return self.input_nodes
+
+    @property
+    def output_nodes(self) -> Dict[str, int]:
+        return self.output_nodes
+
+    @property
     def nodes(self) -> Set[int]:
         return self._nodes
 
