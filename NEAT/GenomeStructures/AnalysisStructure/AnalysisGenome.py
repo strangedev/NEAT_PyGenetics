@@ -27,7 +27,7 @@ class AnalysisGenome(Generic[GenomeStructure]):
         self._input_nodes = dict({})  # type: Dict[str, int]
         self._output_nodes = dict({})  # type: Dict[str, int]
         self._edges = dict({})  # type: Dict[int, List[int]]
-        self._graph_initialised = False  # type: bool
+        self._graph_initialized = False  # type: bool
         self._gene_repository = gene_repository
 
         if storage_structure is not None:
@@ -76,7 +76,7 @@ class AnalysisGenome(Generic[GenomeStructure]):
             head, tail = self._gene_repository.get_node_ids_from_gene(gene_id)
             self._add_edge(head, tail)
 
-        self._graph_initialised = True
+        self._graph_initialized = True
 
     @property
     def input_nodes(self) -> Dict[str, int]:
@@ -96,4 +96,4 @@ class AnalysisGenome(Generic[GenomeStructure]):
 
     @property
     def initialised(self) -> bool:
-        return self._graph_initialised
+        return self._graph_initialized
