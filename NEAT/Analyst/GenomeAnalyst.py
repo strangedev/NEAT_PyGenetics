@@ -90,7 +90,7 @@ class GenomeAnalyst(object):
 
         self._reset_analysis()
         self._set_working_graph(self._cycle_nodes, self._cycle_edges)
-        self._dfs()
+        self._dfs(self._working_nodes)
 
         self._result.cycle_nodes = copy.deepcopy(self._nodes_top_sorted)
 
@@ -123,27 +123,21 @@ class GenomeAnalyst(object):
         self._working_nodes = nodes
         self._working_edges = edges
 
-    def _dfs(self, entry_points: Iterable[int] = None) -> None:
+    def _dfs(self, entry_points: Iterable[int]) -> None:
         """
         Performs depth first search on _working_edges.
         Classifies back-edges while encountering them and creates
         a topological ordering in self._nodes_top_sorted.
 
-        entry_points can be used to tell the dfs, from which nodes only to start
+        entry_points is used to tell the dfs, from which nodes only to start
         the search.
 
         :return: None
         """
-
-        if entry_points is None:
-            dfs_nodes = self._working_nodes
-        else:
-            dfs_nodes = entry_points
-
-        for node in dfs_nodes:
+        for node in entry_points:
             self._node_visited[node] = 0
 
-        for node in dfs_nodes:
+        for node in entry_points:
             if self._node_visited[node] == 0:
                 self._dfs_visit(node)
 
