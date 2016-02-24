@@ -103,31 +103,32 @@ class MainDirector(Director):
         # Simulation.given_simulation.config
 
         while True:
-            if self.decision_maker.inter_cluster_breeding_time():
-                self.discard_phase(clusters=True)
-                self.combination_phase()
+            if self.decision_maker.inter_cluster_breeding_time:
+                # if it's time to cross-breed, first discard a few clusters
+                self.discard_genomes(clusters=True)
+                # then combine clusters
+                self.crossbreed_clusters()
+                # and cluster again
+                self.cluster_genomes()
             else:
-                while not self.decision_maker.is_cluster_time():
-                    self.generation_phase(mode=self.decision_maker.breed_or_mutate())
+                # if it's incest time, first discard a few genomes
+                self.discard_genomes()
+                # then refill the population
+                # genomes that are generated in this phase will belong to the
+                # cluster to which its parents belong.
+                while not self.decision_maker.population_at_maximum_size():
+                    self.generate_new_genome(mode=self.decision_maker.breed_or_mutate())
 
-            # after new genomes have been produced, be it through breeding, mu-
-            # tation or inter cluster breeding, they have to be reclustered
-            self.cluster_phase()
-
-            if self.decision_maker.population_too_big():
-                self.discard_phase()
-            # at the end of this loop we are always at less or equal the max
-            # population size
-
-    def generation_phase(self, mode, genome=None, genome_two=None):
+    def generate_new_genome(self, mode, genome=None, genome_two=None):
         """
         generates a new genome via mutation/breeding
         then analyzes, simulates and stores the new genome
         needs further parameterization
+        :param genome_two:
+        :param genome:
         :param mode: breed or mutate?
         :return:
         """
-        new_genome = None
         if mode == 'breed':
             if genome is None or genome_two is None:
                 genome, genome_two = self.selector.select_genomes_for_breeding()
@@ -140,19 +141,20 @@ class MainDirector(Director):
             return
         analysis_result = self.analyst.analyze_genome(new_genome)
         new_genome.analysis_result = analysis_result
+        new_genome.cluster = genome.cluster
         self.genome_repository.add_genome(new_genome)
 
-    def combination_phase(self):
+    def crossbreed_clusters(self):
         """
         combinates two clusters
         :return:
         """
         cluster_one, cluster_two = self.selector.select_clusters_for_combination()
         for genome_one, genome_two in self.selector.select_cluster_combinations(cluster_one, cluster_two):
-            self.generation_phase(mode='breed', genome=genome_one, genome_two=genome_two)
+            self.generate_new_genome(mode='breed', genome=genome_one, genome_two=genome_two)
         # now interbreed cluster_one and cluster_two
 
-    def cluster_phase(self):
+    def cluster_genomes(self):
         """
         clusters all currently stored genomes
         :return:
@@ -160,7 +162,7 @@ class MainDirector(Director):
         self.clusterer.cluster_genomes()
         pass
 
-    def discard_phase(self, clusters=False):
+    def discard_genomes(self, clusters=False):
         """
         discards a number of genomes
         :param clusters: True, if the lowest X clusters should be discarded,
