@@ -4,10 +4,10 @@ import copy
 from NEAT.GenomeStructures.AnalysisStructure import AnalysisGenome
 from NEAT.Analyst import AnalysisResult
 
+
 class GenomeAnalyst(object):
 
     def __init__(self):
-
         self._cycle_nodes = set({})  # type: Set[str]
         self._cycle_edges = dict({})  # type: Dict[str, List[str]]
         self._working_edges = dict({})  # type: Dict[str, List[str]]
@@ -16,9 +16,7 @@ class GenomeAnalyst(object):
         self._colors = dict({})  # type: Dict[str, int]
         self._nodes_top_sorted = []  # type: List[str]
 
-
     def _add_cycle_node(self, label: str) -> None:
-
         self._cycle_nodes.add(label)
 
     def _add_cycle_edge(self, source: str, target: str) -> None:
@@ -29,7 +27,6 @@ class GenomeAnalyst(object):
         :param target: The label of the incoming node
         :return: None
         """
-
         if not source in self._cycle_edges.keys():
             self._cycle_edges[source] = [target]
 
@@ -47,9 +44,9 @@ class GenomeAnalyst(object):
         Creates an AnalysisResult object which can be accessed through
         AnalysisGenome.result.
 
+        :param genome:
         :return: None
         """
-
         if not genome.initialised:
             raise Exception("Analysis called before genome graph was initialized")
 
@@ -96,7 +93,6 @@ class GenomeAnalyst(object):
 
         :return:
         """
-
         self._result.clear()
         self._colors.clear()
         self._cycle_nodes.clear()
@@ -112,7 +108,6 @@ class GenomeAnalyst(object):
         :param edges: A dict (adjacency list) of edges
         :return: None
         """
-
         self._working_nodes = nodes
         self._working_edges = edges
 
@@ -124,7 +119,6 @@ class GenomeAnalyst(object):
 
         :return: None
         """
-
         for node in self._working_nodes:
             self._colors[node] = 0
 
@@ -141,7 +135,6 @@ class GenomeAnalyst(object):
         :param node: The label of the starting node.
         :return: None
         """
-
         self._colors[node] = 1  # node is discovered
 
         for neighbor in self._working_edges[node]:
