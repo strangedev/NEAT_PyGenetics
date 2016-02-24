@@ -20,9 +20,5 @@ class AnalysisResult(object):
         self.__init__()
 
     @property
-    def nodes(self) -> Set[int]:
-        return set([node for node in self.edges.keys()])
-
-    @property
     def cycle_nodes(self) -> Set[int]:
         return set([node for node in self.cycle_edges.keys()])
