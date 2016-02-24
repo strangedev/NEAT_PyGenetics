@@ -1,11 +1,11 @@
-from typing import List, Dict, Set, Iterable
+from collections import defaultdict
+from typing import List, Dict, Set, Iterable, Tuple
 import copy
 from NEAT.GenomeStructures.AnalysisStructure import AnalysisGenome
 from NEAT.Analyst import AnalysisResult
 
 
 class GenomeAnalyst(object):
-
     def __init__(self):
         """
         _node_visited:
@@ -13,34 +13,10 @@ class GenomeAnalyst(object):
           _node_visited[i] = 1 => node with id i was visited
         :return:
         """
-        self._cycle_nodes = set({})  # type: Set[int]
-        self._cycle_edges = dict({})  # type: Dict[int, List[int]]
-
         self._working_nodes = set({})  # type: Set[int]
         self._working_edges = dict({})  # type: Dict[int, List[int]]
 
-        self._nodes_top_sorted = []  # type: List[int]
-        self._cycle_nodes_top_sorted = []  # type: List[int]
-
         self._result = AnalysisResult.AnalysisResult()
-        self._node_visited = dict({})  # type: Dict[int, int]
-
-    def _add_cycle_node(self, node_id: int) -> None:
-        self._cycle_nodes.add(node_id)
-
-    def _add_cycle_edge(self, source: int, target: int) -> None:
-        """
-        Adds a cycle-edge to the working graph.
-
-        :param source: The label of the outgoing node.
-        :param target: The label of the incoming node
-        :return: None
-        """
-        if source not in self._cycle_edges.keys():
-            self._cycle_edges[source] = [target]
-
-        elif target not in self._cycle_edges[source]:
-            self._cycle_edges[source].append(target)
 
     def analyse(
             self,
@@ -61,40 +37,44 @@ class GenomeAnalyst(object):
                             "initialized")
 
         # Algo:
-        # reset internal fields
-        # copy graph to working copy
+        # reset result object
+        # set working graph to original graph
+        # copy original edges to result
         # call dfs on working copy
-        #   classify edges
-        #   mark cycle nodes
-        # ^ deprecated, cycles are detected while dfs_visit is running
-        # write analysis of dag to result
-        # reset internal fields
-        # move only cycle node edges to working copy
+        #   retrieve topologically sorted nodes and store them in result
+        #   retrieve cycle edges and store them in result
+        # remove cycle edges from edges in result
+        # set working graph to cycle graph
         # call dfs on working copy
-        # write analysis of cycle dag to result
+        #   retrieve topologically sorted cycle nodes and store them in result
+        #   throw away empty cycle edges since at this point, there are no more
+        #     edges in the working graph
 
         self._reset_analysis()
         self._set_working_graph(genome.nodes, genome.edges)
-        self._dfs(genome.input_nodes.values())
 
-        # nodes stay the same
-        self._result.nodes = copy.deepcopy(self._nodes_top_sorted)
-        # remove the cycle edges later
+        # first add all edges to the result, remove found cycle closing edges
+        # later
         self._result.edges = copy.deepcopy(genome.edges)
-        #  Don't add cycle nodes yet, as they are not sorted at this point
-        self._result.cycle_edges = copy.deepcopy(self._cycle_edges)
 
-        for source in self._cycle_nodes:  # removal of the cycle edges
-            target = self._cycle_edges[source]
+        # store found topologically_sorted_nodes directly into the AnalysisRe-
+        # sult
+        # store found cycle_edges locally for further processing
+        self._result.topologically_sorted_nodes, self._result.cycle_edges = \
+            self._dfs(genome.input_nodes.values())
+
+        # removal of the cycle edges from the AnalysisResult
+        for source in self._result.cycle_nodes:
+            target = self._result.cycle_edges[source]
             self._result.edges[source].remove(target)
 
-        self._reset_analysis()
-        self._set_working_graph(self._cycle_nodes, self._cycle_edges)
-        self._dfs(self._working_nodes)
+        self._set_working_graph(
+            self._result.cycle_nodes,
+            self._result.cycle_edges)
+        self._result.topologically_sorted_cycle_nodes, _ = \
+            self._dfs(self._working_nodes)
 
-        self._result.cycle_nodes = copy.deepcopy(self._nodes_top_sorted)
-
-        return copy.deepcopy(self._result)
+        return self._result
 
     def _reset_analysis(self):
         """
@@ -105,13 +85,9 @@ class GenomeAnalyst(object):
         :return:
         """
         self._result.clear()
-        self._node_visited.clear()
-        self._cycle_nodes.clear()
-        self._cycle_edges.clear()
-        self._nodes_top_sorted.clear()
-        self._cycle_nodes_top_sorted.clear()
 
-    def _set_working_graph(self, nodes: Set[int], edges: Dict[int, List[int]]) -> None:
+    def _set_working_graph(self, nodes: Set[int],
+                           edges: Dict[int, List[int]]) -> None:
         """
         Creates a working copy of the graph to be analyzed in order
         to preserve the original graph.
@@ -123,7 +99,8 @@ class GenomeAnalyst(object):
         self._working_nodes = nodes
         self._working_edges = edges
 
-    def _dfs(self, entry_points: Iterable[int]) -> None:
+    def _dfs(self, entry_points: Iterable[int]) \
+            -> Tuple[List[int], Dict[int, List[int]]]:
         """
         Performs depth first search on _working_edges.
         Classifies back-edges while encountering them and creates
@@ -132,16 +109,38 @@ class GenomeAnalyst(object):
         entry_points is used to tell the dfs, from which nodes only to start
         the search.
 
-        :return: None
+        :return: A tuple consisting of
+          a topologically sorted list of the input nodes
+          an adjacency list of found cycle edges in the form
+            Dict[int, List[int]]
         """
-        for node in entry_points:
-            self._node_visited[node] = 0
+        nodes_top_sorted = []  # type: List[int]
+        cycle_edges = defaultdict(list)  # type: Dict[int, List[int]]
+        visited_nodes = set({})  # type: Set[int]
+        # node_visitation_status:
+        # 0 means not visited yet
+        # 1 means currently being visited
+        # 2 means visited
+        node_visitation_status = \
+            {node: 0 for node in self._working_nodes}  # type: Dict[int, int]
 
         for node in entry_points:
-            if self._node_visited[node] == 0:
-                self._dfs_visit(node)
+            if node_visitation_status[node] == 0:
+                self._dfs_visit(
+                    node,
+                    nodes_top_sorted,
+                    cycle_edges,
+                    visited_nodes,
+                    node_visitation_status)
 
-    def _dfs_visit(self, node: int) -> None:
+        return nodes_top_sorted, cycle_edges
+
+    def _dfs_visit(self,
+                   node: int,
+                   nodes_top_sorted: List[int],
+                   cycle_edges: Dict[int, List[int]],
+                   visited_nodes: Set[int],
+                   node_visitation_status: Dict[int, int]) -> None:
         """
         Main DFS method. Separated from _dfs because of the possibility of
         multiple entry points in the graph.
@@ -149,16 +148,20 @@ class GenomeAnalyst(object):
         :param node: The label of the starting node.
         :return: None
         """
-        self._node_visited[node] = 1  # mark node as discovered
+        node_visitation_status[node] = 1
 
         for neighbor in self._working_edges[node]:
-            if self._node_visited[neighbor] == 0:
-                self._dfs_visit(neighbor)
+            if node_visitation_status[neighbor] == 0:
+                self._dfs_visit(
+                    neighbor,
+                    nodes_top_sorted,
+                    cycle_edges,
+                    visited_nodes,
+                    node_visitation_status)
+            # if an edge leads to a node that is currently being visited, the
+            # edge closes a cycle.
+            elif node_visitation_status[neighbor] == 1:
+                cycle_edges[node].append(neighbor)
 
-            # if an edge leads to a node that was already visited, the edge clo-
-            # ses a cycle.
-            if self._node_visited[neighbor] == 1:
-                self._add_cycle_node(node)
-                self._add_cycle_edge(node, neighbor)
-
-        self._nodes_top_sorted.insert(0, node)
+        node_visitation_status[node] = 2
+        nodes_top_sorted.insert(0, node)
