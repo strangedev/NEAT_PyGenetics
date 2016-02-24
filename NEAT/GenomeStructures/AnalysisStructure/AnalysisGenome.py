@@ -6,7 +6,7 @@ import copy
 from typing import List, Dict, Set, Generic
 
 from NEAT.Analyst import AnalysisResult
-from NEAT.GenomeStructures.StorageStructure import StorageGenome
+from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 from NEAT.GenomeStructures.TH_GenomeStructure import GenomeStructure
 from NEAT.Repository.GeneRepository import GeneRepository
 
@@ -23,21 +23,26 @@ class AnalysisGenome(Generic[GenomeStructure]):
             gene_repository: GeneRepository,
             storage_structure: StorageGenome
     ) -> None:
-
-        self._nodes = set({})  # type: Set[str]
-        self._inputNodes = set({})  # type: Set[str]
-        self._outputNodes = set({})  # type: Set[str]
-        self._edges = dict({})  # type: Dict[str, List[str]]
+        self._nodes = set({})  # type: Set[int]
+        self._input_nodes = dict({})  # type: Dict[int, str]
+        self._output_nodes = dict({})  # type: Dict[int, str]
+        self._edges = dict({})  # type: Dict[int, List[int]]
         self._graph_initialised = False  # type: bool
         self._gene_repository = gene_repository
-
         self.init_from_storage_structure(storage_structure)
 
-    def _add_node(self, label: str) -> None:
+    def _add_node(self, node_id: int) -> None:
+        self._nodes.add(node_id)
 
-        self._nodes.add(label)
+    def _add_input_node(self, node_id: int, label: str) -> None:
+        self._nodes.add(node_id)
+        self._input_nodes[label] = node_id
 
-    def _add_edge(self, source: str, target: str) -> None:
+    def _add_output_node(self, node_id: int,label: str) -> None:
+        self.nodes.add(node_id)
+        self._output_nodes[label] = node_id
+
+    def _add_edge(self, source: int, target: int) -> None:
         """
         Adds an edge to the original graph.
 
@@ -54,9 +59,8 @@ class AnalysisGenome(Generic[GenomeStructure]):
 
     def init_from_storage_structure(
             self,
-            other_structure: StorageGenome.StorageGenome
+            storage_structure: StorageGenome
     ) -> None:
-
         self._graph_initialised = True
 
     @property
