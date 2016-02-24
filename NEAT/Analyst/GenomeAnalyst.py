@@ -10,11 +10,14 @@ class GenomeAnalyst(object):
     def __init__(self):
         self._cycle_nodes = set({})  # type: Set[str]
         self._cycle_edges = dict({})  # type: Dict[str, List[str]]
-        self._working_edges = dict({})  # type: Dict[str, List[str]]
+
         self._working_nodes = set({})  # type: Set[str]
+        self._working_edges = dict({})  # type: Dict[str, List[str]]
+
         self._result = AnalysisResult.AnalysisResult()
         self._colors = dict({})  # type: Dict[str, int]
         self._nodes_top_sorted = []  # type: List[str]
+        self._cycle_nodes_top_sorted = []  # type: List[str]
 
     def _add_cycle_node(self, label: str) -> None:
         self._cycle_nodes.add(label)
@@ -27,10 +30,10 @@ class GenomeAnalyst(object):
         :param target: The label of the incoming node
         :return: None
         """
-        if not source in self._cycle_edges.keys():
+        if source not in self._cycle_edges.keys():
             self._cycle_edges[source] = [target]
 
-        elif not target in self._cycle_edges[source]:
+        elif target not in self._cycle_edges[source]:
             self._cycle_edges[source].append(target)
 
     def analyse(
@@ -48,7 +51,8 @@ class GenomeAnalyst(object):
         :return: None
         """
         if not genome.initialised:
-            raise Exception("Analysis called before genome graph was initialized")
+            raise Exception("Analysis called before genome graph was "
+                            "initialized")
 
         # Algo:
         # reset internal fields
@@ -67,8 +71,10 @@ class GenomeAnalyst(object):
         self._set_working_graph(genome.nodes, genome.edges)
         self._dfs()
 
-        self._result.nodes = copy.deepcopy(self._nodes_top_sorted)  # nodes stay the same
-        self._result.edges = copy.deepcopy(genome.edges)  # remove the cycle edges later
+        # nodes stay the same
+        self._result.nodes = copy.deepcopy(self._nodes_top_sorted)
+        # remove the cycle edges later
+        self._result.edges = copy.deepcopy(genome.edges)
         #  Don't add cycle nodes yet, as they are not sorted at this point
         self._result.cycle_edges = copy.deepcopy(self._cycle_edges)
 
