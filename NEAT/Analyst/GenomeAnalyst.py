@@ -1,5 +1,4 @@
-
-from typing import List, Dict, Set
+from typing import List, Dict, Set, Iterable
 import copy
 from NEAT.GenomeStructures.AnalysisStructure import AnalysisGenome
 from NEAT.Analyst import AnalysisResult
@@ -76,7 +75,7 @@ class GenomeAnalyst(object):
 
         self._reset_analysis()
         self._set_working_graph(genome.nodes, genome.edges)
-        self._dfs()
+        self._dfs(genome.input_nodes.values())
 
         # nodes stay the same
         self._result.nodes = copy.deepcopy(self._nodes_top_sorted)
@@ -86,7 +85,6 @@ class GenomeAnalyst(object):
         self._result.cycle_edges = copy.deepcopy(self._cycle_edges)
 
         for source in self._cycle_nodes:  # removal of the cycle edges
-
             target = self._cycle_edges[source]
             self._result.edges[source].remove(target)
 
@@ -125,19 +123,27 @@ class GenomeAnalyst(object):
         self._working_nodes = nodes
         self._working_edges = edges
 
-    def _dfs(self) -> None:
+    def _dfs(self, entry_points: Iterable[int] = None) -> None:
         """
         Performs depth first search on _working_edges.
         Classifies back-edges while encountering them and creates
         a topological ordering in self._nodes_top_sorted.
 
+        entry_points can be used to tell the dfs, from which nodes only to start
+        the search.
+
         :return: None
         """
-        for node in self._working_nodes:
+
+        if entry_points is None:
+            dfs_nodes = self._working_nodes
+        else:
+            dfs_nodes = entry_points
+
+        for node in dfs_nodes:
             self._node_visited[node] = 0
 
-        for node in self._working_nodes:
-
+        for node in dfs_nodes:
             if self._node_visited[node] == 0:
                 self._dfs_visit(node)
 
@@ -152,7 +158,6 @@ class GenomeAnalyst(object):
         self._node_visited[node] = 1  # mark node as discovered
 
         for neighbor in self._working_edges[node]:
-
             if self._node_visited[neighbor] == 0:
                 self._dfs_visit(neighbor)
 
