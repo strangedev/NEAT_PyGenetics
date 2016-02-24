@@ -1,12 +1,15 @@
 from unittest import TestCase
+from unittest.mock import Mock
+
 from NEAT.GenomeStructures.AnalysisStructure import AnalysisGenome
-from NEAT.Tests.MockClasses.MockGeneRepository import MockGeneRepository
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 
 
 class TestAnalysisGenome(TestCase):
     def setUp(self):
-        self.mock_gene_repository = MockGeneRepository()
+        self.mock_gene_repository = Mock()
+        self.mock_gene_repository.get_node_ids_from_gene =\
+            lambda node_id: (node_id * 2, node_id * 2 + 1)
         self.storage_genome = StorageGenome()
 
     def test__add_node(self):
