@@ -1,21 +1,28 @@
 from unittest import TestCase
-from NEAT.Analyst import AnalysisResult
+from NEAT.Analyst.AnalysisResult import AnalysisResult
 
 
 class TestAnalysisResult(TestCase):
 
     def test_clear(self):
+        result = AnalysisResult()
 
-        result = AnalysisResult.AnalysisResult()
-
-        result.nodes = {"A", "B", "C"}
-        result.edges = {"A": ["B"]}
-        result.cycle_nodes = {"C"}
-        result.cycle_edges = {"C": ["A"]}
+        result.disabled_nodes = {1, 2}
+        result.edges = {1: [2]}
+        result.topologically_sorted_nodes = [1, 2]
+        result.cycle_edges = {1: [2]}
+        result.topologically_sorted_cycle_nodes = [1, 2]
 
         result.clear()
 
-        self.assertSetEqual(result.nodes, set({}))
-        self.assertSetEqual(result.cycle_nodes, set({}))
-        self.assertDictEqual(result.edges, {})
-        self.assertDictEqual(result.cycle_edges, {})
+        self.assertSetEqual(set({}), result.disabled_nodes)
+        self.assertDictEqual({}, result.edges)
+        self.assertListEqual([], result.topologically_sorted_nodes)
+        self.assertDictEqual({}, result.cycle_edges)
+        self.assertListEqual([], result.topologically_sorted_cycle_nodes)
+
+    def test_cycle_nodes(self):
+        result = AnalysisResult()
+
+        result.cycle_edges = {1: [2, 3, 4], 2: [3]}
+        self.assertSetEqual({1, 2}, result.cycle_nodes)
