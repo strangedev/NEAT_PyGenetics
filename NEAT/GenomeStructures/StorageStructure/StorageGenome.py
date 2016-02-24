@@ -29,8 +29,8 @@ class StorageGenome(object):
         cluster: The cluster to which the Genome belongs.
         """
         self.id = int()
-        self.inputs = []  # type: List[Tuple[str, int]]
-        self.outputs = []  # type: List[Tuple[str, int]]
+        self.inputs = {}  # type: Dict[str, int]
+        self.outputs = {}  # type: Dict[str, int]
         self.genes = []  # type: List[Tuple[int, bool, Fraction]]
         self.analysis_result = AnalysisResult()
         self.cluster = int()
