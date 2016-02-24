@@ -53,9 +53,12 @@ class AnalysisGenome(Generic[GenomeStructure]):
 
         if not source in self._edges.keys():
             self._edges[source] = [target]
+            self._add_node(source)
+            self._add_node(target)
 
         elif not target in self._edges[source]:
             self._edges[source].append(target)
+            self._add_node(target)
 
     def init_from_storage_structure(
             self,
