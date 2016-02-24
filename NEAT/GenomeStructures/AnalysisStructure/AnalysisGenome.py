@@ -24,8 +24,8 @@ class AnalysisGenome(Generic[GenomeStructure]):
             storage_structure: StorageGenome
     ) -> None:
         self._nodes = set({})  # type: Set[int]
-        self._input_nodes = dict({})  # type: Dict[int, str]
-        self._output_nodes = dict({})  # type: Dict[int, str]
+        self._input_nodes = dict({})  # type: Dict[str, int]
+        self._output_nodes = dict({})  # type: Dict[str, int]
         self._edges = dict({})  # type: Dict[int, List[int]]
         self._graph_initialised = False  # type: bool
         self._gene_repository = gene_repository
