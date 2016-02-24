@@ -51,12 +51,12 @@ class AnalysisGenome(Generic[GenomeStructure]):
         :return: None
         """
 
-        if not source in self._edges.keys():
+        if source not in self._edges.keys():
             self._edges[source] = [target]
             self._add_node(source)
             self._add_node(target)
 
-        elif not target in self._edges[source]:
+        elif target not in self._edges[source]:
             self._edges[source].append(target)
             self._add_node(target)
 
@@ -77,13 +77,13 @@ class AnalysisGenome(Generic[GenomeStructure]):
         self._graph_initialised = True
 
     @property
-    def nodes(self):
+    def nodes(self) -> Set[int]:
         return self._nodes
 
     @property
-    def edges(self):
+    def edges(self) -> Dict[int, List[int]]:
         return self._edges
 
     @property
-    def initialised(self):
+    def initialised(self) -> bool:
         return self._graph_initialised
