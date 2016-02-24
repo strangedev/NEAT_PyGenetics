@@ -23,6 +23,13 @@ class AnalysisGenome(Generic[GenomeStructure]):
             gene_repository: GeneRepository,
             storage_structure: StorageGenome = None
     ) -> None:
+        """
+        Creates an AnalysisGenome. If a StorageGenome is given, it is used for
+        construction. Otherwise the AnalysisGenome is constructed empty.
+        :param gene_repository:
+        :param storage_structure:
+        :return:
+        """
         self._nodes = set({})  # type: Set[int]
         self._input_nodes = dict({})  # type: Dict[str, int]
         self._output_nodes = dict({})  # type: Dict[str, int]
@@ -34,19 +41,36 @@ class AnalysisGenome(Generic[GenomeStructure]):
             self.init_from_storage_structure(storage_structure)
 
     def _add_node(self, node_id: int) -> None:
+        """
+        Adds a node.
+        :param node_id:
+        :return:
+        """
         self._nodes.add(node_id)
 
     def _add_input_node(self, node_id: int, label: str) -> None:
+        """
+        Adds a mapping (label => id) for an input node.
+        :param node_id: The node's id.
+        :param label: The node's label.
+        :return:
+        """
         self._nodes.add(node_id)
         self._input_nodes[label] = node_id
 
-    def _add_output_node(self, node_id: int,label: str) -> None:
+    def _add_output_node(self, node_id: int, label: str) -> None:
+        """
+        Adds a mapping (label => id) for an output node.
+        :param node_id: The node's id.
+        :param label: The node's label.
+        :return:
+        """
         self.nodes.add(node_id)
         self._output_nodes[label] = node_id
 
     def _add_edge(self, source: int, target: int) -> None:
         """
-        Adds an edge to the original graph.
+        Adds an edge to the graph.
 
         :param source: The label of the outgoing node.
         :param target: The label of the incoming node
@@ -66,6 +90,13 @@ class AnalysisGenome(Generic[GenomeStructure]):
             self,
             storage_structure: StorageGenome
     ) -> None:
+        """
+        Initializes the AnalysisGenome based on a StorageGenome.
+        Reads information from the given StorageGenome and creates a adjacency
+        list based on it.
+        :param storage_structure:
+        :return:
+        """
         for node_label, node_id in storage_structure.inputs.items():
             self._add_input_node(node_id, node_label)
 
