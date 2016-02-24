@@ -5,9 +5,7 @@ from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 
 
 class TestAnalysisGenome(TestCase):
-
     def test__add_node(self):
-
         self.mock_gene_repository = MockGeneRepository()
         self.storage_genome = StorageGenome()
         ana = AnalysisGenome.AnalysisGenome(self.mock_gene_repository, self.storage_genome)
@@ -20,7 +18,6 @@ class TestAnalysisGenome(TestCase):
         self.assertSetEqual(ana._nodes, {6, 10})
 
     def test__add_edge(self):
-
         self.mock_gene_repository = MockGeneRepository()
         self.storage_genome = StorageGenome()
         ana = AnalysisGenome.AnalysisGenome(self.mock_gene_repository, self.storage_genome)
@@ -33,19 +30,23 @@ class TestAnalysisGenome(TestCase):
         self.assertDictEqual(ana._edges, {1: [2]})
 
     def test__add_edge_without_preadded_nodes(self):
-        ana = AnalysisGenome.AnalysisGenome()
+        self.mock_gene_repository = MockGeneRepository()
+        self.storage_genome = StorageGenome()
+        ana = AnalysisGenome.AnalysisGenome(self.mock_gene_repository, self.storage_genome)
         self.assertDictEqual(ana._edges, {})
 
         ana._add_edge(1,2)
         self.assertDictEqual(ana._edges, {1: [2]})
 
     def test__add_edge_with_preadded_source_node(self):
-        ana = AnalysisGenome.AnalysisGenome()
-        self.assertDictEqual({})
+        self.mock_gene_repository = MockGeneRepository()
+        self.storage_genome = StorageGenome()
+        ana = AnalysisGenome.AnalysisGenome(self.mock_gene_repository, self.storage_genome)
+        self.assertDictEqual(ana._edges, {})
 
         ana._add_node(1)
 
-        ana._add_edge(1,2)
+        ana._add_edge(1, 2)
         self.assertDictEqual(ana._edges, {1: [2]})
 
     def test_init_from_storage_structure(self):
@@ -59,7 +60,6 @@ class TestAnalysisGenome(TestCase):
 
         ana._add_input_node(1, "A")
         self.assertDictEqual(ana._input_nodes, {"A", 1})
-
 
     def test_add_output_node(self):
         self.mock_gene_repository = MockGeneRepository()
