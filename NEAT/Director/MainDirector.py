@@ -1,5 +1,6 @@
 from NEAT.Director.Director import Director
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
+from NEAT.Analyst.GenomeAnalyst import GenomeAnalyst
 
 
 class MainDirector(Director):
@@ -87,7 +88,7 @@ class MainDirector(Director):
         )
         # analyst analyzes a given genome and creates an AnalysisResult based on
         # it
-        self.analyst = NEAT.Analyst.GenomeAnalyst()
+        self.analyst = GenomeAnalyst()
         # clusterer divides all existing and active genomes in clusters aka spe-
         # cies
         self.clusterer = NEAT.Analyst.GenomeClusterer(
