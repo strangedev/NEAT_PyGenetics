@@ -21,7 +21,9 @@ class TestAnalysisGenome(TestCase):
 
     def test__add_edge(self):
 
-        ana = AnalysisGenome.AnalysisGenome()
+        self.mock_gene_repository = MockGeneRepository()
+        self.storage_genome = StorageGenome()
+        ana = AnalysisGenome.AnalysisGenome(self.mock_gene_repository, self.storage_genome)
         self.assertDictEqual(ana._edges, {})
 
         ana._add_node(1)
