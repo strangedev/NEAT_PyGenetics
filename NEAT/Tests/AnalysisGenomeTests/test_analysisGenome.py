@@ -71,7 +71,7 @@ class TestAnalysisGenome(TestCase):
         ana._add_input_node(1, "A")
         self.assertDictEqual(ana._input_nodes, {"A": 1})
 
-    def test_add_output_node(self):
+    def test__add_output_node(self):
         self.mock_gene_repository = MockGeneRepository()
         self.storage_genome = StorageGenome()
         ana = AnalysisGenome.AnalysisGenome(
