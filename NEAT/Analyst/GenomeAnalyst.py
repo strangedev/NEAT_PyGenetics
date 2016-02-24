@@ -8,6 +8,12 @@ from NEAT.Analyst import AnalysisResult
 class GenomeAnalyst(object):
 
     def __init__(self):
+        """
+        _node_visited:
+          _node_visited[i] = 0 => node with id i was not visited yet
+          _node_visited[i] = 1 => node with id i was visited
+        :return:
+        """
         self._cycle_nodes = set({})  # type: Set[int]
         self._cycle_edges = dict({})  # type: Dict[int, List[int]]
 
@@ -18,7 +24,7 @@ class GenomeAnalyst(object):
         self._cycle_nodes_top_sorted = []  # type: List[int]
 
         self._result = AnalysisResult.AnalysisResult()
-        self._colors = dict({})  # type: Dict[int, int]
+        self._node_visited = dict({})  # type: Dict[int, int]
 
     def _add_cycle_node(self, node_id: int) -> None:
         self._cycle_nodes.add(node_id)
@@ -101,7 +107,7 @@ class GenomeAnalyst(object):
         :return:
         """
         self._result.clear()
-        self._colors.clear()
+        self._node_visited.clear()
         self._cycle_nodes.clear()
         self._cycle_edges.clear()
         self._nodes_top_sorted.clear()
@@ -128,11 +134,11 @@ class GenomeAnalyst(object):
         :return: None
         """
         for node in self._working_nodes:
-            self._colors[node] = 0
+            self._node_visited[node] = 0
 
         for node in self._working_nodes:
 
-            if self._colors[node] == 0:
+            if self._node_visited[node] == 0:
                 self._dfs_visit(node)
 
     def _dfs_visit(self, node: int) -> None:
@@ -143,18 +149,17 @@ class GenomeAnalyst(object):
         :param node: The label of the starting node.
         :return: None
         """
-        self._colors[node] = 1  # node is discovered
+        self._node_visited[node] = 1  # mark node as discovered
 
         for neighbor in self._working_edges[node]:
 
-            if self._colors[neighbor] == 0:
-
+            if self._node_visited[neighbor] == 0:
                 self._dfs_visit(neighbor)
 
-            if self._colors[neighbor] == 1:  # Grey indicates back edge
-
+            # if an edge leads to a node that was already visited, the edge clo-
+            # ses a cycle.
+            if self._node_visited[neighbor] == 1:
                 self._add_cycle_node(node)
                 self._add_cycle_edge(node, neighbor)
 
-        self._colors[node] = 2  # no more neighbors, node is finished
         self._nodes_top_sorted.insert(0, node)
