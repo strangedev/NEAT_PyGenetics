@@ -1,4 +1,4 @@
-from typing import List, Tuple
+from typing import List, Tuple, Dict
 from fractions import Fraction
 
 from NEAT.Analyst.AnalysisResult import AnalysisResult
