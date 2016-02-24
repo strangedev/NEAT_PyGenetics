@@ -8,21 +8,22 @@ from NEAT.Analyst import AnalysisResult
 class GenomeAnalyst(object):
 
     def __init__(self):
-        self._cycle_nodes = set({})  # type: Set[str]
-        self._cycle_edges = dict({})  # type: Dict[str, List[str]]
+        self._cycle_nodes = set({})  # type: Set[int]
+        self._cycle_edges = dict({})  # type: Dict[int, List[int]]
 
-        self._working_nodes = set({})  # type: Set[str]
-        self._working_edges = dict({})  # type: Dict[str, List[str]]
+        self._working_nodes = set({})  # type: Set[int]
+        self._working_edges = dict({})  # type: Dict[int, List[int]]
+
+        self._nodes_top_sorted = []  # type: List[int]
+        self._cycle_nodes_top_sorted = []  # type: List[int]
 
         self._result = AnalysisResult.AnalysisResult()
-        self._colors = dict({})  # type: Dict[str, int]
-        self._nodes_top_sorted = []  # type: List[str]
-        self._cycle_nodes_top_sorted = []  # type: List[str]
+        self._colors = dict({})  # type: Dict[int, int]
 
-    def _add_cycle_node(self, label: str) -> None:
-        self._cycle_nodes.add(label)
+    def _add_cycle_node(self, node_id: int) -> None:
+        self._cycle_nodes.add(node_id)
 
-    def _add_cycle_edge(self, source: str, target: str) -> None:
+    def _add_cycle_edge(self, source: int, target: int) -> None:
         """
         Adds a cycle-edge to the working graph.
 
@@ -105,7 +106,7 @@ class GenomeAnalyst(object):
         self._cycle_edges.clear()
         self._nodes_top_sorted.clear()
 
-    def _set_working_graph(self, nodes: Set[str], edges: Dict[str, List[str]]) -> None:
+    def _set_working_graph(self, nodes: Set[int], edges: Dict[int, List[int]]) -> None:
         """
         Creates a working copy of the graph to be analyzed in order
         to preserve the original graph.
@@ -133,7 +134,7 @@ class GenomeAnalyst(object):
             if self._colors[node] == 0:
                 self._dfs_visit(node)
 
-    def _dfs_visit(self, node: str) -> None:
+    def _dfs_visit(self, node: int) -> None:
         """
         Main DFS method. Separated from _dfs because of the possibility of
         multiple entry points in the graph.
