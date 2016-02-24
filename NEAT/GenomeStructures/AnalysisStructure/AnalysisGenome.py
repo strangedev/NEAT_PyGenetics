@@ -8,6 +8,7 @@ from typing import List, Dict, Set, Generic
 from NEAT.Analyst import AnalysisResult
 from NEAT.GenomeStructures.StorageStructure import StorageGenome
 from NEAT.GenomeStructures.TH_GenomeStructure import GenomeStructure
+from NEAT.Repository.GeneRepository import GeneRepository
 
 
 class AnalysisGenome(Generic[GenomeStructure]):
@@ -19,15 +20,18 @@ class AnalysisGenome(Generic[GenomeStructure]):
 
     def __init__(
             self,
-            other_structure: StorageGenome = None
+            gene_repository: GeneRepository,
+            storage_structure: StorageGenome
     ) -> None:
 
         self._nodes = set({})  # type: Set[str]
+        self._inputNodes = set({})  # type: Set[str]
+        self._outputNodes = set({})  # type: Set[str]
         self._edges = dict({})  # type: Dict[str, List[str]]
         self._graph_initialised = False  # type: bool
+        self._gene_repository = gene_repository
 
-        if other_structure:
-            self.init_from_storage_structure(other_structure)
+        self.init_from_storage_structure(storage_structure)
 
     def _add_node(self, label: str) -> None:
 
