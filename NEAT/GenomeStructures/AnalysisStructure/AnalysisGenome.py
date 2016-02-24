@@ -80,11 +80,11 @@ class AnalysisGenome(Generic[GenomeStructure]):
 
     @property
     def input_nodes(self) -> Dict[str, int]:
-        return self.input_nodes
+        return self._input_nodes
 
     @property
     def output_nodes(self) -> Dict[str, int]:
-        return self.output_nodes
+        return self._output_nodes
 
     @property
     def nodes(self) -> Set[int]:
