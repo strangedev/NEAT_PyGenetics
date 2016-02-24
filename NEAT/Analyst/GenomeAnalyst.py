@@ -18,7 +18,7 @@ class GenomeAnalyst(object):
 
         self._result = AnalysisResult.AnalysisResult()
 
-    def analyse(
+    def analyze(
             self,
             genome: AnalysisGenome.AnalysisGenome
     ) -> AnalysisResult.AnalysisResult:
