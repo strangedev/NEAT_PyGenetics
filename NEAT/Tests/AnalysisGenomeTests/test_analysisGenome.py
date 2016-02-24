@@ -59,7 +59,7 @@ class TestAnalysisGenome(TestCase):
         self.assertDictEqual(ana._input_nodes, {})
 
         ana._add_input_node(1, "A")
-        self.assertDictEqual(ana._input_nodes, {"A", 1})
+        self.assertDictEqual(ana._input_nodes, {"A": 1})
 
     def test_add_output_node(self):
         self.mock_gene_repository = MockGeneRepository()
@@ -68,4 +68,4 @@ class TestAnalysisGenome(TestCase):
         self.assertDictEqual(ana._output_nodes, {})
 
         ana._add_output_node(1, "A")
-        self.assertDictEqual(ana._output_nodes, {"A", 1})
+        self.assertDictEqual(ana._output_nodes, {"A": 1})
