@@ -21,7 +21,7 @@ class AnalysisGenome(Generic[GenomeStructure]):
     def __init__(
             self,
             gene_repository: GeneRepository,
-            storage_structure: StorageGenome
+            storage_structure: StorageGenome = None
     ) -> None:
         self._nodes = set({})  # type: Set[int]
         self._input_nodes = dict({})  # type: Dict[str, int]
@@ -29,7 +29,9 @@ class AnalysisGenome(Generic[GenomeStructure]):
         self._edges = dict({})  # type: Dict[int, List[int]]
         self._graph_initialised = False  # type: bool
         self._gene_repository = gene_repository
-        self.init_from_storage_structure(storage_structure)
+
+        if storage_structure is not None:
+            self.init_from_storage_structure(storage_structure)
 
     def _add_node(self, node_id: int) -> None:
         self._nodes.add(node_id)
