@@ -105,6 +105,7 @@ class GenomeAnalyst(object):
         self._cycle_nodes.clear()
         self._cycle_edges.clear()
         self._nodes_top_sorted.clear()
+        self._cycle_nodes_top_sorted.clear()
 
     def _set_working_graph(self, nodes: Set[int], edges: Dict[int, List[int]]) -> None:
         """
