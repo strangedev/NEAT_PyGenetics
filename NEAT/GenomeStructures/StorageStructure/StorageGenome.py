@@ -26,10 +26,12 @@ class StorageGenome(object):
           Fraction that stores the weight of the gene.
         analysis_result: A result object that is generated when analyzing the
           genome. This is per default empty.
+        cluster: The cluster to which the Genome belongs.
         """
         self.id = int()
         self.inputs = []  # type: List[Tuple[str, int]]
         self.outputs = []  # type: List[Tuple[str, int]]
         self.genes = []  # type: List[Tuple[int, bool, Fraction]]
         self.analysis_result = AnalysisResult()
+        self.cluster = int()
         pass
