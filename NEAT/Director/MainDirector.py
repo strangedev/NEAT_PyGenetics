@@ -1,4 +1,5 @@
 from NEAT.Director.Director import Director
+from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 
 
 class MainDirector(Director):
@@ -119,7 +120,11 @@ class MainDirector(Director):
                 while not self.decision_maker.population_at_maximum_size():
                     self.generate_new_genome(mode=self.decision_maker.breed_or_mutate())
 
-    def generate_new_genome(self, mode, genome=None, genome_two=None):
+    def generate_new_genome(
+            self,
+            mode,
+            genome: StorageGenome = None,
+            genome_two: StorageGenome = None):
         """
         generates a new genome via mutation/breeding
         then analyzes, simulates and stores the new genome
@@ -162,7 +167,7 @@ class MainDirector(Director):
         self.clusterer.cluster_genomes()
         pass
 
-    def discard_genomes(self, clusters=False):
+    def discard_genomes(self, clusters: bool = False):
         """
         discards a number of genomes
         :param clusters: True, if the lowest X clusters should be discarded,
