@@ -61,18 +61,20 @@ class GenomeAnalyst(object):
         # sult
         # store found cycle_edges locally for further processing
         self._result.topologically_sorted_nodes, self._result.cycle_edges = \
-            self._dfs(genome.input_nodes.values())
+            self._dfs(sorted(genome.input_nodes.values()))
 
         # removal of the cycle edges from the AnalysisResult
         for source in self._result.cycle_nodes:
-            target = self._result.cycle_edges[source]
-            self._result.edges[source].remove(target)
+            target_list = self._result.cycle_edges[source]
+            for target in target_list:
+                if target in self._result.edges[source]:
+                    self._result.edges[source].remove(target)
 
         self._set_working_graph(
             self._result.cycle_nodes,
             self._result.cycle_edges)
         self._result.topologically_sorted_cycle_nodes, _ = \
-            self._dfs(self._working_nodes)
+            self._dfs(sorted(self._working_nodes))
 
         return self._result
 
@@ -145,12 +147,34 @@ class GenomeAnalyst(object):
         Main DFS method. Separated from _dfs because of the possibility of
         multiple entry points in the graph.
 
+        First marks the node as currently being visited.
+
+        If the node is not contained in the working edges dict (i.e. if the node
+        does not have any successors), it is marked as finished and returned.
+
+        The node's neighbors are iterated over.
+        If a neighbor is not contained in the working nodes set (this only hap-
+        pens when calling dfs on the cycleedge only subgraph and means, that the
+        node is not one of the cycle nodes), it is skipped.
+        If the neighbor was not visited yet, dfs is called on it.
+        If the neighbor is currently being visited, the edge to it closes a cy-
+        cle and is added to the dict of cycle_edges.
+
+        The node is marked as finished and added at the front of the topologi-
+        cally sorted list of nodes.
+
         :param node: The label of the starting node.
         :return: None
         """
         node_visitation_status[node] = 1
 
-        for neighbor in self._working_edges[node]:
+        if node not in self._working_edges:
+            node_visitation_status[node] = 2
+            return
+
+        for neighbor in sorted(self._working_edges[node]):
+            if neighbor not in self._working_nodes:
+                continue
             if node_visitation_status[neighbor] == 0:
                 self._dfs_visit(
                     neighbor,
