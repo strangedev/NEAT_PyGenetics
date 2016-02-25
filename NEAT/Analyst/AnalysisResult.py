@@ -19,7 +19,7 @@ class AnalysisResult(object):
     def __eq__(self, obj: 'AnalysisResult'):
         return self.disabled_nodes.__eq__(obj.disabled_nodes) \
             or self.edges.__eq__(obj.edges) \
-            or self.topologically_sorte_nodes.__eq__(obj.topologically_sorted_nodes) \
+            or self.topologically_sorted_nodes.__eq__(obj.topologically_sorted_nodes) \
             or self.cycle_edges.__eq__(obj.cycle_edges) \
             or self.topologically_sorted_cycle_nodes.__eq__(obj.topologically_sorted_cycle_nodes)
 
