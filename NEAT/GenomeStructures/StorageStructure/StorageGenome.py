@@ -35,3 +35,14 @@ class StorageGenome(object):
         self.analysis_result = AnalysisResult()
         self.cluster = int()
         pass
+
+    def __eq__(self, obj: 'StorageGenome'):
+        if self.id != obj.id \
+                or self.dead != obj.dead \
+                or not self.inputs.__eq__(obj.inputs) \
+                or not self.outputs.__eq__(obj.outputs) \
+                or not self.genes.__eq__(obj.genes) \
+                or not self.analysis_result.__eq__(obj.analysis_result) \
+                or self.cluster != obj.cluster:
+            return False
+        return True
