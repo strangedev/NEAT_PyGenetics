@@ -4,6 +4,26 @@ from NEAT.Analyst.AnalysisResult import AnalysisResult
 
 class TestAnalysisResult(TestCase):
 
+    def test_equality_operator(self):
+        result = AnalysisResult()
+        new_result = AnalysisResult()
+
+        result.disabled_nodes = {100, 2}
+        result.edges = {36: [2]}
+        result.topologically_sorted_nodes = [3, 2]
+        result.cycle_edges = {1: [7]}
+        result.topologically_sorted_cycle_nodes = [4, 2]
+
+        self.assertFalse(result.__eq__(new_result))
+
+        new_result.disabled_nodes = {100, 2}
+        new_result.edges = {36: [2]}
+        new_result.topologically_sorted_nodes = [3, 2]
+        new_result.cycle_edges = {1: [7]}
+        new_result.topologically_sorted_cycle_nodes = [4, 2]
+
+        self.assertTrue(result.__eq__(new_result))
+
     def test_clear(self):
         result = AnalysisResult()
 
@@ -15,11 +35,8 @@ class TestAnalysisResult(TestCase):
 
         result.clear()
 
-        self.assertSetEqual(set({}), result.disabled_nodes)
-        self.assertDictEqual({}, result.edges)
-        self.assertListEqual([], result.topologically_sorted_nodes)
-        self.assertDictEqual({}, result.cycle_edges)
-        self.assertListEqual([], result.topologically_sorted_cycle_nodes)
+        new_result = AnalysisResult()
+        self.assertTrue(result.__eq__(new_result))
 
     def test_cycle_nodes(self):
         result = AnalysisResult()
