@@ -1,6 +1,7 @@
 from NEAT.Director.Director import Director
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 from NEAT.Analyst.GenomeAnalyst import GenomeAnalyst
+from NEAT.Repository import GenomeRepository
 
 
 class MainDirector(Director):
@@ -48,9 +49,8 @@ class MainDirector(Director):
             self.database_connection
         )
         # genome_repository administrates all genomes ever created
-        self.genome_repository = NEAT.Repository.GenomeRepository(
-            self.database_connection,
-            self.gene_repository
+        self.genome_repository = GenomeRepository.GenomeRepository(
+            self.database_connection
         )
         self.node_repository = NEAT.Repository.NodeRepository(
             self.database_connection
