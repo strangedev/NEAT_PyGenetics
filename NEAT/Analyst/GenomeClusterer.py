@@ -1,3 +1,5 @@
+from NEAT.Repository.GenomeRepository import GenomeRepository
+from NEAT.GenomeStructures.StorageStructure import StorageGenome
 
 class GenomeClusterer(object):
     """
@@ -16,7 +18,11 @@ class GenomeClusterer(object):
         """
         pass
 
-    def calculate_delta(self, genome_one, genome_two):
+    def calculate_delta(
+            self,
+            genome_one: StorageGenome.StorageGenome,
+            genome_two: StorageGenome.StorageGenome
+    ):
         """
         Returns a metric of topological difference for two given
         genomes.
@@ -27,7 +33,7 @@ class GenomeClusterer(object):
         """
         pass
 
-    def calculate_shared_fitness(self, cluster_id):
+    def calculate_shared_fitness(self, cluster_id: int):
         """
         Calculates the shared fitness value for a given cluster based
         on the cluster size and the individual fitness values of the
