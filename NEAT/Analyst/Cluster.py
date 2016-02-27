@@ -10,3 +10,5 @@ class Cluster(object):
 
         self.id = id
         self.representative = representative
+        self.fitness = 0
+        self.max_population = 0

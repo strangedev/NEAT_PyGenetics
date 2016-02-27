@@ -2,6 +2,7 @@ from NEAT.Repository.GenomeRepository import GenomeRepository
 from NEAT.Repository.ClusterRepository import ClusterRepository
 from NEAT.GenomeStructures.StorageStructure import StorageGenome
 from NEAT.Analyst.Cluster import Cluster
+from typing import List, Tuple
 
 class GenomeClusterer(object):
     """
@@ -65,7 +66,7 @@ class GenomeClusterer(object):
             self,
             genome_one: StorageGenome.StorageGenome,
             genome_two: StorageGenome.StorageGenome
-    ):
+    ) -> float:
         """
         Returns a metric of topological difference for two given
         genomes.
@@ -104,11 +105,12 @@ class GenomeClusterer(object):
 
     def calculate_disjoint_excess_count(
             self,
-            smaller_genome,
-            bigger_genome,
-            differing_genes
-    ):
-        smaller_genome_range = 0
+            smaller_genome: StorageGenome,
+            bigger_genome: StorageGenome,
+            differing_genes: List[int]
+    ) -> Tuple[int, int]:
+
+        smaller_genome_range = 0 # type: int
 
         for gene_id in smaller_genome.genes:
 
@@ -123,9 +125,14 @@ class GenomeClusterer(object):
 
         return (len(disjoint_genes), len(excess_genes))
 
-    def calculate_w_bar(self, genome_one, genome_two, matching_genes):
+    def calculate_w_bar(
+            self,
+            genome_one: StorageGenome,
+            genome_two: StorageGenome,
+            matching_genes: List[int]
+    ) -> float:
 
-        weights = []
+        weights = [] # type: List[int]
 
         for gene_id in matching_genes:
 
@@ -148,12 +155,11 @@ class GenomeClusterer(object):
 
         w_bar = sum(
                     [(weight_one - weight_two)**2 for (weight_one, weight_two) in weights]
-                ) / len(matching_genes)
+                ) / len(matching_genes) # type: float
 
         return w_bar
 
-
-    def calculate_shared_fitness(self, cluster_id: int):
+    def calculate_cluster_fitness(self, cluster_id: int):
         """
         Calculates the shared fitness value for a given cluster based
         on the cluster size and the individual fitness values of the
@@ -162,7 +168,16 @@ class GenomeClusterer(object):
         :param cluster_id: The id of the cluster
         :return: The shared fitness value for the input cluster
         """
-        pass
+
+        genomes = self.genome_repository.get_genomes_in_cluster(cluster_id)
+
+        cluster_fitness = 0
+
+        for genome in genomes:
+            cluster_fitness += genome.fitness
+
+        return cluster_fitness / len(list(genomes))
+
 
     def calculate_max_cluster_populations(self):
         """
@@ -173,4 +188,25 @@ class GenomeClusterer(object):
 
         :return: None
         """
-        pass
+
+        max_population = self.clustering_parameters.max_population
+
+        clusters = self.cluster_repository.get_current_clusters()
+
+        for cluster in clusters:
+            cluster.fitness = self.calculate_cluster_fitness(cluster.id)
+            self.cluster_repository.update_fitness_for_cluster(
+                cluster.id,
+                cluster.fitness
+            )
+
+        cluster_fitness_sum = sum([cluster.fitness for cluster in clusters])
+
+        for cluster in clusters:
+
+            cluster.max_population = cluster.fitness / cluster_fitness_sum
+            self.cluster_repository.update_max_population_for_cluster(
+                cluster.id,
+                cluster.max_population
+            )
+

@@ -176,8 +176,8 @@ class MainDirector(Director):
         :return:
         """
         if clusters:
-            for cluster in self.decision_maker.select_clusters_for_discarding():
+            for cluster in self.selector.select_clusters_for_discarding():
                 self.genome_repository.discard_genomes_by_cluster(cluster)
         else:
-            for genome in self.decision_maker.select_genomes_for_discarding():
+            for genome in self.selector.select_genomes_for_discarding():
                 self.genome_repository.discard_genome(genome)
