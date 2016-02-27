@@ -1,13 +1,24 @@
 from NEAT.Repository.GenomeRepository import GenomeRepository
+from NEAT.Repository.ClusterRepository import ClusterRepository
 from NEAT.GenomeStructures.StorageStructure import StorageGenome
+from NEAT.Analyst.Cluster import Cluster
 
 class GenomeClusterer(object):
     """
     A class used for clustering genomes into species.
     """
 
-    def __init__(self):
-        pass
+    def __init__(
+            self,
+            genome_repository: GenomeRepository,
+            cluster_repository: ClusterRepository,
+            clustering_parameters
+    ):
+
+        self.genome_repository = genome_repository
+        self.cluster_repository = cluster_repository
+        self.clustering_parameters = clustering_parameters
+
 
     def cluster_genomes(self):
         """
@@ -16,7 +27,29 @@ class GenomeClusterer(object):
         cluster it is in.
         :return: None
         """
-        pass
+
+        current_genomes = list(self.genome_repository.get_current_population())
+        self.cluster_repository.archive_clusters() # new clusters will be created,
+                                             # the old ones can be stored
+
+        first_genome = current_genomes.pop(0)
+        self.cluster_repository.add_cluster_with_representative(first_genome)
+
+        for genome in current_genomes:
+
+            clusters = self.cluster_repository.get_current_clusters()
+
+            for cluster in clusters:
+
+                delta = self.calculate_delta(genome, cluster.representative)
+
+                if delta < self.clustering_parameters.delta_threshold:
+                    self.cluster_repository.add_genome_to_cluster(genome, cluster)
+
+                else:
+                    self.cluster_repository.add_cluster_with_representative(genome)
+
+
 
     def calculate_delta(
             self,
