@@ -24,3 +24,9 @@ class ClusterRepository(object):
             cluster: Cluster
     ):
         pass
+
+    def get_cluster_by_genome_id(self, genome_id: int):
+        pass
+
+    def get_cluster_count(self) -> int:
+        pass

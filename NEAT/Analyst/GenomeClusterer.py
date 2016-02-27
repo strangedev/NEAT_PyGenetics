@@ -29,14 +29,15 @@ class GenomeClusterer(object):
         """
 
         current_genomes = list(self.genome_repository.get_current_population())
-        self.cluster_repository.archive_clusters() # new clusters will be created,
-                                             # the old ones can be stored
 
-        first_genome = current_genomes.pop(0)
-        self.cluster_repository.add_cluster_with_representative(first_genome)
+        if self.cluster_repository.get_cluster_count == 0:
+            first_genome = current_genomes.pop(0)
+            self.cluster_repository.add_cluster_with_representative(first_genome.id)
+
 
         for genome in current_genomes:
 
+            genome_placed_in_cluster = False
             clusters = self.cluster_repository.get_current_clusters()
 
             for cluster in clusters:
@@ -44,10 +45,22 @@ class GenomeClusterer(object):
                 delta = self.calculate_delta(genome, cluster.representative)
 
                 if delta < self.clustering_parameters.delta_threshold:
-                    self.cluster_repository.add_genome_to_cluster(genome, cluster)
+                    self.genome_repository.update_cluster_for_genome(
+                        genome.id,
+                        cluster.id
+                    )
 
-                else:
-                    self.cluster_repository.add_cluster_with_representative(genome)
+                    genome_placed_in_cluster = True
+
+                    break
+
+            if not genome_placed_in_cluster:
+                self.cluster_repository.add_cluster_with_representative(genome)
+                self.genome_repository.update_cluster_for_genome(
+                    genome.id,
+                    self.cluster_repository.get_cluster_by_representative(genome.id).id
+                )
+
 
 
 
@@ -64,7 +77,12 @@ class GenomeClusterer(object):
         :param genome_two: The second genome
         :return: The delta value (topological difference) of the input genomes
         """
-        pass
+        excess_coeff = 1
+        disjoint_coeff = 1
+        weight_delta_coeff = 1
+        n = 0 # number of genes in bigger genome
+
+
 
     def calculate_shared_fitness(self, cluster_id: int):
         """
