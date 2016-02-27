@@ -61,9 +61,6 @@ class GenomeClusterer(object):
                     self.cluster_repository.get_cluster_by_representative(genome.id).id
                 )
 
-
-
-
     def calculate_delta(
             self,
             genome_one: StorageGenome.StorageGenome,
@@ -77,11 +74,83 @@ class GenomeClusterer(object):
         :param genome_two: The second genome
         :return: The delta value (topological difference) of the input genomes
         """
-        excess_coeff = 1
-        disjoint_coeff = 1
-        weight_delta_coeff = 1
-        n = 0 # number of genes in bigger genome
+        excess_coeff = self.clustering_parameters.excess_coefficient
+        disjoint_coeff = self.clustering_parameters.disjoint_coefficient
+        weight_delta_coeff = self.clustering_parameters.weight_difference_coefficient
 
+        bigger_genome, smaller_genome = (genome_one, genome_two) \
+            if len(genome_one.genes) > len(genome_two.genes) \
+            else (genome_two, genome_one)
+
+        all_genes = smaller_genome.genes + bigger_genome.genes
+
+        matching_genes = [gene_id for gene_id in genome_one.genes \
+                          if gene_id in genome_two.genes]
+
+        differing_genes = [gene_id for gene_id in all_genes \
+                           if gene_id not in matching_genes]
+
+        n = len(bigger_genome.genes)
+        disjoint_count, excess_count = self.calculate_disjoint_excess_count(
+            smaller_genome,
+            bigger_genome,
+            differing_genes
+        )
+        w_bar = self.calculate_w_bar(bigger_genome, smaller_genome)
+
+        return ((excess_coeff * excess_count) / n) \
+               + ((disjoint_coeff * disjoint_count) / n) \
+               + (weight_delta_coeff * w_bar)
+
+    def calculate_disjoint_excess_count(
+            self,
+            smaller_genome,
+            bigger_genome,
+            differing_genes
+    ):
+        smaller_genome_range = 0
+
+        for gene_id in smaller_genome.genes:
+
+            if gene_id > smaller_genome_range:
+                smaller_genome_range = gene_id
+
+        excess_genes = [gene_id for gene_id in differing_genes \
+                        if gene_id > smaller_genome_range]
+
+        disjoint_genes = [gene_id for gene_id in differing_genes \
+                          if gene_id not in excess_genes]
+
+        return (len(disjoint_genes), len(excess_genes))
+
+    def calculate_w_bar(self, genome_one, genome_two, matching_genes):
+
+        weights = []
+
+        for gene_id in matching_genes:
+
+            weight_one = 0
+            weight_two = 0
+
+            for gene in genome_two.genes:
+
+                if gene[0] == gene_id:
+                    weight_one = gene[2]
+                    break
+
+            for gene in genome_one.genes:
+
+                if gene[0] == gene_id:
+                    weight_two = gene[2]
+                    break
+
+            weights.append((weight_one, weight_two))
+
+        w_bar = sum(
+                    [(weight_one - weight_two)**2 for (weight_one, weight_two) in weights]
+                ) / len(matching_genes)
+
+        return w_bar
 
 
     def calculate_shared_fitness(self, cluster_id: int):
@@ -104,3 +173,4 @@ class GenomeClusterer(object):
 
         :return: None
         """
+        pass
