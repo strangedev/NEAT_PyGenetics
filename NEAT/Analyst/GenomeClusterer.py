@@ -33,35 +33,35 @@ class GenomeClusterer(object):
         :return: None
         """
 
-        current_genomes = list(self.genome_repository.get_current_population())
+        current_genomes = list(self.genome_repository.get_current_population()) # TODO:
 
-        if self.cluster_repository.get_cluster_count == 0:
+        if self.cluster_repository.get_cluster_count == 0: # TODO:
             first_genome = current_genomes.pop(0)
-            self.cluster_repository.add_cluster_with_representative(first_genome.id)
+            self.cluster_repository.add_cluster_with_representative(first_genome.id) # TODO:
 
 
         for genome in current_genomes:
-            clusters = self.cluster_repository.get_current_clusters()
+            clusters = self.cluster_repository.get_current_clusters() # TODO:
 
             for cluster in clusters:
 
                 delta = self.calculate_delta(
                     genome,
-                    self.genome_repository.get_genome_by_id(cluster.representative)
+                    self.genome_repository.get_genome_by_id(cluster.representative) # TODO:
                 )
 
                 if delta < self.clustering_parameters["delta_threshold"]:
-                    self.genome_repository.update_cluster_for_genome(
+                    self.genome_repository.update_cluster_for_genome( # TODO:
                         genome.id,
                         cluster.id
                     )
 
                     break
             else:
-                self.cluster_repository.add_cluster_with_representative(genome.id)
-                self.genome_repository.update_cluster_for_genome(
+                self.cluster_repository.add_cluster_with_representative(genome.id) # TODO:
+                self.genome_repository.update_cluster_for_genome( # TODO:
                     genome.id,
-                    self.cluster_repository.get_cluster_by_representative(genome.id).id
+                    self.cluster_repository.get_cluster_by_representative(genome.id).id # TODO:
                 )
 
     def calculate_delta(
@@ -176,7 +176,7 @@ class GenomeClusterer(object):
         :return: The shared fitness value for the input cluster
         """
 
-        genomes = self.genome_repository.get_genomes_in_cluster(cluster_id)
+        genomes = self.genome_repository.get_genomes_in_cluster(cluster_id) # TODO:
 
         cluster_fitness = 0
 
@@ -198,11 +198,11 @@ class GenomeClusterer(object):
 
         max_population = self.clustering_parameters["max_population"]
 
-        clusters = self.cluster_repository.get_current_clusters()
+        clusters = self.cluster_repository.get_current_clusters() # TODO:
 
         for cluster in clusters:
             cluster.fitness = self.calculate_cluster_fitness(cluster.id)
-            self.cluster_repository.update_fitness_for_cluster(
+            self.cluster_repository.update_fitness_for_cluster( # TODO:
                 cluster.id,
                 cluster.fitness
             )
@@ -212,7 +212,7 @@ class GenomeClusterer(object):
         for cluster in clusters:
 
             cluster.max_population = int((cluster.fitness / cluster_fitness_sum) * max_population)
-            self.cluster_repository.update_max_population_for_cluster(
+            self.cluster_repository.update_max_population_for_cluster( # TODO:
                 cluster.id,
                 cluster.max_population
             )
