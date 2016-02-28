@@ -2,6 +2,7 @@ from NEAT.Director.Director import Director
 from NEAT.Config.NEATConfig import NEATConfig
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 from NEAT.Analyst.GenomeAnalyst import GenomeAnalyst
+from NEAT.Analyst.GenomeClusterer import GenomeClusterer
 from NEAT.Repository import GenomeRepository
 
 
@@ -53,6 +54,10 @@ class MainDirector(Director):
         self.genome_repository = GenomeRepository.GenomeRepository(
             self.database_connection
         )
+        # cluster_repository administrates all clusters ever created
+        self.cluster_repository = NEAT.Repository.ClusterRepository(
+            self.database_connection
+        )
         self.node_repository = NEAT.Repository.NodeRepository(
             self.database_connection
         )
@@ -92,8 +97,9 @@ class MainDirector(Director):
         self.analyst = GenomeAnalyst()
         # clusterer divides all existing and active genomes in clusters aka spe-
         # cies
-        self.clusterer = NEAT.Analyst.GenomeClusterer(
+        self.clusterer = GenomeClusterer(
             self.genome_repository,
+            self.cluster_repository,
             self.config.clustering_parameters
         )
 
