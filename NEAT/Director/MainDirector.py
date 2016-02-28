@@ -1,4 +1,5 @@
 from NEAT.Director.Director import Director
+from NEAT.Config.NEATConfig import NEATConfig
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 from NEAT.Analyst.GenomeAnalyst import GenomeAnalyst
 from NEAT.Repository import GenomeRepository
@@ -37,7 +38,7 @@ class MainDirector(Director):
         # - decision_making_parameters (contains e.g. max population size)
         # - clustering_parameters
         # - discarding_parameters
-        self.config = NEAT.config
+        self.config = NEATConfig()
 
         # database connection is a connection to an arbitrary database that is
         # used to store genes, genomes and nodes
@@ -145,7 +146,7 @@ class MainDirector(Director):
             new_genome = self.mutator.mutate_genome(genome)
         else:
             return
-        analysis_result = self.analyst.analyze_genome(new_genome)
+        analysis_result = self.analyst.analyze(new_genome)
         new_genome.analysis_result = analysis_result
         new_genome.cluster = genome.cluster
         self.genome_repository.add_genome(new_genome)
