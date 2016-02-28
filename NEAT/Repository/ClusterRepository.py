@@ -1,3 +1,4 @@
+from typing import List
 from NEAT.GenomeStructures.StorageStructure import StorageGenome
 from NEAT.Analyst.Cluster import Cluster
 
@@ -16,7 +17,7 @@ class ClusterRepository(object):
 
         pass
 
-    def get_current_clusters(self):
+    def get_current_clusters(self) -> List[Cluster]:
         pass
 
     def add_genome_to_cluster(
