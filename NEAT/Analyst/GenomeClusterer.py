@@ -1,8 +1,12 @@
-from NEAT.Repository.GenomeRepository import GenomeRepository
+#from NEAT.Repository.GenomeRepository import GenomeRepository
 from NEAT.Repository.ClusterRepository import ClusterRepository
 from NEAT.GenomeStructures.StorageStructure import StorageGenome
 from NEAT.Analyst.Cluster import Cluster
 from typing import List, Tuple
+
+class GenomeRepository(object):
+
+    pass
 
 class GenomeClusterer(object):
     """
@@ -43,9 +47,12 @@ class GenomeClusterer(object):
 
             for cluster in clusters:
 
-                delta = self.calculate_delta(genome, cluster.representative)
+                delta = self.calculate_delta(
+                    genome,
+                    self.genome_repository.get_genome_by_id(cluster.representative)
+                )
 
-                if delta < self.clustering_parameters.delta_threshold:
+                if delta < self.clustering_parameters["delta_threshold"]:
                     self.genome_repository.update_cluster_for_genome(
                         genome.id,
                         cluster.id
@@ -56,7 +63,7 @@ class GenomeClusterer(object):
                     break
 
             if not genome_placed_in_cluster:
-                self.cluster_repository.add_cluster_with_representative(genome)
+                self.cluster_repository.add_cluster_with_representative(genome.id)
                 self.genome_repository.update_cluster_for_genome(
                     genome.id,
                     self.cluster_repository.get_cluster_by_representative(genome.id).id
@@ -75,29 +82,34 @@ class GenomeClusterer(object):
         :param genome_two: The second genome
         :return: The delta value (topological difference) of the input genomes
         """
-        excess_coeff = self.clustering_parameters.excess_coefficient
-        disjoint_coeff = self.clustering_parameters.disjoint_coefficient
-        weight_delta_coeff = self.clustering_parameters.weight_difference_coefficient
+        excess_coeff = self.clustering_parameters["excess_coefficient"]
+        disjoint_coeff = self.clustering_parameters["disjoint_coefficient"]
+        weight_delta_coeff = self.clustering_parameters["weight_difference_coefficient"]
 
         bigger_genome, smaller_genome = (genome_one, genome_two) \
             if len(genome_one.genes) > len(genome_two.genes) \
             else (genome_two, genome_one)
 
-        all_genes = smaller_genome.genes + bigger_genome.genes
+        bigger_genome_gene_ids = [gene[0] for gene in bigger_genome.genes]
+        smaller_genome_gene_ids = [gene[0] for gene in smaller_genome.genes]
 
-        matching_genes = [gene_id for gene_id in genome_one.genes \
-                          if gene_id in genome_two.genes]
+        all_gene_ids = smaller_genome_gene_ids + bigger_genome_gene_ids
 
-        differing_genes = [gene_id for gene_id in all_genes \
+        matching_genes = [gene_id for gene_id in bigger_genome_gene_ids \
+                          if gene_id in smaller_genome_gene_ids]
+
+        differing_genes = [gene_id for gene_id in all_gene_ids \
                            if gene_id not in matching_genes]
 
         n = len(bigger_genome.genes)
+
         disjoint_count, excess_count = self.calculate_disjoint_excess_count(
-            smaller_genome,
-            bigger_genome,
+            smaller_genome_gene_ids,
+            bigger_genome_gene_ids,
             differing_genes
         )
-        w_bar = self.calculate_w_bar(bigger_genome, smaller_genome)
+
+        w_bar = self.calculate_w_bar(bigger_genome, smaller_genome, matching_genes)
 
         return ((excess_coeff * excess_count) / n) \
                + ((disjoint_coeff * disjoint_count) / n) \
@@ -105,14 +117,14 @@ class GenomeClusterer(object):
 
     def calculate_disjoint_excess_count(
             self,
-            smaller_genome: StorageGenome,
-            bigger_genome: StorageGenome,
+            smaller_genome_gene_ids: List[int],
+            bigger_genome_gene_ids: List[int],
             differing_genes: List[int]
     ) -> Tuple[int, int]:
 
         smaller_genome_range = 0 # type: int
 
-        for gene_id in smaller_genome.genes:
+        for gene_id in smaller_genome_gene_ids:
 
             if gene_id > smaller_genome_range:
                 smaller_genome_range = gene_id
@@ -189,7 +201,7 @@ class GenomeClusterer(object):
         :return: None
         """
 
-        max_population = self.clustering_parameters.max_population
+        max_population = self.clustering_parameters["max_population"]
 
         clusters = self.cluster_repository.get_current_clusters()
 
@@ -204,7 +216,7 @@ class GenomeClusterer(object):
 
         for cluster in clusters:
 
-            cluster.max_population = cluster.fitness / cluster_fitness_sum
+            cluster.max_population = int((cluster.fitness / cluster_fitness_sum) * max_population)
             self.cluster_repository.update_max_population_for_cluster(
                 cluster.id,
                 cluster.max_population

@@ -1,4 +1,5 @@
 from NEAT.GenomeStructures.StorageStructure import StorageGenome
+from NEAT.Analyst.Cluster import Cluster
 
 class ClusterRepository(object):
 
