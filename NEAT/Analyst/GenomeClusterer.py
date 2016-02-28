@@ -41,8 +41,6 @@ class GenomeClusterer(object):
 
 
         for genome in current_genomes:
-
-            genome_placed_in_cluster = False
             clusters = self.cluster_repository.get_current_clusters()
 
             for cluster in clusters:
@@ -58,11 +56,8 @@ class GenomeClusterer(object):
                         cluster.id
                     )
 
-                    genome_placed_in_cluster = True
-
                     break
-
-            if not genome_placed_in_cluster:
+            else:
                 self.cluster_repository.add_cluster_with_representative(genome.id)
                 self.genome_repository.update_cluster_for_genome(
                     genome.id,
