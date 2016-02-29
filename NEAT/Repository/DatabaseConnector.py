@@ -1,3 +1,5 @@
+from typing import Dict, Iterable, List, Tuple
+
 from pymongo import MongoClient
 import json
 import pickle
@@ -15,19 +17,146 @@ class DatabaseConnector(object):
         self._database[collection_name].find()
         return self._database[collection_name]
 
-    def store_object_in_collection(
+    def insert_one(
             self,
             collection_name: str,
-            obj: object):
-        jsoned_object = json.dumps(obj, cls=CustomJSONEncoder)
-        self._database[collection_name].insert_one(jsoned_object)
+            document: object
+    ) -> int:
+        """
+        Inserts a single object into the given collection in the database.
+        :param collection_name:
+        :param document:
+        :return:
+        """
+        obj_json = json.dumps(document, cls=CustomJSONEncoder)
+        return self._database[collection_name].insert_one(obj_json)
 
-    def find_object_in_collection(
+    def insert_many(
             self,
             collection_name: str,
-            object_id: int):
-        obj = self._database[collection_name].find_one(object_id)
-        return json.loads(obj, cls=CustomJSONDecoder)
+            documents: Iterable[object]
+    ) -> List[int]:
+        """
+        Inserts multiple objects into the given collection in the database.
+        :param collection_name:
+        :param documents:
+        :return:
+        """
+        result_ids = []
+        for document in documents:
+            result_ids.append(
+                self.insert_one(collection_name, document)
+            )
+        return result_ids
+
+    def find_one(
+            self,
+            collection_name: str,
+            *args, **kwargs
+    ) -> object:
+        """
+        Finds a single document in the given collection. Same parameters as py-
+        mongos default find_one, except for the collection_name.
+        :param collection_name:
+        :param args:
+        :param kwargs:
+        :return:
+        """
+        obj_json = self._database[collection_name].find_one(args, kwargs)
+        self._database[collection_name].find_one()
+        return json.loads(obj_json, cls=CustomJSONDecoder)
+
+    def find_one_by_id(
+            self,
+            collection_name: str,
+            document_id
+    ):
+        """
+        Finds a single document in the given collection based on its id.
+        :param collection_name:
+        :param document_id:
+        :return:
+        """
+        return self.find_one(collection_name, {'_id': document_id})
+
+    def find_many(
+            self,
+            collection_name: str,
+            *args, **kwargs
+    ) -> object:
+        """
+        Finds all objects in the given collection that match a given query.
+        Parameters the same as pymongos default find, except for the collection_
+        name.
+        :param collection_name:
+        :param args:
+        :param kwargs:
+        :return:
+        """
+        obj_json = self._database[collection_name].find(args, kwargs)
+        return json.loads(obj_json, cls=CustomJSONDecoder)
+
+    def update_one(
+            self,
+            collection_name: str,
+            document_id: int,
+            document: object
+    ):
+        """
+        Updates a single document in the given collection in the database. Takes
+        an id and an object and replaces the data at the given id with the ob-
+        ject.
+        :param document:
+        :param document_id:
+        :param collection_name:
+        :return:
+        """
+        obj_json = json.dumps(document, cls=CustomJSONEncoder)
+        self._database[collection_name]\
+            .replace_one({'_id': document_id}, obj_json)
+
+    def update_many(
+            self,
+            collection_name: str,
+            documents: Iterable[Tuple[int, object]]
+    ):
+        """
+        Updates multiple documents in the given collection in the database.
+        Takes an Iterable of document_id, object tuples and replaces them one by
+        one in the database.
+        :param collection_name:
+        :param documents:
+        :return:
+        """
+        for document_id, document in documents:
+            self.update_one(collection_name, document_id, document)
+
+    def remove_one(
+            self,
+            collection_name: str,
+            document_id
+    ):
+        """
+        Removes one document by id from a given collection.
+        :param collection_name:
+        :param document_id:
+        :return:
+        """
+        self._database[collection_name].remove(document_id)
+
+    def remove_many(
+            self,
+            collection_name: str,
+            document_ids: Iterable[int]
+    ):
+        """
+        Removes many documents by id from a given collection.
+        :param collection_name:
+        :param document_ids:
+        :return:
+        """
+        for document_id in document_ids:
+            self.remove_one(collection_name, document_id)
 
 
 class CustomJSONEncoder(json.JSONEncoder):
