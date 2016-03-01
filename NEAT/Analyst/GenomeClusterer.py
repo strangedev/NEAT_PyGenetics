@@ -1,4 +1,6 @@
 #from NEAT.Repository.GenomeRepository import GenomeRepository
+from bson import ObjectId
+
 from NEAT.Repository.ClusterRepository import ClusterRepository
 from NEAT.GenomeStructures.StorageStructure import StorageGenome
 from NEAT.Analyst.Cluster import Cluster
@@ -167,7 +169,7 @@ class GenomeClusterer(object):
 
         return w_bar
 
-    def calculate_cluster_fitness(self, cluster_id: int):
+    def calculate_cluster_fitness(self, cluster_id: ObjectId):
         """
         Calculates the shared fitness value for a given cluster based
         on the cluster size and the individual fitness values of the

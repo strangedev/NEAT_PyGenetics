@@ -1,5 +1,6 @@
 from typing import Dict, Iterable, List, Tuple
 
+from bson import ObjectId
 from pymongo import MongoClient
 import json
 import pickle
@@ -28,6 +29,8 @@ class DatabaseConnector(object):
         :param document:
         :return:
         """
+        if not hasattr(document, '_id') or document._id is None:
+            document._id = ObjectId()
         obj_json = json.dumps(document, cls=CustomJSONEncoder)
         return self._database[collection_name].insert_one(obj_json)
 
@@ -165,6 +168,8 @@ class CustomJSONEncoder(json.JSONEncoder):
             return {'storage_genome_repr': obj.__dict__}
         elif isinstance(obj, AnalysisResult):
             return {'analysis_result_repr': pickle.dumps(obj).decode('latin1')}
+        elif isinstance(obj, ObjectId):
+            return str(obj)
         return json.JSONEncoder.default(self, obj)
 
 
@@ -180,4 +185,6 @@ class CustomJSONDecoder(json.JSONDecoder):
             return s
         elif 'analysis_result_repr' in dct:
             return pickle.loads(dct['analysis_result_repr'].encode('latin1'))
+        if '_id' in dct:
+            dct['_id'] = ObjectId(dct['_id'])
         return dct

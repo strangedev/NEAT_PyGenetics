@@ -1,4 +1,7 @@
 from unittest import TestCase
+
+from bson import ObjectId
+
 from NEAT.Analyst.GenomeClusterer import GenomeClusterer
 from NEAT.Tests.MockClasses.mock_ClusterRepository import mock_ClusterRepository
 from NEAT.Tests.MockClasses.mock_GenomeRepository import mock_GenomeRepository
@@ -86,7 +89,7 @@ class TestGenomeClusterer(TestCase):
 
         clusterer.cluster_genomes()
 
-        cluster_zero_fitness = clusterer.calculate_cluster_fitness(0)
+        cluster_zero_fitness = clusterer.calculate_cluster_fitness(ObjectId("000000000000000000000000"))
 
         self.assertEqual(
             cluster_zero_fitness,
@@ -94,7 +97,7 @@ class TestGenomeClusterer(TestCase):
             "The cluster fitness for cluster 0 does not match."
         )
 
-        cluster_one_fitness = clusterer.calculate_cluster_fitness(1)
+        cluster_one_fitness = clusterer.calculate_cluster_fitness(ObjectId("000000000000000000000001"))
 
         self.assertEqual(
             cluster_one_fitness,

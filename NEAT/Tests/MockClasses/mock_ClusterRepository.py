@@ -1,3 +1,5 @@
+from bson import ObjectId
+
 from NEAT.Analyst.Cluster import Cluster
 
 class mock_ClusterRepository(object):
@@ -11,10 +13,10 @@ class mock_ClusterRepository(object):
 
         return len(self.clusters)
 
-    def add_cluster_with_representative(self, genome_id):
+    def add_cluster_with_representative(self, genome_id: ObjectId):
 
-        cluster = Cluster(self.next_id, genome_id)
-        cluster.fitness = genome_id
+        cluster = Cluster(ObjectId("00000000000000000000000" + str(self.next_id)), genome_id)
+        cluster.fitness = int(str(genome_id))
         self.clusters.append(cluster)
         self.next_id += 1
 
@@ -22,7 +24,7 @@ class mock_ClusterRepository(object):
 
         return self.clusters
 
-    def get_cluster_by_representative(self, genome_id):
+    def get_cluster_by_representative(self, genome_id: ObjectId):
 
         for cluster in self.clusters:
 
@@ -30,7 +32,7 @@ class mock_ClusterRepository(object):
 
                 return cluster
 
-    def update_fitness_for_cluster(self, cluster_id, fitness):
+    def update_fitness_for_cluster(self, cluster_id: ObjectId, fitness):
 
         for cluster in self.clusters:
 
@@ -40,7 +42,7 @@ class mock_ClusterRepository(object):
 
                 break
 
-    def update_max_population_for_cluster(self, cluster_id, max_population):
+    def update_max_population_for_cluster(self, cluster_id: ObjectId, max_population):
 
         for cluster in self.clusters:
 
@@ -50,7 +52,7 @@ class mock_ClusterRepository(object):
 
                 break
 
-    def update_offspring_for_cluster(self, cluster_id, offspring):
+    def update_offspring_for_cluster(self, cluster_id: ObjectId, offspring):
 
         for cluster in self.clusters:
 

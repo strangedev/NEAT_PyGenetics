@@ -1,6 +1,8 @@
 from typing import List, Tuple, Dict
 from fractions import Fraction
 
+from bson import ObjectId
+
 from NEAT.Analyst.AnalysisResult import AnalysisResult
 
 
@@ -28,22 +30,22 @@ class StorageGenome(object):
           genome. This is per default empty.
         cluster: The cluster to which the Genome belongs.
         """
-        self._id = int()
+        self._id = ObjectId()
         self.is_alive = True
         self.inputs = {}  # type: Dict[str, int]
         self.outputs = {}  # type: Dict[str, int]
         self.genes = []  # type: List[Tuple[int, bool, Fraction]]
         self.analysis_result = AnalysisResult()
-        self.cluster = int()
+        self.cluster = ObjectId()
         pass
 
     def __eq__(self, obj: 'StorageGenome'):
-        if self._id != obj._id \
+        if not self._id.__eq__(obj._id) \
                 or not self.is_alive.__eq__(obj.is_alive) \
                 or not self.inputs.__eq__(obj.inputs) \
                 or not self.outputs.__eq__(obj.outputs) \
                 or not self.genes.__eq__(obj.genes) \
                 or not self.analysis_result.__eq__(obj.analysis_result) \
-                or self.cluster != obj.cluster:
+                or not self.cluster.__eq__(obj.cluster):
             return False
         return True

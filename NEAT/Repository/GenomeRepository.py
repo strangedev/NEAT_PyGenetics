@@ -8,6 +8,10 @@ class GenomeRepository(object):
     def __init__(self, database_connector: DatabaseConnector) -> None:
         self._database_connector = database_connector
 
+    def get_new_genome(self) -> StorageGenome:
+        storage_genome = StorageGenome()
+        return storage_genome
+
     def get_current_population(self) -> Iterable[StorageGenome]:
         pass
 

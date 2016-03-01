@@ -1,3 +1,5 @@
+from bson import ObjectId
+
 
 class Cluster(object):
     """
@@ -7,11 +9,11 @@ class Cluster(object):
 
     def __init__(
             self,
-            id: int,
-            representative: int
+            id: ObjectId,
+            representative: ObjectId
     ):
 
-        self._id = id # type: int
-        self.representative = representative # type: int
+        self._id = id # type: ObjectId
+        self.representative = representative # type: ObjectId
         self.fitness = 0 # type: float
         self.offspring = 0 # type: int

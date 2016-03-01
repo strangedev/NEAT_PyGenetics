@@ -1,5 +1,7 @@
 from unittest import TestCase
 
+from bson import ObjectId
+
 from NEAT.Analyst.GenomeSelector import GenomeSelector
 from NEAT.Config.NEATConfig import NEATConfig
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
@@ -14,31 +16,31 @@ class test_genomeSelector(TestCase):
         """
         self.mock_genome_repository = mock_GenomeRepository()
         self.mock_cluster_repository = mock_ClusterRepository()
-        self.config = NEATConfig()
 
-        self.mock_selection_parameters = self.config.selection_parameters
+        self.mock_selection_parameters = {"discarding_by_genome_fitness": 0.2,
+                                          "discarding_by_cluster_fitness": 0.2}
 
         genomes_from_all_cluster = []
         cluster = []
         self.mock_genome_repository.mock_population = []
 
         for i in range(0, 10):
-            self.mock_cluster_repository.add_cluster_with_representative(i)
+            self.mock_cluster_repository.add_cluster_with_representative(ObjectId(str(i).rjust(24, "0")))
             test_genome = []
 
             for j in range(0,10):
                 storage_genome = StorageGenome()
-                storage_genome.id = j + 10*i
+                storage_genome._id = ObjectId(str(j + 10*i).rjust(24, "0"))
                 storage_genome.fitness = j
                 self.mock_genome_repository.mock_population.append(storage_genome)
-                self.mock_genome_repository.update_cluster_for_genome(j+(10*i), i)
+                self.mock_genome_repository.update_cluster_for_genome(ObjectId(str(j+(10*i)).rjust(24, "0")), ObjectId(str(i).rjust(24, "0")))
                 if j <= 1:
                     test_genome.append(storage_genome)
 
             if i <= 1:
-                cluster.append(self.mock_cluster_repository.get_cluster_by_representative(i))
+                cluster.append(self.mock_cluster_repository.get_cluster_by_representative(ObjectId(str(i).rjust(24, "0"))))
 
-            self.mock_cluster_repository.update_fitness_for_cluster(i, i)
+            self.mock_cluster_repository.update_fitness_for_cluster(ObjectId(str(i).rjust(24, "0")), i)
             genomes_from_all_cluster.extend(test_genome)
 
         genome_selector = GenomeSelector(
