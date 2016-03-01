@@ -11,7 +11,7 @@ class Cluster(object):
             representative: int
     ):
 
-        self.id = id # type: int
+        self._id = id # type: int
         self.representative = representative # type: int
         self.fitness = 0 # type: float
         self.offspring = 0 # type: int
