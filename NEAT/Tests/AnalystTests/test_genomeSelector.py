@@ -1,7 +1,7 @@
 from unittest import TestCase
-from unittest.mock import MagicMock
 
 from NEAT.Analyst.GenomeSelector import GenomeSelector
+from NEAT.Config.NEATConfig import NEATConfig
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 from NEAT.Tests.MockClasses.mock_ClusterRepository import mock_ClusterRepository
 from NEAT.Tests.MockClasses.mock_GenomeRepository import mock_GenomeRepository
@@ -14,10 +14,9 @@ class test_genomeSelector(TestCase):
         """
         self.mock_genome_repository = mock_GenomeRepository()
         self.mock_cluster_repository = mock_ClusterRepository()
-        self.mock_selection_parameters = MagicMock()
+        self.config = NEATConfig()
 
-        # discarding_threshold = 20%
-        self.mock_selection_parameters.discarding_threshold = 0.2
+        self.mock_selection_parameters = self.config.selection_parameters
 
         genomes_from_all_cluster = []
         cluster = []
