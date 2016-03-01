@@ -85,19 +85,21 @@ class DatabaseConnector(object):
     def find_many(
             self,
             collection_name: str,
-            *args, **kwargs
-    ) -> object:
+            filter: Dict
+    ) -> Iterable[object]:
         """
         Finds all objects in the given collection that match a given query.
         Parameters the same as pymongos default find, except for the collection_
         name.
         :param collection_name:
-        :param args:
-        :param kwargs:
+        :param filter:
         :return:
         """
-        obj_json = self._database[collection_name].find(args, kwargs)
-        return json.loads(obj_json, cls=CustomJSONDecoder)
+        result = []
+        for doc in self._database[collection_name].find(filter):
+            result.append(json.loads(doc, cls=CustomJSONDecoder))
+
+        return result
 
     def update_one(
             self,
