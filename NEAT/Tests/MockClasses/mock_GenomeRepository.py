@@ -7,7 +7,7 @@ class mock_GenomeRepository(object):
         self.mock_population = []
 
         genome_one = StorageGenome()
-        genome_one.id = 1
+        genome_one._id = 1
         genome_one.fitness = 0.5
         genome_one.genes = [
 
@@ -19,7 +19,7 @@ class mock_GenomeRepository(object):
         ]
 
         genome_two = StorageGenome()
-        genome_two.id = 2
+        genome_two._id = 2
         genome_two.fitness = 0.7
         genome_two.genes = [
 
@@ -43,7 +43,7 @@ class mock_GenomeRepository(object):
 
         for genome in self.mock_population:
 
-            if genome.id == genome_id:
+            if genome._id == genome_id:
 
                 genome.cluster = cluster_id
 
@@ -53,7 +53,7 @@ class mock_GenomeRepository(object):
 
         for genome in self.mock_population:
 
-            if genome.id == genome_id:
+            if genome._id == genome_id:
 
                 return genome
 

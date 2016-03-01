@@ -34,11 +34,11 @@ class GenomeClusterer(object):
         :return: None
         """
 
-        current_genomes = list(self.genome_repository.get_current_population()) # TODO:
+        current_genomes = list(self.genome_repository.get_current_population())  # type: List[StorageGenome.StorageGenome]
 
         if self.cluster_repository.get_cluster_count == 0: # TODO:
             first_genome = current_genomes.pop(0)
-            self.cluster_repository.add_cluster_with_representative(first_genome.id) # TODO:
+            self.cluster_repository.add_cluster_with_representative(first_genome._id) # TODO:
 
 
         for genome in current_genomes:
@@ -53,16 +53,16 @@ class GenomeClusterer(object):
 
                 if delta < self.clustering_parameters["delta_threshold"]:
                     self.genome_repository.update_cluster_for_genome( # TODO:
-                        genome.id,
+                        genome._id,
                         cluster._id
                     )
 
                     break
             else:
-                self.cluster_repository.add_cluster_with_representative(genome.id) # TODO:
+                self.cluster_repository.add_cluster_with_representative(genome._id) # TODO:
                 self.genome_repository.update_cluster_for_genome( # TODO:
-                    genome.id,
-                    self.cluster_repository.get_cluster_by_representative(genome.id)._id # TODO:
+                    genome._id,
+                    self.cluster_repository.get_cluster_by_representative(genome._id)._id # TODO:
                 )
 
     def calculate_delta(

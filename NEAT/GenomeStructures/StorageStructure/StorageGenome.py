@@ -28,7 +28,8 @@ class StorageGenome(object):
           genome. This is per default empty.
         cluster: The cluster to which the Genome belongs.
         """
-        self.id = int()
+        self._id = int()
+        self.is_alive = True
         self.inputs = {}  # type: Dict[str, int]
         self.outputs = {}  # type: Dict[str, int]
         self.genes = []  # type: List[Tuple[int, bool, Fraction]]
@@ -37,7 +38,8 @@ class StorageGenome(object):
         pass
 
     def __eq__(self, obj: 'StorageGenome'):
-        if self.id != obj.id \
+        if self._id != obj._id \
+                or not self.is_alive.__eq__(obj.is_alive) \
                 or not self.inputs.__eq__(obj.inputs) \
                 or not self.outputs.__eq__(obj.outputs) \
                 or not self.genes.__eq__(obj.genes) \
