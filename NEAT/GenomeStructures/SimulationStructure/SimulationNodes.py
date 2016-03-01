@@ -3,6 +3,11 @@ from fractions import Fraction
 
 
 class Node(object):
+    """
+    A single node in a SimulationGenome. Stores information about its successors
+     and a current value and has methods for propagating its value to its
+     successors.
+    """
     def __init__(self, initial_value: Fraction = Fraction(0)) -> None:
         """
         Successors are stored in a set to prevent adding the same successor mul-
@@ -51,16 +56,25 @@ class Node(object):
             successor_nodes: Iterable[Tuple['Node', Fraction]]
     ) -> None:
         """
-        Adds multiple successor_nodes to the list.
+        Adds all nodes in a given iterable structure to the node successors.
         :param successor_nodes:
         :raises: ValueError, if the weight of one of the given nodes is not in
-         the interval [0,1].
+         the interval [0,1]. All nodes up to the conflicting node will still be
+         added.
         :raises: Exception, if one of the given nodes already exists in the
-         stored list of successors.
+         stored list of successors. All nodes up to the conflicting node will
+         still be added.
         :return:
         """
         for successor_node, weight in successor_nodes:
             self.add_successor(successor_node, weight)
+
+    def reset(self) -> None:
+        """
+        Resets the value to the initial_value.
+        :return:
+        """
+        self.value = self.initial_value
 
     def fire(self) -> None:
         """
@@ -73,13 +87,6 @@ class Node(object):
         # in the simulation.
         for successor in self.successors:
             successor.add_value(self.value * self.weights[successor])
-
-    def reset(self) -> None:
-        """
-        Resets the value to the initial_value.
-        :return:
-        """
-        self.value = self.initial_value
 
     def add_value(self, value: Fraction) -> None:
         """
@@ -95,7 +102,7 @@ class CycleNode(Node):
             self,
             initial_memory_value: Fraction,
             initial_value: Fraction = Fraction(0)
-    ):
+    ) -> None:
         """
         Unlike in Node here the initial_value is mandatory. It is used for the
         first step of firing the cycle edges.

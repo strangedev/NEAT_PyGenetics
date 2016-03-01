@@ -14,6 +14,7 @@ class mock_ClusterRepository(object):
     def add_cluster_with_representative(self, genome_id):
 
         cluster = Cluster(self.next_id, genome_id)
+        cluster.fitness = genome_id
         self.clusters.append(cluster)
         self.next_id += 1
 
@@ -33,7 +34,7 @@ class mock_ClusterRepository(object):
 
         for cluster in self.clusters:
 
-            if cluster.id == cluster_id:
+            if cluster._id == cluster_id:
 
                 cluster.fitness = fitness
 
@@ -43,8 +44,18 @@ class mock_ClusterRepository(object):
 
         for cluster in self.clusters:
 
-            if cluster.id == cluster_id:
+            if cluster._id == cluster_id:
 
                 cluster.max_population = max_population
+
+                break
+
+    def update_offspring_for_cluster(self, cluster_id, offspring):
+
+        for cluster in self.clusters:
+
+            if cluster._id == cluster_id:
+
+                cluster.offspring = offspring
 
                 break

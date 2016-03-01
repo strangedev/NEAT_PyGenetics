@@ -2,7 +2,8 @@
 from NEAT.Repository.ClusterRepository import ClusterRepository
 from NEAT.GenomeStructures.StorageStructure import StorageGenome
 from NEAT.Analyst.Cluster import Cluster
-from typing import List, Tuple
+from typing import List, Tuple, Dict
+import math
 
 class GenomeRepository(object):
 
@@ -17,7 +18,7 @@ class GenomeClusterer(object):
             self,
             genome_repository: GenomeRepository,
             cluster_repository: ClusterRepository,
-            clustering_parameters
+            clustering_parameters: Dict[str, object]
     ):
 
         self.genome_repository = genome_repository
@@ -53,7 +54,7 @@ class GenomeClusterer(object):
                 if delta < self.clustering_parameters["delta_threshold"]:
                     self.genome_repository.update_cluster_for_genome( # TODO:
                         genome.id,
-                        cluster.id
+                        cluster._id
                     )
 
                     break
@@ -61,7 +62,7 @@ class GenomeClusterer(object):
                 self.cluster_repository.add_cluster_with_representative(genome.id) # TODO:
                 self.genome_repository.update_cluster_for_genome( # TODO:
                     genome.id,
-                    self.cluster_repository.get_cluster_by_representative(genome.id).id # TODO:
+                    self.cluster_repository.get_cluster_by_representative(genome.id)._id # TODO:
                 )
 
     def calculate_delta(
@@ -186,8 +187,45 @@ class GenomeClusterer(object):
         return cluster_fitness / len(list(genomes))
 
 
+    def calculate_cluster_offspring_values(self):
+        """
+        Calculates the number of offspring the clusters will generate
+        in the next generation cycle, based on the compared
+        shared fitness values of all active clusters. Fitter clusters
+        will receive a bigger number of offspring.
+
+        :return: None
+        """
+
+        clusters = self.cluster_repository.get_current_clusters() # TODO:
+        max_population = self.clustering_parameters["max_population"]
+        discarding_percentage = self.clustering_parameters["discarding_percentage"]
+
+        to_replace = max_population * discarding_percentage
+
+        for cluster in clusters:
+            cluster.fitness = self.calculate_cluster_fitness(cluster._id)
+            self.cluster_repository.update_fitness_for_cluster( # TODO:
+                cluster._id,
+                cluster.fitness
+            )
+
+        cluster_fitness_sum = sum([cluster.fitness for cluster in clusters])
+
+        for cluster in clusters:
+
+            cluster.offspring = int(
+                round((cluster.fitness / cluster_fitness_sum) * to_replace)
+            )
+            self.cluster_repository.update_offspring_for_cluster( # TODO:
+                cluster._id,
+                cluster.offspring
+            )
+
     def calculate_max_cluster_populations(self):
         """
+        DEPRECATED
+
         Calculates the number of individuals the clusters will be able
         to contain until the next clustering, based on the compared
         shared fitness values of all active clusters. Fitter clusters
@@ -201,9 +239,9 @@ class GenomeClusterer(object):
         clusters = self.cluster_repository.get_current_clusters() # TODO:
 
         for cluster in clusters:
-            cluster.fitness = self.calculate_cluster_fitness(cluster.id)
+            cluster.fitness = self.calculate_cluster_fitness(cluster._id)
             self.cluster_repository.update_fitness_for_cluster( # TODO:
-                cluster.id,
+                cluster._id,
                 cluster.fitness
             )
 
@@ -213,7 +251,7 @@ class GenomeClusterer(object):
 
             cluster.max_population = int((cluster.fitness / cluster_fitness_sum) * max_population)
             self.cluster_repository.update_max_population_for_cluster( # TODO:
-                cluster.id,
+                cluster._id,
                 cluster.max_population
             )
 
