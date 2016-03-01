@@ -13,11 +13,22 @@ class GenomeSelector(object):
             cluster_repository: ClusterRepository,
             selection_parameters
     ):
+        """
+        :param genome_repository: GenomeRepository to select
+        :param cluster_repository: ClusterRepository to select
+        :param selection_parameters: saved in selection.conf
+        :return:
+        """
         self.genome_repository = genome_repository
         self.cluster_repository = cluster_repository
         self.selection_parameters = selection_parameters
 
     def select_clusters_for_discarding(self) -> List[Cluster]:
+        """
+        select x percentage (given by selection.conf "discarding_by_cluster_fitness") of Cluster sorted ascending
+        by fitness
+        :return: List of Cluster wanted to be discarded
+        """
         clusters = []
         for cluster in self.cluster_repository.get_current_clusters():
             clusters.append(cluster)
@@ -26,8 +37,8 @@ class GenomeSelector(object):
 
     def select_genomes_for_discarding(self) -> List[StorageGenome]:
         """
-        discarding_threshold should be in [0 , 1]
-        :return: List of genomes wanted to be discarded
+        select "discarding_by_genome_fitness" percentage (in every Cluster) of genomes sorted ascending by fitness
+        :return: List of Genomes wanted to be discarded
         """
         clusters = []
         for cluster in self.cluster_repository.get_current_clusters():
