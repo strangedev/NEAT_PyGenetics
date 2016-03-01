@@ -1,4 +1,6 @@
-from typing import Iterable
+from typing import Iterable, Union
+
+from bson import ObjectId
 
 from NEAT.Repository.DatabaseConnector import DatabaseConnector
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
@@ -15,10 +17,10 @@ class GenomeRepository(object):
     def get_current_population(self) -> Iterable[StorageGenome]:
         pass
 
-    def get_genome_by_id(self, genome_id: int) -> StorageGenome:
+    def get_genome_by_id(self, genome_id: ObjectId) -> StorageGenome:
         pass
 
-    def get_genomes_in_cluster(self, cluster_id: int) \
+    def get_genomes_in_cluster(self, cluster_id: ObjectId) \
             -> Iterable[StorageGenome]:
         pass
 
@@ -26,4 +28,10 @@ class GenomeRepository(object):
         pass
 
     def insert_genomes(self, genomes: Iterable[StorageGenome]) -> None:
+        pass
+
+    def update_genome(self, genome: StorageGenome) -> None:
+        pass
+
+    def update_genomes(self, genomes: Iterable[StorageGenome]) -> None:
         pass
