@@ -95,8 +95,6 @@ class TestSimulationGenome(unittest.TestCase):
             ('input_1', Fraction(5, 10)),
             ('input_2', Fraction(5, 10))
         ])
-        print(result)
-        print(single_cycle_node.memory_value)
 
         self.assertEqual(Fraction(5929, 12500), result['output_1'])
         self.assertEqual(Fraction(2541, 25000), result['output_2'])
