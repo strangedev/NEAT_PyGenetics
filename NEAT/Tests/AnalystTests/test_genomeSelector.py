@@ -3,7 +3,6 @@ from unittest import TestCase
 from bson import ObjectId
 
 from NEAT.Analyst.GenomeSelector import GenomeSelector
-from NEAT.Config.NEATConfig import NEATConfig
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 from NEAT.Tests.MockClasses.mock_ClusterRepository import mock_ClusterRepository
 from NEAT.Tests.MockClasses.mock_GenomeRepository import mock_GenomeRepository
