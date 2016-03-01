@@ -3,6 +3,7 @@ from NEAT.Repository.ClusterRepository import ClusterRepository
 from NEAT.GenomeStructures.StorageStructure import StorageGenome
 from NEAT.Analyst.Cluster import Cluster
 from typing import List, Tuple, Dict
+import math
 
 class GenomeRepository(object):
 
@@ -53,7 +54,7 @@ class GenomeClusterer(object):
                 if delta < self.clustering_parameters["delta_threshold"]:
                     self.genome_repository.update_cluster_for_genome( # TODO:
                         genome.id,
-                        cluster.id
+                        cluster._id
                     )
 
                     break
@@ -61,7 +62,7 @@ class GenomeClusterer(object):
                 self.cluster_repository.add_cluster_with_representative(genome.id) # TODO:
                 self.genome_repository.update_cluster_for_genome( # TODO:
                     genome.id,
-                    self.cluster_repository.get_cluster_by_representative(genome.id).id # TODO:
+                    self.cluster_repository.get_cluster_by_representative(genome.id)._id # TODO:
                 )
 
     def calculate_delta(
@@ -203,9 +204,9 @@ class GenomeClusterer(object):
         to_replace = max_population * discarding_percentage
 
         for cluster in clusters:
-            cluster.fitness = self.calculate_cluster_fitness(cluster.id)
+            cluster.fitness = self.calculate_cluster_fitness(cluster._id)
             self.cluster_repository.update_fitness_for_cluster( # TODO:
-                cluster.id,
+                cluster._id,
                 cluster.fitness
             )
 
@@ -213,9 +214,11 @@ class GenomeClusterer(object):
 
         for cluster in clusters:
 
-            cluster.offspring = int((cluster.fitness / cluster_fitness_sum) * to_replace)
+            cluster.offspring = int(
+                round((cluster.fitness / cluster_fitness_sum) * to_replace)
+            )
             self.cluster_repository.update_offspring_for_cluster( # TODO:
-                cluster.id,
+                cluster._id,
                 cluster.offspring
             )
 
@@ -236,9 +239,9 @@ class GenomeClusterer(object):
         clusters = self.cluster_repository.get_current_clusters() # TODO:
 
         for cluster in clusters:
-            cluster.fitness = self.calculate_cluster_fitness(cluster.id)
+            cluster.fitness = self.calculate_cluster_fitness(cluster._id)
             self.cluster_repository.update_fitness_for_cluster( # TODO:
-                cluster.id,
+                cluster._id,
                 cluster.fitness
             )
 
@@ -248,7 +251,7 @@ class GenomeClusterer(object):
 
             cluster.max_population = int((cluster.fitness / cluster_fitness_sum) * max_population)
             self.cluster_repository.update_max_population_for_cluster( # TODO:
-                cluster.id,
+                cluster._id,
                 cluster.max_population
             )
 

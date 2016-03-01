@@ -33,7 +33,7 @@ class mock_ClusterRepository(object):
 
         for cluster in self.clusters:
 
-            if cluster.id == cluster_id:
+            if cluster._id == cluster_id:
 
                 cluster.fitness = fitness
 
@@ -43,8 +43,18 @@ class mock_ClusterRepository(object):
 
         for cluster in self.clusters:
 
-            if cluster.id == cluster_id:
+            if cluster._id == cluster_id:
 
                 cluster.max_population = max_population
+
+                break
+
+    def update_offspring_for_cluster(self, cluster_id, offspring):
+
+        for cluster in self.clusters:
+
+            if cluster._id == cluster_id:
+
+                cluster.offspring = offspring
 
                 break

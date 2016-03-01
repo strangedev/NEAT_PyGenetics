@@ -12,6 +12,7 @@ clustering_params["excess_coefficient"] = 1
 clustering_params["disjoint_coefficient"] = 1
 clustering_params["weight_difference_coefficient"] = 1
 clustering_params["max_population"] = 10
+clustering_params["discarding_percentage"] = 0.2
 
 
 clusterer = GenomeClusterer(genome_repo, cluster_repo, clustering_params)
@@ -115,6 +116,24 @@ class TestGenomeClusterer(TestCase):
 
         self.assertEqual(
             cluster_repo.clusters[1].max_population,
-            5,
+            6,
             "The maximum population size for cluster 1 does not match."
+        )
+
+    def test_calculate_cluster_offspring_values(self):
+
+        clusterer.cluster_genomes()
+
+        clusterer.calculate_cluster_offspring_values()
+
+        self.assertEqual(
+            cluster_repo.clusters[0].offspring,
+            1,
+            "The cluster offspring does not match the expected size."
+        )
+
+        self.assertEqual(
+            cluster_repo.clusters[1].offspring,
+            1,
+            "The cluster offspring does not match the expected size."
         )
