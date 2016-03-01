@@ -39,7 +39,7 @@ class mock_GenomeRepository(object):
 
     def update_cluster_for_genome(self, genome_id, cluster_id):
 
-        print("Genome ", genome_id, " is now in cluster ", cluster_id)
+        # print("Genome ", genome_id, " is now in cluster ", cluster_id)
 
         for genome in self.mock_population:
 
