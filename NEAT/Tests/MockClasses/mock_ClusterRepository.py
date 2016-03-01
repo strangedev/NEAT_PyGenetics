@@ -34,7 +34,7 @@ class mock_ClusterRepository(object):
 
         for cluster in self.clusters:
 
-            if cluster.id == cluster_id:
+            if cluster._id == cluster_id:
 
                 cluster.fitness = fitness
 
@@ -44,7 +44,7 @@ class mock_ClusterRepository(object):
 
         for cluster in self.clusters:
 
-            if cluster.id == cluster_id:
+            if cluster._id == cluster_id:
 
                 cluster.max_population = max_population
 

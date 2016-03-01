@@ -32,7 +32,7 @@ class GenomeSelector(object):
         clusters = []
         for cluster in self.cluster_repository.get_current_clusters():
             genomes = []
-            for genome in self.genome_repository.get_genomes_in_cluster(cluster.id):
+            for genome in self.genome_repository.get_genomes_in_cluster(cluster._id):
                 genomes.append(genome)
             genomes.sort(key=lambda genome: genome.fitness)
             clusters.extend(genomes[:int(len(genomes)*self.selection_parameters.discarding_threshold)])

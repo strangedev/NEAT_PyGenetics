@@ -44,7 +44,7 @@ class test_genomeSelector(TestCase):
 
         genome_selector = GenomeSelector(
             self.mock_genome_repository,
-           self.mock_cluster_repository,
+            self.mock_cluster_repository,
             self.mock_selection_parameters
         )
 
