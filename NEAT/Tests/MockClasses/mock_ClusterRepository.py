@@ -14,6 +14,7 @@ class mock_ClusterRepository(object):
     def add_cluster_with_representative(self, genome_id):
 
         cluster = Cluster(self.next_id, genome_id)
+        cluster.fitness = genome_id
         self.clusters.append(cluster)
         self.next_id += 1
 
