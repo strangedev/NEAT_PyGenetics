@@ -1,6 +1,9 @@
-from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 
 class Cluster(object):
+    """
+    Object used to represent a single cluster as stored
+    in the database.
+    """
 
     def __init__(
             self,
@@ -8,7 +11,7 @@ class Cluster(object):
             representative: int
     ):
 
-        self.id = id
-        self.representative = representative # StorageGenome id
-        self.fitness = 0
-        self.max_population = 0
+        self.id = id # type: int
+        self.representative = representative # type: int
+        self.fitness = 0 # type: float
+        self.offspring = 0 # type: int
