@@ -55,18 +55,18 @@ class DatabaseConnector(object):
     def find_one(
             self,
             collection_name: str,
-            *args, **kwargs
+            filter: Dict
     ) -> object:
         """
         Finds a single document in the given collection. Same parameters as py-
         mongos default find_one, except for the collection_name.
         :param collection_name:
-        :param args:
-        :param kwargs:
+        :param filter:
         :return:
         """
-        obj_json = self._database[collection_name].find_one(args, kwargs)
-        self._database[collection_name].find_one()
+        obj_json = self._database[collection_name].find_one(filter)
+        if obj_json is None:
+            return None
         return json.loads(obj_json, cls=CustomJSONDecoder)
 
     def find_one_by_id(
