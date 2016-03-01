@@ -22,7 +22,7 @@ class GenomeSelector(object):
         for cluster in self.cluster_repository.get_current_clusters():
             clusters.append(cluster)
         clusters.sort(key=lambda cluster: cluster.fitness)
-        return clusters[:int(len(clusters)*self.selection_parameters.discarding_threshold)]
+        return clusters[:int(len(clusters)*self.selection_parameters["discarding_by_cluster_fitness"])]
 
     def select_genomes_for_discarding(self) -> List[StorageGenome]:
         """
@@ -35,5 +35,5 @@ class GenomeSelector(object):
             for genome in self.genome_repository.get_genomes_in_cluster(cluster._id):
                 genomes.append(genome)
             genomes.sort(key=lambda genome: genome.fitness)
-            clusters.extend(genomes[:int(len(genomes)*self.selection_parameters.discarding_threshold)])
+            clusters.extend(genomes[:int(len(genomes)*self.selection_parameters["discarding_by_genome_fitness"])])
         return clusters
