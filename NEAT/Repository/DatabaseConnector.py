@@ -4,9 +4,7 @@ from bson import ObjectId
 from pymongo import MongoClient
 import json
 import pickle
-
-from NEAT.Analyst.AnalysisResult import AnalysisResult
-from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
+from NEAT.Repository.Transformator import *
 
 
 class DatabaseConnector(object):
@@ -29,10 +27,11 @@ class DatabaseConnector(object):
         :param document:
         :return:
         """
-        if not hasattr(document, '_id') or document._id is None:
-            document._id = ObjectId()
-        obj_json = json.dumps(document, cls=CustomJSONEncoder)
-        return self._database[collection_name].insert_one(obj_json)
+        if collection_name == "genomes":
+            i = encode_StorageGenome(object)
+            return self._database[collection_name].insert(i)
+        else:
+            return None
 
     def insert_many(
             self,
@@ -45,12 +44,16 @@ class DatabaseConnector(object):
         :param documents:
         :return:
         """
-        result_ids = []
-        for document in documents:
-            result_ids.append(
-                self.insert_one(collection_name, document)
-            )
-        return result_ids
+        if collection_name == "genomes":
+            result_ids = []
+            for document in documents:
+                i = encode_StorageGenome(document)
+                result_ids.append(
+                    self._database[collection_name].insert(i)
+                )
+            return result_ids
+        else:
+            return None
 
     def find_one(
             self,
@@ -64,10 +67,11 @@ class DatabaseConnector(object):
         :param filter:
         :return:
         """
-        obj_json = self._database[collection_name].find_one(filter)
-        if obj_json is None:
+        if collection_name == "genomes":
+            o = self._database[collection_name].find(filter)
+            return decode_StorageGenome(o)
+        else:
             return None
-        return json.loads(obj_json, cls=CustomJSONDecoder)
 
     def find_one_by_id(
             self,
@@ -80,7 +84,10 @@ class DatabaseConnector(object):
         :param document_id:
         :return:
         """
-        return self.find_one(collection_name, {'_id': document_id})
+        if collection_name == "genomes":
+            return decode_StorageGenome(self._database[collection_name].find({'_id': document_id}))
+        else:
+            return None
 
     def find_many(
             self,
@@ -95,11 +102,14 @@ class DatabaseConnector(object):
         :param filter:
         :return:
         """
-        result = []
-        for doc in self._database[collection_name].find(filter):
-            result.append(json.loads(doc, cls=CustomJSONDecoder))
-
-        return result
+        if collection_name == "genomes":
+            result = []
+            found = self._database[collection_name].find(filter)
+            for doc in found:
+                result.append(decode_StorageGenome(doc))
+            return result
+        else:
+            return None
 
     def update_one(
             self,
@@ -116,9 +126,9 @@ class DatabaseConnector(object):
         :param collection_name:
         :return:
         """
-        obj_json = json.dumps(document, cls=CustomJSONEncoder)
-        self._database[collection_name]\
-            .replace_one({'_id': document_id}, obj_json)
+        if collection_name == "genomes":
+            doc = encode_StorageGenome(document)
+            self._database[collection_name].update({'_id': document_id}, doc)
 
     def update_many(
             self,
@@ -133,8 +143,10 @@ class DatabaseConnector(object):
         :param documents:
         :return:
         """
-        for document_id, document in documents:
-            self.update_one(collection_name, document_id, document)
+        if collection_name == "genomes":
+            for document_id, document in documents:
+                doc = encode_StorageGenome(document)
+                self._database[collection_name].update({'_id': document_id}, doc)
 
     def remove_one(
             self,
@@ -147,7 +159,8 @@ class DatabaseConnector(object):
         :param document_id:
         :return:
         """
-        self._database[collection_name].remove(document_id)
+        if collection_name == "genomes":
+            self._database[collection_name].remove({'_id': document_id})
 
     def remove_many(
             self,
@@ -160,8 +173,9 @@ class DatabaseConnector(object):
         :param document_ids:
         :return:
         """
-        for document_id in document_ids:
-            self.remove_one(collection_name, document_id)
+        if collection_name == "genomes":
+            for document_id in document_ids:
+                self._database[collection_name].remove({'_id': document_id})
 
 
 class CustomJSONEncoder(json.JSONEncoder):
