@@ -28,7 +28,7 @@ class DatabaseConnector(object):
         :return:
         """
         if collection_name == "genomes":
-            i = encode_StorageGenome(object)
+            i = encode_StorageGenome(document)
             return self._database[collection_name].insert(i)
         else:
             return None
@@ -68,7 +68,7 @@ class DatabaseConnector(object):
         :return:
         """
         if collection_name == "genomes":
-            o = self._database[collection_name].find(filter)
+            o = self._database[collection_name].find_one(filter)
             return decode_StorageGenome(o)
         else:
             return None
@@ -85,7 +85,7 @@ class DatabaseConnector(object):
         :return:
         """
         if collection_name == "genomes":
-            return decode_StorageGenome(self._database[collection_name].find({'_id': document_id}))
+            return decode_StorageGenome(self._database[collection_name].find_one({'_id': document_id}))
         else:
             return None
 
