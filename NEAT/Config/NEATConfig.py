@@ -99,22 +99,3 @@ class NEATConfig(object):
     def load_defaults(self):
 
         raise NotImplementedError
-
-    def error_check(self):
-
-        db_connector = DatabaseConnector("error_check_dummy")
-        repo = GenomeRepository(db_connector)
-        genome = StorageGenome()
-
-        try:
-
-            repo.insert_genome(genome)
-
-        except Exception as e:
-
-            print("An Error occurred while error checking.")
-            print("Error checking occurs while NEATConfig is loading the configuration files.")
-            print("\n", e)
-            print("\nThis usually means MongoDB isn't running.")
-
-            raise e

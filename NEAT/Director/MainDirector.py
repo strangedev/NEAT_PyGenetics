@@ -4,6 +4,7 @@ from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 from NEAT.Analyst.GenomeAnalyst import GenomeAnalyst
 from NEAT.Analyst.GenomeClusterer import GenomeClusterer
 from NEAT.Repository import GenomeRepository
+from NEAT.ErrorHandling.StartupCheck import StartupCheck
 
 
 class MainDirector(Director):
@@ -23,6 +24,10 @@ class MainDirector(Director):
         self.mode = kwargs.get('mode', 'exit')
         if self.mode == 'exit':
             exit()
+
+        startup_check = StartupCheck()
+        startup_check.run()
+
         self.simulation_name = kwargs.get('simulation')
 
         # used for running simulation and calculating fitness for a given genome
