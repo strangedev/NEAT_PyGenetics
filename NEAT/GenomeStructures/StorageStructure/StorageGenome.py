@@ -32,6 +32,7 @@ class StorageGenome(object):
         """
         self._id = ObjectId()
         self.is_alive = True
+        self.fitness = 0  # type: float
         self.inputs = {}  # type: Dict[str, int]
         self.outputs = {}  # type: Dict[str, int]
         self.genes = []  # type: List[Tuple[int, bool, Fraction]]
@@ -46,6 +47,7 @@ class StorageGenome(object):
                 or not self.outputs.__eq__(obj.outputs) \
                 or not self.genes.__eq__(obj.genes) \
                 or not self.analysis_result.__eq__(obj.analysis_result) \
+                or not self.fitness.__eq__(obj.fitness) \
                 or not self.cluster.__eq__(obj.cluster):
             return False
         return True
