@@ -84,7 +84,7 @@ class Breeder(object):
 
                 gene_enabled = fitter_genome_table[gene_id][0]
                 gene_weight = fitter_genome_table[gene_id][1]
-                
+
                 new_genome.genes.append((gene_id, gene_enabled, gene_weight))
 
         else:
