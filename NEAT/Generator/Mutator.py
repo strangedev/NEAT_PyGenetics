@@ -116,4 +116,18 @@ class Mutator(object):
 
         return new_genome
 
+    def mutate_perturb_weights(self, genome: StorageGenome) -> StorageGenome:
 
+        new_genome = StorageGenome()
+
+        for gene in genome.genes:
+
+            perturb_weight = True \
+                if random.random >= self.mutation_parameters["perturb_gene_weight_probability"] \
+                else False
+
+            if perturb_weight:
+
+                gene[2] = random.random()
+
+        return new_genome
