@@ -4,6 +4,8 @@ from NEAT.Repository.GeneRepository import GeneRepository
 from NEAT.Utilities import ProbabilisticTools
 import random
 import copy
+from typing import Tuple
+from fractions import Fraction
 
 class Mutator(object):
 
@@ -29,10 +31,11 @@ class Mutator(object):
         )
 
         if edge_or_vertex == 0:
-            return self.mutate_add_edge(analysis_genome, genome)
+            new_genome = self.mutate_add_edge(analysis_genome, genome)
         else:
-            return self.mutate_add_vertex(analysis_genome, genome)
+            new_genome = self.mutate_add_node(analysis_genome, genome)
 
+        return self.mutate_perturb_weights(new_genome)
 
     def mutate_add_edge(
             self,
@@ -64,7 +67,7 @@ class Mutator(object):
 
         return new_genome
 
-    def mutate_add_vertex(
+    def mutate_add_node(
             self,
             analysis_genome: AnalysisGenome,
             storage_genome: StorageGenome
@@ -128,6 +131,17 @@ class Mutator(object):
 
             if perturb_weight:
 
-                gene[2] = random.random()
+                new_gene = self.perturb_weight(gene)
+                genome.genes.remove(gene)
+                genome.genes.append(new_gene)
 
         return new_genome
+
+    def perturb_weight(
+            self,
+            gene: Tuple[int, bool, Fraction]
+    ) -> Tuple[int, bool, Fraction]:
+
+        new_weight = Fraction(gene[2] * random.random())
+
+        return (gene[0], gene[1], new_weight)

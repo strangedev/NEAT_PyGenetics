@@ -51,8 +51,6 @@ class NEATConfig(object):
 
             self.load_defaults()
 
-        self.error_check()
-
     def load_config(self):
 
         try:
@@ -98,4 +96,25 @@ class NEATConfig(object):
 
     def load_defaults(self):
 
-        raise NotImplementedError
+        if not self.clustering_parameters_loaded:
+            self.clustering_parameters = dict(
+                {
+                    "delta_threshold": 1,
+                    "excess_coefficient": 1,
+                    "disjoint_coefficient": 1,
+                    "weight_difference_coefficient": 1,
+                    "max_population": 10,
+                    "discarding_percentage": 0.2
+                }
+            )
+            print("defaults for clustering_parameters loaded.")
+
+        if not self.selection_parameters_loaded:
+            self.selection_parameters = dict(
+                {
+                    "add_edge_probability": 0.5,
+                    "new_gene_enabled_probability": 0.7,
+                    "perturb_gene_weight_probability": 0.5
+                }
+            )
+            print("defaults for selection_parameters loaded.")
