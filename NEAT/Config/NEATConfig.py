@@ -8,95 +8,45 @@ class NEATConfig(object):
 
     def __init__(self):
 
+        self.parameters = dict({})
+
         self.config_directory = os.path.dirname(__file__)
         self.working_directory = os.path.join(
             self.config_directory,
             "../../"
         )
 
-        self.clustering_parameters = None
-        self.selection_parameters = None
-        self.decision_making_parameters = None
-        self.discarding_parameters = None
-
-        self.clustering_parameters_loaded = False
-        self.selection_parameters_loaded = False
-        self.decision_making_parameters_loaded = False
-        self.discarding_parameters_loaded = False
-
-        self.clustering_parameters_path = os.path.join(
-            self.config_directory,
-            "./clustering.conf"
-        )
-        self.selection_parameters_path = os.path.join(
-            self.config_directory,
-            "./selection.conf"
-        )
-        self.decision_making_parameters_path = os.path.join(
-            self.config_directory,
-            "./decision_making.conf"
-        )
-        self.discarding_parameters_path = os.path.join(
-            self.config_directory,
-            "./discarding.conf"
-        )
-
+        self.config_categories = [
+            "clustering",
+            "selection",
+            "decision_making",
+            "discarding",
+            "breeding",
+            "mutating"
+        ]
 
         self.load_config()
 
-        if (not self.clustering_parameters_loaded) \
-            or (not self.selection_parameters_loaded) \
-            or (not self.decision_making_parameters_loaded) \
-            or (not self.discarding_parameters_loaded):
-
-            self.load_defaults()
+        self.load_defaults()
 
     def load_config(self):
 
-        try:
+        for category in self.config_categories:
 
-            cluster_conf_file = open(self.clustering_parameters_path)
-            self.clustering_parameters = json.load(cluster_conf_file)
-            self.clustering_parameters_loaded = True
+            try:
+                self.parameters[category] = os.path.join(
+                    self.config_directory,
+                    ("./" + category + ".conf")
+                )
 
-        except Exception as e:
+            except Exception as e:
 
-            print(e, " - loading defaults.")
-
-        try:
-
-            selection_conf_file = open(self.selection_parameters_path)
-            self.selection_parameters = json.load(selection_conf_file)
-            self.selection_parameters_loaded = True
-
-        except Exception as e:
-
-            print(e, " - loading defaults.")
-
-        try:
-
-            decision_making_conf_file = open(self.decision_making_parameters_path)
-            self.decision_making_parameters = json.load(decision_making_conf_file)
-            self.decision_making_parameters_loaded = True
-
-        except Exception as a:
-
-            print(e, " - loading defaults.")
-
-        try:
-
-            discarding_conf_file = open(self.discarding_parameters_path)
-            self.discarding_parameters = json.load(discarding_conf_file)
-            self.discarding_parameters_loaded = True
-
-        except Exception as e:
-
-            print(e, " - loading defaults.")
+                print(e, " - loading defaults.")
 
 
     def load_defaults(self):
 
-        if not self.clustering_parameters_loaded:
+        if not "clustering" in self.parameters.keys():
             self.clustering_parameters = dict(
                 {
                     "delta_threshold": 1,
@@ -107,9 +57,9 @@ class NEATConfig(object):
                     "discarding_percentage": 0.2
                 }
             )
-            print("defaults for clustering_parameters loaded.")
+            print("defaults for clustering loaded.")
 
-        if not self.selection_parameters_loaded:
+        if not "mutating" in self.parameters.keys():
             self.selection_parameters = dict(
                 {
                     "add_edge_probability": 0.5,
@@ -117,4 +67,4 @@ class NEATConfig(object):
                     "perturb_gene_weight_probability": 0.5
                 }
             )
-            print("defaults for selection_parameters loaded.")
+            print("defaults for selection loaded.")

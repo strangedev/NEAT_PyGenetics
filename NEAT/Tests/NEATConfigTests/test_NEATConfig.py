@@ -7,10 +7,12 @@ class TestNEATConfig(TestCase):
 
         config = NEATConfig()
 
-        self.assertIsNotNone(config.clustering_parameters)
-        self.assertIsNotNone(config.selection_parameters)
-        self.assertIsNotNone(config.decision_making_parameters)
-        self.assertIsNotNone(config.discarding_parameters)
+        self.assertIsNotNone(config.parameters["breeding"])
+        self.assertIsNotNone(config.parameters["clustering"])
+        self.assertIsNotNone(config.parameters["decision_making"])
+        self.assertIsNotNone(config.parameters["discarding"])
+        self.assertIsNotNone(config.parameters["mutating"])
+        self.assertIsNotNone(config.parameters["selection"])
 
     def test_load_defaults(self):
         self.fail()
