@@ -20,7 +20,6 @@ class NEATConfig(object):
             "clustering",
             "selection",
             "decision_making",
-            "discarding",
             "breeding",
             "mutating"
         ]
@@ -47,7 +46,7 @@ class NEATConfig(object):
     def load_defaults(self):
 
         if not "clustering" in self.parameters.keys():
-            self.clustering_parameters = dict(
+            self.parameters["clustering"] = dict(
                 {
                     "delta_threshold": 1,
                     "excess_coefficient": 1,
@@ -59,8 +58,33 @@ class NEATConfig(object):
             )
             print("defaults for clustering loaded.")
 
+        if not "selection" in self.parameters.keys():
+            self.parameters["selection"] = dict(
+                {
+                   "discarding_by_genome_fitness": 0.2,
+                    "discarding_by_cluster_fitness": 0.2
+                }
+            )
+            print("defaults for selection loaded.")
+
+        if not "decision_making" in self.parameters.keys():
+            self.parameters["decision_making"] = dict(
+                {
+                    # TODO:
+                }
+            )
+            print("defaults for selection loaded.")
+
+        if not "breeding" in self.parameters.keys():
+            self.parameters["breeding"] = dict(
+                {
+                    "fitness_difference_threshold": 1
+                }
+            )
+            print("defaults for selection loaded.")
+
         if not "mutating" in self.parameters.keys():
-            self.selection_parameters = dict(
+            self.parameters["mutating"] = dict(
                 {
                     "add_edge_probability": 0.5,
                     "new_gene_enabled_probability": 0.7,

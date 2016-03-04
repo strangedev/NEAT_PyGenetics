@@ -114,12 +114,12 @@ class TestGenomeClusterer(TestCase):
         self.assertEqual(
             cluster_repo.clusters[0].max_population,
             4,
-            "The maximum population size for cluster 1 does not match."
+            "The maximum population size for cluster 0 does not match."
         )
 
         self.assertEqual(
             cluster_repo.clusters[1].max_population,
-            6,
+            5,
             "The maximum population size for cluster 1 does not match."
         )
 
