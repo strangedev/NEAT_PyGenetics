@@ -9,7 +9,9 @@ class TestBreeder(TestCase):
 
         breeding_conf = dict(
             {
-                "fitness_difference_threshold": 1
+                "fitness_difference_threshold": 1,
+                "inherit_randomly_if_same_fitness_probability": 0.5,
+                "gene_inherited_as_disabled_probability": 0.5
             }
         )
 
@@ -24,22 +26,22 @@ class TestBreeder(TestCase):
             (0, True, Fraction(0.21)),
             (1, True, Fraction(-0.56)),
             (2, True, Fraction(0.354)),
-            (6, True, Fraction(0.98)),
-            (8, True, Fraction(0.47)),
-            (10, True, Fraction(-0.13))
+            (3, True, Fraction(0.98)),
+            (7, True, Fraction(0.47)),
+            (8, True, Fraction(-0.13))
 
         ]
 
         other_genome = StorageGenome()
-        other_genome.fitness = 25
+        other_genome.fitness = 19.233
         other_genome.genes = [
 
-            (3, True, Fraction(0.1)),
+            (0, True, Fraction(0.1)),
+            (1, True, Fraction(0.1)),
+            (2, True, Fraction(0.1)),
             (4, True, Fraction(0.1)),
-            (5, True, Fraction(0.1)),
-            (7, True, Fraction(0.1)),
-            (9, True, Fraction(-0.1)),
-            (11, True, Fraction(-0.1))
+            (5, True, Fraction(-0.1)),
+            (6, True, Fraction(-0.1))
 
         ]
 
@@ -48,4 +50,31 @@ class TestBreeder(TestCase):
             other_genome
         )
 
-        print(new_genome) # TODO: proper testing
+        print(new_genome.genes) # TODO: proper testing
+        # self.fail("Not implemented.")
+
+        gene_table = {g[0] : (g[1], g[2]) for g in new_genome.genes}
+
+        self.assertListEqual(
+            list(gene_table.keys()),
+            [0, 1, 2, 3, 7, 8],
+            "The wrong genes were inherited by breed_genomes()."
+        )
+
+        self.assertEqual(
+            gene_table[3][1],
+            0.98,
+            "The differing gene with id 3 wasn't inherited correctly by breed_genomes()."
+        )
+
+        self.assertEqual(
+            gene_table[7][1],
+            0.47,
+            "The differing gene with id 3 wasn't inherited correctly by breed_genomes()."
+        )
+
+        self.assertEqual(
+            gene_table[8][1],
+            -0.13,
+            "The differing gene with id 3 wasn't inherited correctly by breed_genomes()."
+        )

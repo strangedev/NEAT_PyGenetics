@@ -35,6 +35,8 @@ class Breeder(object):
         # be able to distinguish between disjoint and excess genes
         # potentially needed for later approaches.
 
+        random.seed()
+
         bigger_genome, smaller_genome = (genome_one, genome_two) \
             if len(genome_one.genes) > len(genome_two.genes) \
             else (genome_two, genome_one)
@@ -55,6 +57,9 @@ class Breeder(object):
         genome_one_table = {gene[0]: (gene[1], gene[2]) for gene in genome_one.genes}
         genome_two_table = {gene[0]: (gene[1], gene[2]) for gene in genome_two.genes}
 
+        print(genome_one_table)
+        print(genome_two_table)
+
         fitter_genome_table = genome_one_table \
             if genome_one.fitness > genome_two.fitness \
             else genome_two_table
@@ -65,42 +70,70 @@ class Breeder(object):
         for gene_id in matching_gene_ids:
 
             parent_genome_table = random.choice(
-                    [
-                        genome_one_table,
-                        genome_two_table
-                    ]
-                )
-            gene_enabled = parent_genome_table[gene_id][0]
+                [
+                    genome_one_table,
+                    genome_two_table
+                ]
+            )
+            gene_enabled = self.should_gene_be_enabled(
+                genome_one_table[gene_id],
+                genome_two_table[gene_id]
+            )
             gene_weight = parent_genome_table[gene_id][1]
 
             new_genome.genes.append((gene_id, gene_enabled, gene_weight))
 
         # Insert inherited differing genes.
-        if abs(genome_one.fitness - genome_two.fitness) < \
+        if abs(genome_one.fitness - genome_two.fitness) > \
                 self.breeding_parameters["fitness_difference_threshold"]:
 
 
             for gene_id in differing_gene_ids:
 
-                gene_enabled = fitter_genome_table[gene_id][0]
-                gene_weight = fitter_genome_table[gene_id][1]
+                if gene_id in fitter_genome_table.keys():
+                    gene_enabled = self.should_gene_be_enabled(
+                        fitter_genome_table[gene_id]
+                    )
+                    gene_weight = fitter_genome_table[gene_id][1]
 
-                new_genome.genes.append((gene_id, gene_enabled, gene_weight))
+                    new_genome.genes.append((gene_id, gene_enabled, gene_weight))
 
         else:
 
             for gene_id in differing_gene_ids:
 
-                parent_genome_table = random.choice(
-                    [
-                        genome_one_table,
-                        genome_two_table
-                    ]
-                )
-                gene_enabled = parent_genome_table[gene_id][0]
-                gene_weight = parent_genome_table[gene_id][1]
+                inherit_gene = True \
+                    if random.random() \
+                       < self.breeding_parameters["inherit_randomly_if_same_fitness_probability"] \
+                    else False
 
-                new_genome.genes.append((gene_id, gene_enabled, gene_weight))
+                if inherit_gene:
+                    parent_genome_table = genome_one_table \
+                        if gene_id in genome_one_table.keys() \
+                        else genome_two_table
+
+                    gene_enabled = self.should_gene_be_enabled(
+                        parent_genome_table[gene_id]
+                    )
+                    gene_weight = parent_genome_table[gene_id][1]
+
+                    new_genome.genes.append((gene_id, gene_enabled, gene_weight))
 
 
+        return new_genome
 
+    def should_gene_be_enabled(self, instance_one, instance_two=None):
+
+        gene_one_enabled = instance_one[1]
+
+        if not instance_two:
+            gene_two_enabled = False
+        else:
+            gene_two_enabled = instance_two[1]
+
+        if (not gene_one_enabled) or  (not gene_two_enabled):
+
+            return False \
+                if random.random() \
+                   < self.breeding_parameters["gene_inherited_as_disabled_probability"] \
+                else True

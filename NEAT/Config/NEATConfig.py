@@ -78,7 +78,9 @@ class NEATConfig(object):
         if not "breeding" in self.parameters.keys():
             self.parameters["breeding"] = dict(
                 {
-                    "fitness_difference_threshold": 1
+                    "fitness_difference_threshold": 1,
+                    "inherit_randomly_if_same_fitness_probability": 0.5,
+                    "gene_inherited_as_disabled_probability": 0.5
                 }
             )
             print("defaults for selection loaded.")
