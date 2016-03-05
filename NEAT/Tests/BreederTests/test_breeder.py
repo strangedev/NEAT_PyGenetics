@@ -45,12 +45,30 @@ class TestBreeder(TestCase):
 
         }
 
+        similar_genome = StorageGenome()
+        similar_genome.fitness = 21.83
+        similar_genome.genes = {
+
+            0: (True, Fraction(0.1)),
+            1: (True, Fraction(0.1)),
+            2: (True, Fraction(0.1)),
+            4: (True, Fraction(0.1)),
+            5: (True, Fraction(-0.1)),
+            6: (True, Fraction(-0.1))
+
+        }
+
         new_genome = self.breeder.breed_genomes(
             fitter_genome,
             other_genome
         )
 
-        print(new_genome.genes) # TODO: proper testing
+        new_genome_two = self.breeder.breed_genomes(
+            fitter_genome,
+            similar_genome
+        )
+
+        # print(new_genome.genes) # TODO: proper testing
         # self.fail("Not implemented.")
 
         self.assertListEqual(
@@ -76,3 +94,25 @@ class TestBreeder(TestCase):
             -0.13,
             "The differing gene with id 3 wasn't inherited correctly by breed_genomes()."
         )
+
+
+        in_set = [(g in new_genome_two.genes.keys()) for g in [0, 1, 2]]
+        self.assertTrue(
+           lambda : not False in in_set
+        )
+
+        differing_genes = [g for g in new_genome_two.genes.keys() if (g not in [0, 1, 2])]
+        for gene_id in differing_genes:
+
+            weight = new_genome_two.genes[gene_id][1]
+
+            parent_genome = fitter_genome \
+                if gene_id in fitter_genome.genes.keys() \
+                else similar_genome
+
+            original_weight = parent_genome.genes[gene_id][1]
+
+            self.assertEqual(
+                weight,
+                original_weight
+            )

@@ -8,7 +8,7 @@ from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 class TestAnalysisGenome(TestCase):
     def setUp(self):
         self.mock_gene_repository = Mock()
-        self.mock_gene_repository.get_node_ids_from_gene =\
+        self.mock_gene_repository.get_node_labels_by_gene_id =\
             lambda node_id: (node_id * 2, node_id * 2 + 1)
         self.storage_genome = StorageGenome()
 

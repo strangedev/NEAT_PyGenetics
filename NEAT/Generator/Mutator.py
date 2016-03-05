@@ -43,7 +43,7 @@ class Mutator(object):
             storage_genome: StorageGenome
     ) -> StorageGenome:
 
-        starting_vertex = random.choice(analysis_genome.nodes)
+        starting_vertex = random.choice(list(analysis_genome.nodes))
 
         possible_endpoints = [v for v in analysis_genome.nodes \
                               if v not in analysis_genome.edges[starting_vertex]]
@@ -63,7 +63,7 @@ class Mutator(object):
         )
 
         new_genome = copy.deepcopy(storage_genome)
-        new_genome.genes.append((gene_id, gene_enabled, gene_weight))
+        new_genome.genes[gene_id] = (gene_enabled, gene_weight)
 
         return new_genome
 
