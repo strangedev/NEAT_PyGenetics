@@ -41,10 +41,10 @@ class Breeder(object):
             if len(genome_one.genes) > len(genome_two.genes) \
             else (genome_two, genome_one)
 
-        bigger_genome_gene_ids = [gene[0] for gene in bigger_genome.genes]
-        smaller_genome_gene_ids = [gene[0] for gene in smaller_genome.genes]
+        bigger_genome_gene_ids = bigger_genome.genes.keys()
+        smaller_genome_gene_ids = smaller_genome.genes.keys()
 
-        all_gene_ids = smaller_genome_gene_ids + bigger_genome_gene_ids
+        all_gene_ids = list(smaller_genome_gene_ids) + list(bigger_genome_gene_ids)
 
         matching_gene_ids = [gene_id for gene_id in bigger_genome_gene_ids \
                           if gene_id in smaller_genome_gene_ids]
@@ -52,17 +52,9 @@ class Breeder(object):
         differing_gene_ids = [gene_id for gene_id in all_gene_ids \
                            if gene_id not in matching_gene_ids]
 
-        # Gene tables are generated in order to perform fast lookup while breeding.
-        # Oh my flying spaghetti monster, I love dict comprehensions.
-        genome_one_table = {gene[0]: (gene[1], gene[2]) for gene in genome_one.genes}
-        genome_two_table = {gene[0]: (gene[1], gene[2]) for gene in genome_two.genes}
-
-        print(genome_one_table)
-        print(genome_two_table)
-
-        fitter_genome_table = genome_one_table \
+        fitter_genome_table = genome_one.genes \
             if genome_one.fitness > genome_two.fitness \
-            else genome_two_table
+            else genome_two.genes
 
         new_genome = StorageGenome()
 
@@ -71,17 +63,17 @@ class Breeder(object):
 
             parent_genome_table = random.choice(
                 [
-                    genome_one_table,
-                    genome_two_table
+                    genome_one.genes,
+                    genome_two.genes
                 ]
             )
             gene_enabled = self.should_gene_be_enabled(
-                genome_one_table[gene_id],
-                genome_two_table[gene_id]
+                genome_one.genes[gene_id],
+                genome_two.genes[gene_id]
             )
             gene_weight = parent_genome_table[gene_id][1]
 
-            new_genome.genes.append((gene_id, gene_enabled, gene_weight))
+            new_genome.genes[gene_id] = (gene_enabled, gene_weight)
 
         # Insert inherited differing genes.
         if abs(genome_one.fitness - genome_two.fitness) > \
@@ -96,7 +88,7 @@ class Breeder(object):
                     )
                     gene_weight = fitter_genome_table[gene_id][1]
 
-                    new_genome.genes.append((gene_id, gene_enabled, gene_weight))
+                    new_genome.genes[gene_id] = (gene_enabled, gene_weight)
 
         else:
 
@@ -108,16 +100,16 @@ class Breeder(object):
                     else False
 
                 if inherit_gene:
-                    parent_genome_table = genome_one_table \
-                        if gene_id in genome_one_table.keys() \
-                        else genome_two_table
+                    parent_genome_table = genome_one.genes \
+                        if gene_id in genome_one.genes.keys() \
+                        else genome_two.genes
 
                     gene_enabled = self.should_gene_be_enabled(
                         parent_genome_table[gene_id]
                     )
                     gene_weight = parent_genome_table[gene_id][1]
 
-                    new_genome.genes.append((gene_id, gene_enabled, gene_weight))
+                    new_genome.genes[gene_id] = (gene_enabled, gene_weight)
 
 
         return new_genome
