@@ -91,5 +91,5 @@ class GenomeRepository(object):
         """
         g = []
         for genome in genomes:
-            g.append((genome._id), encode_StorageGenome(genome))
+            g.append(((genome._id), encode_StorageGenome(genome)))
         self._database_connector.update_many("genomes", g)
