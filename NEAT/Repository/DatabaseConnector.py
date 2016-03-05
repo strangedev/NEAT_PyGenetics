@@ -1,10 +1,6 @@
 from typing import Dict, Iterable, List, Tuple
 
-from bson import ObjectId
 from pymongo import MongoClient
-import json
-import pickle
-from NEAT.Repository.Transformator import *
 
 
 class DatabaseConnector(object):
@@ -13,7 +9,7 @@ class DatabaseConnector(object):
         self._database = self._client[database_name]
 
     def get_collection(self, collection_name: str):
-        self._database[collection_name].find()
+        # self._database[collection_name].find() # don't see why we need this
         return self._database[collection_name]
 
     def insert_one(
@@ -27,11 +23,10 @@ class DatabaseConnector(object):
         :param document:
         :return:
         """
-        if collection_name == "genomes":
-            i = encode_StorageGenome(document)
-            return self._database[collection_name].insert(i)
-        else:
-            return None
+        try:
+            return self._database[collection_name].insert(document)
+        except Exception as e:
+            print(e, 'insert_one, DatabaseConnector')
 
     def insert_many(
             self,
@@ -44,16 +39,14 @@ class DatabaseConnector(object):
         :param documents:
         :return:
         """
-        if collection_name == "genomes":
-            result_ids = []
-            for document in documents:
-                i = encode_StorageGenome(document)
-                result_ids.append(
-                    self._database[collection_name].insert(i)
-                )
-            return result_ids
-        else:
-            return None
+        result_ids = []
+        for document in documents:
+            try:
+                i = self._database[collection_name].insert(document)
+            except Exception as e:
+                print(e, 'insert_many, DatabaseConnector')
+            result_ids.append(i)
+        return result_ids
 
     def find_one(
             self,
@@ -67,11 +60,10 @@ class DatabaseConnector(object):
         :param filter:
         :return:
         """
-        if collection_name == "genomes":
-            o = self._database[collection_name].find_one(filter)
-            return decode_StorageGenome(o)
-        else:
-            return None
+        try:
+            return self._database[collection_name].find_one(filter)
+        except Exception as e:
+            print(e, 'find_one, DatabaseConnector')
 
     def find_one_by_id(
             self,
@@ -84,10 +76,10 @@ class DatabaseConnector(object):
         :param document_id:
         :return:
         """
-        if collection_name == "genomes":
-            return decode_StorageGenome(self._database[collection_name].find_one({'_id': document_id}))
-        else:
-            return None
+        try:
+            return self._database[collection_name].find_one({'_id': document_id})
+        except Exception as e:
+            print(e, 'find_one_by_id, DatabaseConnector')
 
     def find_many(
             self,
@@ -102,19 +94,15 @@ class DatabaseConnector(object):
         :param filter:
         :return:
         """
-        if collection_name == "genomes":
-            result = []
-            found = self._database[collection_name].find(filter)
-            for doc in found:
-                result.append(decode_StorageGenome(doc))
-            return result
-        else:
-            return None
+        try:
+            return self._database[collection_name].find(filter)
+        except Exception as e:
+            print(e, 'find_many, DatabaseConnector')
 
     def update_one(
             self,
             collection_name: str,
-            document_id: int,
+            document_id,
             document: object
     ):
         """
@@ -126,9 +114,10 @@ class DatabaseConnector(object):
         :param collection_name:
         :return:
         """
-        if collection_name == "genomes":
-            doc = encode_StorageGenome(document)
-            self._database[collection_name].update({'_id': document_id}, doc)
+        try:
+            self._database[collection_name].update({'_id': document_id}, document)
+        except Exception as e:
+            print(e, 'update_one, DatabaseConnector')
 
     def update_many(
             self,
@@ -143,10 +132,11 @@ class DatabaseConnector(object):
         :param documents:
         :return:
         """
-        if collection_name == "genomes":
-            for document_id, document in documents:
-                doc = encode_StorageGenome(document)
-                self._database[collection_name].update({'_id': document_id}, doc)
+        for document_id, document in documents:
+            try:
+                self._database[collection_name].update({'_id': document_id}, document)
+            except Exception as e:
+                print(e, 'update_many')
 
     def remove_one(
             self,
@@ -159,8 +149,10 @@ class DatabaseConnector(object):
         :param document_id:
         :return:
         """
-        if collection_name == "genomes":
+        try:
             self._database[collection_name].remove({'_id': document_id})
+        except Exception as e:
+            print(e, 'remove_one, DatabaseConnector')
 
     def remove_many(
             self,
@@ -175,32 +167,7 @@ class DatabaseConnector(object):
         """
         if collection_name == "genomes":
             for document_id in document_ids:
-                self._database[collection_name].remove({'_id': document_id})
-
-
-class CustomJSONEncoder(json.JSONEncoder):
-    def default(self, obj):
-        if isinstance(obj, StorageGenome):
-            return {'storage_genome_repr': obj.__dict__}
-        elif isinstance(obj, AnalysisResult):
-            return {'analysis_result_repr': pickle.dumps(obj).decode('latin1')}
-        elif isinstance(obj, ObjectId):
-            return str(obj)
-        return json.JSONEncoder.default(self, obj)
-
-
-class CustomJSONDecoder(json.JSONDecoder):
-    def __init__(self):
-        json.JSONDecoder.__init__(self, object_hook=self.hook)
-
-    @staticmethod
-    def hook(dct):
-        if 'storage_genome_repr' in dct:
-            s = StorageGenome()
-            s.__dict__ = dct['storage_genome_repr']
-            return s
-        elif 'analysis_result_repr' in dct:
-            return pickle.loads(dct['analysis_result_repr'].encode('latin1'))
-        if '_id' in dct:
-            dct['_id'] = ObjectId(dct['_id'])
-        return dct
+                try:
+                    self._database[collection_name].remove({'_id': document_id})
+                except Exception as e:
+                    print(e, 'remove_many, DatabaseConnector')
