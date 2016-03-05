@@ -1,8 +1,10 @@
 from unittest import TestCase
+from NEAT.Tests.MockClasses.mock_DatabaseConnector import mock_DatabaseConnector
 from NEAT.Repository.GeneRepository import GeneRepository
 
 
 class TestGeneRepository(TestCase):
+
     def test_get_gene_id_for_endpoints(self):
         self.fail()
 

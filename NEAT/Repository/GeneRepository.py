@@ -1,4 +1,5 @@
 from NEAT.Repository.DatabaseConnector import DatabaseConnector
+import itertools
 
 
 class GeneRepository(object):
@@ -30,7 +31,34 @@ class GeneRepository(object):
     def find_connecting_nodes(self, head_node_id, tail_node_id):
 
         # TODO: Figure out a more efficient algo then brute force
-        raise NotImplementedError
+
+        head_edge_candidates = self._database_connector.find_many(
+            "genes",
+            {
+                "head": head_node_id
+            }
+        )
+        tail_edge_candidates = self._database_connector.find_many(
+            "genes",
+            {
+                "tail": tail_node_id
+            }
+        )
+
+        edge_pairs = list(
+            itertools.product(
+                head_edge_candidates,
+                tail_edge_candidates
+            )
+        )
+
+        connection_candidates = [pair
+                                 for pair in edge_pairs
+                                 if pair[0]["tail"] == pair[1]["head"]]
+
+        connecting_nodes = [pair[0]["tail"] for pair in connection_candidates]
+
+        return connecting_nodes
 
     def get_next_node_label(self):
 
