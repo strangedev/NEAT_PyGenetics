@@ -15,7 +15,7 @@ class DatabaseConnector(object):
     def insert_one(
             self,
             collection_name: str,
-            document: object
+            document: dict
     ) -> int:
         """
         Inserts a single object into the given collection in the database.
@@ -43,9 +43,9 @@ class DatabaseConnector(object):
         for document in documents:
             try:
                 i = self._database[collection_name].insert(document)
+                result_ids.append(i)
             except Exception as e:
                 print(e, 'insert_many, DatabaseConnector')
-            result_ids.append(i)
         return result_ids
 
     def find_one(
