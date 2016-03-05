@@ -104,7 +104,7 @@ class AnalysisGenome(Generic[GenomeStructure]):
             self._add_output_node(node_id, node_label)
 
         for gene_id, _, _ in storage_structure.genes:
-            head, tail = self._gene_repository.get_node_ids_from_gene(gene_id)
+            head, tail = self._gene_repository.get_node_labels_by_gene_id(gene_id)
             self._add_edge(head, tail)
 
         self._graph_initialized = True

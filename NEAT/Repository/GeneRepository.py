@@ -58,3 +58,10 @@ class GeneRepository(object):
 
         return next_label
 
+    def get_node_labels_by_gene_id(self, gene_id):
+
+        gene = self._database_connector.find_one_by_id("gene", gene_id)
+        if gene:
+            return (gene["head"], gene["tail"])
+        else:
+            return (None, None)
