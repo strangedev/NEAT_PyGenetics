@@ -67,16 +67,16 @@ class TestAnalysisGenome(TestCase):
             "output2": 5,
             "output3": 6
         }
-        self.storage_genome.genes = [
-            (1, False, 0.5),
-            (2, False, 0.5),
-            (3, False, 0.5),
-            (4, False, 0.5),
-            (5, False, 0.5),
-            (6, False, 0.5),
-            (7, False, 0.5),
-            (8, False, 0.5)
-        ]
+        self.storage_genome.genes = {
+            1: (False, 0.5),
+            2: (False, 0.5),
+            3: (False, 0.5),
+            4: (False, 0.5),
+            5: (False, 0.5),
+            6: (False, 0.5),
+            7: (False, 0.5),
+            8: (False, 0.5)
+        }
         ana = AnalysisGenome.AnalysisGenome(
             self.mock_gene_repository,
             self.storage_genome)
@@ -98,7 +98,7 @@ class TestAnalysisGenome(TestCase):
             ana.output_nodes)
         self.assertDictEqual(
             {2 * node_id: [2 * node_id + 1]
-             for (node_id, _, _) in self.storage_genome.genes},
+             for node_id in self.storage_genome.genes.keys()},
             ana.edges
         )
 

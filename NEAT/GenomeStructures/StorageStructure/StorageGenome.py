@@ -35,7 +35,7 @@ class StorageGenome(object):
         self.fitness = 0  # type: float
         self.inputs = {}  # type: Dict[str, int]
         self.outputs = {}  # type: Dict[str, int]
-        self.genes = []  # type: List[Tuple[int, bool, Fraction]]
+        self.genes = {}  # type: Dict[int, Tuple[bool, Fraction]]
         self.analysis_result = AnalysisResult()
         self.cluster = ObjectId()
         pass
