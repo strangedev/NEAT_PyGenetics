@@ -7,3 +7,5 @@ It follows the concepts of some paper somewhere.
 At the moment, we are fooling around to find a good structure. More content
 later.
 
+Stats for this repository:
+http://strangedev.org/gitstats/neat-stats/index.html
