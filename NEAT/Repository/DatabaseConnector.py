@@ -26,7 +26,7 @@ class DatabaseConnector(object):
         try:
             return self._database[collection_name].insert(document)
         except Exception as e:
-            print(e, 'insert_one, DatabaseConnector')
+            raise(e, 'insert_one, DatabaseConnector')
 
     def insert_many(
             self,
@@ -45,7 +45,7 @@ class DatabaseConnector(object):
                 i = self._database[collection_name].insert(document)
                 result_ids.append(i)
             except Exception as e:
-                print(e, 'insert_many, DatabaseConnector')
+                raise(e, 'insert_many, DatabaseConnector')
         return result_ids
 
     def find_one(
@@ -63,7 +63,7 @@ class DatabaseConnector(object):
         try:
             return self._database[collection_name].find_one(filter)
         except Exception as e:
-            print(e, 'find_one, DatabaseConnector')
+            raise(e, 'find_one, DatabaseConnector')
 
     def find_one_by_id(
             self,
@@ -79,7 +79,7 @@ class DatabaseConnector(object):
         try:
             return self._database[collection_name].find_one({'_id': document_id})
         except Exception as e:
-            print(e, 'find_one_by_id, DatabaseConnector')
+            raise(e, 'find_one_by_id, DatabaseConnector')
 
     def find_many(
             self,
@@ -97,7 +97,7 @@ class DatabaseConnector(object):
         try:
             return self._database[collection_name].find(filter)
         except Exception as e:
-            print(e, 'find_many, DatabaseConnector')
+            raise(e, 'find_many, DatabaseConnector')
 
     def update_one(
             self,
@@ -117,7 +117,7 @@ class DatabaseConnector(object):
         try:
             self._database[collection_name].update({'_id': document_id}, document)
         except Exception as e:
-            print(e, 'update_one, DatabaseConnector')
+            raise(e, 'update_one, DatabaseConnector')
 
     def update_many(
             self,
@@ -136,7 +136,7 @@ class DatabaseConnector(object):
             try:
                 self._database[collection_name].update({'_id': document_id}, document)
             except Exception as e:
-                print(e, 'update_many')
+                raise(e, 'update_many')
 
     def remove_one(
             self,
@@ -152,7 +152,7 @@ class DatabaseConnector(object):
         try:
             self._database[collection_name].remove({'_id': document_id})
         except Exception as e:
-            print(e, 'remove_one, DatabaseConnector')
+            raise(e, 'remove_one, DatabaseConnector')
 
     def remove_many(
             self,
@@ -170,4 +170,4 @@ class DatabaseConnector(object):
                 try:
                     self._database[collection_name].remove({'_id': document_id})
                 except Exception as e:
-                    print(e, 'remove_many, DatabaseConnector')
+                    raise(e, 'remove_many, DatabaseConnector')
