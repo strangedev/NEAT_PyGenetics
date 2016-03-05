@@ -85,14 +85,20 @@ class Mutator(object):
         # if a matching gene that connects start -> new vertex
         # and new_vertex -> end is not found, we'll ask gene repository for a new one.
 
-        connecting_node = self.gene_repository.find_connecting_node( # TODO:
+        connecting_nodes = self.gene_repository.find_connecting_nodes( # TODO:
             starting_vertex,
             endpoint
         )
 
-        if not connecting_node or connecting_node in analysis_genome.nodes:
+        connecting_node = None
 
-            connecting_node = self.gene_repository.get_next_node_id() # TODO:
+        for node in connecting_nodes:
+
+            if not node in analysis_genome.nodes:
+                connecting_node = node
+                break
+            else:
+                connecting_node = self.gene_repository.get_next_node_label()
 
         new_gene_one_id = self.gene_repository.get_gene_id_for_endpoints( # TODO:
             starting_vertex,
