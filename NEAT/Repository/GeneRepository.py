@@ -15,6 +15,7 @@ class GeneRepository(object):
                 "tail": tail_node_id
             }
         )
+
         if gene:
             gene_id = gene["_id"]
         else:
@@ -62,7 +63,7 @@ class GeneRepository(object):
 
     def get_next_node_label(self):
 
-        label_tracker = self._database_connector.find_one("node_label_tracker", {})
+        label_tracker = self._database_connector.find_one("node_label_tracker", None)
 
         if label_tracker:
             next_label = label_tracker["next_label"]
@@ -88,7 +89,7 @@ class GeneRepository(object):
 
     def get_node_labels_by_gene_id(self, gene_id):
 
-        gene = self._database_connector.find_one_by_id("gene", gene_id)
+        gene = self._database_connector.find_one_by_id("genes", gene_id)
         if gene:
             return (gene["head"], gene["tail"])
         else:

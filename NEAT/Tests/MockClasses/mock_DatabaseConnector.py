@@ -8,6 +8,8 @@ class mock_DatabaseConnector(object):
         self._m_next_id = 0
 
     def get_collection(self, collection_name: str):
+        if not collection_name in self._database.keys():
+            return None
         return self._database[collection_name]
 
     def insert_one(
@@ -65,21 +67,26 @@ class mock_DatabaseConnector(object):
         :param filter:
         :return:
         """
+
         if collection_name in self._database.keys():
 
             for doc_id, document in self._database[collection_name].items():
+
+                if not filter:
+                    return document
+
+                filter_mismatch = False
 
                 for key, value in filter.items():
 
                     if key in document.keys():
 
-                        if document[key] == value:
-                            return document
-                        else:
-                            continue
+                        if document[key] != value:
+                            filter_mismatch = True
 
-                    else:
-                        continue
+                if not filter_mismatch:
+                    return document
+
 
         return None
 
@@ -96,9 +103,9 @@ class mock_DatabaseConnector(object):
         """
         if collection_name in self._database.keys():
 
-            for document in self._database[collection_name]:
+            for doc_key, document in self._database[collection_name].items():
 
-                if document._id == document_id:
+                if document["_id"] == document_id:
                     return document
 
         return None
@@ -147,13 +154,9 @@ class mock_DatabaseConnector(object):
         :param collection_name:
         :return:
         """
-        if collection_name in self._database.keys():
-
-            for stored_document in self._database[collection_name]:
-
-                if stored_document._id == document_id:
-
-                     stored_document = document
+        if self.find_one_by_id(collection_name, document_id):
+            document["_id"] = document_id
+            self._database[collection_name][document_id] = document
 
     def update_many(
             self,
