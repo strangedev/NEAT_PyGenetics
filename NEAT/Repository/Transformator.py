@@ -54,13 +54,16 @@ def decode_StorageGenome(document: dict) -> StorageGenome:
     :param document: dictionary to decode
     :return: StorageGenome
     """
-    if document['_type'] == 'StorageGenome':
-        document.pop('_type')
-        analysis_result = decode_AnalysisResult(document.pop('analysis_result'))
-        document.__setitem__('analysis_result', analysis_result.__dict__)
-        storage_genome = StorageGenome()
-        storage_genome.__dict__ = document
-        return storage_genome
+    try:
+        if document['_type'] == 'StorageGenome':
+            document.pop('_type')
+            analysis_result = decode_AnalysisResult(document.pop('analysis_result'))
+            document.__setitem__('analysis_result', analysis_result.__dict__)
+            storage_genome = StorageGenome()
+            storage_genome.__dict__ = document
+            return storage_genome
+    except KeyError:
+        return None
 
 class CustomJSONEncoder(json.JSONEncoder):
     def default(self, obj):
