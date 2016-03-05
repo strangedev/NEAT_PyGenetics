@@ -24,7 +24,7 @@ class mock_DatabaseConnector(object):
         self.create_collection_if_not_exists(collection_name)
 
         assigned_id = self.next_id
-        document._id = assigned_id
+        document["_id"] = assigned_id
 
         self._database[collection_name][assigned_id] = document
 
@@ -120,7 +120,7 @@ class mock_DatabaseConnector(object):
 
         if collection_name in self._database.keys():
 
-            for document in self._database[collection_name]:
+            for doc_id, document in self._database[collection_name].items():
 
                 for key, value in filter.items():
 
@@ -128,11 +128,7 @@ class mock_DatabaseConnector(object):
 
                         if document[key] == value:
                             results.append(document)
-                        else:
-                            continue
 
-                    else:
-                        continue
 
         return results
 

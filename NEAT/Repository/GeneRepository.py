@@ -16,7 +16,7 @@ class GeneRepository(object):
             }
         )
         if gene:
-            gene_id = gene._id
+            gene_id = gene["_id"]
         else:
             gene_id = self._database_connector.insert_one(
                 "genes",
@@ -69,7 +69,7 @@ class GeneRepository(object):
             new_label = next_label + 1
             self._database_connector.update_one(
                 "node_label_tracker",
-                label_tracker._id,
+                label_tracker["_id"],
                 {
                     "next_label": new_label
                 }

@@ -4,8 +4,8 @@ from json import loads, dumps
 
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 from NEAT.Repository.DatabaseConnector import DatabaseConnector
-from NEAT.Repository.DatabaseConnector import CustomJSONDecoder
-from NEAT.Repository.DatabaseConnector import CustomJSONEncoder
+from NEAT.Repository.Transformator import CustomJSONDecoder
+from NEAT.Repository.Transformator import CustomJSONEncoder
 
 
 class DatabaseConnectorTest(unittest.TestCase):
