@@ -1,3 +1,8 @@
+import json
+import pickle
+
+from bson import ObjectId
+
 from NEAT.Analyst.AnalysisResult import AnalysisResult
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 
@@ -56,3 +61,30 @@ def decode_StorageGenome(document: dict) -> StorageGenome:
         storage_genome = StorageGenome()
         storage_genome.__dict__ = document
         return storage_genome
+
+class CustomJSONEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, StorageGenome):
+            return {'storage_genome_repr': obj.__dict__}
+        elif isinstance(obj, AnalysisResult):
+            return {'analysis_result_repr': pickle.dumps(obj).decode('latin1')}
+        elif isinstance(obj, ObjectId):
+            return str(obj)
+        return json.JSONEncoder.default(self, obj)
+
+
+class CustomJSONDecoder(json.JSONDecoder):
+    def __init__(self):
+        json.JSONDecoder.__init__(self, object_hook=self.hook)
+
+    @staticmethod
+    def hook(dct):
+        if 'storage_genome_repr' in dct:
+            s = StorageGenome()
+            s.__dict__ = dct['storage_genome_repr']
+            return s
+        elif 'analysis_result_repr' in dct:
+            return pickle.loads(dct['analysis_result_repr'].encode('latin1'))
+        if '_id' in dct:
+            dct['_id'] = ObjectId(dct['_id'])
+        return dct
