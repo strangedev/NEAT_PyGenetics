@@ -165,9 +165,8 @@ class DatabaseConnector(object):
         :param document_ids:
         :return:
         """
-        if collection_name == "genomes":
-            for document_id in document_ids:
-                try:
-                    self._database[collection_name].remove({'_id': document_id})
-                except Exception as e:
-                    raise(e, 'remove_many, DatabaseConnector')
+        for document_id in document_ids:
+            try:
+                self._database[collection_name].remove({'_id': document_id})
+            except Exception as e:
+                raise(e, 'remove_many, DatabaseConnector')

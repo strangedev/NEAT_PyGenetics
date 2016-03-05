@@ -14,6 +14,10 @@ class DatabaseConnectorTest(unittest.TestCase):
 
         self.database_connector = DatabaseConnector("testBase", client)
 
+    def test_getCollection(self):
+        self.assertTrue(self.collection.__eq__(\
+                            self.database_connector.get_collection('testbase')))
+
     def test_insertOne(self):
         self.collection.insert = (lambda x: x)
         self.assertDictEqual({}, self.database_connector.insert_one('testbase', {}))
@@ -45,11 +49,13 @@ class DatabaseConnectorTest(unittest.TestCase):
     @unittest.expectedFailure
     def test_updateMany(self):
         self.collection.update = (lambda x, y: [x, y])
-        self.fail(self.database_connector.update_many('testbase', [{'doc': 'doc'}]))
         self.database_connector.update_many('testbase', [(1, {'doc': 'doc'})])
+        self.fail(self.database_connector.update_many('testbase', [{'doc': 'doc'}]))
 
     def test_removeOne(self):
-        self.fail()
+        self.collection.remove = (lambda  x: x)
+        self.database_connector.remove_one('testbase', 12)
 
     def test_removeMany(self):
-        self.fail()
+        self.collection.remove = (lambda x: x)
+        self.database_connector.remove_many('testbase', [12, 2, 3])
