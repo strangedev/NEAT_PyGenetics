@@ -5,6 +5,7 @@ from bson import ObjectId
 
 from NEAT.Analyst.AnalysisResult import AnalysisResult
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
+import copy
 
 class Transformator(object):
     def encode_AnalysisResult(analysis_result: AnalysisResult) -> dict:
@@ -13,11 +14,14 @@ class Transformator(object):
         :param analysis_result: AnalystResult to encode
         :return: dict
         """
-        dictionary = analysis_result.__dict__
-        convert = dictionary.pop('disabled_nodes')
-        dictionary.__setitem__('disabled_nodes', list(convert))
-        dictionary.__setitem__('_type', 'AnalysisResult')
-        return dictionary
+        try:
+            dictionary = copy.deepcopy(analysis_result.__dict__)
+            convert = dictionary.__getitem__('disabled_nodes')
+            dictionary.__setitem__('disabled_nodes', list(convert))
+            dictionary.__setitem__('_type', 'AnalysisResult')
+            return dictionary
+        except KeyError:
+            return None
 
     def decode_AnalysisResult(document: dict) -> AnalysisResult:
         """
@@ -25,16 +29,19 @@ class Transformator(object):
         :param document: dictionary to decode
         :return: AnalysisResult
         """
-        if document['_type'] == 'AnalysisResult':
-            document.pop('_type')
+        try:
+            if document['_type'] == 'AnalysisResult':
+                document.pop('_type')
 
-            convert = document.pop('disabled_nodes')
-            document.__setitem__('disabled_nodes', set(convert))
+                convert = document.__getitem__('disabled_nodes')
+                document.__setitem__('disabled_nodes', set(convert))
 
-            result = AnalysisResult()
-            result.__dict__ = document
+                result = AnalysisResult()
+                result.__dict__ = document
 
-            return result
+                return result
+        except KeyError:
+            return None
 
     def encode_StorageGenome(storage_genome: StorageGenome) -> dict:
         """
@@ -42,12 +49,15 @@ class Transformator(object):
         :param storage_genome: StorageGenome to encode
         :return: dict
         """
-        dictionary = storage_genome.__dict__
-        analysis_res = dictionary.pop('analysis_result')
-        analysis_result = Transformator.encode_AnalysisResult(analysis_res)
-        dictionary.__setitem__('analysis_result', analysis_result)
-        dictionary.__setitem__('_type', 'StorageGenome')
-        return dictionary
+        try:
+            dictionary = storage_genome.__dict__
+            analysis_res = dictionary.__getitem__('analysis_result')
+            analysis_result = Transformator.encode_AnalysisResult(analysis_res)
+            dictionary.__setitem__('analysis_result', analysis_result)
+            dictionary.__setitem__('_type', 'StorageGenome')
+            return dictionary
+        except KeyError:
+            return None
 
     def decode_StorageGenome(document: dict) -> StorageGenome:
         """
@@ -59,13 +69,14 @@ class Transformator(object):
             if document['_type'] == 'StorageGenome':
                 document.pop('_type')
                 analysis_result = Transformator.decode_AnalysisResult(document.pop('analysis_result'))
-                document.__setitem__('analysis_result', analysis_result.__dict__)
+                document.__setitem__('analysis_result', analysis_result)
                 storage_genome = StorageGenome()
                 storage_genome.__dict__ = document
                 return storage_genome
         except KeyError:
             return None
 
+"""
 class CustomJSONEncoder(json.JSONEncoder):
     def default(self, obj):
         if isinstance(obj, StorageGenome):
@@ -92,3 +103,4 @@ class CustomJSONDecoder(json.JSONDecoder):
         if '_id' in dct:
             dct['_id'] = ObjectId(dct['_id'])
         return dct
+"""
