@@ -42,15 +42,19 @@ class Mutator(object):
             analysis_genome: AnalysisGenome,
             storage_genome: StorageGenome
     ) -> StorageGenome:
-
+        print(list(analysis_genome.nodes))
         starting_vertex = random.choice(list(analysis_genome.nodes))
 
-        possible_endpoints = [v for v in analysis_genome.nodes \
-                              if v not in analysis_genome.edges[starting_vertex]]
+        possible_endpoints = []
+        for node in analysis_genome.nodes:
+            if starting_vertex not in analysis_genome.edges.keys():
+                possible_endpoints.append(node)
+            elif node not in analysis_genome.edges[starting_vertex]:
+                possible_endpoints.append(node)
 
         endpoint = random.choice(possible_endpoints)
 
-        gene_id = self.gene_repository.get_gene_id_for_endpoints( # TODO:
+        gene_id = self.gene_repository.get_gene_id_for_endpoints(
             starting_vertex,
             endpoint
         )
@@ -73,19 +77,21 @@ class Mutator(object):
             storage_genome: StorageGenome
     ) -> StorageGenome:
 
-        starting_vertex = random.choice(analysis_genome.nodes)
-        endpoint = random.choice(analysis_genome.edges[starting_vertex])
+        starting_vertex = random.choice(list(analysis_genome.edges.keys()))
+        endpoint = random.choice(list(analysis_genome.edges[starting_vertex]))
 
-        old_gene = self.gene_repository.get_gene_id_for_endpoints(
+        old_gene_id = self.gene_repository.get_gene_id_for_endpoints(
             starting_vertex,
             endpoint
         )
+
+        old_gene = storage_genome.genes[old_gene_id]
 
         # try to find an existing gene from the repository first
         # if a matching gene that connects start -> new vertex
         # and new_vertex -> end is not found, we'll ask gene repository for a new one.
 
-        connecting_nodes = self.gene_repository.find_connecting_nodes( # TODO:
+        connecting_nodes = self.gene_repository.find_connecting_nodes(
             starting_vertex,
             endpoint
         )
@@ -100,14 +106,14 @@ class Mutator(object):
             else:
                 connecting_node = self.gene_repository.get_next_node_label()
 
-        new_gene_one_id = self.gene_repository.get_gene_id_for_endpoints( # TODO:
+        new_gene_one_id = self.gene_repository.get_gene_id_for_endpoints(
             starting_vertex,
             connecting_node
         )
-        new_gene_one_weight = old_gene[2]
+        new_gene_one_weight = old_gene[1]
         new_gene_one = (new_gene_one_id, True, new_gene_one_weight)
 
-        new_gene_two_id = self.gene_repository.get_gene_id_for_endpoints( # TODO:
+        new_gene_two_id = self.gene_repository.get_gene_id_for_endpoints(
             connecting_node,
             endpoint
         )
@@ -116,12 +122,12 @@ class Mutator(object):
         new_genome = copy.deepcopy(storage_genome)
 
         for gene in new_genome:
-            if gene[0] == old_gene[0]:
+            if gene[0] == old_gene_id:
                 gene[1] = False
                 break
 
-        new_genome.genes.append(new_gene_one)
-        new_genome.genes.append(new_gene_two)
+        new_genome.genes[new_gene_one_id] = new_gene_one
+        new_genome.genes[new_gene_two_id] = new_gene_two
 
         return new_genome
 

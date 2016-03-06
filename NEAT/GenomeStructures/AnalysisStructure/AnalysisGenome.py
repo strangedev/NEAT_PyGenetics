@@ -37,7 +37,7 @@ class AnalysisGenome(Generic[GenomeStructure]):
         self._graph_initialized = False  # type: bool
         self._gene_repository = gene_repository
 
-        if storage_structure is not None:
+        if storage_structure:
             self._init_from_storage_structure(storage_structure)
 
     def _add_node(self, node_id: int) -> None:

@@ -6,39 +6,27 @@ from NEAT.Tests.MockClasses.mock_GeneRepository import mock_GeneRepository
 from fractions import Fraction
 from unittest.mock import MagicMock
 
-mutation_parameters = dict(
-    {
-        "add_edge_probability": 0.5,
-        "new_gene_enabled_probability": 0.7,
-        "perturb_gene_weight_probability": 0.5
-    }
-)
-
 class TestMutator(TestCase):
-    def test_mutate_genome(self):
+
+    def setUp(self):
+
         self.fail()
 
-    def test_mutate_add_edge(self):
+        self.gene_repo = MagicMock()
 
-        gene_repo = MagicMock()
-
-        edges = {
-            0: (0, 1),
-            1: (2, 6),
-            2: (6, 7),
-            3: (7, 1),
-            7: (7, 3),
-            8: (4, 5),
-            9: (4, 8),
-            13: (8, 5),
+        id_for_endpoints = {
+            (4, 8): 9,
+            (8, 5): 13
         }
+        # TODO: Easier graph...
+        # self.gene_repo.find_connecting_nodes = (lambda h, t: [8])
+        # self.gene_repo.get_node_labels_by_gene_id = (lambda id: ((id -(id % 100))/100, id % 100))
+        # self.gene_repo.get_gene_id_for_endpoints = (lambda h, t:  100*h + t)
+        # self.gene_repo.get_next_node_label = (lambda : 8)
 
-        gene_repo.get_node_labels_by_gene_id = (lambda id: edges[id])
-        gene_repo.get_gene_id_for_endpoints = (lambda h, t: 14)
-
-        fitter_genome = StorageGenome()
-        fitter_genome.fitness = 22.74
-        fitter_genome.genes = {
+        self.fitter_genome = StorageGenome()
+        self.fitter_genome.fitness = 22.74
+        self.fitter_genome.genes = {
             0: (True, Fraction(0.21)),
             1: (True, Fraction(-0.56)),
             2: (True, Fraction(0.354)),
@@ -46,19 +34,46 @@ class TestMutator(TestCase):
             7: (True, Fraction(0.47)),
             8: (True, Fraction(-0.13))
         }
-        fitter_genome_ana = AnalysisGenome(gene_repo, fitter_genome)
+        self.fitter_genome_ana = AnalysisGenome(self.gene_repo, self.fitter_genome)
 
-        mutator = Mutator(gene_repo, mutation_parameters)
-        new_genome = mutator.mutate_add_edge(fitter_genome_ana, fitter_genome)
+        mutation_parameters = dict(
+            {
+                "add_edge_probability": 0.5,
+                "new_gene_enabled_probability": 0.7,
+                "perturb_gene_weight_probability": 0.5
+            }
+        )
+
+        self.mutator = Mutator(self.gene_repo, mutation_parameters)
+
+    def test_mutate_genome(self):
+        self.fail()
+
+    def test_mutate_add_edge(self):
+
+        self.fail()
+
+        new_genome = self.mutator.mutate_add_edge(self.fitter_genome_ana, self.fitter_genome)
 
         differing_genes = [gid for gid in new_genome.genes.keys() \
-                           if gid not in fitter_genome.genes.keys()]
+                           if gid not in self.fitter_genome.genes.keys()]
+
+        print(self.fitter_genome_ana.edges)
 
         self.assertEqual(len(differing_genes), 1)
-        self.assertEqual(differing_genes[0], 14)
+        print("added edge: ", differing_genes)
 
     def test_mutate_add_node(self):
-        self.fail()
+        new_genome = self.mutator.mutate_add_node(self.fitter_genome_ana, self.fitter_genome)
+
+        differing_genes = [gid for gid in new_genome.genes.keys() \
+                           if gid not in self.fitter_genome.genes.keys()]
+
+        self.assertEqual(len(differing_genes), 2)
+        self.assertListEqual(
+            differing_genes,
+            [9, 13]
+        )
 
     def test_mutate_perturb_weights(self):
         self.fail()
