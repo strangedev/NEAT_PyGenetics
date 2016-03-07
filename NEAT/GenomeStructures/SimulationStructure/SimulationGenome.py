@@ -31,7 +31,7 @@ class SimulationGenome(Generic[GenomeStructure]):
         self._hidden_layer = hidden_layer if hidden_layer else []
         self._cycle_nodes = cycle_nodes if cycle_nodes else []
 
-    def _build_from_storage_genome(self, storage_genome: StorageGenome):
+    def _init_from_storage_structure(self, storage_genome: StorageGenome):
         self._input_layer = \
             {label: Node() for label in storage_genome.inputs.keys()}
         self._output_layer = \
