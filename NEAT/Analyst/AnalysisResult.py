@@ -4,28 +4,40 @@ from typing import List, Set, Dict
 class AnalysisResult(object):
     """
     Object used to store results of graph analysis.
-    Note, that the field edges does not contain cycle closing edges anymore.
-    The original set of edges is split into edges and cycle_edges, with
-    edges and cycle_edges being disjoint sets.
+
+    Attributes:
+        genomeDisabledMap: a dict that consists of gene id's (ints) as keys
+            a boolean value that is true, if the gene closes a circle in the a-
+            nalyzed graph.
+        topologically_sorted_nodes: a list of all nodes in the analyzed graph in
+            topological order.
+        topologically_sorted_cycle_nodes: a list of all cycle closing nodes (at
+            the source of the closing edge) in topological order. This is a sub-
+            set of topologically_sorted_nodes.
     """
     def __init__(self) -> None:
         self.disabled_nodes = set({})  # type: Set[int]
-        self.edges = dict({})  # type: Dict[int, List[int]]
-        self.topologically_sorted_nodes = []  # type: List[int]
 
-        self.cycle_edges = dict({})  # type: Dict[int, List[int]]
+        # maps edges to true, if the close a circle in the analyzed graph,
+        #               false, if the don't.
+        self.genomeDisabledMap = dict({})  # type: Dict[int, bool]
+
+        # all nodes in topological order
+        self.topologically_sorted_nodes = []  # type: List[int]
+        # all circle closing nodes in topological order (subset of nodes)
         self.topologically_sorted_cycle_nodes = []  # type: List[int]
 
     def __eq__(self, obj: 'AnalysisResult'):
         return self.disabled_nodes.__eq__(obj.disabled_nodes) \
-            or self.edges.__eq__(obj.edges) \
-            or self.topologically_sorted_nodes.__eq__(obj.topologically_sorted_nodes) \
-            or self.cycle_edges.__eq__(obj.cycle_edges) \
-            or self.topologically_sorted_cycle_nodes.__eq__(obj.topologically_sorted_cycle_nodes)
+            or self.genomeDisabledMap.__eq__(obj.genomeDisabledMap) \
+            or self.topologically_sorted_nodes\
+                   .__eq__(obj.topologically_sorted_nodes) \
+            or self.topologically_sorted_cycle_nodes\
+                   .__eq__(obj.topologically_sorted_cycle_nodes)
 
     def clear(self) -> None:
         self.__init__()
 
     @property
     def cycle_nodes(self) -> Set[int]:
-        return set([node for node in self.cycle_edges.keys()])
+        return set(self.topologically_sorted_cycle_nodes)

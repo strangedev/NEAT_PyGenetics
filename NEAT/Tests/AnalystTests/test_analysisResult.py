@@ -2,14 +2,14 @@ from unittest import TestCase
 from NEAT.Analyst.AnalysisResult import AnalysisResult
 
 
-class TestAnalysisResult(TestCase):
+class TestAnalysisResult(TestCase):  # TODO: refactor AnalysisResult
 
     def test_equality_operator(self):
         result = AnalysisResult()
         new_result = AnalysisResult()
 
         result.disabled_nodes = {100, 2}
-        result.edges = {36: [2]}
+        result.genomeDisabledMap = {36: [2]}
         result.topologically_sorted_nodes = [3, 2]
         result.cycle_edges = {1: [7]}
         result.topologically_sorted_cycle_nodes = [4, 2]
@@ -17,7 +17,7 @@ class TestAnalysisResult(TestCase):
         self.assertFalse(result.__eq__(new_result))
 
         new_result.disabled_nodes = {100, 2}
-        new_result.edges = {36: [2]}
+        new_result.genomeDisabledMap = {36: [2]}
         new_result.topologically_sorted_nodes = [3, 2]
         new_result.cycle_edges = {1: [7]}
         new_result.topologically_sorted_cycle_nodes = [4, 2]
@@ -28,7 +28,7 @@ class TestAnalysisResult(TestCase):
         result = AnalysisResult()
 
         result.disabled_nodes = {1, 2}
-        result.edges = {1: [2]}
+        result.genomeDisabledMap = {1: [2]}
         result.topologically_sorted_nodes = [1, 2]
         result.cycle_edges = {1: [2]}
         result.topologically_sorted_cycle_nodes = [1, 2]

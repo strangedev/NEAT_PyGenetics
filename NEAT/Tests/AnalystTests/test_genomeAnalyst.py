@@ -96,7 +96,7 @@ class TestGenomeAnalyst(TestCase):
 
         self.assertListEqual(topologically_sorted_nodes,
                              result.topologically_sorted_nodes)
-        self.assertDictEqual(edges, result.edges)
+        self.assertDictEqual(edges, result.genomeDisabledMap)  # TODO: refactor AnalysisResult
         self.assertListEqual(topologically_sorted_cycle_nodes,
                              result.topologically_sorted_cycle_nodes)
         self.assertDictEqual(cycle_edges, result.cycle_edges)

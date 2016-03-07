@@ -55,7 +55,7 @@ class GenomeAnalyst(object):
 
         # first add all edges to the result, remove found cycle closing edges
         # later
-        self._result.edges = copy.deepcopy(genome.edges)
+        self._result.genomeDisabledMap = copy.deepcopy(genome.edges)  # TODO: refactor AnalysisResult
 
         # store found topologically_sorted_nodes directly into the AnalysisRe-
         # sult
@@ -67,8 +67,8 @@ class GenomeAnalyst(object):
         for source in self._result.cycle_nodes:
             target_list = self._result.cycle_edges[source]
             for target in target_list:
-                if target in self._result.edges[source]:
-                    self._result.edges[source].remove(target)
+                if target in self._result.genomeDisabledMap[source]:  # TODO: refactor AnalysisResult
+                    self._result.genomeDisabledMap[source].remove(target)  # TODO: refactor AnalysisResult
 
         self._set_working_graph(
             self._result.cycle_nodes,
