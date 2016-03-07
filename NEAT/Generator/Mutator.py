@@ -15,9 +15,7 @@ class Mutator(object):
         self.mutation_parameters = mutation_parameters
 
     def mutate_genome(self, genome) -> StorageGenome:
-
         if len(genome.genes) == 0:
-
             return self.mutate_add_edge(genome)
 
         edge_or_vertex = ProbabilisticTools.weighted_choice( # TODO:
