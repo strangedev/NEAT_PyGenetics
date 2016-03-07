@@ -47,12 +47,14 @@ class Mutator(object):
 
         starting_vertex = random.choice(list(analysis_genome.nodes))
 
-        possible_endpoints = []
-        for node in analysis_genome.nodes:
-            if starting_vertex not in analysis_genome.edges.keys():
-                possible_endpoints.append(node)
-            elif node not in analysis_genome.edges[starting_vertex]:
-                possible_endpoints.append(node)
+        if starting_vertex not in analysis_genome.edges.keys():
+            # if the chosen vertex has no outgoing edges (i.e. is a sink), every
+            # other vertex may be a possible endpoint
+            possible_endpoints = analysis_genome.nodes
+        else:
+            possible_endpoints = \
+                [node for node in analysis_genome.nodes
+                 if node not in analysis_genome.edges[starting_vertex]]
 
         endpoint = random.choice(possible_endpoints)
 
