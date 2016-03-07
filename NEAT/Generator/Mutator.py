@@ -70,7 +70,7 @@ class Mutator(object):
             ]
         )
 
-        new_genome = copy.deepcopy(storage_genome)
+        new_genome = copy.deepcopy(storage_genome) # TODO: never deepcopy a StorageGenome. It WILL break the database because of the ObjectID. We need a copyconstructor.
         new_genome.genes[gene_id] = (gene_enabled, gene_weight)
 
         return new_genome
@@ -125,7 +125,7 @@ class Mutator(object):
         )
         new_gene_two = (True, 1.0)
 
-        new_genome = copy.deepcopy(storage_genome)
+        new_genome = copy.deepcopy(storage_genome) # TODO: never deepcopy a StorageGenome. It WILL break the database because of the ObjectID. We need a copyconstructor.
 
         for gid, gene in new_genome.genes.items():
             if gid == old_gene_id:
@@ -141,7 +141,7 @@ class Mutator(object):
 
         random.seed()
 
-        new_genome = copy.deepcopy(genome)
+        new_genome = copy.deepcopy(genome) # TODO: never deepcopy a StorageGenome. It WILL break the database because of the ObjectID. We need a copyconstructor.
 
         for gid, gene in genome.genes.items():
             perturb_weight = True \
