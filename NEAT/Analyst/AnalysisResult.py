@@ -1,3 +1,4 @@
+from collections import defaultdict
 from typing import List, Set, Dict
 
 
@@ -20,7 +21,7 @@ class AnalysisResult(object):
 
         # maps edges to true, if the close a circle in the analyzed graph,
         #               false, if the don't.
-        self.gene_closes_cycle_map = dict({})  # type: Dict[int, bool]
+        self.gene_closes_cycle_map = defaultdict(bool)  # type: Dict[int, bool]
 
         # all nodes in topological order
         self.topologically_sorted_nodes = []  # type: List[int]
