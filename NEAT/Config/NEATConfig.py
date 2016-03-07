@@ -73,7 +73,7 @@ class NEATConfig(object):
                     # TODO:
                 }
             )
-            print("defaults for selection loaded.")
+            print("defaults for decision_making loaded.")
 
         if not "breeding" in self.parameters.keys():
             self.parameters["breeding"] = dict(
@@ -83,7 +83,7 @@ class NEATConfig(object):
                     "gene_inherited_as_disabled_probability": 0.5
                 }
             )
-            print("defaults for selection loaded.")
+            print("defaults for breeding loaded.")
 
         if not "mutating" in self.parameters.keys():
             self.parameters["mutating"] = dict(
@@ -93,4 +93,4 @@ class NEATConfig(object):
                     "perturb_gene_weight_probability": 0.5
                 }
             )
-            print("defaults for selection loaded.")
+            print("defaults for mutating loaded.")
