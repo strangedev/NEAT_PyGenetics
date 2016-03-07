@@ -21,7 +21,7 @@ class Mutator(object):
 
         if len(analysis_genome.edges) == 0:
 
-            return self.mutate_add_edge(analysis_genome)
+            return self.mutate_add_edge(analysis_genome, genome)
 
         edge_or_vertex = ProbabilisticTools.weighted_choice( # TODO:
             [
@@ -42,15 +42,19 @@ class Mutator(object):
             analysis_genome: AnalysisGenome,
             storage_genome: StorageGenome
     ) -> StorageGenome:
-        print(list(analysis_genome.nodes))
+
+        random.seed()
+
         starting_vertex = random.choice(list(analysis_genome.nodes))
 
-        possible_endpoints = []
-        for node in analysis_genome.nodes:
-            if starting_vertex not in analysis_genome.edges.keys():
-                possible_endpoints.append(node)
-            elif node not in analysis_genome.edges[starting_vertex]:
-                possible_endpoints.append(node)
+        if starting_vertex not in analysis_genome.edges.keys():
+            # if the chosen vertex has no outgoing edges (i.e. is a sink), every
+            # other vertex may be a possible endpoint
+            possible_endpoints = analysis_genome.nodes
+        else:
+            possible_endpoints = \
+                [node for node in analysis_genome.nodes
+                 if node not in analysis_genome.edges[starting_vertex]]
 
         endpoint = random.choice(possible_endpoints)
 
@@ -66,7 +70,7 @@ class Mutator(object):
             ]
         )
 
-        new_genome = copy.deepcopy(storage_genome)
+        new_genome = copy.deepcopy(storage_genome) # TODO: never deepcopy a StorageGenome. It WILL break the database because of the ObjectID. We need a copyconstructor.
         new_genome.genes[gene_id] = (gene_enabled, gene_weight)
 
         return new_genome
@@ -76,6 +80,8 @@ class Mutator(object):
             analysis_genome: AnalysisGenome,
             storage_genome: StorageGenome
     ) -> StorageGenome:
+
+        random.seed()
 
         starting_vertex = random.choice(list(analysis_genome.edges.keys()))
         endpoint = random.choice(list(analysis_genome.edges[starting_vertex]))
@@ -111,19 +117,19 @@ class Mutator(object):
             connecting_node
         )
         new_gene_one_weight = old_gene[1]
-        new_gene_one = (new_gene_one_id, True, new_gene_one_weight)
+        new_gene_one = (True, new_gene_one_weight)
 
         new_gene_two_id = self.gene_repository.get_gene_id_for_endpoints(
             connecting_node,
             endpoint
         )
-        new_gene_two = (new_gene_two_id, True, 1.0)
+        new_gene_two = (True, 1.0)
 
-        new_genome = copy.deepcopy(storage_genome)
+        new_genome = copy.deepcopy(storage_genome) # TODO: never deepcopy a StorageGenome. It WILL break the database because of the ObjectID. We need a copyconstructor.
 
-        for gene in new_genome:
-            if gene[0] == old_gene_id:
-                gene[1] = False
+        for gid, gene in new_genome.genes.items():
+            if gid == old_gene_id:
+                new_genome.genes[gid] = (False, gene[1])
                 break
 
         new_genome.genes[new_gene_one_id] = new_gene_one
@@ -133,27 +139,28 @@ class Mutator(object):
 
     def mutate_perturb_weights(self, genome: StorageGenome) -> StorageGenome:
 
-        new_genome = StorageGenome()
+        random.seed()
 
-        for gene in genome.genes:
+        new_genome = copy.deepcopy(genome) # TODO: never deepcopy a StorageGenome. It WILL break the database because of the ObjectID. We need a copyconstructor.
 
+        for gid, gene in genome.genes.items():
             perturb_weight = True \
-                if random.random >= self.mutation_parameters["perturb_gene_weight_probability"] \
+                if random.random() < self.mutation_parameters["perturb_gene_weight_probability"] \
                 else False
 
             if perturb_weight:
-
                 new_gene = self.perturb_weight(gene)
-                genome.genes.remove(gene)
-                genome.genes.append(new_gene)
+                genome.genes[gid] = new_gene
 
         return new_genome
 
     def perturb_weight(
             self,
-            gene: Tuple[int, bool, Fraction]
-    ) -> Tuple[int, bool, Fraction]:
+            gene: Tuple[bool, Fraction]
+    ) -> Tuple[bool, Fraction]:
 
-        new_weight = Fraction(gene[2] * random.random())
+        random.seed()
 
-        return (gene[0], gene[1], new_weight)
+        new_weight = Fraction(gene[1] * random.random())
+
+        return (gene[0], new_weight)

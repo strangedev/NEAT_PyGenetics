@@ -10,73 +10,108 @@ class TestMutator(TestCase):
 
     def setUp(self):
 
-        self.fail()
-
         self.gene_repo = MagicMock()
 
-        id_for_endpoints = {
-            (4, 8): 9,
-            (8, 5): 13
+        endpoints_for_id = {
+            0: (1, 2),
+            1: (1, 3),
+            2: (2, 1),
+            3: (3, 2),
+            4: (2, 3),
+            5: (2, 2),
+            6: (3, 3),
+            7: (3, 1),
+            8: (1, 1),
+            11: (1, 4),
+            21: (4, 2)
         }
-        # TODO: Easier graph...
-        # self.gene_repo.find_connecting_nodes = (lambda h, t: [8])
-        # self.gene_repo.get_node_labels_by_gene_id = (lambda id: ((id -(id % 100))/100, id % 100))
-        # self.gene_repo.get_gene_id_for_endpoints = (lambda h, t:  100*h + t)
-        # self.gene_repo.get_next_node_label = (lambda : 8)
+        id_for_endpoints = {v: k for k, v in endpoints_for_id.items()}
 
-        self.fitter_genome = StorageGenome()
-        self.fitter_genome.fitness = 22.74
-        self.fitter_genome.genes = {
-            0: (True, Fraction(0.21)),
-            1: (True, Fraction(-0.56)),
-            2: (True, Fraction(0.354)),
-            3: (True, Fraction(0.98)),
-            7: (True, Fraction(0.47)),
-            8: (True, Fraction(-0.13))
+        self.gene_repo.find_connecting_nodes = (lambda h, t: [4])
+        self.gene_repo.get_node_labels_by_gene_id = (lambda id: endpoints_for_id[id])
+        self.gene_repo.get_gene_id_for_endpoints = (lambda h, t:  id_for_endpoints[(h, t)])
+        self.gene_repo.get_next_node_label = (lambda : 4)
+
+        self.genome = StorageGenome()
+        self.genome.inputs = {
+            "1": 1
         }
-        self.fitter_genome_ana = AnalysisGenome(self.gene_repo, self.fitter_genome)
+        self.genome.outputs = {
+            "2": 2,
+            "3": 3
+        }
+        self.genome.genes = {
+            0: (True, 0.745)
+        }
+        self.genome_ana = AnalysisGenome(self.gene_repo, self.genome)
 
         mutation_parameters = dict(
             {
                 "add_edge_probability": 0.5,
                 "new_gene_enabled_probability": 0.7,
-                "perturb_gene_weight_probability": 0.5
+                "perturb_gene_weight_probability": 1
             }
         )
 
         self.mutator = Mutator(self.gene_repo, mutation_parameters)
 
     def test_mutate_genome(self):
-        self.fail()
+
+        new_genome = self.mutator.mutate_genome(self.genome)
+        self.assertNotEqual(
+            new_genome.genes,
+            self.genome.genes,
+            "Mutation din't change the genome."
+        )
 
     def test_mutate_add_edge(self):
 
-        self.fail()
-
-        new_genome = self.mutator.mutate_add_edge(self.fitter_genome_ana, self.fitter_genome)
+        new_genome = self.mutator.mutate_add_edge(self.genome_ana, self.genome)
 
         differing_genes = [gid for gid in new_genome.genes.keys() \
-                           if gid not in self.fitter_genome.genes.keys()]
-
-        print(self.fitter_genome_ana.edges)
+                           if gid not in self.genome.genes.keys()]
 
         self.assertEqual(len(differing_genes), 1)
         print("added edge: ", differing_genes)
 
     def test_mutate_add_node(self):
-        new_genome = self.mutator.mutate_add_node(self.fitter_genome_ana, self.fitter_genome)
+
+        new_genome = self.mutator.mutate_add_node(self.genome_ana, self.genome)
 
         differing_genes = [gid for gid in new_genome.genes.keys() \
-                           if gid not in self.fitter_genome.genes.keys()]
+                           if gid not in self.genome.genes.keys()]
 
         self.assertEqual(len(differing_genes), 2)
         self.assertListEqual(
             differing_genes,
-            [9, 13]
+            [11, 21]
+        )
+        self.assertEqual(
+            new_genome.genes[0][0],
+            False,
+            "The replaced gene hasn't been disabled."
         )
 
     def test_mutate_perturb_weights(self):
-        self.fail()
+
+        new_genome = self.mutator.mutate_perturb_weights(self.genome)
+
+        print(new_genome.genes)
+
+        self.assertNotEqual(
+            new_genome.genes[0][1],
+            self.genome.genes[0][1],
+            "mutate_perturb_weights() didn't change gene weights in genome."
+        )
+
 
     def test_perturb_weight(self):
-        self.fail()
+
+         gene = (True, Fraction(0.1337))
+         perturbed_gene = self.mutator.perturb_weight(gene)
+
+         self.assertNotEqual(
+             gene[1],
+             perturbed_gene[1],
+             "Gene weight did not change."
+         )
