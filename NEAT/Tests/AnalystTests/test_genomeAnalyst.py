@@ -106,7 +106,7 @@ class TestGenomeAnalyst(TestCase):
 
         result = analyst.analyze(analysis_genome)
 
-        self.assertDictEqual(gene_closes_cycle_map, result.geneClosesCycleMap)
+        self.assertDictEqual(gene_closes_cycle_map, result.gene_closes_cycle_map)
         self.assertListEqual(topologically_sorted_nodes,
                              result.topologically_sorted_nodes)
         self.assertListEqual(topologically_sorted_cycle_nodes,

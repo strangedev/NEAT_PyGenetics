@@ -6,7 +6,7 @@ class AnalysisResult(object):
     Object used to store results of graph analysis.
 
     Attributes:
-        geneClosesCycleMap: a dict that consists of gene id's (ints) as keys
+        gene_closes_cycle_map: a dict that consists of gene id's (ints) as keys
             a boolean value that is true, if the gene closes a circle in the a-
             nalyzed graph.
         topologically_sorted_nodes: a list of all nodes in the analyzed graph in
@@ -20,7 +20,7 @@ class AnalysisResult(object):
 
         # maps edges to true, if the close a circle in the analyzed graph,
         #               false, if the don't.
-        self.geneClosesCycleMap = dict({})  # type: Dict[int, bool]
+        self.gene_closes_cycle_map = dict({})  # type: Dict[int, bool]
 
         # all nodes in topological order
         self.topologically_sorted_nodes = []  # type: List[int]
@@ -29,7 +29,7 @@ class AnalysisResult(object):
 
     def __eq__(self, obj: 'AnalysisResult'):
         return self.disabled_nodes.__eq__(obj.disabled_nodes) \
-            or self.geneClosesCycleMap.__eq__(obj.geneClosesCycleMap) \
+            or self.gene_closes_cycle_map.__eq__(obj.gene_closes_cycle_map) \
             or self.topologically_sorted_nodes\
                    .__eq__(obj.topologically_sorted_nodes) \
             or self.topologically_sorted_cycle_nodes\
