@@ -50,7 +50,7 @@ class Mutator(object):
         if starting_vertex not in analysis_genome.edges.keys():
             # if the chosen vertex has no outgoing edges (i.e. is a sink), every
             # other vertex may be a possible endpoint
-            possible_endpoints = analysis_genome.nodes
+            possible_endpoints = list(analysis_genome.nodes)
         else:
             possible_endpoints = []
             for node in analysis_genome.nodes:
