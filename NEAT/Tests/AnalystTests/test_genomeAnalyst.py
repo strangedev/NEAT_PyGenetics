@@ -1,3 +1,4 @@
+from collections import defaultdict
 from unittest import TestCase
 from NEAT.GenomeStructures.AnalysisStructure import AnalysisGenome
 from NEAT.Analyst import GenomeAnalyst
@@ -63,47 +64,13 @@ class TestGenomeAnalyst(TestCase):
                                       20, 24, 1, 10, 9, 15, 22, 14, 21]
         topologically_sorted_cycle_nodes = [24, 23, 22, 21, 17]
 
-        gene_closes_cycle_map = {
-            1: False,
-            2: False,
-            3: False,
-            4: False,
-            5: False,
-            6: False,
-            7: False,
-            8: False,
-            9: False,
-            10: False,
-            11: False,
-            12: False,
-            13: False,
-            14: False,
-            15: False,
-            16: False,
-            17: False,
-            18: False,
-            19: False,
-            20: True,
-            21: False,
-            22: False,
-            23: False,
-            24: False,
-            25: False,
-            26: False,
-            27: False,
-            28: False,
-            29: False,
-            30: True,
-            31: False,
-            32: True,
-            33: False,
-            34: False,
-            35: True,
-            36: False,
-            37: False,
-            38: True
-        }
-
+        gene_closes_cycle_map = defaultdict(bool)
+        gene_closes_cycle_map[20] = True
+        gene_closes_cycle_map[30] = True
+        gene_closes_cycle_map[32] = True
+        gene_closes_cycle_map[35] = True
+        gene_closes_cycle_map[38] = True
+    
         result = analyst.analyze(analysis_genome)
 
         self.assertDictEqual(gene_closes_cycle_map, result.gene_closes_cycle_map)
