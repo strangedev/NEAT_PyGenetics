@@ -8,13 +8,13 @@ class TestAnalysisResult(TestCase):
         result = AnalysisResult()
         new_result = AnalysisResult()
 
-        result.genomeDisabledMap = {36: False, 1: True}
+        result.geneClosesCycleMap = {36: False, 1: True}
         result.topologically_sorted_nodes = [3, 2]
         result.topologically_sorted_cycle_nodes = [4, 2]
 
         self.assertFalse(result.__eq__(new_result))
 
-        new_result.genomeDisabledMap = {36: False, 1: True}
+        new_result.geneClosesCycleMap = {36: False, 1: True}
         new_result.topologically_sorted_nodes = [3, 2]
         new_result.topologically_sorted_cycle_nodes = [4, 2]
 
@@ -23,7 +23,7 @@ class TestAnalysisResult(TestCase):
     def test_clear(self):
         result = AnalysisResult()
 
-        result.genomeDisabledMap = {1: False, 2: True}
+        result.geneClosesCycleMap = {1: False, 2: True}
         result.topologically_sorted_nodes = [1, 2]
         result.topologically_sorted_cycle_nodes = [1, 2]
 
