@@ -1,10 +1,14 @@
 from NEAT.Director.Director import Director
 from NEAT.Config.NEATConfig import NEATConfig
+from NEAT.Generator.Breeder import Breeder
+from NEAT.Generator.Mutator import Mutator
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 from NEAT.Analyst.GenomeAnalyst import GenomeAnalyst
 from NEAT.Analyst.GenomeClusterer import GenomeClusterer
 from NEAT.Repository import GenomeRepository
 from NEAT.ErrorHandling.StartupCheck import StartupCheck
+from NEAT.Repository.DatabaseConnector import DatabaseConnector
+from NEAT.Repository.GeneRepository import GeneRepository
 
 
 class MainDirector(Director):
@@ -48,11 +52,11 @@ class MainDirector(Director):
 
         # database connection is a connection to an arbitrary database that is
         # used to store genes, genomes and nodes
-        self.database_connection = NEAT.Repository.DatabaseConnector(
+        self.database_connection = DatabaseConnector(
             self.simulation_name
         )
         # gene_repository administrates all genes ever created
-        self.gene_repository = NEAT.Repository.GeneRepository(
+        self.gene_repository = GeneRepository(
             self.database_connection
         )
         # genome_repository administrates all genomes ever created
@@ -61,9 +65,6 @@ class MainDirector(Director):
         )
         # cluster_repository administrates all clusters ever created
         self.cluster_repository = NEAT.Repository.ClusterRepository(
-            self.database_connection
-        )
-        self.node_repository = NEAT.Repository.NodeRepository(
             self.database_connection
         )
 
@@ -88,13 +89,13 @@ class MainDirector(Director):
         # breeder creates a new genome from two given genomes
         # it needs the gene_repository to register new genes and to look up used
         # ones
-        self.breeder = NEAT.Generator.Breeder(
+        self.breeder = Breeder(
             self.gene_repository
         )
         # mutator creates a new genome from a given genome
         # it needs the gene_repository to register new genes and to look up used
         # ones
-        self.mutator = NEAT.Generator.Mutator(
+        self.mutator = Mutator(
             self.genome_repository
         )
         # analyst analyzes a given genome and creates an AnalysisResult based on
