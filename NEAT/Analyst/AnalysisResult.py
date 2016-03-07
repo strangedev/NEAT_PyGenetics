@@ -29,10 +29,10 @@ class AnalysisResult(object):
 
     def __eq__(self, obj: 'AnalysisResult'):
         return self.disabled_nodes.__eq__(obj.disabled_nodes) \
-            or self.gene_closes_cycle_map.__eq__(obj.gene_closes_cycle_map) \
-            or self.topologically_sorted_nodes\
+            and self.gene_closes_cycle_map.__eq__(obj.gene_closes_cycle_map) \
+            and self.topologically_sorted_nodes\
                    .__eq__(obj.topologically_sorted_nodes) \
-            or self.topologically_sorted_cycle_nodes\
+            and self.topologically_sorted_cycle_nodes\
                    .__eq__(obj.topologically_sorted_cycle_nodes)
 
     def clear(self) -> None:
