@@ -6,6 +6,7 @@ from NEAT.Repository.DatabaseConnector import DatabaseConnector
 from NEAT.Repository.GenomeRepository import GenomeRepository
 from NEAT.Repository.ClusterRepository import ClusterRepository
 from NEAT.Repository.GeneRepository import GeneRepository
+from NEAT.Decisions.DecisionMaker import DecisionMaker
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 from NEAT.Generator.Breeder import Breeder
 from NEAT.Generator.Mutator import Mutator
@@ -78,7 +79,7 @@ class MainDirector(Director):
         # makes decisions lol
         # things like what to do and stuff (breeding or mutation, if clustering
         # is necessary etc)
-        self.decision_maker = NEAT.Analyst.DecisionMaker( # TODO: Implement pl0x
+        self.decision_maker = DecisionMaker( # TODO: Implement pl0x
             self.genome_repository,
             self.config.parameters["decision_making"]
         )
