@@ -8,6 +8,7 @@ from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 import copy
 
 class Transformator(object):
+    @staticmethod
     def encode_AnalysisResult(analysis_result: AnalysisResult) -> dict:
         """
         encodes AnalysisResult in an dictionary
@@ -21,6 +22,7 @@ class Transformator(object):
         except KeyError:
             return None
 
+    @staticmethod
     def decode_AnalysisResult(document: dict) -> AnalysisResult:
         """
         decodes dictionary in an AnalysisResult
@@ -38,6 +40,7 @@ class Transformator(object):
         except KeyError:
             return None
 
+    @staticmethod
     def encode_StorageGenome(storage_genome: StorageGenome) -> dict:
         """
         encodes StorageGenome in a dictionary
@@ -47,13 +50,14 @@ class Transformator(object):
         try:
             dictionary = storage_genome.__dict__
             analysis_res = dictionary.__getitem__('analysis_result')
-            analysis_result = Transformator.encode_AnalysisResult(analysis_res)
+            analysis_result = Transformator.encode_AnalysisResult()
             dictionary.__setitem__('analysis_result', analysis_result)
             dictionary.__setitem__('_type', 'StorageGenome')
             return dictionary
         except KeyError:
             return None
 
+    @staticmethod
     def decode_StorageGenome(document: dict) -> StorageGenome:
         """
         decodes dictionary to StorageGenome
@@ -63,7 +67,7 @@ class Transformator(object):
         try:
             if document['_type'] == 'StorageGenome':
                 document.pop('_type')
-                analysis_result = Transformator.decode_AnalysisResult(document.pop('analysis_result'))
+                analysis_result = Transformator.decode_AnalysisResult()
                 document.__setitem__('analysis_result', analysis_result)
                 storage_genome = StorageGenome()
                 storage_genome.__dict__ = document
