@@ -89,7 +89,7 @@ class NEATConfig(object):
             self.parameters["mutating"] = dict(
                 {
                     "add_edge_probability": 0.5,
-                    "new_gene_enabled_probability": 0.7,
+                    "new_gene_enabled_probability": 1,
                     "perturb_gene_weight_probability": 0.5
                 }
             )

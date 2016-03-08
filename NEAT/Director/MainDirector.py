@@ -153,7 +153,7 @@ class MainDirector(Director):
 
         next_command = self.simulation_client.get_command()
         if type(next_command) == type(NEAT.Networking.Commands.TimeoutCommand()): # TODO:
-
+            pass
 
         # In case of simulation run:
         self.run()
