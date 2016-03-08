@@ -52,7 +52,7 @@ class DatabaseConnector(object):
             self,
             collection_name: str,
             filter: Dict
-    ) -> object:
+    ) -> dict:
         """
         Finds a single document in the given collection. Same parameters as py-
         mongos default find_one, except for the collection_name.
@@ -85,7 +85,7 @@ class DatabaseConnector(object):
             self,
             collection_name: str,
             filter: Dict
-    ) -> Iterable[object]:
+    ) -> Iterable[dict]:
         """
         Finds all objects in the given collection that match a given query.
         Parameters the same as pymongos default find, except for the collection_
