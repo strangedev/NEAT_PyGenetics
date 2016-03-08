@@ -1,14 +1,17 @@
 from NEAT.Director.Director import Director
 from NEAT.Config.NEATConfig import NEATConfig
-from NEAT.Generator.Breeder import Breeder
-from NEAT.Generator.Mutator import Mutator
-from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
-from NEAT.Analyst.GenomeAnalyst import GenomeAnalyst
-from NEAT.Analyst.GenomeClusterer import GenomeClusterer
-from NEAT.Repository import GenomeRepository
+from NEAT.Networking.Server.SimulationClient import SimulationClient
 from NEAT.ErrorHandling.StartupCheck import StartupCheck
 from NEAT.Repository.DatabaseConnector import DatabaseConnector
+from NEAT.Repository.GenomeRepository import GenomeRepository
+from NEAT.Repository.ClusterRepository import ClusterRepository
 from NEAT.Repository.GeneRepository import GeneRepository
+from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
+from NEAT.Generator.Breeder import Breeder
+from NEAT.Generator.Mutator import Mutator
+from NEAT.Analyst.GenomeAnalyst import GenomeAnalyst
+from NEAT.Analyst.GenomeClusterer import GenomeClusterer
+from NEAT.Analyst.GenomeSelector import GenomeSelector
 
 
 class MainDirector(Director):
@@ -28,77 +31,71 @@ class MainDirector(Director):
         self.mode = kwargs.get('mode', 'exit')
         if self.mode == 'exit':
             exit()
+        elif self.mode == 'run_server':
 
-        startup_check = StartupCheck()
-        startup_check.run()
+            startup_check = StartupCheck()
+            startup_check.run()
 
-        self.simulation_name = kwargs.get('simulation')
+            self.static_init()
 
-        # used for running simulation and calculating fitness for a given genome
-        self.simulation_runner = NEAT.Director.SimulationRunner(self.simulation_name)
-        #   checks if simulation exists, raises exception if not
-        #   checks if simulation is compatible, raises exception if not
-        #   checks if simulation is configured, raises exception if not
-        #   loads configuration from config file inside simulation
+            while True:
+                try:
+                    self.idle()
+                except NetworkingException as e:
+                    pass
 
-        # class containing huge configuration object, potentially just json no-
-        # tation
-        # should contain:
-        # - selection_parameters
-        # - decision_making_parameters (contains e.g. max population size)
-        # - clustering_parameters
-        # - discarding_parameters
+    def static_init(self):
+        """
+        Initializes all parts of NEAT that are not dependent
+        upon the client.
+        """
+        # An interface to a client connected via the REST API.
+        self.simulation_client = SimulationClient()
+
+        # Class containing huge configuration object.
+        # Loads config from JSON or uses default config.
         self.config = NEATConfig()
 
-        # database connection is a connection to an arbitrary database that is
-        # used to store genes, genomes and nodes
-        self.database_connection = DatabaseConnector(
-            self.simulation_name
-        )
-        # gene_repository administrates all genes ever created
-        self.gene_repository = GeneRepository(
-            self.database_connection
-        )
-        # genome_repository administrates all genomes ever created
-        self.genome_repository = GenomeRepository.GenomeRepository(
-            self.database_connection
-        )
-        # cluster_repository administrates all clusters ever created
-        self.cluster_repository = NEAT.Repository.ClusterRepository(
-            self.database_connection
-        )
 
-        # selector selects genes and is parameterized by a global config
+    def dynamic_init(self):
+        """
+        Initializes all parts of NEAT that are dependent upon
+        the client.
+        """
+
+        self.init_db()
+
         # selecting can mean:
         #   - selecting a single genome for mutation
         #   - selecting two genomes for breeding
         #   - selecting two clusters for combination
         #   - selecting two genomes from two given clusters for inter cluster
         #    breeding (since we don't really want to create ALL combinations)
-        self.selector = NEAT.Analyst.GenomeSelector(
+        self.selector = GenomeSelector(
             self.genome_repository,
-            self.config.selection_parameters
+            self.config.parameters["selection"]
         )
         # makes decisions lol
         # things like what to do and stuff (breeding or mutation, if clustering
         # is necessary etc)
-        self.decision_maker = NEAT.Analyst.DecisionMaker(
+        self.decision_maker = NEAT.Analyst.DecisionMaker( # TODO: Implement pl0x
             self.genome_repository,
-            self.config.decision_making_parameters
+            self.config.parameters["decision_making"]
         )
         # breeder creates a new genome from two given genomes
         # it needs the gene_repository to register new genes and to look up used
         # ones
         self.breeder = Breeder(
-            self.gene_repository
+            self.config.parameters["breeding"]
         )
-        # mutator creates a new genome from a given genome
+        # Mutator creates a new genome from a given genome
         # it needs the gene_repository to register new genes and to look up used
         # ones
         self.mutator = Mutator(
-            self.genome_repository
+            self.genome_repository,
+            self.config.parameters["mutating"]
         )
-        # analyst analyzes a given genome and creates an AnalysisResult based on
+        # Analyst analyzes a given genome and creates an AnalysisResult based on
         # it
         self.analyst = GenomeAnalyst()
         # clusterer divides all existing and active genomes in clusters aka spe-
@@ -106,91 +103,173 @@ class MainDirector(Director):
         self.clusterer = GenomeClusterer(
             self.genome_repository,
             self.cluster_repository,
-            self.config.clustering_parameters
+            self.config.parameters["clustering"]
         )
 
+    def init_db(self, archive_existing_db=False):
+
+        # database connection is a connection to an arbitrary database that is
+        # used to store genes, genomes and nodes
+        self.database_connection = DatabaseConnector(
+            self.simulation_client.session.token
+        )
+
+        # gene_repository administrates all genes ever created
+        self.gene_repository = GeneRepository(
+            self.database_connection
+        )
+        # genome_repository administrates all genomes ever created
+        self.genome_repository = GenomeRepository(
+            self.database_connection
+        )
+        # cluster_repository administrates all clusters ever created
+        self.cluster_repository = ClusterRepository(
+            self.database_connection
+        )
+
+    def idle(self):
+        """
+        Standard method that will be executed if local startup is done.
+        In this state, the Director will wait for the client.
+        """
+        # TODO: handshake w/ client.
+        # TODO: Hand out session token, or get session token from client
+        # TODO: get additional config from client
+        # Session tokens will identify a client.
+        # They can be useful for later parallelization.
+        # They also identify the database collections which will be used,
+        # so that different users can have their own storage and previous
+        # sessions can be loaded from storage.
+
+        while not self.simulation_client.session: # all of the above TODOs happen here
+            pass
+
+        self.dynamic_init() # This can be called after the client has connected
+
+        # TODO: get next Command from client.
+        # Either:
+        #   * perform action unrelated to simulation
+        #   * start new simulation run:
+
+        next_command = self.simulation_client.get_command()
+        if type(next_command) == type(NEAT.Networking.Commands.TimeoutCommand()): # TODO:
+
+
+        # In case of simulation run:
+        self.run()
+
     def run(self):
-        pass
-        # on new, creates new database
-        # loads database
+        """
+        The main function where the simulation is run, new
+        genomes are created and discarded
+        This is where the evolutionary magic happens.
+        """
 
         # on new, creates random set of genomes based on configuration inside
         # Simulation.given_simulation.config
+        # TODO: Get block size
+        # TODO: Init population
+        # TODO: check if client is still alive, we don't want NEAT to idle uselessly.
 
         while True:
+
+            ### 1. Simulation / wait for client
+
+            # TODO: send block of genome ids to client
+
+            # Next section applies to all blocks
+            # TODO: network I/O loop for calculating outputs for genome
+            # TODO: recv fitness values
+            # Repeat if blocks left.
+
+            # TODO: Get next command from client.
+            # Either:
+            #   * go on with loop, generate next generation
+            #   * save database for later use, hand out session id to client
+
+            ### 2. Calculate offspring values
+
+            self.calculate_cluster_offspring()
+
+            ### 3. Discarding / Regeneration
+
             if self.decision_maker.inter_cluster_breeding_time:
                 # if it's time to cross-breed, first discard a few clusters
-                self.discard_genomes(clusters=True)
+                self.discard_clusters()
                 # then combine clusters
                 self.crossbreed_clusters()
-                # and cluster again
-                self.cluster_genomes()
             else:
                 # if it's incest time, first discard a few genomes
                 self.discard_genomes()
                 # then refill the population
-                # genomes that are generated in this phase will belong to the
-                # cluster to which its parents belong.
-                while not self.decision_maker.population_at_maximum_size():
-                    self.generate_new_genome(mode=self.decision_maker.breed_or_mutate())
+                self.generate_new_genomes()
 
-    def generate_new_genome(
-            self,
-            mode,
-            genome: StorageGenome = None,
-            genome_two: StorageGenome = None):
+            ### 4. Advance time
+
+            self.decision_maker.advance_time()
+
+    def generate_new_genomes(self):
         """
-        generates a new genome via mutation/breeding
-        then analyzes, simulates and stores the new genome
-        needs further parameterization
-        :param genome_two:
-        :param genome:
-        :param mode: breed or mutate?
+        Regenerates the population by selecting genomes for
+        mutation / breeding, running the generation process and performing analysis.
         :return:
         """
-        if mode == 'breed':
-            if genome is None or genome_two is None:
-                genome, genome_two = self.selector.select_genomes_for_breeding()
-            new_genome = self.breeder.breed_genomes(genome, genome_two)
-        elif mode == 'mutate':
-            if genome is None:
-                genome = self.selector.select_genome_for_mutation()
+
+        mutation_percentage = self.decision_maker.get_mutation_percentage()
+        genomes_for_mutation = self.selector.select_genomes_for_mutation(mutation_percentage)
+        genomes_for_breeding = self.selector.select_genomes_for_breeding(1 - mutation_percentage)
+        new_genomes = []
+
+        for genome in genomes_for_mutation:
             new_genome = self.mutator.mutate_genome(genome)
-        else:
-            return
-        analysis_result = self.analyst.analyze(new_genome)
-        new_genome.analysis_result = analysis_result
-        new_genome.cluster = genome.cluster
-        self.genome_repository.add_genome(new_genome)
+            new_genomes.append(new_genome)
+
+        for genome_one, genome_two in genomes_for_breeding:
+            new_genome = self.breeder.breed_genomes(
+                genome_one,
+                genome_two
+            )
+            new_genomes.append(new_genome)
+
+        for genome in new_genomes:
+            self.analyze_and_insert(genome)
 
     def crossbreed_clusters(self):
         """
-        combinates two clusters
+        combines two clusters by breeding genomes of both clusters
         :return:
         """
         cluster_one, cluster_two = self.selector.select_clusters_for_combination()
         for genome_one, genome_two in self.selector.select_cluster_combinations(cluster_one, cluster_two):
-            self.generate_new_genome(mode='breed', genome=genome_one, genome_two=genome_two)
-        # now interbreed cluster_one and cluster_two
+            new_genome = self.breeder.breed_genomes(genome_one, genome_two)
+            self.analyze_and_insert(new_genome)
 
-    def cluster_genomes(self):
+    def analyze_and_insert(self, genome: StorageGenome):
+
+        analysis_result = self.analyst.analyze(genome)
+        genome.analysis_result = analysis_result
+        genome.cluster = self.clusterer.cluster_genome(genome) # TODO: sequential clustering
+        self.genome_repository.insert_genome(genome)
+
+    def calculate_cluster_offspring(self):
         """
-        clusters all currently stored genomes
+        Calculates fitness values and offspring for clusters.
         :return:
         """
-        self.clusterer.cluster_genomes()
-        pass
+        self.clusterer.calculate_cluster_offspring_values()
 
-    def discard_genomes(self, clusters: bool = False):
+    def discard_genomes(self):
         """
         discards a number of genomes
-        :param clusters: True, if the lowest X clusters should be discarded,
-                         False, if the lowest X% of genomes should be discarded
         :return:
         """
-        if clusters:
-            for cluster in self.selector.select_clusters_for_discarding():
+        for genome in self.selector.select_genomes_for_discarding():
+            self.genome_repository.discard_genome(genome)
+
+    def discard_clusters(self):
+        """
+        Discards a number of clusters
+        :return:
+        """
+        for cluster in self.selector.select_clusters_for_discarding():
                 self.genome_repository.discard_genomes_by_cluster(cluster)
-        else:
-            for genome in self.selector.select_genomes_for_discarding():
-                self.genome_repository.discard_genome(genome)

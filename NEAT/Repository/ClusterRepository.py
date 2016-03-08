@@ -1,10 +1,12 @@
 from typing import List
+from NEAT.Repository.DatabaseConnector import DatabaseConnector
+from NEAT.Repository.Transformator import Transformator
 from NEAT.GenomeStructures.StorageStructure import StorageGenome
 from NEAT.Analyst.Cluster import Cluster
 
 class ClusterRepository(object):
 
-    def __init__(self):
+    def __init__(self, database_connector: DatabaseConnector):
         pass
 
     def archive_clusters(self):
