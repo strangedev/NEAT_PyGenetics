@@ -57,6 +57,9 @@ class MainDirector(Director):
         # Loads config from JSON or uses default config.
         self.config = NEATConfig()
 
+        # Used to keep track of the number of discarded
+        # genomes when clusters are discarded.
+        self._discarded_genomes_count = 0
 
     def dynamic_init(self):
         """
@@ -143,7 +146,7 @@ class MainDirector(Director):
         # sessions can be loaded from storage.
 
         while not self.simulation_client.session: # all of the above TODOs happen here
-            pass
+            self.simulation_client.check_for_session()
 
         self.dynamic_init() # This can be called after the client has connected
 
@@ -152,7 +155,7 @@ class MainDirector(Director):
         #   * perform action unrelated to simulation
         #   * start new simulation run:
 
-        next_command = self.simulation_client.get_command()
+        next_command = self.simulation_client.session.has_ended
         if type(next_command) == type(NEAT.Networking.Commands.TimeoutCommand()): # TODO:
             pass
 
@@ -242,15 +245,21 @@ class MainDirector(Director):
         :return:
         """
         cluster_one, cluster_two = self.selector.select_clusters_for_combination()
-        for genome_one, genome_two in self.selector.select_cluster_combinations(cluster_one, cluster_two):
+        for genome_one, genome_two in self.selector.select_cluster_combinations(
+                cluster_one,
+                cluster_two,
+                self._discarded_genomes_count
+        ):
             new_genome = self.breeder.breed_genomes(genome_one, genome_two)
             self.analyze_and_insert(new_genome)
+
+        self._discarded_genomes_count = 0
 
     def analyze_and_insert(self, genome: StorageGenome):
 
         analysis_result = self.analyst.analyze(genome)
         genome.analysis_result = analysis_result
-        genome.cluster = self.clusterer.cluster_genome(genome) # TODO: sequential clustering
+        genome.cluster = self.clusterer.cluster_genome(genome)
         self.genome_repository.insert_genome(genome)
 
     def calculate_cluster_offspring(self):
@@ -274,4 +283,6 @@ class MainDirector(Director):
         :return:
         """
         for cluster in self.selector.select_clusters_for_discarding():
-                self.genome_repository.discard_genomes_by_cluster(cluster)
+            genomes_to_discard = self.genome_repository.get_genomes_in_cluster(cluster._id)
+            self._discarded_genomes_count += len(genomes_to_discard)
+            self.genome_repository.discard_genomes_by_cluster(cluster)
