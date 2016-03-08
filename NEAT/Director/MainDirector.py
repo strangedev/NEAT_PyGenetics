@@ -165,6 +165,7 @@ class MainDirector(Director):
         genomes are created and discarded
         This is where the evolutionary magic happens.
         """
+        self.decision_maker.reset_time()
 
         # on new, creates random set of genomes based on configuration inside
         # Simulation.given_simulation.config
@@ -216,7 +217,7 @@ class MainDirector(Director):
         :return:
         """
 
-        mutation_percentage = self.decision_maker.get_mutation_percentage()
+        mutation_percentage = self.decision_maker.mutation_percentage
         genomes_for_mutation = self.selector.select_genomes_for_mutation(mutation_percentage)
         genomes_for_breeding = self.selector.select_genomes_for_breeding(1 - mutation_percentage)
         new_genomes = []
