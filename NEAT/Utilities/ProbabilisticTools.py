@@ -10,35 +10,7 @@ def weighted_choice(
     :param weighted_sample: List of Tuples: (outcome, probability)
     :return: The chosen outcome
     """
-
-    abs_probability = sum([s[1] for s in weighted_sample])
-    object_bound_mapper = []
-    lower_bound = 0
-
-    random.seed()
-
-    for sample in weighted_sample:
-
-        obj = sample[0]
-        probability = sample[1]
-
-        bound_offset = probability / abs_probability
-        upper_bound = lower_bound + bound_offset
-        object_bound_mapper.append((obj, lower_bound, upper_bound))
-
-        lower_bound = upper_bound
-
-    x = random.random()
-
-    for interval in object_bound_mapper:
-
-        lower_bound = interval[1]
-        upper_bound = interval[2]
-
-        if (lower_bound < x) and (x <= upper_bound):
-            return interval[0]
-
-    return object_bound_mapper[-1][0]
+    return weighted_choice_range(weighted_sample, 1)
 
 def weighted_choice_range(
         weighted_sample: List[Tuple[object, float]],
@@ -51,4 +23,31 @@ def weighted_choice_range(
     :param count: Amount of outcomes to choose
     :return: The chosen outcomes
     """
-    pass
+    abs_probability = sum([s[1] for s in weighted_sample])
+    object_bound_mapper = dict({})
+    lower_bound = 0
+
+    random.seed()
+
+    for sample in weighted_sample:
+
+        obj = sample[0]
+        probability = sample[1]
+
+        bound_offset = probability / abs_probability
+        upper_bound = lower_bound + bound_offset
+        object_bound_mapper[(lower_bound, upper_bound)] = obj
+
+        lower_bound = upper_bound
+
+    random_draws = [random.random() for _ in range(count)]
+    results = []
+
+    for lower, upper in object_bound_mapper.keys():
+
+        for x in random_draws:
+
+            if (lower < x) and (x <= upper):
+                results.append(object_bound_mapper[(lower, upper)])
+
+    return results
