@@ -1,4 +1,5 @@
-from typing import Iterable
+from fractions import Fraction
+from typing import Iterable, Tuple, List
 
 from NEAT.Repository.DatabaseConnector import DatabaseConnector
 from NEAT.Repository.Transformator import *
@@ -13,7 +14,8 @@ class GenomeRepository(object):
         """
         self._database_connector = database_connector
 
-    def get_new_genome(self) -> StorageGenome:
+    @staticmethod
+    def get_new_genome() -> StorageGenome:
         """
 
         :return: StorageGenome new StorageGenome
@@ -60,7 +62,7 @@ class GenomeRepository(object):
         :param genome: StorageGenome to insert
         :return:
         """
-        i = Transformator.encode_StorageGenome(genome)
+        i = Transformator.encode_StorageGenome()
         self._database_connector.insert_one("genomes", i)
 
     def insert_genomes(self, genomes: Iterable[StorageGenome]) -> None:
@@ -71,7 +73,7 @@ class GenomeRepository(object):
         """
         g = []
         for i in genomes:
-            g.append(Transformator.encode_StorageGenome(i))
+            g.append(Transformator.encode_StorageGenome())
         self._database_connector.insert_many("genomes", g)
 
     def update_genome(self, genome: StorageGenome) -> None:
@@ -80,7 +82,7 @@ class GenomeRepository(object):
         :param genome: StorageGenome to update in DB
         :return:
         """
-        doc = Transformator.encode_StorageGenome(genome)
+        doc = Transformator.encode_StorageGenome()
         self._database_connector.update_one("genomes", genome._id, doc)
 
     def update_genomes(self, genomes: Iterable[StorageGenome]) -> None:
@@ -91,5 +93,52 @@ class GenomeRepository(object):
         """
         g = []
         for genome in genomes:
-            g.append(((genome._id), Transformator.encode_StorageGenome(genome)))
+            g.append((genome._id, Transformator.encode_StorageGenome()))
         self._database_connector.update_many("genomes", g)
+
+    def disable_genome(self, genome_id: ObjectId):
+        """
+
+        :param genome_id: ObjectId from genome to disable
+        :return:
+        """
+        genome = self.get_genome_by_id(genome_id)
+        genome.is_alive = False
+        self.update_genome(genome)
+
+    def disable_genomes(self, genomes_id: [ObjectId]):
+        """
+
+        :param genomes_id: [ObjectId] from genomes to disable
+        :return:
+        """
+        result = []
+        for genome_id in genomes_id:
+            genome = self.get_genome_by_id(genome_id)
+            genome.is_alive = False
+            result.append(genome)
+        self.update_genomes(result)
+
+    def update_genome_fitness(self, genome_id: ObjectId, fitness: Fraction):
+        """
+
+        :param genome_id: ObjectId from genomes to update fitness
+        :param fitness: Fraction to set
+        :return:
+        """
+        genome = self.get_genome_by_id(genome_id)
+        genome.fitness = fitness
+        self.update_genome(genome)
+
+    def update_genomes_fitness(self, genome_fitness: List[Tuple[ObjectId, Fraction]]):
+        """
+
+        :param genome_fitness: List[Tuple[ObjectId, Fraction]] genome_id and fitness to update
+        :return:
+        """
+        result = []
+        for genome_id, fitness in genome_fitness:
+            genome = self.get_genome_by_id(genome_id)
+            genome.fitness = fitness
+            result.append(genome)
+        self.update_genomes(result)
