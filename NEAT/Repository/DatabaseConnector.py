@@ -152,7 +152,7 @@ class DatabaseConnector(object):
         :return:
         """
         try:
-            self._database[collection_name].remove({'_id': document_id})
+            return self._database[collection_name].remove({'_id': document_id})
         except Exception as e:
             raise Exception(" remove_one, DatabaseConnector") from e
 
@@ -167,8 +167,10 @@ class DatabaseConnector(object):
         :param document_ids:
         :return:
         """
+        result = []
         for document_id in document_ids:
             try:
-                self._database[collection_name].remove({'_id': document_id})
+                result.append(self._database[collection_name].remove({'_id': document_id}))
             except Exception as e:
                 raise Exception(" remove_many, DatabaseConnector") from e
+        return result
