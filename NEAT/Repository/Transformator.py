@@ -16,8 +16,6 @@ class Transformator(object):
         """
         try:
             dictionary = copy.deepcopy(analysis_result.__dict__)
-            convert = dictionary.__getitem__('disabled_nodes')
-            dictionary.__setitem__('disabled_nodes', list(convert))
             dictionary.__setitem__('_type', 'AnalysisResult')
             return dictionary
         except KeyError:
@@ -32,9 +30,6 @@ class Transformator(object):
         try:
             if document['_type'] == 'AnalysisResult':
                 document.pop('_type')
-
-                convert = document.__getitem__('disabled_nodes')
-                document.__setitem__('disabled_nodes', set(convert))
 
                 result = AnalysisResult()
                 result.__dict__ = document

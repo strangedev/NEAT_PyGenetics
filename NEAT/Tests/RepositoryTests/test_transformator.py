@@ -12,8 +12,6 @@ class TestTransformator(TestCase):
     def test_encode_AnalysisResult(self):
         analysis_result = AnalysisResult()
         dictionary = copy.deepcopy(analysis_result.__dict__)
-        convert = dictionary.__getitem__('disabled_nodes')
-        dictionary.__setitem__('disabled_nodes', list(convert))
         dictionary.__setitem__('_type', 'AnalysisResult')
         self.assertDictEqual(dictionary, Transformator.encode_AnalysisResult(analysis_result))
 

@@ -4,6 +4,7 @@ AnalysisGenome module
 
 import copy
 from typing import List, Dict, Set, Generic
+from typing import Tuple
 
 from NEAT.Analyst import AnalysisResult
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
@@ -33,7 +34,8 @@ class AnalysisGenome(Generic[GenomeStructure]):
         self._nodes = set({})  # type: Set[int]
         self._input_nodes = dict({})  # type: Dict[str, int]
         self._output_nodes = dict({})  # type: Dict[str, int]
-        self._edges = dict({})  # type: Dict[int, List[int]]
+        # TODO: fix all uses of _edges and property edges
+        self._edges = dict({})  # type: Dict[int, List[Tuple[int, int]]]
         self._graph_initialized = False  # type: bool
         self._gene_repository = gene_repository
 
@@ -68,22 +70,23 @@ class AnalysisGenome(Generic[GenomeStructure]):
         self.nodes.add(node_id)
         self._output_nodes[label] = node_id
 
-    def _add_edge(self, source: int, target: int) -> None:
+    def _add_edge(self, source: int, target: int, gene_id: int) -> None:
         """
         Adds an edge to the graph.
 
         :param source: The label of the outgoing node.
         :param target: The label of the incoming node
+        :param gene_id: The id of the gene that connects the given nodes.
         :return: None
         """
 
         if source not in self._edges.keys():
-            self._edges[source] = [target]
+            self._edges[source] = [(target, gene_id)]
             self._add_node(source)
             self._add_node(target)
 
         elif target not in self._edges[source]:
-            self._edges[source].append(target)
+            self._edges[source].append((target, gene_id))
             self._add_node(target)
 
     def _init_from_storage_structure(
@@ -105,7 +108,7 @@ class AnalysisGenome(Generic[GenomeStructure]):
 
         for gene_id in storage_structure.genes.keys():
             head, tail = self._gene_repository.get_node_labels_by_gene_id(gene_id)
-            self._add_edge(head, tail)
+            self._add_edge(head, tail, gene_id)
 
         self._graph_initialized = True
 
@@ -122,7 +125,7 @@ class AnalysisGenome(Generic[GenomeStructure]):
         return self._nodes
 
     @property
-    def edges(self) -> Dict[int, List[int]]:
+    def edges(self) -> Dict[int, List[Tuple[int, int]]]:
         return self._edges
 
     @property

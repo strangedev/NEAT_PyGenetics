@@ -33,8 +33,8 @@ class TestAnalysisGenome(TestCase):
         ana._add_node(1)
         ana._add_node(2)
 
-        ana._add_edge(1, 2)
-        self.assertDictEqual(ana._edges, {1: [2]})
+        ana._add_edge(1, 2, 7)
+        self.assertDictEqual(ana._edges, {1: [(2, 7)]})
 
     def test__add_edge_without_preadded_nodes(self):
         ana = AnalysisGenome.AnalysisGenome(
@@ -42,8 +42,8 @@ class TestAnalysisGenome(TestCase):
             self.storage_genome)
         self.assertDictEqual(ana._edges, {})
 
-        ana._add_edge(1, 2)
-        self.assertDictEqual(ana._edges, {1: [2]})
+        ana._add_edge(1, 2, 7)
+        self.assertDictEqual(ana._edges, {1: [(2, 7)]})
 
     def test__add_edge_with_preadded_source_node(self):
         ana = AnalysisGenome.AnalysisGenome(
@@ -53,8 +53,8 @@ class TestAnalysisGenome(TestCase):
 
         ana._add_node(1)
 
-        ana._add_edge(1, 2)
-        self.assertDictEqual(ana._edges, {1: [2]})
+        ana._add_edge(1, 2, 7)
+        self.assertDictEqual(ana._edges, {1: [(2, 7)]})
 
     def test_init_from_storage_structure(self):
         self.storage_genome.inputs = {
@@ -97,7 +97,7 @@ class TestAnalysisGenome(TestCase):
             },
             ana.output_nodes)
         self.assertDictEqual(
-            {2 * node_id: [2 * node_id + 1]
+            {2 * node_id: [(2 * node_id + 1, node_id)]
              for node_id in self.storage_genome.genes.keys()},
             ana.edges
         )
