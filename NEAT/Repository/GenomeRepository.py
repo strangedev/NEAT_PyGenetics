@@ -76,27 +76,27 @@ class GenomeRepository(object):
             g.append(Transformator.encode_StorageGenome(i))
         self._database_connector.insert_many("genomes", g)
 
-    def update_genome(self, genome: StorageGenome) -> None:
+    def update_genome(self, genome: StorageGenome) -> dict:
         """
 
         :param genome: StorageGenome to update in DB
-        :return:
+        :return: information about update process (from mongoDB)
         """
         doc = Transformator.encode_StorageGenome(genome)
-        self._database_connector.update_one("genomes", genome._id, doc)
+        return self._database_connector.update_one("genomes", genome._id, doc)
 
-    def update_genomes(self, genomes: Iterable[StorageGenome]) -> None:
+    def update_genomes(self, genomes: Iterable[StorageGenome]) -> dict:
         """
 
         :param genomes: Iterable[StorageGenome] to update in DB
-        :return:
+        :return: information about update process (from mongoDB)
         """
         g = []
         for genome in genomes:
             g.append((genome._id, Transformator.encode_StorageGenome(genome)))
-        self._database_connector.update_many("genomes", g)
+        return self._database_connector.update_many("genomes", g)
 
-    def disable_genome(self, genome_id: ObjectId):
+    def disable_genome(self, genome_id: ObjectId) -> dict:
         """
 
         :param genome_id: ObjectId from genome to disable
@@ -104,41 +104,41 @@ class GenomeRepository(object):
         """
         genome = self.get_genome_by_id(genome_id)
         genome.is_alive = False
-        self.update_genome(genome)
+        return self.update_genome(genome)
 
-    def disable_genomes(self, genomes_id: [ObjectId]):
+    def disable_genomes(self, genomes_id: [ObjectId]) -> [dict]:
         """
 
         :param genomes_id: [ObjectId] from genomes to disable
-        :return:
+        :return: [dict] information about update process (from mongoDB)
         """
         result = []
         for genome_id in genomes_id:
             genome = self.get_genome_by_id(genome_id)
             genome.is_alive = False
             result.append(genome)
-        self.update_genomes(result)
+        return self.update_genomes(result)
 
-    def update_genome_fitness(self, genome_id: ObjectId, fitness: Fraction):
+    def update_genome_fitness(self, genome_id: ObjectId, fitness: Fraction) -> dict:
         """
 
         :param genome_id: ObjectId from genomes to update fitness
         :param fitness: Fraction to set
-        :return:
+        :return: dict information about update process (from mongoDB)
         """
         genome = self.get_genome_by_id(genome_id)
         genome.fitness = fitness
-        self.update_genome(genome)
+        return self.update_genome(genome)
 
-    def update_genomes_fitness(self, genome_fitness: List[Tuple[ObjectId, Fraction]]):
+    def update_genomes_fitness(self, genome_fitness: List[Tuple[ObjectId, Fraction]]) -> dict:
         """
 
         :param genome_fitness: List[Tuple[ObjectId, Fraction]] genome_id and fitness to update
-        :return:
+        :return: [dict] information about update process (from mongoDB)
         """
         result = []
         for genome_id, fitness in genome_fitness:
             genome = self.get_genome_by_id(genome_id)
             genome.fitness = fitness
             result.append(genome)
-        self.update_genomes(result)
+        return self.update_genomes(result)
