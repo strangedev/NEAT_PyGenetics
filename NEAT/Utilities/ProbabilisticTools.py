@@ -10,7 +10,7 @@ def weighted_choice(
     :param weighted_sample: List of Tuples: (outcome, probability)
     :return: The chosen outcome
     """
-    return weighted_choice_range(weighted_sample, 1)
+    return weighted_choice_range(weighted_sample, 1)[0]
 
 def weighted_choice_range(
         weighted_sample: List[Tuple[object, float]],
