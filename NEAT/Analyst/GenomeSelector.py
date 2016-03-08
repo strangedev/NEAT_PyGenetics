@@ -47,15 +47,19 @@ class GenomeSelector(object):
         end = int(len(genomes)*ending)
         return genomes[start:end]
 
-    def get_current_cluster_sorted_by_fitness(self) -> [Cluster]:
+    def get_cluster_area_sorted_by_fitness(self, begin: float, ending: float) -> [Cluster]:
         """
+        :param begin: float percentage starting area (0 is starting by weakest)
+        :param ending: float ending area (1 is starting by fitt est)
         :return: List[Cluster] sorted by fitness
         """
         clusters = []
         for cluster in self.cluster_repository.get_current_clusters():
             clusters.append(cluster)
         clusters.sort(key=lambda cluster: cluster.fitness)
-        return clusters
+        start = int(len(clusters)*begin)
+        end = int(len(clusters*ending))
+        return clusters[start, end]
 
     def select_genomes_for_breeding(self) -> tuple(StorageGenome):
         """
@@ -66,8 +70,8 @@ class GenomeSelector(object):
         for cluster in self.cluster_repository.get_current_clusters():
             result.append(self.get_genomes_from_cluster_id_by_given_percentage(
                 cluster._id, #  TODO: write get id or sth.
-                self.selection_parameters["start_percentage_to_breed"],
-                self.selection_parameters["end_percentage_to_breed"]
+                self.selection_parameters["start_percentage_to_breed_genomes"],  # TODO: ADD in config!
+                self.selection_parameters["end_percentage_to_breed_genomes"]  # TODO: ADD in config!
             )[1])
 
         genome_one = random.choice(result)
@@ -85,15 +89,23 @@ class GenomeSelector(object):
         for cluster in self.cluster_repository.get_current_clusters():
             result.append(self.get_genomes_in_cluster_from_cluster(
                 cluster._id,  # TODO: write get id or sth.
-                self.selection_parameters["start_percentage_to_breed"],
-                self.selection_parameters["end_percentage_to_breed"]
+                self.selection_parameters["start_percentage_to_mutate_genomes"],  # TODO: ADD in config!
+                self.selection_parameters["end_percentage_to_mutate_genomes"]  # TODO: ADD in config!
             )[1])
         return random.choice(result)
 
     def select_clusters_for_combination(self) -> tuple(Cluster):
-        pass  # Todo
+        result = self.get_current_cluster_sorted_by_fitness(
+            self.selection_parameters["start_percentage_to_combinate_cluster"],  # TODO: ADD in config!
+            self.selection_parameters["end_percantage_to_combinate_cluster"]  # TODO: ADD in config!
+        )
+        cluster_one = random.choice(result)
+        result.remove(cluster_one)
+        cluster_two = random.choice(result)
+        return cluster_one, cluster_two
 
     def select_cluster_combination(self, cluster1: Cluster, cluster2: Cluster) -> List[tuple(StorageGenome)]:
+
         pass  # Todo
 
     def select_clusters_for_discarding(self) -> List[Cluster]:
