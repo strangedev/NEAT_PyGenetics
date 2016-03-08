@@ -27,11 +27,6 @@ class SimulationGenome(Generic[GenomeStructure]):
             self,
             storage_genome: StorageGenome
     ):
-        self._input_layer = \
-            {label: Node() for label in storage_genome.inputs.keys()}
-        self._output_layer = \
-            {label: Node() for label in storage_genome.outputs.keys()}
-
         cycle_nodes = {}  # type: Dict[int, CycleNode]
         for node_id in \
                 storage_genome.analysis_result.topologically_sorted_cycle_nodes:
@@ -59,10 +54,17 @@ class SimulationGenome(Generic[GenomeStructure]):
             else:
                 hidden_layer[source].add_successor(hidden_layer[target], weight)
 
+        self._input_layer = \
+            {label: hidden_layer[node_id] for label, node_id in storage_genome.inputs.items()}
+        self._output_layer = \
+            {label: hidden_layer[node_id] for label, node_id in storage_genome.outputs.items()}
+
         self._hidden_layer = \
             [hidden_layer[node_id]
              for node_id
-             in storage_genome.analysis_result.topologically_sorted_nodes]
+             in storage_genome.analysis_result.topologically_sorted_nodes
+             if node_id not in storage_genome.inputs.values() and
+             node_id not in storage_genome.outputs.values()]
 
         self._cycle_nodes = \
             [cycle_nodes[node_id]
