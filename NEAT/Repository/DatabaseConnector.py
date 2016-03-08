@@ -69,7 +69,7 @@ class DatabaseConnector(object):
             self,
             collection_name: str,
             document_id
-    ):
+    ) -> dict:
         """
         Finds a single document in the given collection based on its id.
         :param collection_name:
