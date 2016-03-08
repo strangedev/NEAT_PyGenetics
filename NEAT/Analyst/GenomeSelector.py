@@ -6,7 +6,7 @@ from NEAT.Analyst.Cluster import Cluster
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 from NEAT.Repository.GenomeRepository import GenomeRepository
 from NEAT.Repository.ClusterRepository import ClusterRepository
-from NEAT.Utilities.ProbabilisticTools import weighted_choice_range
+from NEAT.Utilities.ProbabilisticTools import weighted_choice_range, weighted_choice
 
 
 class GenomeSelector(object):
@@ -29,26 +29,18 @@ class GenomeSelector(object):
 
     def get_genomes_in_cluster(
             self,
-            cluster_id: ObjectId,
-            begin: float,
-            ending: float) -> List[[StorageGenome], List[Tuple[StorageGenome, Fraction]]]:
+            cluster_id: ObjectId) -> List[Tuple[StorageGenome, Fraction]]:
         """
         Selects and Area of genomes in Cluster given by input
         offspring.
         :param cluster_id: ObjectId to load Genomes
-        :param begin: float where to begin to select genomes
-        :param ending: float where to end select genomes
         :return: [StorageGenome]
         """
-        genomes1 = []
-        genomes2 = []
+        genomes = []
+
         for genome in self.genome_repository.get_genomes_in_cluster(cluster_id):
-            genomes1.append(genome)
-            genomes2.append((genome, genome.fitness))
-        genomes1.sort(key=lambda g: g.fitness)
-        start = int(len(genomes1)*begin)
-        end = int(len(genomes1)*ending)
-        return [genomes1[start:end], genomes2]
+            genomes.append((genome, genome.fitness))
+        return genomes
 
     def get_cluster_area_sorted_by_fitness(self, begin: float, ending: float) -> [Cluster]:
         """
@@ -64,25 +56,25 @@ class GenomeSelector(object):
         end = int(len(clusters*ending))
         return clusters[start:end]
 
-    def select_genomes_for_breeding(self, mutation_percentage: float) -> List[tuple(StorageGenome)]:
+    def select_genomes_for_breeding(self, breeding_percentage: float) -> List[tuple(StorageGenome)]:
         """
         Selects genomes for breeding currently best two from all Clusters
-        :type mutation_percentage: float
+        :type breeding_percentage: float
         :return: tuple(Storage)
         """
         result = []
         for cluster in self.cluster_repository.get_current_clusters():
-            genome_one = self.get_genomes_in_cluster(cluster._id)[1]
+            genome_one = self.get_genomes_in_cluster(cluster._id)
             genome_two = genome_one
-            seats_to_mutation = int(cluster.offspring * mutation_percentage)
-            result.append(list(zip(
+            seats_to_mutation = int(cluster.offspring * breeding_percentage)
+            result.extend(list(zip(
                 weighted_choice_range(genome_one, seats_to_mutation),
                 weighted_choice_range(genome_two, seats_to_mutation)
             )))
 
         return result
 
-    def select_genome_for_mutation(self, mutation_percentage: float) -> List[StorageGenome]:
+    def select_genomes_for_mutation(self, mutation_percentage: float) -> List[StorageGenome]:
         """
         Selects genome for mutation currently the best from all Clusters
         :param mutation_percentage: float
@@ -93,7 +85,7 @@ class GenomeSelector(object):
             step = self.get_genomes_in_cluster(cluster._id)
             seats_to_mutation = int(cluster.offspring * mutation_percentage)
 
-            result.append(weighted_choice_range(
+            result.extend(weighted_choice_range(
                 step,
                 seats_to_mutation)
             )
@@ -108,8 +100,9 @@ class GenomeSelector(object):
         for cluster in self.cluster_repository.get_current_clusters():
             step.append((cluster, cluster.fitness))
 
-        cluster_one = weighted_choice_range(step, 2)[0]
-        cluster_two = weighted_choice_range(step, 2)[1]
+        cluster_one = weighted_choice(step)
+        step.remove((cluster_one, cluster_one.fitness))
+        cluster_two = weighted_choice(step)
         return cluster_one, cluster_two
 
     def select_cluster_combination(
@@ -123,8 +116,8 @@ class GenomeSelector(object):
         :param genome_count: int number of seats which should be filled
         :return: List[Tuple[StorageGenome]] combination from given cluster
         """
-        genomes1 = self.get_genomes_in_cluster(cluster1._id)[1]
-        genomes2 = self.get_genomes_in_cluster(cluster2._id)[1]
+        genomes1 = self.get_genomes_in_cluster(cluster1._id)
+        genomes2 = self.get_genomes_in_cluster(cluster2._id)
         g1 = weighted_choice_range(genomes1, genome_count)
         g2 = weighted_choice_range(genomes2, genome_count)
         return list(zip(g1, g2))
@@ -139,6 +132,7 @@ class GenomeSelector(object):
             0.0,
             self.selection_parameters["discarding_by_cluster_fitness"]
         )
+
         return clusters
 
     def select_genomes_for_discarding(self) -> List[StorageGenome]:
@@ -148,9 +142,7 @@ class GenomeSelector(object):
         """
         genomes = []
         for cluster in self.cluster_repository.get_current_clusters():
-            genomes.append(self.get_genomes_in_cluster(
-                cluster._id,
-                0.0,
-                self.selection_parameters["discarding_by_genome_fitness"]
-            )[0])
+            g = self.genome_repository.get_genomes_in_cluster(cluster._id)
+            selection = int(len(g) * self.selection_parameters["discarding_by_genome_fitness"])
+            genomes.append(list(g).sort(key= lambda x: x.fitness)[:selection])
         return genomes
