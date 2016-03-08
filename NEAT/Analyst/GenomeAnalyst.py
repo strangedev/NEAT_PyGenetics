@@ -53,26 +53,19 @@ class GenomeAnalyst(object):
         self._reset_analysis()
         self._set_working_graph(genome.nodes, genome.edges)
 
-        # first add all edges to the result, remove found cycle closing edges
-        # later
-        self._result.edges = copy.deepcopy(genome.edges)
-
         # store found topologically_sorted_nodes directly into the AnalysisRe-
         # sult
         # store found cycle_edges locally for further processing
-        self._result.topologically_sorted_nodes, self._result.cycle_edges = \
+        self._result.topologically_sorted_nodes, cycle_edges = \
             self._dfs(sorted(genome.input_nodes.values()))
 
-        # removal of the cycle edges from the AnalysisResult
-        for source in self._result.cycle_nodes:
-            target_list = self._result.cycle_edges[source]
-            for target in target_list:
-                if target in self._result.edges[source]:
-                    self._result.edges[source].remove(target)
+        for _, targets in cycle_edges.items():
+            for _, gene_id in targets:
+                self._result.gene_closes_cycle_map[gene_id] = True
 
         self._set_working_graph(
-            self._result.cycle_nodes,
-            self._result.cycle_edges)
+            set(cycle_edges.keys()),
+            cycle_edges)
         self._result.topologically_sorted_cycle_nodes, _ = \
             self._dfs(sorted(self._working_nodes))
 
@@ -117,7 +110,7 @@ class GenomeAnalyst(object):
             Dict[int, List[int]]
         """
         nodes_top_sorted = []  # type: List[int]
-        cycle_edges = defaultdict(list)  # type: Dict[int, List[int]]
+        cycle_edges = defaultdict(list)  # type: Dict[int, List[Tuple[int, int]]]
         visited_nodes = set({})  # type: Set[int]
         # node_visitation_status:
         # 0 means not visited yet
@@ -140,7 +133,7 @@ class GenomeAnalyst(object):
     def _dfs_visit(self,
                    node: int,
                    nodes_top_sorted: List[int],
-                   cycle_edges: Dict[int, List[int]],
+                   cycle_edges: Dict[int, List[Tuple[int, int]]],
                    visited_nodes: Set[int],
                    node_visitation_status: Dict[int, int]) -> None:
         """
@@ -172,7 +165,7 @@ class GenomeAnalyst(object):
             node_visitation_status[node] = 2
             return
 
-        for neighbor in sorted(self._working_edges[node]):
+        for neighbor, gene_id in sorted(self._working_edges[node], key=lambda x: x[0]):
             if neighbor not in self._working_nodes:
                 continue
             if node_visitation_status[neighbor] == 0:
@@ -185,7 +178,7 @@ class GenomeAnalyst(object):
             # if an edge leads to a node that is currently being visited, the
             # edge closes a cycle.
             elif node_visitation_status[neighbor] == 1:
-                cycle_edges[node].append(neighbor)
+                cycle_edges[node].append((neighbor, gene_id))
 
         node_visitation_status[node] = 2
         nodes_top_sorted.insert(0, node)

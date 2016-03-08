@@ -52,9 +52,13 @@ class Mutator(object):
             # other vertex may be a possible endpoint
             possible_endpoints = list(analysis_genome.nodes)
         else:
-            possible_endpoints = \
-                [node for node in analysis_genome.nodes
-                 if node not in analysis_genome.edges[starting_vertex]]
+            possible_endpoints = []
+            for node in analysis_genome.nodes:
+                for target_node, _ in analysis_genome.edges[starting_vertex]:
+                    if node != target_node:
+                        # if there is no edge from the selected node to the cur-
+                        # rent node, it is a possible endpoint
+                        possible_endpoints.append(node)
 
         endpoint = random.choice(possible_endpoints)
 
@@ -84,7 +88,7 @@ class Mutator(object):
         random.seed()
 
         starting_vertex = random.choice(list(analysis_genome.edges.keys()))
-        endpoint = random.choice(list(analysis_genome.edges[starting_vertex]))
+        endpoint, _ = random.choice(list(analysis_genome.edges[starting_vertex]))
 
         old_gene_id = self.gene_repository.get_gene_id_for_endpoints(
             starting_vertex,
