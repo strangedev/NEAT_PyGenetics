@@ -66,7 +66,7 @@ class TestMutator(TestCase):
 
     def test_mutate_add_edge(self):
 
-        new_genome = self.mutator.mutate_add_edge(self.genome_ana, self.genome)
+        new_genome = self.mutator.mutate_add_edge(self.genome)
 
         differing_genes = [gid for gid in new_genome.genes.keys() \
                            if gid not in self.genome.genes.keys()]

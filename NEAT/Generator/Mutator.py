@@ -16,12 +16,9 @@ class Mutator(object):
 
     def mutate_genome(self, genome) -> StorageGenome:
 
-        analysis_genome = AnalysisGenome(self.gene_repository)
-        analysis_genome._init_from_storage_structure(genome)
+        if len(genome.genes) == 0:
 
-        if len(analysis_genome.edges) == 0:
-
-            return self.mutate_add_edge(analysis_genome, genome)
+            return self.mutate_add_edge(genome)
 
         edge_or_vertex = ProbabilisticTools.weighted_choice( # TODO:
             [
@@ -31,30 +28,45 @@ class Mutator(object):
         )
 
         if edge_or_vertex == 0:
-            new_genome = self.mutate_add_edge(analysis_genome, genome)
+            new_genome = self.mutate_add_edge(genome)
         else:
-            new_genome = self.mutate_add_node(analysis_genome, genome)
+            new_genome = self.mutate_add_node(genome)
 
         return self.mutate_perturb_weights(new_genome)
 
     def mutate_add_edge(
             self,
-            analysis_genome: AnalysisGenome,
-            storage_genome: StorageGenome
+            genome: StorageGenome
     ) -> StorageGenome:
 
         random.seed()
 
-        starting_vertex = random.choice(list(analysis_genome.nodes))
+        input_nodes = [v for v in genome.inputs.values()]
+        output_nodes = [v for v in genome.outputs.values()]
+        gene_endpoints = []
+        for gid in genome.genes.keys():
+            h, t = self.gene_repository.get_node_labels_by_gene_id(gid)
+            gene_endpoints.append(h)
+            gene_endpoints.append(t)
 
-        if starting_vertex not in analysis_genome.edges.keys():
+        nodes = list(set(input_nodes
+                    + output_nodes
+                    + gene_endpoints))
+
+        edges = {h: t for h, t in \
+                 [self.gene_repository.get_node_labels_by_gene_id(gid) \
+                  for gid in genome.genes.keys()]}
+
+        starting_vertex = random.choice(list(nodes))
+
+        if starting_vertex not in edges.keys():
             # if the chosen vertex has no outgoing edges (i.e. is a sink), every
             # other vertex may be a possible endpoint
-            possible_endpoints = analysis_genome.nodes
+            possible_endpoints = nodes
         else:
             possible_endpoints = \
-                [node for node in analysis_genome.nodes
-                 if node not in analysis_genome.edges[starting_vertex]]
+                [node for node in nodes
+                 if node not in edges[starting_vertex]]
 
         endpoint = random.choice(possible_endpoints)
 
@@ -70,7 +82,7 @@ class Mutator(object):
             ]
         )
 
-        new_genome = copy.deepcopy(storage_genome) # TODO: never deepcopy a StorageGenome. It WILL break the database because of the ObjectID. We need a copyconstructor.
+        new_genome = copy.deepcopy(genome) # TODO: never deepcopy a StorageGenome. It WILL break the database because of the ObjectID. We need a copyconstructor.
         new_genome.genes[gene_id] = (gene_enabled, gene_weight)
 
         return new_genome
