@@ -104,7 +104,7 @@ class DatabaseConnector(object):
             collection_name: str,
             document_id,
             document: object
-    ):
+    ) -> dict:
         """
         Updates a single document in the given collection in the database. Takes
         an id and an object and replaces the data at the given id with the ob-
@@ -112,10 +112,10 @@ class DatabaseConnector(object):
         :param document:
         :param document_id:
         :param collection_name:
-        :return:
+        :return: information about update process (from mongoDB)
         """
         try:
-            self._database[collection_name].update({'_id': document_id}, document)
+            return self._database[collection_name].update({'_id': document_id}, document)
         except Exception as e:
             raise Exception(" update_one, DatabaseConnector") from e
 
@@ -123,20 +123,22 @@ class DatabaseConnector(object):
             self,
             collection_name: str,
             documents: Iterable[Tuple[int, object]]
-    ):
+    ) -> List[dict]:
         """
         Updates multiple documents in the given collection in the database.
         Takes an Iterable of document_id, object tuples and replaces them one by
         one in the database.
         :param collection_name:
         :param documents:
-        :return:
+        :return: information about update process (from mongoDB)
         """
+        result = []
         for document_id, document in documents:
             try:
-                self._database[collection_name].update({'_id': document_id}, document)
+                result.append(self._database[collection_name].update({'_id': document_id}, document))
             except Exception as e:
                 raise Exception(" update_many, DatabaseConnector") from e
+        return result
 
     def remove_one(
             self,
