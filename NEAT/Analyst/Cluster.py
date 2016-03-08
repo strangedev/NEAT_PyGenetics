@@ -9,11 +9,10 @@ class Cluster(object):
 
     def __init__(
             self,
-            id: ObjectId,
-            representative: ObjectId
     ):
 
-        self._id = id # type: ObjectId
-        self.representative = representative # type: ObjectId
+        self._id = ObjectId() # type: ObjectId
+        self.representative = None # type: ObjectId
         self.fitness = 0 # type: float
         self.offspring = 0 # type: int
+        self.alive = True
