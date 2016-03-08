@@ -24,7 +24,7 @@ class TestGenomeClusterer(TestCase):
 
     def test_cluster_genomes(self):
 
-        clusterer.cluster_genomes()
+        clusterer.cluster_genomes(genome_repo.mock_population)
 
         self.assertEqual(
             cluster_repo.get_cluster_count(),
@@ -87,7 +87,7 @@ class TestGenomeClusterer(TestCase):
 
     def test_calculate_cluster_fitness(self):
 
-        clusterer.cluster_genomes()
+        clusterer.cluster_genomes(genome_repo.mock_population)
 
         cluster_zero_fitness = clusterer.calculate_cluster_fitness(ObjectId("000000000000000000000000"))
 
@@ -107,7 +107,7 @@ class TestGenomeClusterer(TestCase):
 
     def test_calculate_max_cluster_populations(self):
 
-        clusterer.cluster_genomes()
+        clusterer.cluster_genomes(genome_repo.mock_population)
 
         clusterer.calculate_max_cluster_populations()
 
@@ -125,7 +125,7 @@ class TestGenomeClusterer(TestCase):
 
     def test_calculate_cluster_offspring_values(self):
 
-        clusterer.cluster_genomes()
+        clusterer.cluster_genomes(genome_repo.mock_population)
 
         clusterer.calculate_cluster_offspring_values()
 

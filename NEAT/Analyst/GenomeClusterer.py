@@ -1,15 +1,8 @@
-#from NEAT.Repository.GenomeRepository import GenomeRepository
 from bson import ObjectId
-
+from NEAT.Repository.GenomeRepository import GenomeRepository
 from NEAT.Repository.ClusterRepository import ClusterRepository
 from NEAT.GenomeStructures.StorageStructure import StorageGenome
-from NEAT.Analyst.Cluster import Cluster
 from typing import List, Tuple, Dict
-import math
-
-class GenomeRepository(object):
-
-    pass
 
 class GenomeClusterer(object):
     """
@@ -26,46 +19,41 @@ class GenomeClusterer(object):
         self.genome_repository = genome_repository
         self.cluster_repository = cluster_repository
         self.clustering_parameters = clustering_parameters
+        self._no_clusters = (self.cluster_repository.get_cluster_count == 0)
 
+    def cluster_genomes(self, genomes: List[object]):
 
-    def cluster_genomes(self):
-        """
-        Compares all genomes of the current population by topological
-        similarity and assigns a number to the genome, based on which
-        cluster it is in.
-        :return: None
-        """
+        for genome in genomes:
+            self.cluster_genome(genome)
 
-        current_genomes = list(self.genome_repository.get_current_population())  # type: List[StorageGenome.StorageGenome]
+    def cluster_genome(self, genome: StorageGenome):
 
-        if self.cluster_repository.get_cluster_count == 0: # TODO:
-            first_genome = current_genomes.pop(0)
-            self.cluster_repository.add_cluster_with_representative(first_genome._id) # TODO:
+        if self._no_clusters: # TODO:
+            self.cluster_repository.add_cluster_with_representative(genome._id) # TODO:
+            self._no_clusters = False
 
+        clusters = self.cluster_repository.get_current_clusters() # TODO:
 
-        for genome in current_genomes:
-            clusters = self.cluster_repository.get_current_clusters() # TODO:
+        for cluster in clusters:
 
-            for cluster in clusters:
+            delta = self.calculate_delta(
+                genome,
+                self.genome_repository.get_genome_by_id(cluster.representative) # TODO:
+            )
 
-                delta = self.calculate_delta(
-                    genome,
-                    self.genome_repository.get_genome_by_id(cluster.representative) # TODO:
-                )
-
-                if delta < self.clustering_parameters["delta_threshold"]:
-                    self.genome_repository.update_cluster_for_genome( # TODO:
-                        genome._id,
-                        cluster._id
-                    )
-
-                    break
-            else:
-                self.cluster_repository.add_cluster_with_representative(genome._id) # TODO:
+            if delta < self.clustering_parameters["delta_threshold"]:
                 self.genome_repository.update_cluster_for_genome( # TODO:
                     genome._id,
-                    self.cluster_repository.get_cluster_by_representative(genome._id)._id # TODO:
+                    cluster._id
                 )
+
+                break
+        else:
+            self.cluster_repository.add_cluster_with_representative(genome._id) # TODO:
+            self.genome_repository.update_cluster_for_genome( # TODO:
+                genome._id,
+                self.cluster_repository.get_cluster_by_representative(genome._id)._id # TODO:
+            )
 
     def calculate_delta(
             self,
