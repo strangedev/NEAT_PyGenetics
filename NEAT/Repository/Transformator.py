@@ -5,6 +5,7 @@ from bson import ObjectId
 
 from NEAT.Analyst.AnalysisResult import AnalysisResult
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
+from NEAT.Analyst.Cluster import Cluster
 import copy
 
 class Transformator(object):
@@ -72,6 +73,26 @@ class Transformator(object):
                 storage_genome = StorageGenome()
                 storage_genome.__dict__ = document
                 return storage_genome
+        except KeyError:
+            return None
+
+    @staticmethod
+    def encode_Cluster(cluster: Cluster) -> dict:
+        try:
+            dictionary = cluster.__dict__
+            dictionary.__setitem__('_type', 'Cluster')
+            return dictionary
+        except KeyError:
+            return None
+
+    @staticmethod
+    def decode_Cluster(document: dict) -> Cluster:
+        try:
+            if document['_type'] == 'Cluster':
+                document.pop('_type')
+                cluster = Cluster()
+                cluster.__dict__ = document
+                return cluster
         except KeyError:
             return None
 

@@ -9,6 +9,9 @@ class mock_ClusterRepository(object):
         self.clusters = []
         self.next_id = 0
 
+    def reset(self):
+        self.__init__()
+
     def get_cluster_count(self):
 
         return len(self.clusters)

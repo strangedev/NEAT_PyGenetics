@@ -24,7 +24,15 @@ class TestGenomeClusterer(TestCase):
 
     def test_cluster_genomes(self):
 
-        clusterer.cluster_genomes(genome_repo.mock_population)
+        new_cluster_repo = mock_ClusterRepository()
+        new_genome_repo = mock_GenomeRepository()
+        new_clusterer = GenomeClusterer(
+            new_cluster_repo,
+            new_genome_repo,
+            new_clustering_params
+        )
+
+        new_clusterer.cluster_genomes(genome_repo.mock_population)
 
         self.assertEqual(
             cluster_repo.get_cluster_count(),
