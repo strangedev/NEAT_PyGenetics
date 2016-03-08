@@ -62,7 +62,7 @@ class GenomeRepository(object):
         :param genome: StorageGenome to insert
         :return:
         """
-        i = Transformator.encode_StorageGenome()
+        i = Transformator.encode_StorageGenome(genome)
         self._database_connector.insert_one("genomes", i)
 
     def insert_genomes(self, genomes: Iterable[StorageGenome]) -> None:
@@ -73,7 +73,7 @@ class GenomeRepository(object):
         """
         g = []
         for i in genomes:
-            g.append(Transformator.encode_StorageGenome())
+            g.append(Transformator.encode_StorageGenome(i))
         self._database_connector.insert_many("genomes", g)
 
     def update_genome(self, genome: StorageGenome) -> None:
@@ -82,7 +82,7 @@ class GenomeRepository(object):
         :param genome: StorageGenome to update in DB
         :return:
         """
-        doc = Transformator.encode_StorageGenome()
+        doc = Transformator.encode_StorageGenome(genome)
         self._database_connector.update_one("genomes", genome._id, doc)
 
     def update_genomes(self, genomes: Iterable[StorageGenome]) -> None:
@@ -93,7 +93,7 @@ class GenomeRepository(object):
         """
         g = []
         for genome in genomes:
-            g.append((genome._id, Transformator.encode_StorageGenome()))
+            g.append((genome._id, Transformator.encode_StorageGenome(genome)))
         self._database_connector.update_many("genomes", g)
 
     def disable_genome(self, genome_id: ObjectId):

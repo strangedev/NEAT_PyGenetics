@@ -18,7 +18,7 @@ class TestTransformator(TestCase):
     def test_encode_StorageGenome(self):
         storage_genome = StorageGenome()
         storage_dict = copy.deepcopy(storage_genome.__dict__)
-        analysis_dict = Transformator.encode_AnalysisResult(storage_dict.__getitem__('analysis_result'))
+        analysis_dict = Transformator.encode_AnalysisResult()
         storage_dict.__setitem__('analysis_result', analysis_dict)
         storage_dict.__setitem__('_type', 'StorageGenome')
         self.assertDictEqual(storage_dict, Transformator.encode_StorageGenome(storage_genome))
@@ -41,12 +41,12 @@ class TestTransformator(TestCase):
     @unittest.expectedFailure
     def test_encode_AnalysisResultExpectedKeyError(self):
         e = {}
-        self.assertEqual(None, Transformator.encode_AnalysisResult(e))
+        self.assertEqual(None, Transformator.encode_AnalysisResult())
 
     @unittest.expectedFailure
     def test_decodeAnalysisResultExpectedKeyError(self):
-        self.assertEqual(None, Transformator.decode_AnalysisResult({}))
+        self.assertEqual(None, Transformator.decode_AnalysisResult())
 
     @unittest.expectedFailure
     def test_encode_StorageGenome(self):
-        self.assertEqual(None, Transformator.encode_StorageGenome({}))
+        self.assertEqual(None, Transformator.encode_StorageGenome())

@@ -56,7 +56,7 @@ class GenomeSelector(object):
         end = int(len(clusters*ending))
         return clusters[start:end]
 
-    def select_genomes_for_breeding(self, breeding_percentage: float) -> List[tuple(StorageGenome)]:
+    def select_genomes_for_breeding(self, breeding_percentage: float) -> List[Tuple[StorageGenome]]:
         """
         Selects genomes for breeding currently best two from all Clusters
         :type breeding_percentage: float

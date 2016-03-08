@@ -50,7 +50,7 @@ class Transformator(object):
         try:
             dictionary = storage_genome.__dict__
             analysis_res = dictionary.__getitem__('analysis_result')
-            analysis_result = Transformator.encode_AnalysisResult()
+            analysis_result = Transformator.encode_AnalysisResult(analysis_res)
             dictionary.__setitem__('analysis_result', analysis_result)
             dictionary.__setitem__('_type', 'StorageGenome')
             return dictionary
@@ -67,7 +67,7 @@ class Transformator(object):
         try:
             if document['_type'] == 'StorageGenome':
                 document.pop('_type')
-                analysis_result = Transformator.decode_AnalysisResult()
+                analysis_result = Transformator.decode_AnalysisResult(document['analysis_result'])
                 document.__setitem__('analysis_result', analysis_result)
                 storage_genome = StorageGenome()
                 storage_genome.__dict__ = document
