@@ -17,8 +17,6 @@ class AnalysisResult(object):
             set of topologically_sorted_nodes.
     """
     def __init__(self) -> None:
-        self.disabled_nodes = set({})  # type: Set[int]
-
         # maps edges to true, if the close a circle in the analyzed graph,
         #               false, if the don't.
         self.gene_closes_cycle_map = defaultdict(bool)  # type: Dict[int, bool]
@@ -29,8 +27,7 @@ class AnalysisResult(object):
         self.topologically_sorted_cycle_nodes = []  # type: List[int]
 
     def __eq__(self, obj: 'AnalysisResult'):
-        return self.disabled_nodes.__eq__(obj.disabled_nodes) \
-            and self.gene_closes_cycle_map.__eq__(obj.gene_closes_cycle_map) \
+        return self.gene_closes_cycle_map.__eq__(obj.gene_closes_cycle_map) \
             and self.topologically_sorted_nodes\
                    .__eq__(obj.topologically_sorted_nodes) \
             and self.topologically_sorted_cycle_nodes\
