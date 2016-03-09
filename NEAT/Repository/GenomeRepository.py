@@ -28,9 +28,9 @@ class GenomeRepository(object):
 
         :return: Iterable[StorageGenomes] which are alive
         """
-        o = self._database_connector.find_many("genomes", {"is_alive": True})
+        alive = self._database_connector.find_many("genomes", {"is_alive": True})
         genomes = []
-        for genome in o:
+        for genome in alive:
             genomes.append(Transformator.decode_StorageGenome(genome))
         return genomes
 
@@ -63,7 +63,7 @@ class GenomeRepository(object):
         :return:
         """
         i = Transformator.encode_StorageGenome(genome)
-        self._database_connector.insert_one("genomes", i)
+        return self._database_connector.insert_one("genomes", i)
 
     def insert_genomes(self, genomes: Iterable[StorageGenome]) -> None:
         """
@@ -74,7 +74,7 @@ class GenomeRepository(object):
         g = []
         for i in genomes:
             g.append(Transformator.encode_StorageGenome(i))
-        self._database_connector.insert_many("genomes", g)
+        return self._database_connector.insert_many("genomes", g)
 
     def update_genome(self, genome: StorageGenome) -> dict:
         """
@@ -93,7 +93,7 @@ class GenomeRepository(object):
         """
         g = []
         for genome in genomes:
-            g.append((genome._id, Transformator.encode_StorageGenome(genome)))
+            g.append(self._database_connector.find_one_by_id("genomes", genome._id))
         return self._database_connector.update_many("genomes", g)
 
     def disable_genome(self, genome_id: ObjectId) -> dict:
@@ -102,9 +102,9 @@ class GenomeRepository(object):
         :param genome_id: ObjectId from genome to disable
         :return:
         """
-        genome = self.get_genome_by_id(genome_id)
-        genome.is_alive = False
-        return self.update_genome(genome)
+        genome = self._database_connector.find_one_by_id(genome_id)
+        genome.__setitem__('is_alive', False)
+        return self._database_connector.update_one("genomes", genome_id, genome)
 
     def disable_genomes(self, genomes_id: [ObjectId]) -> [dict]:
         """
@@ -114,7 +114,7 @@ class GenomeRepository(object):
         """
         result = []
         for genome_id in genomes_id:
-            genome = self.get_genome_by_id(genome_id)
+            genome = self._database_connector.find_one_by_id(genome_id)
             genome.is_alive = False
             result.append(genome)
         return self.update_genomes(result)
@@ -126,7 +126,7 @@ class GenomeRepository(object):
         :param fitness: Fraction to set
         :return: dict information about update process (from mongoDB)
         """
-        genome = self.get_genome_by_id(genome_id)
+        genome = self._database_connector.find_one_by_id(genome_id)
         genome.fitness = fitness
         return self.update_genome(genome)
 
