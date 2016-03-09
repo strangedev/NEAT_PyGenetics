@@ -37,7 +37,7 @@ class JSONSocket(Thread):
         bytes_received = 0
 
         while bytes_received < message_size:
-            chunk = self._socket.recv(
+            chunk = socket.recv(
                 min(
                     message_size - bytes_received,
                     1024
@@ -45,7 +45,7 @@ class JSONSocket(Thread):
             )
             if chunk == "":
                 raise RuntimeError("JSONSocket: socket broken")
-            message_chunks.append(chunk)
+            message_chunks.append(chunk.decode('utf-8'))
             bytes_received += len(chunk)
 
         return ''.join(message_chunks)
@@ -56,7 +56,7 @@ class JSONSocket(Thread):
         bytes_sent = 0
 
         while bytes_sent < 16:
-            chunk = self._socket.recv(
+            chunk = socket.recv(
                 min(
                     16 - bytes_sent,
                     16
@@ -64,7 +64,7 @@ class JSONSocket(Thread):
             )
             if chunk == '':
                 raise RuntimeError("JSONSocket: socket broken")
-            message_size_serialized += chunk
+            message_size_serialized += chunk.decode('utf-8')
             bytes_sent += len(chunk)
 
         return int(message_size_serialized)
@@ -100,7 +100,7 @@ class JSONSocket(Thread):
             missing = 16 - length
             for i in range(missing):
                 as_string = '0' + as_string
-        return as_string
+        return as_string.encode('utf-8')
 
     def _connect(self):
         self._socket.connect(
@@ -117,7 +117,7 @@ class JSONSocket(Thread):
 
         self._connect()
         self._send_message(
-            json.dumps(dictionary)
+            json.dumps(dictionary).encode('utf-8')
         )
 
     def receive_json(self):
