@@ -42,20 +42,31 @@ class DatabaseConnectorTest(unittest.TestCase):
         self.assertDictEqual({'a': 'b', 'c': 'd'}, self.database_connector.find_many('testbase', {'a': 'b', 'c': 'd'}))
 
     def test_updateOne(self):
-        self.collection.update = (lambda x, y: [x, y])
-        self.database_connector.update_one('testbase', '22', {'test': 'test'})
-        pass
+        self.collection.update = (lambda x, y: True)
+        self.assertTrue(
+            self.database_connector.update_one('testbase', '22', {'test': 'test'}))
 
     @unittest.expectedFailure
-    def test_updateMany(self):
+    def test_updateManyFail(self):
         self.collection.update = (lambda x, y: [x, y])
         self.database_connector.update_many('testbase', [(1, {'doc': 'doc'})])
         self.fail(self.database_connector.update_many('testbase', [{'doc': 'doc'}]))
 
+    def test_updateMany(self):
+        self.collection.update = (lambda x, y: True)
+        for i in self.database_connector.update_many(
+                'testbase',
+                [(1, {'doc': 'doc'}), (2, {'doc': 'doc'}), (1, {'doc': 'doc'}), (1, {'doc': 'doc'})]
+        ):
+            self.assertTrue(i)
+
     def test_removeOne(self):
-        self.collection.remove = (lambda  x: x)
-        self.database_connector.remove_one('testbase', 12)
+        self.collection.remove = (lambda x: True)
+        self.assertTrue(
+            self.database_connector.remove_one('testbase', {'a': 2})
+        )
 
     def test_removeMany(self):
-        self.collection.remove = (lambda x: x)
-        self.database_connector.remove_many('testbase', [12, 2, 3])
+        self.collection.remove = (lambda x: True)
+        for i in self.database_connector.remove_many('testbase', [12, 2, 3]):
+                self.assertTrue(i)
