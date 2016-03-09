@@ -16,3 +16,10 @@ class Cluster(object):
         self.fitness = 0 # type: float
         self.offspring = 0 # type: int
         self.alive = True
+
+    def __eq__(self, obj: 'Cluster') -> bool:
+        return self._id.__eq__(obj._id) and \
+            self.representative.__eq__(obj.representative) and \
+            self.fitness.__eq__(obj.fitness) and \
+            self.offspring.__eq__(obj.offspring) and \
+            self.alive.__eq__(obj.alive)
