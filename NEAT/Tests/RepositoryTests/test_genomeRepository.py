@@ -67,4 +67,13 @@ class TestGenomeRepository(TestCase):
         self.assertFalse(Transformator.Transformator.decode_StorageGenome(genome).is_alive)
 
     def test_disable_genomes(self):
-        pass
+        self.genome_repository.update_genomes = (lambda x:x)
+        self.db.find_one_by_id = (lambda x:x)
+        genomes = []
+        for i in range(0,10):
+            g = StorageGenome()
+            g.is_alive = True
+            genomes.append(g)
+
+        for i in self.genome_repository.disable_genomes(genomes):
+            self.assertFalse(i.is_alive)
