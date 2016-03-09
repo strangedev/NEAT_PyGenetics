@@ -53,7 +53,7 @@ class GenomeSelector(object):
             clusters.append(cluster)
         clusters.sort(key=lambda c: c.fitness)
         start = int(len(clusters)*begin)
-        end = int(len(clusters*ending))
+        end = int(len(clusters)*ending)
         return clusters[start:end]
 
     def select_genomes_for_breeding(self, breeding_percentage: float) -> List[Tuple[StorageGenome]]:
@@ -144,5 +144,6 @@ class GenomeSelector(object):
         for cluster in self.cluster_repository.get_current_clusters():
             g = self.genome_repository.get_genomes_in_cluster(cluster._id)
             selection = int(len(g) * self.selection_parameters["discarding_by_genome_fitness"])
-            genomes.append(list(g).sort(key= lambda x: x.fitness)[:selection])
+            list(g).sort(key=lambda x: x.fitness)
+            genomes.extend(g[:selection])
         return genomes
