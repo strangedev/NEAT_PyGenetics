@@ -1,13 +1,9 @@
 from unittest import TestCase
 from unittest.mock import MagicMock
 
-from bson import ObjectId
-
 from NEAT.Analyst.Cluster import Cluster
 from NEAT.Analyst.GenomeSelector import GenomeSelector
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
-from NEAT.Tests.MockClasses.mock_ClusterRepository import mock_ClusterRepository
-from NEAT.Tests.MockClasses.mock_GenomeRepository import mock_GenomeRepository
 
 
 class test_genomeSelector(TestCase):
@@ -24,21 +20,20 @@ class test_genomeSelector(TestCase):
 
     def test_getGenomesInCluster(self):
         genomes = []
-        genomes_in_tupel = []
-        for g in range(1,10):
+        genomes_in_tuple = []
+        for g in range(1, 10):
             genome = StorageGenome()
             genome.fitness = float(1/g)
             genomes.append(genome)
-            genomes_in_tupel.append((genome, genome.fitness))
+            genomes_in_tuple.append((genome, genome.fitness))
         self.mock_genome_repository.get_genomes_in_cluster = MagicMock(return_value=genomes)
 
-        self.assertListEqual(genomes_in_tupel, self.genome_selector.get_genomes_in_cluster(0))
+        self.assertListEqual(genomes_in_tuple, self.genome_selector.get_genomes_in_cluster(0))
 
     def test_getClusterAreaSortedByFitness(self):
         unsorted = [0.0, 1.0, 2.4, 0.4, 0.9, 0.12, 4.32, 3.2, 5.1, 0.55]
         chosen = [0.4, 0.55, 0.9, 1.0, 2.4, 3.2]
         discard = [0.0, 0.12]
-        result = []
         cluster = []
         cluster_chosen = []
         cluster_discard = []
@@ -52,7 +47,7 @@ class test_genomeSelector(TestCase):
                 cluster_discard.append(c)
         self.mock_cluster_repository.get_current_clusters = MagicMock(return_value=cluster)
 
-        cluster_chosen.sort(key= lambda c: c.fitness)
+        cluster_chosen.sort(key=lambda x: x.fitness)
 
         self.assertListEqual(cluster_chosen, self.genome_selector.get_cluster_area_sorted_by_fitness(0.2, 0.8))
         self.assertListEqual(cluster_discard, self.genome_selector.select_clusters_for_discarding())
@@ -65,11 +60,10 @@ class test_genomeSelector(TestCase):
             c = Cluster()
             c.offspring = i
             cluster.append(c)
-        for i in range(0,8):
+        for i in range(0, 8):
             g = StorageGenome()
             g.fitness = float(1/(i+1))
             genome.append(g)
-        c = Cluster()
         g = StorageGenome()
 
         self.mock_cluster_repository.get_current_clusters = MagicMock(return_value=cluster)
@@ -95,9 +89,7 @@ class test_genomeSelector(TestCase):
         test_comb = self.genome_selector.select_clusters_for_combinations()
         self.assertEqual(type(d), type(self.genome_selector.select_clusters_for_combinations()))
         self.assertFalse(
-            test_comb[0].__eq__(
-            test_comb[1]
-            )
+            test_comb[0].__eq__(test_comb[1])
         )
 
     def test_selectClusterCombination(self):
@@ -108,7 +100,7 @@ class test_genomeSelector(TestCase):
             c = Cluster()
             c.offspring = i
             cluster.append(c)
-        for i in range(0,8):
+        for i in range(0, 8):
             g = StorageGenome()
             g.fitness = float(1/(i+1))
             genome.append(g)
@@ -129,19 +121,14 @@ class test_genomeSelector(TestCase):
         """
         cluster = []
         genome = []
-        for i in range(0,4):
+        for i in range(0, 4):
             c = Cluster()
             c.offspring = i
             cluster.append(c)
-        for i in range(0,10):
+        for i in range(0, 10):
             g = StorageGenome()
             g.fitness = float(1/(i+1))
             genome.append(g)
         self.mock_cluster_repository.get_current_clusters = MagicMock(return_value=cluster)
         self.mock_genome_repository.get_genomes_in_cluster = MagicMock(return_value=genome)
         self.assertEqual(8, len(self.genome_selector.select_genomes_for_discarding()))
-
-
-
-
-
