@@ -49,7 +49,7 @@ class Transformator(object):
         :return: dict
         """
         try:
-            dictionary = storage_genome.__dict__
+            dictionary = copy.deepcopy(storage_genome.__dict__)
             analysis_res = dictionary.__getitem__('analysis_result')
             analysis_result = Transformator.encode_AnalysisResult(analysis_res)
             dictionary.__setitem__('analysis_result', analysis_result)
