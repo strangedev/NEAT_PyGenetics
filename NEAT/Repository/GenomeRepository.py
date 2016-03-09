@@ -138,7 +138,7 @@ class GenomeRepository(object):
         """
         result = []
         for genome_id, fitness in genome_fitness:
-            genome = self.get_genome_by_id(genome_id)
+            genome = self._database_connector.find_one_by_id(genome_id)
             genome.fitness = fitness
             result.append(genome)
         return self.update_genomes(result)

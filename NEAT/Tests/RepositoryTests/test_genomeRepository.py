@@ -77,3 +77,21 @@ class TestGenomeRepository(TestCase):
 
         for i in self.genome_repository.disable_genomes(genomes):
             self.assertFalse(i.is_alive)
+
+    def test_updateGenomeFitness(self):
+        genome = StorageGenome()
+        genome.fitness = 1.0
+        self.db.find_one_by_id = (lambda x: x)
+        self.genome_repository.update_genome = lambda x: x
+        self.assertEqual(2.0, self.genome_repository.update_genome_fitness(genome, 2.0).fitness)
+
+    def test_updateGenomesFitness(self):
+        genomes = []
+        for i in range(0, 10):
+            g = StorageGenome()
+            g.fitness = float(1 / (i + 2))
+            genomes.append((g, 4.7))
+        self.db.find_one_by_id = lambda x: x
+        self.genome_repository.update_genomes = lambda x: x
+        for i in self.genome_repository.update_genomes_fitness(genomes):
+            self.assertEqual(4.7, i.fitness)
