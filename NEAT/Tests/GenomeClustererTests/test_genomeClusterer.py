@@ -27,9 +27,9 @@ class TestGenomeClusterer(TestCase):
         new_cluster_repo = mock_ClusterRepository()
         new_genome_repo = mock_GenomeRepository()
         new_clusterer = GenomeClusterer(
-            new_cluster_repo,
             new_genome_repo,
-            new_clustering_params
+            new_cluster_repo,
+            clustering_params
         )
 
         new_clusterer.cluster_genomes(genome_repo.mock_population)
