@@ -5,7 +5,7 @@ from threading import Semaphore, Thread
 
 message_queue_size = 64
 server_address = "127.0.0.1"
-server_port = 8066
+server_port = 8081
 
 in_free = Semaphore(message_queue_size)
 in_full = Semaphore(0)
@@ -17,23 +17,23 @@ out_mutex = Semaphore(1)
 
 class QueueWorker(Thread):
 
-    def __init__(self, queue, mode):
+    def __init__(self, queue, mode, port):
         self._queue = queue
         self._mode = mode
+        self._port = port
 
         super().__init__()
         self.start()
 
-        self._work_on_queue = self._work_receive \
-            if self._mode == "recv" \
-            else self._work_send
-
     def run(self):
         while True:
-            self._work_on_queue()
+            if self._mode == "recv":
+                self._work_receive()
+            else:
+                self._work_send()
 
     def _work_receive(self):
-        self.socket = JSONSocket(server_address, server_port)
+        self.socket = JSONSocket(server_address, self._port)
         dictionary = self.socket.receive_dict()
 
         in_free.acquire()
@@ -65,8 +65,8 @@ class NEATServer(object):
         self._out_queue = []
         self._in_queue = []
 
-        self._in_queue_worker = QueueWorker(self, "recv")
-        self._out_queue_worker = QueueWorker(self, "send")
+        self._in_queue_worker = QueueWorker(self._in_queue, "recv", server_port)
+        self._out_queue_worker = QueueWorker(self._out_queue, "send", server_port + 1)
 
     def _enqueue_command(self, command: BaseCommand):
         out_free.acquire()
