@@ -17,6 +17,11 @@ class JSONSocket(Thread):
             socket.AF_INET,
             socket.SOCK_STREAM
         )
+        self._socket.setsockopt(
+            socket.SOL_SOCKET,
+            socket.SO_REUSEADDR,
+            1
+        )
 
         self._server_address = server_address
         self._server_port = server_port
