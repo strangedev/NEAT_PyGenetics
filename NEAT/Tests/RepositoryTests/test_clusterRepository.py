@@ -2,6 +2,7 @@ from unittest import TestCase
 from unittest.mock import MagicMock
 
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
+from NEAT.Repository import Transformator
 from NEAT.Repository.ClusterRepository import ClusterRepository
 
 
@@ -16,7 +17,11 @@ class TestClusterRepository(TestCase):
 
     def test_add_cluster_with_representative(self):
         genome = StorageGenome()
-        self.fail()
+        self.db.insert_one = lambda x, y: y
+        self.assertDictEqual(
+            Transformator.Transformator.encode_StorageGenome(genome),
+            self.cluster_repository.add_cluster_with_representative(genome).__getitem__('representative')
+        )
 
     def test_archive_cluster(self):
         self.fail()
