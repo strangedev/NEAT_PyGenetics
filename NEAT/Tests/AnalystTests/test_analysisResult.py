@@ -37,3 +37,13 @@ class TestAnalysisResult(TestCase):
 
         result.topologically_sorted_cycle_nodes = [1, 2]
         self.assertSetEqual({1, 2}, result.cycle_nodes)
+
+    def test_copyConstructor(self):
+        ana1 = AnalysisResult()
+        ana1.gene_closes_cycle_map[5] = True
+        ana1.topologically_sorted_nodes = [1, 8, 3, 4, 6, 7]
+        ana1.topologically_sorted_cycle_nodes = [6, 2, 4]
+        ana2 = AnalysisResult(ana1)
+
+        self.assertEqual(ana1, ana2)
+        self.assertNotEqual(ana1.__repr__(), ana2.__repr__())

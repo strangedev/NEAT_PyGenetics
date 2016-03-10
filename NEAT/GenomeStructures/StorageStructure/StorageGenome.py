@@ -1,3 +1,4 @@
+from copy import deepcopy
 from typing import List, Tuple, Dict
 from fractions import Fraction
 
@@ -14,7 +15,7 @@ class StorageGenome(object):
     (gene_id, weight, disabled)
     """
 
-    def __init__(self):
+    def __init__(self, genome: 'StorageGenome' = None):
         """
         id: The Genome's ID, unique in the population.
         inputs: A list of the ids of the input nodes. There has to be at least
@@ -29,15 +30,17 @@ class StorageGenome(object):
         analysis_result: A result object that is generated when analyzing the
           genome. This is per default empty.
         cluster: The cluster to which the Genome belongs.
+        :param genome: If genome is given, its inputs are copied (except for id)
         """
         self._id = ObjectId()
-        self.is_alive = True
-        self.fitness = 0  # type: float
-        self.inputs = {}  # type: Dict[str, int]
-        self.outputs = {}  # type: Dict[str, int]
-        self.genes = {}  # type: Dict[int, Tuple[bool, Fraction]]
-        self.analysis_result = AnalysisResult()
-        self.cluster = ObjectId()
+        self.is_alive = True if genome is None else genome.is_alive
+        self.fitness = 0 if genome is None else genome.fitness  # type: float
+        self.inputs = {} if genome is None else deepcopy(genome.inputs)  # type: Dict[str, int]
+        self.outputs = {} if genome is None else deepcopy(genome.outputs)  # type: Dict[str, int]
+        self.genes = {} if genome is None else deepcopy(genome.genes)  # type: Dict[int, Tuple[bool, Fraction]]
+        self.analysis_result = AnalysisResult() if genome is None \
+            else AnalysisResult(genome.analysis_result)
+        self.cluster = ObjectId() if genome is None else genome.cluster
         pass
 
     def __eq__(self, obj: 'StorageGenome'):
