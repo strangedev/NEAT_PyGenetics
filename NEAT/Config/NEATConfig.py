@@ -6,11 +6,13 @@ import os
 
 class NEATConfig(object):
 
-    def __init__(self):
+    def __init__(self, config_path=None):
 
         self.parameters = dict({})
 
-        self.config_directory = os.path.dirname(__file__)
+        self.config_directory = os.path.dirname(__file__) \
+            if not config_path \
+            else config_path
         self.working_directory = os.path.join(
             self.config_directory,
             "../../"
