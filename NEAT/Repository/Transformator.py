@@ -80,6 +80,9 @@ class Transformator(object):
     def encode_Cluster(cluster: Cluster) -> dict:
         try:
             dictionary = cluster.__dict__
+            representative = dictionary.__getitem__('representative')
+            encode_genome = Transformator.encode_StorageGenome(representative)
+            dictionary.__setitem__('representative', encode_genome)
             dictionary.__setitem__('_type', 'Cluster')
             return dictionary
         except KeyError:
@@ -90,6 +93,9 @@ class Transformator(object):
         try:
             if document['_type'] == 'Cluster':
                 document.pop('_type')
+                representative = document.__getitem__('representative')
+                decode_genome = Transformator.decode_StorageGenome(representative)
+                document.__setitem__('representative', decode_genome)
                 cluster = Cluster()
                 cluster.__dict__ = document
                 return cluster
