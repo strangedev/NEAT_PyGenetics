@@ -22,7 +22,7 @@ class ClusterRepository(object):
     def add_cluster_with_representative(
             self,
             genome_id: ObjectId
-    ) -> None:
+    ) -> ObjectId:
         cluster = Cluster()
         cluster.representative = genome_id
         return self._database_connector.insert_one(
@@ -30,7 +30,7 @@ class ClusterRepository(object):
             Transformator.encode_Cluster(cluster)
         )
 
-    def archive_cluster(self, cluster_id: ObjectId):
+    def archive_cluster(self, cluster_id: ObjectId) -> dict:
         cluster = Transformator.decode_Cluster(
             self._database_connector.find_one_by_id(
                 "clusters",
