@@ -25,7 +25,7 @@ class ClusterRepository(object):
     ) -> None:
         cluster = Cluster()
         cluster.representative = genome_id
-        self._database_connector.insert_one(
+        return self._database_connector.insert_one(
             "clusters",
             Transformator.encode_Cluster(cluster)
         )
@@ -38,7 +38,7 @@ class ClusterRepository(object):
             )
         )
         cluster.alive = False
-        self._database_connector.update_one(
+        return self._database_connector.update_one(
             "clusters",
             cluster_id,
             Transformator.encode_Cluster(
