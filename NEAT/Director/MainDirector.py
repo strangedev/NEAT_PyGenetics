@@ -172,20 +172,26 @@ class MainDirector(Director):
             ### 1. Simulation / wait for client
 
             # TODO: send block of genome ids to client
-            genomes = self.genome_repository.get_current_population()
+            genomes = list(self.genome_repository.get_current_population())
             block_count = len(genomes) / self._block_size
             genome_index = 0
             for i in range(block_count):
                 block = genomes[genome_index : genome_index + self._block_size]
-                self.simulation_client.send_block(block, i)
-                fitness_values = self.simulation_client.get_fitness_values(i)
+                self.simulation_client.send_block(block, i) # TODO:
+                block_inputs = self.simulation_client.get_block_inputs(i) # TODO:
+                # TODO: Compute output
+                block_outputs = None
+                self.simulation_client.send_block_output(block_outputs) # TODO:
+                fitness_values = self.simulation_client.get_fitness_values(i) # TODO:
                 # TODO: do something w/ fitness values
                 genome_index += self._block_size
 
-            # TODO: Get next command from client.
             # Either:
             #   * go on with loop, generate next generation
             #   * save database for later use, hand out session id to client
+            if not self.simulation_client.get_advance_generation(): # TODO:
+                return # TODO: archive session
+
 
             ### 2. Calculate offspring values
 
