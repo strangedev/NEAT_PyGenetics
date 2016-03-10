@@ -1,5 +1,6 @@
 from typing import Dict, Iterable, List, Tuple
 
+from bson import ObjectId
 from pymongo import MongoClient
 
 
@@ -16,7 +17,7 @@ class DatabaseConnector(object):
             self,
             collection_name: str,
             document: dict
-    ) -> int:
+    ) -> ObjectId:
         """
         Inserts a single object into the given collection in the database.
         :param collection_name:
@@ -32,7 +33,7 @@ class DatabaseConnector(object):
             self,
             collection_name: str,
             documents: Iterable[object]
-    ) -> List[int]:
+    ) -> List[ObjectId]:
         """
         Inserts multiple objects into the given collection in the database.
         :param collection_name:
