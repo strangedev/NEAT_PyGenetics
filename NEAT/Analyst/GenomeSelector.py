@@ -91,7 +91,7 @@ class GenomeSelector(object):
             )
         return result
 
-    def select_clusters_for_combinations(self) -> Tuple[Cluster]:
+    def select_clusters_for_combination(self) -> Tuple[Cluster]:
         """
 
         :return: Tuple[Cluster] cluster chosen for combination
@@ -105,7 +105,7 @@ class GenomeSelector(object):
         cluster_two = weighted_choice(step)
         return cluster_one, cluster_two
 
-    def select_cluster_combination(
+    def select_cluster_combinations(
             self,
             cluster1: Cluster,
             cluster2: Cluster,
