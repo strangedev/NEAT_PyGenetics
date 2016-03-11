@@ -162,11 +162,9 @@ class MainDirector(Director):
         genomes are created and discarded
         This is where the evolutionary magic happens.
         """
-        self.decision_maker.reset_time()
 
         # on new, creates random set of genomes based on configuration inside
         # Simulation.given_simulation.config
-        self._block_size = self.simulation_client.get_block_size()
         self.perform_simulation_setup()
 
         # TODO: Init population if necessary
@@ -267,7 +265,7 @@ class MainDirector(Director):
         :return:
         """
         for genome in self.selector.select_genomes_for_discarding():
-            self.genome_repository.discard_genome(genome)
+            self.genome_repository.disable_genome(genome._id)
 
     def discard_clusters(self):
         """
@@ -277,10 +275,11 @@ class MainDirector(Director):
         for cluster in self.selector.select_clusters_for_discarding():
             genomes_to_discard = self.genome_repository.get_genomes_in_cluster(cluster._id)
             self._discarded_genomes_count += len(list(genomes_to_discard))
-            self.genome_repository.discard_genomes_by_cluster(cluster)
+            self.genome_repository.disable_genomes([i._id for i in genomes_to_discard])
 
     def perform_simulation_setup(self):
-        pass
+        self.decision_maker.reset_time()
+        self._block_size = self.simulation_client.get_block_size()
 
     def perform_simulation_io(self):
         genomes = list(self.genome_repository.get_current_population())
