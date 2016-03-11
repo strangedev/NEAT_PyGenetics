@@ -276,7 +276,7 @@ class MainDirector(Director):
         :return:
         """
         for genome in self.selector.select_genomes_for_discarding():
-            self.genome_repository.discard_genome(genome)
+            self.genome_repository.disable_genome(genome._id)
 
     def discard_clusters(self):
         """
@@ -286,4 +286,4 @@ class MainDirector(Director):
         for cluster in self.selector.select_clusters_for_discarding():
             genomes_to_discard = self.genome_repository.get_genomes_in_cluster(cluster._id)
             self._discarded_genomes_count += len(genomes_to_discard)
-            self.genome_repository.discard_genomes_by_cluster(cluster)
+            self.genome_repository.disable_genomes([i._id for i in genomes_to_discard])
