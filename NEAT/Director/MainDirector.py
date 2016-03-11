@@ -9,11 +9,15 @@ from NEAT.Repository.ClusterRepository import ClusterRepository
 from NEAT.Repository.GeneRepository import GeneRepository
 from NEAT.Decisions.DecisionMaker import DecisionMaker
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
+from NEAT.GenomeStructures.AnalysisStructure.AnalysisGenome import AnalysisGenome
 from NEAT.Generator.Breeder import Breeder
 from NEAT.Generator.Mutator import Mutator
 from NEAT.Analyst.GenomeAnalyst import GenomeAnalyst
 from NEAT.Analyst.GenomeClusterer import GenomeClusterer
 from NEAT.Analyst.GenomeSelector import GenomeSelector
+import math
+from bson import ObjectId
+from typing import Dict
 
 
 class MainDirector(Director):
@@ -163,33 +167,19 @@ class MainDirector(Director):
         # on new, creates random set of genomes based on configuration inside
         # Simulation.given_simulation.config
         self._block_size = self.simulation_client.get_block_size()
+        self.perform_simulation_setup()
 
-        # TODO: Init population
-        # TODO: check if client is still alive, we don't want NEAT to idle uselessly.
+        # TODO: Init population if necessary
 
         while True:
 
             ### 1. Simulation / wait for client
-
-            # TODO: send block of genome ids to client
-            genomes = list(self.genome_repository.get_current_population())
-            block_count = len(genomes) / self._block_size
-            genome_index = 0
-            for i in range(block_count):
-                block = genomes[genome_index : genome_index + self._block_size]
-                self.simulation_client.send_block(block, i) # TODO:
-                block_inputs = self.simulation_client.get_block_inputs(i) # TODO:
-                # TODO: Compute output
-                block_outputs = None
-                self.simulation_client.send_block_output(block_outputs) # TODO:
-                fitness_values = self.simulation_client.get_fitness_values(i) # TODO:
-                # TODO: do something w/ fitness values
-                genome_index += self._block_size
+            advance_generation = self.perform_simulation_io()
 
             # Either:
             #   * go on with loop, generate next generation
             #   * save database for later use, hand out session id to client
-            if not self.simulation_client.get_advance_generation(): # TODO:
+            if not advance_generation:
                 return # TODO: archive session
 
 
@@ -258,7 +248,8 @@ class MainDirector(Director):
 
     def analyze_and_insert(self, genome: StorageGenome):
 
-        analysis_result = self.analyst.analyze(genome)
+        analysis_genome = AnalysisGenome(self.gene_repository, genome)
+        analysis_result = self.analyst.analyze(analysis_genome)
         genome.analysis_result = analysis_result
         genome.cluster = self.clusterer.cluster_genome(genome)
         self.genome_repository.insert_genome(genome)
@@ -285,5 +276,40 @@ class MainDirector(Director):
         """
         for cluster in self.selector.select_clusters_for_discarding():
             genomes_to_discard = self.genome_repository.get_genomes_in_cluster(cluster._id)
-            self._discarded_genomes_count += len(genomes_to_discard)
+            self._discarded_genomes_count += len(list(genomes_to_discard))
             self.genome_repository.discard_genomes_by_cluster(cluster)
+
+    def perform_simulation_setup(self):
+        pass
+
+    def perform_simulation_io(self):
+        genomes = list(self.genome_repository.get_current_population())
+        block_count = math.ceil(len(genomes) / self._block_size)
+        genome_index = 0
+
+        for block_id in range(block_count):
+            block = genomes[genome_index : genome_index + self._block_size]
+            self.simulation_client.send_block(block, block_id)
+            block_inputs = self.simulation_client.get_block_inputs(block_id)
+            self.simulation_client.send_block_outputs(
+                self.compute_genome_output(block_inputs),
+                block_id
+            )
+            self.update_fitness_values(
+                self.simulation_client.get_fitness_values(block_id)
+            )
+            genome_index += self._block_size
+
+        return self.simulation_client.get_advance_generation()
+
+    def compute_genome_output(
+            self,
+            block_inputs: Dict[ObjectId, Dict[str, float]]
+    ) -> Dict[ObjectId, Dict[str, float]]:
+        pass # TODO:
+
+    def update_fitness_values(
+            self,
+            fitness_values: Dict[ObjectId, float]
+    ) -> None:
+        pass # TODO:

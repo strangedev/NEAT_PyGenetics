@@ -2,6 +2,8 @@ class BaseCommand(object):
 
     def __init__(self):
         self._type = "BaseCommand"
+        self.parameters = dict({})
+        self.result = dict({})
 
     def from_dict(self, dictionary):
         self.__dict__ = dictionary
