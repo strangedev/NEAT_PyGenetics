@@ -3,6 +3,7 @@ import unittest
 from unittest import TestCase
 
 from NEAT.Analyst.AnalysisResult import AnalysisResult
+from NEAT.Analyst.Cluster import Cluster
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 from NEAT.Repository.Transformator import Transformator
 
@@ -50,3 +51,8 @@ class TestTransformator(TestCase):
     @unittest.expectedFailure
     def test_encode_StorageGenome(self):
         self.assertEqual(None, Transformator.encode_StorageGenome())
+
+    def test_noGenomeAsRepresentative(self):
+        cluster = Cluster()
+        encode = Transformator.encode_Cluster(cluster)
+        self.assertEqual(cluster, Transformator.decode_Cluster(encode))
