@@ -10,3 +10,8 @@ class BaseCommand(object):
 
     def as_dict(self):
         return self.__dict__
+
+    def __eq__(self, obj: 'BaseCommand') -> bool:
+        return self._type.__eq__(obj._type) and \
+            self.parameters.__eq__(obj.parameters) and \
+            self.result.__eq__(obj.result)
