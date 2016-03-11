@@ -1,5 +1,8 @@
+from fractions import Fraction
 from unittest import TestCase
 from unittest.mock import MagicMock
+
+from bson import ObjectId
 
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 from NEAT.Repository import Transformator
@@ -15,16 +18,16 @@ class TestGenomeRepository(TestCase):
         self.assertEqual(StorageGenome().__class__, self.genome_repository.get_new_genome().__class__)
 
     def test_get_current_population(self):
-        self.db.find_many = (lambda x, y: [{},{},{}])
+        self.db.find_many = (lambda x, y: [{}, {}, {}])
         self.assertListEqual([None, None, None], self.genome_repository.get_current_population())
 
     def test_get_genome_by_id(self):
         self.db.find_one_by_id = (lambda x, y: {})
-        self.assertEqual(None, self.genome_repository.get_genome_by_id(2))
+        self.assertEqual(None, self.genome_repository.get_genome_by_id(ObjectId()))
 
     def test_get_genomes_in_cluster(self):
         self.db.find_many = (lambda x, y: [{}, {}, {}])
-        self.assertEqual([None, None, None], self.genome_repository.get_genomes_in_cluster(2))
+        self.assertEqual([None, None, None], self.genome_repository.get_genomes_in_cluster(ObjectId()))
 
     def test_insert_genome(self):
         self.db.insert_one = (lambda x, y: y)
@@ -36,7 +39,7 @@ class TestGenomeRepository(TestCase):
         self.db.insert_many = (lambda x, y: y)
         e = []
         g = []
-        for i in range(1,4):
+        for i in range(1, 4):
             genome = StorageGenome()
             g.append(genome)
             e.append(Transformator.Transformator.encode_StorageGenome(genome))
@@ -49,7 +52,7 @@ class TestGenomeRepository(TestCase):
     def test_update_genomes(self):
         self.db.update_many = (lambda x, y: False)
         g = []
-        for i in range(1,4):
+        for i in range(1, 4):
             g.append(StorageGenome())
         self.assertFalse(self.genome_repository.update_genomes(g))
 
@@ -67,10 +70,10 @@ class TestGenomeRepository(TestCase):
         self.assertFalse(Transformator.Transformator.decode_StorageGenome(genome).is_alive)
 
     def test_disable_genomes(self):
-        self.genome_repository.update_genomes = (lambda x:x)
-        self.db.find_one_by_id = (lambda x:x)
+        self.genome_repository.update_genomes = (lambda x: x)
+        self.db.find_one_by_id = (lambda x: x)
         genomes = []
-        for i in range(0,10):
+        for i in range(0, 10):
             g = StorageGenome()
             g.is_alive = True
             genomes.append(g)
@@ -81,9 +84,9 @@ class TestGenomeRepository(TestCase):
     def test_updateGenomeFitness(self):
         genome = StorageGenome()
         genome.fitness = 1.0
-        self.db.find_one_by_id = (lambda x: x)
+        self.db.find_one_by_id = MagicMock(return_value=genome)
         self.genome_repository.update_genome = lambda x: x
-        self.assertEqual(2.0, self.genome_repository.update_genome_fitness(genome, 2.0).fitness)
+        self.assertEqual(Fraction(2.0), self.genome_repository.update_genome_fitness(genome._id, Fraction(2.0)).fitness)
 
     def test_updateGenomesFitness(self):
         genomes = []
