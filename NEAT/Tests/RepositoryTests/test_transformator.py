@@ -51,8 +51,3 @@ class TestTransformator(TestCase):
     @unittest.expectedFailure
     def test_encode_StorageGenome(self):
         self.assertEqual(None, Transformator.encode_StorageGenome())
-
-    def test_noGenomeAsRepresentative(self):
-        cluster = Cluster()
-        encode = Transformator.encode_Cluster(cluster)
-        self.assertEqual(cluster, Transformator.decode_Cluster(encode))

@@ -1,6 +1,7 @@
 from unittest import TestCase
 from unittest.mock import MagicMock
 
+from NEAT.Analyst.Cluster import Cluster
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 from NEAT.Repository import Transformator
 from NEAT.Repository.ClusterRepository import ClusterRepository
@@ -24,10 +25,25 @@ class TestClusterRepository(TestCase):
         )
 
     def test_archive_cluster(self):
-        self.fail()
+        self.db.find_one_by_id = lambda x, y: y
+        self.db.update_one = lambda x, y, z: z
+        cluster = Cluster()
+        genome = StorageGenome()
+        cluster.representative = genome
+        cluster.alive = True
+        encode = Transformator.Transformator.encode_Cluster(cluster)
+        decode = Transformator.Transformator.decode_Cluster(self.cluster_repository.archive_cluster(encode))
+        self.assertFalse(decode.alive)
 
     def test_get_cluster_by_representative(self):
-        self.fail()
+        cluster = Cluster()
+        self.db.find_one = MagicMock(return_value=Transformator.Transformator.encode_Cluster(cluster))
+        storage_genome = StorageGenome()
+        self.assertEqual(cluster, self.cluster_repository.get_cluster_by_representative(storage_genome))
 
     def test_get_cluster_count(self):
-        self.fail()
+        self.db.find_many = MagicMock(return_value=[Transformator.Transformator.encode_Cluster(Cluster()),
+                                                    Transformator.Transformator.encode_Cluster(Cluster()),
+                                                    Transformator.Transformator.encode_Cluster(Cluster())
+                                                    ])
+        self.assertEqual(3, self.cluster_repository.get_cluster_count())
