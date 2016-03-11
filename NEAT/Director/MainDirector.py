@@ -2,6 +2,7 @@ from NEAT.Director.Director import Director
 from NEAT.Config.NEATConfig import NEATConfig
 from NEAT.Networking.Server.SimulationClient import SimulationClient
 from NEAT.ErrorHandling.StartupCheck import StartupCheck
+from NEAT.ErrorHandling.Exceptions.NetworkProtocolException import NetworkProtocolException
 from NEAT.Repository.DatabaseConnector import DatabaseConnector
 from NEAT.Repository.GenomeRepository import GenomeRepository
 from NEAT.Repository.ClusterRepository import ClusterRepository
@@ -42,7 +43,8 @@ class MainDirector(Director):
             while True:
                 try:
                     self.idle()
-                except NetworkingException as e:
+                except NetworkProtocolException as e:
+                    print(e)
                     pass
 
     def static_init(self):
@@ -52,10 +54,6 @@ class MainDirector(Director):
         """
         # An interface to a client connected via the REST API.
         self.simulation_client = SimulationClient()
-
-        # Class containing huge configuration object.
-        # Loads config from JSON or uses default config.
-        self.config = NEATConfig()
 
         # Used to keep track of the number of discarded
         # genomes when clusters are discarded.
@@ -68,6 +66,10 @@ class MainDirector(Director):
         """
 
         self.init_db()
+
+        # Class containing huge configuration object.
+        # Loads config from JSON or uses default config.
+        self.config = NEATConfig(self._config_path)
 
         # selecting can mean:
         #   - selecting a single genome for mutation
@@ -82,8 +84,7 @@ class MainDirector(Director):
         # makes decisions lol
         # things like what to do and stuff (breeding or mutation, if clustering
         # is necessary etc)
-        self.decision_maker = DecisionMaker( # TODO: Implement pl0x
-            self.genome_repository,
+        self.decision_maker = DecisionMaker(
             self.config.parameters["decision_making"]
         )
         # breeder creates a new genome from two given genomes
@@ -136,28 +137,17 @@ class MainDirector(Director):
         Standard method that will be executed if local startup is done.
         In this state, the Director will wait for the client.
         """
-        # TODO: handshake w/ client.
-        # TODO: Hand out session token, or get session token from client
-        # TODO: get additional config from client
+
+        self.simulation_client.wait_for_session()
+        self._config_path = self.simulation_client.get_config_path()
+
         # Session tokens will identify a client.
         # They can be useful for later parallelization.
         # They also identify the database collections which will be used,
         # so that different users can have their own storage and previous
         # sessions can be loaded from storage.
 
-        while not self.simulation_client.session: # all of the above TODOs happen here
-            self.simulation_client.check_for_session()
-
         self.dynamic_init() # This can be called after the client has connected
-
-        # TODO: get next Command from client.
-        # Either:
-        #   * perform action unrelated to simulation
-        #   * start new simulation run:
-
-        next_command = self.simulation_client.session.has_ended
-        if type(next_command) == type(NEAT.Networking.Commands.TimeoutCommand()): # TODO:
-            pass
 
         # In case of simulation run:
         self.run()
@@ -172,7 +162,8 @@ class MainDirector(Director):
 
         # on new, creates random set of genomes based on configuration inside
         # Simulation.given_simulation.config
-        # TODO: Get block size
+        self._block_size = self.simulation_client.get_block_size()
+
         # TODO: Init population
         # TODO: check if client is still alive, we don't want NEAT to idle uselessly.
 
@@ -181,16 +172,26 @@ class MainDirector(Director):
             ### 1. Simulation / wait for client
 
             # TODO: send block of genome ids to client
+            genomes = list(self.genome_repository.get_current_population())
+            block_count = len(genomes) / self._block_size
+            genome_index = 0
+            for i in range(block_count):
+                block = genomes[genome_index : genome_index + self._block_size]
+                self.simulation_client.send_block(block, i) # TODO:
+                block_inputs = self.simulation_client.get_block_inputs(i) # TODO:
+                # TODO: Compute output
+                block_outputs = None
+                self.simulation_client.send_block_output(block_outputs) # TODO:
+                fitness_values = self.simulation_client.get_fitness_values(i) # TODO:
+                # TODO: do something w/ fitness values
+                genome_index += self._block_size
 
-            # Next section applies to all blocks
-            # TODO: network I/O loop for calculating outputs for genome
-            # TODO: recv fitness values
-            # Repeat if blocks left.
-
-            # TODO: Get next command from client.
             # Either:
             #   * go on with loop, generate next generation
             #   * save database for later use, hand out session id to client
+            if not self.simulation_client.get_advance_generation(): # TODO:
+                return # TODO: archive session
+
 
             ### 2. Calculate offspring values
 

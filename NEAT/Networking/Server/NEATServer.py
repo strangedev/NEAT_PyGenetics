@@ -1,7 +1,8 @@
-from NEAT.Networking.Server.JSONSocket import JSONSocket
-from NEAT.Networking.Commands.BaseCommand import BaseCommand
-from NEAT.Networking.Server.CommandTranscoder import CommandTranscoder
 from threading import Semaphore, Thread
+
+from NEAT.Networking.Commands.BaseCommand import BaseCommand
+from NEAT.Networking.Commands.CommandTranscoder import CommandTranscoder
+from NEAT.Networking.Server.JSONSocket import JSONSocket
 
 message_queue_size = 64
 server_address = "127.0.0.1"
