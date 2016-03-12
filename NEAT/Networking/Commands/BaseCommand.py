@@ -20,3 +20,8 @@ class BaseCommand(object):
         if key in self.result.keys():
             return self.result[key]
         return None
+
+    def __eq__(self, obj: 'BaseCommand') -> bool:
+        return self._type.__eq__(obj._type) and \
+            self.parameters.__eq__(obj.parameters) and \
+            self.result.__eq__(obj.result)

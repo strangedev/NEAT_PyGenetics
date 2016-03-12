@@ -86,8 +86,8 @@ class test_genomeSelector(TestCase):
         self.mock_cluster_repository.get_current_clusters = MagicMock(return_value=cluster)
         c = Cluster()
         d = (c, c)
-        test_comb = self.genome_selector.select_clusters_for_combinations()
-        self.assertEqual(type(d), type(self.genome_selector.select_clusters_for_combinations()))
+        test_comb = self.genome_selector.select_clusters_for_combination()
+        self.assertEqual(type(d), type(self.genome_selector.select_clusters_for_combination()))
         self.assertFalse(
             test_comb[0].__eq__(test_comb[1])
         )
@@ -105,7 +105,7 @@ class test_genomeSelector(TestCase):
             g.fitness = float(1/(i+1))
             genome.append(g)
         self.mock_genome_repository.get_genomes_in_cluster = MagicMock(return_value=genome)
-        test_comb = self.genome_selector.select_cluster_combination(cluster[0], cluster[1], 2)
+        test_comb = self.genome_selector.select_cluster_combinations(cluster[0], cluster[1], 2)
         g = StorageGenome()
         g_type = (g, g)
         g_list = [g_type]
