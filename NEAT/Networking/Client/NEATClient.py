@@ -25,10 +25,11 @@ class NEATClient(object):
     def _recv_result(self):
         socket = JSONSocket(
             self._server_address,
-            self._server_port
+            self._server_port + 1
         )
         try:
             dictionary = socket.receive_dict()
+            print(dictionary)
         except Exception:
             return None
         return CommandTranscoder.decode_command(dictionary)

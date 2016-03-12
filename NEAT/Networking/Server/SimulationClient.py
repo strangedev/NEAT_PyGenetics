@@ -25,15 +25,15 @@ class SimulationClient(object):
 
         if not type(types) == type(list([])):
             types = [types]
-        if not command._type == types:
-            raise NetworkProtocolException()
+        if not command._type in types:
+            raise NetworkProtocolException("Wrong command type encountered")
 
         if filter:
             for key, value in filter.items():
                 if not key in command.parameters.keys():
-                    raise NetworkProtocolException
+                    raise NetworkProtocolException("Filter key not in command parameters")
                 if not value == command.parameters[key]:
-                    raise  NetworkProtocolException
+                    raise  NetworkProtocolException("Filter values do not match in command parameters")
 
         return command
 

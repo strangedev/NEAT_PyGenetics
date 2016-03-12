@@ -1,4 +1,5 @@
 from threading import Semaphore, Thread
+import atexit
 
 from NEAT.Networking.Commands.BaseCommand import BaseCommand
 from NEAT.Networking.Commands.CommandTranscoder import CommandTranscoder
@@ -15,6 +16,17 @@ out_free = Semaphore(message_queue_size)
 out_full = Semaphore(0)
 out_mutex = Semaphore(1)
 
+thread_should_end = False
+thread_should_end_mutex = Semaphore(1)
+
+def signal_thread_should_end():
+    thread_should_end_mutex.acquire()
+    global thread_should_end
+    thread_should_end = True
+    thread_should_end_mutex.release()
+
+atexit.register(signal_thread_should_end)
+
 class QueueWorker(Thread):
 
     def __init__(self, queue, mode, address, port):
@@ -28,6 +40,10 @@ class QueueWorker(Thread):
 
     def run(self):
         while True:
+            if thread_should_end_mutex.acquire(timeout=1000): # TODO: put socket in timeout mode
+                if thread_should_end:
+                    return
+                thread_should_end_mutex.release()
             if self._mode == "recv":
                 self._work_receive()
             else:
@@ -44,7 +60,7 @@ class QueueWorker(Thread):
         in_full.release()
 
     def _work_send(self):
-        self.socket = JSONSocket(self._address, server_port)
+        self.socket = JSONSocket(self._address, self._port)
 
         out_full.acquire()
         out_mutex.acquire()
