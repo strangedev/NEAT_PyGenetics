@@ -1,6 +1,8 @@
 from NEAT.Networking.Server.NEATServer import NEATServer
 from NEAT.Networking.Commands.BaseCommand import BaseCommand
 from NEAT.ErrorHandling.Exceptions.NetworkProtocolException import NetworkProtocolException
+from bson import ObjectId
+from typing import Dict
 
 class SimulationClient(object):
     """
@@ -88,7 +90,7 @@ class SimulationClient(object):
             result
         )
 
-    def get_block_inputs(self, block_id):
+    def get_block_inputs(self, block_id) -> Dict[ObjectId, Dict[str, float]]:
         set_command = self._listen_for_command("SetInputs", {"block_id": block_id})
         self._respond_to_command(set_command)
         return set_command.parameters["block"]
