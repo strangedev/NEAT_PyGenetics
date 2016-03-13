@@ -73,7 +73,7 @@ class MainDirector(Director):
 
         # Class containing huge configuration object.
         # Loads config from JSON or uses default config.
-        self.config = NEATConfig(self._config_path)
+        self.config = NEATConfig(self._session["config_path"])
 
         # selecting can mean:
         #   - selecting a single genome for mutation
@@ -142,8 +142,7 @@ class MainDirector(Director):
         In this state, the Director will wait for the client.
         """
 
-        self.simulation_client.wait_for_session()
-        self._config_path = self.simulation_client.get_config_path()
+        self._session = self.simulation_client.get_session()
 
         # Session tokens will identify a client.
         # They can be useful for later parallelization.
@@ -165,7 +164,7 @@ class MainDirector(Director):
 
         # on new, creates random set of genomes based on configuration inside
         # Simulation.given_simulation.config
-        self.perform_simulation_setup()
+        self.decision_maker.reset_time()
 
         # TODO: Init population if necessary
 
@@ -277,17 +276,13 @@ class MainDirector(Director):
             self._discarded_genomes_count += len(list(genomes_to_discard))
             self.genome_repository.disable_genomes([i._id for i in genomes_to_discard])
 
-    def perform_simulation_setup(self):
-        self.decision_maker.reset_time()
-        self._block_size = self.simulation_client.get_block_size()
-
     def perform_simulation_io(self):
         genomes = list(self.genome_repository.get_current_population())
-        block_count = math.ceil(len(genomes) / self._block_size)
+        block_count = math.ceil(len(genomes) / self._session["block_size"])
         genome_index = 0
 
         for block_id in range(block_count):
-            block = genomes[genome_index : genome_index + self._block_size]
+            block = genomes[genome_index : genome_index + self._session["block_size"]]
             self.simulation_client.send_block(block, block_id)
             block_inputs = self.simulation_client.get_block_inputs(block_id)
             self.simulation_client.send_block_outputs(
@@ -297,7 +292,7 @@ class MainDirector(Director):
             self.update_fitness_values(
                 self.simulation_client.get_fitness_values(block_id)
             )
-            genome_index += self._block_size
+            genome_index += self._session["block_size"]
 
         return self.simulation_client.get_advance_generation()
 

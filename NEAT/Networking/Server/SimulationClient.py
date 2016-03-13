@@ -47,26 +47,15 @@ class SimulationClient(object):
             timeout=2000
     ):
         if not result:
-            result = {
-                "acknowledged": acknowledged
-            }
+            result = dict({})
         command.result = result
+        command.result["acknowledged"] = acknowledged
         self._server.respond(command)
 
-    def wait_for_session(self):
+    def get_session(self):
         session_command = self._listen_for_command("AnnounceSession")
-        self._session = session_command.parameters["session"]
         self._respond_to_command(session_command)
-
-    def get_config_path(self):
-        announce_command = self._listen_for_command("AnnounceConfigPath")
-        self._respond_to_command(announce_command)
-        return announce_command.parameters["config_path"]
-
-    def get_block_size(self):
-        announce_command = self._listen_for_command("AnnounceBlockSize")
-        self._respond_to_command(announce_command)
-        return announce_command.parameters["block_size"]
+        return session_command.parameters
 
     def send_block(self, block, block_id):
         block_to_send = {
