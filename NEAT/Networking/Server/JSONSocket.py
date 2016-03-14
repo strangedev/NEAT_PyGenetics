@@ -85,7 +85,7 @@ class JSONSocket(Thread):
 
         message_size_serialized  = self._serialize_message_size(message_size)
 
-        while bytes_sent < 16:
+        while bytes_sent < self._header_size:
             sent = self._socket.send(
                 message_size_serialized[bytes_sent:]
             )
@@ -135,6 +135,7 @@ class JSONSocket(Thread):
             self._send_message(
                 json.dumps(dictionary).encode('utf-8')
             )
+            self.close_connection()
         except RuntimeError:
             return None
 
@@ -142,7 +143,7 @@ class JSONSocket(Thread):
 
         try:
             if not self.socket_alive:
-                return None
+                return None # TODO: exceptions
 
             self._socket.bind(
                 (

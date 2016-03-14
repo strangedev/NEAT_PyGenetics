@@ -78,6 +78,7 @@ class NEATServer(object):
         self._server_address = ServerConfig.server_address
         self._server_port = ServerConfig.server_port
 
+        # TODO: receive
         self._in_queue_worker = QueueWorker(
             self._in_queue,
             "recv",

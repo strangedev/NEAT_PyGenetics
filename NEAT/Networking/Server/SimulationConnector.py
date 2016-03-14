@@ -1,10 +1,13 @@
-from NEAT.Networking.Server.NEATServer import NEATServer
-from NEAT.Networking.Commands.BaseCommand import BaseCommand
-from NEAT.ErrorHandling.Exceptions.NetworkProtocolException import NetworkProtocolException
-from bson import ObjectId
 from typing import Dict
 
-class SimulationClient(object):
+from bson import ObjectId
+
+from NEAT.ErrorHandling.Exceptions.NetworkProtocolException import NetworkProtocolException
+from NEAT.Networking.Commands.BaseCommand import BaseCommand
+from NEAT.Networking.Server.NEATServer import NEATServer
+
+
+class SimulationConnector(object):
     """
     A class providing a high-level interface to
     a client connected via the REST API.
@@ -35,14 +38,14 @@ class SimulationClient(object):
                 if not key in command.parameters.keys():
                     raise NetworkProtocolException("Filter key not in command parameters")
                 if not value == command.parameters[key]:
-                    raise  NetworkProtocolException("Filter values do not match in command parameters")
+                    raise NetworkProtocolException("Filter values do not match in command parameters")
 
         return command
 
     def _respond_to_command(
             self,
             command: BaseCommand,
-            result: dict=None,
+            result: dict = None,
             acknowledged=True,
             timeout=2000
     ):
@@ -65,7 +68,7 @@ class SimulationClient(object):
                     for input_label in genome.inputs.keys()
                 }
             for genome in block
-        }
+            }
         result = {
             "block": block_to_send,
             "block_id": block_id,

@@ -1,6 +1,6 @@
 from NEAT.Director.Director import Director
 from NEAT.Config.NEATConfig import NEATConfig
-from NEAT.Networking.Server.SimulationClient import SimulationClient
+from NEAT.Networking.Server.SimulationConnector import SimulationConnector
 from NEAT.ErrorHandling.StartupCheck import StartupCheck
 from NEAT.ErrorHandling.Exceptions.NetworkProtocolException import NetworkProtocolException
 from NEAT.Repository.DatabaseConnector import DatabaseConnector
@@ -57,7 +57,7 @@ class MainDirector(Director):
         upon the client.
         """
         # An interface to a client connected via the REST API.
-        self.simulation_client = SimulationClient()
+        self.simulation_connector = SimulationConnector()
 
         # Used to keep track of the number of discarded
         # genomes when clusters are discarded.
@@ -120,7 +120,7 @@ class MainDirector(Director):
         # database connection is a connection to an arbitrary database that is
         # used to store genes, genomes and nodes
         self.database_connection = DatabaseConnector(
-            self.simulation_client.session.token
+            self.simulation_connector.session.token
         )
 
         # gene_repository administrates all genes ever created
@@ -142,7 +142,7 @@ class MainDirector(Director):
         In this state, the Director will wait for the client.
         """
 
-        self._session = self.simulation_client.get_session()
+        self._session = self.simulation_connector.get_session()
 
         # Session tokens will identify a client.
         # They can be useful for later parallelization.
@@ -283,18 +283,18 @@ class MainDirector(Director):
 
         for block_id in range(block_count):
             block = genomes[genome_index : genome_index + self._session["block_size"]]
-            self.simulation_client.send_block(block, block_id)
-            block_inputs = self.simulation_client.get_block_inputs(block_id)
-            self.simulation_client.send_block_outputs(
+            self.simulation_connector.send_block(block, block_id)
+            block_inputs = self.simulation_connector.get_block_inputs(block_id)
+            self.simulation_connector.send_block_outputs(
                 self.compute_genome_output(block_inputs),
                 block_id
             )
             self.update_fitness_values(
-                self.simulation_client.get_fitness_values(block_id)
+                self.simulation_connector.get_fitness_values(block_id)
             )
             genome_index += self._session["block_size"]
 
-        return self.simulation_client.get_advance_generation()
+        return self.simulation_connector.get_advance_generation()
 
     def compute_genome_output(
             self,
