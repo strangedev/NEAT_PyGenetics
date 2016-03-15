@@ -29,7 +29,7 @@ class TestSimulationClient(TestCase):
     def test_get_block_id(self):
         command = GetBlockCommand()
         command.set_block_id(2)
-        self.assertEqual(command, self.simulation_client.get_block_id(2))
+        self.assertEqual(command, self.simulation_client.get_block(2))
 
     def test_set_block_inputs(self):
         id = ObjectId()

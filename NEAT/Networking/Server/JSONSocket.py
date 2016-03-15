@@ -38,7 +38,7 @@ class JSONSocket(Thread):
             self._socket.close()
             self._socket_alive = False
 
-    def _receive_message(self, socket):
+    def _receive_message(self, socket: socket.socket):
 
         message_size = self._receive_message_size(socket)
 
@@ -59,7 +59,7 @@ class JSONSocket(Thread):
 
         return ''.join(message_chunks)
 
-    def _receive_message_size(self, socket):
+    def _receive_message_size(self, socket: socket.socket):
 
         message_size_serialized = ''
         bytes_sent = 0
