@@ -5,14 +5,14 @@ import socket
 import json
 from threading import Thread
 
-class JSONSocket(Thread):
 
+class JSONSocket(Thread):
     def __init__(
-        self,
-        server_address,
-        server_port,
-        header_size=16,
-        chunk_size=1024
+            self,
+            server_address,
+            server_port,
+            header_size=16,
+            chunk_size=1024
     ):
         super().__init__()
 
@@ -33,23 +33,23 @@ class JSONSocket(Thread):
         self._socket_alive = True
 
     @property
-    def socket_alive(self):
+    def socket_alive(self) -> bool:
         return self._socket_alive
 
-    def close_connection(self):
+    def close_connection(self) -> None:
         if self.socket_alive:
             self._socket.close()
             self._socket_alive = False
 
-    def _receive_message(self, socket: socket.socket):
+    def _receive_message(self, sock: socket.socket):
 
-        message_size = self._receive_message_size(socket)
+        message_size = self._receive_message_size(sock)
 
         message_chunks = []
         bytes_received = 0
 
         while bytes_received < message_size:
-            chunk = socket.recv(
+            chunk = sock.recv(
                 min(
                     message_size - bytes_received,
                     self._chunk_size
@@ -62,13 +62,13 @@ class JSONSocket(Thread):
 
         return ''.join(message_chunks)
 
-    def _receive_message_size(self, socket: socket.socket):
+    def _receive_message_size(self, sock: socket.socket):
 
         message_size_chunks = []
         bytes_received = 0
 
         while bytes_received < self._header_size:
-            chunk = socket.recv(
+            chunk = sock.recv(
                 min(
                     self._header_size - bytes_received,
                     self._header_size
@@ -86,7 +86,7 @@ class JSONSocket(Thread):
         message_size = len(message)
         bytes_sent = 0
 
-        message_size_serialized  = self._serialize_message_size(message_size)
+        message_size_serialized = self._serialize_message_size(message_size)
 
         while bytes_sent < self._header_size:
             sent = self._socket.send(
@@ -106,11 +106,11 @@ class JSONSocket(Thread):
             bytes_sent += sent
 
     def _serialize_message_size(self, message_size: int):
-        if message_size > 10**self._header_size:
+        if message_size > 10 ** self._header_size:
             raise SerializationException(
-                "The message length exceeded the header size ("
-                + str(self._header_size)
-                + ")"
+                "The message length exceeded the header size (" +
+                str(self._header_size) +
+                ")"
             )
         as_string = str(message_size)
         length = len(as_string)
@@ -120,10 +120,12 @@ class JSONSocket(Thread):
                 as_string = '0' + as_string
         return as_string.encode('utf-8')
 
-    def _serialize_dict(self, dictionary: dict):
+    @staticmethod
+    def _serialize_dict(dictionary: dict):
         return json.dumps(dictionary).encode('utf-8')
 
-    def _deserialize_dict(self, string: str):
+    @staticmethod
+    def _deserialize_dict(string: str):
         return json.loads(string)
 
     def _connect(self):
@@ -166,7 +168,6 @@ class JSONSocket(Thread):
             )
 
             while self.socket_alive:
-
                 self._socket.listen(5)
                 serving_socket, address = self._socket.accept()
                 dictionary = self._receive_message(serving_socket)
