@@ -50,13 +50,16 @@ class SimulationConnector(object):
         command = self._server.fetch()
 
         if not command._type == type:
+            self._respond_to_command(command, acknowledged=False)
             raise NetworkProtocolException("Wrong command type encountered")
 
         if filter:
             for key, value in filter.items():
                 if not key in command.parameters.keys():
+                    self._respond_to_command(command, acknowledged=False)
                     raise NetworkProtocolException("Filter key not in command parameters")
                 if not value == command.parameters[key]:
+                    self._respond_to_command(command, acknowledged=False)
                     raise NetworkProtocolException("Filter values do not match in command parameters")
 
         return command
