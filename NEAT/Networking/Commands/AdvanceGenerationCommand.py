@@ -5,3 +5,4 @@ class AdvanceGenerationCommand(BaseCommand):
     def __init__(self):
         super().__init__()
         self._type = "AdvanceGeneration"
+        self.parameters["advance_generation"] = True
