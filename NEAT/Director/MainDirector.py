@@ -3,6 +3,7 @@ from NEAT.Config.NEATConfig import NEATConfig
 from NEAT.Networking.Server.SimulationConnector import SimulationConnector
 from NEAT.ErrorHandling.StartupCheck import StartupCheck
 from NEAT.ErrorHandling.Exceptions.NetworkProtocolException import NetworkProtocolException
+from NEAT.ErrorHandling.Exceptions.NetworkTimeoutException import NetworkTimeoutException
 from NEAT.Repository.DatabaseConnector import DatabaseConnector
 from NEAT.Repository.GenomeRepository import GenomeRepository
 from NEAT.Repository.ClusterRepository import ClusterRepository
@@ -34,6 +35,7 @@ class MainDirector(Director):
               respond to a module name in Simulation.
         :return:
         """
+        self._maximum_timeouts = 5
         self.mode = kwargs.get('mode', 'exit')
         if self.mode == 'exit':
             exit()
@@ -171,7 +173,17 @@ class MainDirector(Director):
         while True:
 
             ### 1. Simulation / wait for client
-            advance_generation = self.perform_simulation_io()
+            timeout_count = 0
+            advance_generation = False
+            while timeout_count < self._maximum_timeouts:
+                try:
+                    advance_generation = self.perform_simulation_io()
+                except NetworkTimeoutException as e:
+                    # TODO: log timeout event
+                    timeout_count += 1
+            if not timeout_count < self._maximum_timeouts:
+                raise NetworkTimeoutException
+
 
             # Either:
             #   * go on with loop, generate next generation
