@@ -1,10 +1,12 @@
 from threading import Semaphore, Thread
 import atexit
+from typing import List
 
 from NEAT.Networking.Commands.BaseCommand import BaseCommand
 from NEAT.Networking.Commands.CommandTranscoder import CommandTranscoder
 from NEAT.Networking.Server.JSONSocket import JSONSocket
 from NEAT.Config.StaticConfig import ServerConfig
+from NEAT.Utilities import TimeUtilities
 
 message_queue_size = 64
 
@@ -28,8 +30,28 @@ def signal_thread_should_end():
 atexit.register(signal_thread_should_end)
 
 class QueueWorker(Thread):
+    """
+    A thread which operates on networking message queues
+    via JSONSocket in two different modes:
 
-    def __init__(self, queue, mode, address, port):
+    1. receive
+    The worker thread will accept JSONSocket connections,
+    receive dictionaries, creates command objects and inserts them
+    into the appropriate queue (in_queue)
+
+    2. send
+    The worker thread will wait for command objects to appear inside
+    the outgoing queue (out_queue), convert them to dictionaries
+    and send them to the client via a JSONSocket.
+    """
+
+    def __init__(
+            self,
+            queue: List[BaseCommand],
+            mode: str,
+            address: str,
+            port: int
+    ):
         self._queue = queue
         self._mode = mode
         self._address = address
@@ -44,7 +66,7 @@ class QueueWorker(Thread):
                 if thread_should_end:
                     return
                 thread_should_end_mutex.release()
-            if self._mode == "recv":
+            if self._mode == "receive":
                 self._work_receive()
             else:
                 self._work_send()
@@ -71,6 +93,10 @@ class QueueWorker(Thread):
         self.socket.send_dict(message)
 
 class NEATServer(object):
+    """
+    A message queue server that handles sending and receiving
+    of command objects via the QueueWorker and JSONSocket classes.
+    """
 
     def __init__(self):
         self._out_queue = []
@@ -81,7 +107,7 @@ class NEATServer(object):
         # TODO: receive
         self._in_queue_worker = QueueWorker(
             self._in_queue,
-            "recv",
+            "receive",
             self._server_address,
             self._server_port
         )
@@ -93,6 +119,12 @@ class NEATServer(object):
         )
 
     def _enqueue_command(self, command: BaseCommand):
+        """
+        Puts a command that should be sent to the client into
+        the outgoing message queue.
+        :param command: The command to enqueue
+        :return: None
+        """
         out_free.acquire()
         out_mutex.acquire()
         self._out_queue.append(
@@ -103,7 +135,21 @@ class NEATServer(object):
         out_mutex.release()
         out_full.release()
 
-    def _dequeue_command(self):
+    def _command_available(self) -> bool:
+        """
+        Checks whether the in_queue contains any elements.
+        :return: True if the in_queue isn't empty
+        """
+        in_mutex.acquire()
+        available =  len(self._in_queue) > 0
+        in_mutex.release()
+        return available
+
+    def _dequeue_command(self) -> BaseCommand:
+        """
+        Pops a command from the incoming message queue.
+        :return: None
+        """
         in_full.acquire()
         in_mutex.acquire()
         command = CommandTranscoder.decode_command(
@@ -113,7 +159,10 @@ class NEATServer(object):
         in_free.release()
         return command
 
-    def respond(self, command: BaseCommand):
+    def respond(
+            self,
+            command: BaseCommand
+    ) -> bool:
         try:
             self._enqueue_command(command)
             return True
@@ -121,8 +170,19 @@ class NEATServer(object):
             print(e)
             return False
 
-    def fetch(self):
+    def fetch(
+            self,
+            timeout: int=None
+    ) -> BaseCommand:
         try:
+            if timeout:
+                time_passed = 0
+                while time_passed < timeout:
+                    starting_time = TimeUtilities.millis()
+                    if self._command_available():
+                        return self._dequeue_command()
+                    time_passed += TimeUtilities.millis() - starting_time
+                return None
             return self._dequeue_command()
         except Exception as e:
             print(e)
