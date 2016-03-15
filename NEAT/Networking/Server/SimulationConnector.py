@@ -2,6 +2,7 @@ from typing import Dict, List
 
 from bson import ObjectId
 
+from NEAT.ErrorHandling.Exceptions.NetworkTimeoutException import NetworkTimeoutException
 from NEAT.ErrorHandling.Exceptions.NetworkProtocolException import NetworkProtocolException
 from NEAT.Networking.Commands.BaseCommand import BaseCommand
 from NEAT.Networking.Server.NEATServer import NEATServer
@@ -30,7 +31,7 @@ class SimulationConnector(object):
             self,
             type: str,
             filter: Dict[str, object]=None,
-            timeout: int=2000
+            timeout: int=None
     ) -> BaseCommand:
         """
         Waits for the message queue to have a command ready,
@@ -47,7 +48,9 @@ class SimulationConnector(object):
         :return: The received command object
         """
         # TODO: timeouts, more error handling
-        command = self._server.fetch()
+        command = self._server.fetch(timeout)
+        if not command:
+            raise NetworkTimeoutException
 
         if not command._type == type:
             self._respond_to_command(command, acknowledged=False)
