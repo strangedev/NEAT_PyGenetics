@@ -25,7 +25,7 @@ class SimulationClient(object):
         response = self._client.run_command(command)
         return response
 
-    def get_block_id(self, block_id: int) -> GetBlockCommand:
+    def get_block(self, block_id: int) -> GetBlockCommand:
         command = GetBlockCommand()
         command.set_block_id(block_id)
         response = self._client.run_command(command)
