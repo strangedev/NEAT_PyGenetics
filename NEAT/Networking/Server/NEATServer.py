@@ -47,7 +47,7 @@ class QueueWorker(Thread):
 
     def __init__(
             self,
-            queue: List[BaseCommand],
+            queue: List[dict],
             mode: str,
             address: str,
             port: int
@@ -72,8 +72,11 @@ class QueueWorker(Thread):
                 self._work_send()
 
     def _work_receive(self):
-        self.socket = JSONSocket(self._address, self._port)
-        message = self.socket.receive_dict()
+        try:
+            self.socket = JSONSocket(self._address, self._port)
+            message = self.socket.receive_dict()
+        except Exception:
+            return
 
         in_free.acquire()
         in_mutex.acquire()
@@ -90,7 +93,14 @@ class QueueWorker(Thread):
         out_mutex.release()
         out_free.release()
 
-        self.socket.send_dict(message)
+        try:
+            self.socket.send_dict(message)
+        except Exception:
+            out_free.acquire()
+            out_mutex.acquire()
+            self._queue.insert(0, message)
+            out_mutex.release()
+            out_full.release()
 
 class NEATServer(object):
     """

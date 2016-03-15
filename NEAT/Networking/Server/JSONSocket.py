@@ -1,3 +1,6 @@
+from NEAT.ErrorHandling.Exceptions.SerializationException import SerializationException
+from NEAT.ErrorHandling.Exceptions.SocketRuntimeException import SocketRuntimeException
+from NEAT.ErrorHandling.Exceptions.SocketAlreadyUsedException import SocketAlreadyUsedException
 import socket
 import json
 from threading import Thread
@@ -61,22 +64,22 @@ class JSONSocket(Thread):
 
     def _receive_message_size(self, socket: socket.socket):
 
-        message_size_serialized = ''
-        bytes_sent = 0
+        message_size_chunks = []
+        bytes_received = 0
 
-        while bytes_sent < self._header_size:
+        while bytes_received < self._header_size:
             chunk = socket.recv(
                 min(
-                    self._header_size - bytes_sent,
+                    self._header_size - bytes_received,
                     self._header_size
                 )
             )
             if chunk == '':
                 raise RuntimeError("JSONSocket: socket broken")
-            message_size_serialized += chunk.decode('utf-8')
-            bytes_sent += len(chunk)
+            message_size_chunks.append(chunk.decode('utf-8'))
+            bytes_received += len(chunk)
 
-        return int(message_size_serialized)
+        return int(''.join(message_size_chunks))
 
     def _send_message(self, message: str):
 
@@ -102,11 +105,17 @@ class JSONSocket(Thread):
                 raise RuntimeError("JSONSocket: socket broken")
             bytes_sent += sent
 
-    def _serialize_message_size(self, message_size):
+    def _serialize_message_size(self, message_size: int):
+        if message_size > 10**self._header_size:
+            raise SerializationException(
+                "The message length exceeded the header size ("
+                + str(self._header_size)
+                + ")"
+            )
         as_string = str(message_size)
         length = len(as_string)
-        if length < 16:
-            missing = 16 - length
+        if length < self._header_size:
+            missing = self._header_size - length
             for i in range(missing):
                 as_string = '0' + as_string
         return as_string.encode('utf-8')
@@ -129,7 +138,7 @@ class JSONSocket(Thread):
 
         try:
             if not self.socket_alive:
-                return None
+                raise SocketAlreadyUsedException
 
             self._connect()
             self._send_message(
@@ -137,13 +146,17 @@ class JSONSocket(Thread):
             )
             self.close_connection()
         except RuntimeError:
-            return None
+            raise SocketRuntimeException(
+                "Runtime error encountered while sending dictionary."
+            )
+        finally:
+            self.close_connection()
 
     def receive_dict(self):
 
         try:
             if not self.socket_alive:
-                return None # TODO: exceptions
+                raise SocketAlreadyUsedException
 
             self._socket.bind(
                 (
@@ -158,9 +171,10 @@ class JSONSocket(Thread):
                 serving_socket, address = self._socket.accept()
                 dictionary = self._receive_message(serving_socket)
                 serving_socket.close()
-                self.close_connection()
                 return self._deserialize_dict(dictionary)
-
         except RuntimeError:
-
-            return None
+            raise SocketRuntimeException(
+                "Runtime error encountered while receiving dictionary."
+            )
+        finally:
+            self.close_connection()
