@@ -11,4 +11,5 @@ class SetInputsCommand(BaseCommand):
         self.parameters["block_id"] = None
 
     def set_inputs(self, inputs: Dict[ObjectId, Dict[str, float]], block_id: int):
-        self.parameters 
+        self.parameters["block_id"] = block_id
+        self.parameters["block"] = inputs
