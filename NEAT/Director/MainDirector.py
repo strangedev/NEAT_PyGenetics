@@ -169,6 +169,8 @@ class MainDirector(Director):
         self.decision_maker.reset_time()
 
         # TODO: Init population if necessary
+        if len(self.genome_repository.get_current_population()) == 0:
+            self.init_population()
 
         while True:
 
@@ -319,3 +321,14 @@ class MainDirector(Director):
             fitness_values: Dict[ObjectId, float]
     ) -> None:
         pass # TODO:
+
+    def init_population(self):
+        population_size = self.config.parameters["clustering"]["max_population"]
+        input_labels = self.config.parameters["genomes"]["inputs"]
+        output_labels = self.config.parameters["genomes"]["outputs"]
+        for i in range(population_size):
+            genome = StorageGenome(
+                inputs=input_labels,
+                outputs=output_labels
+            )
+            self.genome_repository.insert_genome(genome)

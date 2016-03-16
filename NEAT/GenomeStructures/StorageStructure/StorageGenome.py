@@ -15,7 +15,12 @@ class StorageGenome(object):
     (gene_id, weight, disabled)
     """
 
-    def __init__(self, genome: 'StorageGenome' = None):
+    def __init__(
+            self,
+            genome: 'StorageGenome' = None,
+            inputs: List[str] = None,
+            outputs: List[str] = None
+    ):
         """
         id: The Genome's ID, unique in the population.
         inputs: A list of the ids of the input nodes. There has to be at least
@@ -41,7 +46,17 @@ class StorageGenome(object):
         self.analysis_result = AnalysisResult() if genome is None \
             else AnalysisResult(genome.analysis_result)
         self.cluster = ObjectId() if genome is None else genome.cluster
-        pass
+        if inputs and outputs:
+            self._init_with_nodes(inputs, outputs)
+
+    def _init_with_nodes(self, inputs: List[str], outputs: List[str]):
+        node_id = 0
+        for input_label in inputs:
+            self.inputs[input_label] = node_id
+            node_id += 1
+        for output_label in outputs:
+            self.outputs[output_label] = node_id
+            node_id += 1
 
     def __eq__(self, obj: 'StorageGenome'):
         if not self._id.__eq__(obj._id) \

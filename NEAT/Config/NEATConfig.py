@@ -1,7 +1,5 @@
-from NEAT.Repository.DatabaseConnector import DatabaseConnector
-from NEAT.Repository.GenomeRepository import GenomeRepository
-from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 import json
+from NEAT.ErrorHandling.Exceptions.NetworkProtocolException import NetworkProtocolException
 import os
 
 class NEATConfig(object):
@@ -23,7 +21,8 @@ class NEATConfig(object):
             "selection",
             "decision_making",
             "breeding",
-            "mutating"
+            "mutating",
+            "genomes"
         ]
 
         self.load_config()
@@ -35,10 +34,14 @@ class NEATConfig(object):
         for category in self.config_categories:
 
             try:
-                self.parameters[category] = os.path.join(
+                config_file_path = os.path.join(
                     self.config_directory,
                     ("./" + category + ".conf")
                 )
+                with open(config_file_path) as config_file:
+                    self.parameters[category] = json.loads(
+                        config_file.read()
+                    )
 
             except Exception as e:
 
@@ -96,3 +99,8 @@ class NEATConfig(object):
                 }
             )
             print("defaults for mutating loaded.")
+
+        if not "genomes" in self.parameters.keys():
+            raise NetworkProtocolException(
+                "Genome configuration couldn't be loaded."
+            )
