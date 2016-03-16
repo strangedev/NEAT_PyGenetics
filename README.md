@@ -4,8 +4,8 @@
 
 This is currently an amateur implementation of NEAT for general purposes.
 It follows the concepts of some paper somewhere.
-At the moment, we are fooling around to find a good structure. More content
-later.
 
-Stats for this repository:
-http://strangedev.org/gitstats/neat-stats/index.html
+To get started with the code, please visit the [wiki](https://github.com/strangedev/NEAT_PyGenetics/wiki), or use pydoc (or similar)
+to create manpages from our docstrings.
+
+Stats for this repository are [here](http://strangedev.org/gitstats/neat-stats/index.html)
