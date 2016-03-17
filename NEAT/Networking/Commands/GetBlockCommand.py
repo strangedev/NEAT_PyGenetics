@@ -2,8 +2,8 @@ from NEAT.Networking.Commands.BaseCommand import BaseCommand
 from typing import Dict
 from bson import ObjectId
 
-class GetBlockCommand(BaseCommand):
 
+class GetBlockCommand(BaseCommand):
     def __init__(self):
         super().__init__()
         self._type = "GetBlock"
