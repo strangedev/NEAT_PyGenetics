@@ -27,7 +27,7 @@ class SimulationClient(object):
         if not response.result["acknowledged"]:
             raise NetworkProtocolException
 
-    def get_block(self, block_id: int) -> GetBlockCommand:
+    def get_block(self, block_id: int) -> Dict[ObjectId, Dict[str, float]]:
         command = GetBlockCommand()
         command.set_block_id(block_id)
         response = self._client.run_command(command)
