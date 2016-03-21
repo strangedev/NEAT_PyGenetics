@@ -3,6 +3,22 @@ from NEAT.ErrorHandling.Exceptions.NetworkProtocolException import NetworkProtoc
 import os
 
 class NEATConfig(object):
+    """
+    A huge configuration object which loads it's parameters
+    from disk, or reverts to default values whenever a
+    configuration file isn't found or can't be opened.
+    Config files are in JSON notation.
+
+    Configuration files are listed in self.config_categories
+    and should be present as CATEGORYNAME.conf in the
+    provided config_path. If no config path is specified, the builtin
+    config files in NEAT/Config are used.
+
+    All config files except one can be loaded from defaults.
+    The only exception is genomes.conf, the config file specifying
+    the input and output nodes of the genomes to use, because it
+    is dependent on the simulation.
+    """
 
     def __init__(self, config_path=None):
 
@@ -30,6 +46,15 @@ class NEATConfig(object):
         self.load_defaults()
 
     def load_config(self):
+        """
+        Tries to initialize self.parameters with data
+        from the configuration files. It uses the base file
+        names from self.config_categories and is agnostic to the number
+        and names of the existing categories.
+        Config files need to be in JSON notation.
+
+        :return: None
+        """
 
         for category in self.config_categories:
 
@@ -49,6 +74,18 @@ class NEATConfig(object):
 
 
     def load_defaults(self):
+        """
+        This method is called by __init__ after the config
+        files are loaded. It's job is to test whether the
+        config files were loaded by self.load_config() and provide
+        the appropriate default values (or crash if there are no defaults)
+        for the missing config parameters.
+
+        Because this error-handling method cannot rely on file I/O,
+        the defaults are hard-coded.
+
+        :return: None
+        """
 
         if not "clustering" in self.parameters.keys():
             self.parameters["clustering"] = dict(
