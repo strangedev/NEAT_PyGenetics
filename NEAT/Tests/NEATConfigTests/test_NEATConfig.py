@@ -17,11 +17,15 @@ class TestNEATConfig(TestCase):
 
         config = NEATConfig()
         config.parameters.clear()
-        config.load_defaults()
+        exception_thrown = False
+        try:
+            config.load_defaults()
+        except Exception:
+            exception_thrown = True
 
+        self.assertTrue(exception_thrown)
         self.assertIsNotNone(config.parameters["breeding"])
         self.assertIsNotNone(config.parameters["clustering"])
         self.assertIsNotNone(config.parameters["decision_making"])
         self.assertIsNotNone(config.parameters["mutating"])
         self.assertIsNotNone(config.parameters["selection"])
-
