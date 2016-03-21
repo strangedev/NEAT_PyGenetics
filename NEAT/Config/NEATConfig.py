@@ -1,6 +1,8 @@
 import json
-from NEAT.ErrorHandling.Exceptions.NetworkProtocolException import NetworkProtocolException
 import os
+
+from NEAT.ErrorHandling.Exceptions.NetworkProtocolException import NetworkProtocolException
+
 
 class NEATConfig(object):
     """
@@ -72,7 +74,6 @@ class NEATConfig(object):
 
                 print(e, " - loading defaults.")
 
-
     def load_defaults(self):
         """
         This method is called by __init__ after the config
@@ -87,57 +88,47 @@ class NEATConfig(object):
         :return: None
         """
 
-        if not "clustering" in self.parameters.keys():
-            self.parameters["clustering"] = dict(
-                {
+        if "clustering" not in self.parameters.keys():
+            self.parameters["clustering"] = {
                     "delta_threshold": 1,
                     "excess_coefficient": 1,
                     "disjoint_coefficient": 1,
                     "weight_difference_coefficient": 1,
                     "max_population": 10,
                     "discarding_percentage": 0.2
-                }
-            )
+            }
             print("defaults for clustering loaded.")
 
-        if not "selection" in self.parameters.keys():
-            self.parameters["selection"] = dict(
-                {
-                   "discarding_by_genome_fitness": 0.2,
+        if "selection" not in self.parameters.keys():
+            self.parameters["selection"] = {
+                    "discarding_by_genome_fitness": 0.2,
                     "discarding_by_cluster_fitness": 0.2
-                }
-            )
+            }
             print("defaults for selection loaded.")
 
-        if not "decision_making" in self.parameters.keys():
-            self.parameters["decision_making"] = dict(
-                {
-                    # TODO:
-                }
-            )
+        if "decision_making" not in self.parameters.keys():
+            self.parameters["decision_making"] = {
+                    "todo": "fail"  # TODO:
+            }
             print("defaults for decision_making loaded.")
 
-        if not "breeding" in self.parameters.keys():
-            self.parameters["breeding"] = dict(
-                {
+        if "breeding" not in self.parameters.keys():
+            self.parameters["breeding"] = {
                     "fitness_difference_threshold": 1,
                     "inherit_randomly_if_same_fitness_probability": 0.5,
                     "gene_inherited_as_disabled_probability": 0.5
                 }
-            )
             print("defaults for breeding loaded.")
 
-        if not "mutating" in self.parameters.keys():
-            self.parameters["mutating"] = dict(
-                {
+        if "mutating" not in self.parameters.keys():
+            self.parameters["mutating"] = {
                     "add_edge_probability": 0.5,
                     "new_gene_enabled_probability": 1,
                     "perturb_gene_weight_probability": 0.5
                 }
-            )
             print("defaults for mutating loaded.")
 
-        if not "genomes" in self.parameters.keys():
+        if "genomes" not in self.parameters.keys():
             raise NetworkProtocolException(
                 "Genome configuration couldn't be loaded."
             )
