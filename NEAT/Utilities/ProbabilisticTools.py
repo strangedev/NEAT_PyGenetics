@@ -1,8 +1,12 @@
-from typing import List, Tuple
+from typing import List, Tuple, Any, TypeVar
+from fractions import Fraction
 import random
 
+AnyFloat = TypeVar('AnyFloat', float, Fraction)
+
+
 def weighted_choice(
-        weighted_sample: List[Tuple[object, float]]
+        weighted_sample: List[Tuple[Any, AnyFloat]]
 ) -> object:
     """
     Chooses an object from a list of possible outcomes,
@@ -12,8 +16,9 @@ def weighted_choice(
     """
     return weighted_choice_range(weighted_sample, 1)[0]
 
+
 def weighted_choice_range(
-        weighted_sample: List[Tuple[object, float]],
+        weighted_sample: List[Tuple[Any, AnyFloat]],
         count: int
 ) -> List[object]:
     """
