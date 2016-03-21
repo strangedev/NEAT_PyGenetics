@@ -17,7 +17,7 @@ from NEAT.Analyst.GenomeAnalyst import GenomeAnalyst
 from NEAT.Analyst.GenomeClusterer import GenomeClusterer
 from NEAT.Analyst.GenomeSelector import GenomeSelector
 import math
-from bson import ObjectId
+from bson.objectid import ObjectId
 from typing import Dict
 
 
@@ -37,6 +37,21 @@ class MainDirector(Director):
         """
         self._maximum_timeouts = 5
         self.mode = kwargs.get('mode', 'exit')
+        self.selector = None
+        self.decision_maker = None
+        self.breeder = None
+        self.mutator = None
+        self.analyst = None
+        self.clusterer = None
+        self.simulation_connector = SimulationConnector()
+        self.database_connection = None
+        self.gene_repository = None
+        self.genome_repository = None
+        self.cluster_repository = None
+        self.config = None
+        self._session = None
+        self._discarded_genomes_count = 0
+
         if self.mode == 'exit':
             exit()
         elif self.mode == 'run_server':
@@ -44,26 +59,31 @@ class MainDirector(Director):
             startup_check = StartupCheck()
             startup_check.run()
 
-            self.static_init()
-
             while True:
                 try:
-                    self.idle()
+                    self.idle()  # TODO: exit command
                 except NetworkProtocolException as e:
                     print(e)
                     pass
 
-    def static_init(self):
+    def idle(self):
         """
-        Initializes all parts of NEAT that are not dependent
-        upon the client.
+        Standard method that will be executed if local startup is done.
+        In this state, the Director will wait for the client.
         """
-        # An interface to a client connected via the REST API.
-        self.simulation_connector = SimulationConnector()
 
-        # Used to keep track of the number of discarded
-        # genomes when clusters are discarded.
-        self._discarded_genomes_count = 0
+        self._session = self.simulation_connector.get_session()
+
+        # Session tokens will identify a client.
+        # They can be useful for later parallelization.
+        # They also identify the database collections which will be used,
+        # so that different users can have their own storage and previous
+        # sessions can be loaded from storage.
+
+        self.dynamic_init()  # This can be called after the client has connected
+
+        # In case of simulation run:
+        self.run()
 
     def dynamic_init(self):
         """
@@ -85,6 +105,7 @@ class MainDirector(Director):
         #    breeding (since we don't really want to create ALL combinations)
         self.selector = GenomeSelector(
             self.genome_repository,
+            self.cluster_repository,
             self.config.parameters["selection"]
         )
         # makes decisions lol
@@ -117,12 +138,12 @@ class MainDirector(Director):
             self.config.parameters["clustering"]
         )
 
-    def init_db(self, archive_existing_db=False):
+    def init_db(self):
 
         # database connection is a connection to an arbitrary database that is
         # used to store genes, genomes and nodes
         self.database_connection = DatabaseConnector(
-            self.simulation_connector.session.token
+            self._session["session_id"]
         )
 
         # gene_repository administrates all genes ever created
@@ -137,25 +158,6 @@ class MainDirector(Director):
         self.cluster_repository = ClusterRepository(
             self.database_connection
         )
-
-    def idle(self):
-        """
-        Standard method that will be executed if local startup is done.
-        In this state, the Director will wait for the client.
-        """
-
-        self._session = self.simulation_connector.get_session()
-
-        # Session tokens will identify a client.
-        # They can be useful for later parallelization.
-        # They also identify the database collections which will be used,
-        # so that different users can have their own storage and previous
-        # sessions can be loaded from storage.
-
-        self.dynamic_init() # This can be called after the client has connected
-
-        # In case of simulation run:
-        self.run()
 
     def run(self):
         """
@@ -174,31 +176,29 @@ class MainDirector(Director):
 
         while True:
 
-            ### 1. Simulation / wait for client
+            # 1. Simulation / wait for client
             timeout_count = 0
             advance_generation = False
             while timeout_count < self._maximum_timeouts:
                 try:
                     advance_generation = self.perform_simulation_io()
-                except NetworkTimeoutException as e:
+                except NetworkTimeoutException:
                     # TODO: log timeout event
                     timeout_count += 1
             if not timeout_count < self._maximum_timeouts:
                 raise NetworkTimeoutException
 
-
             # Either:
             #   * go on with loop, generate next generation
             #   * save database for later use, hand out session id to client
             if not advance_generation:
-                return # TODO: archive session
+                return  # TODO: archive session
 
-
-            ### 2. Calculate offspring values
+            # 2. Calculate offspring values
 
             self.calculate_cluster_offspring()
 
-            ### 3. Discarding / Regeneration
+            # 3. Discarding / Regeneration
 
             if self.decision_maker.inter_cluster_breeding_time:
                 # if it's time to cross-breed, first discard a few clusters
@@ -211,7 +211,7 @@ class MainDirector(Director):
                 # then refill the population
                 self.generate_new_genomes()
 
-            ### 4. Advance time
+            # 4. Advance time
 
             self.decision_maker.advance_time()
 
@@ -278,7 +278,7 @@ class MainDirector(Director):
         :return:
         """
         for genome in self.selector.select_genomes_for_discarding():
-            self.genome_repository.disable_genome(genome._id)
+            self.genome_repository.disable_genome(genome.object_id)
 
     def discard_clusters(self):
         """
@@ -286,9 +286,9 @@ class MainDirector(Director):
         :return:
         """
         for cluster in self.selector.select_clusters_for_discarding():
-            genomes_to_discard = self.genome_repository.get_genomes_in_cluster(cluster._id)
+            genomes_to_discard = self.genome_repository.get_genomes_in_cluster(cluster.cluster_id)
             self._discarded_genomes_count += len(list(genomes_to_discard))
-            self.genome_repository.disable_genomes([i._id for i in genomes_to_discard])
+            self.genome_repository.disable_genomes([i.object_id for i in genomes_to_discard])
 
     def perform_simulation_io(self):
         genomes = list(self.genome_repository.get_current_population())
@@ -296,7 +296,7 @@ class MainDirector(Director):
         genome_index = 0
 
         for block_id in range(block_count):
-            block = genomes[genome_index : genome_index + self._session["block_size"]]
+            block = genomes[genome_index: genome_index + self._session["block_size"]]
             self.simulation_connector.send_block(block, block_id)
             block_inputs = self.simulation_connector.get_block_inputs(block_id)
             self.simulation_connector.send_block_outputs(
@@ -314,13 +314,13 @@ class MainDirector(Director):
             self,
             block_inputs: Dict[ObjectId, Dict[str, float]]
     ) -> Dict[ObjectId, Dict[str, float]]:
-        pass # TODO:
+        pass  # TODO:
 
     def update_fitness_values(
             self,
             fitness_values: Dict[ObjectId, float]
     ) -> None:
-        pass # TODO:
+        pass  # TODO:
 
     def init_population(self):
         population_size = self.config.parameters["clustering"]["max_population"]

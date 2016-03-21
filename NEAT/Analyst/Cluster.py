@@ -1,4 +1,4 @@
-from bson import ObjectId
+from bson.objectid import ObjectId
 
 
 class Cluster(object):
@@ -11,10 +11,10 @@ class Cluster(object):
             self,
     ):
 
-        self._id = ObjectId() # type: ObjectId
-        self.representative = None # type: ObjectId
-        self.fitness = 0 # type: float
-        self.offspring = 0 # type: int
+        self._id = ObjectId()  # type: ObjectId
+        self.representative = None  # type: ObjectId
+        self.fitness = 0  # type: float
+        self.offspring = 0  # type: int
         self.alive = True
 
     def __eq__(self, obj: 'Cluster') -> bool:
@@ -23,3 +23,7 @@ class Cluster(object):
             self.fitness.__eq__(obj.fitness) and \
             self.offspring.__eq__(obj.offspring) and \
             self.alive.__eq__(obj.alive)
+
+    @property
+    def cluster_id(self):
+        return self._id

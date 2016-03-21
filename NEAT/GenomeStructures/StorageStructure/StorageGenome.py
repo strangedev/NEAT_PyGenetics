@@ -69,3 +69,7 @@ class StorageGenome(object):
                 or not self.cluster.__eq__(obj.cluster):
             return False
         return True
+
+    @property
+    def object_id(self):
+        return self._id
