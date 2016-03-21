@@ -28,7 +28,12 @@ class GenomeRepository(object):
 
         :return: Iterable[StorageGenomes] which are alive
         """
-        genomes_alive = self._database_connector.find_many("genomes", {"is_alive": True})
+        genomes_alive = self._database_connector.find_many(
+            "genomes",
+            {
+                "is_alive": True
+            }
+        )
         genomes = []
         for genome in genomes_alive:
             genomes.append(Transformator.decode_StorageGenome(genome))
@@ -126,11 +131,7 @@ class GenomeRepository(object):
         :param genome_id: ObjectId from genome to disable
         :return:
         """
-        genome = Transformator.decode_StorageGenome(
-            self._database_connector.find_one_by_id(
-                "genomes",
-                genome_id)
-        )
+        genome = self.get_genome_by_id(genome_id)
         genome.is_alive = False
         return self.update_genome(genome)
 
@@ -142,12 +143,7 @@ class GenomeRepository(object):
         """
         result = []
         for genome_id in genomes_id:
-            genome = Transformator.decode_StorageGenome(
-                self._database_connector.find_one_by_id(
-                    "genomes",
-                    genome_id
-                )
-            )
+            genome = self.get_genome_by_id(genome_id)
             genome.is_alive = False
             result.append(genome)
         return self.update_genomes(result)
@@ -159,12 +155,7 @@ class GenomeRepository(object):
         :param fitness: Fraction to set
         :return: dict information about update process (from mongoDB)
         """
-        genome = Transformator.decode_StorageGenome(
-            self._database_connector.find_one_by_id(
-                "genomes",
-                genome_id
-            )
-        )
+        genome = self.get_genome_by_id(genome_id)
         genome.fitness = fitness
         return self.update_genome(genome)
 
@@ -176,12 +167,16 @@ class GenomeRepository(object):
         """
         result = []
         for genome_id, fitness in genome_fitness:
-            genome = Transformator.decode_StorageGenome(
-                self._database_connector.find_one_by_id(
-                    "genomes",
-                    genome_id
-                )
-            )
+            genome = self.get_genome_by_id(genome_id)
             genome.fitness = fitness
             result.append(genome)
         return self.update_genomes(result)
+
+    def update_genome_cluster(
+            self,
+            genome_id: ObjectId,
+            cluster_id: ObjectId
+    ):
+        genome = self.get_genome_by_id(genome_id)
+        genome.cluster = cluster_id
+        return self.update_genome(genome)

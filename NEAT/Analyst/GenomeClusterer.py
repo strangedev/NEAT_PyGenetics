@@ -24,7 +24,7 @@ class GenomeClusterer(object):
         self.clustering_parameters = clustering_parameters
         self._no_clusters = (self.cluster_repository.get_cluster_count == 0)
 
-    def cluster_genomes(self, genomes: List[StorageGenome]):
+    def cluster_genomes(self, genomes: List['StorageGenome']):
         """
         Calculates the clusters in which the passed genomes belong
         individually and updates the database
@@ -58,7 +58,7 @@ class GenomeClusterer(object):
             )
 
             if delta < self.clustering_parameters["delta_threshold"]:
-                self.genome_repository.update_cluster_for_genome(  # TODO:
+                self.genome_repository.update_genome_cluster(
                     genome.object_id,
                     cluster.cluster_id
                 )
@@ -66,9 +66,11 @@ class GenomeClusterer(object):
                 break
         else:
             self.cluster_repository.add_cluster_with_representative(genome.object_id)
-            self.genome_repository.update_cluster_for_genome(  # TODO:
+            self.genome_repository.update_genome_cluster(
                 genome.object_id,
-                self.cluster_repository.get_cluster_by_representative(genome.object_id).cluster_id
+                self.cluster_repository.get_cluster_by_representative(
+                    genome.object_id
+                ).cluster_id
             )
 
     def calculate_delta(
@@ -86,9 +88,15 @@ class GenomeClusterer(object):
         :param genome_two: The second genome
         :return: The delta value (topological difference) of the input genomes
         """
-        excess_coefficient = self.clustering_parameters["excess_coefficient"]
-        disjoint_coefficient = self.clustering_parameters["disjoint_coefficient"]
-        weight_delta_coefficient = self.clustering_parameters["weight_difference_coefficient"]
+        excess_coefficient = float(
+            self.clustering_parameters["excess_coefficient"]
+        )
+        disjoint_coefficient = float(
+            self.clustering_parameters["disjoint_coefficient"]
+        )
+        weight_delta_coefficient = float(
+            self.clustering_parameters["weight_difference_coefficient"]
+        )
 
         bigger_genome, smaller_genome = (genome_one, genome_two) \
             if len(genome_one.genes) > len(genome_two.genes) \
@@ -99,10 +107,10 @@ class GenomeClusterer(object):
 
         all_gene_ids = smaller_genome_gene_ids + bigger_genome_gene_ids
 
-        matching_genes = [gene_id for gene_id in bigger_genome_gene_ids \
+        matching_genes = [gene_id for gene_id in bigger_genome_gene_ids
                           if gene_id in smaller_genome_gene_ids]
 
-        differing_genes = [gene_id for gene_id in all_gene_ids \
+        differing_genes = [gene_id for gene_id in all_gene_ids
                            if gene_id not in matching_genes]
 
         n = len(bigger_genome.genes)
@@ -111,12 +119,12 @@ class GenomeClusterer(object):
 
         w_bar = self.calculate_w_bar(bigger_genome, smaller_genome, matching_genes)
 
-        return ((excess_coefficient * excess_count) / n) \
-               + ((disjoint_coefficient * disjoint_count) / n) \
-               + (weight_delta_coefficient * w_bar)
+        return ((excess_coefficient * excess_count) / n) + \
+               ((disjoint_coefficient * disjoint_count) / n) + \
+               (weight_delta_coefficient * w_bar)
 
+    @staticmethod
     def calculate_disjoint_excess_count(
-            self,
             smaller_genome_gene_ids: List[int],
             differing_genes: List[int]
     ) -> Tuple[int, int]:
@@ -136,16 +144,16 @@ class GenomeClusterer(object):
             if gene_id > smaller_genome_range:
                 smaller_genome_range = gene_id
 
-        excess_genes = [gene_id for gene_id in differing_genes \
+        excess_genes = [gene_id for gene_id in differing_genes
                         if gene_id > smaller_genome_range]
 
-        disjoint_genes = [gene_id for gene_id in differing_genes \
+        disjoint_genes = [gene_id for gene_id in differing_genes
                           if gene_id not in excess_genes]
 
-        return (len(disjoint_genes), len(excess_genes))
+        return len(disjoint_genes), len(excess_genes)
 
+    @staticmethod
     def calculate_w_bar(
-            self,
             genome_one: StorageGenome,
             genome_two: StorageGenome,
             matching_genes: List[int]
