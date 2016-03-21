@@ -1,6 +1,6 @@
 from fractions import Fraction
 from typing import List, Tuple
-from bson import ObjectId
+from bson.objectid import ObjectId
 
 from NEAT.Analyst.Cluster import Cluster
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
