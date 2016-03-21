@@ -30,7 +30,8 @@ class GenomeSelector(object):
 
     def get_genomes_in_cluster(
             self,
-            cluster_id: ObjectId) -> List[Tuple[StorageGenome, Fraction]]:
+            cluster_id: ObjectId
+    ) -> List[Tuple[StorageGenome, Fraction]]:
         """
         Selects and Area of genomes in Cluster given by input
         offspring.
@@ -43,7 +44,11 @@ class GenomeSelector(object):
             genomes.append((genome, genome.fitness))
         return genomes
 
-    def get_cluster_area_sorted_by_fitness(self, begin: float, ending: float) -> [Cluster]:
+    def get_cluster_area_sorted_by_fitness(
+            self,
+            begin: float,
+            ending: float
+    ) -> List[Cluster]:
         """
         :param begin: float percentage starting area (0 is starting by weakest)
         :param ending: float ending area (1 is starting by fitt est)
@@ -57,7 +62,10 @@ class GenomeSelector(object):
         end = int(len(clusters) * ending)
         return clusters[start:end]
 
-    def select_genomes_for_breeding(self, breeding_percentage: float) -> List[Tuple[StorageGenome]]:
+    def select_genomes_for_breeding(
+            self,
+            breeding_percentage: float
+    ) -> List[Tuple[StorageGenome, StorageGenome]]:
         """
         Selects genomes for breeding currently best two from all Clusters
         :type breeding_percentage: float
@@ -75,7 +83,10 @@ class GenomeSelector(object):
 
         return result
 
-    def select_genomes_for_mutation(self, mutation_percentage: float) -> List[StorageGenome]:
+    def select_genomes_for_mutation(
+            self,
+            mutation_percentage: float
+    ) -> List[StorageGenome]:
         """
         Selects genome for mutation currently the best from all Clusters
         :param mutation_percentage: float
@@ -109,7 +120,8 @@ class GenomeSelector(object):
             self,
             cluster1: Cluster,
             cluster2: Cluster,
-            genome_count: int) -> List[Tuple[StorageGenome]]:
+            genome_count: int
+    ) -> List[Tuple[StorageGenome]]:
         """
         :param cluster1: Cluster to choose 1
         :param cluster2: Cluster to choose 2
