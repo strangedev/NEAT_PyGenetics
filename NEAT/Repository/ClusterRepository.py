@@ -60,3 +60,63 @@ class ClusterRepository(object):
     def get_cluster_count(self) -> int:
         clusters = self.get_current_clusters()
         return len(clusters)
+
+    def update_offspring_for_cluster(
+            self,
+            cluster_id: ObjectId,
+            cluster_offspring: int
+    ):
+        cluster = Transformator.decode_Cluster(
+            self._database_connector.find_one_by_id(
+                "clusters",
+                cluster_id
+            )
+        )
+        cluster.offspring = cluster_offspring
+        return self._database_connector.update_one(
+            "clusters",
+            cluster_id,
+            Transformator.encode_Cluster(
+                cluster
+            )
+        )
+
+    def update_fitness_for_cluster(
+            self,
+            cluster_id: ObjectId,
+            cluster_fitness: float
+    ):
+        cluster = Transformator.decode_Cluster(
+            self._database_connector.find_one_by_id(
+                "clusters",
+                cluster_id
+            )
+        )
+        cluster.offspring = cluster_fitness
+        return self._database_connector.update_one(
+            "clusters",
+            cluster_id,
+            Transformator.encode_Cluster(
+                cluster
+            )
+        )
+
+    def update_max_population_for_cluster(
+            self,
+            cluster_id: ObjectId,
+            cluster_max_population: int
+    ):
+        cluster = Transformator.decode_Cluster(
+            self._database_connector.find_one_by_id(
+                "clusters",
+                cluster_id
+            )
+        )
+        cluster.offspring = cluster_max_population
+        return self._database_connector.update_one(
+            "clusters",
+            cluster_id,
+            Transformator.encode_Cluster(
+                cluster
+            )
+        )

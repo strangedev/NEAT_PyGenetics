@@ -1,8 +1,11 @@
-from bson import ObjectId
-from NEAT.Repository.GenomeRepository import GenomeRepository
-from NEAT.Repository.ClusterRepository import ClusterRepository
-from NEAT.GenomeStructures.StorageStructure import StorageGenome
 from typing import List, Tuple, Dict
+
+from bson import ObjectId
+
+from NEAT.GenomeStructures.StorageStructure import StorageGenome
+from NEAT.Repository.ClusterRepository import ClusterRepository
+from NEAT.Repository.GenomeRepository import GenomeRepository
+
 
 class GenomeClusterer(object):
     """
@@ -55,7 +58,7 @@ class GenomeClusterer(object):
             )
 
             if delta < self.clustering_parameters["delta_threshold"]:
-                self.genome_repository.update_cluster_for_genome( # TODO:
+                self.genome_repository.update_cluster_for_genome(  # TODO:
                     genome.object_id,
                     cluster.cluster_id
                 )
@@ -63,7 +66,7 @@ class GenomeClusterer(object):
                 break
         else:
             self.cluster_repository.add_cluster_with_representative(genome.object_id)
-            self.genome_repository.update_cluster_for_genome( # TODO:
+            self.genome_repository.update_cluster_for_genome(  # TODO:
                 genome.object_id,
                 self.cluster_repository.get_cluster_by_representative(genome.object_id).cluster_id
             )
@@ -126,7 +129,7 @@ class GenomeClusterer(object):
         :return: The amount of excess and disjoint genes as tuple.
         """
 
-        smaller_genome_range = 0 # type: int
+        smaller_genome_range = 0  # type: int
 
         for gene_id in smaller_genome_gene_ids:
 
@@ -158,7 +161,7 @@ class GenomeClusterer(object):
         of matching genes.
         """
 
-        weights = [] # type: List[int]
+        weights = []  # type: List[int]
 
         for gene_id in matching_genes:
 
@@ -180,8 +183,8 @@ class GenomeClusterer(object):
             weights.append((weight_one, weight_two))
 
         w_bar = sum(
-                    [(weight_one - weight_two)**2 for (weight_one, weight_two) in weights]
-                ) / len(matching_genes) # type: float
+            [(weight_one - weight_two) ** 2 for (weight_one, weight_two) in weights]
+        ) / len(matching_genes)  # type: float
 
         return w_bar
 
@@ -195,7 +198,7 @@ class GenomeClusterer(object):
         :return: The shared fitness value for the input cluster
         """
 
-        genomes = self.genome_repository.get_genomes_in_cluster(cluster_id) # TODO:
+        genomes = self.genome_repository.get_genomes_in_cluster(cluster_id)
 
         cluster_fitness = 0
 
@@ -203,7 +206,6 @@ class GenomeClusterer(object):
             cluster_fitness += genome.fitness
 
         return cluster_fitness / len(list(genomes))
-
 
     def calculate_cluster_offspring_values(self):
         """
@@ -215,28 +217,27 @@ class GenomeClusterer(object):
         :return: None
         """
 
-        clusters = self.cluster_repository.get_current_clusters() # TODO:
+        clusters = self.cluster_repository.get_current_clusters()
         max_population = self.clustering_parameters["max_population"]
         discarding_percentage = self.clustering_parameters["discarding_percentage"]
 
-        to_replace = max_population * discarding_percentage
+        to_replace = int(max_population) * float(discarding_percentage)
 
         for cluster in clusters:
-            cluster.fitness = self.calculate_cluster_fitness(cluster._id)
-            self.cluster_repository.update_fitness_for_cluster( # TODO:
-                cluster._id,
+            cluster.fitness = self.calculate_cluster_fitness(cluster.cluster_id)
+            self.cluster_repository.update_fitness_for_cluster(
+                cluster.cluster_id,
                 cluster.fitness
             )
 
         cluster_fitness_sum = sum([cluster.fitness for cluster in clusters])
 
         for cluster in clusters:
-
             cluster.offspring = int(
                 round((cluster.fitness / cluster_fitness_sum) * to_replace)
             )
-            self.cluster_repository.update_offspring_for_cluster( # TODO:
-                cluster._id,
+            self.cluster_repository.update_offspring_for_cluster(
+                cluster.cluster_id,
                 cluster.offspring
             )
 
@@ -252,24 +253,25 @@ class GenomeClusterer(object):
         :return: None
         """
 
-        max_population = self.clustering_parameters["max_population"]
+        max_population = int(self.clustering_parameters["max_population"])
 
-        clusters = self.cluster_repository.get_current_clusters() # TODO:
+        clusters = self.cluster_repository.get_current_clusters()
 
         for cluster in clusters:
-            cluster.fitness = self.calculate_cluster_fitness(cluster._id)
-            self.cluster_repository.update_fitness_for_cluster( # TODO:
-                cluster._id,
+            cluster.fitness = self.calculate_cluster_fitness(cluster.cluster_id)
+            self.cluster_repository.update_fitness_for_cluster(
+                cluster.cluster_id,
                 cluster.fitness
             )
 
         cluster_fitness_sum = sum([cluster.fitness for cluster in clusters])
 
         for cluster in clusters:
-
-            cluster.max_population = int((cluster.fitness / cluster_fitness_sum) * max_population)
-            self.cluster_repository.update_max_population_for_cluster( # TODO:
-                cluster._id,
+            cluster.max_population = int(
+                (cluster.fitness / cluster_fitness_sum) *
+                max_population
+            )
+            self.cluster_repository.update_max_population_for_cluster(
+                cluster.cluster_id,
                 cluster.max_population
             )
-
