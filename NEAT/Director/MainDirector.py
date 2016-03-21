@@ -37,20 +37,20 @@ class MainDirector(Director):
         """
         self._maximum_timeouts = 5
         self.mode = kwargs.get('mode', 'exit')
-        self.selector = None
-        self.decision_maker = None
-        self.breeder = None
-        self.mutator = None
-        self.analyst = None
-        self.clusterer = None
-        self.simulation_connector = SimulationConnector()
-        self.database_connection = None
-        self.gene_repository = None
-        self.genome_repository = None
-        self.cluster_repository = None
-        self.config = None
-        self._session = None
-        self._discarded_genomes_count = 0
+        self.selector = None  # type: GenomeSelector
+        self.decision_maker = None  # type: DecisionMaker
+        self.breeder = None  # type: Breeder
+        self.mutator = None  # type: Mutator
+        self.analyst = None  # type: GenomeAnalyst
+        self.clusterer = None  # type: GenomeClusterer
+        self.simulation_connector = SimulationConnector()  # type: SimulationConnector
+        self.database_connector = None  # type: DatabaseConnector
+        self.gene_repository = None  # type: GeneRepository
+        self.genome_repository = None  # type: GenomeRepository
+        self.cluster_repository = None  # type: ClusterRepository
+        self.config = None  # type: NEATConfig
+        self._session = None  # type: dict
+        self._discarded_genomes_count = 0  # type: int
 
         if self.mode == 'exit':
             exit()
@@ -142,21 +142,21 @@ class MainDirector(Director):
 
         # database connection is a connection to an arbitrary database that is
         # used to store genes, genomes and nodes
-        self.database_connection = DatabaseConnector(
+        self.database_connector = DatabaseConnector(
             self._session["session_id"]
         )
 
         # gene_repository administrates all genes ever created
         self.gene_repository = GeneRepository(
-            self.database_connection
+            self.database_connector
         )
         # genome_repository administrates all genomes ever created
         self.genome_repository = GenomeRepository(
-            self.database_connection
+            self.database_connector
         )
         # cluster_repository administrates all clusters ever created
         self.cluster_repository = ClusterRepository(
-            self.database_connection
+            self.database_connector
         )
 
     def run(self):
@@ -171,7 +171,9 @@ class MainDirector(Director):
         self.decision_maker.reset_time()
 
         # TODO: Init population if necessary
-        if len(self.genome_repository.get_current_population()) == 0:
+        if len(
+                list(self.genome_repository.get_current_population())
+        ) == 0:
             self.init_population()
 
         while True:
