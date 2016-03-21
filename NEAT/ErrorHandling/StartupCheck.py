@@ -1,5 +1,7 @@
 from NEAT.Repository.DatabaseConnector import DatabaseConnector
 from NEAT.Repository.GenomeRepository import GenomeRepository
+from NEAT.ErrorHandling.Exceptions.StartupCheckException import StartupCheckException
+
 
 class StartupCheck(object):
 
@@ -9,13 +11,9 @@ class StartupCheck(object):
 
     def run(self):
         genome = self.rep.get_new_genome()
-
         try:
             self.rep.insert_genome(genome)
-        except Exception as e:
-            print("An Error occurred while error checking.")
-            print("Error checking occurs while NEATConfig is loading the configuration files.")
-            print("\n", e)
-            print("\nThis usually means MongoDB isn't running.")
-
-            raise e # TODO: custom error classes!
+        except Exception:
+            raise StartupCheckException(
+                "Startup check failed. Check if mongoDB is running."
+            )
