@@ -177,6 +177,12 @@ class GenomeRepository(object):
             genome_id: ObjectId,
             cluster_id: ObjectId
     ):
+        """
+
+        :param genome_id: The ObjectId of the genome to update
+        :param cluster_id: The new cluster of the genome as ObjectId
+        :return: dict information about update process (from mongodb)
+        """
         genome = self.get_genome_by_id(genome_id)
         genome.cluster = cluster_id
         return self.update_genome(genome)
