@@ -34,5 +34,7 @@ class DecisionMaker(object):
 
     def _cutoff_function(self, x, cutoff_point):
         return (1 / math.exp(x /
-                             self._decision_making_parameters["cutoff_point_scalar"] * math.log(cutoff_point)))
-
+                             self._decision_making_parameters["cutoff_point_scalar"] *
+                             math.log(cutoff_point)
+                             )
+                )
