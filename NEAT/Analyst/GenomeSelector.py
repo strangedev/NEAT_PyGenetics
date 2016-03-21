@@ -64,7 +64,7 @@ class GenomeSelector(object):
         """
         result = []
         for cluster in self.cluster_repository.get_current_clusters():
-            genome_one = self.get_genomes_in_cluster(cluster._id)
+            genome_one = self.get_genomes_in_cluster(cluster.cluster_id)
             genome_two = genome_one
             seats_to_mutation = int(cluster.offspring * breeding_percentage)
             result.extend(list(zip(
@@ -82,7 +82,7 @@ class GenomeSelector(object):
         """
         result = []
         for cluster in self.cluster_repository.get_current_clusters():
-            step = self.get_genomes_in_cluster(cluster._id)
+            step = self.get_genomes_in_cluster(cluster.cluster_id)
             seats_to_mutation = int(cluster.offspring * mutation_percentage)
 
             result.extend(weighted_choice_range(
@@ -93,7 +93,6 @@ class GenomeSelector(object):
 
     def select_clusters_for_combination(self) -> Tuple[Cluster]:
         """
-
         :return: Tuple[Cluster] cluster chosen for combination
         """
         step = []
@@ -116,8 +115,8 @@ class GenomeSelector(object):
         :param genome_count: int number of seats which should be filled
         :return: List[Tuple[StorageGenome]] combination from given cluster
         """
-        genomes1 = self.get_genomes_in_cluster(cluster1._id)
-        genomes2 = self.get_genomes_in_cluster(cluster2._id)
+        genomes1 = self.get_genomes_in_cluster(cluster1.cluster_id)
+        genomes2 = self.get_genomes_in_cluster(cluster2.cluster_id)
         g1 = weighted_choice_range(genomes1, genome_count)
         g2 = weighted_choice_range(genomes2, genome_count)
         return list(zip(g1, g2))
@@ -142,7 +141,7 @@ class GenomeSelector(object):
         """
         genomes = []
         for cluster in self.cluster_repository.get_current_clusters():
-            g = self.genome_repository.get_genomes_in_cluster(cluster._id)
+            g = self.genome_repository.get_genomes_in_cluster(cluster.cluster_id)
             selection = int(len(g) * self.selection_parameters["discarding_by_genome_fitness"])
             list(g).sort(key=lambda x: x.fitness)
             genomes.extend(g[:selection])
