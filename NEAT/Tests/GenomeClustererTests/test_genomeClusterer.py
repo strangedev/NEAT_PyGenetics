@@ -57,11 +57,7 @@ class TestGenomeClusterer(TestCase):
 
     def test_calculate_disjoint_excess_count(self):
 
-        disjoint_count, excess_count = clusterer.calculate_disjoint_excess_count(
-            [1, 2, 3, 4],
-            [1, 3, 4, 5],
-            [2, 5]
-        )
+        disjoint_count, excess_count = clusterer.calculate_disjoint_excess_count([1, 2, 3, 4], [2, 5])
 
         self.assertEqual(
             disjoint_count,
