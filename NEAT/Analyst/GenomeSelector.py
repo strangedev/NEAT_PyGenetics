@@ -1,11 +1,12 @@
 from fractions import Fraction
 from typing import List, Tuple
+
 from bson.objectid import ObjectId
 
 from NEAT.Analyst.Cluster import Cluster
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
-from NEAT.Repository.GenomeRepository import GenomeRepository
 from NEAT.Repository.ClusterRepository import ClusterRepository
+from NEAT.Repository.GenomeRepository import GenomeRepository
 from NEAT.Utilities.ProbabilisticTools import weighted_choice_range, weighted_choice
 
 
@@ -52,8 +53,8 @@ class GenomeSelector(object):
         for cluster in self.cluster_repository.get_current_clusters():
             clusters.append(cluster)
         clusters.sort(key=lambda c: c.fitness)
-        start = int(len(clusters)*begin)
-        end = int(len(clusters)*ending)
+        start = int(len(clusters) * begin)
+        end = int(len(clusters) * ending)
         return clusters[start:end]
 
     def select_genomes_for_breeding(self, breeding_percentage: float) -> List[Tuple[StorageGenome]]:
@@ -99,7 +100,7 @@ class GenomeSelector(object):
         for cluster in self.cluster_repository.get_current_clusters():
             step.append((cluster, cluster.fitness))
 
-        cluster_one = weighted_choice(step)
+        cluster_one = weighted_choice(step)  # type: Cluster
         step.remove((cluster_one, cluster_one.fitness))
         cluster_two = weighted_choice(step)
         return cluster_one, cluster_two
@@ -141,8 +142,14 @@ class GenomeSelector(object):
         """
         genomes = []
         for cluster in self.cluster_repository.get_current_clusters():
-            g = self.genome_repository.get_genomes_in_cluster(cluster.cluster_id)
-            selection = int(len(g) * self.selection_parameters["discarding_by_genome_fitness"])
+            g = list(
+                self.genome_repository.get_genomes_in_cluster(
+                    cluster.cluster_id
+                )
+            )
+            selection = int(
+                len(g) * self.selection_parameters["discarding_by_genome_fitness"]
+            )
             list(g).sort(key=lambda x: x.fitness)
             genomes.extend(g[:selection])
         return genomes
