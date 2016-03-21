@@ -169,7 +169,7 @@ class GenomeClusterer(object):
         of matching genes.
         """
 
-        weights = []  # type: List[int]
+        weights = []  # type: List[Tuple[float, float]]
 
         for gene_id in matching_genes:
 
@@ -247,39 +247,4 @@ class GenomeClusterer(object):
             self.cluster_repository.update_offspring_for_cluster(
                 cluster.cluster_id,
                 cluster.offspring
-            )
-
-    def calculate_max_cluster_populations(self):
-        """
-        DEPRECATED
-
-        Calculates the number of individuals the clusters will be able
-        to contain until the next clustering, based on the compared
-        shared fitness values of all active clusters. Fitter clusters
-        will receive a bigger population.
-
-        :return: None
-        """
-
-        max_population = int(self.clustering_parameters["max_population"])
-
-        clusters = self.cluster_repository.get_current_clusters()
-
-        for cluster in clusters:
-            cluster.fitness = self.calculate_cluster_fitness(cluster.cluster_id)
-            self.cluster_repository.update_fitness_for_cluster(
-                cluster.cluster_id,
-                cluster.fitness
-            )
-
-        cluster_fitness_sum = sum([cluster.fitness for cluster in clusters])
-
-        for cluster in clusters:
-            cluster.max_population = int(
-                (cluster.fitness / cluster_fitness_sum) *
-                max_population
-            )
-            self.cluster_repository.update_max_population_for_cluster(
-                cluster.cluster_id,
-                cluster.max_population
             )
