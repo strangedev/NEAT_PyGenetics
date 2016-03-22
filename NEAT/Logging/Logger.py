@@ -1,7 +1,7 @@
 import os, time, datetime
 
 
-class Logger():
+class Logger:
     """
     Logs messages to different files, based
     on the reported log level.
@@ -52,7 +52,7 @@ class Logger():
     def log(self, message: str, log_level: int = 1):
         if not isinstance(type(log_level), type(1)):
             log_level = Logger.lookup_log_level(
-                log_level
+                str(log_level)
             )
         if log_level not in range(7):
             return
