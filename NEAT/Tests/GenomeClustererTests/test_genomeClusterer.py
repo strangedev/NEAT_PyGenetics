@@ -134,6 +134,27 @@ class TestGenomeClusterer(TestCase):
             self.genome_clusterer.calculate_disjoint_excess_count(smaller_genome_gene_ids, differing_genes)
         )
 
+    def test_calculate_w_bar(self):
+        genome_one = StorageGenome()
+        genome_two = StorageGenome()
+        genome_one.genes = {
+            2: (False, Fraction(12.1)),
+            3: (True, Fraction(2.2)),
+            4: (False, Fraction(2.2)),
+            6: (True, Fraction(2.3))
+        }
+        genome_two.genes = {
+            2: (False, Fraction(1.1)),
+            5: (True, Fraction(3.3)),
+            6: (True, Fraction(2.3))
+        }
+        matching_genes = [2,6]
+        weight_two = 1.1
+        weight_one = 12.1
+        weights = [(weight_one, weight_two), (2.3, 2.3)]
+        self.assertEqual(60.5, self.genome_clusterer.calculate_w_bar(genome_one, genome_two, matching_genes))
+
+
 """
     def test_cluster_genomes(self):
 
