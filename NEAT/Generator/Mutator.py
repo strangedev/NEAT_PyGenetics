@@ -21,7 +21,7 @@ class Mutator(object):
         if len(analysis_genome.edges) == 0:
             return self.mutate_add_edge(analysis_genome, genome)
 
-        edge_or_vertex = ProbabilisticTools.weighted_choice(  # TODO:
+        edge_or_vertex = ProbabilisticTools.weighted_choice(
             [
                 (0, self.mutation_parameters["add_edge_probability"]),
                 (1, 1 - self.mutation_parameters["add_edge_probability"])
