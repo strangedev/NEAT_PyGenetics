@@ -50,11 +50,11 @@ class TestGenomeRepository(TestCase):
         self.assertFalse(self.genome_repository.update_genome(StorageGenome()))
 
     def test_update_genomes(self):
-        self.db.update_many = (lambda x, y: False)
+        self.genome_repository.update_genome = lambda x: x
         g = []
         for i in range(1, 4):
             g.append(StorageGenome())
-        self.assertFalse(self.genome_repository.update_genomes(g))
+        self.assertListEqual(g, self.genome_repository.update_genomes(g))
 
     def test_disable_genome(self):
         g = StorageGenome()
@@ -62,21 +62,17 @@ class TestGenomeRepository(TestCase):
 
         genome = Transformator.Transformator.encode_StorageGenome(g)
         self.db.find_one_by_id = MagicMock(return_value=genome)
-        self.db.update_one = MagicMock(return_value=True)
+        self.genome_repository.update_genome = lambda x: x
 
-        self.assertTrue(
-            self.genome_repository.disable_genome(g._id)
-        )
-        self.assertFalse(Transformator.Transformator.decode_StorageGenome(genome).is_alive)
+        self.assertFalse(self.genome_repository.disable_genome(g._id).is_alive)
 
     def test_disable_genomes(self):
-        self.genome_repository.update_genomes = (lambda x: x)
-        self.db.find_one_by_id = (lambda x: x)
+
+        self.db.find_one_by_id = lambda x, y: Transformator.Transformator.encode_StorageGenome(StorageGenome())
         genomes = []
         for i in range(0, 10):
-            g = StorageGenome()
-            g.is_alive = True
-            genomes.append(g)
+            genomes.append(self.db.find_one_by_id(i, ObjectId()))
+        self.genome_repository.update_genomes = lambda x: x
 
         for i in self.genome_repository.disable_genomes(genomes):
             self.assertFalse(i.is_alive)
@@ -84,7 +80,8 @@ class TestGenomeRepository(TestCase):
     def test_updateGenomeFitness(self):
         genome = StorageGenome()
         genome.fitness = 1.0
-        self.db.find_one_by_id = MagicMock(return_value=genome)
+
+        self.genome_repository.get_genome_by_id = lambda x: genome
         self.genome_repository.update_genome = lambda x: x
         self.assertEqual(Fraction(2.0), self.genome_repository.update_genome_fitness(genome._id, Fraction(2.0)).fitness)
 
@@ -94,7 +91,7 @@ class TestGenomeRepository(TestCase):
             g = StorageGenome()
             g.fitness = float(1 / (i + 2))
             genomes.append((g, 4.7))
-        self.db.find_one_by_id = lambda x: x
+        self.genome_repository.get_genome_by_id = lambda x: x
         self.genome_repository.update_genomes = lambda x: x
         for i in self.genome_repository.update_genomes_fitness(genomes):
             self.assertEqual(4.7, i.fitness)
