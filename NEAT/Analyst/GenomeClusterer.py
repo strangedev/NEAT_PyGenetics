@@ -48,6 +48,7 @@ class GenomeClusterer(object):
         if self._no_clusters:
             self.cluster_repository.add_cluster_with_representative(genome.object_id)
             self._no_clusters = False
+            return
 
         clusters = self.cluster_repository.get_current_clusters()
         for cluster in clusters:
@@ -102,8 +103,8 @@ class GenomeClusterer(object):
             if len(genome_one.genes) > len(genome_two.genes) \
             else (genome_two, genome_one)
 
-        bigger_genome_gene_ids = [gene[0] for gene in bigger_genome.genes]
-        smaller_genome_gene_ids = [gene[0] for gene in smaller_genome.genes]
+        bigger_genome_gene_ids = [gene for gene in bigger_genome.genes]
+        smaller_genome_gene_ids = [gene for gene in smaller_genome.genes]
 
         all_gene_ids = smaller_genome_gene_ids + bigger_genome_gene_ids
 
