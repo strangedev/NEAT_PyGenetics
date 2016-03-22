@@ -154,6 +154,16 @@ class TestGenomeClusterer(TestCase):
         weights = [(weight_one, weight_two), (2.3, 2.3)]
         self.assertEqual(60.5, self.genome_clusterer.calculate_w_bar(genome_one, genome_two, matching_genes))
 
+    def test_calculate_cluster_fitness(self):
+        cluster_id = ObjectId()
+        genomes = []
+        for i in range(0,4):
+            g = StorageGenome()
+            g.fitness = float(i)
+            genomes.append(g)
+        self.mock_genome_repository.get_genomes_in_cluster = MagicMock(return_value=genomes)
+        self.assertEqual((6.0)/4, self.genome_clusterer.calculate_cluster_fitness(cluster_id))
+        self.mock_genome_repository.get_genomes_in_cluster.assert_called_with(cluster_id)
 
 """
     def test_cluster_genomes(self):
