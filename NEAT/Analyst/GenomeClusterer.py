@@ -177,16 +177,16 @@ class GenomeClusterer(object):
             weight_one = 0
             weight_two = 0
 
-            for gene in genome_two.genes:
-
-                if gene[0] == gene_id:
-                    weight_one = gene[2]
-                    break
-
             for gene in genome_one.genes:
 
-                if gene[0] == gene_id:
-                    weight_two = gene[2]
+                if gene == gene_id:
+                    weight_one = float(genome_one.genes[gene][1])
+                    break
+
+            for gene in genome_two.genes:
+
+                if gene == gene_id:
+                    weight_two = float(genome_two.genes[gene][1])
                     break
 
             weights.append((weight_one, weight_two))
