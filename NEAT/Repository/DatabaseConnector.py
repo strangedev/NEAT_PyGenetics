@@ -1,7 +1,9 @@
-from typing import Dict, Iterable, List, Tuple
+from typing import Dict, Iterable, List, Tuple, TypeVar
 
 from bson import ObjectId
 from pymongo import MongoClient
+
+AnyId = TypeVar('AnyId', ObjectId, int, str)
 
 
 class DatabaseConnector(object):
@@ -69,7 +71,7 @@ class DatabaseConnector(object):
     def find_one_by_id(
             self,
             collection_name: str,
-            document_id
+            document_id: AnyId
     ) -> dict:
         """
         Finds a single document in the given collection based on its id.
@@ -103,7 +105,7 @@ class DatabaseConnector(object):
     def update_one(
             self,
             collection_name: str,
-            document_id,
+            document_id: AnyId,
             document: object
     ) -> dict:
         """
@@ -123,7 +125,7 @@ class DatabaseConnector(object):
     def update_many(
             self,
             collection_name: str,
-            documents: Iterable[Tuple[int, object]]
+            documents: Iterable[Tuple[AnyId, object]]
     ) -> List[dict]:
         """
         Updates multiple documents in the given collection in the database.
@@ -144,7 +146,7 @@ class DatabaseConnector(object):
     def remove_one(
             self,
             collection_name: str,
-            document_id
+            document_id: AnyId
     ):
         """
         Removes one document by id from a given collection.
@@ -160,7 +162,7 @@ class DatabaseConnector(object):
     def remove_many(
             self,
             collection_name: str,
-            document_ids: Iterable[int]
+            document_ids: Iterable[AnyId]
     ):
         """
         Removes many documents by id from a given collection.
