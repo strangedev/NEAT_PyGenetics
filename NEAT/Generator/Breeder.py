@@ -129,7 +129,6 @@ class Breeder(object):
             gene_two_enabled = instance_two[1]
 
         if (not gene_one_enabled) or (not gene_two_enabled):
-            return False \
-                if random.random() < self.breeding_parameters[
-                    "gene_inherited_as_disabled_probability"] \
-                else True
+            return not random.random() < self.breeding_parameters[
+                    "gene_inherited_as_disabled_probability"
+            ]
