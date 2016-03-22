@@ -52,7 +52,6 @@ class TestGenomeRepository(TestCase):
     def test_update_genomes(self):
         self.genome_repository.update_genome = lambda x: x
         g = []
-        count = 0
         for i in range(1, 4):
             g.append(StorageGenome())
         self.assertListEqual(g, self.genome_repository.update_genomes(g))
