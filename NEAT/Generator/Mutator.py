@@ -1,14 +1,14 @@
+import copy
+import random
+from fractions import Fraction
+from typing import Tuple
+
 from NEAT.GenomeStructures.AnalysisStructure.AnalysisGenome import AnalysisGenome
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
-from NEAT.Repository.GeneRepository import GeneRepository
 from NEAT.Utilities import ProbabilisticTools
-import random
-import copy
-from typing import Tuple
-from fractions import Fraction
+
 
 class Mutator(object):
-
     def __init__(self, gene_repository, mutation_parameters):
 
         self.gene_repository = gene_repository
@@ -16,14 +16,12 @@ class Mutator(object):
 
     def mutate_genome(self, genome) -> StorageGenome:
 
-        analysis_genome = AnalysisGenome(self.gene_repository)
-        analysis_genome._init_from_storage_structure(genome)
+        analysis_genome = AnalysisGenome(self.gene_repository, genome)
 
         if len(analysis_genome.edges) == 0:
-
             return self.mutate_add_edge(analysis_genome, genome)
 
-        edge_or_vertex = ProbabilisticTools.weighted_choice( # TODO:
+        edge_or_vertex = ProbabilisticTools.weighted_choice(  # TODO:
             [
                 (0, self.mutation_parameters["add_edge_probability"]),
                 (1, 1 - self.mutation_parameters["add_edge_probability"])
@@ -74,7 +72,7 @@ class Mutator(object):
             ]
         )
 
-        new_genome = copy.deepcopy(storage_genome) # TODO: never deepcopy a StorageGenome. It WILL break the database because of the ObjectID. We need a copyconstructor.
+        new_genome = StorageGenome(storage_genome)
         new_genome.genes[gene_id] = (gene_enabled, gene_weight)
 
         return new_genome
@@ -110,7 +108,7 @@ class Mutator(object):
 
         for node in connecting_nodes:
 
-            if not node in analysis_genome.nodes:
+            if node not in analysis_genome.nodes:
                 connecting_node = node
                 break
             else:
@@ -129,7 +127,7 @@ class Mutator(object):
         )
         new_gene_two = (True, 1.0)
 
-        new_genome = copy.deepcopy(storage_genome) # TODO: never deepcopy a StorageGenome. It WILL break the database because of the ObjectID. We need a copyconstructor.
+        new_genome = StorageGenome(storage_genome)
 
         for gid, gene in new_genome.genes.items():
             if gid == old_gene_id:
@@ -145,26 +143,23 @@ class Mutator(object):
 
         random.seed()
 
-        new_genome = copy.deepcopy(genome) # TODO: never deepcopy a StorageGenome. It WILL break the database because of the ObjectID. We need a copyconstructor.
+        new_genome = StorageGenome(genome)
 
         for gid, gene in genome.genes.items():
-            perturb_weight = True \
-                if random.random() < self.mutation_parameters["perturb_gene_weight_probability"] \
-                else False
-
+            perturb_weight = random.random() < self.mutation_parameters[
+                "perturb_gene_weight_probability"
+            ]
             if perturb_weight:
                 new_gene = self.perturb_weight(gene)
                 genome.genes[gid] = new_gene
 
         return new_genome
 
+    @staticmethod
     def perturb_weight(
-            self,
             gene: Tuple[bool, Fraction]
     ) -> Tuple[bool, Fraction]:
 
         random.seed()
-
         new_weight = Fraction(gene[1] * random.random())
-
-        return (gene[0], new_weight)
+        return gene[0], new_weight
