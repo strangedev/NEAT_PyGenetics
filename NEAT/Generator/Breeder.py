@@ -91,11 +91,9 @@ class Breeder(object):
 
             for gene_id in differing_gene_ids:
 
-                inherit_gene = True \
-                    if random.random() < self.breeding_parameters[
+                inherit_gene = random.random() < self.breeding_parameters[
                            "inherit_randomly_if_same_fitness_probability"
-                       ] \
-                    else False
+                       ]
 
                 if inherit_gene:
                     parent_genome_table = genome_one.genes \
