@@ -2,11 +2,11 @@ from typing import Dict, List
 
 from bson import ObjectId
 
-from NEAT.ErrorHandling.Exceptions.NetworkTimeoutException import NetworkTimeoutException
 from NEAT.ErrorHandling.Exceptions.NetworkProtocolException import NetworkProtocolException
+from NEAT.ErrorHandling.Exceptions.NetworkTimeoutException import NetworkTimeoutException
+from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 from NEAT.Networking.Commands.BaseCommand import BaseCommand
 from NEAT.Networking.Server.NEATServer import NEATServer
-from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 
 
 class SimulationConnector(object):
@@ -25,13 +25,13 @@ class SimulationConnector(object):
     """
 
     def __init__(self) -> None:
-        self._server = NEATServer() # type: NEATServer
+        self._server = NEATServer()  # type: NEATServer
 
     def _listen_for_command(
             self,
-            type: str,
-            filter: Dict[str, object]=None,
-            timeout: int=None
+            command_type: str,
+            parameter_filter: Dict[str, object]=None,
+            timeout: int = None
     ) -> BaseCommand:
         """
         Waits for the message queue to have a command ready,
@@ -40,8 +40,8 @@ class SimulationConnector(object):
         match type / filter.
         If the next received command does not match,
         NetworkProtocolException is raised.
-        :param type: The type of the expected command as string
-        :param filter: A dictionary of parameters that are expected to be
+        :param command_type: The type of the expected command as string
+        :param parameter_filter: A dictionary of parameters that are expected to be
         present in the command's parameters.
         :param timeout: The timeout after which the attempt to get
         the command will fail
@@ -52,13 +52,13 @@ class SimulationConnector(object):
         if not command:
             raise NetworkTimeoutException
 
-        if not command._type == type:
+        if not command.type == command_type:
             self._respond_to_command(command, acknowledged=False)
             raise NetworkProtocolException("Wrong command type encountered")
 
-        if filter:
-            for key, value in filter.items():
-                if not key in command.parameters.keys():
+        if parameter_filter:
+            for key, value in parameter_filter.items():
+                if key not in command.parameters.keys():
                     self._respond_to_command(command, acknowledged=False)
                     raise NetworkProtocolException("Filter key not in command parameters")
                 if not value == command.parameters[key]:
@@ -126,11 +126,11 @@ class SimulationConnector(object):
         :return: None
         """
         block_to_send = {
-            genome._id:
+            genome.object_id:
                 {
                     input_label: None
                     for input_label in genome.inputs.keys()
-                }
+                    }
             for genome in block
             }
         result = {
@@ -193,7 +193,9 @@ class SimulationConnector(object):
         """
         set_command = self._listen_for_command(
             "SetFitnessValues",
-            {"block_id": block_id}
+            {
+                "block_id": block_id
+            }
         )
         self._respond_to_command(set_command)
         return set_command.parameters["fitness_values"]

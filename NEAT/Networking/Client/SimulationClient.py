@@ -2,7 +2,6 @@ from typing import Dict
 
 from bson import ObjectId
 
-from NEAT.Config.StaticConfig.ServerConfig import server_address, server_port  # TODO:
 from NEAT.ErrorHandling.Exceptions.NetworkProtocolException import NetworkProtocolException
 from NEAT.Networking.Client.NEATClient import NEATClient
 from NEAT.Networking.Commands.AdvanceGenerationCommand import AdvanceGenerationCommand
@@ -15,7 +14,7 @@ from NEAT.Networking.Commands.SetInputsCommand import SetInputsCommand
 
 class SimulationClient(object):
     # TODO: Error Handling! on every response
-    def __init__(self):
+    def __init__(self, server_address, server_port):
         self._client = NEATClient(server_address, server_port)
 
     def announce_session(self, session_id, config_path=None, block_size=1):

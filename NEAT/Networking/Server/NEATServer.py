@@ -1,11 +1,11 @@
-from threading import Semaphore, Thread
 import atexit
+from threading import Semaphore, Thread
 from typing import List
 
+from NEAT.Config.StaticConfig import ServerConfig
 from NEAT.Networking.Commands.BaseCommand import BaseCommand
 from NEAT.Networking.Commands.CommandTranscoder import CommandTranscoder
 from NEAT.Networking.Server.JSONSocket import JSONSocket
-from NEAT.Config.StaticConfig import ServerConfig
 from NEAT.Utilities import TimeUtilities
 
 message_queue_size = 64
@@ -21,13 +21,16 @@ out_mutex = Semaphore(1)
 thread_should_end = False
 thread_should_end_mutex = Semaphore(1)
 
+
 def signal_thread_should_end():
     thread_should_end_mutex.acquire()
     global thread_should_end
     thread_should_end = True
     thread_should_end_mutex.release()
 
+
 atexit.register(signal_thread_should_end)
+
 
 class QueueWorker(Thread):
     """
@@ -62,7 +65,7 @@ class QueueWorker(Thread):
 
     def run(self):
         while True:
-            if thread_should_end_mutex.acquire(timeout=1000): # TODO: put socket in timeout mode
+            if thread_should_end_mutex.acquire(timeout=1000):  # TODO: put socket in timeout mode
                 if thread_should_end:
                     return
                 thread_should_end_mutex.release()
@@ -101,6 +104,7 @@ class QueueWorker(Thread):
             self._queue.insert(0, message)
             out_mutex.release()
             out_full.release()
+
 
 class NEATServer(object):
     """
@@ -151,7 +155,7 @@ class NEATServer(object):
         :return: True if the in_queue isn't empty
         """
         in_mutex.acquire()
-        available =  len(self._in_queue) > 0
+        available = len(self._in_queue) > 0
         in_mutex.release()
         return available
 
@@ -182,7 +186,7 @@ class NEATServer(object):
 
     def fetch(
             self,
-            timeout: int=None
+            timeout: int = None
     ) -> BaseCommand:
         try:
             if timeout:
@@ -197,4 +201,3 @@ class NEATServer(object):
         except Exception as e:
             print(e)
             return None
-

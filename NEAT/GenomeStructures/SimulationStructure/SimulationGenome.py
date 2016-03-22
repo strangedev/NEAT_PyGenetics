@@ -71,12 +71,12 @@ class SimulationGenome(Generic[GenomeStructure]):
              for node_id
              in storage_genome.analysis_result.topologically_sorted_cycle_nodes]
 
-    def set_input(
+    def _set_inputs(
             self,
-            inputs: List[Tuple[str, Fraction]]
+            inputs: Dict[str, Fraction]
     ) -> None:
 
-        for label, value in inputs:
+        for label, value in inputs.items():
             self._input_layer[label].value = value
 
     @property
@@ -88,13 +88,13 @@ class SimulationGenome(Generic[GenomeStructure]):
 
     def calculate_step(
             self,
-            inputs: List[Tuple[str, Fraction]]
+            inputs: Dict[str, Fraction]
     ) -> Dict[str, Fraction]:
         """
         :param inputs: List of tuples of the form (node_label, value)
         :return: Dict of output node labels and their current values.
         """
-        self.set_input(inputs)
+        self._set_inputs(inputs)
 
         for node in self._hidden_layer:
             node.reset()

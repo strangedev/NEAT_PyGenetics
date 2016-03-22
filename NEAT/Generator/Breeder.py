@@ -91,11 +91,9 @@ class Breeder(object):
 
             for gene_id in differing_gene_ids:
 
-                inherit_gene = True \
-                    if random.random() < self.breeding_parameters[
+                inherit_gene = random.random() < self.breeding_parameters[
                            "inherit_randomly_if_same_fitness_probability"
-                       ] \
-                    else False
+                       ]
 
                 if inherit_gene:
                     parent_genome_table = genome_one.genes \
@@ -129,7 +127,6 @@ class Breeder(object):
             gene_two_enabled = instance_two[1]
 
         if (not gene_one_enabled) or (not gene_two_enabled):
-            return False \
-                if random.random() < self.breeding_parameters[
-                    "gene_inherited_as_disabled_probability"] \
-                else True
+            return not random.random() < self.breeding_parameters[
+                    "gene_inherited_as_disabled_probability"
+            ]

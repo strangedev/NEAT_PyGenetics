@@ -16,6 +16,10 @@ class BaseCommand(object):
         ack = self._get_result_if_exists("acknowledged")
         return ack if ack else False
 
+    @property
+    def type(self):
+        return self._type
+
     def _get_result_if_exists(self, key):
         if key in self.result.keys():
             return self.result[key]

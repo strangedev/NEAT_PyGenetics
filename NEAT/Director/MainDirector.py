@@ -1,5 +1,6 @@
 from NEAT.Director.Director import Director
 from NEAT.Config.NEATConfig import NEATConfig
+from NEAT.Simulator.Simulator import Simulator
 from NEAT.Networking.Server.SimulationConnector import SimulationConnector
 from NEAT.ErrorHandling.StartupCheck import StartupCheck
 from NEAT.ErrorHandling.Exceptions.NetworkProtocolException import NetworkProtocolException
@@ -19,6 +20,7 @@ from NEAT.Analyst.GenomeSelector import GenomeSelector
 import math
 from bson.objectid import ObjectId
 from typing import Dict
+import itertools
 
 
 class MainDirector(Director):
@@ -43,6 +45,7 @@ class MainDirector(Director):
         self.mutator = None  # type: Mutator
         self.analyst = None  # type: GenomeAnalyst
         self.clusterer = None  # type: GenomeClusterer
+        self.simulator = None  # type: Simulator
         self.simulation_connector = SimulationConnector()  # type: SimulationConnector
         self.database_connector = None  # type: DatabaseConnector
         self.gene_repository = None  # type: GeneRepository
@@ -138,6 +141,8 @@ class MainDirector(Director):
             self.config.parameters["clustering"]
         )
 
+        self.simulator = Simulator(self.gene_repository)
+
     def init_db(self):
 
         # database connection is a connection to an arbitrary database that is
@@ -170,7 +175,7 @@ class MainDirector(Director):
         # Simulation.given_simulation.config
         self.decision_maker.reset_time()
 
-        # TODO: Init population if necessary
+        # Init population if its not present yet.
         if len(
                 list(self.genome_repository.get_current_population())
         ) == 0:
@@ -194,7 +199,7 @@ class MainDirector(Director):
             #   * go on with loop, generate next generation
             #   * save database for later use, hand out session id to client
             if not advance_generation:
-                return  # TODO: archive session
+                exit()  # TODO: archive session
 
             # 2. Calculate offspring values
 
@@ -296,33 +301,47 @@ class MainDirector(Director):
         genomes = list(self.genome_repository.get_current_population())
         block_count = math.ceil(len(genomes) / self._session["block_size"])
         genome_index = 0
+        fitness_values = []
 
         for block_id in range(block_count):
+
             block = genomes[genome_index: genome_index + self._session["block_size"]]
             self.simulation_connector.send_block(block, block_id)
             block_inputs = self.simulation_connector.get_block_inputs(block_id)
             self.simulation_connector.send_block_outputs(
-                self.compute_genome_output(block_inputs),
+                self.compute_genome_outputs(block_inputs),
                 block_id
             )
-            self.update_fitness_values(
+            fitness_values.append(
                 self.simulation_connector.get_fitness_values(block_id)
             )
             genome_index += self._session["block_size"]
 
+        self.update_fitness_values(
+            itertools.chain(*fitness_values)
+        )
         return self.simulation_connector.get_advance_generation()
 
-    def compute_genome_output(
+    def compute_genome_outputs(
             self,
             block_inputs: Dict[ObjectId, Dict[str, float]]
     ) -> Dict[ObjectId, Dict[str, float]]:
-        pass  # TODO:
+        results = dict({})
+        for genome_id, inputs in block_inputs.items():
+            storage_genome = self.genome_repository.get_genome_by_id(genome_id)
+            outputs = self.simulator.simulate_genome(storage_genome, inputs)
+            results[genome_id] = outputs
+        return results
 
     def update_fitness_values(
             self,
             fitness_values: Dict[ObjectId, float]
     ) -> None:
-        pass  # TODO:
+        for genome_id, fitness_value in fitness_values:
+            self.genome_repository.update_genome_fitness(
+                genome_id,
+                fitness_value
+            )
 
     def init_population(self):
         population_size = self.config.parameters["clustering"]["max_population"]

@@ -1,5 +1,6 @@
-from NEAT.Networking.Server.JSONSocket import JSONSocket
 from NEAT.Networking.Commands.CommandTranscoder import CommandTranscoder
+from NEAT.Networking.Server.JSONSocket import JSONSocket
+
 
 class NEATClient(object):
 
@@ -22,14 +23,13 @@ class NEATClient(object):
             return False
         return True
 
-    def _recv_result(self):
+    def _receive_result(self):
         socket = JSONSocket(
             self._server_address,
             self._server_port + 1
         )
         try:
             dictionary = socket.receive_dict()
-            print(dictionary)
         except Exception:
             return None
         return CommandTranscoder.decode_command(dictionary)
@@ -37,5 +37,5 @@ class NEATClient(object):
     def run_command(self, command):
         message_sent = self._send_command(command)
         if message_sent:
-            return self._recv_result()
+            return self._receive_result()
         return None
