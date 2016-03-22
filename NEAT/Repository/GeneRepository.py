@@ -91,6 +91,6 @@ class GeneRepository(object):
 
         gene = self._database_connector.find_one_by_id("genes", gene_id)
         if gene:
-            return (gene["head"], gene["tail"])
+            return gene["head"], gene["tail"]
         else:
-            return (None, None)
+            return None, None
