@@ -59,19 +59,12 @@ class TestGenomeClusterer(TestCase):
 
         self.genome_clusterer.cluster_genome(genome)
 
-<<<<<<< HEAD
         self.genome_clusterer.calculate_delta.assert_any_call(genome, storageGenome1)
         self.genome_clusterer.calculate_delta.assert_any_call(genome, storageGenome2)
         self.mock_cluster_repository.add_cluster_with_representative.assert_called_with(genome.genome_id)
         self.mock_cluster_repository.get_cluster_by_representative.assert_called_with(genome.genome_id)
         self.mock_genome_repository.update_genome_cluster.assert_called_with(genome.genome_id, cluster1.cluster_id)
-=======
-        self.genome_clusterer.calculate_delta.assert_any_call(genome, storage_genome1)
-        self.genome_clusterer.calculate_delta.assert_any_call(genome, storage_genome2)
-        self.mock_cluster_repository.add_cluster_with_representative.assert_called_with(genome.object_id)
-        self.mock_cluster_repository.get_cluster_by_representative.assert_called_with(genome.object_id)
-        self.mock_genome_repository.update_genome_cluster.assert_called_with(genome.object_id, cluster1.cluster_id)
->>>>>>> origin/master
+
 
     def test_cluster_genome_with_delta_less(self):
         genome = StorageGenome()
@@ -92,13 +85,8 @@ class TestGenomeClusterer(TestCase):
 
         self.genome_clusterer.cluster_genome(genome)
 
-<<<<<<< HEAD
         self.genome_clusterer.calculate_delta.assert_called_with(genome, storageGenome1)
         self.mock_genome_repository.update_genome_cluster.assert_called_with(genome.genome_id, cluster1.cluster_id)
-=======
-        self.genome_clusterer.calculate_delta.assert_called_with(genome, storage_genome1)
-        self.mock_genome_repository.update_genome_cluster.assert_called_with(genome.object_id, cluster1.cluster_id)
->>>>>>> origin/master
 
     def test_calculate_delta(self):
         genome_one = StorageGenome()
