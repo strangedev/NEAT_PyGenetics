@@ -24,7 +24,7 @@ def acknowledged_command(c: BaseCommand):     # TODO ...
 
 class TestSimulationClient(TestCase):
     def setUp(self):
-        self.simulation_client = SimulationClient()
+        self.simulation_client = SimulationClient(None, None)
         self.mock_client = MagicMock()
         self.mock_client.run_command = create_autospec(acknowledged_command)
         self.simulation_client._client = self.mock_client
