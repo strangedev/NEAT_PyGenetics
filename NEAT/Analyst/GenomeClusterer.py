@@ -160,7 +160,7 @@ class GenomeClusterer(object):
             matching_genes: List[int]
     ) -> float:
         """
-        Callcuates the average quadratic weight differences
+        Calculates the average quadratic weight differences
         of matching genes for two given genomes.
         :param genome_one: The first genome
         :param genome_two: The second genome
