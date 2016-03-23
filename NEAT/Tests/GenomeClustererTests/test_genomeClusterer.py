@@ -117,14 +117,14 @@ class TestGenomeClusterer(TestCase):
         diff2 = [5,1,3]
 
         self.genome_clusterer.calculate_disjoint_excess_count = MagicMock(return_value=(16, 17))
-        self.genome_clusterer.calculate_w_bar = MagicMock(return_value=1.5)
+        self.genome_clusterer.calculate_average_weight_difference = MagicMock(return_value=1.5)
         self.assertEqual(12.5, self.genome_clusterer.calculate_delta(genome_one, genome_two))
         self.genome_clusterer.calculate_disjoint_excess_count.assert_called_with(smaller1, diff1)
-        self.genome_clusterer.calculate_w_bar.assert_called_with(genome_two, genome_one, matching1)
+        self.genome_clusterer.calculate_average_weight_difference.assert_called_with(genome_two, genome_one, matching1)
 
         self.assertEqual(12.5, self.genome_clusterer.calculate_delta(genome_one, genome_three))
         self.genome_clusterer.calculate_disjoint_excess_count.assert_called_with(smaller2, diff2)
-        self.genome_clusterer.calculate_w_bar.assert_called_with(genome_one, genome_three, matching2)
+        self.genome_clusterer.calculate_average_weight_difference.assert_called_with(genome_one, genome_three, matching2)
 
     def test_calculate_disjoint_excess_count(self):
         smaller_genome_gene_ids = [1,2]
@@ -152,7 +152,7 @@ class TestGenomeClusterer(TestCase):
         weight_two = 1.1
         weight_one = 12.1
         weights = [(weight_one, weight_two), (2.3, 2.3)]
-        self.assertEqual(60.5, self.genome_clusterer.calculate_w_bar(genome_one, genome_two, matching_genes))
+        self.assertEqual(60.5, self.genome_clusterer.calculate_average_weight_difference(genome_one, genome_two, matching_genes))
 
     def test_calculate_cluster_fitness(self):
         cluster_id = ObjectId()

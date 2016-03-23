@@ -118,7 +118,7 @@ class GenomeClusterer(object):
 
         disjoint_count, excess_count = self.calculate_disjoint_excess_count(smaller_genome_gene_ids, differing_genes)
 
-        w_bar = self.calculate_w_bar(bigger_genome, smaller_genome, matching_genes)
+        w_bar = self.calculate_average_weight_difference(bigger_genome, smaller_genome, matching_genes)
 
         return ((excess_coefficient * excess_count) / n) + \
                ((disjoint_coefficient * disjoint_count) / n) + \
@@ -154,7 +154,7 @@ class GenomeClusterer(object):
         return len(disjoint_genes), len(excess_genes)
 
     @staticmethod
-    def calculate_w_bar(
+    def calculate_average_weight_difference(
             genome_one: StorageGenome,
             genome_two: StorageGenome,
             matching_genes: List[int]
