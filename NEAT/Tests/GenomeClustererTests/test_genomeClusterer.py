@@ -165,6 +165,29 @@ class TestGenomeClusterer(TestCase):
         self.assertEqual((6.0)/4, self.genome_clusterer.calculate_cluster_fitness(cluster_id))
         self.mock_genome_repository.get_genomes_in_cluster.assert_called_with(cluster_id)
 
+    def test_calculate_cluster_offspring_values(self):
+        clusters = []
+        for i in range(0,4):
+            c = Cluster()
+            c._id = i
+            clusters.append(c)
+        self.mock_cluster_repository.get_current_clusters = MagicMock(return_value=clusters)
+        self.mock_cluster_repository.update_fitness_for_cluster = MagicMock()
+        self.genome_clusterer.calculate_cluster_fitness = lambda x: x
+        self.mock_cluster_repository.update_offspring_for_cluster = MagicMock()
+
+        self.genome_clusterer.calculate_cluster_offspring_values()
+
+        self.mock_cluster_repository.update_fitness_for_cluster.assert_any_call(0,0)
+        self.mock_cluster_repository.update_fitness_for_cluster.assert_any_call(1,1)
+        self.mock_cluster_repository.update_fitness_for_cluster.assert_any_call(2,2)
+        self.mock_cluster_repository.update_fitness_for_cluster.assert_any_call(3,3)
+
+        self.mock_cluster_repository.update_offspring_for_cluster.assert_any_call(0,0)
+        self.mock_cluster_repository.update_offspring_for_cluster.assert_any_call(1,0)
+        self.mock_cluster_repository.update_offspring_for_cluster.assert_any_call(2,1)
+        self.mock_cluster_repository.update_offspring_for_cluster.assert_any_call(3,1)
+
 """
     def test_cluster_genomes(self):
 
