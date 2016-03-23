@@ -172,21 +172,21 @@ class GenomeClusterer(object):
 
         weights = []  # type: List[Tuple[float, float]]
 
-        for gene_id in matching_genes:
+        for matching_gene_id in matching_genes:
 
             weight_one = 0
             weight_two = 0
 
-            for gene in genome_one.genes:
+            for gene_id in genome_one.genes:
 
-                if gene == gene_id:
-                    weight_one = float(genome_one.genes[gene][1])
+                if gene_id == matching_gene_id:
+                    weight_one = float(genome_one.genes[gene_id][1])
                     break
 
-            for gene in genome_two.genes:
+            for gene_id in genome_two.genes:
 
-                if gene == gene_id:
-                    weight_two = float(genome_two.genes[gene][1])
+                if gene_id == matching_gene_id:
+                    weight_two = float(genome_two.genes[gene_id][1])
                     break
 
             weights.append((weight_one, weight_two))
