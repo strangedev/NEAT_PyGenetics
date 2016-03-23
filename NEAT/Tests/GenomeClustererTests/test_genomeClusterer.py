@@ -9,10 +9,9 @@ from NEAT.Analyst.GenomeClusterer import GenomeClusterer
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 from NEAT.Repository.ClusterRepository import ClusterRepository
 from NEAT.Repository.GenomeRepository import GenomeRepository
-from NEAT.Tests.MockClasses.mock_ClusterRepository import mock_ClusterRepository
-from NEAT.Tests.MockClasses.mock_GenomeRepository import mock_GenomeRepository
 
 
+# noinspection PyUnresolvedReferences
 class TestGenomeClusterer(TestCase):
     def setUp(self):
         clustering_params = {"delta_threshold": 0.5, "excess_coefficient": 1, "disjoint_coefficient": 1,
@@ -44,10 +43,10 @@ class TestGenomeClusterer(TestCase):
         genome = StorageGenome()
         cluster1 = Cluster()
         cluster2 = Cluster()
-        storageGenome1 = StorageGenome()
-        storageGenome2 = StorageGenome()
-        cluster1.representative = storageGenome1
-        cluster2.representative = storageGenome2
+        storage_genome1 = StorageGenome()
+        storage_genome2 = StorageGenome()
+        cluster1.representative = storage_genome1
+        cluster2.representative = storage_genome2
         clusters = [cluster1, cluster2]
 
         self.mock_cluster_repository.get_current_clusters = MagicMock(return_value=clusters)
@@ -60,8 +59,8 @@ class TestGenomeClusterer(TestCase):
 
         self.genome_clusterer.cluster_genome(genome)
 
-        self.genome_clusterer.calculate_delta.assert_any_call(genome, storageGenome1)
-        self.genome_clusterer.calculate_delta.assert_any_call(genome, storageGenome2)
+        self.genome_clusterer.calculate_delta.assert_any_call(genome, storage_genome1)
+        self.genome_clusterer.calculate_delta.assert_any_call(genome, storage_genome2)
         self.mock_cluster_repository.add_cluster_with_representative.assert_called_with(genome.object_id)
         self.mock_cluster_repository.get_cluster_by_representative.assert_called_with(genome.object_id)
         self.mock_genome_repository.update_genome_cluster.assert_called_with(genome.object_id, cluster1.cluster_id)
@@ -70,10 +69,10 @@ class TestGenomeClusterer(TestCase):
         genome = StorageGenome()
         cluster1 = Cluster()
         cluster2 = Cluster()
-        storageGenome1 = StorageGenome()
-        storageGenome2 = StorageGenome()
-        cluster1.representative = storageGenome1
-        cluster2.representative = storageGenome2
+        storage_genome1 = StorageGenome()
+        storage_genome2 = StorageGenome()
+        cluster1.representative = storage_genome1
+        cluster2.representative = storage_genome2
         clusters = [cluster1, cluster2]
 
         self.mock_cluster_repository.get_current_clusters = MagicMock(return_value=clusters)
@@ -85,7 +84,7 @@ class TestGenomeClusterer(TestCase):
 
         self.genome_clusterer.cluster_genome(genome)
 
-        self.genome_clusterer.calculate_delta.assert_called_with(genome, storageGenome1)
+        self.genome_clusterer.calculate_delta.assert_called_with(genome, storage_genome1)
         self.mock_genome_repository.update_genome_cluster.assert_called_with(genome.object_id, cluster1.cluster_id)
 
     def test_calculate_delta(self):
@@ -107,14 +106,14 @@ class TestGenomeClusterer(TestCase):
             5: (True, Fraction(3.3))
         }
 
-        smaller1 = [1,2,3]
-        smaller2 = [2,5]
+        smaller1 = [1, 2, 3]
+        smaller2 = [2, 5]
 
-        matching1 = [2,3]
-        diff1 = [1,4]
+        matching1 = [2, 3]
+        diff1 = [1, 4]
 
         matching2 = [2]
-        diff2 = [5,1,3]
+        diff2 = [5, 1, 3]
 
         self.genome_clusterer.calculate_disjoint_excess_count = MagicMock(return_value=(16, 17))
         self.genome_clusterer.calculate_average_weight_difference = MagicMock(return_value=1.5)
@@ -124,11 +123,15 @@ class TestGenomeClusterer(TestCase):
 
         self.assertEqual(12.5, self.genome_clusterer.calculate_delta(genome_one, genome_three))
         self.genome_clusterer.calculate_disjoint_excess_count.assert_called_with(smaller2, diff2)
-        self.genome_clusterer.calculate_average_weight_difference.assert_called_with(genome_one, genome_three, matching2)
+        self.genome_clusterer.calculate_average_weight_difference.assert_called_with(
+            genome_one,
+            genome_three,
+            matching2
+        )
 
     def test_calculate_disjoint_excess_count(self):
-        smaller_genome_gene_ids = [1,2]
-        differing_genes = [2,3,4]
+        smaller_genome_gene_ids = [1, 2]
+        differing_genes = [2, 3, 4]
         self.assertEqual(
             (1, 2),
             self.genome_clusterer.calculate_disjoint_excess_count(smaller_genome_gene_ids, differing_genes)
@@ -148,26 +151,25 @@ class TestGenomeClusterer(TestCase):
             5: (True, Fraction(3.3)),
             6: (True, Fraction(2.3))
         }
-        matching_genes = [2,6]
-        weight_two = 1.1
-        weight_one = 12.1
-        weights = [(weight_one, weight_two), (2.3, 2.3)]
-        self.assertEqual(60.5, self.genome_clusterer.calculate_average_weight_difference(genome_one, genome_two, matching_genes))
+        matching_genes = [2, 6]
+        self.assertEqual(60.5, self.genome_clusterer.calculate_average_weight_difference(genome_one,
+                                                                                         genome_two,
+                                                                                         matching_genes))
 
     def test_calculate_cluster_fitness(self):
         cluster_id = ObjectId()
         genomes = []
-        for i in range(0,4):
+        for i in range(0, 4):
             g = StorageGenome()
             g.fitness = float(i)
             genomes.append(g)
         self.mock_genome_repository.get_genomes_in_cluster = MagicMock(return_value=genomes)
-        self.assertEqual((6.0)/4, self.genome_clusterer.calculate_cluster_fitness(cluster_id))
+        self.assertEqual(6.0 / 4, self.genome_clusterer.calculate_cluster_fitness(cluster_id))
         self.mock_genome_repository.get_genomes_in_cluster.assert_called_with(cluster_id)
 
     def test_calculate_cluster_offspring_values(self):
         clusters = []
-        for i in range(0,4):
+        for i in range(0, 4):
             c = Cluster()
             c._id = i
             clusters.append(c)
@@ -178,137 +180,12 @@ class TestGenomeClusterer(TestCase):
 
         self.genome_clusterer.calculate_cluster_offspring_values()
 
-        self.mock_cluster_repository.update_fitness_for_cluster.assert_any_call(0,0)
-        self.mock_cluster_repository.update_fitness_for_cluster.assert_any_call(1,1)
-        self.mock_cluster_repository.update_fitness_for_cluster.assert_any_call(2,2)
-        self.mock_cluster_repository.update_fitness_for_cluster.assert_any_call(3,3)
+        self.mock_cluster_repository.update_fitness_for_cluster.assert_any_call(0, 0)
+        self.mock_cluster_repository.update_fitness_for_cluster.assert_any_call(1, 1)
+        self.mock_cluster_repository.update_fitness_for_cluster.assert_any_call(2, 2)
+        self.mock_cluster_repository.update_fitness_for_cluster.assert_any_call(3, 3)
 
-        self.mock_cluster_repository.update_offspring_for_cluster.assert_any_call(0,0)
-        self.mock_cluster_repository.update_offspring_for_cluster.assert_any_call(1,0)
-        self.mock_cluster_repository.update_offspring_for_cluster.assert_any_call(2,1)
-        self.mock_cluster_repository.update_offspring_for_cluster.assert_any_call(3,1)
-
-"""
-    def test_cluster_genomes(self):
-
-        new_cluster_repo = mock_ClusterRepository()
-        new_genome_repo = mock_GenomeRepository()
-        new_clusterer = GenomeClusterer(
-            new_genome_repo,
-            new_cluster_repo,
-            clustering_params
-        )
-
-        new_clusterer.cluster_genomes(genome_repo.mock_population)
-
-        self.assertEqual(
-            cluster_repo.get_cluster_count(),
-            2,
-            "Genomes have not been put into 2 different clusters."
-        )
-
-    def test_calculate_delta(self):
-
-        genomes = genome_repo.get_current_population()
-
-        delta = clusterer.calculate_delta(
-            genomes[0],
-            genomes[1]
-        )
-
-        self.assertEqual(
-            delta,
-            2/3,
-            "The delta value for genomes in mock_GenomeRepository does not match."
-        )
-
-    def test_calculate_disjoint_excess_count(self):
-
-        disjoint_count, excess_count = clusterer.calculate_disjoint_excess_count([1, 2, 3, 4], [2, 5])
-
-        self.assertEqual(
-            disjoint_count,
-            1,
-            "The number of disjoint genes does not match."
-        )
-
-        self.assertEqual(
-            excess_count,
-            1,
-            "The number of excess genes does not match."
-        )
-
-    def test_calculate_w_bar(self):
-
-        genomes = genome_repo.get_current_population()
-
-        w_bar = clusterer.calculate_w_bar(
-
-            genomes[0],
-            genomes[1],
-            [1, 3, 4]
-
-        )
-
-        self.assertEqual(
-            w_bar,
-            1/6,
-            "The average quadratic difference of gene weights does not match."
-        )
-
-    def test_calculate_cluster_fitness(self):
-
-        clusterer.cluster_genomes(genome_repo.mock_population)
-
-        cluster_zero_fitness = clusterer.calculate_cluster_fitness(ObjectId("000000000000000000000000"))
-
-        self.assertEqual(
-            cluster_zero_fitness,
-            0.5,
-            "The cluster fitness for cluster 0 does not match."
-        )
-
-        cluster_one_fitness = clusterer.calculate_cluster_fitness(ObjectId("000000000000000000000001"))
-
-        self.assertEqual(
-            cluster_one_fitness,
-            0.7,
-            "The cluster fitness for cluster 1 does not match."
-        )
-
-    def test_calculate_max_cluster_populations(self):
-
-        clusterer.cluster_genomes(genome_repo.mock_population)
-
-        clusterer.calculate_max_cluster_populations()
-
-        self.assertEqual(
-            cluster_repo.clusters[0].max_population,
-            4,
-            "The maximum population size for cluster 0 does not match."
-        )
-
-        self.assertEqual(
-            cluster_repo.clusters[1].max_population,
-            5,
-            "The maximum population size for cluster 1 does not match."
-        )
-
-    def test_calculate_cluster_offspring_values(self):
-
-        clusterer.cluster_genomes(genome_repo.mock_population)
-
-        clusterer.calculate_cluster_offspring_values()
-
-        self.assertEqual(
-            cluster_repo.clusters[0].offspring,
-            1,
-            "The cluster offspring does not match the expected size."
-        )
-
-        self.assertEqual(
-            cluster_repo.clusters[1].offspring,
-            1,
-            "The cluster offspring does not match the expected size."
-        )
-"""
+        self.mock_cluster_repository.update_offspring_for_cluster.assert_any_call(0, 0)
+        self.mock_cluster_repository.update_offspring_for_cluster.assert_any_call(1, 0)
+        self.mock_cluster_repository.update_offspring_for_cluster.assert_any_call(2, 1)
+        self.mock_cluster_repository.update_offspring_for_cluster.assert_any_call(3, 1)
