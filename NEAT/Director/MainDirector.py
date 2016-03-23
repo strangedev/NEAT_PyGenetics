@@ -285,7 +285,7 @@ class MainDirector(Director):
         :return:
         """
         for genome in self.selector.select_genomes_for_discarding():
-            self.genome_repository.disable_genome(genome.object_id)
+            self.genome_repository.disable_genome(genome.genome_id)
 
     def discard_clusters(self):
         """
@@ -295,7 +295,7 @@ class MainDirector(Director):
         for cluster in self.selector.select_clusters_for_discarding():
             genomes_to_discard = self.genome_repository.get_genomes_in_cluster(cluster.cluster_id)
             self._discarded_genomes_count += len(list(genomes_to_discard))
-            self.genome_repository.disable_genomes([i.object_id for i in genomes_to_discard])
+            self.genome_repository.disable_genomes([i.genome_id for i in genomes_to_discard])
 
     def perform_simulation_io(self):
         genomes = list(self.genome_repository.get_current_population())

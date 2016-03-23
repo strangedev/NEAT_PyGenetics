@@ -46,7 +46,7 @@ class GenomeClusterer(object):
         """
 
         if self._no_clusters:
-            self.cluster_repository.add_cluster_with_representative(genome.object_id)
+            self.cluster_repository.add_cluster_with_representative(genome.genome_id)
             self._no_clusters = False
             return
 
@@ -60,17 +60,17 @@ class GenomeClusterer(object):
 
             if delta < self.clustering_parameters["delta_threshold"]:
                 self.genome_repository.update_genome_cluster(
-                    genome.object_id,
+                    genome.genome_id,
                     cluster.cluster_id
                 )
 
                 break
         else:
-            self.cluster_repository.add_cluster_with_representative(genome.object_id)
+            self.cluster_repository.add_cluster_with_representative(genome.genome_id)
             self.genome_repository.update_genome_cluster(
-                genome.object_id,
+                genome.genome_id,
                 self.cluster_repository.get_cluster_by_representative(
-                    genome.object_id
+                    genome.genome_id
                 ).cluster_id
             )
 
