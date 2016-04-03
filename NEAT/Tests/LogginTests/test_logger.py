@@ -51,5 +51,5 @@ class TestLogger(TestCase):
         Logger.get_timestamp = MagicMock(return_value="testing")
         self.assertEqual("testing", Logger.get_timestamp())
         self.logger.log("test")
-        self.logger.open_log.assert_called_with("log/./info.log", "log/./log", "testinginfo: test")
+        self.logger.open_log.assert_called_with("log/./info.log", "log/./log", "testinginfo: test")  # TODO: right call?
 
