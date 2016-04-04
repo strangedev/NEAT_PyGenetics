@@ -2,7 +2,7 @@ from copy import deepcopy
 from typing import List, Tuple, Dict
 from fractions import Fraction
 
-from bson import ObjectId
+from bson.objectid import ObjectId
 
 from NEAT.Analyst.AnalysisResult import AnalysisResult
 
