@@ -37,7 +37,7 @@ class MainDirector(Director):
               respond to a module name in Simulation.
         :return:
         """
-        self._maximum_timeouts = 5
+        self._maximum_timeouts = 5000
         self.mode = kwargs.get('mode', 'exit')
         self.selector = None  # type: GenomeSelector
         self.decision_maker = None  # type: DecisionMaker

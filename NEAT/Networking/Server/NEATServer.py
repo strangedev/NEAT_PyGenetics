@@ -166,6 +166,7 @@ class NEATServer(object):
         """
         in_full.acquire()
         in_mutex.acquire()
+        print(self._in_queue)
         command = CommandTranscoder.decode_command(
             self._in_queue.pop(0)
         )
@@ -197,7 +198,8 @@ class NEATServer(object):
                         return self._dequeue_command()
                     time_passed += TimeUtilities.millis() - starting_time
                 return None
+            print("No timeout set.")
             return self._dequeue_command()
         except Exception as e:
-            print(e)
+            print("Exception in fetch", e)
             return None

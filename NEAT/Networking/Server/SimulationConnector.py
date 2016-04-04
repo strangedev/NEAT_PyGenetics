@@ -49,6 +49,7 @@ class SimulationConnector(object):
         """
         # TODO: timeouts, more error handling
         command = self._server.fetch(timeout)
+        print("Received: ", command)
         if not command:
             raise NetworkTimeoutException
 

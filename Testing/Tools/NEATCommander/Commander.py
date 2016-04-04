@@ -36,4 +36,3 @@ def start_commanding(session_id, block_size, config_path):
         except NetworkProtocolException as e:
             print(e)
             return
-

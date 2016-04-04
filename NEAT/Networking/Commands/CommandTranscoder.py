@@ -1,8 +1,12 @@
 from NEAT.Networking.Commands.BaseCommand import BaseCommand
+from NEAT.Networking.Commands.AnnounceSessionCommand import AnnounceSessionCommand
+from NEAT.Networking.Commands.GetBlockCommand import GetBlockCommand
 
 type_class_map = dict(
     {
-        "BaseCommand": BaseCommand
+        "BaseCommand": BaseCommand,
+        "AnnounceSession": AnnounceSessionCommand,
+        "GetBlock": GetBlockCommand
     }
 )
 
