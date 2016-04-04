@@ -1,6 +1,8 @@
 from typing import Tuple, Generic, Dict, List
 from fractions import Fraction
 
+from NEAT.ErrorHandling.Exceptions.InputMissingException import \
+    InputMissingException
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 from NEAT.GenomeStructures.TH_GenomeStructure import GenomeStructure
 from NEAT.GenomeStructures.SimulationStructure.SimulationNodes import Node
@@ -13,27 +15,6 @@ class SimulationGenome(Generic[GenomeStructure]):
     The SimulationGenome is a structural representation of a genome's genepool.
     It is optimized for the purpose of simulating a neural network and is gene-
     rated from a given StorageGenome.
-
-    Attributes:
-        genome_id (_id):
-            The Genome's ID, unique in the population.
-        inputs:
-            A list of the ids of the input nodes. There has to be at least
-            one gene per input that is connected to it. Represented as a list
-            of tuples of the form (Input_Label, Node-ID).
-        outputs:
-            A list of the ids of the output nodes. There has to be at least
-            one gene per output that is connected to it. Represented as a list
-            of tuples of the form (Output_Label, Node-ID).
-        genes:
-            A list of all genes, that make up the genome. Presented as a tu-
-            ple of Gene-ID, a boolean that is true, if the gene is disabled
-            and a Fraction that stores the weight of the gene.
-        analysis_result:
-            A result object that is generated when analyzing the genome.
-            This is empty per default.
-        cluster:
-            The cluster to which the Genome belongs.
 
     Attributes:
         _gene_repository:
@@ -151,8 +132,11 @@ class SimulationGenome(Generic[GenomeStructure]):
               id => value
         :return:
         """
-        for label, value in inputs.items():
-            self._input_layer[label].value = value
+        for node_id in self._input_layer:
+            if node_id not in inputs:
+                raise InputMissingException("Input for node " + node_id +
+                                            " is missing.")
+            self._input_layer[node_id].value = inputs[node_id]
 
     @property
     def output(self) -> Dict[str, Fraction]:
