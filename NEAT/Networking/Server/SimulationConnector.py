@@ -127,7 +127,7 @@ class SimulationConnector(object):
         :return: None
         """
         block_to_send = {
-            genome.object_id:
+            genome.genome_id:
                 {
                     input_label: None
                     for input_label in genome.inputs.keys()

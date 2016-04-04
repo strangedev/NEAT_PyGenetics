@@ -46,8 +46,9 @@ class GenomeClusterer(object):
         """
 
         if self._no_clusters:
-            self.cluster_repository.add_cluster_with_representative(genome.object_id)
+            self.cluster_repository.add_cluster_with_representative(genome.genome_id)
             self._no_clusters = False
+            return
 
         clusters = self.cluster_repository.get_current_clusters()
         for cluster in clusters:
@@ -59,17 +60,17 @@ class GenomeClusterer(object):
 
             if delta < self.clustering_parameters["delta_threshold"]:
                 self.genome_repository.update_genome_cluster(
-                    genome.object_id,
+                    genome.genome_id,
                     cluster.cluster_id
                 )
 
                 break
         else:
-            self.cluster_repository.add_cluster_with_representative(genome.object_id)
+            self.cluster_repository.add_cluster_with_representative(genome.genome_id)
             self.genome_repository.update_genome_cluster(
-                genome.object_id,
+                genome.genome_id,
                 self.cluster_repository.get_cluster_by_representative(
-                    genome.object_id
+                    genome.genome_id
                 ).cluster_id
             )
 
@@ -102,8 +103,8 @@ class GenomeClusterer(object):
             if len(genome_one.genes) > len(genome_two.genes) \
             else (genome_two, genome_one)
 
-        bigger_genome_gene_ids = [gene[0] for gene in bigger_genome.genes]
-        smaller_genome_gene_ids = [gene[0] for gene in smaller_genome.genes]
+        bigger_genome_gene_ids = [gene for gene in bigger_genome.genes]
+        smaller_genome_gene_ids = [gene for gene in smaller_genome.genes]
 
         all_gene_ids = smaller_genome_gene_ids + bigger_genome_gene_ids
 
@@ -117,7 +118,7 @@ class GenomeClusterer(object):
 
         disjoint_count, excess_count = self.calculate_disjoint_excess_count(smaller_genome_gene_ids, differing_genes)
 
-        w_bar = self.calculate_w_bar(bigger_genome, smaller_genome, matching_genes)
+        w_bar = self.calculate_average_weight_difference(bigger_genome, smaller_genome, matching_genes)
 
         return ((excess_coefficient * excess_count) / n) + \
                ((disjoint_coefficient * disjoint_count) / n) + \
@@ -153,13 +154,13 @@ class GenomeClusterer(object):
         return len(disjoint_genes), len(excess_genes)
 
     @staticmethod
-    def calculate_w_bar(
+    def calculate_average_weight_difference(
             genome_one: StorageGenome,
             genome_two: StorageGenome,
             matching_genes: List[int]
     ) -> float:
         """
-        Callcuates the average quadratic weight differences
+        Calculates the average quadratic weight differences
         of matching genes for two given genomes.
         :param genome_one: The first genome
         :param genome_two: The second genome
@@ -171,21 +172,21 @@ class GenomeClusterer(object):
 
         weights = []  # type: List[Tuple[float, float]]
 
-        for gene_id in matching_genes:
+        for matching_gene_id in matching_genes:
 
             weight_one = 0
             weight_two = 0
 
-            for gene in genome_two.genes:
+            for gene_id in genome_one.genes:
 
-                if gene[0] == gene_id:
-                    weight_one = gene[2]
+                if gene_id == matching_gene_id:
+                    weight_one = float(genome_one.genes[gene_id][1])
                     break
 
-            for gene in genome_one.genes:
+            for gene_id in genome_two.genes:
 
-                if gene[0] == gene_id:
-                    weight_two = gene[2]
+                if gene_id == matching_gene_id:
+                    weight_two = float(genome_two.genes[gene_id][1])
                     break
 
             weights.append((weight_one, weight_two))

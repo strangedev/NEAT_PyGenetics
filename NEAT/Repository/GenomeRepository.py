@@ -108,7 +108,7 @@ class GenomeRepository(object):
         genome_encoded = Transformator.encode_StorageGenome(genome)
         return self._database_connector.update_one(
             "genomes",
-            genome.object_id,
+            genome.genome_id,
             genome_encoded
         )
 
