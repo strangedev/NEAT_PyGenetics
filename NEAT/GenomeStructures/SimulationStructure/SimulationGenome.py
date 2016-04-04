@@ -9,16 +9,72 @@ from NEAT.Repository.GeneRepository import GeneRepository
 
 
 class SimulationGenome(Generic[GenomeStructure]):
+    """
+    The SimulationGenome is a structural representation of a genome's genepool.
+    It is optimized for the purpose of simulating a neural network and is gene-
+    rated from a given StorageGenome.
+
+    Attributes:
+        genome_id (_id):
+            The Genome's ID, unique in the population.
+        inputs:
+            A list of the ids of the input nodes. There has to be at least
+            one gene per input that is connected to it. Represented as a list
+            of tuples of the form (Input_Label, Node-ID).
+        outputs:
+            A list of the ids of the output nodes. There has to be at least
+            one gene per output that is connected to it. Represented as a list
+            of tuples of the form (Output_Label, Node-ID).
+        genes:
+            A list of all genes, that make up the genome. Presented as a tu-
+            ple of Gene-ID, a boolean that is true, if the gene is disabled
+            and a Fraction that stores the weight of the gene.
+        analysis_result:
+            A result object that is generated when analyzing the genome.
+            This is empty per default.
+        cluster:
+            The cluster to which the Genome belongs.
+
+    Attributes:
+        _gene_repository:
+            Access to information about the node ids in the StorageGenome
+        _output:
+            Contains the results of the last calculation process.
+        _input_layer:
+            A set of Nodes as the input layer. These are identical in number and
+             ids with the input ids in the StorageGenome.
+        _output_layer:
+            A set of Nodes as the output layer. These are identical in number
+            and ids with the output ids in the StorageGenome.
+        _hidden_layer:
+            A hidden layer. This consists of a list of nodes which are calcula-
+            ted in the order of the list. This list is taken from the topologi-
+            cally sorted node list in the given StorageGenome's AnalysisResult.
+            So to ensure a functioning neural network, that list has to be cor-
+            rect.
+        _cycle_nodes:
+            A list of CycleNodes, topologically sorted (like the hidden layer).
+            These are nodes that have outgoing links that close a cycle. These
+            nodes have to be treated separately, because the cycle closing edges
+            have to be calculated first. For this initial calculation the last
+            calculation value is used as the outgoing base value. If the genome
+            was not simulated yet. a default value is used as the initial value.
+
+    Usage:
+        insert StorageGenome
+        call calculate_step
+        have fun
+    """
     def __init__(
             self,
             gene_repository: GeneRepository,
             storage_genome: StorageGenome
     ) -> None:
         """
-         Subset of hidden_layer.
-        :param gene_repository:
-        :param storage_genome:
-        :return SimulationGenome:
+        :param GeneRepository gene_repository: Needed for access to the node
+          storage. Is used when generating the structure.
+        :param StorageGenome storage_genome: The StorageGenome from which the
+          SimulationStructure is generated.
         """
         self._gene_repository = gene_repository
         self._init_from_storage_structure(storage_genome)
@@ -27,11 +83,18 @@ class SimulationGenome(Generic[GenomeStructure]):
             self,
             storage_genome: StorageGenome
     ):
+        """
+        Builds the internal structure from a given StorageGenome.
+        :param storage_genome:
+        :return:
+        """
+        # Create all CycleNode Objects
         cycle_nodes = {}  # type: Dict[int, CycleNode]
         for node_id in \
                 storage_genome.analysis_result.topologically_sorted_cycle_nodes:
             cycle_nodes[node_id] = CycleNode(Fraction(0))
 
+        # Create all Node Objects excluding previously created CycleNodes
         hidden_layer = {}  # type: Dict[int, Node]
         for node_id in \
                 storage_genome.analysis_result.topologically_sorted_nodes:
@@ -40,6 +103,7 @@ class SimulationGenome(Generic[GenomeStructure]):
             else:
                 hidden_layer[node_id] = Node()
 
+        # Adds edges to the nodes based on the StorageGenome's Genes.
         for gene_id, (is_disabled, weight) in storage_genome.genes.items():
             if is_disabled:
                 continue
@@ -54,11 +118,14 @@ class SimulationGenome(Generic[GenomeStructure]):
             else:
                 hidden_layer[source].add_successor(hidden_layer[target], weight)
 
+        # Generate sets of input and output nodes
         self._input_layer = \
             {label: hidden_layer[node_id] for label, node_id in storage_genome.inputs.items()}
         self._output_layer = \
             {label: hidden_layer[node_id] for label, node_id in storage_genome.outputs.items()}
 
+        # Generate again topologically sorted list of Node Objects including
+        # CycleNode Objects
         self._hidden_layer = \
             [hidden_layer[node_id]
              for node_id
@@ -66,6 +133,7 @@ class SimulationGenome(Generic[GenomeStructure]):
              if node_id not in storage_genome.inputs.values() and
              node_id not in storage_genome.outputs.values()]
 
+        # Generate again topologically sorted list of CycleNode Objects
         self._cycle_nodes = \
             [cycle_nodes[node_id]
              for node_id
@@ -75,14 +143,21 @@ class SimulationGenome(Generic[GenomeStructure]):
             self,
             inputs: Dict[str, Fraction]
     ) -> None:
-
+        """
+        Sets the values of all input nodes to the corresponding values in the
+        given input map.
+        :param inputs:
+            A map of the form
+              id => value
+        :return:
+        """
         for label, value in inputs.items():
             self._input_layer[label].value = value
 
     @property
     def output(self) -> Dict[str, Fraction]:
         """
-        :return: Dict of output nodes' label:value
+        :return: Dict of the output nodes' values of the form label:value
         """
         return {label: node.value for label, node in self._output_layer.items()}
 
@@ -91,6 +166,12 @@ class SimulationGenome(Generic[GenomeStructure]):
             inputs: Dict[str, Fraction]
     ) -> Dict[str, Fraction]:
         """
+        Sets inputs.
+        Resets all values in the hidden and output layers.
+        Iterates over cycle nodes, then input nodes, then hidden nodes and cal-
+        culates each.
+        Preserves the values of the Cycle Nodes.
+        Returns the output nodes' values.
         :param inputs: List of tuples of the form (node_label, value)
         :return: Dict of output node labels and their current values.
         """
