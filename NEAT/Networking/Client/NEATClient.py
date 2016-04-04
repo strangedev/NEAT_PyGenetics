@@ -29,13 +29,21 @@ class NEATClient(object):
             self._server_port + 1
         )
         try:
+            print("Trying to receive dict...")
             dictionary = socket.receive_dict()
-        except Exception:
+        except Exception as e:
+            print(e)
             return None
-        return CommandTranscoder.decode_command(dictionary)
+
+        if "_type" in dictionary.keys():
+            if dictionary["_type"] in CommandTranscoder.type_class_map.keys():
+                response = CommandTranscoder.decode_command(dictionary)
+                return response
+        return dictionary
 
     def run_command(self, command):
         message_sent = self._send_command(command)
         if message_sent:
+            print("Message has been sent.")
             return self._receive_result()
         return None

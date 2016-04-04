@@ -8,5 +8,6 @@ cli.announce_session(
 )
 block = cli.get_block(0)
 print(block)
+exit()
 for genome in block:
     pass

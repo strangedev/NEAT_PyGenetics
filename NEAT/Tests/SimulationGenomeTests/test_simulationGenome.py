@@ -53,11 +53,11 @@ class TestSimulationGenome(unittest.TestCase):
             storage_genome
         )
 
-        result = gen.calculate_step([
-            ('input_1', Fraction(5, 10)),
-            ('input_2', Fraction(5, 10)),
-            ('input_3', Fraction(5, 10))
-        ])  # type: Dict[str, float]
+        result = gen.calculate_step({
+            'input_1': Fraction(5, 10),
+            'input_2': Fraction(5, 10),
+            'input_3': Fraction(5, 10)
+        })  # type: Dict[str, float]
 
         self.assertEqual(Fraction(43, 100), result['output_1'])
         self.assertEqual(Fraction(55, 100), result['output_2'])
@@ -105,10 +105,10 @@ class TestSimulationGenome(unittest.TestCase):
             storage_genome
         )
 
-        result = gen.calculate_step([
-            ('input_1', Fraction(5, 10)),
-            ('input_2', Fraction(5, 10))
-        ])
+        result = gen.calculate_step({
+            'input_1': Fraction(5, 10),
+            'input_2': Fraction(5, 10)
+        })
 
         self.assertEqual(Fraction(7, 20), result['output_1'])
         self.assertEqual(Fraction(3, 40), result['output_2'])

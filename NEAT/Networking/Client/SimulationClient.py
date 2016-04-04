@@ -24,12 +24,14 @@ class SimulationClient(object):
         command.set_session_id(session_id)
         response = self._client.run_command(command)
         if not response.result["acknowledged"]:
-            raise NetworkProtocolException
+            raise NetworkProtocolException("Couldn't announce session to server.")
 
     def get_block(self, block_id: int) -> Dict[ObjectId, Dict[str, float]]:
         command = GetBlockCommand()
         command.set_block_id(block_id)
+        print("Sending GetBlock...")
         response = self._client.run_command(command)
+        print("Got response: ", response)
         if not response.result["acknowledged"]:
             raise NetworkProtocolException
         return response.result["block"]

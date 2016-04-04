@@ -99,7 +99,7 @@ class SimulationConnector(object):
         will fail if the client hasn't connected yet
         :return: None
         """
-        if not result:
+        if result is None:
             result = dict({})
         command.result = result
         command.result["acknowledged"] = acknowledged
@@ -127,7 +127,7 @@ class SimulationConnector(object):
         :return: None
         """
         block_to_send = {
-            genome.object_id:
+            genome.genome_id.__str__():
                 {
                     input_label: None
                     for input_label in genome.inputs.keys()
@@ -142,6 +142,7 @@ class SimulationConnector(object):
         }
 
         get_command = self._listen_for_command("GetBlock", {"block_id": block_id})
+        print("Sending block: ", result)
         self._respond_to_command(
             get_command,
             result
@@ -159,6 +160,10 @@ class SimulationConnector(object):
         genome_id: Dict[input_label: input_value]
         """
         set_command = self._listen_for_command("SetInputs", {"block_id": block_id})
+        for key, value in set_command.parameters["block"].items():
+            del set_command.parameters["block"][key]
+            set_command.parameters["block"][ObjectId(key)] = value
+
         self._respond_to_command(set_command)
         return set_command.parameters["block"]
 

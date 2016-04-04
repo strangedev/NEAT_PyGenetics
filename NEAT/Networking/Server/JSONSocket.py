@@ -55,7 +55,7 @@ class JSONSocket(Thread):
                     self._chunk_size
                 )
             )
-            if chunk == "":
+            if chunk == b'':
                 raise RuntimeError("JSONSocket: socket broken")
             message_chunks.append(chunk.decode('utf-8'))
             bytes_received += len(chunk)
@@ -74,7 +74,7 @@ class JSONSocket(Thread):
                     self._header_size
                 )
             )
-            if chunk == '':
+            if chunk == b'':
                 raise RuntimeError("JSONSocket: socket broken")
             message_size_chunks.append(chunk.decode('utf-8'))
             bytes_received += len(chunk)
@@ -147,9 +147,11 @@ class JSONSocket(Thread):
                 json.dumps(dictionary).encode('utf-8')
             )
             self.close_connection()
-        except RuntimeError:
+        except Exception as e:
+            print(e)
             raise SocketRuntimeException(
-                "Runtime error encountered while sending dictionary."
+                "Runtime error encountered while sending dictionary: " +
+                e.__repr__()
             )
         finally:
             self.close_connection()

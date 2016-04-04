@@ -17,7 +17,7 @@ class DecisionMaker(object):
         self._time = 0
 
     @property
-    def mutation_percentage(self):
+    def mutation_percentage(self) -> float:
         base_percentage = self._decision_making_parameters["mutation_base_percentage"]
         additional_percentage = self._cutoff_function(
             self._time,

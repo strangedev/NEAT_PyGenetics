@@ -33,7 +33,10 @@ class Logger:
 
     @staticmethod
     def lookup_log_level(log_level: str) -> int:
-        return Logger.log_levels()[log_level]
+        if Logger.log_levels().__contains__(log_level):
+            return Logger.log_levels()[log_level]
+        else:
+            return 7
 
     @staticmethod
     def lookup_log_level_label(log_level: int) -> str:
@@ -50,7 +53,7 @@ class Logger:
         return datetime.datetime.fromtimestamp(time.time()).strftime("[%Y-%m-%d | %H:%M:%S] ")
 
     def log(self, message: str, log_level: int = 1):
-        if not isinstance(type(log_level), type(1)):
+        if not isinstance(type(log_level), type(int)):
             log_level = Logger.lookup_log_level(
                 str(log_level)
             )
@@ -70,6 +73,9 @@ class Logger:
         message = (str(Logger.get_timestamp()) +
                    log_level_label + ": " +
                    message)
+        self.open_log(file_path, global_log_file_name, message)
+
+    def open_log(self, file_path: str, global_log_file_name: str, message: str) -> bool:
         try:
             with open(file_path, "a") as file:
                 file.write(message)
