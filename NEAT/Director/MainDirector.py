@@ -178,7 +178,7 @@ class MainDirector(Director):
         # Init population if its not present yet.
         if len(
                 list(self.genome_repository.get_current_population())
-        ) == 0:
+        ) < self.config.parameters["clustering"]["max_population"]:
             self.init_population()
 
         while True:

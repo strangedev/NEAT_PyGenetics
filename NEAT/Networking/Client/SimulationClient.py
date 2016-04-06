@@ -33,7 +33,7 @@ class SimulationClient(object):
         response = self._client.run_command(command)
         print("Got response: ", response)
         if not response.result["acknowledged"]:
-            raise NetworkProtocolException
+            raise NetworkProtocolException("Couldn't get block.")
         return response.result["block"]
 
     def set_block_inputs(self, inputs: Dict[ObjectId, Dict[str, float]], block_id: int) -> SetInputsCommand:
