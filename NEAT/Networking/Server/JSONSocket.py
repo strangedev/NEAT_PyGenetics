@@ -148,7 +148,7 @@ class JSONSocket(Thread):
             )
             self.close_connection()
         except Exception as e:
-            print(e)
+            print("Error while sending:", e, dictionary)
             raise SocketRuntimeException(
                 "Runtime error encountered while sending dictionary: " +
                 e.__repr__()

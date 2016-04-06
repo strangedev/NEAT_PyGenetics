@@ -1,6 +1,7 @@
 from typing import Dict, List
 
 from bson import ObjectId
+import copy
 
 from NEAT.ErrorHandling.Exceptions.NetworkProtocolException import NetworkProtocolException
 from NEAT.ErrorHandling.Exceptions.NetworkTimeoutException import NetworkTimeoutException
@@ -160,7 +161,7 @@ class SimulationConnector(object):
         genome_id: Dict[input_label: input_value]
         """
         set_command = self._listen_for_command("SetInputs", {"block_id": block_id})
-        self._respond_to_command(set_command)
+        self._respond_to_command(copy.deepcopy(set_command))
 
         for key, value in set_command.parameters["block"].items():
             del set_command.parameters["block"][key]
@@ -208,7 +209,7 @@ class SimulationConnector(object):
                 "block_id": block_id
             }
         )
-        self._respond_to_command(set_command)
+        self._respond_to_command(copy.deepcopy(set_command))
         for key, value in set_command.parameters["fitness_values"].items():
             del set_command.parameters["fitness_values"][key]
             set_command.parameters["fitness_values"][ObjectId(key)] = value
