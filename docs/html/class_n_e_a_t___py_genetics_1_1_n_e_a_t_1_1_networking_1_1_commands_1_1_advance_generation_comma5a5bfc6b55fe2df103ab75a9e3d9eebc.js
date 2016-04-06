@@ -1,5 +1,0 @@
-var class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_advance_generation_comma5a5bfc6b55fe2df103ab75a9e3d9eebc =
-[
-    [ "__init__", "class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_advance_generation_comma5a5bfc6b55fe2df103ab75a9e3d9eebc.html#aa5c2d4cae5b431359a0563a53f2e8020", null ],
-    [ "set_advance_generation", "class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_advance_generation_comma5a5bfc6b55fe2df103ab75a9e3d9eebc.html#a2d1945cf45fc83a8fc73aa690829969d", null ]
-];

@@ -1,6 +1,0 @@
-var class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome =
-[
-    [ "__init__", "class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome.html#a8b7615cf97ad4ce4c3805ecde57637c8", null ],
-    [ "__eq__", "class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome.html#a0d0ae3acf7162d05cb40fe5eaff9ada9", null ],
-    [ "genome_id", "class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome.html#a536876e28c6ee27477de23a369e11daa", null ]
-];

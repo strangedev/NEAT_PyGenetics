@@ -1,5 +1,0 @@
-var class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_set_inputs_command_1_1_set_inputs_command =
-[
-    [ "__init__", "class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_set_inputs_command_1_1_set_inputs_command.html#a8976dadea27ff8c738c32b2a8c42acde", null ],
-    [ "set_inputs", "class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_set_inputs_command_1_1_set_inputs_command.html#a610420d005c225778fa1be622cd3843a", null ]
-];

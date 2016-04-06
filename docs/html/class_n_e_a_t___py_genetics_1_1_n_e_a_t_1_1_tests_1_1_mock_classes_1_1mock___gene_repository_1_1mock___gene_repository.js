@@ -1,6 +1,0 @@
-var class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___gene_repository_1_1mock___gene_repository =
-[
-    [ "find_connecting_node", "class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___gene_repository_1_1mock___gene_repository.html#af8237f68a2528e68c6984225bc9a116f", null ],
-    [ "get_gene_id_for_endpoints", "class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___gene_repository_1_1mock___gene_repository.html#a7b5eef06e8d2486c49acb86b74f43316", null ],
-    [ "get_next_node_id", "class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___gene_repository_1_1mock___gene_repository.html#a496072cac2263f4b7213ba45f4458883", null ]
-];

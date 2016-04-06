@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['generepository',['GeneRepository',['../class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_gene_repository_1_1_gene_repository.html',1,'NEAT_PyGenetics::NEAT::Repository::GeneRepository']]],
-  ['genomeanalyst',['GenomeAnalyst',['../class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst.html',1,'NEAT_PyGenetics::NEAT::Analyst::GenomeAnalyst']]],
-  ['genomeclusterer',['GenomeClusterer',['../class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer.html',1,'NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer']]],
-  ['genomerepository',['GenomeRepository',['../class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_genome_repository_1_1_genome_repository.html',1,'NEAT_PyGenetics::NEAT::Repository::GenomeRepository']]],
-  ['genomeselector',['GenomeSelector',['../class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector.html',1,'NEAT_PyGenetics::NEAT::Analyst::GenomeSelector']]],
-  ['getblockcommand',['GetBlockCommand',['../class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_get_block_command_1_1_get_block_command.html',1,'NEAT_PyGenetics::NEAT::Networking::Commands::GetBlockCommand']]],
-  ['getoutputscommand',['GetOutputsCommand',['../class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_get_outputs_command_1_1_get_outputs_command.html',1,'NEAT_PyGenetics::NEAT::Networking::Commands::GetOutputsCommand']]]
+  ['generepository',['GeneRepository',['../classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GeneRepository_1_1GeneRepository.html',1,'NEAT_PyGenetics::NEAT::Repository::GeneRepository']]],
+  ['genomeanalyst',['GenomeAnalyst',['../classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeAnalyst_1_1GenomeAnalyst.html',1,'NEAT_PyGenetics::NEAT::Analyst::GenomeAnalyst']]],
+  ['genomeclusterer',['GenomeClusterer',['../classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeClusterer_1_1GenomeClusterer.html',1,'NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer']]],
+  ['genomerepository',['GenomeRepository',['../classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository.html',1,'NEAT_PyGenetics::NEAT::Repository::GenomeRepository']]],
+  ['genomeselector',['GenomeSelector',['../classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector.html',1,'NEAT_PyGenetics::NEAT::Analyst::GenomeSelector']]],
+  ['getblockcommand',['GetBlockCommand',['../classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Commands_1_1GetBlockCommand_1_1GetBlockCommand.html',1,'NEAT_PyGenetics::NEAT::Networking::Commands::GetBlockCommand']]],
+  ['getoutputscommand',['GetOutputsCommand',['../classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Commands_1_1GetOutputsCommand_1_1GetOutputsCommand.html',1,'NEAT_PyGenetics::NEAT::Networking::Commands::GetOutputsCommand']]]
 ];

@@ -1,6 +1,0 @@
-var class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_get_outputs_command_1_1_get_outputs_command =
-[
-    [ "__init__", "class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_get_outputs_command_1_1_get_outputs_command.html#a9cb7b34e60b60ab5b71843ba223ff626", null ],
-    [ "get_block_id", "class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_get_outputs_command_1_1_get_outputs_command.html#af1c805c74a7c01ff8314f84f8461f25c", null ],
-    [ "set_block_id", "class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_get_outputs_command_1_1_get_outputs_command.html#a8ec7f2dc4780ec36b72c7fbff9492621", null ]
-];

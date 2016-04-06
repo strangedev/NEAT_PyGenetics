@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['basecommand',['BaseCommand',['../class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_base_command_1_1_base_command.html',1,'NEAT_PyGenetics::NEAT::Networking::Commands::BaseCommand']]],
-  ['breeder',['Breeder',['../class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_generator_1_1_breeder_1_1_breeder.html',1,'NEAT_PyGenetics::NEAT::Generator::Breeder']]]
+  ['basecommand',['BaseCommand',['../classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Commands_1_1BaseCommand_1_1BaseCommand.html',1,'NEAT_PyGenetics::NEAT::Networking::Commands::BaseCommand']]],
+  ['breeder',['Breeder',['../classNEAT__PyGenetics_1_1NEAT_1_1Generator_1_1Breeder_1_1Breeder.html',1,'NEAT_PyGenetics::NEAT::Generator::Breeder']]]
 ];

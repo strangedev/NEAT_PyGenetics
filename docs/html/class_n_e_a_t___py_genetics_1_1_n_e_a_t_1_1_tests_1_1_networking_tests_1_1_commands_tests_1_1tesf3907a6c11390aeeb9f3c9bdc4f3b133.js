@@ -1,8 +1,0 @@
-var class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tesf3907a6c11390aeeb9f3c9bdc4f3b133 =
-[
-    [ "setUp", "class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tesf3907a6c11390aeeb9f3c9bdc4f3b133.html#a2272af4f270fe071e01f4f958ae98f0c", null ],
-    [ "test_decode_command", "class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tesf3907a6c11390aeeb9f3c9bdc4f3b133.html#a64882d2ce98604b07d52cea3c2c71f7c", null ],
-    [ "test_encode_command", "class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tesf3907a6c11390aeeb9f3c9bdc4f3b133.html#aa76781012dfd0b9e6c121d9d17c2167e", null ],
-    [ "base_command", "class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tesf3907a6c11390aeeb9f3c9bdc4f3b133.html#ab37426eab44d5bf3cc1175ac7efac8a8", null ],
-    [ "command_transcoder", "class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tesf3907a6c11390aeeb9f3c9bdc4f3b133.html#a28601736fc099584cd37ae3370fa8630", null ]
-];

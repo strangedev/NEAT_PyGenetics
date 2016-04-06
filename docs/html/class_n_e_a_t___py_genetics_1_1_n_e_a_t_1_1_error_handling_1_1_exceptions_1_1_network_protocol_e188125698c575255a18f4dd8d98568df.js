@@ -1,4 +1,0 @@
-var class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_error_handling_1_1_exceptions_1_1_network_protocol_e188125698c575255a18f4dd8d98568df =
-[
-    [ "__init__", "class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_error_handling_1_1_exceptions_1_1_network_protocol_e188125698c575255a18f4dd8d98568df.html#a9d12de9b98da65c1a683fe038e066e49", null ]
-];

@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['neatclient',['NEATClient',['../class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_client_1_1_n_e_a_t_client_1_1_n_e_a_t_client.html',1,'NEAT_PyGenetics::NEAT::Networking::Client::NEATClient']]],
-  ['neatconfig',['NEATConfig',['../class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_config_1_1_n_e_a_t_config_1_1_n_e_a_t_config.html',1,'NEAT_PyGenetics::NEAT::Config::NEATConfig']]],
-  ['neatserver',['NEATServer',['../class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_n_e_a_t_server_1_1_n_e_a_t_server.html',1,'NEAT_PyGenetics::NEAT::Networking::Server::NEATServer']]],
-  ['networkprotocolexception',['NetworkProtocolException',['../class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_error_handling_1_1_exceptions_1_1_network_protocol_e188125698c575255a18f4dd8d98568df.html',1,'NEAT_PyGenetics::NEAT::ErrorHandling::Exceptions::NetworkProtocolException']]],
-  ['networktimeoutexception',['NetworkTimeoutException',['../class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_error_handling_1_1_exceptions_1_1_network_timeout_ex09d61843cecde07531bc3d1c6f238646.html',1,'NEAT_PyGenetics::NEAT::ErrorHandling::Exceptions::NetworkTimeoutException']]],
-  ['node',['Node',['../class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_simulation_structure_1_1_simulation_nodes_1_1_node.html',1,'NEAT_PyGenetics::NEAT::GenomeStructures::SimulationStructure::SimulationNodes']]]
+  ['neatclient',['NEATClient',['../classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Client_1_1NEATClient_1_1NEATClient.html',1,'NEAT_PyGenetics::NEAT::Networking::Client::NEATClient']]],
+  ['neatconfig',['NEATConfig',['../classNEAT__PyGenetics_1_1NEAT_1_1Config_1_1NEATConfig_1_1NEATConfig.html',1,'NEAT_PyGenetics::NEAT::Config::NEATConfig']]],
+  ['neatserver',['NEATServer',['../classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1NEATServer_1_1NEATServer.html',1,'NEAT_PyGenetics::NEAT::Networking::Server::NEATServer']]],
+  ['networkprotocolexception',['NetworkProtocolException',['../classNEAT__PyGenetics_1_1NEAT_1_1ErrorHandling_1_1Exceptions_1_1NetworkProtocolException_1_1NetworkProtocolException.html',1,'NEAT_PyGenetics::NEAT::ErrorHandling::Exceptions::NetworkProtocolException']]],
+  ['networktimeoutexception',['NetworkTimeoutException',['../classNEAT__PyGenetics_1_1NEAT_1_1ErrorHandling_1_1Exceptions_1_1NetworkTimeoutException_1_1NetworkTimeoutException.html',1,'NEAT_PyGenetics::NEAT::ErrorHandling::Exceptions::NetworkTimeoutException']]],
+  ['node',['Node',['../classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1Node.html',1,'NEAT_PyGenetics::NEAT::GenomeStructures::SimulationStructure::SimulationNodes']]]
 ];

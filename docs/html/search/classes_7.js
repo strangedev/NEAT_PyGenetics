@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logger',['Logger',['../class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_logging_1_1_logger_1_1_logger.html',1,'NEAT_PyGenetics::NEAT::Logging::Logger']]]
+  ['logger',['Logger',['../classNEAT__PyGenetics_1_1NEAT_1_1Logging_1_1Logger_1_1Logger.html',1,'NEAT_PyGenetics::NEAT::Logging::Logger']]]
 ];
