@@ -1,6 +1,6 @@
 from typing import Dict, Iterable, List, Tuple, TypeVar
 
-from bson import ObjectId
+from bson.objectid import ObjectId
 from pymongo import MongoClient
 
 AnyId = TypeVar('AnyId', ObjectId, int, str)
