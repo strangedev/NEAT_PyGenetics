@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="test__storage_genome_8py" kind="file" language="Python">
+    <compoundname>test_storageGenome.py</compoundname>
+    <innerclass refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_storage_genome_tests_1_1test__storage_genome_1_1_storage_genome_test_case" prot="public">NEAT_PyGenetics::NEAT::Tests::StorageGenomeTests::test_storageGenome::StorageGenomeTestCase</innerclass>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_storage_genome_tests_1_1test__storage_genome">NEAT_PyGenetics::NEAT::Tests::StorageGenomeTests::test_storageGenome</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">import</highlight><highlight class="normal"><sp/>unittest</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>fractions<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Fraction</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>bson<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>ObjectId</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>NEAT.GenomeStructures.StorageStructure.StorageGenome<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>StorageGenome</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_storage_genome_tests_1_1test__storage_genome_1_1_storage_genome_test_case" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_storage_genome_tests_1_1test__storage_genome_1_1_storage_genome_test_case" kindref="compound">StorageGenomeTestCase</ref>(unittest.TestCase):</highlight></codeline>
+<codeline lineno="10" refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_storage_genome_tests_1_1test__storage_genome_1_1_storage_genome_test_case_1a27b58493e931470520a1e71e514009cb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_storage_genome_tests_1_1test__storage_genome_1_1_storage_genome_test_case_1a27b58493e931470520a1e71e514009cb" kindref="member">test_eq</ref>(self):</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="12"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Tests,<sp/>that<sp/>the<sp/>equality<sp/>operator<sp/>works.</highlight></codeline>
+<codeline lineno="13"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:</highlight></codeline>
+<codeline lineno="14"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s1<sp/>=<sp/>StorageGenome()</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s2<sp/>=<sp/>StorageGenome()</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s2._id<sp/>=<sp/>ObjectId(s1._id)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s2.cluster<sp/>=<sp/>ObjectId(s1.cluster)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertEquals(s1,<sp/>s2)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">test_notEq(self):</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s1<sp/>=<sp/>StorageGenome()</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s2<sp/>=<sp/>StorageGenome()</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertNotEqual(s1,<sp/>s2)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">test_copyConstruct(self):</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s1<sp/>=<sp/>StorageGenome()</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s1.inputs[</highlight><highlight class="stringliteral">&apos;uiae&apos;</highlight><highlight class="normal">]<sp/>=<sp/>1</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s1.inputs[</highlight><highlight class="stringliteral">&apos;eaiu&apos;</highlight><highlight class="normal">]<sp/>=<sp/>2</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s1.outputs[</highlight><highlight class="stringliteral">&apos;nrtd&apos;</highlight><highlight class="normal">]<sp/>=<sp/>3</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s1.outputs[</highlight><highlight class="stringliteral">&apos;dtrn&apos;</highlight><highlight class="normal">]<sp/>=<sp/>4</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s1.genes[2]<sp/>=<sp/>(</highlight><highlight class="keyword">True</highlight><highlight class="normal">,<sp/>Fraction(15,<sp/>11))</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s1.genes[5]<sp/>=<sp/>(</highlight><highlight class="keyword">True</highlight><highlight class="normal">,<sp/>Fraction(135,<sp/>9))</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s1.genes[12]<sp/>=<sp/>(</highlight><highlight class="keyword">True</highlight><highlight class="normal">,<sp/>Fraction(17,<sp/>81))</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s1.analysis_result.topologically_sorted_nodes<sp/>=<sp/>[1,<sp/>5,<sp/>7,<sp/>2,<sp/>3,<sp/>8]</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s1.analysis_result.topologically_sorted_cycle_nodes<sp/>=<sp/>[3,<sp/>2,<sp/>8,<sp/>1]</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s1.analysis_result.gene_closes_cycle_map[5]<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>s2<sp/>=<sp/>StorageGenome(s1)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertNotEqual(s1,<sp/>s2)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertNotEqual(s1._id,<sp/>s2._id)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertDictEqual(s1.inputs,<sp/>s2.inputs)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertDictEqual(s1.outputs,<sp/>s2.outputs)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertDictEqual(s1.genes,<sp/>s2.genes)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertEqual(s1.cluster,<sp/>s2.cluster)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertEqual(s1.analysis_result,<sp/>s2.analysis_result)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertNotEqual(s1.__repr__(),<sp/>s2.__repr__())</highlight></codeline>
+    </programlisting>
+    <location file="NEAT/Tests/StorageGenomeTests/test_storageGenome.py"/>
+  </compounddef>
+</doxygen>

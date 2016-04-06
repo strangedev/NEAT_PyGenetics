@@ -1,0 +1,4 @@
+var namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_analysis_structure_1_1_analysis_genome =
+[
+    [ "AnalysisGenome", "class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_analysis_structure_1_1_analysis_genome_1_1_analysis_genome.html", "class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_analysis_structure_1_1_analysis_genome_1_1_analysis_genome" ]
+];

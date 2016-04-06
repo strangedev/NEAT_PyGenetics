@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands" kind="namespace" language="Python">
+    <compoundname>NEAT_PyGenetics::NEAT::Networking::Commands</compoundname>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_advance_generation_command">NEAT_PyGenetics::NEAT::Networking::Commands::AdvanceGenerationCommand</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_announce_session_command">NEAT_PyGenetics::NEAT::Networking::Commands::AnnounceSessionCommand</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_base_command">NEAT_PyGenetics::NEAT::Networking::Commands::BaseCommand</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_command_transcoder">NEAT_PyGenetics::NEAT::Networking::Commands::CommandTranscoder</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_get_block_command">NEAT_PyGenetics::NEAT::Networking::Commands::GetBlockCommand</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_get_outputs_command">NEAT_PyGenetics::NEAT::Networking::Commands::GetOutputsCommand</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_heart_beat_command">NEAT_PyGenetics::NEAT::Networking::Commands::HeartBeatCommand</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_set_fitness_values_command">NEAT_PyGenetics::NEAT::Networking::Commands::SetFitnessValuesCommand</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_set_inputs_command">NEAT_PyGenetics::NEAT::Networking::Commands::SetInputsCommand</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="NEAT/Networking/Commands/__init__.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

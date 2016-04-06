@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_96975f9bcb12b7b9d4556e26043051b3" kind="dir">
+    <compoundname>NEAT/Tests/SimulationGenomeTests</compoundname>
+    <innerfile refid="_tests_2_simulation_genome_tests_2____init_____8py">__init__.py</innerfile>
+    <innerfile refid="test__simulation_genome_8py">test_simulationGenome.py</innerfile>
+    <innerfile refid="test__simulation_nodes_8py">test_simulationNodes.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="NEAT/Tests/SimulationGenomeTests/"/>
+  </compounddef>
+</doxygen>

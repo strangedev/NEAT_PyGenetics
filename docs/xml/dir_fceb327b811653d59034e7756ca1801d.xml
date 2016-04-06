@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_fceb327b811653d59034e7756ca1801d" kind="dir">
+    <compoundname>NEAT/GenomeStructures/StorageStructure</compoundname>
+    <innerfile refid="_genome_structures_2_storage_structure_2____init_____8py">__init__.py</innerfile>
+    <innerfile refid="_storage_genome_8py">StorageGenome.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="NEAT/GenomeStructures/StorageStructure/"/>
+  </compounddef>
+</doxygen>

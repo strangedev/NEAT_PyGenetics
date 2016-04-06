@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_simulation_genome_tests_1_1test__simulation_genome" kind="namespace" language="Python">
+    <compoundname>NEAT_PyGenetics::NEAT::Tests::SimulationGenomeTests::test_simulationGenome</compoundname>
+    <innerclass refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_simulation_genome_tests_1_1test__simulatioa0f878a251e2d1346bb30cc508043f47" prot="public">NEAT_PyGenetics::NEAT::Tests::SimulationGenomeTests::test_simulationGenome::TestSimulationGenome</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="NEAT/Tests/SimulationGenomeTests/test_simulationGenome.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

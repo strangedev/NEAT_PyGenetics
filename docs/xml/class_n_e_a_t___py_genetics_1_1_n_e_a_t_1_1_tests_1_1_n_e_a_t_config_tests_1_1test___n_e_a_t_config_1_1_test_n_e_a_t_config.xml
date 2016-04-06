@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_n_e_a_t_config_tests_1_1test___n_e_a_t_config_1_1_test_n_e_a_t_config" kind="class" language="Python" prot="public">
+    <compoundname>NEAT_PyGenetics::NEAT::Tests::NEATConfigTests::test_NEATConfig::TestNEATConfig</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">TestCase</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_n_e_a_t_config_tests_1_1test___n_e_a_t_config_1_1_test_n_e_a_t_config_1af0a8dbda0ccd83925dc128d89eda15d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.NEATConfigTests.test_NEATConfig.TestNEATConfig.test_load_config</definition>
+        <argsstring>(self)</argsstring>
+        <name>test_load_config</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/NEATConfigTests/test_NEATConfig.py" line="6" column="1" bodyfile="NEAT/Tests/NEATConfigTests/test_NEATConfig.py" bodystart="6" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_n_e_a_t_config_tests_1_1test___n_e_a_t_config_1_1_test_n_e_a_t_config_1af2a32fc9eb41393f00eebc5cee9e04b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.NEATConfigTests.test_NEATConfig.TestNEATConfig.test_load_defaults</definition>
+        <argsstring>(self)</argsstring>
+        <name>test_load_defaults</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/NEATConfigTests/test_NEATConfig.py" line="16" column="1" bodyfile="NEAT/Tests/NEATConfigTests/test_NEATConfig.py" bodystart="16" bodyend="32"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="269">
+        <label>NEAT_PyGenetics.NEAT.Tests.NEATConfigTests.test_NEATConfig.TestNEATConfig</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_n_e_a_t_config_tests_1_1test___n_e_a_t_config_1_1_test_n_e_a_t_config"/>
+        <childnode refid="270" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="270">
+        <label>TestCase</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="271">
+        <label>NEAT_PyGenetics.NEAT.Tests.NEATConfigTests.test_NEATConfig.TestNEATConfig</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_n_e_a_t_config_tests_1_1test___n_e_a_t_config_1_1_test_n_e_a_t_config"/>
+        <childnode refid="272" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="272">
+        <label>TestCase</label>
+      </node>
+    </collaborationgraph>
+    <location file="NEAT/Tests/NEATConfigTests/test_NEATConfig.py" line="4" column="1" bodyfile="NEAT/Tests/NEATConfigTests/test_NEATConfig.py" bodystart="4" bodyend="32"/>
+    <listofallmembers>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_n_e_a_t_config_tests_1_1test___n_e_a_t_config_1_1_test_n_e_a_t_config_1af0a8dbda0ccd83925dc128d89eda15d1" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::NEATConfigTests::test_NEATConfig::TestNEATConfig</scope><name>test_load_config</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_n_e_a_t_config_tests_1_1test___n_e_a_t_config_1_1_test_n_e_a_t_config_1af2a32fc9eb41393f00eebc5cee9e04b1" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::NEATConfigTests::test_NEATConfig::TestNEATConfig</scope><name>test_load_defaults</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

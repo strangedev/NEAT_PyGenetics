@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_error_handling_1_1_exceptions" kind="namespace" language="Python">
+    <compoundname>NEAT_PyGenetics::NEAT::ErrorHandling::Exceptions</compoundname>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_error_handling_1_1_exceptions_1_1_input_missing_exception">NEAT_PyGenetics::NEAT::ErrorHandling::Exceptions::InputMissingException</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_error_handling_1_1_exceptions_1_1_network_protocol_exception">NEAT_PyGenetics::NEAT::ErrorHandling::Exceptions::NetworkProtocolException</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_error_handling_1_1_exceptions_1_1_network_timeout_exception">NEAT_PyGenetics::NEAT::ErrorHandling::Exceptions::NetworkTimeoutException</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_error_handling_1_1_exceptions_1_1_serialization_exception">NEAT_PyGenetics::NEAT::ErrorHandling::Exceptions::SerializationException</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_error_handling_1_1_exceptions_1_1_socket_already_used_exception">NEAT_PyGenetics::NEAT::ErrorHandling::Exceptions::SocketAlreadyUsedException</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_error_handling_1_1_exceptions_1_1_socket_runtime_exception">NEAT_PyGenetics::NEAT::ErrorHandling::Exceptions::SocketRuntimeException</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_error_handling_1_1_exceptions_1_1_startup_check_exception">NEAT_PyGenetics::NEAT::ErrorHandling::Exceptions::StartupCheckException</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="NEAT/ErrorHandling/Exceptions/__init__.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

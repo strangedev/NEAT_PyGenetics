@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_error_handling_1_1_exceptions_1_1_serialization_exced8c283cc206751d1c7b7fc1791f39a64" kind="class" language="Python" prot="public">
+    <compoundname>NEAT_PyGenetics::NEAT::ErrorHandling::Exceptions::SerializationException::SerializationException</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Exception</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_error_handling_1_1_exceptions_1_1_serialization_exced8c283cc206751d1c7b7fc1791f39a64_1ada817ecebb49fc5dc085531462eef9a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.ErrorHandling.Exceptions.SerializationException.SerializationException.__init__</definition>
+        <argsstring>(self, message=&quot;&quot;, errors=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>message</type>
+          <defname>message</defname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>errors</type>
+          <defname>errors</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/ErrorHandling/Exceptions/SerializationException.py" line="2" column="1" bodyfile="NEAT/ErrorHandling/Exceptions/SerializationException.py" bodystart="2" bodyend="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="152">
+        <label>Exception</label>
+      </node>
+      <node id="151">
+        <label>NEAT_PyGenetics.NEAT.ErrorHandling.Exceptions.SerializationException.SerializationException</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_error_handling_1_1_exceptions_1_1_serialization_exced8c283cc206751d1c7b7fc1791f39a64"/>
+        <childnode refid="152" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="154">
+        <label>Exception</label>
+      </node>
+      <node id="153">
+        <label>NEAT_PyGenetics.NEAT.ErrorHandling.Exceptions.SerializationException.SerializationException</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_error_handling_1_1_exceptions_1_1_serialization_exced8c283cc206751d1c7b7fc1791f39a64"/>
+        <childnode refid="154" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="NEAT/ErrorHandling/Exceptions/SerializationException.py" line="1" column="1" bodyfile="NEAT/ErrorHandling/Exceptions/SerializationException.py" bodystart="1" bodyend="6"/>
+    <listofallmembers>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_error_handling_1_1_exceptions_1_1_serialization_exced8c283cc206751d1c7b7fc1791f39a64_1ada817ecebb49fc5dc085531462eef9a0" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::ErrorHandling::Exceptions::SerializationException::SerializationException</scope><name>__init__</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

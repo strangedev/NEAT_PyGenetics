@@ -1,0 +1,107 @@
+.TH "NEAT_PyGenetics.NEAT.Config.NEATConfig.NEATConfig" 3 "Wed Apr 6 2016" "NEAT_PyGenetics" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NEAT_PyGenetics.NEAT.Config.NEATConfig.NEATConfig \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP (self, config_path=None)"
+.br
+.ti -1c
+.RI "def \fBload_config\fP (self)"
+.br
+.ti -1c
+.RI "def \fBload_defaults\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBparameters\fP"
+.br
+.ti -1c
+.RI "\fBconfig_directory\fP"
+.br
+.ti -1c
+.RI "\fBworking_directory\fP"
+.br
+.ti -1c
+.RI "\fBconfig_categories\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A huge configuration object which loads it's parameters
+from disk, or reverts to default values whenever a
+configuration file isn't found or can't be opened.
+Config files are in JSON notation.
+
+Configuration files are listed in self.config_categories
+and should be present as CATEGORYNAME.conf in the
+provided config_path. If no config path is specified, the builtin
+config files in NEAT/Config are used.
+
+All config files except one can be loaded from defaults.
+The only exception is genomes.conf, the config file specifying
+the input and output nodes of the genomes to use, because it
+is dependent on the simulation.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 7 of file NEATConfig\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def NEAT_PyGenetics\&.NEAT\&.Config\&.NEATConfig\&.NEATConfig\&.load_config ( self)"
+
+.PP
+.nf
+Tries to initialize self.parameters with data
+from the configuration files. It uses the base file
+names from self.config_categories and is agnostic to the number
+and names of the existing categories.
+Config files need to be in JSON notation.
+
+:return: None
+
+.fi
+.PP
+ 
+.PP
+Definition at line 50 of file NEATConfig\&.py\&.
+.SS "def NEAT_PyGenetics\&.NEAT\&.Config\&.NEATConfig\&.NEATConfig\&.load_defaults ( self)"
+
+.PP
+.nf
+This method is called by __init__ after the config
+files are loaded. It's job is to test whether the
+config files were loaded by self.load_config() and provide
+the appropriate default values (or crash if there are no defaults)
+for the missing config parameters.
+
+Because this error-handling method cannot rely on file I/O,
+the defaults are hard-coded.
+
+:return: None
+
+.fi
+.PP
+ 
+.PP
+Definition at line 77 of file NEATConfig\&.py\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for NEAT_PyGenetics from the source code\&.

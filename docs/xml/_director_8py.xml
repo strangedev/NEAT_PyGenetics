@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="_director_8py" kind="file" language="Python">
+    <compoundname>Director.py</compoundname>
+    <innerclass refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_director_1_1_director_1_1_director" prot="public">NEAT_PyGenetics::NEAT::Director::Director::Director</innerclass>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_director_1_1_director">NEAT_PyGenetics::NEAT::Director::Director</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_director_1_1_director_1_1_director" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_director_1_1_director_1_1_director" kindref="compound">Director</ref>(object):</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">run(self):</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">pass</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="NEAT/Director/Director.py"/>
+  </compounddef>
+</doxygen>

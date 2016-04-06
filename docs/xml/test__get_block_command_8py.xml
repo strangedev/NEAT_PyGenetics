@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="test__get_block_command_8py" kind="file" language="Python">
+    <compoundname>test_getBlockCommand.py</compoundname>
+    <innerclass refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tesdc7e260cf1123322a38da74b6d6a076b" prot="public">NEAT_PyGenetics::NEAT::Tests::NetworkingTests::CommandsTests::test_getBlockCommand::TestGetBlockCommand</innerclass>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1test__get_block_command">NEAT_PyGenetics::NEAT::Tests::NetworkingTests::CommandsTests::test_getBlockCommand</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">from</highlight><highlight class="normal"><sp/>unittest<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>TestCase</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tesdc7e260cf1123322a38da74b6d6a076b" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tesdc7e260cf1123322a38da74b6d6a076b" kindref="compound">TestGetBlockCommand</ref>(TestCase):</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">pass</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="NEAT/Tests/NetworkingTests/CommandsTests/test_getBlockCommand.py"/>
+  </compounddef>
+</doxygen>

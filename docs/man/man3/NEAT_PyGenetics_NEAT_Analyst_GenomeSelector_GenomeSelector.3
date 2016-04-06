@@ -1,0 +1,141 @@
+.TH "NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector" 3 "Wed Apr 6 2016" "NEAT_PyGenetics" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP"
+.br
+.ti -1c
+.RI "def \fBget_genomes_in_cluster\fP"
+.br
+.ti -1c
+.RI "def \fBget_cluster_area_sorted_by_fitness\fP"
+.br
+.ti -1c
+.RI "def \fBselect_genomes_for_breeding\fP"
+.br
+.ti -1c
+.RI "def \fBselect_genomes_for_mutation\fP"
+.br
+.ti -1c
+.RI "def \fBselect_clusters_for_combination\fP (self)"
+.br
+.ti -1c
+.RI "def \fBselect_cluster_combinations\fP"
+.br
+.ti -1c
+.RI "def \fBselect_clusters_for_discarding\fP (self)"
+.br
+.ti -1c
+.RI "def \fBselect_genomes_for_discarding\fP (self)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBgenome_repository\fP"
+.br
+.ti -1c
+.RI "\fBcluster_repository\fP"
+.br
+.ti -1c
+.RI "\fBselection_parameters\fP"
+.br
+.ti -1c
+.RI "\fBgenomes\fP"
+.br
+.ti -1c
+.RI "\fBclusters\fP"
+.br
+.ti -1c
+.RI "\fBkey\fP"
+.br
+.ti -1c
+.RI "\fBstart\fP"
+.br
+.ti -1c
+.RI "\fBend\fP"
+.br
+.ti -1c
+.RI "\fBresult\fP"
+.br
+.ti -1c
+.RI "\fBgenome_one\fP"
+.br
+.ti -1c
+.RI "\fBgenome_two\fP"
+.br
+.ti -1c
+.RI "\fBseats_to_mutation\fP"
+.br
+.ti -1c
+.RI "\fBstep\fP"
+.br
+.ti -1c
+.RI "\fBgenomes1\fP"
+.br
+.ti -1c
+.RI "\fBgenomes2\fP"
+.br
+.ti -1c
+.RI "\fBg1\fP"
+.br
+.ti -1c
+.RI "\fBg2\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 13 of file GenomeSelector\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def NEAT_PyGenetics\&.NEAT\&.Analyst\&.GenomeSelector\&.GenomeSelector\&.select_clusters_for_combination ( self,  Tuple,  Cluster,  Cluster)"
+
+.PP
+.nf
+:return: Tuple[Cluster] cluster chosen for combination
+
+.fi
+.PP
+ 
+.PP
+Definition at line 106 of file GenomeSelector\&.py\&.
+.SS "def NEAT_PyGenetics\&.NEAT\&.Analyst\&.GenomeSelector\&.GenomeSelector\&.select_clusters_for_discarding ( self,  List,  Cluster)"
+
+.PP
+.nf
+select x percentage (given by selection.conf "discarding_by_cluster_fitness") of Cluster sorted ascending
+by fitness
+:return: List of Cluster wanted to be discarded
+
+.fi
+.PP
+ 
+.PP
+Definition at line 137 of file GenomeSelector\&.py\&.
+.SS "def NEAT_PyGenetics\&.NEAT\&.Analyst\&.GenomeSelector\&.GenomeSelector\&.select_genomes_for_discarding ( self,  List,  StorageGenome)"
+
+.PP
+.nf
+select "discarding_by_genome_fitness" percentage (in every Cluster) of genomes sorted ascending by fitness
+:return: List of Genomes wanted to be discarded
+
+.fi
+.PP
+ 
+.PP
+Definition at line 150 of file GenomeSelector\&.py\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for NEAT_PyGenetics from the source code\&.

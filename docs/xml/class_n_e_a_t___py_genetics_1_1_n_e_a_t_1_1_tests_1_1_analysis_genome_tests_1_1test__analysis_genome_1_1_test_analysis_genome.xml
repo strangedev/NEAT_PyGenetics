@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_analysis_genome_tests_1_1test__analysis_genome_1_1_test_analysis_genome" kind="class" language="Python" prot="public">
+    <compoundname>NEAT_PyGenetics::NEAT::Tests::AnalysisGenomeTests::test_analysisGenome::TestAnalysisGenome</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">TestCase</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_analysis_genome_tests_1_1test__analysis_genome_1_1_test_analysis_genome_1a344a0b4458ba026a33e499da5ba58563" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Tests.AnalysisGenomeTests.test_analysisGenome.TestAnalysisGenome::mock_gene_repository</definition>
+        <argsstring></argsstring>
+        <name>mock_gene_repository</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/AnalysisGenomeTests/test_analysisGenome.py" line="10" column="1" bodyfile="NEAT/Tests/AnalysisGenomeTests/test_analysisGenome.py" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_analysis_genome_tests_1_1test__analysis_genome_1_1_test_analysis_genome_1a422f45a24e190778e830b08d527d2d66" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Tests.AnalysisGenomeTests.test_analysisGenome.TestAnalysisGenome::storage_genome</definition>
+        <argsstring></argsstring>
+        <name>storage_genome</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/AnalysisGenomeTests/test_analysisGenome.py" line="13" column="1" bodyfile="NEAT/Tests/AnalysisGenomeTests/test_analysisGenome.py" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_analysis_genome_tests_1_1test__analysis_genome_1_1_test_analysis_genome_1a7eb8161235eddea20bc4c9663570cdac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.AnalysisGenomeTests.test_analysisGenome.TestAnalysisGenome.setUp</definition>
+        <argsstring>(self)</argsstring>
+        <name>setUp</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/AnalysisGenomeTests/test_analysisGenome.py" line="9" column="1" bodyfile="NEAT/Tests/AnalysisGenomeTests/test_analysisGenome.py" bodystart="9" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_analysis_genome_tests_1_1test__analysis_genome_1_1_test_analysis_genome_1ac95b9d78e65bf92e330d9c44ed0ef3fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.AnalysisGenomeTests.test_analysisGenome.TestAnalysisGenome.test__add_node</definition>
+        <argsstring>(self)</argsstring>
+        <name>test__add_node</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/AnalysisGenomeTests/test_analysisGenome.py" line="15" column="1" bodyfile="NEAT/Tests/AnalysisGenomeTests/test_analysisGenome.py" bodystart="15" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_analysis_genome_tests_1_1test__analysis_genome_1_1_test_analysis_genome_1aaffe3eb85a13c66e0825223bae4ac78e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.AnalysisGenomeTests.test_analysisGenome.TestAnalysisGenome.test__add_edge</definition>
+        <argsstring>(self)</argsstring>
+        <name>test__add_edge</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/AnalysisGenomeTests/test_analysisGenome.py" line="27" column="1" bodyfile="NEAT/Tests/AnalysisGenomeTests/test_analysisGenome.py" bodystart="27" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_analysis_genome_tests_1_1test__analysis_genome_1_1_test_analysis_genome_1a54eb6e20e337eeb03a7c31ee7339712f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.AnalysisGenomeTests.test_analysisGenome.TestAnalysisGenome.test__add_edge_without_preadded_nodes</definition>
+        <argsstring>(self)</argsstring>
+        <name>test__add_edge_without_preadded_nodes</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/AnalysisGenomeTests/test_analysisGenome.py" line="39" column="1" bodyfile="NEAT/Tests/AnalysisGenomeTests/test_analysisGenome.py" bodystart="39" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_analysis_genome_tests_1_1test__analysis_genome_1_1_test_analysis_genome_1a603ac3eb47164d8edb36630a92655adb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.AnalysisGenomeTests.test_analysisGenome.TestAnalysisGenome.test__add_edge_with_preadded_source_node</definition>
+        <argsstring>(self)</argsstring>
+        <name>test__add_edge_with_preadded_source_node</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/AnalysisGenomeTests/test_analysisGenome.py" line="48" column="1" bodyfile="NEAT/Tests/AnalysisGenomeTests/test_analysisGenome.py" bodystart="48" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_analysis_genome_tests_1_1test__analysis_genome_1_1_test_analysis_genome_1a24febdb8aa6bb2efff1f6dd77b4d4393" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.AnalysisGenomeTests.test_analysisGenome.TestAnalysisGenome.test_init_from_storage_structure</definition>
+        <argsstring>(self)</argsstring>
+        <name>test_init_from_storage_structure</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/AnalysisGenomeTests/test_analysisGenome.py" line="59" column="1" bodyfile="NEAT/Tests/AnalysisGenomeTests/test_analysisGenome.py" bodystart="59" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_analysis_genome_tests_1_1test__analysis_genome_1_1_test_analysis_genome_1ad10dfce265aa3af67fb951add1fcdd34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.AnalysisGenomeTests.test_analysisGenome.TestAnalysisGenome.test__add_input_node</definition>
+        <argsstring>(self)</argsstring>
+        <name>test__add_input_node</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/AnalysisGenomeTests/test_analysisGenome.py" line="105" column="1" bodyfile="NEAT/Tests/AnalysisGenomeTests/test_analysisGenome.py" bodystart="105" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_analysis_genome_tests_1_1test__analysis_genome_1_1_test_analysis_genome_1a59b12daf2e5e073af71aa97e0bb87009" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.AnalysisGenomeTests.test_analysisGenome.TestAnalysisGenome.test__add_output_node</definition>
+        <argsstring>(self)</argsstring>
+        <name>test__add_output_node</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/AnalysisGenomeTests/test_analysisGenome.py" line="114" column="1" bodyfile="NEAT/Tests/AnalysisGenomeTests/test_analysisGenome.py" bodystart="114" bodyend="122"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="209">
+        <label>NEAT_PyGenetics.NEAT.Tests.AnalysisGenomeTests.test_analysisGenome.TestAnalysisGenome</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_analysis_genome_tests_1_1test__analysis_genome_1_1_test_analysis_genome"/>
+        <childnode refid="210" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="210">
+        <label>TestCase</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="211">
+        <label>NEAT_PyGenetics.NEAT.Tests.AnalysisGenomeTests.test_analysisGenome.TestAnalysisGenome</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_analysis_genome_tests_1_1test__analysis_genome_1_1_test_analysis_genome"/>
+        <childnode refid="212" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="212">
+        <label>TestCase</label>
+      </node>
+    </collaborationgraph>
+    <location file="NEAT/Tests/AnalysisGenomeTests/test_analysisGenome.py" line="8" column="1" bodyfile="NEAT/Tests/AnalysisGenomeTests/test_analysisGenome.py" bodystart="8" bodyend="122"/>
+    <listofallmembers>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_analysis_genome_tests_1_1test__analysis_genome_1_1_test_analysis_genome_1a344a0b4458ba026a33e499da5ba58563" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::AnalysisGenomeTests::test_analysisGenome::TestAnalysisGenome</scope><name>mock_gene_repository</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_analysis_genome_tests_1_1test__analysis_genome_1_1_test_analysis_genome_1a7eb8161235eddea20bc4c9663570cdac" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::AnalysisGenomeTests::test_analysisGenome::TestAnalysisGenome</scope><name>setUp</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_analysis_genome_tests_1_1test__analysis_genome_1_1_test_analysis_genome_1a422f45a24e190778e830b08d527d2d66" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::AnalysisGenomeTests::test_analysisGenome::TestAnalysisGenome</scope><name>storage_genome</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_analysis_genome_tests_1_1test__analysis_genome_1_1_test_analysis_genome_1aaffe3eb85a13c66e0825223bae4ac78e" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::AnalysisGenomeTests::test_analysisGenome::TestAnalysisGenome</scope><name>test__add_edge</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_analysis_genome_tests_1_1test__analysis_genome_1_1_test_analysis_genome_1a603ac3eb47164d8edb36630a92655adb" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::AnalysisGenomeTests::test_analysisGenome::TestAnalysisGenome</scope><name>test__add_edge_with_preadded_source_node</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_analysis_genome_tests_1_1test__analysis_genome_1_1_test_analysis_genome_1a54eb6e20e337eeb03a7c31ee7339712f" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::AnalysisGenomeTests::test_analysisGenome::TestAnalysisGenome</scope><name>test__add_edge_without_preadded_nodes</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_analysis_genome_tests_1_1test__analysis_genome_1_1_test_analysis_genome_1ad10dfce265aa3af67fb951add1fcdd34" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::AnalysisGenomeTests::test_analysisGenome::TestAnalysisGenome</scope><name>test__add_input_node</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_analysis_genome_tests_1_1test__analysis_genome_1_1_test_analysis_genome_1ac95b9d78e65bf92e330d9c44ed0ef3fc" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::AnalysisGenomeTests::test_analysisGenome::TestAnalysisGenome</scope><name>test__add_node</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_analysis_genome_tests_1_1test__analysis_genome_1_1_test_analysis_genome_1a59b12daf2e5e073af71aa97e0bb87009" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::AnalysisGenomeTests::test_analysisGenome::TestAnalysisGenome</scope><name>test__add_output_node</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_analysis_genome_tests_1_1test__analysis_genome_1_1_test_analysis_genome_1a24febdb8aa6bb2efff1f6dd77b4d4393" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::AnalysisGenomeTests::test_analysisGenome::TestAnalysisGenome</scope><name>test_init_from_storage_structure</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

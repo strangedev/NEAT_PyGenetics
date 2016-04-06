@@ -1,0 +1,95 @@
+.TH "NEAT_PyGenetics.NEAT.GenomeStructures.SimulationStructure.SimulationNodes.Node" 3 "Wed Apr 6 2016" "NEAT_PyGenetics" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NEAT_PyGenetics.NEAT.GenomeStructures.SimulationStructure.SimulationNodes.Node \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.PP
+Inherited by \fBNEAT_PyGenetics\&.NEAT\&.GenomeStructures\&.SimulationStructure\&.SimulationNodes\&.CycleNode\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP"
+.br
+.ti -1c
+.RI "def \fBadd_successor\fP"
+.br
+.ti -1c
+.RI "def \fBadd_successors\fP"
+.br
+.ti -1c
+.RI "def \fBreset\fP (self)"
+.br
+.ti -1c
+.RI "def \fBfire\fP (self)"
+.br
+.ti -1c
+.RI "def \fBadd_value\fP"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBsuccessors\fP"
+.br
+.ti -1c
+.RI "\fBweights\fP"
+.br
+.ti -1c
+.RI "\fBinitial_value\fP"
+.br
+.ti -1c
+.RI "\fBvalue\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A single node in a SimulationGenome. Stores information about its successors
+ and a current value and has methods for propagating its value to its
+ successors.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 5 of file SimulationNodes\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def NEAT_PyGenetics\&.NEAT\&.GenomeStructures\&.SimulationStructure\&.SimulationNodes\&.Node\&.fire ( self,  None)"
+
+.PP
+.nf
+Adds the currently stored value multiplied with the specific weights
+to each successor.
+:return:
+
+.fi
+.PP
+ 
+.PP
+Definition at line 79 of file SimulationNodes\&.py\&.
+.SS "def NEAT_PyGenetics\&.NEAT\&.GenomeStructures\&.SimulationStructure\&.SimulationNodes\&.Node\&.reset ( self,  None)"
+
+.PP
+.nf
+Resets the value to the initial_value.
+:return:
+
+.fi
+.PP
+ 
+.PP
+Definition at line 72 of file SimulationNodes\&.py\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for NEAT_PyGenetics from the source code\&.

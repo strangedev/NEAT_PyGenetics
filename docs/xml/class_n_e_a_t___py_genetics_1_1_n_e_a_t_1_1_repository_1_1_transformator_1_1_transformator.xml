@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_transformator_1_1_transformator" kind="class" language="Python" prot="public">
+    <compoundname>NEAT_PyGenetics::NEAT::Repository::Transformator::Transformator</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_transformator_1_1_transformator_1a930f3a38fe7754c4c4a950718cf6df99" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Repository.Transformator.Transformator.encode_AnalysisResult</definition>
+        <argsstring></argsstring>
+        <name>encode_AnalysisResult</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Repository/Transformator.py" line="13" column="1" bodyfile="NEAT/Repository/Transformator.py" bodystart="13" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_transformator_1_1_transformator_1afa3d18da2509741c7b98b86f6b867c93" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Repository.Transformator.Transformator.decode_AnalysisResult</definition>
+        <argsstring></argsstring>
+        <name>decode_AnalysisResult</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Repository/Transformator.py" line="27" column="1" bodyfile="NEAT/Repository/Transformator.py" bodystart="27" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_transformator_1_1_transformator_1a5c4155f4acbb4c8cf532e1fccc9b2e47" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Repository.Transformator.Transformator.encode_StorageGenome</definition>
+        <argsstring></argsstring>
+        <name>encode_StorageGenome</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Repository/Transformator.py" line="45" column="1" bodyfile="NEAT/Repository/Transformator.py" bodystart="45" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_transformator_1_1_transformator_1acc9bbdb90961f5952e142967fadb8792" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Repository.Transformator.Transformator.decode_StorageGenome</definition>
+        <argsstring></argsstring>
+        <name>decode_StorageGenome</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Repository/Transformator.py" line="62" column="1" bodyfile="NEAT/Repository/Transformator.py" bodystart="62" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_transformator_1_1_transformator_1ae51de8a47210d94df0d81d170cd81998" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Repository.Transformator.Transformator.encode_Cluster</definition>
+        <argsstring></argsstring>
+        <name>encode_Cluster</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Repository/Transformator.py" line="80" column="1" bodyfile="NEAT/Repository/Transformator.py" bodystart="80" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_transformator_1_1_transformator_1a8671f5ca051f20dbdd948c8689a6019c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Repository.Transformator.Transformator.decode_Cluster</definition>
+        <argsstring></argsstring>
+        <name>decode_Cluster</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Repository/Transformator.py" line="89" column="1" bodyfile="NEAT/Repository/Transformator.py" bodystart="89" bodyend="127"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="298">
+        <label>object</label>
+      </node>
+      <node id="297">
+        <label>NEAT_PyGenetics.NEAT.Repository.Transformator.Transformator</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_transformator_1_1_transformator"/>
+        <childnode refid="298" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="300">
+        <label>object</label>
+      </node>
+      <node id="299">
+        <label>NEAT_PyGenetics.NEAT.Repository.Transformator.Transformator</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_transformator_1_1_transformator"/>
+        <childnode refid="300" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="NEAT/Repository/Transformator.py" line="11" column="1" bodyfile="NEAT/Repository/Transformator.py" bodystart="11" bodyend="127"/>
+    <listofallmembers>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_transformator_1_1_transformator_1afa3d18da2509741c7b98b86f6b867c93" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Repository::Transformator::Transformator</scope><name>decode_AnalysisResult</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_transformator_1_1_transformator_1a8671f5ca051f20dbdd948c8689a6019c" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Repository::Transformator::Transformator</scope><name>decode_Cluster</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_transformator_1_1_transformator_1acc9bbdb90961f5952e142967fadb8792" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Repository::Transformator::Transformator</scope><name>decode_StorageGenome</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_transformator_1_1_transformator_1a930f3a38fe7754c4c4a950718cf6df99" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Repository::Transformator::Transformator</scope><name>encode_AnalysisResult</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_transformator_1_1_transformator_1ae51de8a47210d94df0d81d170cd81998" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Repository::Transformator::Transformator</scope><name>encode_Cluster</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_transformator_1_1_transformator_1a5c4155f4acbb4c8cf532e1fccc9b2e47" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Repository::Transformator::Transformator</scope><name>encode_StorageGenome</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

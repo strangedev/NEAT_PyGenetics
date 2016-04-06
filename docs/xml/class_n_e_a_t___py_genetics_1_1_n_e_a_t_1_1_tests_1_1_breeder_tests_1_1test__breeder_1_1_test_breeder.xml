@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_breeder_tests_1_1test__breeder_1_1_test_breeder" kind="class" language="Python" prot="public">
+    <compoundname>NEAT_PyGenetics::NEAT::Tests::BreederTests::test_breeder::TestBreeder</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">TestCase</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_breeder_tests_1_1test__breeder_1_1_test_breeder_1abc027b8c1ce451c04c5eae1fe983c40b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Tests.BreederTests.test_breeder.TestBreeder::breeder</definition>
+        <argsstring></argsstring>
+        <name>breeder</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/BreederTests/test_breeder.py" line="18" column="1" bodyfile="NEAT/Tests/BreederTests/test_breeder.py" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_breeder_tests_1_1test__breeder_1_1_test_breeder_1a8967d8a2eed942a90b58d7b1201cb46c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.BreederTests.test_breeder.TestBreeder.setUp</definition>
+        <argsstring>(self)</argsstring>
+        <name>setUp</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/BreederTests/test_breeder.py" line="8" column="1" bodyfile="NEAT/Tests/BreederTests/test_breeder.py" bodystart="8" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_breeder_tests_1_1test__breeder_1_1_test_breeder_1a8595b48bc5d70d810bbe5aa38fc3175f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.BreederTests.test_breeder.TestBreeder.test_breed_genomes</definition>
+        <argsstring>(self)</argsstring>
+        <name>test_breed_genomes</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/BreederTests/test_breeder.py" line="20" column="1" bodyfile="NEAT/Tests/BreederTests/test_breeder.py" bodystart="20" bodyend="118"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="221">
+        <label>NEAT_PyGenetics.NEAT.Tests.BreederTests.test_breeder.TestBreeder</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_breeder_tests_1_1test__breeder_1_1_test_breeder"/>
+        <childnode refid="222" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="222">
+        <label>TestCase</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="223">
+        <label>NEAT_PyGenetics.NEAT.Tests.BreederTests.test_breeder.TestBreeder</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_breeder_tests_1_1test__breeder_1_1_test_breeder"/>
+        <childnode refid="224" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="224">
+        <label>TestCase</label>
+      </node>
+    </collaborationgraph>
+    <location file="NEAT/Tests/BreederTests/test_breeder.py" line="6" column="1" bodyfile="NEAT/Tests/BreederTests/test_breeder.py" bodystart="6" bodyend="118"/>
+    <listofallmembers>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_breeder_tests_1_1test__breeder_1_1_test_breeder_1abc027b8c1ce451c04c5eae1fe983c40b" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::BreederTests::test_breeder::TestBreeder</scope><name>breeder</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_breeder_tests_1_1test__breeder_1_1_test_breeder_1a8967d8a2eed942a90b58d7b1201cb46c" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::BreederTests::test_breeder::TestBreeder</scope><name>setUp</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_breeder_tests_1_1test__breeder_1_1_test_breeder_1a8595b48bc5d70d810bbe5aa38fc3175f" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::BreederTests::test_breeder::TestBreeder</scope><name>test_breed_genomes</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

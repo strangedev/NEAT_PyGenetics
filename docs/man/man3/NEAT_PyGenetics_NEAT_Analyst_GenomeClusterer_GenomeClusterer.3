@@ -1,0 +1,149 @@
+.TH "NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer" 3 "Wed Apr 6 2016" "NEAT_PyGenetics" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP"
+.br
+.ti -1c
+.RI "def \fBcluster_genomes\fP"
+.br
+.ti -1c
+.RI "def \fBcluster_genome\fP"
+.br
+.ti -1c
+.RI "def \fBcalculate_delta\fP"
+.br
+.ti -1c
+.RI "def \fBcalculate_cluster_fitness\fP"
+.br
+.ti -1c
+.RI "def \fBcalculate_cluster_offspring_values\fP (self)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fBcalculate_disjoint_excess_count\fP"
+.br
+.ti -1c
+.RI "def \fBcalculate_average_weight_difference\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBgenome_repository\fP"
+.br
+.ti -1c
+.RI "\fBcluster_repository\fP"
+.br
+.ti -1c
+.RI "\fBclustering_parameters\fP"
+.br
+.ti -1c
+.RI "\fBexcess_coefficient\fP"
+.br
+.ti -1c
+.RI "\fBdisjoint_coefficient\fP"
+.br
+.ti -1c
+.RI "\fBweight_delta_coefficient\fP"
+.br
+.ti -1c
+.RI "\fBbigger_genome\fP"
+.br
+.ti -1c
+.RI "\fBsmaller_genome\fP"
+.br
+.ti -1c
+.RI "\fBbigger_genome_gene_ids\fP"
+.br
+.ti -1c
+.RI "\fBsmaller_genome_gene_ids\fP"
+.br
+.ti -1c
+.RI "\fBall_gene_ids\fP"
+.br
+.ti -1c
+.RI "\fBmatching_genes\fP"
+.br
+.ti -1c
+.RI "\fBdiffering_genes\fP"
+.br
+.ti -1c
+.RI "\fBn\fP"
+.br
+.ti -1c
+.RI "\fBdisjoint_count\fP"
+.br
+.ti -1c
+.RI "\fBexcess_count\fP"
+.br
+.ti -1c
+.RI "\fBw_bar\fP"
+.br
+.ti -1c
+.RI "\fBsmaller_genome_range\fP"
+.br
+.ti -1c
+.RI "\fBexcess_genes\fP"
+.br
+.ti -1c
+.RI "\fBdisjoint_genes\fP"
+.br
+.ti -1c
+.RI "\fBweights\fP"
+.br
+.ti -1c
+.RI "\fBweight_one\fP"
+.br
+.ti -1c
+.RI "\fBweight_two\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A class used for clustering genomes into species.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 10 of file GenomeClusterer\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def NEAT_PyGenetics\&.NEAT\&.Analyst\&.GenomeClusterer\&.GenomeClusterer\&.calculate_cluster_offspring_values ( self)"
+
+.PP
+.nf
+Calculates the number of offspring the clusters will generate
+in the next generation cycle, based on the compared
+shared fitness values of all active clusters. Fitter clusters
+will receive a bigger number of offspring.
+
+:return: None
+
+.fi
+.PP
+ 
+.PP
+Definition at line 219 of file GenomeClusterer\&.py\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for NEAT_PyGenetics from the source code\&.

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures" kind="namespace" language="Python">
+    <compoundname>NEAT_PyGenetics::NEAT::GenomeStructures</compoundname>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_analysis_structure">NEAT_PyGenetics::NEAT::GenomeStructures::AnalysisStructure</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_simulation_structure">NEAT_PyGenetics::NEAT::GenomeStructures::SimulationStructure</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure">NEAT_PyGenetics::NEAT::GenomeStructures::StorageStructure</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_t_h___genome_structure">NEAT_PyGenetics::NEAT::GenomeStructures::TH_GenomeStructure</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="NEAT/GenomeStructures/__init__.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

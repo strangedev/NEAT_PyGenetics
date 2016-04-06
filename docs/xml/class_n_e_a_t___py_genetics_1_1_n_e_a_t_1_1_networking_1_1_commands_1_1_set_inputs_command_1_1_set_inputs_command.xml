@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_set_inputs_command_1_1_set_inputs_command" kind="class" language="Python" prot="public">
+    <compoundname>NEAT_PyGenetics::NEAT::Networking::Commands::SetInputsCommand::SetInputsCommand</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">BaseCommand</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_set_inputs_command_1_1_set_inputs_command_1a8fc61ff11bcb2519567467af4f305a71" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Networking.Commands.SetInputsCommand.SetInputsCommand::_type</definition>
+        <argsstring></argsstring>
+        <name>_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Commands/SetInputsCommand.py" line="9" column="1" bodyfile="NEAT/Networking/Commands/SetInputsCommand.py" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_set_inputs_command_1_1_set_inputs_command_1a8976dadea27ff8c738c32b2a8c42acde" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Commands.SetInputsCommand.SetInputsCommand.__init__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Commands/SetInputsCommand.py" line="7" column="1" bodyfile="NEAT/Networking/Commands/SetInputsCommand.py" bodystart="7" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_set_inputs_command_1_1_set_inputs_command_1a610420d005c225778fa1be622cd3843a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Commands.SetInputsCommand.SetInputsCommand.set_inputs</definition>
+        <argsstring></argsstring>
+        <name>set_inputs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Commands/SetInputsCommand.py" line="13" column="1" bodyfile="NEAT/Networking/Commands/SetInputsCommand.py" bodystart="13" bodyend="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="159">
+        <label>NEAT_PyGenetics.NEAT.Networking.Commands.SetInputsCommand.SetInputsCommand</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_set_inputs_command_1_1_set_inputs_command"/>
+        <childnode refid="160" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="160">
+        <label>BaseCommand</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="161">
+        <label>NEAT_PyGenetics.NEAT.Networking.Commands.SetInputsCommand.SetInputsCommand</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_set_inputs_command_1_1_set_inputs_command"/>
+        <childnode refid="162" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="162">
+        <label>BaseCommand</label>
+      </node>
+    </collaborationgraph>
+    <location file="NEAT/Networking/Commands/SetInputsCommand.py" line="5" column="1" bodyfile="NEAT/Networking/Commands/SetInputsCommand.py" bodystart="5" bodyend="16"/>
+    <listofallmembers>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_set_inputs_command_1_1_set_inputs_command_1a8976dadea27ff8c738c32b2a8c42acde" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Commands::SetInputsCommand::SetInputsCommand</scope><name>__init__</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_set_inputs_command_1_1_set_inputs_command_1a8fc61ff11bcb2519567467af4f305a71" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Commands::SetInputsCommand::SetInputsCommand</scope><name>_type</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_set_inputs_command_1_1_set_inputs_command_1a610420d005c225778fa1be622cd3843a" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Commands::SetInputsCommand::SetInputsCommand</scope><name>set_inputs</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

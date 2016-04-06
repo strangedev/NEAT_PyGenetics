@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_simulation_structure_1_1_simulation_nodes_1_1_node" kind="class" language="Python" prot="public">
+    <compoundname>NEAT_PyGenetics::NEAT::GenomeStructures::SimulationStructure::SimulationNodes::Node</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+    <derivedcompoundref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_simulation_structure_1_1_simulation_nodes_1_1_cycle_node" prot="public" virt="non-virtual">NEAT_PyGenetics.NEAT.GenomeStructures.SimulationStructure.SimulationNodes.CycleNode</derivedcompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_simulation_structure_1_1_simulation_nodes_1_1_node_1a7eb303cad09b69f01466fd6287c895c4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.GenomeStructures.SimulationStructure.SimulationNodes.Node::successors</definition>
+        <argsstring></argsstring>
+        <name>successors</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/GenomeStructures/SimulationStructure/SimulationNodes.py" line="23" column="1" bodyfile="NEAT/GenomeStructures/SimulationStructure/SimulationNodes.py" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_simulation_structure_1_1_simulation_nodes_1_1_node_1a0e8535438a367cd12a2eb47dee280f36" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.GenomeStructures.SimulationStructure.SimulationNodes.Node::weights</definition>
+        <argsstring></argsstring>
+        <name>weights</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/GenomeStructures/SimulationStructure/SimulationNodes.py" line="24" column="1" bodyfile="NEAT/GenomeStructures/SimulationStructure/SimulationNodes.py" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_simulation_structure_1_1_simulation_nodes_1_1_node_1ae6a237c61d2c2118e6310f254c824490" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.GenomeStructures.SimulationStructure.SimulationNodes.Node::initial_value</definition>
+        <argsstring></argsstring>
+        <name>initial_value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/GenomeStructures/SimulationStructure/SimulationNodes.py" line="25" column="1" bodyfile="NEAT/GenomeStructures/SimulationStructure/SimulationNodes.py" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_simulation_structure_1_1_simulation_nodes_1_1_node_1af25b687b957169788a4190545d6dd90c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.GenomeStructures.SimulationStructure.SimulationNodes.Node::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/GenomeStructures/SimulationStructure/SimulationNodes.py" line="26" column="1" bodyfile="NEAT/GenomeStructures/SimulationStructure/SimulationNodes.py" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_simulation_structure_1_1_simulation_nodes_1_1_node_1adc4a4683c2a06deaf2804d6f2745df3c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.GenomeStructures.SimulationStructure.SimulationNodes.Node.__init__</definition>
+        <argsstring></argsstring>
+        <name>__init__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/GenomeStructures/SimulationStructure/SimulationNodes.py" line="11" column="1" bodyfile="NEAT/GenomeStructures/SimulationStructure/SimulationNodes.py" bodystart="11" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_simulation_structure_1_1_simulation_nodes_1_1_node_1a97ac70897d562bce07c8395c17fe2a1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.GenomeStructures.SimulationStructure.SimulationNodes.Node.add_successor</definition>
+        <argsstring></argsstring>
+        <name>add_successor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/GenomeStructures/SimulationStructure/SimulationNodes.py" line="28" column="1" bodyfile="NEAT/GenomeStructures/SimulationStructure/SimulationNodes.py" bodystart="30" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_simulation_structure_1_1_simulation_nodes_1_1_node_1a101dbc625ef502856902d623193e2901" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.GenomeStructures.SimulationStructure.SimulationNodes.Node.add_successors</definition>
+        <argsstring></argsstring>
+        <name>add_successors</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/GenomeStructures/SimulationStructure/SimulationNodes.py" line="54" column="1" bodyfile="NEAT/GenomeStructures/SimulationStructure/SimulationNodes.py" bodystart="56" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_simulation_structure_1_1_simulation_nodes_1_1_node_1ae2ad3e79c3b1a95bffd61b932f54f566" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.GenomeStructures.SimulationStructure.SimulationNodes.Node.reset</definition>
+        <argsstring>(self)</argsstring>
+        <name>reset</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Resets the value to the initial_value.
+:return:
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/GenomeStructures/SimulationStructure/SimulationNodes.py" line="72" column="1" bodyfile="NEAT/GenomeStructures/SimulationStructure/SimulationNodes.py" bodystart="72" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_simulation_structure_1_1_simulation_nodes_1_1_node_1abc0a976efab6982a2630d01489554fde" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.GenomeStructures.SimulationStructure.SimulationNodes.Node.fire</definition>
+        <argsstring>(self)</argsstring>
+        <name>fire</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Adds the currently stored value multiplied with the specific weights
+to each successor.
+:return:
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/GenomeStructures/SimulationStructure/SimulationNodes.py" line="79" column="1" bodyfile="NEAT/GenomeStructures/SimulationStructure/SimulationNodes.py" bodystart="79" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_simulation_structure_1_1_simulation_nodes_1_1_node_1aecc180ca33b3e3acd7601a3ad3e63b7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.GenomeStructures.SimulationStructure.SimulationNodes.Node.add_value</definition>
+        <argsstring></argsstring>
+        <name>add_value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/GenomeStructures/SimulationStructure/SimulationNodes.py" line="91" column="1" bodyfile="NEAT/GenomeStructures/SimulationStructure/SimulationNodes.py" bodystart="91" bodyend="99"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>A single node in a SimulationGenome. Stores information about its successors
+ and a current value and has methods for propagating its value to its
+ successors.
+</verbatim> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="142">
+        <label>NEAT_PyGenetics.NEAT.GenomeStructures.SimulationStructure.SimulationNodes.Node</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_simulation_structure_1_1_simulation_nodes_1_1_node"/>
+        <childnode refid="143" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="144">
+        <label>NEAT_PyGenetics.NEAT.GenomeStructures.SimulationStructure.SimulationNodes.CycleNode</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_simulation_structure_1_1_simulation_nodes_1_1_cycle_node"/>
+        <childnode refid="142" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="143">
+        <label>object</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="145">
+        <label>NEAT_PyGenetics.NEAT.GenomeStructures.SimulationStructure.SimulationNodes.Node</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_simulation_structure_1_1_simulation_nodes_1_1_node"/>
+        <childnode refid="146" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="146">
+        <label>object</label>
+      </node>
+    </collaborationgraph>
+    <location file="NEAT/GenomeStructures/SimulationStructure/SimulationNodes.py" line="5" column="1" bodyfile="NEAT/GenomeStructures/SimulationStructure/SimulationNodes.py" bodystart="5" bodyend="100"/>
+    <listofallmembers>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_simulation_structure_1_1_simulation_nodes_1_1_node_1adc4a4683c2a06deaf2804d6f2745df3c" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::GenomeStructures::SimulationStructure::SimulationNodes::Node</scope><name>__init__</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_simulation_structure_1_1_simulation_nodes_1_1_node_1a97ac70897d562bce07c8395c17fe2a1b" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::GenomeStructures::SimulationStructure::SimulationNodes::Node</scope><name>add_successor</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_simulation_structure_1_1_simulation_nodes_1_1_node_1a101dbc625ef502856902d623193e2901" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::GenomeStructures::SimulationStructure::SimulationNodes::Node</scope><name>add_successors</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_simulation_structure_1_1_simulation_nodes_1_1_node_1aecc180ca33b3e3acd7601a3ad3e63b7d" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::GenomeStructures::SimulationStructure::SimulationNodes::Node</scope><name>add_value</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_simulation_structure_1_1_simulation_nodes_1_1_node_1abc0a976efab6982a2630d01489554fde" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::GenomeStructures::SimulationStructure::SimulationNodes::Node</scope><name>fire</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_simulation_structure_1_1_simulation_nodes_1_1_node_1ae6a237c61d2c2118e6310f254c824490" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::GenomeStructures::SimulationStructure::SimulationNodes::Node</scope><name>initial_value</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_simulation_structure_1_1_simulation_nodes_1_1_node_1ae2ad3e79c3b1a95bffd61b932f54f566" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::GenomeStructures::SimulationStructure::SimulationNodes::Node</scope><name>reset</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_simulation_structure_1_1_simulation_nodes_1_1_node_1a7eb303cad09b69f01466fd6287c895c4" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::GenomeStructures::SimulationStructure::SimulationNodes::Node</scope><name>successors</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_simulation_structure_1_1_simulation_nodes_1_1_node_1af25b687b957169788a4190545d6dd90c" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::GenomeStructures::SimulationStructure::SimulationNodes::Node</scope><name>value</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_simulation_structure_1_1_simulation_nodes_1_1_node_1a0e8535438a367cd12a2eb47dee280f36" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::GenomeStructures::SimulationStructure::SimulationNodes::Node</scope><name>weights</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

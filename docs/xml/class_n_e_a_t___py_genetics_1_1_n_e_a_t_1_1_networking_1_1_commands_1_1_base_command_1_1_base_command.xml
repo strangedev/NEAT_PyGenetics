@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_base_command_1_1_base_command" kind="class" language="Python" prot="public">
+    <compoundname>NEAT_PyGenetics::NEAT::Networking::Commands::BaseCommand::BaseCommand</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_base_command_1_1_base_command_1a516d4268958cae85c3a7c67557aef823" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Networking.Commands.BaseCommand.BaseCommand::_type</definition>
+        <argsstring></argsstring>
+        <name>_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Commands/BaseCommand.py" line="4" column="1" bodyfile="NEAT/Networking/Commands/BaseCommand.py" bodystart="4" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_base_command_1_1_base_command_1a87713fee0405179de7fdaf94e0788a8f" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Networking.Commands.BaseCommand.BaseCommand::__dict__</definition>
+        <argsstring></argsstring>
+        <name>__dict__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Commands/BaseCommand.py" line="9" column="1" bodyfile="NEAT/Networking/Commands/BaseCommand.py" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_base_command_1_1_base_command_1a50465fec7d23d12cfca6cd0d8b6b8a67" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Networking.Commands.BaseCommand.BaseCommand::parameters</definition>
+        <argsstring></argsstring>
+        <name>parameters</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Commands/BaseCommand.py" line="5" column="1" bodyfile="NEAT/Networking/Commands/BaseCommand.py" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_base_command_1_1_base_command_1aa3136732344967769c806b465e699858" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Networking.Commands.BaseCommand.BaseCommand::result</definition>
+        <argsstring></argsstring>
+        <name>result</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Commands/BaseCommand.py" line="6" column="1" bodyfile="NEAT/Networking/Commands/BaseCommand.py" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_base_command_1_1_base_command_1a7f060792cc1f8ea526bc47c592eae10e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Commands.BaseCommand.BaseCommand.__init__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Commands/BaseCommand.py" line="3" column="1" bodyfile="NEAT/Networking/Commands/BaseCommand.py" bodystart="3" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_base_command_1_1_base_command_1a7466f3e151d869df0c0680aeaabd5497" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Commands.BaseCommand.BaseCommand.from_dict</definition>
+        <argsstring>(self, dictionary)</argsstring>
+        <name>from_dict</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>dictionary</type>
+          <defname>dictionary</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Commands/BaseCommand.py" line="8" column="1" bodyfile="NEAT/Networking/Commands/BaseCommand.py" bodystart="8" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_base_command_1_1_base_command_1af8833907610ee782bbf991be49efe73f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Commands.BaseCommand.BaseCommand.as_dict</definition>
+        <argsstring>(self)</argsstring>
+        <name>as_dict</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Commands/BaseCommand.py" line="11" column="1" bodyfile="NEAT/Networking/Commands/BaseCommand.py" bodystart="11" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_base_command_1_1_base_command_1a255f188c1306814a7840d33dfcf7650c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Commands.BaseCommand.BaseCommand.acknowledged</definition>
+        <argsstring>(self)</argsstring>
+        <name>acknowledged</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Commands/BaseCommand.py" line="15" column="1" bodyfile="NEAT/Networking/Commands/BaseCommand.py" bodystart="15" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_base_command_1_1_base_command_1a631800c4e60223cee2fed6930a7b47df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Commands.BaseCommand.BaseCommand.type</definition>
+        <argsstring>(self)</argsstring>
+        <name>type</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Commands/BaseCommand.py" line="20" column="1" bodyfile="NEAT/Networking/Commands/BaseCommand.py" bodystart="20" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_base_command_1_1_base_command_1ae1b33bc9a9dad6bcb9f2d3bb28c7355f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Commands.BaseCommand.BaseCommand.__eq__</definition>
+        <argsstring></argsstring>
+        <name>__eq__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Commands/BaseCommand.py" line="28" column="1" bodyfile="NEAT/Networking/Commands/BaseCommand.py" bodystart="28" bodyend="32"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_base_command_1_1_base_command_1addb5e37acf4ba6594cfe4cd92ea64dae" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Commands.BaseCommand.BaseCommand._get_result_if_exists</definition>
+        <argsstring>(self, key)</argsstring>
+        <name>_get_result_if_exists</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>key</type>
+          <defname>key</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Commands/BaseCommand.py" line="23" column="1" bodyfile="NEAT/Networking/Commands/BaseCommand.py" bodystart="23" bodyend="27"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="19">
+        <label>object</label>
+      </node>
+      <node id="18">
+        <label>NEAT_PyGenetics.NEAT.Networking.Commands.BaseCommand.BaseCommand</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_base_command_1_1_base_command"/>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="21">
+        <label>object</label>
+      </node>
+      <node id="20">
+        <label>NEAT_PyGenetics.NEAT.Networking.Commands.BaseCommand.BaseCommand</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_base_command_1_1_base_command"/>
+        <childnode refid="21" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="NEAT/Networking/Commands/BaseCommand.py" line="1" column="1" bodyfile="NEAT/Networking/Commands/BaseCommand.py" bodystart="1" bodyend="32"/>
+    <listofallmembers>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_base_command_1_1_base_command_1a87713fee0405179de7fdaf94e0788a8f" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Commands::BaseCommand::BaseCommand</scope><name>__dict__</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_base_command_1_1_base_command_1ae1b33bc9a9dad6bcb9f2d3bb28c7355f" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Commands::BaseCommand::BaseCommand</scope><name>__eq__</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_base_command_1_1_base_command_1a7f060792cc1f8ea526bc47c592eae10e" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Commands::BaseCommand::BaseCommand</scope><name>__init__</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_base_command_1_1_base_command_1addb5e37acf4ba6594cfe4cd92ea64dae" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Commands::BaseCommand::BaseCommand</scope><name>_get_result_if_exists</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_base_command_1_1_base_command_1a516d4268958cae85c3a7c67557aef823" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Commands::BaseCommand::BaseCommand</scope><name>_type</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_base_command_1_1_base_command_1a255f188c1306814a7840d33dfcf7650c" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Commands::BaseCommand::BaseCommand</scope><name>acknowledged</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_base_command_1_1_base_command_1af8833907610ee782bbf991be49efe73f" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Commands::BaseCommand::BaseCommand</scope><name>as_dict</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_base_command_1_1_base_command_1a7466f3e151d869df0c0680aeaabd5497" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Commands::BaseCommand::BaseCommand</scope><name>from_dict</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_base_command_1_1_base_command_1a50465fec7d23d12cfca6cd0d8b6b8a67" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Commands::BaseCommand::BaseCommand</scope><name>parameters</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_base_command_1_1_base_command_1aa3136732344967769c806b465e699858" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Commands::BaseCommand::BaseCommand</scope><name>result</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_base_command_1_1_base_command_1a631800c4e60223cee2fed6930a7b47df" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Commands::BaseCommand::BaseCommand</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

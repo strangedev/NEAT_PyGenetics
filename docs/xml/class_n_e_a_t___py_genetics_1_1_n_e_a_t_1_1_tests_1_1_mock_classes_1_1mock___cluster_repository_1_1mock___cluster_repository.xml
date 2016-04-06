@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___cluster_repository_1_1mock___cluster_repository" kind="class" language="Python" prot="public">
+    <compoundname>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_ClusterRepository::mock_ClusterRepository</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___cluster_repository_1_1mock___cluster_repository_1a2e2d77ba5375cceedf179e25c7887de5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_ClusterRepository.mock_ClusterRepository::clusters</definition>
+        <argsstring></argsstring>
+        <name>clusters</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_ClusterRepository.py" line="9" column="1" bodyfile="NEAT/Tests/MockClasses/mock_ClusterRepository.py" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___cluster_repository_1_1mock___cluster_repository_1a3b7a06a95cca18e535ce14621cd4fa4d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_ClusterRepository.mock_ClusterRepository::next_id</definition>
+        <argsstring></argsstring>
+        <name>next_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_ClusterRepository.py" line="10" column="1" bodyfile="NEAT/Tests/MockClasses/mock_ClusterRepository.py" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___cluster_repository_1_1mock___cluster_repository_1a9f89fd3f00cd01d78dcae1af7b061c8a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_ClusterRepository.mock_ClusterRepository.__init__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_ClusterRepository.py" line="7" column="1" bodyfile="NEAT/Tests/MockClasses/mock_ClusterRepository.py" bodystart="7" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___cluster_repository_1_1mock___cluster_repository_1a7c1d0e1494945daece920c3faa393417" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_ClusterRepository.mock_ClusterRepository.reset</definition>
+        <argsstring>(self)</argsstring>
+        <name>reset</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_ClusterRepository.py" line="12" column="1" bodyfile="NEAT/Tests/MockClasses/mock_ClusterRepository.py" bodystart="12" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___cluster_repository_1_1mock___cluster_repository_1aaedaee0f127d37e0c3a5521f15364277" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_ClusterRepository.mock_ClusterRepository.get_cluster_count</definition>
+        <argsstring>(self)</argsstring>
+        <name>get_cluster_count</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_ClusterRepository.py" line="15" column="1" bodyfile="NEAT/Tests/MockClasses/mock_ClusterRepository.py" bodystart="15" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___cluster_repository_1_1mock___cluster_repository_1a226b6c12fc2b76219c55c9e4b99baa16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_ClusterRepository.mock_ClusterRepository.add_cluster_with_representative</definition>
+        <argsstring></argsstring>
+        <name>add_cluster_with_representative</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_ClusterRepository.py" line="19" column="1" bodyfile="NEAT/Tests/MockClasses/mock_ClusterRepository.py" bodystart="19" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___cluster_repository_1_1mock___cluster_repository_1a134f5b068a5237328c7c3b481852bafd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_ClusterRepository.mock_ClusterRepository.get_current_clusters</definition>
+        <argsstring>(self)</argsstring>
+        <name>get_current_clusters</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_ClusterRepository.py" line="28" column="1" bodyfile="NEAT/Tests/MockClasses/mock_ClusterRepository.py" bodystart="28" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___cluster_repository_1_1mock___cluster_repository_1abeb34604f2a2aa59c79c0db965494929" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_ClusterRepository.mock_ClusterRepository.get_cluster_by_representative</definition>
+        <argsstring></argsstring>
+        <name>get_cluster_by_representative</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_ClusterRepository.py" line="32" column="1" bodyfile="NEAT/Tests/MockClasses/mock_ClusterRepository.py" bodystart="32" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___cluster_repository_1_1mock___cluster_repository_1aee0e3e9834f04db0768aefa4949fecdf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_ClusterRepository.mock_ClusterRepository.update_fitness_for_cluster</definition>
+        <argsstring></argsstring>
+        <name>update_fitness_for_cluster</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_ClusterRepository.py" line="40" column="1" bodyfile="NEAT/Tests/MockClasses/mock_ClusterRepository.py" bodystart="40" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___cluster_repository_1_1mock___cluster_repository_1a750492b84023bed8ca6f78ccda904de5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_ClusterRepository.mock_ClusterRepository.update_max_population_for_cluster</definition>
+        <argsstring></argsstring>
+        <name>update_max_population_for_cluster</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_ClusterRepository.py" line="50" column="1" bodyfile="NEAT/Tests/MockClasses/mock_ClusterRepository.py" bodystart="50" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___cluster_repository_1_1mock___cluster_repository_1ac6f8854ca405235c472100f1b9519762" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_ClusterRepository.mock_ClusterRepository.update_offspring_for_cluster</definition>
+        <argsstring></argsstring>
+        <name>update_offspring_for_cluster</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_ClusterRepository.py" line="60" column="1" bodyfile="NEAT/Tests/MockClasses/mock_ClusterRepository.py" bodystart="60" bodyend="68"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="103">
+        <label>object</label>
+      </node>
+      <node id="102">
+        <label>NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_ClusterRepository.mock_ClusterRepository</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___cluster_repository_1_1mock___cluster_repository"/>
+        <childnode refid="103" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="105">
+        <label>object</label>
+      </node>
+      <node id="104">
+        <label>NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_ClusterRepository.mock_ClusterRepository</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___cluster_repository_1_1mock___cluster_repository"/>
+        <childnode refid="105" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="NEAT/Tests/MockClasses/mock_ClusterRepository.py" line="5" column="1" bodyfile="NEAT/Tests/MockClasses/mock_ClusterRepository.py" bodystart="5" bodyend="68"/>
+    <listofallmembers>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___cluster_repository_1_1mock___cluster_repository_1a9f89fd3f00cd01d78dcae1af7b061c8a" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_ClusterRepository::mock_ClusterRepository</scope><name>__init__</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___cluster_repository_1_1mock___cluster_repository_1a226b6c12fc2b76219c55c9e4b99baa16" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_ClusterRepository::mock_ClusterRepository</scope><name>add_cluster_with_representative</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___cluster_repository_1_1mock___cluster_repository_1a2e2d77ba5375cceedf179e25c7887de5" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_ClusterRepository::mock_ClusterRepository</scope><name>clusters</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___cluster_repository_1_1mock___cluster_repository_1abeb34604f2a2aa59c79c0db965494929" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_ClusterRepository::mock_ClusterRepository</scope><name>get_cluster_by_representative</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___cluster_repository_1_1mock___cluster_repository_1aaedaee0f127d37e0c3a5521f15364277" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_ClusterRepository::mock_ClusterRepository</scope><name>get_cluster_count</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___cluster_repository_1_1mock___cluster_repository_1a134f5b068a5237328c7c3b481852bafd" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_ClusterRepository::mock_ClusterRepository</scope><name>get_current_clusters</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___cluster_repository_1_1mock___cluster_repository_1a3b7a06a95cca18e535ce14621cd4fa4d" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_ClusterRepository::mock_ClusterRepository</scope><name>next_id</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___cluster_repository_1_1mock___cluster_repository_1a7c1d0e1494945daece920c3faa393417" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_ClusterRepository::mock_ClusterRepository</scope><name>reset</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___cluster_repository_1_1mock___cluster_repository_1aee0e3e9834f04db0768aefa4949fecdf" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_ClusterRepository::mock_ClusterRepository</scope><name>update_fitness_for_cluster</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___cluster_repository_1_1mock___cluster_repository_1a750492b84023bed8ca6f78ccda904de5" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_ClusterRepository::mock_ClusterRepository</scope><name>update_max_population_for_cluster</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___cluster_repository_1_1mock___cluster_repository_1ac6f8854ca405235c472100f1b9519762" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_ClusterRepository::mock_ClusterRepository</scope><name>update_offspring_for_cluster</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

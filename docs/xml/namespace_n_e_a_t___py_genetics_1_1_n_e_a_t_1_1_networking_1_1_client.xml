@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_client" kind="namespace" language="Python">
+    <compoundname>NEAT_PyGenetics::NEAT::Networking::Client</compoundname>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_client_1_1_n_e_a_t_client">NEAT_PyGenetics::NEAT::Networking::Client::NEATClient</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_client_1_1_simulation_client">NEAT_PyGenetics::NEAT::Networking::Client::SimulationClient</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="NEAT/Networking/Client/__init__.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

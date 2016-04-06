@@ -1,0 +1,111 @@
+.TH "NEAT_PyGenetics.NEAT.Networking.Server.SimulationConnector.SimulationConnector" 3 "Wed Apr 6 2016" "NEAT_PyGenetics" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NEAT_PyGenetics.NEAT.Networking.Server.SimulationConnector.SimulationConnector \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits object\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP (self)"
+.br
+.ti -1c
+.RI "def \fBget_session\fP (self)"
+.br
+.ti -1c
+.RI "def \fBsend_block\fP"
+.br
+.ti -1c
+.RI "def \fBget_block_inputs\fP"
+.br
+.ti -1c
+.RI "def \fBsend_block_outputs\fP"
+.br
+.ti -1c
+.RI "def \fBget_fitness_values\fP"
+.br
+.ti -1c
+.RI "def \fBget_advance_generation\fP (self)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcommand\fP"
+.br
+.ti -1c
+.RI "\fBacknowledged\fP"
+.br
+.ti -1c
+.RI "\fBresult\fP"
+.br
+.ti -1c
+.RI "\fBblock_to_send\fP"
+.br
+.ti -1c
+.RI "\fBget_command\fP"
+.br
+.ti -1c
+.RI "\fBset_command\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+A class providing a high-level interface to
+a client connected via the NEATClient.
+It receives commands from NEATServer's message
+queue und responds to them.
+When a function from SimulationConnector is called,
+the client is expected to have sent a certain command
+(if there are no commands in the message queue, the Server
+will wait for the next command to be received). If the
+client has sent another command, or a command where
+the expected parameters are not present,
+NetworkProtocolException will be raised.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 12 of file SimulationConnector\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def NEAT_PyGenetics\&.NEAT\&.Networking\&.Server\&.SimulationConnector\&.SimulationConnector\&.get_advance_generation ( self,  bool)"
+
+.PP
+.nf
+Awaits the AdvanceGeneration command to be sent by the client.
+:return: A bool indicating whether the next generation should be
+calculated by NEAT (True) or the current session should be archived
+(False).
+
+.fi
+.PP
+ 
+.PP
+Definition at line 217 of file SimulationConnector\&.py\&.
+.SS "def NEAT_PyGenetics\&.NEAT\&.Networking\&.Server\&.SimulationConnector\&.SimulationConnector\&.get_session ( self,  Dict,  str,  object)"
+
+.PP
+.nf
+Awaits the AnnounceSession command to be sent by the client.
+:return: The session parameters for the new simulation session
+
+.fi
+.PP
+ 
+.PP
+Definition at line 108 of file SimulationConnector\&.py\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for NEAT_PyGenetics from the source code\&.

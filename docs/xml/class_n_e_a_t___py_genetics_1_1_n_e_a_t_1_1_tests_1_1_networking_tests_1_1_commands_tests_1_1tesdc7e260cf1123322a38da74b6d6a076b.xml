@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tesdc7e260cf1123322a38da74b6d6a076b" kind="class" language="Python" prot="public">
+    <compoundname>NEAT_PyGenetics::NEAT::Tests::NetworkingTests::CommandsTests::test_getBlockCommand::TestGetBlockCommand</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">TestCase</basecompoundref>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="253">
+        <label>NEAT_PyGenetics.NEAT.Tests.NetworkingTests.CommandsTests.test_getBlockCommand.TestGetBlockCommand</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tesdc7e260cf1123322a38da74b6d6a076b"/>
+        <childnode refid="254" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="254">
+        <label>TestCase</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="255">
+        <label>NEAT_PyGenetics.NEAT.Tests.NetworkingTests.CommandsTests.test_getBlockCommand.TestGetBlockCommand</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tesdc7e260cf1123322a38da74b6d6a076b"/>
+        <childnode refid="256" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="256">
+        <label>TestCase</label>
+      </node>
+    </collaborationgraph>
+    <location file="NEAT/Tests/NetworkingTests/CommandsTests/test_getBlockCommand.py" line="4" column="1" bodyfile="NEAT/Tests/NetworkingTests/CommandsTests/test_getBlockCommand.py" bodystart="4" bodyend="6"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

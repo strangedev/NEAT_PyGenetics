@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_announce_session_command_1_1_announce_session_command" kind="class" language="Python" prot="public">
+    <compoundname>NEAT_PyGenetics::NEAT::Networking::Commands::AnnounceSessionCommand::AnnounceSessionCommand</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">BaseCommand</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_announce_session_command_1_1_announce_session_command_1a21a5017e0a951f53d7a5b4cba8a3f705" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Networking.Commands.AnnounceSessionCommand.AnnounceSessionCommand::_type</definition>
+        <argsstring></argsstring>
+        <name>_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Commands/AnnounceSessionCommand.py" line="7" column="1" bodyfile="NEAT/Networking/Commands/AnnounceSessionCommand.py" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_announce_session_command_1_1_announce_session_command_1a9ac1c2d236b717bc4b7ec521a7f3daa5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Commands.AnnounceSessionCommand.AnnounceSessionCommand.__init__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Commands/AnnounceSessionCommand.py" line="5" column="1" bodyfile="NEAT/Networking/Commands/AnnounceSessionCommand.py" bodystart="5" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_announce_session_command_1_1_announce_session_command_1ace39d5d011d61bb501f16f78ae1b4997" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Commands.AnnounceSessionCommand.AnnounceSessionCommand.set_config_path</definition>
+        <argsstring>(self, config_path)</argsstring>
+        <name>set_config_path</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>config_path</type>
+          <defname>config_path</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Commands/AnnounceSessionCommand.py" line="12" column="1" bodyfile="NEAT/Networking/Commands/AnnounceSessionCommand.py" bodystart="12" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_announce_session_command_1_1_announce_session_command_1ade8f205209da28a137c8d361a4830c0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Commands.AnnounceSessionCommand.AnnounceSessionCommand.get_config_path</definition>
+        <argsstring>(self)</argsstring>
+        <name>get_config_path</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Commands/AnnounceSessionCommand.py" line="15" column="1" bodyfile="NEAT/Networking/Commands/AnnounceSessionCommand.py" bodystart="15" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_announce_session_command_1_1_announce_session_command_1a7c9eae1dc5ba08c0b44182a6db99fd27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Commands.AnnounceSessionCommand.AnnounceSessionCommand.set_session_id</definition>
+        <argsstring>(self, session_id)</argsstring>
+        <name>set_session_id</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>session_id</type>
+          <defname>session_id</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Commands/AnnounceSessionCommand.py" line="18" column="1" bodyfile="NEAT/Networking/Commands/AnnounceSessionCommand.py" bodystart="18" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_announce_session_command_1_1_announce_session_command_1a3e3a2c23ea1b303a4892f77895dd9350" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Commands.AnnounceSessionCommand.AnnounceSessionCommand.get_session_id</definition>
+        <argsstring>(self)</argsstring>
+        <name>get_session_id</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Commands/AnnounceSessionCommand.py" line="21" column="1" bodyfile="NEAT/Networking/Commands/AnnounceSessionCommand.py" bodystart="21" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_announce_session_command_1_1_announce_session_command_1a4b4d1a2f45cbe7e4be0658a3751e9dc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Commands.AnnounceSessionCommand.AnnounceSessionCommand.set_block_size</definition>
+        <argsstring></argsstring>
+        <name>set_block_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Commands/AnnounceSessionCommand.py" line="24" column="1" bodyfile="NEAT/Networking/Commands/AnnounceSessionCommand.py" bodystart="24" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_announce_session_command_1_1_announce_session_command_1af6a3e5c83d5d990c909ef038272d797e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Commands.AnnounceSessionCommand.AnnounceSessionCommand.get_block_size</definition>
+        <argsstring>(self)</argsstring>
+        <name>get_block_size</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Commands/AnnounceSessionCommand.py" line="27" column="1" bodyfile="NEAT/Networking/Commands/AnnounceSessionCommand.py" bodystart="27" bodyend="30"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="15">
+        <label>BaseCommand</label>
+      </node>
+      <node id="14">
+        <label>NEAT_PyGenetics.NEAT.Networking.Commands.AnnounceSessionCommand.AnnounceSessionCommand</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_announce_session_command_1_1_announce_session_command"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="17">
+        <label>BaseCommand</label>
+      </node>
+      <node id="16">
+        <label>NEAT_PyGenetics.NEAT.Networking.Commands.AnnounceSessionCommand.AnnounceSessionCommand</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_announce_session_command_1_1_announce_session_command"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="NEAT/Networking/Commands/AnnounceSessionCommand.py" line="3" column="1" bodyfile="NEAT/Networking/Commands/AnnounceSessionCommand.py" bodystart="3" bodyend="30"/>
+    <listofallmembers>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_announce_session_command_1_1_announce_session_command_1a9ac1c2d236b717bc4b7ec521a7f3daa5" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Commands::AnnounceSessionCommand::AnnounceSessionCommand</scope><name>__init__</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_announce_session_command_1_1_announce_session_command_1a21a5017e0a951f53d7a5b4cba8a3f705" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Commands::AnnounceSessionCommand::AnnounceSessionCommand</scope><name>_type</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_announce_session_command_1_1_announce_session_command_1af6a3e5c83d5d990c909ef038272d797e" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Commands::AnnounceSessionCommand::AnnounceSessionCommand</scope><name>get_block_size</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_announce_session_command_1_1_announce_session_command_1ade8f205209da28a137c8d361a4830c0b" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Commands::AnnounceSessionCommand::AnnounceSessionCommand</scope><name>get_config_path</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_announce_session_command_1_1_announce_session_command_1a3e3a2c23ea1b303a4892f77895dd9350" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Commands::AnnounceSessionCommand::AnnounceSessionCommand</scope><name>get_session_id</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_announce_session_command_1_1_announce_session_command_1a4b4d1a2f45cbe7e4be0658a3751e9dc3" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Commands::AnnounceSessionCommand::AnnounceSessionCommand</scope><name>set_block_size</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_announce_session_command_1_1_announce_session_command_1ace39d5d011d61bb501f16f78ae1b4997" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Commands::AnnounceSessionCommand::AnnounceSessionCommand</scope><name>set_config_path</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_announce_session_command_1_1_announce_session_command_1a7c9eae1dc5ba08c0b44182a6db99fd27" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Commands::AnnounceSessionCommand::AnnounceSessionCommand</scope><name>set_session_id</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

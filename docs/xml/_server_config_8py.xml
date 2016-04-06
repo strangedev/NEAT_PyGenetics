@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="_server_config_8py" kind="file" language="Python">
+    <compoundname>ServerConfig.py</compoundname>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_config_1_1_static_config_1_1_server_config">NEAT_PyGenetics::NEAT::Config::StaticConfig::ServerConfig</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">server_address<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;127.0.0.1&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal">server_port<sp/>=<sp/>8081</highlight></codeline>
+    </programlisting>
+    <location file="NEAT/Config/StaticConfig/ServerConfig.py"/>
+  </compounddef>
+</doxygen>

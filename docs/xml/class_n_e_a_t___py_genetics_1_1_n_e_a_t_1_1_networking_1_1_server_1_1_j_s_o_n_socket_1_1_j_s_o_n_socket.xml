@@ -1,0 +1,334 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket" kind="class" language="Python" prot="public">
+    <compoundname>NEAT_PyGenetics::NEAT::Networking::Server::JSONSocket::JSONSocket</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Thread</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1a8230b24453ea204dd0c4271a7b42e905" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Networking.Server.JSONSocket.JSONSocket::_socket</definition>
+        <argsstring></argsstring>
+        <name>_socket</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/JSONSocket.py" line="19" column="1" bodyfile="NEAT/Networking/Server/JSONSocket.py" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1af9e867b88554f1a5643c2e57d643e6bd" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Networking.Server.JSONSocket.JSONSocket::_server_address</definition>
+        <argsstring></argsstring>
+        <name>_server_address</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/JSONSocket.py" line="29" column="1" bodyfile="NEAT/Networking/Server/JSONSocket.py" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1a8cdae830377e7be38fa20a822d425a99" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Networking.Server.JSONSocket.JSONSocket::_server_port</definition>
+        <argsstring></argsstring>
+        <name>_server_port</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/JSONSocket.py" line="30" column="1" bodyfile="NEAT/Networking/Server/JSONSocket.py" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1aa4981d10e565900a1d35cea31a700b11" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Networking.Server.JSONSocket.JSONSocket::_header_size</definition>
+        <argsstring></argsstring>
+        <name>_header_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/JSONSocket.py" line="31" column="1" bodyfile="NEAT/Networking/Server/JSONSocket.py" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1a0837400366cfa3ed9b513890c18a1add" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Networking.Server.JSONSocket.JSONSocket::_chunk_size</definition>
+        <argsstring></argsstring>
+        <name>_chunk_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/JSONSocket.py" line="32" column="1" bodyfile="NEAT/Networking/Server/JSONSocket.py" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1a894a9909c529d0870902aa83b0b7e98a" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Networking.Server.JSONSocket.JSONSocket::_socket_alive</definition>
+        <argsstring></argsstring>
+        <name>_socket_alive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/JSONSocket.py" line="33" column="1" bodyfile="NEAT/Networking/Server/JSONSocket.py" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1a95dd555e4124ce36a47d00e3b62b597a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Server.JSONSocket.JSONSocket.__init__</definition>
+        <argsstring>(self, server_address, server_port, header_size=16, chunk_size=1024)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>server_address</type>
+          <defname>server_address</defname>
+        </param>
+        <param>
+          <type>server_port</type>
+          <defname>server_port</defname>
+        </param>
+        <param>
+          <type>header_size</type>
+          <defname>header_size</defname>
+          <defval>16</defval>
+        </param>
+        <param>
+          <type>chunk_size</type>
+          <defname>chunk_size</defname>
+          <defval>1024</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/JSONSocket.py" line="10" column="1" bodyfile="NEAT/Networking/Server/JSONSocket.py" bodystart="16" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1a05c99b2b4e7b4552155560f5fad0b939" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Server.JSONSocket.JSONSocket.socket_alive</definition>
+        <argsstring>(self)</argsstring>
+        <name>socket_alive</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/JSONSocket.py" line="36" column="1" bodyfile="NEAT/Networking/Server/JSONSocket.py" bodystart="36" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1a196c88e61cbc698f1012a5561f85f6d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Server.JSONSocket.JSONSocket.close_connection</definition>
+        <argsstring>(self)</argsstring>
+        <name>close_connection</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/JSONSocket.py" line="39" column="1" bodyfile="NEAT/Networking/Server/JSONSocket.py" bodystart="39" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1a104209f938a7b47d91692face1dc0569" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Server.JSONSocket.JSONSocket.send_dict</definition>
+        <argsstring></argsstring>
+        <name>send_dict</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/JSONSocket.py" line="139" column="1" bodyfile="NEAT/Networking/Server/JSONSocket.py" bodystart="139" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1a2bc8b4e45a2e94d386c98caba0ecce14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Server.JSONSocket.JSONSocket.receive_dict</definition>
+        <argsstring>(self)</argsstring>
+        <name>receive_dict</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/JSONSocket.py" line="159" column="1" bodyfile="NEAT/Networking/Server/JSONSocket.py" bodystart="159" bodyend="184"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1ac7c9548e957329135dc597d0d4411598" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Server.JSONSocket.JSONSocket._receive_message</definition>
+        <argsstring></argsstring>
+        <name>_receive_message</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/JSONSocket.py" line="44" column="1" bodyfile="NEAT/Networking/Server/JSONSocket.py" bodystart="44" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1a385c2eece694f41f8464cbb0ed70d733" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Server.JSONSocket.JSONSocket._receive_message_size</definition>
+        <argsstring></argsstring>
+        <name>_receive_message_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/JSONSocket.py" line="65" column="1" bodyfile="NEAT/Networking/Server/JSONSocket.py" bodystart="65" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1a3f2f6075525c219a22887cd09abcd187" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Server.JSONSocket.JSONSocket._send_message</definition>
+        <argsstring></argsstring>
+        <name>_send_message</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/JSONSocket.py" line="84" column="1" bodyfile="NEAT/Networking/Server/JSONSocket.py" bodystart="84" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1a074db5b782e7e85a09e8e4d471023bfb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Server.JSONSocket.JSONSocket._serialize_message_size</definition>
+        <argsstring></argsstring>
+        <name>_serialize_message_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/JSONSocket.py" line="108" column="1" bodyfile="NEAT/Networking/Server/JSONSocket.py" bodystart="108" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1a0f46d42b9948c8c66d6b07ddbf4dee71" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Server.JSONSocket.JSONSocket._connect</definition>
+        <argsstring>(self)</argsstring>
+        <name>_connect</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/JSONSocket.py" line="131" column="1" bodyfile="NEAT/Networking/Server/JSONSocket.py" bodystart="131" bodyend="138"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1a6ae49bb84317541ae2a578e17cfd7e36" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Server.JSONSocket.JSONSocket._serialize_dict</definition>
+        <argsstring></argsstring>
+        <name>_serialize_dict</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/JSONSocket.py" line="124" column="1" bodyfile="NEAT/Networking/Server/JSONSocket.py" bodystart="124" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1ac282b15b97f9d8f0bf5315c3be4157c4" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Server.JSONSocket.JSONSocket._deserialize_dict</definition>
+        <argsstring></argsstring>
+        <name>_deserialize_dict</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/JSONSocket.py" line="128" column="1" bodyfile="NEAT/Networking/Server/JSONSocket.py" bodystart="128" bodyend="130"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="93">
+        <label>Thread</label>
+      </node>
+      <node id="92">
+        <label>NEAT_PyGenetics.NEAT.Networking.Server.JSONSocket.JSONSocket</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket"/>
+        <childnode refid="93" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="95">
+        <label>Thread</label>
+      </node>
+      <node id="94">
+        <label>NEAT_PyGenetics.NEAT.Networking.Server.JSONSocket.JSONSocket</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket"/>
+        <childnode refid="95" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="NEAT/Networking/Server/JSONSocket.py" line="9" column="1" bodyfile="NEAT/Networking/Server/JSONSocket.py" bodystart="9" bodyend="184"/>
+    <listofallmembers>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1a95dd555e4124ce36a47d00e3b62b597a" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Server::JSONSocket::JSONSocket</scope><name>__init__</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1a0837400366cfa3ed9b513890c18a1add" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Server::JSONSocket::JSONSocket</scope><name>_chunk_size</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1a0f46d42b9948c8c66d6b07ddbf4dee71" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Server::JSONSocket::JSONSocket</scope><name>_connect</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1ac282b15b97f9d8f0bf5315c3be4157c4" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Server::JSONSocket::JSONSocket</scope><name>_deserialize_dict</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1aa4981d10e565900a1d35cea31a700b11" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Server::JSONSocket::JSONSocket</scope><name>_header_size</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1ac7c9548e957329135dc597d0d4411598" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Server::JSONSocket::JSONSocket</scope><name>_receive_message</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1a385c2eece694f41f8464cbb0ed70d733" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Server::JSONSocket::JSONSocket</scope><name>_receive_message_size</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1a3f2f6075525c219a22887cd09abcd187" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Server::JSONSocket::JSONSocket</scope><name>_send_message</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1a6ae49bb84317541ae2a578e17cfd7e36" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Server::JSONSocket::JSONSocket</scope><name>_serialize_dict</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1a074db5b782e7e85a09e8e4d471023bfb" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Server::JSONSocket::JSONSocket</scope><name>_serialize_message_size</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1af9e867b88554f1a5643c2e57d643e6bd" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Server::JSONSocket::JSONSocket</scope><name>_server_address</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1a8cdae830377e7be38fa20a822d425a99" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Server::JSONSocket::JSONSocket</scope><name>_server_port</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1a8230b24453ea204dd0c4271a7b42e905" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Server::JSONSocket::JSONSocket</scope><name>_socket</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1a894a9909c529d0870902aa83b0b7e98a" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Server::JSONSocket::JSONSocket</scope><name>_socket_alive</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1a196c88e61cbc698f1012a5561f85f6d0" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Server::JSONSocket::JSONSocket</scope><name>close_connection</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1a2bc8b4e45a2e94d386c98caba0ecce14" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Server::JSONSocket::JSONSocket</scope><name>receive_dict</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1a104209f938a7b47d91692face1dc0569" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Server::JSONSocket::JSONSocket</scope><name>send_dict</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_j_s_o_n_socket_1_1_j_s_o_n_socket_1a05c99b2b4e7b4552155560f5fad0b939" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Server::JSONSocket::JSONSocket</scope><name>socket_alive</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

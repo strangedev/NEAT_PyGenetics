@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_8ce70f41bcd79ffe398ee59d6beaac62" kind="dir">
+    <compoundname>NEAT/Tests/LogginTests</compoundname>
+    <innerfile refid="_tests_2_loggin_tests_2____init_____8py">__init__.py</innerfile>
+    <innerfile refid="test__logger_8py">test_logger.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="NEAT/Tests/LogginTests/"/>
+  </compounddef>
+</doxygen>

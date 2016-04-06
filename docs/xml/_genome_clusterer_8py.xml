@@ -1,0 +1,266 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="_genome_clusterer_8py" kind="file" language="Python">
+    <compoundname>GenomeClusterer.py</compoundname>
+    <innerclass refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer" prot="public">NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</innerclass>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer">NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">from</highlight><highlight class="normal"><sp/>typing<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>List,<sp/>Tuple,<sp/>Dict</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>bson<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>ObjectId</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>NEAT.GenomeStructures.StorageStructure<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>StorageGenome</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>NEAT.Repository.ClusterRepository<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>ClusterRepository</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>NEAT.Repository.GenomeRepository<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>GenomeRepository</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer" kindref="compound">GenomeClusterer</ref>(object):</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="12"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>A<sp/>class<sp/>used<sp/>for<sp/>clustering<sp/>genomes<sp/>into<sp/>species.</highlight></codeline>
+<codeline lineno="13"><highlight class="stringliteral"><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">__init__(</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self,</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genome_repository:<sp/>GenomeRepository,</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cluster_repository:<sp/>ClusterRepository,</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clustering_parameters:<sp/>Dict[str,<sp/>object]</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>):</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1af9623df2d784da3e4c186b729c63bb81" kindref="member">genome_repository</ref><sp/>=<sp/>genome_repository</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1ab9332a669c7c28ee6d33806da38eee45" kindref="member">cluster_repository</ref><sp/>=<sp/>cluster_repository</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a23498ab192f633f9bada8709832b5fed" kindref="member">clustering_parameters</ref><sp/>=<sp/>clustering_parameters</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a23a8244cf5fc16133939b27cd558810b" kindref="member">_no_clusters</ref><sp/>=<sp/>(self.cluster_repository.get_cluster_count<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">cluster_genomes(self,<sp/>genomes:<sp/>List[</highlight><highlight class="stringliteral">&apos;StorageGenome&apos;</highlight><highlight class="normal">]):</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="29"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Calculates<sp/>the<sp/>clusters<sp/>in<sp/>which<sp/>the<sp/>passed<sp/>genomes<sp/>belong</highlight></codeline>
+<codeline lineno="30"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>individually<sp/>and<sp/>updates<sp/>the<sp/>database</highlight></codeline>
+<codeline lineno="31"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(cluster_repository,<sp/>genome_repository)<sp/>accordingly.</highlight></codeline>
+<codeline lineno="32"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>genomes:<sp/>The<sp/>list<sp/>of<sp/>genomes<sp/>to<sp/>put<sp/>in<sp/>clusters</highlight></codeline>
+<codeline lineno="33"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>None</highlight></codeline>
+<codeline lineno="34"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>genome<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>genomes:</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a4b17098e6b96981aa7a00ffe3c3510c8" kindref="member">cluster_genome</ref>(genome)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">cluster_genome(self,<sp/>genome:<sp/>StorageGenome):</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="41"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Calculates<sp/>in<sp/>which<sp/>cluster<sp/>a<sp/>single<sp/>genome<sp/>belongs<sp/>and</highlight></codeline>
+<codeline lineno="42"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>updates<sp/>the<sp/>database<sp/>(cluster_repository,<sp/>genome_repository)</highlight></codeline>
+<codeline lineno="43"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>accordingly.</highlight></codeline>
+<codeline lineno="44"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>genome:<sp/>The<sp/>StorageGenome<sp/>to<sp/>put<sp/>in<sp/>a<sp/>cluster</highlight></codeline>
+<codeline lineno="45"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>None</highlight></codeline>
+<codeline lineno="46"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a23a8244cf5fc16133939b27cd558810b" kindref="member">_no_clusters</ref>:</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.cluster_repository.add_cluster_with_representative(genome.genome_id)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a23a8244cf5fc16133939b27cd558810b" kindref="member">_no_clusters</ref><sp/>=<sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clusters<sp/>=<sp/>self.cluster_repository.get_current_clusters()</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>cluster<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>clusters:</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>delta<sp/>=<sp/>self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a057cec399fba67f9f90c70ad9158ec5e" kindref="member">calculate_delta</ref>(</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genome,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.genome_repository.get_genome_by_id(cluster.representative)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>delta<sp/>&lt;<sp/>self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a23498ab192f633f9bada8709832b5fed" kindref="member">clustering_parameters</ref>[</highlight><highlight class="stringliteral">&quot;delta_threshold&quot;</highlight><highlight class="normal">]:</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.genome_repository.update_genome_cluster(</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genome.genome_id,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cluster.cluster_id</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.cluster_repository.add_cluster_with_representative(genome.genome_id)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.genome_repository.update_genome_cluster(</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genome.genome_id,</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.cluster_repository.get_cluster_by_representative(</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genome.genome_id</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>).cluster_id</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">calculate_delta(</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self,</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genome_one:<sp/>StorageGenome.StorageGenome,</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genome_two:<sp/>StorageGenome.StorageGenome</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>)<sp/>-&gt;<sp/>float:</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="83"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Returns<sp/>a<sp/>metric<sp/>of<sp/>topological<sp/>difference<sp/>for<sp/>two<sp/>given</highlight></codeline>
+<codeline lineno="84"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genomes.</highlight></codeline>
+<codeline lineno="85"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>See<sp/>https://github.com/strangedev/NEAT_PyGenetics/wiki/Delta-Function</highlight></codeline>
+<codeline lineno="86"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline lineno="87"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="88"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>genome_one:<sp/>The<sp/>first<sp/>genome</highlight></codeline>
+<codeline lineno="89"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>genome_two:<sp/>The<sp/>second<sp/>genome</highlight></codeline>
+<codeline lineno="90"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>The<sp/>delta<sp/>value<sp/>(topological<sp/>difference)<sp/>of<sp/>the<sp/>input<sp/>genomes</highlight></codeline>
+<codeline lineno="91"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>excess_coefficient<sp/>=<sp/>float(</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a23498ab192f633f9bada8709832b5fed" kindref="member">clustering_parameters</ref>[</highlight><highlight class="stringliteral">&quot;excess_coefficient&quot;</highlight><highlight class="normal">]</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>disjoint_coefficient<sp/>=<sp/>float(</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a23498ab192f633f9bada8709832b5fed" kindref="member">clustering_parameters</ref>[</highlight><highlight class="stringliteral">&quot;disjoint_coefficient&quot;</highlight><highlight class="normal">]</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>weight_delta_coefficient<sp/>=<sp/>float(</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a23498ab192f633f9bada8709832b5fed" kindref="member">clustering_parameters</ref>[</highlight><highlight class="stringliteral">&quot;weight_difference_coefficient&quot;</highlight><highlight class="normal">]</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bigger_genome,<sp/>smaller_genome<sp/>=<sp/>(genome_one,<sp/>genome_two)<sp/>\</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>len(genome_one.genes)<sp/>&gt;<sp/>len(genome_two.genes)<sp/>\</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>(genome_two,<sp/>genome_one)</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bigger_genome_gene_ids<sp/>=<sp/>[gene<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>gene<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>bigger_genome.genes]</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>smaller_genome_gene_ids<sp/>=<sp/>[gene<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>gene<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>smaller_genome.genes]</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>all_gene_ids<sp/>=<sp/>smaller_genome_gene_ids<sp/>+<sp/>bigger_genome_gene_ids</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>matching_genes<sp/>=<sp/>[gene_id<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>gene_id<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>bigger_genome_gene_ids</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>gene_id<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>smaller_genome_gene_ids]</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>differing_genes<sp/>=<sp/>[gene_id<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>gene_id<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>all_gene_ids</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>gene_id<sp/></highlight><highlight class="keywordflow">not</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>matching_genes]</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>n<sp/>=<sp/>len(bigger_genome.genes)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>disjoint_count,<sp/>excess_count<sp/>=<sp/>self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a25f21d57d135bbf3b0f23bbfdef375e7" kindref="member">calculate_disjoint_excess_count</ref>(smaller_genome_gene_ids,<sp/>differing_genes)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>w_bar<sp/>=<sp/>self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a748db217e8ce0c9f3e4302b00b4677e8" kindref="member">calculate_average_weight_difference</ref>(bigger_genome,<sp/>smaller_genome,<sp/>matching_genes)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((excess_coefficient<sp/>*<sp/>excess_count)<sp/>/<sp/>n)<sp/>+<sp/>\</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((disjoint_coefficient<sp/>*<sp/>disjoint_count)<sp/>/<sp/>n)<sp/>+<sp/>\</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(weight_delta_coefficient<sp/>*<sp/>w_bar)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>@staticmethod</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">calculate_disjoint_excess_count(</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>smaller_genome_gene_ids:<sp/>List[int],</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>differing_genes:<sp/>List[int]</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>)<sp/>-&gt;<sp/>Tuple[int,<sp/>int]:</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="133"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Calculates<sp/>the<sp/>amount<sp/>of<sp/>excess<sp/>and<sp/>disjoint<sp/>genes</highlight></codeline>
+<codeline lineno="134"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>two<sp/>genomes,<sp/>given<sp/>the<sp/>gene<sp/>ids<sp/>of<sp/>the<sp/>smaller</highlight></codeline>
+<codeline lineno="135"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genome<sp/>and<sp/>the<sp/>set<sp/>of<sp/>differing<sp/>genes.</highlight></codeline>
+<codeline lineno="136"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>smaller_genome_gene_ids:<sp/>A<sp/>list<sp/>of<sp/>gene<sp/>ids<sp/>of<sp/>the<sp/>smaller<sp/>genome</highlight></codeline>
+<codeline lineno="137"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>differing_genes:<sp/>A<sp/>list<sp/>of<sp/>differing<sp/>genes</highlight></codeline>
+<codeline lineno="138"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>The<sp/>amount<sp/>of<sp/>excess<sp/>and<sp/>disjoint<sp/>genes<sp/>as<sp/>tuple.</highlight></codeline>
+<codeline lineno="139"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>smaller_genome_range<sp/>=<sp/>0<sp/><sp/></highlight><highlight class="comment">#<sp/>type:<sp/>int</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>gene_id<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>smaller_genome_gene_ids:</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>gene_id<sp/>&gt;<sp/>smaller_genome_range:</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>smaller_genome_range<sp/>=<sp/>gene_id</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>excess_genes<sp/>=<sp/>[gene_id<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>gene_id<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>differing_genes</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>gene_id<sp/>&gt;<sp/>smaller_genome_range]</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>disjoint_genes<sp/>=<sp/>[gene_id<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>gene_id<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>differing_genes</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>gene_id<sp/></highlight><highlight class="keywordflow">not</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>excess_genes]</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>len(disjoint_genes),<sp/>len(excess_genes)</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>@staticmethod</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">calculate_average_weight_difference(</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genome_one:<sp/>StorageGenome,</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genome_two:<sp/>StorageGenome,</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>matching_genes:<sp/>List[int]</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>)<sp/>-&gt;<sp/>float:</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="163"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Calculates<sp/>the<sp/>average<sp/>quadratic<sp/>weight<sp/>differences</highlight></codeline>
+<codeline lineno="164"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>of<sp/>matching<sp/>genes<sp/>for<sp/>two<sp/>given<sp/>genomes.</highlight></codeline>
+<codeline lineno="165"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>genome_one:<sp/>The<sp/>first<sp/>genome</highlight></codeline>
+<codeline lineno="166"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>genome_two:<sp/>The<sp/>second<sp/>genome</highlight></codeline>
+<codeline lineno="167"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>matching_genes:<sp/>A<sp/>list<sp/>of<sp/>matching<sp/>genes<sp/>for</highlight></codeline>
+<codeline lineno="168"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the<sp/>two<sp/>given<sp/>genomes.</highlight></codeline>
+<codeline lineno="169"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>The<sp/>average<sp/>quadratic<sp/>weight<sp/>difference</highlight></codeline>
+<codeline lineno="170"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>of<sp/>matching<sp/>genes.</highlight></codeline>
+<codeline lineno="171"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>weights<sp/>=<sp/>[]<sp/><sp/></highlight><highlight class="comment">#<sp/>type:<sp/>List[Tuple[float,<sp/>float]]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>matching_gene_id<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>matching_genes:</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>weight_one<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>weight_two<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>gene_id<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>genome_one.genes:</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>gene_id<sp/>==<sp/>matching_gene_id:</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>weight_one<sp/>=<sp/>float(genome_one.genes[gene_id][1])</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>gene_id<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>genome_two.genes:</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>gene_id<sp/>==<sp/>matching_gene_id:</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>weight_two<sp/>=<sp/>float(genome_two.genes[gene_id][1])</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>weights.append((weight_one,<sp/>weight_two))</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>w_bar<sp/>=<sp/>sum(</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[(weight_one<sp/>-<sp/>weight_two)<sp/>**<sp/>2<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(weight_one,<sp/>weight_two)<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>weights]</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)<sp/>/<sp/>len(matching_genes)<sp/><sp/></highlight><highlight class="comment">#<sp/>type:<sp/>float</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>w_bar</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">calculate_cluster_fitness(self,<sp/>cluster_id:<sp/>ObjectId):</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="202"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Calculates<sp/>the<sp/>shared<sp/>fitness<sp/>value<sp/>for<sp/>a<sp/>given<sp/>cluster<sp/>based</highlight></codeline>
+<codeline lineno="203"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>on<sp/>the<sp/>cluster<sp/>size<sp/>and<sp/>the<sp/>individual<sp/>fitness<sp/>values<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="204"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>contained<sp/>individuals.</highlight></codeline>
+<codeline lineno="205"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="206"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:param<sp/>cluster_id:<sp/>The<sp/>id<sp/>of<sp/>the<sp/>cluster</highlight></codeline>
+<codeline lineno="207"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>The<sp/>shared<sp/>fitness<sp/>value<sp/>for<sp/>the<sp/>input<sp/>cluster</highlight></codeline>
+<codeline lineno="208"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genomes<sp/>=<sp/>self.genome_repository.get_genomes_in_cluster(cluster_id)</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cluster_fitness<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>genome<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>genomes:</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cluster_fitness<sp/>+=<sp/>genome.fitness</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>cluster_fitness<sp/>/<sp/>len(list(genomes))</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219" refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a6bd0107d083dade08414c19ad9aaadaf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a6bd0107d083dade08414c19ad9aaadaf" kindref="member">calculate_cluster_offspring_values</ref>(self):</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;</highlight></codeline>
+<codeline lineno="221"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Calculates<sp/>the<sp/>number<sp/>of<sp/>offspring<sp/>the<sp/>clusters<sp/>will<sp/>generate</highlight></codeline>
+<codeline lineno="222"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>in<sp/>the<sp/>next<sp/>generation<sp/>cycle,<sp/>based<sp/>on<sp/>the<sp/>compared</highlight></codeline>
+<codeline lineno="223"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>shared<sp/>fitness<sp/>values<sp/>of<sp/>all<sp/>active<sp/>clusters.<sp/>Fitter<sp/>clusters</highlight></codeline>
+<codeline lineno="224"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>will<sp/>receive<sp/>a<sp/>bigger<sp/>number<sp/>of<sp/>offspring.</highlight></codeline>
+<codeline lineno="225"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="226"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:return:<sp/>None</highlight></codeline>
+<codeline lineno="227"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clusters<sp/>=<sp/>self.cluster_repository.get_current_clusters()</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>max_population<sp/>=<sp/>self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a23498ab192f633f9bada8709832b5fed" kindref="member">clustering_parameters</ref>[</highlight><highlight class="stringliteral">&quot;max_population&quot;</highlight><highlight class="normal">]</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>discarding_percentage<sp/>=<sp/>self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a23498ab192f633f9bada8709832b5fed" kindref="member">clustering_parameters</ref>[</highlight><highlight class="stringliteral">&quot;discarding_percentage&quot;</highlight><highlight class="normal">]</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>to_replace<sp/>=<sp/>int(max_population)<sp/>*<sp/>float(discarding_percentage)</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>cluster<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>clusters:</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cluster.fitness<sp/>=<sp/>self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a5dba985534b3de86bb03574e683749f6" kindref="member">calculate_cluster_fitness</ref>(cluster.cluster_id)</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.cluster_repository.update_fitness_for_cluster(</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cluster.cluster_id,</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cluster.fitness</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cluster_fitness_sum<sp/>=<sp/>sum([cluster.fitness<sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>cluster<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>clusters])</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>cluster<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>clusters:</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cluster.offspring<sp/>=<sp/>int(</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>round((cluster.fitness<sp/>/<sp/>cluster_fitness_sum)<sp/>*<sp/>to_replace)</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.cluster_repository.update_offspring_for_cluster(</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cluster.cluster_id,</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cluster.offspring</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+    </programlisting>
+    <location file="NEAT/Analyst/GenomeClusterer.py"/>
+  </compounddef>
+</doxygen>

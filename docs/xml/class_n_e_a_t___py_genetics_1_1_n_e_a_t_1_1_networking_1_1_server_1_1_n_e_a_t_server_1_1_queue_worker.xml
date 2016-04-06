@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_n_e_a_t_server_1_1_queue_worker" kind="class" language="Python" prot="public">
+    <compoundname>NEAT_PyGenetics::NEAT::Networking::Server::NEATServer::QueueWorker</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Thread</basecompoundref>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_n_e_a_t_server_1_1_queue_worker_1a51388d55c2bcd5bf63cd0ceb3bf89c82" prot="private" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Networking.Server.NEATServer.QueueWorker::_queue</definition>
+        <argsstring></argsstring>
+        <name>_queue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/NEATServer.py" line="58" column="1" bodyfile="NEAT/Networking/Server/NEATServer.py" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_n_e_a_t_server_1_1_queue_worker_1a7af39d645863d096ed979d5c7a4a0b2c" prot="private" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Networking.Server.NEATServer.QueueWorker::_mode</definition>
+        <argsstring></argsstring>
+        <name>_mode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/NEATServer.py" line="59" column="1" bodyfile="NEAT/Networking/Server/NEATServer.py" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_n_e_a_t_server_1_1_queue_worker_1a135371d886d952e4f9bbaa6b7a7ce461" prot="private" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Networking.Server.NEATServer.QueueWorker::_address</definition>
+        <argsstring></argsstring>
+        <name>_address</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/NEATServer.py" line="60" column="1" bodyfile="NEAT/Networking/Server/NEATServer.py" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_n_e_a_t_server_1_1_queue_worker_1a993493671e20871d45ebc2a3932af13f" prot="private" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Networking.Server.NEATServer.QueueWorker::_port</definition>
+        <argsstring></argsstring>
+        <name>_port</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/NEATServer.py" line="61" column="1" bodyfile="NEAT/Networking/Server/NEATServer.py" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_n_e_a_t_server_1_1_queue_worker_1ad5eb20f5b3bfb6a6aafa945bd5103c1b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Networking.Server.NEATServer.QueueWorker::socket</definition>
+        <argsstring></argsstring>
+        <name>socket</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/NEATServer.py" line="79" column="1" bodyfile="NEAT/Networking/Server/NEATServer.py" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_n_e_a_t_server_1_1_queue_worker_1a413e2f230b433bfc4f137f1ae1a331e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Server.NEATServer.QueueWorker.__init__</definition>
+        <argsstring></argsstring>
+        <name>__init__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/NEATServer.py" line="51" column="1" bodyfile="NEAT/Networking/Server/NEATServer.py" bodystart="53" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_n_e_a_t_server_1_1_queue_worker_1a856d13880c0616f9b0c25b02788a54e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Server.NEATServer.QueueWorker.run</definition>
+        <argsstring>(self)</argsstring>
+        <name>run</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/NEATServer.py" line="66" column="1" bodyfile="NEAT/Networking/Server/NEATServer.py" bodystart="66" bodyend="76"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_n_e_a_t_server_1_1_queue_worker_1a79f651f0aff4ec1d3138fa7266089f7d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Server.NEATServer.QueueWorker._work_receive</definition>
+        <argsstring>(self)</argsstring>
+        <name>_work_receive</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/NEATServer.py" line="77" column="1" bodyfile="NEAT/Networking/Server/NEATServer.py" bodystart="77" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_n_e_a_t_server_1_1_queue_worker_1a9a878aaaab5a7c58672f684ac3cc87a9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Server.NEATServer.QueueWorker._work_send</definition>
+        <argsstring>(self)</argsstring>
+        <name>_work_send</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/NEATServer.py" line="90" column="1" bodyfile="NEAT/Networking/Server/NEATServer.py" bodystart="90" bodyend="108"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>A thread which operates on networking message queues
+via JSONSocket in two different modes:
+
+1. receive
+The worker thread will accept JSONSocket connections,
+receive dictionaries, creates command objects and inserts them
+into the appropriate queue (in_queue)
+
+2. send
+The worker thread will wait for command objects to appear inside
+the outgoing queue (out_queue), convert them to dictionaries
+and send them to the client via a JSONSocket.
+</verbatim> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="148">
+        <label>Thread</label>
+      </node>
+      <node id="147">
+        <label>NEAT_PyGenetics.NEAT.Networking.Server.NEATServer.QueueWorker</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_n_e_a_t_server_1_1_queue_worker"/>
+        <childnode refid="148" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="150">
+        <label>Thread</label>
+      </node>
+      <node id="149">
+        <label>NEAT_PyGenetics.NEAT.Networking.Server.NEATServer.QueueWorker</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_n_e_a_t_server_1_1_queue_worker"/>
+        <childnode refid="150" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="NEAT/Networking/Server/NEATServer.py" line="35" column="1" bodyfile="NEAT/Networking/Server/NEATServer.py" bodystart="35" bodyend="109"/>
+    <listofallmembers>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_n_e_a_t_server_1_1_queue_worker_1a413e2f230b433bfc4f137f1ae1a331e5" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Server::NEATServer::QueueWorker</scope><name>__init__</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_n_e_a_t_server_1_1_queue_worker_1a135371d886d952e4f9bbaa6b7a7ce461" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Server::NEATServer::QueueWorker</scope><name>_address</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_n_e_a_t_server_1_1_queue_worker_1a7af39d645863d096ed979d5c7a4a0b2c" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Server::NEATServer::QueueWorker</scope><name>_mode</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_n_e_a_t_server_1_1_queue_worker_1a993493671e20871d45ebc2a3932af13f" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Server::NEATServer::QueueWorker</scope><name>_port</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_n_e_a_t_server_1_1_queue_worker_1a51388d55c2bcd5bf63cd0ceb3bf89c82" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Server::NEATServer::QueueWorker</scope><name>_queue</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_n_e_a_t_server_1_1_queue_worker_1a79f651f0aff4ec1d3138fa7266089f7d" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Server::NEATServer::QueueWorker</scope><name>_work_receive</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_n_e_a_t_server_1_1_queue_worker_1a9a878aaaab5a7c58672f684ac3cc87a9" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Server::NEATServer::QueueWorker</scope><name>_work_send</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_n_e_a_t_server_1_1_queue_worker_1a856d13880c0616f9b0c25b02788a54e3" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Server::NEATServer::QueueWorker</scope><name>run</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_n_e_a_t_server_1_1_queue_worker_1ad5eb20f5b3bfb6a6aafa945bd5103c1b" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Server::NEATServer::QueueWorker</scope><name>socket</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

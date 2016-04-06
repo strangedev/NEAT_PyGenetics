@@ -1,0 +1,245 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst" kind="class" language="Python" prot="public">
+    <compoundname>NEAT_PyGenetics::NEAT::Analyst::GenomeAnalyst::GenomeAnalyst</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst_1a61333814f998f2c80d271f3ebc92d198" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeAnalyst.GenomeAnalyst::topologically_sorted_nodes</definition>
+        <argsstring></argsstring>
+        <name>topologically_sorted_nodes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeAnalyst.py" line="59" column="1" bodyfile="NEAT/Analyst/GenomeAnalyst.py" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst_1a5453383e771c7f655739ee80508a8b08" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeAnalyst.GenomeAnalyst::cycle_edges</definition>
+        <argsstring></argsstring>
+        <name>cycle_edges</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeAnalyst.py" line="59" column="1" bodyfile="NEAT/Analyst/GenomeAnalyst.py" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst_1adee62c855c0445f8b5c4032ceaf1217d" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeAnalyst.GenomeAnalyst::topologically_sorted_cycle_nodes</definition>
+        <argsstring></argsstring>
+        <name>topologically_sorted_cycle_nodes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeAnalyst.py" line="69" column="1" bodyfile="NEAT/Analyst/GenomeAnalyst.py" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst_1aa3744394330051a36263c6d8b2a9f1a0" prot="private" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeAnalyst.GenomeAnalyst::_</definition>
+        <argsstring></argsstring>
+        <name>_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeAnalyst.py" line="69" column="1" bodyfile="NEAT/Analyst/GenomeAnalyst.py" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst_1a528e2fcf56e3c4ccf93c966bb1633a27" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeAnalyst.GenomeAnalyst::_working_nodes</definition>
+        <argsstring></argsstring>
+        <name>_working_nodes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeAnalyst.py" line="16" column="1" bodyfile="NEAT/Analyst/GenomeAnalyst.py" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst_1a5dbbe157e69532d14ab4691a283519f9" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeAnalyst.GenomeAnalyst::_working_edges</definition>
+        <argsstring></argsstring>
+        <name>_working_edges</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeAnalyst.py" line="17" column="1" bodyfile="NEAT/Analyst/GenomeAnalyst.py" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst_1a274b5e01a98b5ffbac43b36e97e6a60f" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeAnalyst.GenomeAnalyst::_result</definition>
+        <argsstring></argsstring>
+        <name>_result</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeAnalyst.py" line="19" column="1" bodyfile="NEAT/Analyst/GenomeAnalyst.py" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst_1a2b9e3334de517a0555177ee6bcc0ac04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Analyst.GenomeAnalyst.GenomeAnalyst.__init__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>_node_visited:
+  _node_visited[i] = 0 =&gt; node with id i was not visited yet
+  _node_visited[i] = 1 =&gt; node with id i was visited
+:return:
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeAnalyst.py" line="9" column="1" bodyfile="NEAT/Analyst/GenomeAnalyst.py" bodystart="9" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst_1afdd3b4e6b0b8275dd62677b8d5a18933" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Analyst.GenomeAnalyst.GenomeAnalyst.analyze</definition>
+        <argsstring></argsstring>
+        <name>analyze</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeAnalyst.py" line="21" column="1" bodyfile="NEAT/Analyst/GenomeAnalyst.py" bodystart="23" bodyend="23"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst_1aeaf05265455f980f6310be94f61ae0c5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Analyst.GenomeAnalyst.GenomeAnalyst._reset_analysis</definition>
+        <argsstring>(self)</argsstring>
+        <name>_reset_analysis</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Resets internal fields of class where intermediate results
+of the analysis are stored in order to be able to perform
+another (sub-)analysis.
+
+:return:
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeAnalyst.py" line="74" column="1" bodyfile="NEAT/Analyst/GenomeAnalyst.py" bodystart="74" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst_1a79205035135d0a65fe25812fca3806af" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Analyst.GenomeAnalyst.GenomeAnalyst._set_working_graph</definition>
+        <argsstring></argsstring>
+        <name>_set_working_graph</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeAnalyst.py" line="84" column="1" bodyfile="NEAT/Analyst/GenomeAnalyst.py" bodystart="84" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst_1ab6082abc29816a909a7db8fccadad2c3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Analyst.GenomeAnalyst.GenomeAnalyst._dfs</definition>
+        <argsstring></argsstring>
+        <name>_dfs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeAnalyst.py" line="97" column="1" bodyfile="NEAT/Analyst/GenomeAnalyst.py" bodystart="97" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst_1a89f90c1ef3121df4e6d511bd057f5eb2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Analyst.GenomeAnalyst.GenomeAnalyst._dfs_visit</definition>
+        <argsstring></argsstring>
+        <name>_dfs_visit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeAnalyst.py" line="133" column="1" bodyfile="NEAT/Analyst/GenomeAnalyst.py" bodystart="134" bodyend="185"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="64">
+        <label>NEAT_PyGenetics.NEAT.Analyst.GenomeAnalyst.GenomeAnalyst</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst"/>
+        <childnode refid="65" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="65">
+        <label>object</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="66">
+        <label>NEAT_PyGenetics.NEAT.Analyst.GenomeAnalyst.GenomeAnalyst</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst"/>
+        <childnode refid="67" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="67">
+        <label>object</label>
+      </node>
+    </collaborationgraph>
+    <location file="NEAT/Analyst/GenomeAnalyst.py" line="8" column="1" bodyfile="NEAT/Analyst/GenomeAnalyst.py" bodystart="8" bodyend="185"/>
+    <listofallmembers>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst_1aa3744394330051a36263c6d8b2a9f1a0" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeAnalyst::GenomeAnalyst</scope><name>_</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst_1a2b9e3334de517a0555177ee6bcc0ac04" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeAnalyst::GenomeAnalyst</scope><name>__init__</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst_1ab6082abc29816a909a7db8fccadad2c3" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeAnalyst::GenomeAnalyst</scope><name>_dfs</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst_1a89f90c1ef3121df4e6d511bd057f5eb2" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeAnalyst::GenomeAnalyst</scope><name>_dfs_visit</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst_1aeaf05265455f980f6310be94f61ae0c5" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeAnalyst::GenomeAnalyst</scope><name>_reset_analysis</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst_1a274b5e01a98b5ffbac43b36e97e6a60f" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeAnalyst::GenomeAnalyst</scope><name>_result</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst_1a79205035135d0a65fe25812fca3806af" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeAnalyst::GenomeAnalyst</scope><name>_set_working_graph</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst_1a5dbbe157e69532d14ab4691a283519f9" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeAnalyst::GenomeAnalyst</scope><name>_working_edges</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst_1a528e2fcf56e3c4ccf93c966bb1633a27" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeAnalyst::GenomeAnalyst</scope><name>_working_nodes</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst_1afdd3b4e6b0b8275dd62677b8d5a18933" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeAnalyst::GenomeAnalyst</scope><name>analyze</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst_1a5453383e771c7f655739ee80508a8b08" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeAnalyst::GenomeAnalyst</scope><name>cycle_edges</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst_1adee62c855c0445f8b5c4032ceaf1217d" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeAnalyst::GenomeAnalyst</scope><name>topologically_sorted_cycle_nodes</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_analyst_1_1_genome_analyst_1a61333814f998f2c80d271f3ebc92d198" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeAnalyst::GenomeAnalyst</scope><name>topologically_sorted_nodes</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

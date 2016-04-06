@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_storage_genome_tests_1_1test__storage_genome_1_1_storage_genome_test_case" kind="class" language="Python" prot="public">
+    <compoundname>NEAT_PyGenetics::NEAT::Tests::StorageGenomeTests::test_storageGenome::StorageGenomeTestCase</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">TestCase</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_storage_genome_tests_1_1test__storage_genome_1_1_storage_genome_test_case_1a27b58493e931470520a1e71e514009cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.StorageGenomeTests.test_storageGenome.StorageGenomeTestCase.test_eq</definition>
+        <argsstring>(self)</argsstring>
+        <name>test_eq</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Tests, that the equality operator works.
+:return:
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/StorageGenomeTests/test_storageGenome.py" line="10" column="1" bodyfile="NEAT/Tests/StorageGenomeTests/test_storageGenome.py" bodystart="10" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_storage_genome_tests_1_1test__storage_genome_1_1_storage_genome_test_case_1a01f81b00e989464c932df722135daf5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.StorageGenomeTests.test_storageGenome.StorageGenomeTestCase.test_notEq</definition>
+        <argsstring>(self)</argsstring>
+        <name>test_notEq</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/StorageGenomeTests/test_storageGenome.py" line="21" column="1" bodyfile="NEAT/Tests/StorageGenomeTests/test_storageGenome.py" bodystart="21" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_storage_genome_tests_1_1test__storage_genome_1_1_storage_genome_test_case_1a4c670f9b3e78d2be50280880f1de23d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.StorageGenomeTests.test_storageGenome.StorageGenomeTestCase.test_copyConstruct</definition>
+        <argsstring>(self)</argsstring>
+        <name>test_copyConstruct</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/StorageGenomeTests/test_storageGenome.py" line="26" column="1" bodyfile="NEAT/Tests/StorageGenomeTests/test_storageGenome.py" bodystart="26" bodyend="48"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="202">
+        <label>TestCase</label>
+      </node>
+      <node id="201">
+        <label>NEAT_PyGenetics.NEAT.Tests.StorageGenomeTests.test_storageGenome.StorageGenomeTestCase</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_storage_genome_tests_1_1test__storage_genome_1_1_storage_genome_test_case"/>
+        <childnode refid="202" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="204">
+        <label>TestCase</label>
+      </node>
+      <node id="203">
+        <label>NEAT_PyGenetics.NEAT.Tests.StorageGenomeTests.test_storageGenome.StorageGenomeTestCase</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_storage_genome_tests_1_1test__storage_genome_1_1_storage_genome_test_case"/>
+        <childnode refid="204" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="NEAT/Tests/StorageGenomeTests/test_storageGenome.py" line="9" column="1" bodyfile="NEAT/Tests/StorageGenomeTests/test_storageGenome.py" bodystart="9" bodyend="48"/>
+    <listofallmembers>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_storage_genome_tests_1_1test__storage_genome_1_1_storage_genome_test_case_1a4c670f9b3e78d2be50280880f1de23d5" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::StorageGenomeTests::test_storageGenome::StorageGenomeTestCase</scope><name>test_copyConstruct</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_storage_genome_tests_1_1test__storage_genome_1_1_storage_genome_test_case_1a27b58493e931470520a1e71e514009cb" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::StorageGenomeTests::test_storageGenome::StorageGenomeTestCase</scope><name>test_eq</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_storage_genome_tests_1_1test__storage_genome_1_1_storage_genome_test_case_1a01f81b00e989464c932df722135daf5c" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::StorageGenomeTests::test_storageGenome::StorageGenomeTestCase</scope><name>test_notEq</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

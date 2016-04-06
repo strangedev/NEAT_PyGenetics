@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_utilities_1_1_probabilistic_tools" kind="namespace" language="Python">
+    <compoundname>NEAT_PyGenetics::NEAT::Utilities::ProbabilisticTools</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_probabilistic_tools_8py_1a77fe590d9378f14206a59d8e6bdec281" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics::NEAT::Utilities::ProbabilisticTools.AnyFloat</definition>
+        <argsstring></argsstring>
+        <name>AnyFloat</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Utilities/ProbabilisticTools.py" line="5" column="1" bodyfile="NEAT/Utilities/ProbabilisticTools.py" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_probabilistic_tools_8py_1a221f1f7b971343a6b94683e937f85161" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Utilities.ProbabilisticTools.weighted_choice</definition>
+        <argsstring></argsstring>
+        <name>weighted_choice</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Utilities/ProbabilisticTools.py" line="8" column="1" bodyfile="NEAT/Utilities/ProbabilisticTools.py" bodystart="9" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="_probabilistic_tools_8py_1a43b159877aba0fde144f159772e135f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Utilities.ProbabilisticTools.weighted_choice_range</definition>
+        <argsstring></argsstring>
+        <name>weighted_choice_range</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Utilities/ProbabilisticTools.py" line="20" column="1" bodyfile="NEAT/Utilities/ProbabilisticTools.py" bodystart="21" bodyend="59"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="NEAT/Utilities/ProbabilisticTools.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

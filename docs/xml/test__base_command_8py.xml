@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="test__base_command_8py" kind="file" language="Python">
+    <compoundname>test_baseCommand.py</compoundname>
+    <innerclass refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tese8fe8884dc3553b68bdb031db05dd839" prot="public">NEAT_PyGenetics::NEAT::Tests::NetworkingTests::CommandsTests::test_baseCommand::TestBaseCommand</innerclass>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1test__base_command">NEAT_PyGenetics::NEAT::Tests::NetworkingTests::CommandsTests::test_baseCommand</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">from</highlight><highlight class="normal"><sp/>unittest<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>TestCase</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>NEAT.Networking.Commands.BaseCommand<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>BaseCommand</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tese8fe8884dc3553b68bdb031db05dd839" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tese8fe8884dc3553b68bdb031db05dd839" kindref="compound">TestBaseCommand</ref>(TestCase):</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">setUp(self):</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tese8fe8884dc3553b68bdb031db05dd839_1ac704c0173d8ef7856a04cc83086bdfd6" kindref="member">base_command</ref><sp/>=<sp/>BaseCommand()</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tese8fe8884dc3553b68bdb031db05dd839_1a73e2d296a6b064d382f4a7261c499fb8" kindref="member">dictionary</ref><sp/>=<sp/>self.base_command.__dict__</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">test_from_dict(self):</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertDictEqual(self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tese8fe8884dc3553b68bdb031db05dd839_1a73e2d296a6b064d382f4a7261c499fb8" kindref="member">dictionary</ref>,<sp/>self.base_command.__dict__)</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.base_command.from_dict({</highlight><highlight class="stringliteral">&quot;test&quot;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&quot;test&quot;</highlight><highlight class="normal">})</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertDictEqual({</highlight><highlight class="stringliteral">&quot;test&quot;</highlight><highlight class="normal">:<sp/></highlight><highlight class="stringliteral">&quot;test&quot;</highlight><highlight class="normal">},<sp/>self.base_command.__dict__)</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">test_as_dict(self):</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertDictEqual(self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tese8fe8884dc3553b68bdb031db05dd839_1a73e2d296a6b064d382f4a7261c499fb8" kindref="member">dictionary</ref>,<sp/>self.base_command.as_dict())</highlight></codeline>
+    </programlisting>
+    <location file="NEAT/Tests/NetworkingTests/CommandsTests/test_baseCommand.py"/>
+  </compounddef>
+</doxygen>

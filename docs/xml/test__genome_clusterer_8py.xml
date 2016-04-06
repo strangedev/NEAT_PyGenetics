@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="test__genome_clusterer_8py" kind="file" language="Python">
+    <compoundname>test_genomeClusterer.py</compoundname>
+    <innerclass refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_genome_clusterer_tests_1_1test__genome_clu8e5a0289e00c807a0d74c340ea42f50e" prot="public">NEAT_PyGenetics::NEAT::Tests::GenomeClustererTests::test_genomeClusterer::TestGenomeClusterer</innerclass>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_genome_clusterer_tests_1_1test__genome_clusterer">NEAT_PyGenetics::NEAT::Tests::GenomeClustererTests::test_genomeClusterer</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">from</highlight><highlight class="normal"><sp/>fractions<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Fraction</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>unittest<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>TestCase</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>unittest.mock<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>MagicMock</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>bson<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>ObjectId</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>NEAT.Analyst.Cluster<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Cluster</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>NEAT.Analyst.GenomeClusterer<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>GenomeClusterer</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>NEAT.GenomeStructures.StorageStructure.StorageGenome<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>StorageGenome</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>NEAT.Repository.ClusterRepository<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>ClusterRepository</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>NEAT.Repository.GenomeRepository<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>GenomeRepository</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">#<sp/>noinspection<sp/>PyUnresolvedReferences</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_genome_clusterer_tests_1_1test__genome_clu8e5a0289e00c807a0d74c340ea42f50e" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_genome_clusterer_tests_1_1test__genome_clu8e5a0289e00c807a0d74c340ea42f50e" kindref="compound">TestGenomeClusterer</ref>(TestCase):</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">setUp(self):</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clustering_params<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;delta_threshold&quot;</highlight><highlight class="normal">:<sp/>0.5,<sp/></highlight><highlight class="stringliteral">&quot;excess_coefficient&quot;</highlight><highlight class="normal">:<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;disjoint_coefficient&quot;</highlight><highlight class="normal">:<sp/>1,</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;weight_difference_coefficient&quot;</highlight><highlight class="normal">:<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;max_population&quot;</highlight><highlight class="normal">:<sp/>10,<sp/></highlight><highlight class="stringliteral">&quot;discarding_percentage&quot;</highlight><highlight class="normal">:<sp/>0.2}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_genome_clusterer_tests_1_1test__genome_clu8e5a0289e00c807a0d74c340ea42f50e_1a9cc349e3e78e1616840e36bcfd3a6834" kindref="member">clustering_parameters</ref><sp/>=<sp/>clustering_params</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_genome_clusterer_tests_1_1test__genome_clu8e5a0289e00c807a0d74c340ea42f50e_1aa5acaa2c17a115c32c5317a067be0016" kindref="member">db_connector</ref><sp/>=<sp/>MagicMock()</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_genome_clusterer_tests_1_1test__genome_clu8e5a0289e00c807a0d74c340ea42f50e_1a1abfe40b10ff6d4cd6a58f4fca6c76b8" kindref="member">mock_genome_repository</ref><sp/>=<sp/>GenomeRepository(self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_genome_clusterer_tests_1_1test__genome_clu8e5a0289e00c807a0d74c340ea42f50e_1aa5acaa2c17a115c32c5317a067be0016" kindref="member">db_connector</ref>)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_genome_clusterer_tests_1_1test__genome_clu8e5a0289e00c807a0d74c340ea42f50e_1a78d0e64bf2b3100d5d291f433c7020eb" kindref="member">mock_cluster_repository</ref><sp/>=<sp/>ClusterRepository(self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_genome_clusterer_tests_1_1test__genome_clu8e5a0289e00c807a0d74c340ea42f50e_1aa5acaa2c17a115c32c5317a067be0016" kindref="member">db_connector</ref>)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Will<sp/>return<sp/>1,<sp/>so<sp/>_no_clusters<sp/>will<sp/>be<sp/>false</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.mock_cluster_repository.get_cluster_count<sp/>=<sp/>1</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_genome_clusterer_tests_1_1test__genome_clu8e5a0289e00c807a0d74c340ea42f50e_1a73efd20ba6c48aeab0c9fe41a444c334" kindref="member">genome_clusterer</ref><sp/>=<sp/>GenomeClusterer(</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_genome_clusterer_tests_1_1test__genome_clu8e5a0289e00c807a0d74c340ea42f50e_1a1abfe40b10ff6d4cd6a58f4fca6c76b8" kindref="member">mock_genome_repository</ref>,</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_genome_clusterer_tests_1_1test__genome_clu8e5a0289e00c807a0d74c340ea42f50e_1a78d0e64bf2b3100d5d291f433c7020eb" kindref="member">mock_cluster_repository</ref>,</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_genome_clusterer_tests_1_1test__genome_clu8e5a0289e00c807a0d74c340ea42f50e_1a9cc349e3e78e1616840e36bcfd3a6834" kindref="member">clustering_parameters</ref></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">test_cluster_genome_no_clusters(self):</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.genome_clusterer._no_clusters<sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.mock_cluster_repository.add_cluster_with_representative<sp/>=<sp/>MagicMock()</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genome<sp/>=<sp/>StorageGenome()</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.genome_clusterer.cluster_genome(genome)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.mock_cluster_repository.add_cluster_with_representative.assert_called_with(genome.genome_id)</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertFalse(self.genome_clusterer._no_clusters)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">test_cluster_genome_no_delta_less(self):</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genome<sp/>=<sp/>StorageGenome()</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cluster1<sp/>=<sp/>Cluster()</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cluster2<sp/>=<sp/>Cluster()</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>storage_genome1<sp/>=<sp/>StorageGenome()</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>storage_genome2<sp/>=<sp/>StorageGenome()</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cluster1.representative<sp/>=<sp/>storage_genome1</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cluster2.representative<sp/>=<sp/>storage_genome2</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clusters<sp/>=<sp/>[cluster1,<sp/>cluster2]</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.mock_cluster_repository.get_current_clusters<sp/>=<sp/>MagicMock(return_value=clusters)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.genome_clusterer.calculate_delta<sp/>=<sp/>MagicMock(return_value=1.9)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.mock_genome_repository.get_genome_by_id<sp/>=<sp/></highlight><highlight class="keyword">lambda</highlight><highlight class="normal"><sp/>x:<sp/>x</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.mock_cluster_repository.add_cluster_with_representative<sp/>=<sp/>MagicMock()</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.mock_genome_repository.update_genome_cluster<sp/>=<sp/>MagicMock()</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.mock_cluster_repository.get_cluster_by_representative<sp/>=<sp/>MagicMock(return_value=cluster1)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.genome_clusterer.cluster_genome(genome)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.genome_clusterer.calculate_delta.assert_any_call(genome,<sp/>storage_genome1)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.genome_clusterer.calculate_delta.assert_any_call(genome,<sp/>storage_genome2)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.mock_cluster_repository.add_cluster_with_representative.assert_called_with(genome.genome_id)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.mock_cluster_repository.get_cluster_by_representative.assert_called_with(genome.genome_id)</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.mock_genome_repository.update_genome_cluster.assert_called_with(genome.genome_id,<sp/>cluster1.cluster_id)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">test_cluster_genome_with_delta_less(self):</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genome<sp/>=<sp/>StorageGenome()</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cluster1<sp/>=<sp/>Cluster()</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cluster2<sp/>=<sp/>Cluster()</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>storage_genome1<sp/>=<sp/>StorageGenome()</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>storage_genome2<sp/>=<sp/>StorageGenome()</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cluster1.representative<sp/>=<sp/>storage_genome1</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cluster2.representative<sp/>=<sp/>storage_genome2</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clusters<sp/>=<sp/>[cluster1,<sp/>cluster2]</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.mock_cluster_repository.get_current_clusters<sp/>=<sp/>MagicMock(return_value=clusters)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.genome_clusterer.calculate_delta<sp/>=<sp/>MagicMock(return_value=0.1)</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.mock_genome_repository.get_genome_by_id<sp/>=<sp/></highlight><highlight class="keyword">lambda</highlight><highlight class="normal"><sp/>x:<sp/>x</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.mock_genome_repository.update_genome_cluster<sp/>=<sp/>MagicMock()</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.mock_cluster_repository.get_cluster_by_representative<sp/>=<sp/>MagicMock(return_value=cluster1)</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.genome_clusterer.cluster_genome(genome)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.genome_clusterer.calculate_delta.assert_called_with(genome,<sp/>storage_genome1)</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.mock_genome_repository.update_genome_cluster.assert_called_with(genome.genome_id,<sp/>cluster1.cluster_id)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">test_calculate_delta(self):</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genome_one<sp/>=<sp/>StorageGenome()</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genome_two<sp/>=<sp/>StorageGenome()</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genome_three<sp/>=<sp/>StorageGenome()</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genome_one.genes<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1:<sp/>(</highlight><highlight class="keyword">True</highlight><highlight class="normal">,<sp/>Fraction(1.1)),</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3:<sp/>(</highlight><highlight class="keyword">True</highlight><highlight class="normal">,<sp/>Fraction(2.2)),</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2:<sp/>(</highlight><highlight class="keyword">False</highlight><highlight class="normal">,<sp/>Fraction(1.1))</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genome_two.genes<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2:<sp/>(</highlight><highlight class="keyword">False</highlight><highlight class="normal">,<sp/>Fraction(1.1)),</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3:<sp/>(</highlight><highlight class="keyword">True</highlight><highlight class="normal">,<sp/>Fraction(2.2)),</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4:<sp/>(</highlight><highlight class="keyword">False</highlight><highlight class="normal">,<sp/>Fraction(2.2))</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genome_three.genes<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2:<sp/>(</highlight><highlight class="keyword">False</highlight><highlight class="normal">,<sp/>Fraction(1.1)),</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>5:<sp/>(</highlight><highlight class="keyword">True</highlight><highlight class="normal">,<sp/>Fraction(3.3))</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>smaller1<sp/>=<sp/>[1,<sp/>2,<sp/>3]</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>smaller2<sp/>=<sp/>[2,<sp/>5]</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>matching1<sp/>=<sp/>[2,<sp/>3]</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>diff1<sp/>=<sp/>[1,<sp/>4]</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>matching2<sp/>=<sp/>[2]</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>diff2<sp/>=<sp/>[5,<sp/>1,<sp/>3]</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.genome_clusterer.calculate_disjoint_excess_count<sp/>=<sp/>MagicMock(return_value=(16,<sp/>17))</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.genome_clusterer.calculate_average_weight_difference<sp/>=<sp/>MagicMock(return_value=1.5)</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertEqual(12.5,<sp/>self.genome_clusterer.calculate_delta(genome_one,<sp/>genome_two))</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.genome_clusterer.calculate_disjoint_excess_count.assert_called_with(smaller1,<sp/>diff1)</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.genome_clusterer.calculate_average_weight_difference.assert_called_with(genome_two,<sp/>genome_one,<sp/>matching1)</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertEqual(12.5,<sp/>self.genome_clusterer.calculate_delta(genome_one,<sp/>genome_three))</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.genome_clusterer.calculate_disjoint_excess_count.assert_called_with(smaller2,<sp/>diff2)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.genome_clusterer.calculate_average_weight_difference.assert_called_with(</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genome_one,</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genome_three,</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>matching2</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">test_calculate_disjoint_excess_count(self):</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>smaller_genome_gene_ids<sp/>=<sp/>[1,<sp/>2]</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>differing_genes<sp/>=<sp/>[2,<sp/>3,<sp/>4]</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertEqual(</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(1,<sp/>2),</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.genome_clusterer.calculate_disjoint_excess_count(smaller_genome_gene_ids,<sp/>differing_genes)</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">test_calculate_w_bar(self):</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genome_one<sp/>=<sp/>StorageGenome()</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genome_two<sp/>=<sp/>StorageGenome()</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genome_one.genes<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2:<sp/>(</highlight><highlight class="keyword">False</highlight><highlight class="normal">,<sp/>Fraction(12.1)),</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3:<sp/>(</highlight><highlight class="keyword">True</highlight><highlight class="normal">,<sp/>Fraction(2.2)),</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4:<sp/>(</highlight><highlight class="keyword">False</highlight><highlight class="normal">,<sp/>Fraction(2.2)),</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>6:<sp/>(</highlight><highlight class="keyword">True</highlight><highlight class="normal">,<sp/>Fraction(2.3))</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genome_two.genes<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2:<sp/>(</highlight><highlight class="keyword">False</highlight><highlight class="normal">,<sp/>Fraction(1.1)),</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>5:<sp/>(</highlight><highlight class="keyword">True</highlight><highlight class="normal">,<sp/>Fraction(3.3)),</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>6:<sp/>(</highlight><highlight class="keyword">True</highlight><highlight class="normal">,<sp/>Fraction(2.3))</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>matching_genes<sp/>=<sp/>[2,<sp/>6]</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertEqual(60.5,<sp/>self.genome_clusterer.calculate_average_weight_difference(genome_one,</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genome_two,</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>matching_genes))</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">test_calculate_cluster_fitness(self):</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cluster_id<sp/>=<sp/>ObjectId()</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genomes<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>i<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(0,<sp/>4):</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>g<sp/>=<sp/>StorageGenome()</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>g.fitness<sp/>=<sp/>float(i)</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genomes.append(g)</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.mock_genome_repository.get_genomes_in_cluster<sp/>=<sp/>MagicMock(return_value=genomes)</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.assertEqual(6.0<sp/>/<sp/>4,<sp/>self.genome_clusterer.calculate_cluster_fitness(cluster_id))</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.mock_genome_repository.get_genomes_in_cluster.assert_called_with(cluster_id)</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">test_calculate_cluster_offspring_values(self):</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clusters<sp/>=<sp/>[]</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>i<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(0,<sp/>4):</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c<sp/>=<sp/>Cluster()</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>c._id<sp/>=<sp/>i</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>clusters.append(c)</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.mock_cluster_repository.get_current_clusters<sp/>=<sp/>MagicMock(return_value=clusters)</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.mock_cluster_repository.update_fitness_for_cluster<sp/>=<sp/>MagicMock()</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.genome_clusterer.calculate_cluster_fitness<sp/>=<sp/></highlight><highlight class="keyword">lambda</highlight><highlight class="normal"><sp/>x:<sp/>x</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.mock_cluster_repository.update_offspring_for_cluster<sp/>=<sp/>MagicMock()</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.genome_clusterer.calculate_cluster_offspring_values()</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.mock_cluster_repository.update_fitness_for_cluster.assert_any_call(0,<sp/>0)</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.mock_cluster_repository.update_fitness_for_cluster.assert_any_call(1,<sp/>1)</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.mock_cluster_repository.update_fitness_for_cluster.assert_any_call(2,<sp/>2)</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.mock_cluster_repository.update_fitness_for_cluster.assert_any_call(3,<sp/>3)</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.mock_cluster_repository.update_offspring_for_cluster.assert_any_call(0,<sp/>0)</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.mock_cluster_repository.update_offspring_for_cluster.assert_any_call(1,<sp/>0)</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.mock_cluster_repository.update_offspring_for_cluster.assert_any_call(2,<sp/>1)</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.mock_cluster_repository.update_offspring_for_cluster.assert_any_call(3,<sp/>1)</highlight></codeline>
+    </programlisting>
+    <location file="NEAT/Tests/GenomeClustererTests/test_genomeClusterer.py"/>
+  </compounddef>
+</doxygen>

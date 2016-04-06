@@ -1,0 +1,239 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome" kind="class" language="Python" prot="public">
+    <compoundname>NEAT_PyGenetics::NEAT::GenomeStructures::StorageStructure::StorageGenome::StorageGenome</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome_1ae38094c8ef50b8a303fdcd8f7d0ee10e" prot="private" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.GenomeStructures.StorageStructure.StorageGenome.StorageGenome::_id</definition>
+        <argsstring></argsstring>
+        <name>_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/GenomeStructures/StorageStructure/StorageGenome.py" line="48" column="1" bodyfile="NEAT/GenomeStructures/StorageStructure/StorageGenome.py" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome_1ae1e47996623ce538b3450f2415d57bc3" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.GenomeStructures.StorageStructure.StorageGenome.StorageGenome::is_alive</definition>
+        <argsstring></argsstring>
+        <name>is_alive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/GenomeStructures/StorageStructure/StorageGenome.py" line="49" column="1" bodyfile="NEAT/GenomeStructures/StorageStructure/StorageGenome.py" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome_1a919c35fa0dfc5d4a81b008bef83c3ac9" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.GenomeStructures.StorageStructure.StorageGenome.StorageGenome::fitness</definition>
+        <argsstring></argsstring>
+        <name>fitness</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/GenomeStructures/StorageStructure/StorageGenome.py" line="50" column="1" bodyfile="NEAT/GenomeStructures/StorageStructure/StorageGenome.py" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome_1ad0bd7b5a391f6df7f56f60294fee0a00" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.GenomeStructures.StorageStructure.StorageGenome.StorageGenome::inputs</definition>
+        <argsstring></argsstring>
+        <name>inputs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/GenomeStructures/StorageStructure/StorageGenome.py" line="51" column="1" bodyfile="NEAT/GenomeStructures/StorageStructure/StorageGenome.py" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome_1a69f429018a927d4919d4468054cf49ea" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.GenomeStructures.StorageStructure.StorageGenome.StorageGenome::outputs</definition>
+        <argsstring></argsstring>
+        <name>outputs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/GenomeStructures/StorageStructure/StorageGenome.py" line="52" column="1" bodyfile="NEAT/GenomeStructures/StorageStructure/StorageGenome.py" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome_1a82003c70917d4c96053c6cea930383ce" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.GenomeStructures.StorageStructure.StorageGenome.StorageGenome::genes</definition>
+        <argsstring></argsstring>
+        <name>genes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/GenomeStructures/StorageStructure/StorageGenome.py" line="53" column="1" bodyfile="NEAT/GenomeStructures/StorageStructure/StorageGenome.py" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome_1a4ed1621581430cdf5791c33d1c2f6ac2" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.GenomeStructures.StorageStructure.StorageGenome.StorageGenome::analysis_result</definition>
+        <argsstring></argsstring>
+        <name>analysis_result</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/GenomeStructures/StorageStructure/StorageGenome.py" line="54" column="1" bodyfile="NEAT/GenomeStructures/StorageStructure/StorageGenome.py" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome_1a4d31fdd32df12f7c1d9c6848b4ae1bcc" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.GenomeStructures.StorageStructure.StorageGenome.StorageGenome::cluster</definition>
+        <argsstring></argsstring>
+        <name>cluster</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/GenomeStructures/StorageStructure/StorageGenome.py" line="56" column="1" bodyfile="NEAT/GenomeStructures/StorageStructure/StorageGenome.py" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome_1a8b7615cf97ad4ce4c3805ecde57637c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.GenomeStructures.StorageStructure.StorageGenome.StorageGenome.__init__</definition>
+        <argsstring></argsstring>
+        <name>__init__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/GenomeStructures/StorageStructure/StorageGenome.py" line="37" column="1" bodyfile="NEAT/GenomeStructures/StorageStructure/StorageGenome.py" bodystart="39" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome_1a0d0ae3acf7162d05cb40fe5eaff9ada9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.GenomeStructures.StorageStructure.StorageGenome.StorageGenome.__eq__</definition>
+        <argsstring></argsstring>
+        <name>__eq__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/GenomeStructures/StorageStructure/StorageGenome.py" line="69" column="1" bodyfile="NEAT/GenomeStructures/StorageStructure/StorageGenome.py" bodystart="69" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome_1a536876e28c6ee27477de23a369e11daa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.GenomeStructures.StorageStructure.StorageGenome.StorageGenome.genome_id</definition>
+        <argsstring>(self)</argsstring>
+        <name>genome_id</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/GenomeStructures/StorageStructure/StorageGenome.py" line="82" column="1" bodyfile="NEAT/GenomeStructures/StorageStructure/StorageGenome.py" bodystart="82" bodyend="84"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome_1ac24a901685ca9f69ed58a5a78bfe3c0e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.GenomeStructures.StorageStructure.StorageGenome.StorageGenome._init_with_nodes</definition>
+        <argsstring></argsstring>
+        <name>_init_with_nodes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/GenomeStructures/StorageStructure/StorageGenome.py" line="60" column="1" bodyfile="NEAT/GenomeStructures/StorageStructure/StorageGenome.py" bodystart="60" bodyend="68"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>A data structure for storing genome information in a
+compact way.
+
+Attributes:
+    genome_id (_id):
+        The Genome&apos;s ID, unique in the population.
+    inputs:
+        A list of the ids of the input nodes. There has to be at least
+        one gene per input that is connected to it. Represented as a list
+        of tuples of the form (Input_Label, Node-ID).
+    outputs:
+        A list of the ids of the output nodes. There has to be at least
+        one gene per output that is connected to it. Represented as a list
+        of tuples of the form (Output_Label, Node-ID).
+    genes:
+        A list of all genes, that make up the genome. Presented as a tu-
+        ple of Gene-ID, a boolean that is true, if the gene is disabled
+        and a Fraction that stores the weight of the gene.
+    analysis_result:
+        A result object that is generated when analyzing the genome.
+        This is empty per default.
+    cluster:
+        The cluster to which the Genome belongs.
+</verbatim> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="197">
+        <label>NEAT_PyGenetics.NEAT.GenomeStructures.StorageStructure.StorageGenome.StorageGenome</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome"/>
+        <childnode refid="198" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="198">
+        <label>object</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="199">
+        <label>NEAT_PyGenetics.NEAT.GenomeStructures.StorageStructure.StorageGenome.StorageGenome</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome"/>
+        <childnode refid="200" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="200">
+        <label>object</label>
+      </node>
+    </collaborationgraph>
+    <location file="NEAT/GenomeStructures/StorageStructure/StorageGenome.py" line="10" column="1" bodyfile="NEAT/GenomeStructures/StorageStructure/StorageGenome.py" bodystart="10" bodyend="84"/>
+    <listofallmembers>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome_1a0d0ae3acf7162d05cb40fe5eaff9ada9" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::GenomeStructures::StorageStructure::StorageGenome::StorageGenome</scope><name>__eq__</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome_1a8b7615cf97ad4ce4c3805ecde57637c8" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::GenomeStructures::StorageStructure::StorageGenome::StorageGenome</scope><name>__init__</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome_1ae38094c8ef50b8a303fdcd8f7d0ee10e" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::GenomeStructures::StorageStructure::StorageGenome::StorageGenome</scope><name>_id</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome_1ac24a901685ca9f69ed58a5a78bfe3c0e" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::GenomeStructures::StorageStructure::StorageGenome::StorageGenome</scope><name>_init_with_nodes</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome_1a4ed1621581430cdf5791c33d1c2f6ac2" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::GenomeStructures::StorageStructure::StorageGenome::StorageGenome</scope><name>analysis_result</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome_1a4d31fdd32df12f7c1d9c6848b4ae1bcc" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::GenomeStructures::StorageStructure::StorageGenome::StorageGenome</scope><name>cluster</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome_1a919c35fa0dfc5d4a81b008bef83c3ac9" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::GenomeStructures::StorageStructure::StorageGenome::StorageGenome</scope><name>fitness</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome_1a82003c70917d4c96053c6cea930383ce" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::GenomeStructures::StorageStructure::StorageGenome::StorageGenome</scope><name>genes</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome_1a536876e28c6ee27477de23a369e11daa" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::GenomeStructures::StorageStructure::StorageGenome::StorageGenome</scope><name>genome_id</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome_1ad0bd7b5a391f6df7f56f60294fee0a00" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::GenomeStructures::StorageStructure::StorageGenome::StorageGenome</scope><name>inputs</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome_1ae1e47996623ce538b3450f2415d57bc3" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::GenomeStructures::StorageStructure::StorageGenome::StorageGenome</scope><name>is_alive</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures_1_1_storage_structure_1_1_storage_genome_1_1_storage_genome_1a69f429018a927d4919d4468054cf49ea" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::GenomeStructures::StorageStructure::StorageGenome::StorageGenome</scope><name>outputs</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

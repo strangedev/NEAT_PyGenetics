@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_n_e_a_t_server" kind="namespace" language="Python">
+    <compoundname>NEAT_PyGenetics::NEAT::Networking::Server::NEATServer</compoundname>
+    <innerclass refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_n_e_a_t_server_1_1_n_e_a_t_server" prot="public">NEAT_PyGenetics::NEAT::Networking::Server::NEATServer::NEATServer</innerclass>
+    <innerclass refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_server_1_1_n_e_a_t_server_1_1_queue_worker" prot="public">NEAT_PyGenetics::NEAT::Networking::Server::NEATServer::QueueWorker</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_n_e_a_t_server_8py_1a06c3658b631544a2d391856bc4157fb7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics::NEAT::Networking::Server::NEATServer.message_queue_size</definition>
+        <argsstring></argsstring>
+        <name>message_queue_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/NEATServer.py" line="11" column="1" bodyfile="NEAT/Networking/Server/NEATServer.py" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_e_a_t_server_8py_1af588da43cb6226eeefed66fcd0b55f3f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics::NEAT::Networking::Server::NEATServer.in_free</definition>
+        <argsstring></argsstring>
+        <name>in_free</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/NEATServer.py" line="13" column="1" bodyfile="NEAT/Networking/Server/NEATServer.py" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_e_a_t_server_8py_1a103058cec8663aa23ad8b490a60d9636" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics::NEAT::Networking::Server::NEATServer.in_full</definition>
+        <argsstring></argsstring>
+        <name>in_full</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/NEATServer.py" line="14" column="1" bodyfile="NEAT/Networking/Server/NEATServer.py" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_e_a_t_server_8py_1a5ad5f8cb9ef69061f884d1e90917ab3c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics::NEAT::Networking::Server::NEATServer.in_mutex</definition>
+        <argsstring></argsstring>
+        <name>in_mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/NEATServer.py" line="15" column="1" bodyfile="NEAT/Networking/Server/NEATServer.py" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_e_a_t_server_8py_1a036def46999e8405d81e4a1fe107ebbb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics::NEAT::Networking::Server::NEATServer.out_free</definition>
+        <argsstring></argsstring>
+        <name>out_free</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/NEATServer.py" line="17" column="1" bodyfile="NEAT/Networking/Server/NEATServer.py" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_e_a_t_server_8py_1aa41e6cd5b937e1297e70b15d7a27f815" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics::NEAT::Networking::Server::NEATServer.out_full</definition>
+        <argsstring></argsstring>
+        <name>out_full</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/NEATServer.py" line="18" column="1" bodyfile="NEAT/Networking/Server/NEATServer.py" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_e_a_t_server_8py_1a2707de3d151443b717044f44638fb0ca" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics::NEAT::Networking::Server::NEATServer.out_mutex</definition>
+        <argsstring></argsstring>
+        <name>out_mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/NEATServer.py" line="19" column="1" bodyfile="NEAT/Networking/Server/NEATServer.py" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_e_a_t_server_8py_1abec4285c7ad0edab7a9fd7ebe9dc68b7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics::NEAT::Networking::Server::NEATServer.thread_should_end</definition>
+        <argsstring></argsstring>
+        <name>thread_should_end</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/NEATServer.py" line="21" column="1" bodyfile="NEAT/Networking/Server/NEATServer.py" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_n_e_a_t_server_8py_1a0b02bca7bd26405ce43a713830d97217" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics::NEAT::Networking::Server::NEATServer.thread_should_end_mutex</definition>
+        <argsstring></argsstring>
+        <name>thread_should_end_mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/NEATServer.py" line="22" column="1" bodyfile="NEAT/Networking/Server/NEATServer.py" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_n_e_a_t_server_8py_1a7f23754a67df20fada4b79bc4061da68" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Server.NEATServer.signal_thread_should_end</definition>
+        <argsstring>()</argsstring>
+        <name>signal_thread_should_end</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Server/NEATServer.py" line="25" column="1" bodyfile="NEAT/Networking/Server/NEATServer.py" bodystart="25" bodyend="34"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="NEAT/Networking/Server/NEATServer.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

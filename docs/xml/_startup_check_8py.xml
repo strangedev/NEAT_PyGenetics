@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="_startup_check_8py" kind="file" language="Python">
+    <compoundname>StartupCheck.py</compoundname>
+    <innerclass refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_error_handling_1_1_startup_check_1_1_startup_check" prot="public">NEAT_PyGenetics::NEAT::ErrorHandling::StartupCheck::StartupCheck</innerclass>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_error_handling_1_1_startup_check">NEAT_PyGenetics::NEAT::ErrorHandling::StartupCheck</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">from</highlight><highlight class="normal"><sp/>NEAT.Repository.DatabaseConnector<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>DatabaseConnector</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>NEAT.Repository.GenomeRepository<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>GenomeRepository</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>NEAT.ErrorHandling.Exceptions.StartupCheckException<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>StartupCheckException</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_error_handling_1_1_startup_check_1_1_startup_check" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_error_handling_1_1_startup_check_1_1_startup_check" kindref="compound">StartupCheck</ref>(object):</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">__init__(self):</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_error_handling_1_1_startup_check_1_1_startup_check_1afca8d845c7a7796c0963e0d49ec96786" kindref="member">con</ref><sp/>=<sp/>DatabaseConnector(</highlight><highlight class="stringliteral">&quot;error_check_dummy&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_error_handling_1_1_startup_check_1_1_startup_check_1a9defc0bb9535a560af330658f89337ac" kindref="member">rep</ref><sp/>=<sp/>GenomeRepository(self.<ref refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_error_handling_1_1_startup_check_1_1_startup_check_1afca8d845c7a7796c0963e0d49ec96786" kindref="member">con</ref>)</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">run(self):</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>genome<sp/>=<sp/>self.rep.get_new_genome()</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">try</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.rep.insert_genome(genome)</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">except</highlight><highlight class="normal"><sp/>Exception:</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">raise</highlight><highlight class="normal"><sp/>StartupCheckException(</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Startup<sp/>check<sp/>failed.<sp/>Check<sp/>if<sp/>mongoDB<sp/>is<sp/>running.&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+    </programlisting>
+    <location file="NEAT/ErrorHandling/StartupCheck.py"/>
+  </compounddef>
+</doxygen>

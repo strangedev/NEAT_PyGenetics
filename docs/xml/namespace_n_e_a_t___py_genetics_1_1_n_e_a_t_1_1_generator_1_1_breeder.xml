@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_generator_1_1_breeder" kind="namespace" language="Python">
+    <compoundname>NEAT_PyGenetics::NEAT::Generator::Breeder</compoundname>
+    <innerclass refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_generator_1_1_breeder_1_1_breeder" prot="public">NEAT_PyGenetics::NEAT::Generator::Breeder::Breeder</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="NEAT/Generator/Breeder.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

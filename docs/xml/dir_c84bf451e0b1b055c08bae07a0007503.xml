@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_c84bf451e0b1b055c08bae07a0007503" kind="dir">
+    <compoundname>NEAT/Tests/Decisions</compoundname>
+    <innerfile refid="_tests_2_decisions_2____init_____8py">__init__.py</innerfile>
+    <innerfile refid="test__decision_maker_8py">test_decisionMaker.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="NEAT/Tests/Decisions/"/>
+  </compounddef>
+</doxygen>

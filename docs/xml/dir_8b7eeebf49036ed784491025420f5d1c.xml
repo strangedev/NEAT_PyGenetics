@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_8b7eeebf49036ed784491025420f5d1c" kind="dir">
+    <compoundname>NEAT/Config/StaticConfig</compoundname>
+    <innerfile refid="_config_2_static_config_2____init_____8py">__init__.py</innerfile>
+    <innerfile refid="_server_config_8py">ServerConfig.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="NEAT/Config/StaticConfig/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,324 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector" kind="class" language="Python" prot="public">
+    <compoundname>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_DatabaseConnector::mock_DatabaseConnector</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1aaa8b3d15b7e01aef04c5ab3f58e8a006" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_DatabaseConnector.mock_DatabaseConnector::assigned_id</definition>
+        <argsstring></argsstring>
+        <name>assigned_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" line="28" column="1" bodyfile="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1a6061ac8abee52f8e6d81b92c24c944eb" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_DatabaseConnector.mock_DatabaseConnector::assigned_ids</definition>
+        <argsstring></argsstring>
+        <name>assigned_ids</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" line="48" column="1" bodyfile="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1a7e65d11937c1858690f2cd25ac07de18" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_DatabaseConnector.mock_DatabaseConnector::filter_mismatch</definition>
+        <argsstring></argsstring>
+        <name>filter_mismatch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" line="78" column="1" bodyfile="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1a3370fecdccb2abc0c0a3356825f04cc4" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_DatabaseConnector.mock_DatabaseConnector::results</definition>
+        <argsstring></argsstring>
+        <name>results</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" line="126" column="1" bodyfile="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1ae2f7be22baf415ecdc567d498726b3a9" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_DatabaseConnector.mock_DatabaseConnector::_database</definition>
+        <argsstring></argsstring>
+        <name>_database</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" line="7" column="1" bodyfile="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1acf325753483672630faa433462046478" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_DatabaseConnector.mock_DatabaseConnector::_m_next_id</definition>
+        <argsstring></argsstring>
+        <name>_m_next_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" line="8" column="1" bodyfile="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1a02398d61ab2bab01e548b901cd4d70f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_DatabaseConnector.mock_DatabaseConnector.__init__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" line="5" column="1" bodyfile="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" bodystart="5" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1aef1a53517f1680bcc5ddfcbeff3f4785" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_DatabaseConnector.mock_DatabaseConnector.get_collection</definition>
+        <argsstring></argsstring>
+        <name>get_collection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" line="10" column="1" bodyfile="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" bodystart="10" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1a9f8c8a2adf0987729548df63dfe118e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_DatabaseConnector.mock_DatabaseConnector.insert_one</definition>
+        <argsstring></argsstring>
+        <name>insert_one</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" line="15" column="1" bodyfile="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" bodystart="17" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1a0c7202b51bd1bf1001d3748ac39d825b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_DatabaseConnector.mock_DatabaseConnector.insert_many</definition>
+        <argsstring></argsstring>
+        <name>insert_many</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" line="35" column="1" bodyfile="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" bodystart="37" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1ac03ab8b0c7fda497eac3ca7435aec3a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_DatabaseConnector.mock_DatabaseConnector.find_one</definition>
+        <argsstring></argsstring>
+        <name>find_one</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" line="58" column="1" bodyfile="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" bodystart="60" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1ace6331811ba2e674ef037a66d073377a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_DatabaseConnector.mock_DatabaseConnector.find_one_by_id</definition>
+        <argsstring></argsstring>
+        <name>find_one_by_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" line="93" column="1" bodyfile="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" bodystart="95" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1a0ea2557b31cd7af3af9e098cc8dd3f7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_DatabaseConnector.mock_DatabaseConnector.find_many</definition>
+        <argsstring></argsstring>
+        <name>find_many</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" line="113" column="1" bodyfile="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" bodystart="115" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1a01f612634b7f3da00fb1b327dfa5b524" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_DatabaseConnector.mock_DatabaseConnector.update_one</definition>
+        <argsstring></argsstring>
+        <name>update_one</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" line="142" column="1" bodyfile="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" bodystart="144" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1a9fa32e7c0e425396238b66ab8f3ffb5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_DatabaseConnector.mock_DatabaseConnector.update_many</definition>
+        <argsstring></argsstring>
+        <name>update_many</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" line="161" column="1" bodyfile="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" bodystart="163" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1a534ae334b83f54bce7d32f66faf22440" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_DatabaseConnector.mock_DatabaseConnector.remove_one</definition>
+        <argsstring></argsstring>
+        <name>remove_one</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" line="177" column="1" bodyfile="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" bodystart="179" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1ab3ff82b4de49e912a56c7b3cd0a208ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_DatabaseConnector.mock_DatabaseConnector.remove_many</definition>
+        <argsstring></argsstring>
+        <name>remove_many</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" line="190" column="1" bodyfile="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" bodystart="192" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1a9092111a34ce0573dace98120682e415" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_DatabaseConnector.mock_DatabaseConnector.create_collection_if_not_exists</definition>
+        <argsstring>(self, collection_name)</argsstring>
+        <name>create_collection_if_not_exists</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>collection_name</type>
+          <defname>collection_name</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" line="205" column="1" bodyfile="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" bodystart="205" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1a7172e251a453e9481d7c8359b6961105" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_DatabaseConnector.mock_DatabaseConnector.next_id</definition>
+        <argsstring>(self)</argsstring>
+        <name>next_id</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" line="210" column="1" bodyfile="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" bodystart="210" bodyend="213"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="106">
+        <label>NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_DatabaseConnector.mock_DatabaseConnector</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector"/>
+        <childnode refid="107" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="107">
+        <label>object</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="108">
+        <label>NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_DatabaseConnector.mock_DatabaseConnector</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector"/>
+        <childnode refid="109" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="109">
+        <label>object</label>
+      </node>
+    </collaborationgraph>
+    <location file="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" line="3" column="1" bodyfile="NEAT/Tests/MockClasses/mock_DatabaseConnector.py" bodystart="3" bodyend="213"/>
+    <listofallmembers>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1a02398d61ab2bab01e548b901cd4d70f7" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_DatabaseConnector::mock_DatabaseConnector</scope><name>__init__</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1ae2f7be22baf415ecdc567d498726b3a9" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_DatabaseConnector::mock_DatabaseConnector</scope><name>_database</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1acf325753483672630faa433462046478" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_DatabaseConnector::mock_DatabaseConnector</scope><name>_m_next_id</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1aaa8b3d15b7e01aef04c5ab3f58e8a006" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_DatabaseConnector::mock_DatabaseConnector</scope><name>assigned_id</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1a6061ac8abee52f8e6d81b92c24c944eb" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_DatabaseConnector::mock_DatabaseConnector</scope><name>assigned_ids</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1a9092111a34ce0573dace98120682e415" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_DatabaseConnector::mock_DatabaseConnector</scope><name>create_collection_if_not_exists</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1a7e65d11937c1858690f2cd25ac07de18" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_DatabaseConnector::mock_DatabaseConnector</scope><name>filter_mismatch</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1a0ea2557b31cd7af3af9e098cc8dd3f7d" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_DatabaseConnector::mock_DatabaseConnector</scope><name>find_many</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1ac03ab8b0c7fda497eac3ca7435aec3a0" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_DatabaseConnector::mock_DatabaseConnector</scope><name>find_one</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1ace6331811ba2e674ef037a66d073377a" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_DatabaseConnector::mock_DatabaseConnector</scope><name>find_one_by_id</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1aef1a53517f1680bcc5ddfcbeff3f4785" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_DatabaseConnector::mock_DatabaseConnector</scope><name>get_collection</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1a0c7202b51bd1bf1001d3748ac39d825b" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_DatabaseConnector::mock_DatabaseConnector</scope><name>insert_many</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1a9f8c8a2adf0987729548df63dfe118e8" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_DatabaseConnector::mock_DatabaseConnector</scope><name>insert_one</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1a7172e251a453e9481d7c8359b6961105" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_DatabaseConnector::mock_DatabaseConnector</scope><name>next_id</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1ab3ff82b4de49e912a56c7b3cd0a208ac" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_DatabaseConnector::mock_DatabaseConnector</scope><name>remove_many</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1a534ae334b83f54bce7d32f66faf22440" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_DatabaseConnector::mock_DatabaseConnector</scope><name>remove_one</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1a3370fecdccb2abc0c0a3356825f04cc4" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_DatabaseConnector::mock_DatabaseConnector</scope><name>results</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1a9fa32e7c0e425396238b66ab8f3ffb5e" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_DatabaseConnector::mock_DatabaseConnector</scope><name>update_many</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___database_connector_1_1mock___database_connector_1a01f612634b7f3da00fb1b327dfa5b524" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_DatabaseConnector::mock_DatabaseConnector</scope><name>update_one</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

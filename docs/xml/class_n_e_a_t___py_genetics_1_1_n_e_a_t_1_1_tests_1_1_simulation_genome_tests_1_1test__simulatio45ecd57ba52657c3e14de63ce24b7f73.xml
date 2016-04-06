@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_simulation_genome_tests_1_1test__simulatio45ecd57ba52657c3e14de63ce24b7f73" kind="class" language="Python" prot="public">
+    <compoundname>NEAT_PyGenetics::NEAT::Tests::SimulationGenomeTests::test_simulationNodes::TestSimulationCycleNode</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">TestCase</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_simulation_genome_tests_1_1test__simulatio45ecd57ba52657c3e14de63ce24b7f73_1a0ad6f4a80ac5521840deb8b91dde6020" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Tests.SimulationGenomeTests.test_simulationNodes.TestSimulationCycleNode::rand</definition>
+        <argsstring></argsstring>
+        <name>rand</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/SimulationGenomeTests/test_simulationNodes.py" line="163" column="1" bodyfile="NEAT/Tests/SimulationGenomeTests/test_simulationNodes.py" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_simulation_genome_tests_1_1test__simulatio45ecd57ba52657c3e14de63ce24b7f73_1ae8c352cdd9202aa02c85f6514e896e46" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.SimulationGenomeTests.test_simulationNodes.TestSimulationCycleNode.setUp</definition>
+        <argsstring>(self)</argsstring>
+        <name>setUp</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/SimulationGenomeTests/test_simulationNodes.py" line="162" column="1" bodyfile="NEAT/Tests/SimulationGenomeTests/test_simulationNodes.py" bodystart="162" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_simulation_genome_tests_1_1test__simulatio45ecd57ba52657c3e14de63ce24b7f73_1aff6a6b849ab9b0d2f266e46753e06bd0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.SimulationGenomeTests.test_simulationNodes.TestSimulationCycleNode.test_createNode</definition>
+        <argsstring>(self)</argsstring>
+        <name>test_createNode</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/SimulationGenomeTests/test_simulationNodes.py" line="166" column="1" bodyfile="NEAT/Tests/SimulationGenomeTests/test_simulationNodes.py" bodystart="166" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_simulation_genome_tests_1_1test__simulatio45ecd57ba52657c3e14de63ce24b7f73_1aa2a6c739540eaa41276a31be0c8ef619" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.SimulationGenomeTests.test_simulationNodes.TestSimulationCycleNode.test_preserveMemory</definition>
+        <argsstring>(self)</argsstring>
+        <name>test_preserveMemory</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/SimulationGenomeTests/test_simulationNodes.py" line="172" column="1" bodyfile="NEAT/Tests/SimulationGenomeTests/test_simulationNodes.py" bodystart="172" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_simulation_genome_tests_1_1test__simulatio45ecd57ba52657c3e14de63ce24b7f73_1a5b6c8cba78559d3d4fbe1336fda1569b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.SimulationGenomeTests.test_simulationNodes.TestSimulationCycleNode.test_preserveMemoryWithInitialValue</definition>
+        <argsstring>(self)</argsstring>
+        <name>test_preserveMemoryWithInitialValue</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/SimulationGenomeTests/test_simulationNodes.py" line="177" column="1" bodyfile="NEAT/Tests/SimulationGenomeTests/test_simulationNodes.py" bodystart="177" bodyend="181"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_simulation_genome_tests_1_1test__simulatio45ecd57ba52657c3e14de63ce24b7f73_1af290d2156db85e2109ef6722c25eb213" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.SimulationGenomeTests.test_simulationNodes.TestSimulationCycleNode.test_addCycleSuccessor</definition>
+        <argsstring>(self)</argsstring>
+        <name>test_addCycleSuccessor</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Generates 100 random values from -1 to 2. Creates new nodes for every
+value and adds them using the generated value as the weight.
+Checks, that for values below zero and above one a
+ValueError is raised.
+:return:
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/SimulationGenomeTests/test_simulationNodes.py" line="182" column="1" bodyfile="NEAT/Tests/SimulationGenomeTests/test_simulationNodes.py" bodystart="182" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_simulation_genome_tests_1_1test__simulatio45ecd57ba52657c3e14de63ce24b7f73_1abd65f6b19f91eb3796411a7bc6f60cb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.SimulationGenomeTests.test_simulationNodes.TestSimulationCycleNode.test_addCycleSuccessorThatAlreadyExists</definition>
+        <argsstring>(self)</argsstring>
+        <name>test_addCycleSuccessorThatAlreadyExists</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Adds the same node multiple times to another node and expects it to
+raise an Exception.
+:return:
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/SimulationGenomeTests/test_simulationNodes.py" line="205" column="1" bodyfile="NEAT/Tests/SimulationGenomeTests/test_simulationNodes.py" bodystart="205" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_simulation_genome_tests_1_1test__simulatio45ecd57ba52657c3e14de63ce24b7f73_1ae41ca9680b1fc37c9033e68fab641eb5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.SimulationGenomeTests.test_simulationNodes.TestSimulationCycleNode.test_addCycleSuccessors</definition>
+        <argsstring>(self)</argsstring>
+        <name>test_addCycleSuccessors</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Generates a list of nodes, appends it to a test node and checks, if
+add_successor was called for every node.
+:return:
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/SimulationGenomeTests/test_simulationNodes.py" line="218" column="1" bodyfile="NEAT/Tests/SimulationGenomeTests/test_simulationNodes.py" bodystart="218" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_simulation_genome_tests_1_1test__simulatio45ecd57ba52657c3e14de63ce24b7f73_1abba2b6050d0f0b156684d6a8430595c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.SimulationGenomeTests.test_simulationNodes.TestSimulationCycleNode.test_addCycleSuccessorsOfWhichOneAlreadyExists</definition>
+        <argsstring>(self)</argsstring>
+        <name>test_addCycleSuccessorsOfWhichOneAlreadyExists</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Generates a list of nodes and duplicates some of them.
+Then checks, if appending the list to a node raises an Exception.
+:return:
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/SimulationGenomeTests/test_simulationNodes.py" line="231" column="1" bodyfile="NEAT/Tests/SimulationGenomeTests/test_simulationNodes.py" bodystart="231" bodyend="247"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_simulation_genome_tests_1_1test__simulatio45ecd57ba52657c3e14de63ce24b7f73_1ab3d073cdf68857190769fd380b63b842" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.SimulationGenomeTests.test_simulationNodes.TestSimulationCycleNode.test_fireCycles</definition>
+        <argsstring>(self)</argsstring>
+        <name>test_fireCycles</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Generates a list of nodes and weights, and a test node and their initial
+value. Then adds the list as cycle_successors to the node and calls
+fire.
+Checks that all values are calculated correctly.
+Also checks that firing multiple times sums the values.
+:return:
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/SimulationGenomeTests/test_simulationNodes.py" line="248" column="1" bodyfile="NEAT/Tests/SimulationGenomeTests/test_simulationNodes.py" bodystart="248" bodyend="274"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="277">
+        <label>NEAT_PyGenetics.NEAT.Tests.SimulationGenomeTests.test_simulationNodes.TestSimulationCycleNode</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_simulation_genome_tests_1_1test__simulatio45ecd57ba52657c3e14de63ce24b7f73"/>
+        <childnode refid="278" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="278">
+        <label>TestCase</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="279">
+        <label>NEAT_PyGenetics.NEAT.Tests.SimulationGenomeTests.test_simulationNodes.TestSimulationCycleNode</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_simulation_genome_tests_1_1test__simulatio45ecd57ba52657c3e14de63ce24b7f73"/>
+        <childnode refid="280" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="280">
+        <label>TestCase</label>
+      </node>
+    </collaborationgraph>
+    <location file="NEAT/Tests/SimulationGenomeTests/test_simulationNodes.py" line="161" column="1" bodyfile="NEAT/Tests/SimulationGenomeTests/test_simulationNodes.py" bodystart="161" bodyend="274"/>
+    <listofallmembers>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_simulation_genome_tests_1_1test__simulatio45ecd57ba52657c3e14de63ce24b7f73_1a0ad6f4a80ac5521840deb8b91dde6020" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::SimulationGenomeTests::test_simulationNodes::TestSimulationCycleNode</scope><name>rand</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_simulation_genome_tests_1_1test__simulatio45ecd57ba52657c3e14de63ce24b7f73_1ae8c352cdd9202aa02c85f6514e896e46" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::SimulationGenomeTests::test_simulationNodes::TestSimulationCycleNode</scope><name>setUp</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_simulation_genome_tests_1_1test__simulatio45ecd57ba52657c3e14de63ce24b7f73_1af290d2156db85e2109ef6722c25eb213" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::SimulationGenomeTests::test_simulationNodes::TestSimulationCycleNode</scope><name>test_addCycleSuccessor</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_simulation_genome_tests_1_1test__simulatio45ecd57ba52657c3e14de63ce24b7f73_1ae41ca9680b1fc37c9033e68fab641eb5" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::SimulationGenomeTests::test_simulationNodes::TestSimulationCycleNode</scope><name>test_addCycleSuccessors</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_simulation_genome_tests_1_1test__simulatio45ecd57ba52657c3e14de63ce24b7f73_1abba2b6050d0f0b156684d6a8430595c0" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::SimulationGenomeTests::test_simulationNodes::TestSimulationCycleNode</scope><name>test_addCycleSuccessorsOfWhichOneAlreadyExists</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_simulation_genome_tests_1_1test__simulatio45ecd57ba52657c3e14de63ce24b7f73_1abd65f6b19f91eb3796411a7bc6f60cb0" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::SimulationGenomeTests::test_simulationNodes::TestSimulationCycleNode</scope><name>test_addCycleSuccessorThatAlreadyExists</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_simulation_genome_tests_1_1test__simulatio45ecd57ba52657c3e14de63ce24b7f73_1aff6a6b849ab9b0d2f266e46753e06bd0" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::SimulationGenomeTests::test_simulationNodes::TestSimulationCycleNode</scope><name>test_createNode</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_simulation_genome_tests_1_1test__simulatio45ecd57ba52657c3e14de63ce24b7f73_1ab3d073cdf68857190769fd380b63b842" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::SimulationGenomeTests::test_simulationNodes::TestSimulationCycleNode</scope><name>test_fireCycles</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_simulation_genome_tests_1_1test__simulatio45ecd57ba52657c3e14de63ce24b7f73_1aa2a6c739540eaa41276a31be0c8ef619" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::SimulationGenomeTests::test_simulationNodes::TestSimulationCycleNode</scope><name>test_preserveMemory</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_simulation_genome_tests_1_1test__simulatio45ecd57ba52657c3e14de63ce24b7f73_1a5b6c8cba78559d3d4fbe1336fda1569b" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::SimulationGenomeTests::test_simulationNodes::TestSimulationCycleNode</scope><name>test_preserveMemoryWithInitialValue</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

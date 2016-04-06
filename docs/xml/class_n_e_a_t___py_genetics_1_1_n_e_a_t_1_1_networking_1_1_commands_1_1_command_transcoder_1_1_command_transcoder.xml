@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_command_transcoder_1_1_command_transcoder" kind="class" language="Python" prot="public">
+    <compoundname>NEAT_PyGenetics::NEAT::Networking::Commands::CommandTranscoder::CommandTranscoder</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_command_transcoder_1_1_command_transcoder_1a161a64d3c2586008802d174ebc5b6e4b" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Networking.Commands.CommandTranscoder.CommandTranscoder::type_class_map</definition>
+        <argsstring></argsstring>
+        <name>type_class_map</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Commands/CommandTranscoder.py" line="7" column="1" bodyfile="NEAT/Networking/Commands/CommandTranscoder.py" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_command_transcoder_1_1_command_transcoder_1a173c5fa30eabf9dc236f761803dfd1df" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Commands.CommandTranscoder.CommandTranscoder.encode_command</definition>
+        <argsstring></argsstring>
+        <name>encode_command</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Commands/CommandTranscoder.py" line="17" column="1" bodyfile="NEAT/Networking/Commands/CommandTranscoder.py" bodystart="17" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_command_transcoder_1_1_command_transcoder_1aebdcf1865dd3c040c341f00e88c8d387" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Networking.Commands.CommandTranscoder.CommandTranscoder.decode_command</definition>
+        <argsstring></argsstring>
+        <name>decode_command</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Networking/Commands/CommandTranscoder.py" line="21" column="1" bodyfile="NEAT/Networking/Commands/CommandTranscoder.py" bodystart="21" bodyend="28"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="35">
+        <label>object</label>
+      </node>
+      <node id="34">
+        <label>NEAT_PyGenetics.NEAT.Networking.Commands.CommandTranscoder.CommandTranscoder</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_command_transcoder_1_1_command_transcoder"/>
+        <childnode refid="35" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="37">
+        <label>object</label>
+      </node>
+      <node id="36">
+        <label>NEAT_PyGenetics.NEAT.Networking.Commands.CommandTranscoder.CommandTranscoder</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_command_transcoder_1_1_command_transcoder"/>
+        <childnode refid="37" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="NEAT/Networking/Commands/CommandTranscoder.py" line="5" column="1" bodyfile="NEAT/Networking/Commands/CommandTranscoder.py" bodystart="5" bodyend="28"/>
+    <listofallmembers>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_command_transcoder_1_1_command_transcoder_1aebdcf1865dd3c040c341f00e88c8d387" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Commands::CommandTranscoder::CommandTranscoder</scope><name>decode_command</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_command_transcoder_1_1_command_transcoder_1a173c5fa30eabf9dc236f761803dfd1df" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Commands::CommandTranscoder::CommandTranscoder</scope><name>encode_command</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking_1_1_commands_1_1_command_transcoder_1_1_command_transcoder_1a161a64d3c2586008802d174ebc5b6e4b" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Networking::Commands::CommandTranscoder::CommandTranscoder</scope><name>type_class_map</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

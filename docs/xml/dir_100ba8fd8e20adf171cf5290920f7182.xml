@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_100ba8fd8e20adf171cf5290920f7182" kind="dir">
+    <compoundname>NEAT/Config</compoundname>
+    <innerdir refid="dir_8b7eeebf49036ed784491025420f5d1c">NEAT/Config/StaticConfig</innerdir>
+    <innerfile refid="_config_2____init_____8py">__init__.py</innerfile>
+    <innerfile refid="_n_e_a_t_config_8py">NEATConfig.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="NEAT/Config/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,106 @@
+.TH "NEAT_PyGenetics.NEAT.GenomeStructures.SimulationStructure.SimulationGenome.SimulationGenome" 3 "Wed Apr 6 2016" "NEAT_PyGenetics" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NEAT_PyGenetics.NEAT.GenomeStructures.SimulationStructure.SimulationGenome.SimulationGenome \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits Generic, and GenomeStructure\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP"
+.br
+.ti -1c
+.RI "def \fBoutput\fP (self)"
+.br
+.ti -1c
+.RI "def \fBcalculate_step\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBcycle_nodes\fP"
+.br
+.ti -1c
+.RI "\fBhidden_layer\fP"
+.br
+.ti -1c
+.RI "\fBcloses_circle\fP"
+.br
+.ti -1c
+.RI "\fBsource\fP"
+.br
+.ti -1c
+.RI "\fBtarget\fP"
+.br
+.ti -1c
+.RI "\fBvalue\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+.nf
+The SimulationGenome is a structural representation of a genome's genepool.
+It is optimized for the purpose of simulating a neural network and is gene-
+rated from a given StorageGenome.
+
+Attributes:
+    _gene_repository:
+        Access to information about the node ids in the StorageGenome
+    _output:
+        Contains the results of the last calculation process.
+    _input_layer:
+        A set of Nodes as the input layer. These are identical in number and
+         ids with the input ids in the StorageGenome.
+    _output_layer:
+        A set of Nodes as the output layer. These are identical in number
+        and ids with the output ids in the StorageGenome.
+    _hidden_layer:
+        A hidden layer. This consists of a list of nodes which are calcula-
+        ted in the order of the list. This list is taken from the topologi-
+        cally sorted node list in the given StorageGenome's AnalysisResult.
+        So to ensure a functioning neural network, that list has to be cor-
+        rect.
+    _cycle_nodes:
+        A list of CycleNodes, topologically sorted (like the hidden layer).
+        These are nodes that have outgoing links that close a cycle. These
+        nodes have to be treated separately, because the cycle closing edges
+        have to be calculated first. For this initial calculation the last
+        calculation value is used as the outgoing base value. If the genome
+        was not simulated yet. a default value is used as the initial value.
+
+Usage:
+    insert StorageGenome
+    call calculate_step
+    have fun
+
+.fi
+.PP
+ 
+.PP
+Definition at line 13 of file SimulationGenome\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def NEAT_PyGenetics\&.NEAT\&.GenomeStructures\&.SimulationStructure\&.SimulationGenome\&.SimulationGenome\&.output ( self,  Dict,  str,  Fraction)"
+
+.PP
+.nf
+:return: Dict of the output nodes' values of the form label:value
+
+.fi
+.PP
+ 
+.PP
+Definition at line 142 of file SimulationGenome\&.py\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for NEAT_PyGenetics from the source code\&.

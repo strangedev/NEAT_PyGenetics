@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tesf3907a6c11390aeeb9f3c9bdc4f3b133" kind="class" language="Python" prot="public">
+    <compoundname>NEAT_PyGenetics::NEAT::Tests::NetworkingTests::CommandsTests::test_commandTranscoder::TestCommandTranscoder</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">TestCase</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tesf3907a6c11390aeeb9f3c9bdc4f3b133_1ab37426eab44d5bf3cc1175ac7efac8a8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Tests.NetworkingTests.CommandsTests.test_commandTranscoder.TestCommandTranscoder::base_command</definition>
+        <argsstring></argsstring>
+        <name>base_command</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/NetworkingTests/CommandsTests/test_commandTranscoder.py" line="9" column="1" bodyfile="NEAT/Tests/NetworkingTests/CommandsTests/test_commandTranscoder.py" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tesf3907a6c11390aeeb9f3c9bdc4f3b133_1a28601736fc099584cd37ae3370fa8630" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Tests.NetworkingTests.CommandsTests.test_commandTranscoder.TestCommandTranscoder::command_transcoder</definition>
+        <argsstring></argsstring>
+        <name>command_transcoder</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/NetworkingTests/CommandsTests/test_commandTranscoder.py" line="10" column="1" bodyfile="NEAT/Tests/NetworkingTests/CommandsTests/test_commandTranscoder.py" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tesf3907a6c11390aeeb9f3c9bdc4f3b133_1a2272af4f270fe071e01f4f958ae98f0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.NetworkingTests.CommandsTests.test_commandTranscoder.TestCommandTranscoder.setUp</definition>
+        <argsstring>(self)</argsstring>
+        <name>setUp</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/NetworkingTests/CommandsTests/test_commandTranscoder.py" line="8" column="1" bodyfile="NEAT/Tests/NetworkingTests/CommandsTests/test_commandTranscoder.py" bodystart="8" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tesf3907a6c11390aeeb9f3c9bdc4f3b133_1aa76781012dfd0b9e6c121d9d17c2167e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.NetworkingTests.CommandsTests.test_commandTranscoder.TestCommandTranscoder.test_encode_command</definition>
+        <argsstring>(self)</argsstring>
+        <name>test_encode_command</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/NetworkingTests/CommandsTests/test_commandTranscoder.py" line="12" column="1" bodyfile="NEAT/Tests/NetworkingTests/CommandsTests/test_commandTranscoder.py" bodystart="12" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tesf3907a6c11390aeeb9f3c9bdc4f3b133_1a64882d2ce98604b07d52cea3c2c71f7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.NetworkingTests.CommandsTests.test_commandTranscoder.TestCommandTranscoder.test_decode_command</definition>
+        <argsstring>(self)</argsstring>
+        <name>test_decode_command</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/NetworkingTests/CommandsTests/test_commandTranscoder.py" line="15" column="1" bodyfile="NEAT/Tests/NetworkingTests/CommandsTests/test_commandTranscoder.py" bodystart="15" bodyend="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="229">
+        <label>NEAT_PyGenetics.NEAT.Tests.NetworkingTests.CommandsTests.test_commandTranscoder.TestCommandTranscoder</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tesf3907a6c11390aeeb9f3c9bdc4f3b133"/>
+        <childnode refid="230" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="230">
+        <label>TestCase</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="231">
+        <label>NEAT_PyGenetics.NEAT.Tests.NetworkingTests.CommandsTests.test_commandTranscoder.TestCommandTranscoder</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tesf3907a6c11390aeeb9f3c9bdc4f3b133"/>
+        <childnode refid="232" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="232">
+        <label>TestCase</label>
+      </node>
+    </collaborationgraph>
+    <location file="NEAT/Tests/NetworkingTests/CommandsTests/test_commandTranscoder.py" line="7" column="1" bodyfile="NEAT/Tests/NetworkingTests/CommandsTests/test_commandTranscoder.py" bodystart="7" bodyend="18"/>
+    <listofallmembers>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tesf3907a6c11390aeeb9f3c9bdc4f3b133_1ab37426eab44d5bf3cc1175ac7efac8a8" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::NetworkingTests::CommandsTests::test_commandTranscoder::TestCommandTranscoder</scope><name>base_command</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tesf3907a6c11390aeeb9f3c9bdc4f3b133_1a28601736fc099584cd37ae3370fa8630" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::NetworkingTests::CommandsTests::test_commandTranscoder::TestCommandTranscoder</scope><name>command_transcoder</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tesf3907a6c11390aeeb9f3c9bdc4f3b133_1a2272af4f270fe071e01f4f958ae98f0c" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::NetworkingTests::CommandsTests::test_commandTranscoder::TestCommandTranscoder</scope><name>setUp</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tesf3907a6c11390aeeb9f3c9bdc4f3b133_1a64882d2ce98604b07d52cea3c2c71f7c" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::NetworkingTests::CommandsTests::test_commandTranscoder::TestCommandTranscoder</scope><name>test_decode_command</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_networking_tests_1_1_commands_tests_1_1tesf3907a6c11390aeeb9f3c9bdc4f3b133_1aa76781012dfd0b9e6c121d9d17c2167e" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::NetworkingTests::CommandsTests::test_commandTranscoder::TestCommandTranscoder</scope><name>test_encode_command</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

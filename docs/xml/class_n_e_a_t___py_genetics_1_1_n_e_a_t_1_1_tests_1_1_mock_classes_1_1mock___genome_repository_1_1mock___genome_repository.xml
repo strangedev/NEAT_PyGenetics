@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___genome_repository_1_1mock___genome_repository" kind="class" language="Python" prot="public">
+    <compoundname>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_GenomeRepository::mock_GenomeRepository</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___genome_repository_1_1mock___genome_repository_1abb2dfb4fa59c22b09dede3bcbd27ca4b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_GenomeRepository.mock_GenomeRepository::mock_population</definition>
+        <argsstring></argsstring>
+        <name>mock_population</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_GenomeRepository.py" line="9" column="1" bodyfile="NEAT/Tests/MockClasses/mock_GenomeRepository.py" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___genome_repository_1_1mock___genome_repository_1a1b6913e42019740f0dd683eef2bf8f32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_GenomeRepository.mock_GenomeRepository.__init__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_GenomeRepository.py" line="7" column="1" bodyfile="NEAT/Tests/MockClasses/mock_GenomeRepository.py" bodystart="7" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___genome_repository_1_1mock___genome_repository_1ad5413865b1a0a82964e0046d59406383" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_GenomeRepository.mock_GenomeRepository.get_current_population</definition>
+        <argsstring>(self)</argsstring>
+        <name>get_current_population</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_GenomeRepository.py" line="38" column="1" bodyfile="NEAT/Tests/MockClasses/mock_GenomeRepository.py" bodystart="38" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___genome_repository_1_1mock___genome_repository_1a3d3a5d43fa4285aa6282557fef12f471" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_GenomeRepository.mock_GenomeRepository.update_cluster_for_genome</definition>
+        <argsstring></argsstring>
+        <name>update_cluster_for_genome</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_GenomeRepository.py" line="42" column="1" bodyfile="NEAT/Tests/MockClasses/mock_GenomeRepository.py" bodystart="42" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___genome_repository_1_1mock___genome_repository_1aab8cb8b23202bf0a41e3dcbf42c096b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_GenomeRepository.mock_GenomeRepository.get_genome_by_id</definition>
+        <argsstring></argsstring>
+        <name>get_genome_by_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_GenomeRepository.py" line="54" column="1" bodyfile="NEAT/Tests/MockClasses/mock_GenomeRepository.py" bodystart="54" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___genome_repository_1_1mock___genome_repository_1a5abad1601614b0c128b4ab64e41ecba8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_GenomeRepository.mock_GenomeRepository.get_genomes_in_cluster</definition>
+        <argsstring></argsstring>
+        <name>get_genomes_in_cluster</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Tests/MockClasses/mock_GenomeRepository.py" line="62" column="1" bodyfile="NEAT/Tests/MockClasses/mock_GenomeRepository.py" bodystart="62" bodyend="73"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="115">
+        <label>object</label>
+      </node>
+      <node id="114">
+        <label>NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_GenomeRepository.mock_GenomeRepository</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___genome_repository_1_1mock___genome_repository"/>
+        <childnode refid="115" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="117">
+        <label>object</label>
+      </node>
+      <node id="116">
+        <label>NEAT_PyGenetics.NEAT.Tests.MockClasses.mock_GenomeRepository.mock_GenomeRepository</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___genome_repository_1_1mock___genome_repository"/>
+        <childnode refid="117" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="NEAT/Tests/MockClasses/mock_GenomeRepository.py" line="5" column="1" bodyfile="NEAT/Tests/MockClasses/mock_GenomeRepository.py" bodystart="5" bodyend="73"/>
+    <listofallmembers>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___genome_repository_1_1mock___genome_repository_1a1b6913e42019740f0dd683eef2bf8f32" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_GenomeRepository::mock_GenomeRepository</scope><name>__init__</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___genome_repository_1_1mock___genome_repository_1ad5413865b1a0a82964e0046d59406383" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_GenomeRepository::mock_GenomeRepository</scope><name>get_current_population</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___genome_repository_1_1mock___genome_repository_1aab8cb8b23202bf0a41e3dcbf42c096b0" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_GenomeRepository::mock_GenomeRepository</scope><name>get_genome_by_id</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___genome_repository_1_1mock___genome_repository_1a5abad1601614b0c128b4ab64e41ecba8" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_GenomeRepository::mock_GenomeRepository</scope><name>get_genomes_in_cluster</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___genome_repository_1_1mock___genome_repository_1abb2dfb4fa59c22b09dede3bcbd27ca4b" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_GenomeRepository::mock_GenomeRepository</scope><name>mock_population</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests_1_1_mock_classes_1_1mock___genome_repository_1_1mock___genome_repository_1a3d3a5d43fa4285aa6282557fef12f471" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Tests::MockClasses::mock_GenomeRepository::mock_GenomeRepository</scope><name>update_cluster_for_genome</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

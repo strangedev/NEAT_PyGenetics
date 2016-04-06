@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t" kind="namespace" language="Python">
+    <compoundname>NEAT_PyGenetics::NEAT</compoundname>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst">NEAT_PyGenetics::NEAT::Analyst</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_config">NEAT_PyGenetics::NEAT::Config</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_decisions">NEAT_PyGenetics::NEAT::Decisions</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_director">NEAT_PyGenetics::NEAT::Director</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_error_handling">NEAT_PyGenetics::NEAT::ErrorHandling</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_generator">NEAT_PyGenetics::NEAT::Generator</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_genome_structures">NEAT_PyGenetics::NEAT::GenomeStructures</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_logging">NEAT_PyGenetics::NEAT::Logging</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_networking">NEAT_PyGenetics::NEAT::Networking</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository">NEAT_PyGenetics::NEAT::Repository</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_simulator">NEAT_PyGenetics::NEAT::Simulator</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_tests">NEAT_PyGenetics::NEAT::Tests</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_utilities">NEAT_PyGenetics::NEAT::Utilities</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="NEAT/__init__.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

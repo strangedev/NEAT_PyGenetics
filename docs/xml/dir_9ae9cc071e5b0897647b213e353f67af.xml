@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_9ae9cc071e5b0897647b213e353f67af" kind="dir">
+    <compoundname>NEAT/Tests/StorageGenomeTests</compoundname>
+    <innerfile refid="_tests_2_storage_genome_tests_2____init_____8py">__init__.py</innerfile>
+    <innerfile refid="test__storage_genome_8py">test_storageGenome.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="NEAT/Tests/StorageGenomeTests/"/>
+  </compounddef>
+</doxygen>

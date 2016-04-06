@@ -1,0 +1,247 @@
+.TH "NEAT_PyGenetics.NEAT.Director.MainDirector.MainDirector" 3 "Wed Apr 6 2016" "NEAT_PyGenetics" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NEAT_PyGenetics.NEAT.Director.MainDirector.MainDirector \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits Director\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "def \fB__init__\fP (self, kwargs)"
+.br
+.ti -1c
+.RI "def \fBidle\fP (self)"
+.br
+.ti -1c
+.RI "def \fBdynamic_init\fP (self)"
+.br
+.ti -1c
+.RI "def \fBinit_db\fP (self)"
+.br
+.ti -1c
+.RI "def \fBrun\fP (self)"
+.br
+.ti -1c
+.RI "def \fBgenerate_new_genomes\fP (self)"
+.br
+.ti -1c
+.RI "def \fBcrossbreed_clusters\fP (self)"
+.br
+.ti -1c
+.RI "def \fBanalyze_and_insert\fP"
+.br
+.ti -1c
+.RI "def \fBcalculate_cluster_offspring\fP (self)"
+.br
+.ti -1c
+.RI "def \fBdiscard_genomes\fP (self)"
+.br
+.ti -1c
+.RI "def \fBdiscard_clusters\fP (self)"
+.br
+.ti -1c
+.RI "def \fBperform_simulation_io\fP (self)"
+.br
+.ti -1c
+.RI "def \fBcompute_genome_outputs\fP"
+.br
+.ti -1c
+.RI "def \fBupdate_fitness_values\fP"
+.br
+.ti -1c
+.RI "def \fBinit_population\fP (self)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBmode\fP"
+.br
+.ti -1c
+.RI "\fBselector\fP"
+.br
+.ti -1c
+.RI "\fBdecision_maker\fP"
+.br
+.ti -1c
+.RI "\fBbreeder\fP"
+.br
+.ti -1c
+.RI "\fBmutator\fP"
+.br
+.ti -1c
+.RI "\fBanalyst\fP"
+.br
+.ti -1c
+.RI "\fBclusterer\fP"
+.br
+.ti -1c
+.RI "\fBsimulator\fP"
+.br
+.ti -1c
+.RI "\fBsimulation_connector\fP"
+.br
+.ti -1c
+.RI "\fBdatabase_connector\fP"
+.br
+.ti -1c
+.RI "\fBgene_repository\fP"
+.br
+.ti -1c
+.RI "\fBgenome_repository\fP"
+.br
+.ti -1c
+.RI "\fBcluster_repository\fP"
+.br
+.ti -1c
+.RI "\fBconfig\fP"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBresults\fP"
+.br
+.ti -1c
+.RI "\fBstorage_genome\fP"
+.br
+.ti -1c
+.RI "\fBoutputs\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 26 of file MainDirector\&.py\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "def NEAT_PyGenetics\&.NEAT\&.Director\&.MainDirector\&.MainDirector\&.__init__ ( self,  kwargs)"
+
+.PP
+.nf
+:param kwargs:
+    - mode:
+- exit: exits the program, default action if nothing is provided.
+- new: creates a new database for a given simulation. requires parame-
+ ter simulation to be set.
+- load: loads a database for a given simulation. requires parameter
+ simulation to be set.
+    - simulation: the name of the simulation that should be used. must cor-
+      respond to a module name in Simulation.
+:return:
+
+.fi
+.PP
+ 
+.PP
+Definition at line 27 of file MainDirector\&.py\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "def NEAT_PyGenetics\&.NEAT\&.Director\&.MainDirector\&.MainDirector\&.calculate_cluster_offspring ( self)"
+
+.PP
+.nf
+Calculates fitness values and offspring for clusters.
+:return:
+
+.fi
+.PP
+ 
+.PP
+Definition at line 275 of file MainDirector\&.py\&.
+.SS "def NEAT_PyGenetics\&.NEAT\&.Director\&.MainDirector\&.MainDirector\&.crossbreed_clusters ( self)"
+
+.PP
+.nf
+combines two clusters by breeding genomes of both clusters
+:return:
+
+.fi
+.PP
+ 
+.PP
+Definition at line 251 of file MainDirector\&.py\&.
+.SS "def NEAT_PyGenetics\&.NEAT\&.Director\&.MainDirector\&.MainDirector\&.discard_clusters ( self)"
+
+.PP
+.nf
+Discards a number of clusters
+:return:
+
+.fi
+.PP
+ 
+.PP
+Definition at line 290 of file MainDirector\&.py\&.
+.SS "def NEAT_PyGenetics\&.NEAT\&.Director\&.MainDirector\&.MainDirector\&.discard_genomes ( self)"
+
+.PP
+.nf
+discards a number of genomes
+:return:
+
+.fi
+.PP
+ 
+.PP
+Definition at line 282 of file MainDirector\&.py\&.
+.SS "def NEAT_PyGenetics\&.NEAT\&.Director\&.MainDirector\&.MainDirector\&.dynamic_init ( self)"
+
+.PP
+.nf
+Initializes all parts of NEAT that are dependent upon
+the client.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 91 of file MainDirector\&.py\&.
+.SS "def NEAT_PyGenetics\&.NEAT\&.Director\&.MainDirector\&.MainDirector\&.generate_new_genomes ( self)"
+
+.PP
+.nf
+Regenerates the population by selecting genomes for
+mutation / breeding, running the generation process and performing analysis.
+:return:
+
+.fi
+.PP
+ 
+.PP
+Definition at line 225 of file MainDirector\&.py\&.
+.SS "def NEAT_PyGenetics\&.NEAT\&.Director\&.MainDirector\&.MainDirector\&.idle ( self)"
+
+.PP
+.nf
+Standard method that will be executed if local startup is done.
+In this state, the Director will wait for the client.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 72 of file MainDirector\&.py\&.
+.SS "def NEAT_PyGenetics\&.NEAT\&.Director\&.MainDirector\&.MainDirector\&.run ( self)"
+
+.PP
+.nf
+The main function where the simulation is run, new
+genomes are created and discarded
+This is where the evolutionary magic happens.
+
+.fi
+.PP
+ 
+.PP
+Definition at line 167 of file MainDirector\&.py\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for NEAT_PyGenetics from the source code\&.

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="_time_utilities_8py" kind="file" language="Python">
+    <compoundname>TimeUtilities.py</compoundname>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_utilities_1_1_time_utilities">NEAT_PyGenetics::NEAT::Utilities::TimeUtilities</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">import</highlight><highlight class="normal"><sp/>time</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">millis():</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>int(round(time.time()<sp/>*<sp/>1000))</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="NEAT/Utilities/TimeUtilities.py"/>
+  </compounddef>
+</doxygen>

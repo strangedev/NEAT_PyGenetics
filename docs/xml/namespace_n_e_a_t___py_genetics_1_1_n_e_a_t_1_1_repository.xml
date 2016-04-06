@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository" kind="namespace" language="Python">
+    <compoundname>NEAT_PyGenetics::NEAT::Repository</compoundname>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository">NEAT_PyGenetics::NEAT::Repository::ClusterRepository</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_database_connector">NEAT_PyGenetics::NEAT::Repository::DatabaseConnector</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_gene_repository">NEAT_PyGenetics::NEAT::Repository::GeneRepository</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_genome_repository">NEAT_PyGenetics::NEAT::Repository::GenomeRepository</innernamespace>
+    <innernamespace refid="namespace_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_transformator">NEAT_PyGenetics::NEAT::Repository::Transformator</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="NEAT/Repository/__init__.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

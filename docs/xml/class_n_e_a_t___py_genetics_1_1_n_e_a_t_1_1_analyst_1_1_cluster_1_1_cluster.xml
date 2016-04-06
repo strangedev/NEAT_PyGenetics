@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_cluster_1_1_cluster" kind="class" language="Python" prot="public">
+    <compoundname>NEAT_PyGenetics::NEAT::Analyst::Cluster::Cluster</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_cluster_1_1_cluster_1a1149dbba922a4ddbcc4104e288f9fc42" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.Cluster.Cluster::_id</definition>
+        <argsstring></argsstring>
+        <name>_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/Cluster.py" line="32" column="1" bodyfile="NEAT/Analyst/Cluster.py" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_cluster_1_1_cluster_1a6d98b217b836b08679f9b20f9459f2ba" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.Cluster.Cluster::representative</definition>
+        <argsstring></argsstring>
+        <name>representative</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/Cluster.py" line="33" column="1" bodyfile="NEAT/Analyst/Cluster.py" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_cluster_1_1_cluster_1a1c956f56f9f8e92391eb6c8912d8cd8a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.Cluster.Cluster::fitness</definition>
+        <argsstring></argsstring>
+        <name>fitness</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/Cluster.py" line="34" column="1" bodyfile="NEAT/Analyst/Cluster.py" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_cluster_1_1_cluster_1a29316a5b5546bea6c97896e814ce084e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.Cluster.Cluster::offspring</definition>
+        <argsstring></argsstring>
+        <name>offspring</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/Cluster.py" line="35" column="1" bodyfile="NEAT/Analyst/Cluster.py" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_cluster_1_1_cluster_1a9d814ccf011d42ab14bdade4be3e1fdb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.Cluster.Cluster::alive</definition>
+        <argsstring></argsstring>
+        <name>alive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/Cluster.py" line="36" column="1" bodyfile="NEAT/Analyst/Cluster.py" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_cluster_1_1_cluster_1a12ebc01de1535941e1af477dddaedbe9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Analyst.Cluster.Cluster.__init__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/Cluster.py" line="29" column="1" bodyfile="NEAT/Analyst/Cluster.py" bodystart="31" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_cluster_1_1_cluster_1a85d2dfa24ff6846be17920a77987ece5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Analyst.Cluster.Cluster.__eq__</definition>
+        <argsstring></argsstring>
+        <name>__eq__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/Cluster.py" line="38" column="1" bodyfile="NEAT/Analyst/Cluster.py" bodystart="38" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_cluster_1_1_cluster_1a691632bc1747f486a4f1c8fe3ee02265" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Analyst.Cluster.Cluster.cluster_id</definition>
+        <argsstring>(self)</argsstring>
+        <name>cluster_id</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/Cluster.py" line="46" column="1" bodyfile="NEAT/Analyst/Cluster.py" bodystart="46" bodyend="48"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>Object used to represent a single cluster as stored
+in the database.
+
+Attributes:
+    cluster_id (_id):
+        The Cluster&apos;s ID, unique
+    representative:
+        The ID of the representative StorageGenome.
+        All genomes in the cluster are topologically similar
+        to it&apos;s representative genome.
+    fitness:
+        The cluster&apos;s fitness value.
+        This is calculated from the fitness values of the
+        contained genomes by a shared fitness approach.
+    offspring:
+        The amount of offspring that will be generated based
+        on genomes from this clusters during the next generation.
+    alive:
+        Whether the cluster is alive, i.e. if there are any
+        genomes in the current population which belong to this
+        cluster.
+</verbatim> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="26">
+        <label>NEAT_PyGenetics.NEAT.Analyst.Cluster.Cluster</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_cluster_1_1_cluster"/>
+        <childnode refid="27" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>object</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="28">
+        <label>NEAT_PyGenetics.NEAT.Analyst.Cluster.Cluster</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_cluster_1_1_cluster"/>
+        <childnode refid="29" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>object</label>
+      </node>
+    </collaborationgraph>
+    <location file="NEAT/Analyst/Cluster.py" line="4" column="1" bodyfile="NEAT/Analyst/Cluster.py" bodystart="4" bodyend="48"/>
+    <listofallmembers>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_cluster_1_1_cluster_1a85d2dfa24ff6846be17920a77987ece5" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::Cluster::Cluster</scope><name>__eq__</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_cluster_1_1_cluster_1a12ebc01de1535941e1af477dddaedbe9" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::Cluster::Cluster</scope><name>__init__</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_cluster_1_1_cluster_1a1149dbba922a4ddbcc4104e288f9fc42" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::Cluster::Cluster</scope><name>_id</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_cluster_1_1_cluster_1a9d814ccf011d42ab14bdade4be3e1fdb" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::Cluster::Cluster</scope><name>alive</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_cluster_1_1_cluster_1a691632bc1747f486a4f1c8fe3ee02265" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::Cluster::Cluster</scope><name>cluster_id</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_cluster_1_1_cluster_1a1c956f56f9f8e92391eb6c8912d8cd8a" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::Cluster::Cluster</scope><name>fitness</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_cluster_1_1_cluster_1a29316a5b5546bea6c97896e814ce084e" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::Cluster::Cluster</scope><name>offspring</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_cluster_1_1_cluster_1a6d98b217b836b08679f9b20f9459f2ba" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::Cluster::Cluster</scope><name>representative</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,422 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector" kind="class" language="Python" prot="public">
+    <compoundname>NEAT_PyGenetics::NEAT::Analyst::GenomeSelector::GenomeSelector</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1aabb39abd6a1fcfa61f9b8eb4662e00db" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector::genome_repository</definition>
+        <argsstring></argsstring>
+        <name>genome_repository</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeSelector.py" line="27" column="1" bodyfile="NEAT/Analyst/GenomeSelector.py" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1ad3561e93fc8fdd2c51ffec388ddc4c7e" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector::cluster_repository</definition>
+        <argsstring></argsstring>
+        <name>cluster_repository</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeSelector.py" line="28" column="1" bodyfile="NEAT/Analyst/GenomeSelector.py" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1af6ab170d7eef08b15d79eabb074ade5e" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector::selection_parameters</definition>
+        <argsstring></argsstring>
+        <name>selection_parameters</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeSelector.py" line="29" column="1" bodyfile="NEAT/Analyst/GenomeSelector.py" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1affce7cea247dd2a869d83fbcc67f9f78" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector::genomes</definition>
+        <argsstring></argsstring>
+        <name>genomes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeSelector.py" line="41" column="1" bodyfile="NEAT/Analyst/GenomeSelector.py" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a65680f48e6b7e8f218f8536420a665db" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector::clusters</definition>
+        <argsstring></argsstring>
+        <name>clusters</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeSelector.py" line="57" column="1" bodyfile="NEAT/Analyst/GenomeSelector.py" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a59881db1a9d315dd4019aad7d52eeeb2" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector::key</definition>
+        <argsstring></argsstring>
+        <name>key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeSelector.py" line="60" column="1" bodyfile="NEAT/Analyst/GenomeSelector.py" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a41d6d1538df7134f2f31519ff49f6c58" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector::start</definition>
+        <argsstring></argsstring>
+        <name>start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeSelector.py" line="61" column="1" bodyfile="NEAT/Analyst/GenomeSelector.py" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a9531d1391e7501950602af5dd854a43a" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector::end</definition>
+        <argsstring></argsstring>
+        <name>end</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeSelector.py" line="62" column="1" bodyfile="NEAT/Analyst/GenomeSelector.py" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1af361031b936449d59bedda05b9363d13" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector::result</definition>
+        <argsstring></argsstring>
+        <name>result</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeSelector.py" line="74" column="1" bodyfile="NEAT/Analyst/GenomeSelector.py" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1afa3ff139e2ad867f5746aee243fd9aa1" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector::genome_one</definition>
+        <argsstring></argsstring>
+        <name>genome_one</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeSelector.py" line="76" column="1" bodyfile="NEAT/Analyst/GenomeSelector.py" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a8ea3993f52a51fe0d93b331eb2b78a8d" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector::genome_two</definition>
+        <argsstring></argsstring>
+        <name>genome_two</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeSelector.py" line="77" column="1" bodyfile="NEAT/Analyst/GenomeSelector.py" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a22cb93426797917839ba925a79e51a36" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector::seats_to_mutation</definition>
+        <argsstring></argsstring>
+        <name>seats_to_mutation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeSelector.py" line="78" column="1" bodyfile="NEAT/Analyst/GenomeSelector.py" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1af8c8af7836b5ae5b52f6688c1266bb06" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector::step</definition>
+        <argsstring></argsstring>
+        <name>step</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeSelector.py" line="97" column="1" bodyfile="NEAT/Analyst/GenomeSelector.py" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a2b86adfa98c72c3ce406e95fce29a9ad" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector::genomes1</definition>
+        <argsstring></argsstring>
+        <name>genomes1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeSelector.py" line="131" column="1" bodyfile="NEAT/Analyst/GenomeSelector.py" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1aff1676f8a3e91f03ef133d445fd111b8" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector::genomes2</definition>
+        <argsstring></argsstring>
+        <name>genomes2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeSelector.py" line="132" column="1" bodyfile="NEAT/Analyst/GenomeSelector.py" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a66bc085d9c0e2b4ce121fd3c4d4ec226" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector::g1</definition>
+        <argsstring></argsstring>
+        <name>g1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeSelector.py" line="133" column="1" bodyfile="NEAT/Analyst/GenomeSelector.py" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a335eeb80af660ac6ef6d5a8ca81fb95c" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector::g2</definition>
+        <argsstring></argsstring>
+        <name>g2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeSelector.py" line="134" column="1" bodyfile="NEAT/Analyst/GenomeSelector.py" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a92cb92afdabf4246963cf8214c9baa76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector.__init__</definition>
+        <argsstring></argsstring>
+        <name>__init__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeSelector.py" line="14" column="1" bodyfile="NEAT/Analyst/GenomeSelector.py" bodystart="16" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1aae7092166920c907176530a60deda37d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector.get_genomes_in_cluster</definition>
+        <argsstring></argsstring>
+        <name>get_genomes_in_cluster</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeSelector.py" line="31" column="1" bodyfile="NEAT/Analyst/GenomeSelector.py" bodystart="33" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a2fb8600454d9d808158dbe3ace6b4952" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector.get_cluster_area_sorted_by_fitness</definition>
+        <argsstring></argsstring>
+        <name>get_cluster_area_sorted_by_fitness</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeSelector.py" line="47" column="1" bodyfile="NEAT/Analyst/GenomeSelector.py" bodystart="49" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a938d385b8d73983a5e9abf75a80f03f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector.select_genomes_for_breeding</definition>
+        <argsstring></argsstring>
+        <name>select_genomes_for_breeding</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeSelector.py" line="65" column="1" bodyfile="NEAT/Analyst/GenomeSelector.py" bodystart="67" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1af335a5342b0a1695c52d61274c83b0bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector.select_genomes_for_mutation</definition>
+        <argsstring></argsstring>
+        <name>select_genomes_for_mutation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeSelector.py" line="86" column="1" bodyfile="NEAT/Analyst/GenomeSelector.py" bodystart="88" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a9e1d64bae210147a47049f1c8c389bfc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector.select_clusters_for_combination</definition>
+        <argsstring>(self)</argsstring>
+        <name>select_clusters_for_combination</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>:return: Tuple[Cluster] cluster chosen for combination
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeSelector.py" line="106" column="1" bodyfile="NEAT/Analyst/GenomeSelector.py" bodystart="106" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a08b5d1264a5dadc1ec98affabf1ab76d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector.select_cluster_combinations</definition>
+        <argsstring></argsstring>
+        <name>select_cluster_combinations</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeSelector.py" line="119" column="1" bodyfile="NEAT/Analyst/GenomeSelector.py" bodystart="121" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a1016a10b5301bd2a1fd770dceda6644b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector.select_clusters_for_discarding</definition>
+        <argsstring>(self)</argsstring>
+        <name>select_clusters_for_discarding</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>select x percentage (given by selection.conf &quot;discarding_by_cluster_fitness&quot;) of Cluster sorted ascending
+by fitness
+:return: List of Cluster wanted to be discarded
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeSelector.py" line="137" column="1" bodyfile="NEAT/Analyst/GenomeSelector.py" bodystart="137" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1af7cd898b9a5bbc1e2e407256a385f865" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector.select_genomes_for_discarding</definition>
+        <argsstring>(self)</argsstring>
+        <name>select_genomes_for_discarding</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>select &quot;discarding_by_genome_fitness&quot; percentage (in every Cluster) of genomes sorted ascending by fitness
+:return: List of Genomes wanted to be discarded
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeSelector.py" line="150" column="1" bodyfile="NEAT/Analyst/GenomeSelector.py" bodystart="150" bodyend="168"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="77">
+        <label>object</label>
+      </node>
+      <node id="76">
+        <label>NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector"/>
+        <childnode refid="77" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="79">
+        <label>object</label>
+      </node>
+      <node id="78">
+        <label>NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelector</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector"/>
+        <childnode refid="79" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="NEAT/Analyst/GenomeSelector.py" line="13" column="1" bodyfile="NEAT/Analyst/GenomeSelector.py" bodystart="13" bodyend="168"/>
+    <listofallmembers>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a92cb92afdabf4246963cf8214c9baa76" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeSelector::GenomeSelector</scope><name>__init__</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1ad3561e93fc8fdd2c51ffec388ddc4c7e" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeSelector::GenomeSelector</scope><name>cluster_repository</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a65680f48e6b7e8f218f8536420a665db" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeSelector::GenomeSelector</scope><name>clusters</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a9531d1391e7501950602af5dd854a43a" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeSelector::GenomeSelector</scope><name>end</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a66bc085d9c0e2b4ce121fd3c4d4ec226" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeSelector::GenomeSelector</scope><name>g1</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a335eeb80af660ac6ef6d5a8ca81fb95c" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeSelector::GenomeSelector</scope><name>g2</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1afa3ff139e2ad867f5746aee243fd9aa1" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeSelector::GenomeSelector</scope><name>genome_one</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1aabb39abd6a1fcfa61f9b8eb4662e00db" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeSelector::GenomeSelector</scope><name>genome_repository</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a8ea3993f52a51fe0d93b331eb2b78a8d" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeSelector::GenomeSelector</scope><name>genome_two</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1affce7cea247dd2a869d83fbcc67f9f78" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeSelector::GenomeSelector</scope><name>genomes</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a2b86adfa98c72c3ce406e95fce29a9ad" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeSelector::GenomeSelector</scope><name>genomes1</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1aff1676f8a3e91f03ef133d445fd111b8" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeSelector::GenomeSelector</scope><name>genomes2</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a2fb8600454d9d808158dbe3ace6b4952" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeSelector::GenomeSelector</scope><name>get_cluster_area_sorted_by_fitness</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1aae7092166920c907176530a60deda37d" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeSelector::GenomeSelector</scope><name>get_genomes_in_cluster</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a59881db1a9d315dd4019aad7d52eeeb2" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeSelector::GenomeSelector</scope><name>key</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1af361031b936449d59bedda05b9363d13" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeSelector::GenomeSelector</scope><name>result</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a22cb93426797917839ba925a79e51a36" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeSelector::GenomeSelector</scope><name>seats_to_mutation</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a08b5d1264a5dadc1ec98affabf1ab76d" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeSelector::GenomeSelector</scope><name>select_cluster_combinations</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a9e1d64bae210147a47049f1c8c389bfc" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeSelector::GenomeSelector</scope><name>select_clusters_for_combination</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a1016a10b5301bd2a1fd770dceda6644b" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeSelector::GenomeSelector</scope><name>select_clusters_for_discarding</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a938d385b8d73983a5e9abf75a80f03f5" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeSelector::GenomeSelector</scope><name>select_genomes_for_breeding</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1af7cd898b9a5bbc1e2e407256a385f865" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeSelector::GenomeSelector</scope><name>select_genomes_for_discarding</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1af335a5342b0a1695c52d61274c83b0bf" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeSelector::GenomeSelector</scope><name>select_genomes_for_mutation</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1af6ab170d7eef08b15d79eabb074ade5e" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeSelector::GenomeSelector</scope><name>selection_parameters</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1a41d6d1538df7134f2f31519ff49f6c58" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeSelector::GenomeSelector</scope><name>start</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_selector_1_1_genome_selector_1af8c8af7836b5ae5b52f6688c1266bb06" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeSelector::GenomeSelector</scope><name>step</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

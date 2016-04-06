@@ -1,0 +1,503 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer" kind="class" language="Python" prot="public">
+    <compoundname>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1af9623df2d784da3e4c186b729c63bb81" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer::genome_repository</definition>
+        <argsstring></argsstring>
+        <name>genome_repository</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="22" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1ab9332a669c7c28ee6d33806da38eee45" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer::cluster_repository</definition>
+        <argsstring></argsstring>
+        <name>cluster_repository</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="23" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a23498ab192f633f9bada8709832b5fed" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer::clustering_parameters</definition>
+        <argsstring></argsstring>
+        <name>clustering_parameters</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="24" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1aefeaee4266e3fab9ff64f0b23fa08902" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer::excess_coefficient</definition>
+        <argsstring></argsstring>
+        <name>excess_coefficient</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="92" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a2d3a31646312ae391f5805b5f5a7c0c5" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer::disjoint_coefficient</definition>
+        <argsstring></argsstring>
+        <name>disjoint_coefficient</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="95" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a4d2e391563722c816e807faf0011aabf" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer::weight_delta_coefficient</definition>
+        <argsstring></argsstring>
+        <name>weight_delta_coefficient</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="98" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a5b2d70ae35a4051f4663c496190f0780" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer::bigger_genome</definition>
+        <argsstring></argsstring>
+        <name>bigger_genome</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="102" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a5b0b90cb5b44c29ae3a062a9f591cee9" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer::smaller_genome</definition>
+        <argsstring></argsstring>
+        <name>smaller_genome</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="102" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a3046dce6838bbf4b7209358ca3c88a2a" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer::bigger_genome_gene_ids</definition>
+        <argsstring></argsstring>
+        <name>bigger_genome_gene_ids</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="106" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1ac6b59f46ec08ad39bb46b6597591ab6f" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer::smaller_genome_gene_ids</definition>
+        <argsstring></argsstring>
+        <name>smaller_genome_gene_ids</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="107" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a73179831aa538106f4b8d7dcb54c82c7" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer::all_gene_ids</definition>
+        <argsstring></argsstring>
+        <name>all_gene_ids</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="109" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a47fed7fbdbd9d079e693921bc38e5f3e" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer::matching_genes</definition>
+        <argsstring></argsstring>
+        <name>matching_genes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="111" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a7b7e2e57ffced7bd6a6c884aa20f313a" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer::differing_genes</definition>
+        <argsstring></argsstring>
+        <name>differing_genes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="114" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1aed8ff1fe75594eae5a5422965cca13b5" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer::n</definition>
+        <argsstring></argsstring>
+        <name>n</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="117" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1abc33fd75cd1bbcb72c3bfea41db56b63" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer::disjoint_count</definition>
+        <argsstring></argsstring>
+        <name>disjoint_count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="119" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a0e1ff1aa859082568b6b5efeeb029234" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer::excess_count</definition>
+        <argsstring></argsstring>
+        <name>excess_count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="119" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1adf2a23e3ff4eca53b7b4834cd9b51275" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer::w_bar</definition>
+        <argsstring></argsstring>
+        <name>w_bar</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="121" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="121" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a402e6e20884053cc0ae8f04f86734091" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer::smaller_genome_range</definition>
+        <argsstring></argsstring>
+        <name>smaller_genome_range</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="141" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a4fdea1cdff3d733af9de249641892695" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer::excess_genes</definition>
+        <argsstring></argsstring>
+        <name>excess_genes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="148" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a1aed67ecb6dba5bad3cf73de3b756b91" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer::disjoint_genes</definition>
+        <argsstring></argsstring>
+        <name>disjoint_genes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="151" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1aff7fba61d7cd8eeeed9149ed48211699" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer::weights</definition>
+        <argsstring></argsstring>
+        <name>weights</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="173" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="173" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1ac1f8f1740d1a6663cc8fb29fe29f3c35" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer::weight_one</definition>
+        <argsstring></argsstring>
+        <name>weight_one</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="177" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a2541d20300efb0cff96a18abb6a85d81" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer::weight_two</definition>
+        <argsstring></argsstring>
+        <name>weight_two</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="178" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a23a8244cf5fc16133939b27cd558810b" prot="private" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer::_no_clusters</definition>
+        <argsstring></argsstring>
+        <name>_no_clusters</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="25" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a2f18f1f814c59bc18bc896c67331db10" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer.__init__</definition>
+        <argsstring></argsstring>
+        <name>__init__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="15" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="17" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a3cb27bd4e57fbae51f5638bf252d7d19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer.cluster_genomes</definition>
+        <argsstring></argsstring>
+        <name>cluster_genomes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="27" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="27" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a4b17098e6b96981aa7a00ffe3c3510c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer.cluster_genome</definition>
+        <argsstring></argsstring>
+        <name>cluster_genome</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="39" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="39" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a057cec399fba67f9f90c70ad9158ec5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer.calculate_delta</definition>
+        <argsstring></argsstring>
+        <name>calculate_delta</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="77" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="79" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a5dba985534b3de86bb03574e683749f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer.calculate_cluster_fitness</definition>
+        <argsstring></argsstring>
+        <name>calculate_cluster_fitness</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="200" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="200" bodyend="218"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a6bd0107d083dade08414c19ad9aaadaf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer.calculate_cluster_offspring_values</definition>
+        <argsstring>(self)</argsstring>
+        <name>calculate_cluster_offspring_values</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Calculates the number of offspring the clusters will generate
+in the next generation cycle, based on the compared
+shared fitness values of all active clusters. Fitter clusters
+will receive a bigger number of offspring.
+
+:return: None
+</verbatim> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="219" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="219" bodyend="252"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a25f21d57d135bbf3b0f23bbfdef375e7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer.calculate_disjoint_excess_count</definition>
+        <argsstring></argsstring>
+        <name>calculate_disjoint_excess_count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="128" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="129" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a748db217e8ce0c9f3e4302b00b4677e8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer.calculate_average_weight_difference</definition>
+        <argsstring></argsstring>
+        <name>calculate_average_weight_difference</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Analyst/GenomeClusterer.py" line="157" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="158" bodyend="160"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>A class used for clustering genomes into species.
+</verbatim> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="69">
+        <label>object</label>
+      </node>
+      <node id="68">
+        <label>NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer"/>
+        <childnode refid="69" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="71">
+        <label>object</label>
+      </node>
+      <node id="70">
+        <label>NEAT_PyGenetics.NEAT.Analyst.GenomeClusterer.GenomeClusterer</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer"/>
+        <childnode refid="71" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="NEAT/Analyst/GenomeClusterer.py" line="10" column="1" bodyfile="NEAT/Analyst/GenomeClusterer.py" bodystart="10" bodyend="252"/>
+    <listofallmembers>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a2f18f1f814c59bc18bc896c67331db10" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>__init__</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a23a8244cf5fc16133939b27cd558810b" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>_no_clusters</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a73179831aa538106f4b8d7dcb54c82c7" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>all_gene_ids</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a5b2d70ae35a4051f4663c496190f0780" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>bigger_genome</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a3046dce6838bbf4b7209358ca3c88a2a" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>bigger_genome_gene_ids</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a748db217e8ce0c9f3e4302b00b4677e8" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>calculate_average_weight_difference</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a5dba985534b3de86bb03574e683749f6" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>calculate_cluster_fitness</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a6bd0107d083dade08414c19ad9aaadaf" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>calculate_cluster_offspring_values</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a057cec399fba67f9f90c70ad9158ec5e" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>calculate_delta</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a25f21d57d135bbf3b0f23bbfdef375e7" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>calculate_disjoint_excess_count</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a4b17098e6b96981aa7a00ffe3c3510c8" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>cluster_genome</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a3cb27bd4e57fbae51f5638bf252d7d19" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>cluster_genomes</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1ab9332a669c7c28ee6d33806da38eee45" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>cluster_repository</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a23498ab192f633f9bada8709832b5fed" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>clustering_parameters</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a7b7e2e57ffced7bd6a6c884aa20f313a" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>differing_genes</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a2d3a31646312ae391f5805b5f5a7c0c5" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>disjoint_coefficient</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1abc33fd75cd1bbcb72c3bfea41db56b63" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>disjoint_count</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a1aed67ecb6dba5bad3cf73de3b756b91" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>disjoint_genes</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1aefeaee4266e3fab9ff64f0b23fa08902" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>excess_coefficient</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a0e1ff1aa859082568b6b5efeeb029234" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>excess_count</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a4fdea1cdff3d733af9de249641892695" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>excess_genes</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1af9623df2d784da3e4c186b729c63bb81" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>genome_repository</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a47fed7fbdbd9d079e693921bc38e5f3e" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>matching_genes</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1aed8ff1fe75594eae5a5422965cca13b5" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>n</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a5b0b90cb5b44c29ae3a062a9f591cee9" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>smaller_genome</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1ac6b59f46ec08ad39bb46b6597591ab6f" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>smaller_genome_gene_ids</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a402e6e20884053cc0ae8f04f86734091" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>smaller_genome_range</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1adf2a23e3ff4eca53b7b4834cd9b51275" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>w_bar</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a4d2e391563722c816e807faf0011aabf" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>weight_delta_coefficient</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1ac1f8f1740d1a6663cc8fb29fe29f3c35" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>weight_one</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1a2541d20300efb0cff96a18abb6a85d81" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>weight_two</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_analyst_1_1_genome_clusterer_1_1_genome_clusterer_1aff7fba61d7cd8eeeed9149ed48211699" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Analyst::GenomeClusterer::GenomeClusterer</scope><name>weights</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

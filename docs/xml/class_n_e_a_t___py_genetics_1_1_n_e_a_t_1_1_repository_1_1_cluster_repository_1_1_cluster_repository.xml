@@ -1,0 +1,232 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository_1_1_cluster_repository" kind="class" language="Python" prot="public">
+    <compoundname>NEAT_PyGenetics::NEAT::Repository::ClusterRepository::ClusterRepository</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">object</basecompoundref>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository_1_1_cluster_repository_1a1834515cd9dbbdf31e311ce6a2e8e78a" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Repository.ClusterRepository.ClusterRepository::cluster</definition>
+        <argsstring></argsstring>
+        <name>cluster</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Repository/ClusterRepository.py" line="26" column="1" bodyfile="NEAT/Repository/ClusterRepository.py" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository_1_1_cluster_repository_1accef80a33d0dd0473ad8c9b3723ec0d9" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Repository.ClusterRepository.ClusterRepository::representative</definition>
+        <argsstring></argsstring>
+        <name>representative</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Repository/ClusterRepository.py" line="27" column="1" bodyfile="NEAT/Repository/ClusterRepository.py" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository_1_1_cluster_repository_1a8d545f61188a41b15f2c7f3fb2fddcec" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Repository.ClusterRepository.ClusterRepository::offspring</definition>
+        <argsstring></argsstring>
+        <name>offspring</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Repository/ClusterRepository.py" line="75" column="1" bodyfile="NEAT/Repository/ClusterRepository.py" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository_1_1_cluster_repository_1ab02d6987f0458e6b1c4b0d64c47b5a03" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>NEAT_PyGenetics.NEAT.Repository.ClusterRepository.ClusterRepository::_database_connector</definition>
+        <argsstring></argsstring>
+        <name>_database_connector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Repository/ClusterRepository.py" line="11" column="1" bodyfile="NEAT/Repository/ClusterRepository.py" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository_1_1_cluster_repository_1a49b3cd6db6131c52bba0de2481584f20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Repository.ClusterRepository.ClusterRepository.__init__</definition>
+        <argsstring></argsstring>
+        <name>__init__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Repository/ClusterRepository.py" line="10" column="1" bodyfile="NEAT/Repository/ClusterRepository.py" bodystart="10" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository_1_1_cluster_repository_1a06b7a0bc3b6bf0ddc6eb9040dcecd74b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Repository.ClusterRepository.ClusterRepository.get_current_clusters</definition>
+        <argsstring>(self)</argsstring>
+        <name>get_current_clusters</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Repository/ClusterRepository.py" line="13" column="1" bodyfile="NEAT/Repository/ClusterRepository.py" bodystart="13" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository_1_1_cluster_repository_1adab9f634071749a11cfe0875075fb0a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Repository.ClusterRepository.ClusterRepository.add_cluster_with_representative</definition>
+        <argsstring></argsstring>
+        <name>add_cluster_with_representative</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Repository/ClusterRepository.py" line="22" column="1" bodyfile="NEAT/Repository/ClusterRepository.py" bodystart="24" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository_1_1_cluster_repository_1a58649974b303a672e75c650e69d1cb21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Repository.ClusterRepository.ClusterRepository.archive_cluster</definition>
+        <argsstring></argsstring>
+        <name>archive_cluster</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Repository/ClusterRepository.py" line="33" column="1" bodyfile="NEAT/Repository/ClusterRepository.py" bodystart="33" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository_1_1_cluster_repository_1af79b19639b87ae827067ddb4d23fe83d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Repository.ClusterRepository.ClusterRepository.get_cluster_by_representative</definition>
+        <argsstring></argsstring>
+        <name>get_cluster_by_representative</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Repository/ClusterRepository.py" line="49" column="1" bodyfile="NEAT/Repository/ClusterRepository.py" bodystart="49" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository_1_1_cluster_repository_1aba5e54a8cf88aece8ebb990b812a3ce2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Repository.ClusterRepository.ClusterRepository.get_cluster_count</definition>
+        <argsstring>(self)</argsstring>
+        <name>get_cluster_count</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Repository/ClusterRepository.py" line="60" column="1" bodyfile="NEAT/Repository/ClusterRepository.py" bodystart="60" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository_1_1_cluster_repository_1a40254dd9f12511e8fa3e707b65938db4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Repository.ClusterRepository.ClusterRepository.update_offspring_for_cluster</definition>
+        <argsstring></argsstring>
+        <name>update_offspring_for_cluster</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Repository/ClusterRepository.py" line="64" column="1" bodyfile="NEAT/Repository/ClusterRepository.py" bodystart="66" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository_1_1_cluster_repository_1ac0949d637eb75abae63005db57f14700" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Repository.ClusterRepository.ClusterRepository.update_fitness_for_cluster</definition>
+        <argsstring></argsstring>
+        <name>update_fitness_for_cluster</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Repository/ClusterRepository.py" line="84" column="1" bodyfile="NEAT/Repository/ClusterRepository.py" bodystart="86" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository_1_1_cluster_repository_1a69ed07f142ec57528a44026aba6bd1fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def NEAT_PyGenetics.NEAT.Repository.ClusterRepository.ClusterRepository.update_max_population_for_cluster</definition>
+        <argsstring></argsstring>
+        <name>update_max_population_for_cluster</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="NEAT/Repository/ClusterRepository.py" line="104" column="1" bodyfile="NEAT/Repository/ClusterRepository.py" bodystart="106" bodyend="107"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="31">
+        <label>object</label>
+      </node>
+      <node id="30">
+        <label>NEAT_PyGenetics.NEAT.Repository.ClusterRepository.ClusterRepository</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository_1_1_cluster_repository"/>
+        <childnode refid="31" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="33">
+        <label>object</label>
+      </node>
+      <node id="32">
+        <label>NEAT_PyGenetics.NEAT.Repository.ClusterRepository.ClusterRepository</label>
+        <link refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository_1_1_cluster_repository"/>
+        <childnode refid="33" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="NEAT/Repository/ClusterRepository.py" line="8" column="1" bodyfile="NEAT/Repository/ClusterRepository.py" bodystart="8" bodyend="122"/>
+    <listofallmembers>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository_1_1_cluster_repository_1a49b3cd6db6131c52bba0de2481584f20" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Repository::ClusterRepository::ClusterRepository</scope><name>__init__</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository_1_1_cluster_repository_1ab02d6987f0458e6b1c4b0d64c47b5a03" prot="private" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Repository::ClusterRepository::ClusterRepository</scope><name>_database_connector</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository_1_1_cluster_repository_1adab9f634071749a11cfe0875075fb0a5" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Repository::ClusterRepository::ClusterRepository</scope><name>add_cluster_with_representative</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository_1_1_cluster_repository_1a58649974b303a672e75c650e69d1cb21" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Repository::ClusterRepository::ClusterRepository</scope><name>archive_cluster</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository_1_1_cluster_repository_1a1834515cd9dbbdf31e311ce6a2e8e78a" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Repository::ClusterRepository::ClusterRepository</scope><name>cluster</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository_1_1_cluster_repository_1af79b19639b87ae827067ddb4d23fe83d" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Repository::ClusterRepository::ClusterRepository</scope><name>get_cluster_by_representative</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository_1_1_cluster_repository_1aba5e54a8cf88aece8ebb990b812a3ce2" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Repository::ClusterRepository::ClusterRepository</scope><name>get_cluster_count</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository_1_1_cluster_repository_1a06b7a0bc3b6bf0ddc6eb9040dcecd74b" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Repository::ClusterRepository::ClusterRepository</scope><name>get_current_clusters</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository_1_1_cluster_repository_1a8d545f61188a41b15f2c7f3fb2fddcec" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Repository::ClusterRepository::ClusterRepository</scope><name>offspring</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository_1_1_cluster_repository_1accef80a33d0dd0473ad8c9b3723ec0d9" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Repository::ClusterRepository::ClusterRepository</scope><name>representative</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository_1_1_cluster_repository_1ac0949d637eb75abae63005db57f14700" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Repository::ClusterRepository::ClusterRepository</scope><name>update_fitness_for_cluster</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository_1_1_cluster_repository_1a69ed07f142ec57528a44026aba6bd1fe" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Repository::ClusterRepository::ClusterRepository</scope><name>update_max_population_for_cluster</name></member>
+      <member refid="class_n_e_a_t___py_genetics_1_1_n_e_a_t_1_1_repository_1_1_cluster_repository_1_1_cluster_repository_1a40254dd9f12511e8fa3e707b65938db4" prot="public" virt="non-virtual"><scope>NEAT_PyGenetics::NEAT::Repository::ClusterRepository::ClusterRepository</scope><name>update_offspring_for_cluster</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

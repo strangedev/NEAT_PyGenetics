@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_f40922c48af953d1e9961a9baf6f959d" kind="dir">
+    <compoundname>NEAT/Networking</compoundname>
+    <innerdir refid="dir_67372fd630e6697592671465d9acea2a">NEAT/Networking/Client</innerdir>
+    <innerdir refid="dir_bd8f0ec6b98442998ab4401d397dbcaa">NEAT/Networking/Commands</innerdir>
+    <innerdir refid="dir_1571c4efa1d4f5aa2a06a57e560c7511">NEAT/Networking/Server</innerdir>
+    <innerfile refid="_networking_2____init_____8py">__init__.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="NEAT/Networking/"/>
+  </compounddef>
+</doxygen>
