@@ -192,7 +192,7 @@ class GenomeClusterer(object):
 
         w_bar = sum(
             [(weight_one - weight_two) ** 2 for (weight_one, weight_two) in weights]
-        ) / len(matching_genes)  # type: float
+        ) / len(matching_genes) if len(matching_genes) > 0 else 0  # type: float
 
         return w_bar
 
