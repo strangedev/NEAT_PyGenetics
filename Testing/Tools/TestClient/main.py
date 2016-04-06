@@ -8,6 +8,10 @@ cli.announce_session(
 )
 block = cli.get_block(0)
 print(block)
-exit()
-for genome in block:
-    pass
+
+for genome, inputs in block.items():
+    for input in inputs:
+        block[genome][input] = 0.5
+
+cli.set_block_inputs(block, 0)
+

@@ -160,11 +160,12 @@ class SimulationConnector(object):
         genome_id: Dict[input_label: input_value]
         """
         set_command = self._listen_for_command("SetInputs", {"block_id": block_id})
+        self._respond_to_command(set_command)
+
         for key, value in set_command.parameters["block"].items():
             del set_command.parameters["block"][key]
             set_command.parameters["block"][ObjectId(key)] = value
 
-        self._respond_to_command(set_command)
         return set_command.parameters["block"]
 
     def send_block_outputs(
@@ -210,7 +211,7 @@ class SimulationConnector(object):
         self._respond_to_command(set_command)
         for key, value in set_command.parameters["fitness_values"].items():
             del set_command.parameters["fitness_values"][key]
-            set_command.parameters["fitness_values"][key.__str__()] = value
+            set_command.parameters["fitness_values"][ObjectId(key)] = value
 
         return set_command.parameters["fitness_values"]
 
