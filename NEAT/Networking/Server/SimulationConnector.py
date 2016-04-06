@@ -131,9 +131,9 @@ class SimulationConnector(object):
                 {
                     input_label: None
                     for input_label in genome.inputs.keys()
-                    }
+                }
             for genome in block
-            }
+        }
         result = {
             "block": block_to_send,
             "block_id": block_id,
@@ -183,6 +183,10 @@ class SimulationConnector(object):
         :return: None
         """
         get_command = self._listen_for_command("GetOutputs", {"block_id": block_id})
+        for key, value in outputs.items():
+            del outputs[key]
+            outputs[key.__str__()] = value
+
         get_command.result["outputs"] = outputs
         self._respond_to_command(get_command)
 
@@ -204,6 +208,10 @@ class SimulationConnector(object):
             }
         )
         self._respond_to_command(set_command)
+        for key, value in set_command.parameters["fitness_values"].items():
+            del set_command.parameters["fitness_values"][key]
+            set_command.parameters["fitness_values"][key.__str__()] = value
+
         return set_command.parameters["fitness_values"]
 
     def get_advance_generation(self) -> bool:
