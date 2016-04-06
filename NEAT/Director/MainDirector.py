@@ -269,8 +269,8 @@ class MainDirector(Director):
         analysis_genome = AnalysisGenome(self.gene_repository, genome)
         analysis_result = self.analyst.analyze(analysis_genome)
         genome.analysis_result = analysis_result
-        genome.cluster = self.clusterer.cluster_genome(genome)
         self.genome_repository.insert_genome(genome)
+        self.clusterer.cluster_genome(genome)
 
     def calculate_cluster_offspring(self):
         """

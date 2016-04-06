@@ -48,7 +48,6 @@ class GenomeClusterer(object):
         if self._no_clusters:
             self.cluster_repository.add_cluster_with_representative(genome.genome_id)
             self._no_clusters = False
-            return
 
         clusters = self.cluster_repository.get_current_clusters()
         for cluster in clusters:

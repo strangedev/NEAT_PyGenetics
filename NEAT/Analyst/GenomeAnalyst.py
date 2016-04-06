@@ -163,6 +163,7 @@ class GenomeAnalyst(object):
 
         if node not in self._working_edges:
             node_visitation_status[node] = 2
+            nodes_top_sorted.insert(0, node)
             return
 
         for neighbor, gene_id in sorted(self._working_edges[node], key=lambda x: x[0]):
