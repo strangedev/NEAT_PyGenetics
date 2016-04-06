@@ -2,7 +2,7 @@ from NEAT.Networking.Client.SimulationClient import SimulationClient
 
 cli = SimulationClient("127.0.0.1", 8081)
 cli.announce_session(
-    "testSession",
+    "testSession1",
     "/home/strangedev/Dokumente/NEAT_PyGenetics/NEAT/Config",
     1
 )

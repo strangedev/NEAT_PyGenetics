@@ -352,4 +352,4 @@ class MainDirector(Director):
                 inputs=input_labels,
                 outputs=output_labels
             )
-            self.genome_repository.insert_genome(genome)
+            self.analyze_and_insert(genome)
