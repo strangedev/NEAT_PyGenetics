@@ -107,23 +107,31 @@ Inheritance diagram for NEAT_PyGenetics.NEAT.Analyst.GenomeSelector.GenomeSelect
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a92cb92afdabf4246963cf8214c9baa76"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector.html#a92cb92afdabf4246963cf8214c9baa76">__init__</a></td></tr>
+<tr class="memdesc:a92cb92afdabf4246963cf8214c9baa76"><td class="mdescLeft">&#160;</td><td class="mdescRight">:param genome_repository: GenomeRepository to select :param cluster_repository: ClusterRepository to select :param selection_parameters: saved in selection.conf :return:  <a href="#a92cb92afdabf4246963cf8214c9baa76">More...</a><br /></td></tr>
 <tr class="separator:a92cb92afdabf4246963cf8214c9baa76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae7092166920c907176530a60deda37d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector.html#aae7092166920c907176530a60deda37d">get_genomes_in_cluster</a></td></tr>
+<tr class="memdesc:aae7092166920c907176530a60deda37d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selects and Area of genomes in <a class="el" href="namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster.html">Cluster</a> given by input offspring.  <a href="#aae7092166920c907176530a60deda37d">More...</a><br /></td></tr>
 <tr class="separator:aae7092166920c907176530a60deda37d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fb8600454d9d808158dbe3ace6b4952"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector.html#a2fb8600454d9d808158dbe3ace6b4952">get_cluster_area_sorted_by_fitness</a></td></tr>
+<tr class="memdesc:a2fb8600454d9d808158dbe3ace6b4952"><td class="mdescLeft">&#160;</td><td class="mdescRight">:param begin: float percentage starting area (0 is starting by weakest) :param ending: float ending area (1 is starting by fitt est) :return: List[<a class="el" href="namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster.html">Cluster</a>] sorted by fitness  <a href="#a2fb8600454d9d808158dbe3ace6b4952">More...</a><br /></td></tr>
 <tr class="separator:a2fb8600454d9d808158dbe3ace6b4952"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a938d385b8d73983a5e9abf75a80f03f5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector.html#a938d385b8d73983a5e9abf75a80f03f5">select_genomes_for_breeding</a></td></tr>
+<tr class="memdesc:a938d385b8d73983a5e9abf75a80f03f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selects genomes for breeding currently best two from all Clusters :type breeding_percentage: float :return: tuple(Storage)  <a href="#a938d385b8d73983a5e9abf75a80f03f5">More...</a><br /></td></tr>
 <tr class="separator:a938d385b8d73983a5e9abf75a80f03f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af335a5342b0a1695c52d61274c83b0bf"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector.html#af335a5342b0a1695c52d61274c83b0bf">select_genomes_for_mutation</a></td></tr>
+<tr class="memdesc:af335a5342b0a1695c52d61274c83b0bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selects genome for mutation currently the best from all Clusters :param mutation_percentage: float :return: StorageGenome the most fit.  <a href="#af335a5342b0a1695c52d61274c83b0bf">More...</a><br /></td></tr>
 <tr class="separator:af335a5342b0a1695c52d61274c83b0bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e1d64bae210147a47049f1c8c389bfc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector.html#a9e1d64bae210147a47049f1c8c389bfc">select_clusters_for_combination</a> (self)</td></tr>
 <tr class="memdesc:a9e1d64bae210147a47049f1c8c389bfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">:return: Tuple[<a class="el" href="namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster.html">Cluster</a>] cluster chosen for combination  <a href="#a9e1d64bae210147a47049f1c8c389bfc">More...</a><br /></td></tr>
 <tr class="separator:a9e1d64bae210147a47049f1c8c389bfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08b5d1264a5dadc1ec98affabf1ab76d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector.html#a08b5d1264a5dadc1ec98affabf1ab76d">select_cluster_combinations</a></td></tr>
+<tr class="memdesc:a08b5d1264a5dadc1ec98affabf1ab76d"><td class="mdescLeft">&#160;</td><td class="mdescRight">:param cluster1: <a class="el" href="namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster.html">Cluster</a> to choose 1 :param cluster2: <a class="el" href="namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster.html">Cluster</a> to choose 2 :param genome_count: int number of seats which should be filled :return: List[Tuple[StorageGenome]] combination from given cluster  <a href="#a08b5d1264a5dadc1ec98affabf1ab76d">More...</a><br /></td></tr>
 <tr class="separator:a08b5d1264a5dadc1ec98affabf1ab76d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1016a10b5301bd2a1fd770dceda6644b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector.html#a1016a10b5301bd2a1fd770dceda6644b">select_clusters_for_discarding</a> (self)</td></tr>
+<tr class="memdesc:a1016a10b5301bd2a1fd770dceda6644b"><td class="mdescLeft">&#160;</td><td class="mdescRight">select x percentage (given by selection.conf "discarding_by_cluster_fitness") of <a class="el" href="namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster.html">Cluster</a> sorted ascending by fitness :return: List of <a class="el" href="namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster.html">Cluster</a> wanted to be discarded  <a href="#a1016a10b5301bd2a1fd770dceda6644b">More...</a><br /></td></tr>
 <tr class="separator:a1016a10b5301bd2a1fd770dceda6644b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7cd898b9a5bbc1e2e407256a385f865"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector.html#af7cd898b9a5bbc1e2e407256a385f865">select_genomes_for_discarding</a> (self)</td></tr>
+<tr class="memdesc:af7cd898b9a5bbc1e2e407256a385f865"><td class="mdescLeft">&#160;</td><td class="mdescRight">select "discarding_by_genome_fitness" percentage (in every <a class="el" href="namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster.html">Cluster</a>) of genomes sorted ascending by fitness :return: List of Genomes wanted to be discarded  <a href="#af7cd898b9a5bbc1e2e407256a385f865">More...</a><br /></td></tr>
 <tr class="separator:af7cd898b9a5bbc1e2e407256a385f865"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
@@ -188,6 +196,8 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>:param genome_repository: GenomeRepository to select :param cluster_repository: ClusterRepository to select :param selection_parameters: saved in selection.conf :return: </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -215,6 +225,8 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>:param begin: float percentage starting area (0 is starting by weakest) :param ending: float ending area (1 is starting by fitt est) :return: List[<a class="el" href="namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster.html">Cluster</a>] sorted by fitness </p>
+
 </div>
 </div>
 <a class="anchor" id="aae7092166920c907176530a60deda37d"></a>
@@ -241,6 +253,9 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Selects and Area of genomes in <a class="el" href="namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster.html">Cluster</a> given by input offspring. </p>
+<p>:param cluster_id: ObjectId to load Genomes :return: [StorageGenome] </p>
+
 </div>
 </div>
 <a class="anchor" id="a08b5d1264a5dadc1ec98affabf1ab76d"></a>
@@ -266,6 +281,8 @@ Static Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>:param cluster1: <a class="el" href="namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster.html">Cluster</a> to choose 1 :param cluster2: <a class="el" href="namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster.html">Cluster</a> to choose 2 :param genome_count: int number of seats which should be filled :return: List[Tuple[StorageGenome]] combination from given cluster </p>
 
 </div>
 </div>
@@ -339,6 +356,8 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>select x percentage (given by selection.conf "discarding_by_cluster_fitness") of <a class="el" href="namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster.html">Cluster</a> sorted ascending by fitness :return: List of <a class="el" href="namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster.html">Cluster</a> wanted to be discarded </p>
+
 </div>
 </div>
 <a class="anchor" id="a938d385b8d73983a5e9abf75a80f03f5"></a>
@@ -364,6 +383,8 @@ Static Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Selects genomes for breeding currently best two from all Clusters :type breeding_percentage: float :return: tuple(Storage) </p>
 
 </div>
 </div>
@@ -397,6 +418,8 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>select "discarding_by_genome_fitness" percentage (in every <a class="el" href="namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster.html">Cluster</a>) of genomes sorted ascending by fitness :return: List of Genomes wanted to be discarded </p>
+
 </div>
 </div>
 <a class="anchor" id="af335a5342b0a1695c52d61274c83b0bf"></a>
@@ -422,6 +445,8 @@ Static Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Selects genome for mutation currently the best from all Clusters :param mutation_percentage: float :return: StorageGenome the most fit. </p>
 
 </div>
 </div>

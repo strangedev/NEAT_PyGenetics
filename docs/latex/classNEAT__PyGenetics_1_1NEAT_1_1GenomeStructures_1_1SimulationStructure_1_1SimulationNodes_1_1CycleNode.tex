@@ -10,15 +10,15 @@ Inheritance diagram for N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Genome\+St
 \begin{DoxyCompactItemize}
 \item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1CycleNode_a7296250c1afe722523e7897b0ab2b4d4}{\+\_\+\+\_\+init\+\_\+\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Unlike in \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1Node}{Node} here the initial\+\_\+value is mandatory. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1CycleNode_acac910243feebfd38ee9bb9503a4db24}{add\+\_\+cycle\+\_\+successor}
-\item 
+\begin{DoxyCompactList}\small\item\em Adds a cycle successor to the list. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1CycleNode_a842b0166427a3d54ba9dc87062d2cd57}{add\+\_\+cycle\+\_\+successors}
-\item 
+\begin{DoxyCompactList}\small\item\em Adds multiple successor\+\_\+nodes to the list. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1CycleNode_aded4c01be2b30e8fc2d0bd89bd4d9763}{fire\+\_\+cycles} (self)
-\item 
+\begin{DoxyCompactList}\small\item\em Adds the last stored value multiplied with the specific weights to all cycle closing successors. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1CycleNode_a55f0110c03f18c3b093f7cb06354e1e3}{preserve\+\_\+memory} (self)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Copies the current value into the memory\+\_\+value. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -42,6 +42,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationSt
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1CycleNode_a7296250c1afe722523e7897b0ab2b4d4}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1CycleNode_a7296250c1afe722523e7897b0ab2b4d4}
 
 
+Unlike in \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1Node}{Node} here the initial\+\_\+value is mandatory. 
+
+It is used for the first step of firing the cycle edges. \+:param initial\+\_\+value\+: \+:return\+: 
+
 \subsection{Member Function Documentation}
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Cycle\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Cycle\+Node}!add\+\_\+cycle\+\_\+successor@{add\+\_\+cycle\+\_\+successor}}
 \index{add\+\_\+cycle\+\_\+successor@{add\+\_\+cycle\+\_\+successor}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Cycle\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Cycle\+Node}}
@@ -51,7 +55,11 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationSt
 \item[{}]{successor\+\_\+node}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1CycleNode_acac910243feebfd38ee9bb9503a4db24}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1CycleNode_acac910243feebfd38ee9bb9503a4db24}
-\index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Cycle\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Cycle\+Node}!add\+\_\+cycle\+\_\+successors@{add\+\_\+cycle\+\_\+successors}}
+
+
+Adds a cycle successor to the list. 
+
+Throws an Exception otherwise. \+:param successor\+\_\+node\+: \+:param weight\+: \+:raises\+: Value\+Error, if the weight of the given nodes is not in the interval \mbox{[}0,1\mbox{]}. \+:raises\+: Exception, if the given successor\+\_\+node already exists in the stored list of successors. \+:return\+: \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Cycle\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Cycle\+Node}!add\+\_\+cycle\+\_\+successors@{add\+\_\+cycle\+\_\+successors}}
 \index{add\+\_\+cycle\+\_\+successors@{add\+\_\+cycle\+\_\+successors}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Cycle\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Cycle\+Node}}
 \subsubsection[{\texorpdfstring{add\+\_\+cycle\+\_\+successors}{add_cycle_successors}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Genome\+Structures.\+Simulation\+Structure.\+Simulation\+Nodes.\+Cycle\+Node.\+add\+\_\+cycle\+\_\+successors (
 \begin{DoxyParamCaption}
@@ -59,7 +67,11 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationSt
 \item[{}]{successor\+\_\+nodes}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1CycleNode_a842b0166427a3d54ba9dc87062d2cd57}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1CycleNode_a842b0166427a3d54ba9dc87062d2cd57}
-\index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Cycle\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Cycle\+Node}!fire\+\_\+cycles@{fire\+\_\+cycles}}
+
+
+Adds multiple successor\+\_\+nodes to the list. 
+
+\+:param successor\+\_\+nodes\+: \+:raises\+: Value\+Error, if the weight of one of the given nodes is not in the interval \mbox{[}0,1\mbox{]}. \+:raises\+: Exception, if one of the given nodes already exists in the stored list of successors. \+:return\+: \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Cycle\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Cycle\+Node}!fire\+\_\+cycles@{fire\+\_\+cycles}}
 \index{fire\+\_\+cycles@{fire\+\_\+cycles}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Cycle\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Cycle\+Node}}
 \subsubsection[{\texorpdfstring{fire\+\_\+cycles(self)}{fire_cycles(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Genome\+Structures.\+Simulation\+Structure.\+Simulation\+Nodes.\+Cycle\+Node.\+fire\+\_\+cycles (
 \begin{DoxyParamCaption}
@@ -67,7 +79,11 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationSt
 \item[{}]{None}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1CycleNode_aded4c01be2b30e8fc2d0bd89bd4d9763}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1CycleNode_aded4c01be2b30e8fc2d0bd89bd4d9763}
-\index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Cycle\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Cycle\+Node}!preserve\+\_\+memory@{preserve\+\_\+memory}}
+
+
+Adds the last stored value multiplied with the specific weights to all cycle closing successors. 
+
+Serves as some kind of short time memory. (Use to be determined) \+:return\+: \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Cycle\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Cycle\+Node}!preserve\+\_\+memory@{preserve\+\_\+memory}}
 \index{preserve\+\_\+memory@{preserve\+\_\+memory}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Cycle\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Cycle\+Node}}
 \subsubsection[{\texorpdfstring{preserve\+\_\+memory(self)}{preserve_memory(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Genome\+Structures.\+Simulation\+Structure.\+Simulation\+Nodes.\+Cycle\+Node.\+preserve\+\_\+memory (
 \begin{DoxyParamCaption}
@@ -76,6 +92,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationSt
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1CycleNode_a55f0110c03f18c3b093f7cb06354e1e3}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1CycleNode_a55f0110c03f18c3b093f7cb06354e1e3}
 
+
+Copies the current value into the memory\+\_\+value. 
+
+\+:return\+: 
 
 \subsection{Member Data Documentation}
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Cycle\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Cycle\+Node}!cycle\+\_\+successors@{cycle\+\_\+successors}}

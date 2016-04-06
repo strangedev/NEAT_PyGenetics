@@ -10,31 +10,31 @@ Inheritance diagram for N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Repository
 \begin{DoxyCompactItemize}
 \item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_a2d5029444baeba1137a19954fbdc5192}{\+\_\+\+\_\+init\+\_\+\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em \+:param database\+\_\+connector\+: Database using \+:return\+: \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository}{Genome\+Repository} \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_a02f46e4d4d2d09b0ac2b69174f49e129}{get\+\_\+current\+\_\+population} (self)
 \begin{DoxyCompactList}\small\item\em \+:return\+: Iterable\mbox{[}Storage\+Genomes\mbox{]} which are alive \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_ac55f0529efead778623d6e3eadafa138}{get\+\_\+genome\+\_\+by\+\_\+id}
-\item 
+\begin{DoxyCompactList}\small\item\em \+:param genome\+\_\+id\+: Object\+Id genome\+\_\+id from genome to find \+:return\+: Storage\+Genome of given genome\+\_\+id \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_a307127db97bbcb6ef6bbb2000e64d36c}{get\+\_\+genomes\+\_\+in\+\_\+cluster}
-\item 
+\begin{DoxyCompactList}\small\item\em \+:param cluster\+\_\+id\+: Object\+ID cluster\+\_\+id from Cluster \+:return\+: Iterable\mbox{[}Storage\+Genome\mbox{]} from Cluster \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_ac5457262e579905f051b3a0e4f14cbae}{insert\+\_\+genome}
-\item 
+\begin{DoxyCompactList}\small\item\em \+:param genome\+: Storage\+Genome to insert \+:return\+: \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_ae5b9ba3a9e6586e42cefdd9daf1379b3}{insert\+\_\+genomes}
-\item 
+\begin{DoxyCompactList}\small\item\em \+:param genomes\+: Iterable\mbox{[}Genome\mbox{]} to insert \+:return\+: \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_a62c182ec66b0b0f2e444f6bd62f212a2}{update\+\_\+genome}
-\item 
+\begin{DoxyCompactList}\small\item\em \+:param genome\+: Storage\+Genome to update in DB \+:return\+: information about update process (from mongo\+DB) \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_af596e230a4ae914fda99e8f8dfdab8a3}{update\+\_\+genomes}
-\item 
+\begin{DoxyCompactList}\small\item\em \+:param genomes\+: Iterable\mbox{[}Storage\+Genome\mbox{]} to update in DB \+:return\+: information about update process (from mongo\+DB) \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_a9a4f5e6dc63ce8a858a79bdb331cc62c}{disable\+\_\+genome}
-\item 
+\begin{DoxyCompactList}\small\item\em \+:param genome\+\_\+id\+: Object\+Id from genome to disable \+:return\+: \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_aad8da608f4c1919e72453f1671761b8e}{disable\+\_\+genomes}
-\item 
+\begin{DoxyCompactList}\small\item\em \+:param genomes\+\_\+id\+: \mbox{[}Object\+Id\mbox{]} from genomes to disable \+:return\+: \mbox{[}dict\mbox{]} information about update process (from mongo\+DB) \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_a89e1f1e4680f135c1eba0f8d13314896}{update\+\_\+genome\+\_\+fitness}
-\item 
+\begin{DoxyCompactList}\small\item\em \+:param genome\+\_\+id\+: Object\+Id from genomes to update fitness \+:param fitness\+: Fraction to set \+:return\+: dict information about update process (from mongo\+DB) \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_a6e90ef99f78be7ecddc26d8b73416116}{update\+\_\+genomes\+\_\+fitness}
-\item 
+\begin{DoxyCompactList}\small\item\em \+:param genome\+\_\+fitness\+: List\mbox{[}Tuple\mbox{[}Object\+Id, Fraction\mbox{]}\mbox{]} genome\+\_\+id and fitness to update \+:return\+: \mbox{[}dict\mbox{]} information about update process (from mongo\+DB) \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_a1709665aff216c7567cbc079bc5135c8}{update\+\_\+genome\+\_\+cluster}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \+:param genome\+\_\+id\+: The Object\+Id of the genome to update \+:param cluster\+\_\+id\+: The new cluster of the genome as Object\+Id \+:return\+: dict information about update process (from mongodb) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -60,6 +60,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_a2d5029444baeba1137a19954fbdc5192}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_a2d5029444baeba1137a19954fbdc5192}
 
 
+\+:param database\+\_\+connector\+: Database using \+:return\+: \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository}{Genome\+Repository} 
+
+
+
 \subsection{Member Function Documentation}
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository}!disable\+\_\+genome@{disable\+\_\+genome}}
 \index{disable\+\_\+genome@{disable\+\_\+genome}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository}}
@@ -69,6 +73,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1
 \item[{}]{genome\+\_\+id}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_a9a4f5e6dc63ce8a858a79bdb331cc62c}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_a9a4f5e6dc63ce8a858a79bdb331cc62c}
+
+
+\+:param genome\+\_\+id\+: Object\+Id from genome to disable \+:return\+: 
+
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository}!disable\+\_\+genomes@{disable\+\_\+genomes}}
 \index{disable\+\_\+genomes@{disable\+\_\+genomes}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository}}
 \subsubsection[{\texorpdfstring{disable\+\_\+genomes}{disable_genomes}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Repository.\+Genome\+Repository.\+Genome\+Repository.\+disable\+\_\+genomes (
@@ -77,6 +85,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1
 \item[{}]{genomes\+\_\+id}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_aad8da608f4c1919e72453f1671761b8e}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_aad8da608f4c1919e72453f1671761b8e}
+
+
+\+:param genomes\+\_\+id\+: \mbox{[}Object\+Id\mbox{]} from genomes to disable \+:return\+: \mbox{[}dict\mbox{]} information about update process (from mongo\+DB) 
+
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository}!get\+\_\+current\+\_\+population@{get\+\_\+current\+\_\+population}}
 \index{get\+\_\+current\+\_\+population@{get\+\_\+current\+\_\+population}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository}}
 \subsubsection[{\texorpdfstring{get\+\_\+current\+\_\+population(self)}{get_current_population(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Repository.\+Genome\+Repository.\+Genome\+Repository.\+get\+\_\+current\+\_\+population (
@@ -98,6 +110,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1
 \item[{}]{genome\+\_\+id}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_ac55f0529efead778623d6e3eadafa138}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_ac55f0529efead778623d6e3eadafa138}
+
+
+\+:param genome\+\_\+id\+: Object\+Id genome\+\_\+id from genome to find \+:return\+: Storage\+Genome of given genome\+\_\+id 
+
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository}!get\+\_\+genomes\+\_\+in\+\_\+cluster@{get\+\_\+genomes\+\_\+in\+\_\+cluster}}
 \index{get\+\_\+genomes\+\_\+in\+\_\+cluster@{get\+\_\+genomes\+\_\+in\+\_\+cluster}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository}}
 \subsubsection[{\texorpdfstring{get\+\_\+genomes\+\_\+in\+\_\+cluster}{get_genomes_in_cluster}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Repository.\+Genome\+Repository.\+Genome\+Repository.\+get\+\_\+genomes\+\_\+in\+\_\+cluster (
@@ -106,6 +122,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1
 \item[{}]{cluster\+\_\+id}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_a307127db97bbcb6ef6bbb2000e64d36c}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_a307127db97bbcb6ef6bbb2000e64d36c}
+
+
+\+:param cluster\+\_\+id\+: Object\+ID cluster\+\_\+id from Cluster \+:return\+: Iterable\mbox{[}Storage\+Genome\mbox{]} from Cluster 
+
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository}!get\+\_\+new\+\_\+genome@{get\+\_\+new\+\_\+genome}}
 \index{get\+\_\+new\+\_\+genome@{get\+\_\+new\+\_\+genome}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository}}
 \subsubsection[{\texorpdfstring{get\+\_\+new\+\_\+genome()}{get_new_genome()}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Repository.\+Genome\+Repository.\+Genome\+Repository.\+get\+\_\+new\+\_\+genome (
@@ -125,6 +145,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1
 \item[{}]{genome}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_ac5457262e579905f051b3a0e4f14cbae}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_ac5457262e579905f051b3a0e4f14cbae}
+
+
+\+:param genome\+: Storage\+Genome to insert \+:return\+: 
+
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository}!insert\+\_\+genomes@{insert\+\_\+genomes}}
 \index{insert\+\_\+genomes@{insert\+\_\+genomes}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository}}
 \subsubsection[{\texorpdfstring{insert\+\_\+genomes}{insert_genomes}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Repository.\+Genome\+Repository.\+Genome\+Repository.\+insert\+\_\+genomes (
@@ -133,6 +157,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1
 \item[{}]{genomes}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_ae5b9ba3a9e6586e42cefdd9daf1379b3}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_ae5b9ba3a9e6586e42cefdd9daf1379b3}
+
+
+\+:param genomes\+: Iterable\mbox{[}Genome\mbox{]} to insert \+:return\+: 
+
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository}!update\+\_\+genome@{update\+\_\+genome}}
 \index{update\+\_\+genome@{update\+\_\+genome}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository}}
 \subsubsection[{\texorpdfstring{update\+\_\+genome}{update_genome}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Repository.\+Genome\+Repository.\+Genome\+Repository.\+update\+\_\+genome (
@@ -141,6 +169,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1
 \item[{}]{genome}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_a62c182ec66b0b0f2e444f6bd62f212a2}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_a62c182ec66b0b0f2e444f6bd62f212a2}
+
+
+\+:param genome\+: Storage\+Genome to update in DB \+:return\+: information about update process (from mongo\+DB) 
+
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository}!update\+\_\+genome\+\_\+cluster@{update\+\_\+genome\+\_\+cluster}}
 \index{update\+\_\+genome\+\_\+cluster@{update\+\_\+genome\+\_\+cluster}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository}}
 \subsubsection[{\texorpdfstring{update\+\_\+genome\+\_\+cluster}{update_genome_cluster}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Repository.\+Genome\+Repository.\+Genome\+Repository.\+update\+\_\+genome\+\_\+cluster (
@@ -149,6 +181,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1
 \item[{}]{genome\+\_\+id}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_a1709665aff216c7567cbc079bc5135c8}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_a1709665aff216c7567cbc079bc5135c8}
+
+
+\+:param genome\+\_\+id\+: The Object\+Id of the genome to update \+:param cluster\+\_\+id\+: The new cluster of the genome as Object\+Id \+:return\+: dict information about update process (from mongodb) 
+
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository}!update\+\_\+genome\+\_\+fitness@{update\+\_\+genome\+\_\+fitness}}
 \index{update\+\_\+genome\+\_\+fitness@{update\+\_\+genome\+\_\+fitness}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository}}
 \subsubsection[{\texorpdfstring{update\+\_\+genome\+\_\+fitness}{update_genome_fitness}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Repository.\+Genome\+Repository.\+Genome\+Repository.\+update\+\_\+genome\+\_\+fitness (
@@ -157,6 +193,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1
 \item[{}]{genome\+\_\+id}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_a89e1f1e4680f135c1eba0f8d13314896}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_a89e1f1e4680f135c1eba0f8d13314896}
+
+
+\+:param genome\+\_\+id\+: Object\+Id from genomes to update fitness \+:param fitness\+: Fraction to set \+:return\+: dict information about update process (from mongo\+DB) 
+
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository}!update\+\_\+genomes@{update\+\_\+genomes}}
 \index{update\+\_\+genomes@{update\+\_\+genomes}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository}}
 \subsubsection[{\texorpdfstring{update\+\_\+genomes}{update_genomes}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Repository.\+Genome\+Repository.\+Genome\+Repository.\+update\+\_\+genomes (
@@ -165,6 +205,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1
 \item[{}]{genomes}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_af596e230a4ae914fda99e8f8dfdab8a3}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_af596e230a4ae914fda99e8f8dfdab8a3}
+
+
+\+:param genomes\+: Iterable\mbox{[}Storage\+Genome\mbox{]} to update in DB \+:return\+: information about update process (from mongo\+DB) 
+
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository}!update\+\_\+genomes\+\_\+fitness@{update\+\_\+genomes\+\_\+fitness}}
 \index{update\+\_\+genomes\+\_\+fitness@{update\+\_\+genomes\+\_\+fitness}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Repository\+::\+Genome\+Repository\+::\+Genome\+Repository}}
 \subsubsection[{\texorpdfstring{update\+\_\+genomes\+\_\+fitness}{update_genomes_fitness}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Repository.\+Genome\+Repository.\+Genome\+Repository.\+update\+\_\+genomes\+\_\+fitness (
@@ -173,6 +217,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1
 \item[{}]{genome\+\_\+fitness}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_a6e90ef99f78be7ecddc26d8b73416116}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Repository_1_1GenomeRepository_1_1GenomeRepository_a6e90ef99f78be7ecddc26d8b73416116}
+
+
+\+:param genome\+\_\+fitness\+: List\mbox{[}Tuple\mbox{[}Object\+Id, Fraction\mbox{]}\mbox{]} genome\+\_\+id and fitness to update \+:return\+: \mbox{[}dict\mbox{]} information about update process (from mongo\+DB) 
+
 
 
 \subsection{Member Data Documentation}

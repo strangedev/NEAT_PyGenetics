@@ -17,22 +17,22 @@ Inheritance diagram for N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Analyst.\+
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeClusterer_1_1GenomeClusterer_a2f18f1f814c59bc18bc896c67331db10}{\+\_\+\+\_\+init\+\_\+\+\_\+}
 \item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeClusterer_1_1GenomeClusterer_a3cb27bd4e57fbae51f5638bf252d7d19}{cluster\+\_\+genomes}
-\item 
+\begin{DoxyCompactList}\small\item\em Calculates the clusters in which the passed genomes belong individually and updates the database (cluster\+\_\+repository, genome\+\_\+repository) accordingly. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeClusterer_1_1GenomeClusterer_a4b17098e6b96981aa7a00ffe3c3510c8}{cluster\+\_\+genome}
-\item 
+\begin{DoxyCompactList}\small\item\em Calculates in which cluster a single genome belongs and updates the database (cluster\+\_\+repository, genome\+\_\+repository) accordingly. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeClusterer_1_1GenomeClusterer_a057cec399fba67f9f90c70ad9158ec5e}{calculate\+\_\+delta}
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a metric of topological difference for two given genomes. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeClusterer_1_1GenomeClusterer_a5dba985534b3de86bb03574e683749f6}{calculate\+\_\+cluster\+\_\+fitness}
-\item 
+\begin{DoxyCompactList}\small\item\em Calculates the shared fitness value for a given cluster based on the cluster size and the individual fitness values of the contained individuals. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeClusterer_1_1GenomeClusterer_a6bd0107d083dade08414c19ad9aaadaf}{calculate\+\_\+cluster\+\_\+offspring\+\_\+values} (self)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Calculates the number of offspring the clusters will generate in the next generation cycle, based on the compared shared fitness values of all active clusters. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeClusterer_1_1GenomeClusterer_a25f21d57d135bbf3b0f23bbfdef375e7}{calculate\+\_\+disjoint\+\_\+excess\+\_\+count}
-\item 
+\begin{DoxyCompactList}\small\item\em Calculates the amount of excess and disjoint genes for two genomes, given the gene ids of the smaller genome and the set of differing genes. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeClusterer_1_1GenomeClusterer_a748db217e8ce0c9f3e4302b00b4677e8}{calculate\+\_\+average\+\_\+weight\+\_\+difference}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Calculates the average quadratic weight differences of matching genes for two given genomes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -106,7 +106,11 @@ A class used for clustering genomes into species.
 \item[{}]{genome\+\_\+one}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeClusterer_1_1GenomeClusterer_a748db217e8ce0c9f3e4302b00b4677e8}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeClusterer_1_1GenomeClusterer_a748db217e8ce0c9f3e4302b00b4677e8}
-\index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer}!calculate\+\_\+cluster\+\_\+fitness@{calculate\+\_\+cluster\+\_\+fitness}}
+
+
+Calculates the average quadratic weight differences of matching genes for two given genomes. 
+
+\+:param genome\+\_\+one\+: The first genome \+:param genome\+\_\+two\+: The second genome \+:param matching\+\_\+genes\+: A list of matching genes for the two given genomes. \+:return\+: The average quadratic weight difference of matching genes. \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer}!calculate\+\_\+cluster\+\_\+fitness@{calculate\+\_\+cluster\+\_\+fitness}}
 \index{calculate\+\_\+cluster\+\_\+fitness@{calculate\+\_\+cluster\+\_\+fitness}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer}}
 \subsubsection[{\texorpdfstring{calculate\+\_\+cluster\+\_\+fitness}{calculate_cluster_fitness}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Analyst.\+Genome\+Clusterer.\+Genome\+Clusterer.\+calculate\+\_\+cluster\+\_\+fitness (
 \begin{DoxyParamCaption}
@@ -114,14 +118,24 @@ A class used for clustering genomes into species.
 \item[{}]{cluster\+\_\+id}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeClusterer_1_1GenomeClusterer_a5dba985534b3de86bb03574e683749f6}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeClusterer_1_1GenomeClusterer_a5dba985534b3de86bb03574e683749f6}
-\index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer}!calculate\+\_\+cluster\+\_\+offspring\+\_\+values@{calculate\+\_\+cluster\+\_\+offspring\+\_\+values}}
+
+
+Calculates the shared fitness value for a given cluster based on the cluster size and the individual fitness values of the contained individuals. 
+
+\+:param cluster\+\_\+id\+: The id of the cluster \+:return\+: The shared fitness value for the input cluster \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer}!calculate\+\_\+cluster\+\_\+offspring\+\_\+values@{calculate\+\_\+cluster\+\_\+offspring\+\_\+values}}
 \index{calculate\+\_\+cluster\+\_\+offspring\+\_\+values@{calculate\+\_\+cluster\+\_\+offspring\+\_\+values}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer}}
 \subsubsection[{\texorpdfstring{calculate\+\_\+cluster\+\_\+offspring\+\_\+values(self)}{calculate_cluster_offspring_values(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Analyst.\+Genome\+Clusterer.\+Genome\+Clusterer.\+calculate\+\_\+cluster\+\_\+offspring\+\_\+values (
 \begin{DoxyParamCaption}
 \item[{}]{self}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeClusterer_1_1GenomeClusterer_a6bd0107d083dade08414c19ad9aaadaf}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeClusterer_1_1GenomeClusterer_a6bd0107d083dade08414c19ad9aaadaf}
-\index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer}!calculate\+\_\+delta@{calculate\+\_\+delta}}
+
+
+Calculates the number of offspring the clusters will generate in the next generation cycle, based on the compared shared fitness values of all active clusters. 
+
+Fitter clusters will receive a bigger number of offspring.
+
+\+:return\+: None \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer}!calculate\+\_\+delta@{calculate\+\_\+delta}}
 \index{calculate\+\_\+delta@{calculate\+\_\+delta}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer}}
 \subsubsection[{\texorpdfstring{calculate\+\_\+delta}{calculate_delta}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Analyst.\+Genome\+Clusterer.\+Genome\+Clusterer.\+calculate\+\_\+delta (
 \begin{DoxyParamCaption}
@@ -129,14 +143,24 @@ A class used for clustering genomes into species.
 \item[{}]{genome\+\_\+one}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeClusterer_1_1GenomeClusterer_a057cec399fba67f9f90c70ad9158ec5e}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeClusterer_1_1GenomeClusterer_a057cec399fba67f9f90c70ad9158ec5e}
-\index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer}!calculate\+\_\+disjoint\+\_\+excess\+\_\+count@{calculate\+\_\+disjoint\+\_\+excess\+\_\+count}}
+
+
+Returns a metric of topological difference for two given genomes. 
+
+See \href{https://github.com/strangedev/NEAT_PyGenetics/wiki/Delta-Function}{\tt https\+://github.\+com/strangedev/\+N\+E\+A\+T\+\_\+\+Py\+Genetics/wiki/\+Delta-\/\+Function} for more information.
+
+\+:param genome\+\_\+one\+: The first genome \+:param genome\+\_\+two\+: The second genome \+:return\+: The delta value (topological difference) of the input genomes \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer}!calculate\+\_\+disjoint\+\_\+excess\+\_\+count@{calculate\+\_\+disjoint\+\_\+excess\+\_\+count}}
 \index{calculate\+\_\+disjoint\+\_\+excess\+\_\+count@{calculate\+\_\+disjoint\+\_\+excess\+\_\+count}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer}}
 \subsubsection[{\texorpdfstring{calculate\+\_\+disjoint\+\_\+excess\+\_\+count}{calculate_disjoint_excess_count}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Analyst.\+Genome\+Clusterer.\+Genome\+Clusterer.\+calculate\+\_\+disjoint\+\_\+excess\+\_\+count (
 \begin{DoxyParamCaption}
 \item[{}]{smaller\+\_\+genome\+\_\+gene\+\_\+ids}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeClusterer_1_1GenomeClusterer_a25f21d57d135bbf3b0f23bbfdef375e7}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeClusterer_1_1GenomeClusterer_a25f21d57d135bbf3b0f23bbfdef375e7}
-\index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer}!cluster\+\_\+genome@{cluster\+\_\+genome}}
+
+
+Calculates the amount of excess and disjoint genes for two genomes, given the gene ids of the smaller genome and the set of differing genes. 
+
+\+:param smaller\+\_\+genome\+\_\+gene\+\_\+ids\+: A list of gene ids of the smaller genome \+:param differing\+\_\+genes\+: A list of differing genes \+:return\+: The amount of excess and disjoint genes as tuple. \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer}!cluster\+\_\+genome@{cluster\+\_\+genome}}
 \index{cluster\+\_\+genome@{cluster\+\_\+genome}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer}}
 \subsubsection[{\texorpdfstring{cluster\+\_\+genome}{cluster_genome}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Analyst.\+Genome\+Clusterer.\+Genome\+Clusterer.\+cluster\+\_\+genome (
 \begin{DoxyParamCaption}
@@ -144,7 +168,11 @@ A class used for clustering genomes into species.
 \item[{}]{genome}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeClusterer_1_1GenomeClusterer_a4b17098e6b96981aa7a00ffe3c3510c8}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeClusterer_1_1GenomeClusterer_a4b17098e6b96981aa7a00ffe3c3510c8}
-\index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer}!cluster\+\_\+genomes@{cluster\+\_\+genomes}}
+
+
+Calculates in which cluster a single genome belongs and updates the database (cluster\+\_\+repository, genome\+\_\+repository) accordingly. 
+
+\+:param genome\+: The Storage\+Genome to put in a cluster \+:return\+: None \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer}!cluster\+\_\+genomes@{cluster\+\_\+genomes}}
 \index{cluster\+\_\+genomes@{cluster\+\_\+genomes}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer}}
 \subsubsection[{\texorpdfstring{cluster\+\_\+genomes}{cluster_genomes}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Analyst.\+Genome\+Clusterer.\+Genome\+Clusterer.\+cluster\+\_\+genomes (
 \begin{DoxyParamCaption}
@@ -153,6 +181,10 @@ A class used for clustering genomes into species.
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeClusterer_1_1GenomeClusterer_a3cb27bd4e57fbae51f5638bf252d7d19}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeClusterer_1_1GenomeClusterer_a3cb27bd4e57fbae51f5638bf252d7d19}
 
+
+Calculates the clusters in which the passed genomes belong individually and updates the database (cluster\+\_\+repository, genome\+\_\+repository) accordingly. 
+
+\+:param genomes\+: The list of genomes to put in clusters \+:return\+: None 
 
 \subsection{Member Data Documentation}
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Clusterer\+::\+Genome\+Clusterer}!all\+\_\+gene\+\_\+ids@{all\+\_\+gene\+\_\+ids}}

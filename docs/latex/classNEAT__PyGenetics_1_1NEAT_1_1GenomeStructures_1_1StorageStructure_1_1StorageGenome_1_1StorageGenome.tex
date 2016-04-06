@@ -1,5 +1,10 @@
 \hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1StorageStructure_1_1StorageGenome_1_1StorageGenome}{}\section{N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Genome\+Structures.\+Storage\+Structure.\+Storage\+Genome.\+Storage\+Genome Class Reference}
 \label{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1StorageStructure_1_1StorageGenome_1_1StorageGenome}\index{N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Genome\+Structures.\+Storage\+Structure.\+Storage\+Genome.\+Storage\+Genome@{N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Genome\+Structures.\+Storage\+Structure.\+Storage\+Genome.\+Storage\+Genome}}
+
+
+A data structure for storing genome information in a compact way.  
+
+
 Inheritance diagram for N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Genome\+Structures.\+Storage\+Structure.\+Storage\+Genome.\+Storage\+Genome\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,7 +15,7 @@ Inheritance diagram for N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Genome\+St
 \begin{DoxyCompactItemize}
 \item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1StorageStructure_1_1StorageGenome_1_1StorageGenome_a8b7615cf97ad4ce4c3805ecde57637c8}{\+\_\+\+\_\+init\+\_\+\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em \+:param genome\+: If genome is given, its inputs are copied (except for id) \+:param inputs\+: A list of strings, representing the inputs nodes\textquotesingle{} labels \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1StorageStructure_1_1StorageGenome_1_1StorageGenome_a0d0ae3acf7162d05cb40fe5eaff9ada9}{\+\_\+\+\_\+eq\+\_\+\+\_\+}
 \item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1StorageStructure_1_1StorageGenome_1_1StorageGenome_a536876e28c6ee27477de23a369e11daa}{genome\+\_\+id} (self)
@@ -34,6 +39,11 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1StorageStruc
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+A data structure for storing genome information in a compact way. 
+
+Attributes\+: genome\+\_\+id (\+\_\+id)\+: The Genome\textquotesingle{}s ID, unique in the population. inputs\+: A list of the ids of the input nodes. There has to be at least one gene per input that is connected to it. Represented as a list of tuples of the form (Input\+\_\+\+Label, Node-\/\+ID). outputs\+: A list of the ids of the output nodes. There has to be at least one gene per output that is connected to it. Represented as a list of tuples of the form (Output\+\_\+\+Label, Node-\/\+ID). genes\+: A list of all genes, that make up the genome. Presented as a tu-\/ ple of Gene-\/\+ID, a boolean that is true, if the gene is disabled and a Fraction that stores the weight of the gene. analysis\+\_\+result\+: A result object that is generated when analyzing the genome. This is empty per default. cluster\+: The cluster to which the Genome belongs. 
+
 \subsection{Constructor \& Destructor Documentation}
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Storage\+Structure\+::\+Storage\+Genome\+::\+Storage\+Genome@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Storage\+Structure\+::\+Storage\+Genome\+::\+Storage\+Genome}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
 \index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Storage\+Structure\+::\+Storage\+Genome\+::\+Storage\+Genome@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Storage\+Structure\+::\+Storage\+Genome\+::\+Storage\+Genome}}
@@ -43,6 +53,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1StorageStruc
 \item[{}]{genome}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1StorageStructure_1_1StorageGenome_1_1StorageGenome_a8b7615cf97ad4ce4c3805ecde57637c8}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1StorageStructure_1_1StorageGenome_1_1StorageGenome_a8b7615cf97ad4ce4c3805ecde57637c8}
+
+
+\+:param genome\+: If genome is given, its inputs are copied (except for id) \+:param inputs\+: A list of strings, representing the inputs nodes\textquotesingle{} labels 
+
 
 
 \subsection{Member Function Documentation}

@@ -1,5 +1,10 @@
 \hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1AnalysisStructure_1_1AnalysisGenome_1_1AnalysisGenome}{}\section{N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Genome\+Structures.\+Analysis\+Structure.\+Analysis\+Genome.\+Analysis\+Genome Class Reference}
 \label{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1AnalysisStructure_1_1AnalysisGenome_1_1AnalysisGenome}\index{N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Genome\+Structures.\+Analysis\+Structure.\+Analysis\+Genome.\+Analysis\+Genome@{N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Genome\+Structures.\+Analysis\+Structure.\+Analysis\+Genome.\+Analysis\+Genome}}
+
+
+Data structure used for analysing genome graphs.  
+
+
 Inheritance diagram for N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Genome\+Structures.\+Analysis\+Structure.\+Analysis\+Genome.\+Analysis\+Genome\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,7 +15,7 @@ Inheritance diagram for N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Genome\+St
 \begin{DoxyCompactItemize}
 \item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1AnalysisStructure_1_1AnalysisGenome_1_1AnalysisGenome_ade327b90f0ad5077a0864d5a7dfe705e}{\+\_\+\+\_\+init\+\_\+\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Creates an \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1AnalysisStructure_1_1AnalysisGenome_1_1AnalysisGenome}{Analysis\+Genome}. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1AnalysisStructure_1_1AnalysisGenome_1_1AnalysisGenome_afde7a1abfb35596b72a79b5a1119acfd}{input\+\_\+nodes} (self)
 \item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1AnalysisStructure_1_1AnalysisGenome_1_1AnalysisGenome_afd38f7e3e579713434e6f7ad977ace57}{output\+\_\+nodes} (self)
@@ -30,6 +35,11 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1AnalysisStru
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+Data structure used for analysing genome graphs. 
+
+It uses an adjacency list representation of the genome graph which is compatible with well known graph algorithms. 
+
 \subsection{Constructor \& Destructor Documentation}
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Analysis\+Structure\+::\+Analysis\+Genome\+::\+Analysis\+Genome@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Analysis\+Structure\+::\+Analysis\+Genome\+::\+Analysis\+Genome}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
 \index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Analysis\+Structure\+::\+Analysis\+Genome\+::\+Analysis\+Genome@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Analysis\+Structure\+::\+Analysis\+Genome\+::\+Analysis\+Genome}}
@@ -40,6 +50,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1AnalysisStru
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1AnalysisStructure_1_1AnalysisGenome_1_1AnalysisGenome_ade327b90f0ad5077a0864d5a7dfe705e}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1AnalysisStructure_1_1AnalysisGenome_1_1AnalysisGenome_ade327b90f0ad5077a0864d5a7dfe705e}
 
+
+Creates an \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1AnalysisStructure_1_1AnalysisGenome_1_1AnalysisGenome}{Analysis\+Genome}. 
+
+If a Storage\+Genome is given, it is used for construction. Otherwise the \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1AnalysisStructure_1_1AnalysisGenome_1_1AnalysisGenome}{Analysis\+Genome} is constructed empty. \+:param gene\+\_\+repository\+: \+:param storage\+\_\+structure\+: \+:return\+: 
 
 \subsection{Member Function Documentation}
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Analysis\+Structure\+::\+Analysis\+Genome\+::\+Analysis\+Genome@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Analysis\+Structure\+::\+Analysis\+Genome\+::\+Analysis\+Genome}!edges@{edges}}

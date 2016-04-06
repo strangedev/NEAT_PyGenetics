@@ -10,27 +10,27 @@ Inheritance diagram for N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Director.\
 \begin{DoxyCompactItemize}
 \item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_ab14b0501fc1b74c88b2e57f2c427f556}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, kwargs)
-\item 
+\begin{DoxyCompactList}\small\item\em \+:param kwargs\+: \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_ae092b13a0703771ac0813e67fb872362}{idle} (self)
-\item 
+\begin{DoxyCompactList}\small\item\em Standard method that will be executed if local startup is done. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_a145a35253c447b14b3a834cd6bbd6b15}{dynamic\+\_\+init} (self)
-\item 
+\begin{DoxyCompactList}\small\item\em Initializes all parts of \hyperlink{namespaceNEAT__PyGenetics_1_1NEAT}{N\+E\+AT} that are dependent upon the client. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_a1d54dab714e07b9ba097b118994bc7e0}{init\+\_\+db} (self)
 \item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_a0dc96b0a3075b0522e9179e154e3bfdc}{run} (self)
-\item 
+\begin{DoxyCompactList}\small\item\em The main function where the simulation is run, new genomes are created and discarded This is where the evolutionary magic happens. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_a62d21475b9a55ebf26b731e1af031998}{generate\+\_\+new\+\_\+genomes} (self)
-\item 
+\begin{DoxyCompactList}\small\item\em Regenerates the population by selecting genomes for mutation / breeding, running the generation process and performing analysis. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_a24b32672d44473d0ed697d72326a3ed0}{crossbreed\+\_\+clusters} (self)
-\item 
+\begin{DoxyCompactList}\small\item\em combines two clusters by breeding genomes of both clusters \+:return\+: \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_af9ec8145b3a3dc21f823d38b3ea08df1}{analyze\+\_\+and\+\_\+insert}
 \item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_afc0fd1df30dc28284a1c9552b507298e}{calculate\+\_\+cluster\+\_\+offspring} (self)
-\item 
+\begin{DoxyCompactList}\small\item\em Calculates fitness values and offspring for clusters. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_a477d29aba8bdf6743748389dce049b9a}{discard\+\_\+genomes} (self)
-\item 
+\begin{DoxyCompactList}\small\item\em discards a number of genomes \+:return\+: \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_a2916d65736e93f21a9a2a8f31d234615}{discard\+\_\+clusters} (self)
-\item 
+\begin{DoxyCompactList}\small\item\em Discards a number of clusters \+:return\+: \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_a233974c8f6d855886617f80737fb44eb}{perform\+\_\+simulation\+\_\+io} (self)
 \item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_a37de122cc8ac060871f2af4da1a0a1c1}{compute\+\_\+genome\+\_\+outputs}
@@ -92,6 +92,19 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1Main
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_ab14b0501fc1b74c88b2e57f2c427f556}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_ab14b0501fc1b74c88b2e57f2c427f556}
 
 
+\+:param kwargs\+: 
+
+
+\begin{DoxyItemize}
+\item mode\+:
+\begin{DoxyItemize}
+\item exit\+: exits the program, default action if nothing is provided.
+\item new\+: creates a new database for a given simulation. requires parame-\/ ter simulation to be set.
+\item load\+: loads a database for a given simulation. requires parameter simulation to be set.
+\end{DoxyItemize}
+\item simulation\+: the name of the simulation that should be used. must cor-\/ respond to a module name in Simulation. \+:return\+: 
+\end{DoxyItemize}
+
 \subsection{Member Function Documentation}
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director}!analyze\+\_\+and\+\_\+insert@{analyze\+\_\+and\+\_\+insert}}
 \index{analyze\+\_\+and\+\_\+insert@{analyze\+\_\+and\+\_\+insert}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director}}
@@ -108,7 +121,11 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1Main
 \item[{}]{self}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_afc0fd1df30dc28284a1c9552b507298e}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_afc0fd1df30dc28284a1c9552b507298e}
-\index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director}!compute\+\_\+genome\+\_\+outputs@{compute\+\_\+genome\+\_\+outputs}}
+
+
+Calculates fitness values and offspring for clusters. 
+
+\+:return\+: \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director}!compute\+\_\+genome\+\_\+outputs@{compute\+\_\+genome\+\_\+outputs}}
 \index{compute\+\_\+genome\+\_\+outputs@{compute\+\_\+genome\+\_\+outputs}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director}}
 \subsubsection[{\texorpdfstring{compute\+\_\+genome\+\_\+outputs}{compute_genome_outputs}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Director.\+Main\+Director.\+Main\+Director.\+compute\+\_\+genome\+\_\+outputs (
 \begin{DoxyParamCaption}
@@ -123,6 +140,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1Main
 \item[{}]{self}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_a24b32672d44473d0ed697d72326a3ed0}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_a24b32672d44473d0ed697d72326a3ed0}
+
+
+combines two clusters by breeding genomes of both clusters \+:return\+: 
+
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director}!discard\+\_\+clusters@{discard\+\_\+clusters}}
 \index{discard\+\_\+clusters@{discard\+\_\+clusters}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director}}
 \subsubsection[{\texorpdfstring{discard\+\_\+clusters(self)}{discard_clusters(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Director.\+Main\+Director.\+Main\+Director.\+discard\+\_\+clusters (
@@ -130,6 +151,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1Main
 \item[{}]{self}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_a2916d65736e93f21a9a2a8f31d234615}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_a2916d65736e93f21a9a2a8f31d234615}
+
+
+Discards a number of clusters \+:return\+: 
+
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director}!discard\+\_\+genomes@{discard\+\_\+genomes}}
 \index{discard\+\_\+genomes@{discard\+\_\+genomes}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director}}
 \subsubsection[{\texorpdfstring{discard\+\_\+genomes(self)}{discard_genomes(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Director.\+Main\+Director.\+Main\+Director.\+discard\+\_\+genomes (
@@ -137,6 +162,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1Main
 \item[{}]{self}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_a477d29aba8bdf6743748389dce049b9a}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_a477d29aba8bdf6743748389dce049b9a}
+
+
+discards a number of genomes \+:return\+: 
+
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director}!dynamic\+\_\+init@{dynamic\+\_\+init}}
 \index{dynamic\+\_\+init@{dynamic\+\_\+init}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director}}
 \subsubsection[{\texorpdfstring{dynamic\+\_\+init(self)}{dynamic_init(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Director.\+Main\+Director.\+Main\+Director.\+dynamic\+\_\+init (
@@ -144,6 +173,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1Main
 \item[{}]{self}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_a145a35253c447b14b3a834cd6bbd6b15}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_a145a35253c447b14b3a834cd6bbd6b15}
+
+
+Initializes all parts of \hyperlink{namespaceNEAT__PyGenetics_1_1NEAT}{N\+E\+AT} that are dependent upon the client. 
+
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director}!generate\+\_\+new\+\_\+genomes@{generate\+\_\+new\+\_\+genomes}}
 \index{generate\+\_\+new\+\_\+genomes@{generate\+\_\+new\+\_\+genomes}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director}}
 \subsubsection[{\texorpdfstring{generate\+\_\+new\+\_\+genomes(self)}{generate_new_genomes(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Director.\+Main\+Director.\+Main\+Director.\+generate\+\_\+new\+\_\+genomes (
@@ -151,14 +184,22 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1Main
 \item[{}]{self}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_a62d21475b9a55ebf26b731e1af031998}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_a62d21475b9a55ebf26b731e1af031998}
-\index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director}!idle@{idle}}
+
+
+Regenerates the population by selecting genomes for mutation / breeding, running the generation process and performing analysis. 
+
+\+:return\+: \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director}!idle@{idle}}
 \index{idle@{idle}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director}}
 \subsubsection[{\texorpdfstring{idle(self)}{idle(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Director.\+Main\+Director.\+Main\+Director.\+idle (
 \begin{DoxyParamCaption}
 \item[{}]{self}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_ae092b13a0703771ac0813e67fb872362}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_ae092b13a0703771ac0813e67fb872362}
-\index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director}!init\+\_\+db@{init\+\_\+db}}
+
+
+Standard method that will be executed if local startup is done. 
+
+In this state, the \hyperlink{namespaceNEAT__PyGenetics_1_1NEAT_1_1Director_1_1Director}{Director} will wait for the client. \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director}!init\+\_\+db@{init\+\_\+db}}
 \index{init\+\_\+db@{init\+\_\+db}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director}}
 \subsubsection[{\texorpdfstring{init\+\_\+db(self)}{init_db(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Director.\+Main\+Director.\+Main\+Director.\+init\+\_\+db (
 \begin{DoxyParamCaption}
@@ -186,6 +227,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1Main
 \item[{}]{self}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_a0dc96b0a3075b0522e9179e154e3bfdc}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Director_1_1MainDirector_1_1MainDirector_a0dc96b0a3075b0522e9179e154e3bfdc}
+
+
+The main function where the simulation is run, new genomes are created and discarded This is where the evolutionary magic happens. 
+
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director}!update\+\_\+fitness\+\_\+values@{update\+\_\+fitness\+\_\+values}}
 \index{update\+\_\+fitness\+\_\+values@{update\+\_\+fitness\+\_\+values}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Director\+::\+Main\+Director\+::\+Main\+Director}}
 \subsubsection[{\texorpdfstring{update\+\_\+fitness\+\_\+values}{update_fitness_values}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Director.\+Main\+Director.\+Main\+Director.\+update\+\_\+fitness\+\_\+values (

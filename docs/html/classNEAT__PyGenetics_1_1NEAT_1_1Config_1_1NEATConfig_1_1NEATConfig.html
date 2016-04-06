@@ -95,6 +95,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">NEAT_PyGenetics.NEAT.Config.NEATConfig.NEATConfig Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A huge configuration object which loads it's parameters from disk, or reverts to default values whenever a configuration file isn't found or can't be opened.  
+ <a href="classNEAT__PyGenetics_1_1NEAT_1_1Config_1_1NEATConfig_1_1NEATConfig.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for NEAT_PyGenetics.NEAT.Config.NEATConfig.NEATConfig:</div>
 <div class="dyncontent">
@@ -109,8 +112,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a88504e0a5c56f166a3ee5898ae3e0dea"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1Config_1_1NEATConfig_1_1NEATConfig.html#a88504e0a5c56f166a3ee5898ae3e0dea">__init__</a> (self, config_path=None)</td></tr>
 <tr class="separator:a88504e0a5c56f166a3ee5898ae3e0dea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6843226e3a017a384c8244f4e62e0f5"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1Config_1_1NEATConfig_1_1NEATConfig.html#aa6843226e3a017a384c8244f4e62e0f5">load_config</a> (self)</td></tr>
+<tr class="memdesc:aa6843226e3a017a384c8244f4e62e0f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to initialize self.parameters with data from the configuration files.  <a href="#aa6843226e3a017a384c8244f4e62e0f5">More...</a><br /></td></tr>
 <tr class="separator:aa6843226e3a017a384c8244f4e62e0f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2669153b4f4160d33477fc89d16dd716"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1Config_1_1NEATConfig_1_1NEATConfig.html#a2669153b4f4160d33477fc89d16dd716">load_defaults</a> (self)</td></tr>
+<tr class="memdesc:a2669153b4f4160d33477fc89d16dd716"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is called by <b>init</b> after the config files are loaded.  <a href="#a2669153b4f4160d33477fc89d16dd716">More...</a><br /></td></tr>
 <tr class="separator:a2669153b4f4160d33477fc89d16dd716"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -124,7 +129,12 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a1e2b0edc6558d673c7f7a197d2faa72e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1Config_1_1NEATConfig_1_1NEATConfig.html#a1e2b0edc6558d673c7f7a197d2faa72e">config_categories</a></td></tr>
 <tr class="separator:a1e2b0edc6558d673c7f7a197d2faa72e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A huge configuration object which loads it's parameters from disk, or reverts to default values whenever a configuration file isn't found or can't be opened. </p>
+<p><a class="el" href="namespaceNEAT__PyGenetics_1_1NEAT_1_1Config.html">Config</a> files are in JSON notation.</p>
+<p>Configuration files are listed in self.config_categories and should be present as CATEGORYNAME.conf in the provided config_path. If no config path is specified, the builtin config files in NEAT/Config are used.</p>
+<p>All config files except one can be loaded from defaults. The only exception is genomes.conf, the config file specifying the input and output nodes of the genomes to use, because it is dependent on the simulation. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a88504e0a5c56f166a3ee5898ae3e0dea"></a>
 <div class="memitem">
 <div class="memproto">
@@ -166,6 +176,10 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Tries to initialize self.parameters with data from the configuration files. </p>
+<p>It uses the base file names from self.config_categories and is agnostic to the number and names of the existing categories. <a class="el" href="namespaceNEAT__PyGenetics_1_1NEAT_1_1Config.html">Config</a> files need to be in JSON notation.</p>
+<p>:return: None </p>
+
 </div>
 </div>
 <a class="anchor" id="a2669153b4f4160d33477fc89d16dd716"></a>
@@ -181,6 +195,11 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>This method is called by <b>init</b> after the config files are loaded. </p>
+<p>It's job is to test whether the config files were loaded by self.load_config() and provide the appropriate default values (or crash if there are no defaults) for the missing config parameters.</p>
+<p>Because this error-handling method cannot rely on file I/O, the defaults are hard-coded.</p>
+<p>:return: None </p>
 
 </div>
 </div>

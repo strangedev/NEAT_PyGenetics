@@ -1,5 +1,10 @@
 \hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1SimulationConnector_1_1SimulationConnector}{}\section{N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Networking.\+Server.\+Simulation\+Connector.\+Simulation\+Connector Class Reference}
 \label{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1SimulationConnector_1_1SimulationConnector}\index{N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Networking.\+Server.\+Simulation\+Connector.\+Simulation\+Connector@{N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Networking.\+Server.\+Simulation\+Connector.\+Simulation\+Connector}}
+
+
+A class providing a high-\/level interface to a client connected via the N\+E\+A\+T\+Client.  
+
+
 Inheritance diagram for N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Networking.\+Server.\+Simulation\+Connector.\+Simulation\+Connector\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,17 +17,17 @@ Inheritance diagram for N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Networking
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1SimulationConnector_1_1SimulationConnector_a3efe4fc8a7d68cfd454fbaf0e981bee5}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self)
 \item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1SimulationConnector_1_1SimulationConnector_af5849c17a1aa5ef6bc4f9e1f798fe00c}{get\+\_\+session} (self)
-\item 
+\begin{DoxyCompactList}\small\item\em Awaits the Announce\+Session command to be sent by the client. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1SimulationConnector_1_1SimulationConnector_a4984c0604704e1808a51050274c7a56e}{send\+\_\+block}
-\item 
+\begin{DoxyCompactList}\small\item\em Awaits the Get\+Block command to be sent by the client and sends the block to the client. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1SimulationConnector_1_1SimulationConnector_a193505d0bf3a8dfa0063b7aca22cd84b}{get\+\_\+block\+\_\+inputs}
-\item 
+\begin{DoxyCompactList}\small\item\em Awaits the Set\+Inputs command to be sent by the client. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1SimulationConnector_1_1SimulationConnector_a82d0ed025654632c25d2241aef9024cc}{send\+\_\+block\+\_\+outputs}
-\item 
+\begin{DoxyCompactList}\small\item\em Awaits the Get\+Outputs command to be sent by the client and sends the outputs for the previously received inputs back to the client. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1SimulationConnector_1_1SimulationConnector_af63e36b9eb1e3dcc9d58e437d251cc35}{get\+\_\+fitness\+\_\+values}
-\item 
+\begin{DoxyCompactList}\small\item\em Awaits the Set\+Fitness\+Values command to be sent by the client. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1SimulationConnector_1_1SimulationConnector_a5a07ea6d6971102b7dbe65e8fbaeb2c6}{get\+\_\+advance\+\_\+generation} (self)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Awaits the Advance\+Generation command to be sent by the client. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -39,6 +44,11 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1Simulati
 \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1SimulationConnector_1_1SimulationConnector_ae984255e91818c23a045b807d373bf1b}{set\+\_\+command}
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+A class providing a high-\/level interface to a client connected via the N\+E\+A\+T\+Client. 
+
+It receives commands from \hyperlink{namespaceNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1NEATServer}{N\+E\+A\+T\+Server}\textquotesingle{}s message queue und responds to them. When a function from \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1SimulationConnector_1_1SimulationConnector}{Simulation\+Connector} is called, the client is expected to have sent a certain command (if there are no commands in the message queue, the \hyperlink{namespaceNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server}{Server} will wait for the next command to be received). If the client has sent another command, or a command where the expected parameters are not present, Network\+Protocol\+Exception will be raised. 
 
 \subsection{Constructor \& Destructor Documentation}
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
@@ -60,7 +70,11 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1Simulati
 \item[{}]{bool}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1SimulationConnector_1_1SimulationConnector_a5a07ea6d6971102b7dbe65e8fbaeb2c6}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1SimulationConnector_1_1SimulationConnector_a5a07ea6d6971102b7dbe65e8fbaeb2c6}
-\index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector}!get\+\_\+block\+\_\+inputs@{get\+\_\+block\+\_\+inputs}}
+
+
+Awaits the Advance\+Generation command to be sent by the client. 
+
+\+:return\+: A bool indicating whether the next generation should be calculated by \hyperlink{namespaceNEAT__PyGenetics_1_1NEAT}{N\+E\+AT} (True) or the current session should be archived (False). \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector}!get\+\_\+block\+\_\+inputs@{get\+\_\+block\+\_\+inputs}}
 \index{get\+\_\+block\+\_\+inputs@{get\+\_\+block\+\_\+inputs}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector}}
 \subsubsection[{\texorpdfstring{get\+\_\+block\+\_\+inputs}{get_block_inputs}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Networking.\+Server.\+Simulation\+Connector.\+Simulation\+Connector.\+get\+\_\+block\+\_\+inputs (
 \begin{DoxyParamCaption}
@@ -68,7 +82,11 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1Simulati
 \item[{}]{block\+\_\+id}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1SimulationConnector_1_1SimulationConnector_a193505d0bf3a8dfa0063b7aca22cd84b}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1SimulationConnector_1_1SimulationConnector_a193505d0bf3a8dfa0063b7aca22cd84b}
-\index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector}!get\+\_\+fitness\+\_\+values@{get\+\_\+fitness\+\_\+values}}
+
+
+Awaits the Set\+Inputs command to be sent by the client. 
+
+\+:param block\+\_\+id\+: The id of the block whose inputs should by received \+:return\+: The received inputs as Dictionary of genome\+\_\+id\+: Dict\mbox{[}input\+\_\+label\+: input\+\_\+value\mbox{]} \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector}!get\+\_\+fitness\+\_\+values@{get\+\_\+fitness\+\_\+values}}
 \index{get\+\_\+fitness\+\_\+values@{get\+\_\+fitness\+\_\+values}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector}}
 \subsubsection[{\texorpdfstring{get\+\_\+fitness\+\_\+values}{get_fitness_values}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Networking.\+Server.\+Simulation\+Connector.\+Simulation\+Connector.\+get\+\_\+fitness\+\_\+values (
 \begin{DoxyParamCaption}
@@ -76,7 +94,11 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1Simulati
 \item[{}]{block\+\_\+id}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1SimulationConnector_1_1SimulationConnector_af63e36b9eb1e3dcc9d58e437d251cc35}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1SimulationConnector_1_1SimulationConnector_af63e36b9eb1e3dcc9d58e437d251cc35}
-\index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector}!get\+\_\+session@{get\+\_\+session}}
+
+
+Awaits the Set\+Fitness\+Values command to be sent by the client. 
+
+\+:param block\+\_\+id\+: The id of the block whose fitness values should be received \+:return\+: The received fitness values as dictionary of genome\+\_\+id\+: fitness\+\_\+value \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector}!get\+\_\+session@{get\+\_\+session}}
 \index{get\+\_\+session@{get\+\_\+session}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector}}
 \subsubsection[{\texorpdfstring{get\+\_\+session(self)}{get_session(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Networking.\+Server.\+Simulation\+Connector.\+Simulation\+Connector.\+get\+\_\+session (
 \begin{DoxyParamCaption}
@@ -86,7 +108,11 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1Simulati
 \item[{}]{object}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1SimulationConnector_1_1SimulationConnector_af5849c17a1aa5ef6bc4f9e1f798fe00c}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1SimulationConnector_1_1SimulationConnector_af5849c17a1aa5ef6bc4f9e1f798fe00c}
-\index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector}!send\+\_\+block@{send\+\_\+block}}
+
+
+Awaits the Announce\+Session command to be sent by the client. 
+
+\+:return\+: The session parameters for the new simulation session \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector}!send\+\_\+block@{send\+\_\+block}}
 \index{send\+\_\+block@{send\+\_\+block}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector}}
 \subsubsection[{\texorpdfstring{send\+\_\+block}{send_block}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Networking.\+Server.\+Simulation\+Connector.\+Simulation\+Connector.\+send\+\_\+block (
 \begin{DoxyParamCaption}
@@ -94,7 +120,11 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1Simulati
 \item[{}]{block}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1SimulationConnector_1_1SimulationConnector_a4984c0604704e1808a51050274c7a56e}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1SimulationConnector_1_1SimulationConnector_a4984c0604704e1808a51050274c7a56e}
-\index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector}!send\+\_\+block\+\_\+outputs@{send\+\_\+block\+\_\+outputs}}
+
+
+Awaits the Get\+Block command to be sent by the client and sends the block to the client. 
+
+\+:param block\+: The List of Storage\+Genomes to be sent to the client \+:param block\+\_\+id\+: The id (0 -\/ block\+\_\+count) of the block to be sent \+:return\+: None \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector}!send\+\_\+block\+\_\+outputs@{send\+\_\+block\+\_\+outputs}}
 \index{send\+\_\+block\+\_\+outputs@{send\+\_\+block\+\_\+outputs}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector}}
 \subsubsection[{\texorpdfstring{send\+\_\+block\+\_\+outputs}{send_block_outputs}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Networking.\+Server.\+Simulation\+Connector.\+Simulation\+Connector.\+send\+\_\+block\+\_\+outputs (
 \begin{DoxyParamCaption}
@@ -103,6 +133,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1Simulati
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1SimulationConnector_1_1SimulationConnector_a82d0ed025654632c25d2241aef9024cc}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1SimulationConnector_1_1SimulationConnector_a82d0ed025654632c25d2241aef9024cc}
 
+
+Awaits the Get\+Outputs command to be sent by the client and sends the outputs for the previously received inputs back to the client. 
+
+\+:param outputs\+: The output values as dictionary of genome\+\_\+id\+: Dict\mbox{[}output\+\_\+label\+: output\+\_\+value\mbox{]} \+:param block\+\_\+id\+: The od of the block whose inputs should be sent \+:return\+: None 
 
 \subsection{Member Data Documentation}
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+Simulation\+Connector\+::\+Simulation\+Connector}!acknowledged@{acknowledged}}

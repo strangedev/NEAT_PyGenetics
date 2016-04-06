@@ -109,8 +109,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a99ffddd6afb3f995598605e165772515"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1Generator_1_1Breeder_1_1Breeder.html#a99ffddd6afb3f995598605e165772515">__init__</a></td></tr>
 <tr class="separator:a99ffddd6afb3f995598605e165772515"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e78ccec465831c858910b1319e75076"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1Generator_1_1Breeder_1_1Breeder.html#a6e78ccec465831c858910b1319e75076">breed_genomes</a></td></tr>
+<tr class="memdesc:a6e78ccec465831c858910b1319e75076"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a new genome based on two input genomes.  <a href="#a6e78ccec465831c858910b1319e75076">More...</a><br /></td></tr>
 <tr class="separator:a6e78ccec465831c858910b1319e75076"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a761995541d6d9ff88e2ee112a57dff0f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1Generator_1_1Breeder_1_1Breeder.html#a761995541d6d9ff88e2ee112a57dff0f">should_gene_be_enabled</a> (self, instance_one, instance_two=None)</td></tr>
+<tr class="memdesc:a761995541d6d9ff88e2ee112a57dff0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decides whether the inherited variant of a gene should be enabled in the offspring genome based on both parents' instances of the gene.  <a href="#a761995541d6d9ff88e2ee112a57dff0f">More...</a><br /></td></tr>
 <tr class="separator:a761995541d6d9ff88e2ee112a57dff0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
@@ -196,6 +198,10 @@ Static Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Generates a new genome based on two input genomes. </p>
+<p>Matching genes are inherited randomly from one of the parents. Differing genes are inherited from the fitter parent. If the fitness value difference is below fitness_difference_threshold, the differing genes are inherited randomly as well.</p>
+<p>:param genome_one: :param genome_two: :return: </p>
+
 </div>
 </div>
 <a class="anchor" id="a761995541d6d9ff88e2ee112a57dff0f"></a>
@@ -227,6 +233,9 @@ Static Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Decides whether the inherited variant of a gene should be enabled in the offspring genome based on both parents' instances of the gene. </p>
+<p>:param instance_one: The first gene instance :param instance_two: The second gene instance :return: Whether the inherited gene should be enabled </p>
 
 </div>
 </div>

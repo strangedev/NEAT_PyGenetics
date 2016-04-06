@@ -1,5 +1,10 @@
 \hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster_1_1Cluster}{}\section{N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Analyst.\+Cluster.\+Cluster Class Reference}
 \label{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster_1_1Cluster}\index{N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Analyst.\+Cluster.\+Cluster@{N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Analyst.\+Cluster.\+Cluster}}
+
+
+Object used to represent a single cluster as stored in the database.  
+
+
 Inheritance diagram for N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Analyst.\+Cluster.\+Cluster\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -27,6 +32,11 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster_1_1Cluster_a6
 \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster_1_1Cluster_a9d814ccf011d42ab14bdade4be3e1fdb}{alive}
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Object used to represent a single cluster as stored in the database. 
+
+Attributes\+: cluster\+\_\+id (\+\_\+id)\+: The \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster_1_1Cluster}{Cluster}\textquotesingle{}s ID, unique representative\+: The ID of the representative Storage\+Genome. All genomes in the cluster are topologically similar to it\textquotesingle{}s representative genome. fitness\+: The cluster\textquotesingle{}s fitness value. This is calculated from the fitness values of the contained genomes by a shared fitness approach. offspring\+: The amount of offspring that will be generated based on genomes from this clusters during the next generation. alive\+: Whether the cluster is alive, i.\+e. if there are any genomes in the current population which belong to this cluster. 
 
 \subsection{Constructor \& Destructor Documentation}
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Cluster\+::\+Cluster@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Cluster\+::\+Cluster}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}

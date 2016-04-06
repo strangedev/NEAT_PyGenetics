@@ -15,7 +15,7 @@ Inheritance diagram for N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Analyst.\+
 \begin{DoxyCompactItemize}
 \item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1AnalysisResult_1_1AnalysisResult_a76e2ba4c3bec7e93ab1c78e281a8504d}{\+\_\+\+\_\+init\+\_\+\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em \+:param analysis\+\_\+result\+: If analysis\+\_\+result is given, its contents are copied. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1AnalysisResult_1_1AnalysisResult_a6145154aa0f23413e57312a78cc12f91}{\+\_\+\+\_\+eq\+\_\+\+\_\+}
 \item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1AnalysisResult_1_1AnalysisResult_abc4627be334a397f27b8173cb4a21796}{clear} (self)
@@ -26,17 +26,17 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1AnalysisResult_1_1Ana
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1AnalysisResult_1_1AnalysisResult_a8ad8be788715b6298240055bbd835d5e}{gene\+\_\+closes\+\_\+cycle\+\_\+map}
-\begin{DoxyCompactList}\small\item\em a dict that consists of gene id\textquotesingle{}s (ints) as keys \end{DoxyCompactList}\item 
+\item 
 \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1AnalysisResult_1_1AnalysisResult_a5dec17c624dfc418d21b543b366413e2}{topologically\+\_\+sorted\+\_\+nodes}
-\begin{DoxyCompactList}\small\item\em a list of all nodes in the analyzed graph in \end{DoxyCompactList}\item 
+\item 
 \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1AnalysisResult_1_1AnalysisResult_acca98f28e97dddad4c4ee0c86d499e58}{topologically\+\_\+sorted\+\_\+cycle\+\_\+nodes}
-\begin{DoxyCompactList}\small\item\em a list of all cycle closing nodes (at \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Object used to store results of graph analysis. 
 
-the source of the closing edge) in topological order. This is a sub-\/ set of topologically\+\_\+sorted\+\_\+nodes. 
+Attributes\+: gene\+\_\+closes\+\_\+cycle\+\_\+map\+: a dict that consists of gene id\textquotesingle{}s (ints) as keys a boolean value that is true, if the gene closes a circle in the a-\/ nalyzed graph. topologically\+\_\+sorted\+\_\+nodes\+: a list of all nodes in the analyzed graph in topological order. topologically\+\_\+sorted\+\_\+cycle\+\_\+nodes\+: a list of all cycle closing nodes (at the source of the closing edge) in topological order. This is a sub-\/ set of topologically\+\_\+sorted\+\_\+nodes. 
 
 \subsection{Constructor \& Destructor Documentation}
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Analysis\+Result\+::\+Analysis\+Result@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Analysis\+Result\+::\+Analysis\+Result}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
@@ -48,6 +48,10 @@ the source of the closing edge) in topological order. This is a sub-\/ set of to
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1AnalysisResult_1_1AnalysisResult_a76e2ba4c3bec7e93ab1c78e281a8504d}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1AnalysisResult_1_1AnalysisResult_a76e2ba4c3bec7e93ab1c78e281a8504d}
 
+
+\+:param analysis\+\_\+result\+: If analysis\+\_\+result is given, its contents are copied. 
+
+\+:return\+: 
 
 \subsection{Member Function Documentation}
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Analysis\+Result\+::\+Analysis\+Result@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Analysis\+Result\+::\+Analysis\+Result}!\+\_\+\+\_\+eq\+\_\+\+\_\+@{\+\_\+\+\_\+eq\+\_\+\+\_\+}}
@@ -81,24 +85,12 @@ the source of the closing edge) in topological order. This is a sub-\/ set of to
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Analysis\+Result\+::\+Analysis\+Result@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Analysis\+Result\+::\+Analysis\+Result}!gene\+\_\+closes\+\_\+cycle\+\_\+map@{gene\+\_\+closes\+\_\+cycle\+\_\+map}}
 \index{gene\+\_\+closes\+\_\+cycle\+\_\+map@{gene\+\_\+closes\+\_\+cycle\+\_\+map}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Analysis\+Result\+::\+Analysis\+Result@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Analysis\+Result\+::\+Analysis\+Result}}
 \subsubsection[{\texorpdfstring{gene\+\_\+closes\+\_\+cycle\+\_\+map}{gene_closes_cycle_map}}]{\setlength{\rightskip}{0pt plus 5cm}N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Analyst.\+Analysis\+Result.\+Analysis\+Result.\+gene\+\_\+closes\+\_\+cycle\+\_\+map}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1AnalysisResult_1_1AnalysisResult_a8ad8be788715b6298240055bbd835d5e}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1AnalysisResult_1_1AnalysisResult_a8ad8be788715b6298240055bbd835d5e}
-
-
-a dict that consists of gene id\textquotesingle{}s (ints) as keys 
-
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Analysis\+Result\+::\+Analysis\+Result@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Analysis\+Result\+::\+Analysis\+Result}!topologically\+\_\+sorted\+\_\+cycle\+\_\+nodes@{topologically\+\_\+sorted\+\_\+cycle\+\_\+nodes}}
 \index{topologically\+\_\+sorted\+\_\+cycle\+\_\+nodes@{topologically\+\_\+sorted\+\_\+cycle\+\_\+nodes}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Analysis\+Result\+::\+Analysis\+Result@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Analysis\+Result\+::\+Analysis\+Result}}
 \subsubsection[{\texorpdfstring{topologically\+\_\+sorted\+\_\+cycle\+\_\+nodes}{topologically_sorted_cycle_nodes}}]{\setlength{\rightskip}{0pt plus 5cm}N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Analyst.\+Analysis\+Result.\+Analysis\+Result.\+topologically\+\_\+sorted\+\_\+cycle\+\_\+nodes}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1AnalysisResult_1_1AnalysisResult_acca98f28e97dddad4c4ee0c86d499e58}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1AnalysisResult_1_1AnalysisResult_acca98f28e97dddad4c4ee0c86d499e58}
-
-
-a list of all cycle closing nodes (at 
-
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Analysis\+Result\+::\+Analysis\+Result@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Analysis\+Result\+::\+Analysis\+Result}!topologically\+\_\+sorted\+\_\+nodes@{topologically\+\_\+sorted\+\_\+nodes}}
 \index{topologically\+\_\+sorted\+\_\+nodes@{topologically\+\_\+sorted\+\_\+nodes}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Analysis\+Result\+::\+Analysis\+Result@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Analysis\+Result\+::\+Analysis\+Result}}
 \subsubsection[{\texorpdfstring{topologically\+\_\+sorted\+\_\+nodes}{topologically_sorted_nodes}}]{\setlength{\rightskip}{0pt plus 5cm}N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Analyst.\+Analysis\+Result.\+Analysis\+Result.\+topologically\+\_\+sorted\+\_\+nodes}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1AnalysisResult_1_1AnalysisResult_a5dec17c624dfc418d21b543b366413e2}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1AnalysisResult_1_1AnalysisResult_a5dec17c624dfc418d21b543b366413e2}
-
-
-a list of all nodes in the analyzed graph in 
-
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

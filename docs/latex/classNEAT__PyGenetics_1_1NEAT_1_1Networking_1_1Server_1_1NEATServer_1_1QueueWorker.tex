@@ -1,5 +1,10 @@
 \hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1NEATServer_1_1QueueWorker}{}\section{N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Networking.\+Server.\+N\+E\+A\+T\+Server.\+Queue\+Worker Class Reference}
 \label{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1NEATServer_1_1QueueWorker}\index{N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Networking.\+Server.\+N\+E\+A\+T\+Server.\+Queue\+Worker@{N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Networking.\+Server.\+N\+E\+A\+T\+Server.\+Queue\+Worker}}
+
+
+A thread which operates on networking message queues via \hyperlink{namespaceNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1JSONSocket}{J\+S\+O\+N\+Socket} in two different modes\+:  
+
+
 Inheritance diagram for N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Networking.\+Server.\+N\+E\+A\+T\+Server.\+Queue\+Worker\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -19,6 +24,15 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1NEATServ
 \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1NEATServer_1_1QueueWorker_ad5eb20f5b3bfb6a6aafa945bd5103c1b}{socket}
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+A thread which operates on networking message queues via \hyperlink{namespaceNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1JSONSocket}{J\+S\+O\+N\+Socket} in two different modes\+: 
+
+
+\begin{DoxyEnumerate}
+\item receive The worker thread will accept \hyperlink{namespaceNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1JSONSocket}{J\+S\+O\+N\+Socket} connections, receive dictionaries, creates command objects and inserts them into the appropriate queue (in\+\_\+queue)
+\item send The worker thread will wait for command objects to appear inside the outgoing queue (out\+\_\+queue), convert them to dictionaries and send them to the client via a \hyperlink{namespaceNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1JSONSocket}{J\+S\+O\+N\+Socket}. 
+\end{DoxyEnumerate}
 
 \subsection{Constructor \& Destructor Documentation}
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+N\+E\+A\+T\+Server\+::\+Queue\+Worker@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Networking\+::\+Server\+::\+N\+E\+A\+T\+Server\+::\+Queue\+Worker}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}

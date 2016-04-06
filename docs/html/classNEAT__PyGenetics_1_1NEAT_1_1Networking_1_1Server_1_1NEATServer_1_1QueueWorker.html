@@ -95,6 +95,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">NEAT_PyGenetics.NEAT.Networking.Server.NEATServer.QueueWorker Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A thread which operates on networking message queues via <a class="el" href="namespaceNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1JSONSocket.html">JSONSocket</a> in two different modes:  
+ <a href="classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1NEATServer_1_1QueueWorker.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for NEAT_PyGenetics.NEAT.Networking.Server.NEATServer.QueueWorker:</div>
 <div class="dyncontent">
@@ -116,7 +119,13 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:ad5eb20f5b3bfb6a6aafa945bd5103c1b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1NEATServer_1_1QueueWorker.html#ad5eb20f5b3bfb6a6aafa945bd5103c1b">socket</a></td></tr>
 <tr class="separator:ad5eb20f5b3bfb6a6aafa945bd5103c1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A thread which operates on networking message queues via <a class="el" href="namespaceNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1JSONSocket.html">JSONSocket</a> in two different modes: </p>
+<ol type="1">
+<li>receive The worker thread will accept <a class="el" href="namespaceNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1JSONSocket.html">JSONSocket</a> connections, receive dictionaries, creates command objects and inserts them into the appropriate queue (in_queue)</li>
+<li>send The worker thread will wait for command objects to appear inside the outgoing queue (out_queue), convert them to dictionaries and send them to the client via a <a class="el" href="namespaceNEAT__PyGenetics_1_1NEAT_1_1Networking_1_1Server_1_1JSONSocket.html">JSONSocket</a>. </li>
+</ol>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a413e2f230b433bfc4f137f1ae1a331e5"></a>
 <div class="memitem">
 <div class="memproto">

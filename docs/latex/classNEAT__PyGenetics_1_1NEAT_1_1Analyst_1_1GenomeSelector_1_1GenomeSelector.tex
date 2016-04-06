@@ -10,23 +10,23 @@ Inheritance diagram for N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Analyst.\+
 \begin{DoxyCompactItemize}
 \item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector_a92cb92afdabf4246963cf8214c9baa76}{\+\_\+\+\_\+init\+\_\+\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em \+:param genome\+\_\+repository\+: Genome\+Repository to select \+:param cluster\+\_\+repository\+: Cluster\+Repository to select \+:param selection\+\_\+parameters\+: saved in selection.\+conf \+:return\+: \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector_aae7092166920c907176530a60deda37d}{get\+\_\+genomes\+\_\+in\+\_\+cluster}
-\item 
+\begin{DoxyCompactList}\small\item\em Selects and Area of genomes in \hyperlink{namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster}{Cluster} given by input offspring. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector_a2fb8600454d9d808158dbe3ace6b4952}{get\+\_\+cluster\+\_\+area\+\_\+sorted\+\_\+by\+\_\+fitness}
-\item 
+\begin{DoxyCompactList}\small\item\em \+:param begin\+: float percentage starting area (0 is starting by weakest) \+:param ending\+: float ending area (1 is starting by fitt est) \+:return\+: List\mbox{[}\hyperlink{namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster}{Cluster}\mbox{]} sorted by fitness \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector_a938d385b8d73983a5e9abf75a80f03f5}{select\+\_\+genomes\+\_\+for\+\_\+breeding}
-\item 
+\begin{DoxyCompactList}\small\item\em Selects genomes for breeding currently best two from all Clusters \+:type breeding\+\_\+percentage\+: float \+:return\+: tuple(\+Storage) \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector_af335a5342b0a1695c52d61274c83b0bf}{select\+\_\+genomes\+\_\+for\+\_\+mutation}
-\item 
+\begin{DoxyCompactList}\small\item\em Selects genome for mutation currently the best from all Clusters \+:param mutation\+\_\+percentage\+: float \+:return\+: Storage\+Genome the most fit. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector_a9e1d64bae210147a47049f1c8c389bfc}{select\+\_\+clusters\+\_\+for\+\_\+combination} (self)
 \begin{DoxyCompactList}\small\item\em \+:return\+: Tuple\mbox{[}\hyperlink{namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster}{Cluster}\mbox{]} cluster chosen for combination \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector_a08b5d1264a5dadc1ec98affabf1ab76d}{select\+\_\+cluster\+\_\+combinations}
-\item 
+\begin{DoxyCompactList}\small\item\em \+:param cluster1\+: \hyperlink{namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster}{Cluster} to choose 1 \+:param cluster2\+: \hyperlink{namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster}{Cluster} to choose 2 \+:param genome\+\_\+count\+: int number of seats which should be filled \+:return\+: List\mbox{[}Tuple\mbox{[}Storage\+Genome\mbox{]}\mbox{]} combination from given cluster \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector_a1016a10b5301bd2a1fd770dceda6644b}{select\+\_\+clusters\+\_\+for\+\_\+discarding} (self)
-\item 
+\begin{DoxyCompactList}\small\item\em select x percentage (given by selection.\+conf \char`\"{}discarding\+\_\+by\+\_\+cluster\+\_\+fitness\char`\"{}) of \hyperlink{namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster}{Cluster} sorted ascending by fitness \+:return\+: List of \hyperlink{namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster}{Cluster} wanted to be discarded \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector_af7cd898b9a5bbc1e2e407256a385f865}{select\+\_\+genomes\+\_\+for\+\_\+discarding} (self)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em select \char`\"{}discarding\+\_\+by\+\_\+genome\+\_\+fitness\char`\"{} percentage (in every \hyperlink{namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster}{Cluster}) of genomes sorted ascending by fitness \+:return\+: List of Genomes wanted to be discarded \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -77,6 +77,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1Gen
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector_a92cb92afdabf4246963cf8214c9baa76}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector_a92cb92afdabf4246963cf8214c9baa76}
 
 
+\+:param genome\+\_\+repository\+: Genome\+Repository to select \+:param cluster\+\_\+repository\+: Cluster\+Repository to select \+:param selection\+\_\+parameters\+: saved in selection.\+conf \+:return\+: 
+
+
+
 \subsection{Member Function Documentation}
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector}!get\+\_\+cluster\+\_\+area\+\_\+sorted\+\_\+by\+\_\+fitness@{get\+\_\+cluster\+\_\+area\+\_\+sorted\+\_\+by\+\_\+fitness}}
 \index{get\+\_\+cluster\+\_\+area\+\_\+sorted\+\_\+by\+\_\+fitness@{get\+\_\+cluster\+\_\+area\+\_\+sorted\+\_\+by\+\_\+fitness}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector}}
@@ -86,6 +90,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1Gen
 \item[{}]{begin}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector_a2fb8600454d9d808158dbe3ace6b4952}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector_a2fb8600454d9d808158dbe3ace6b4952}
+
+
+\+:param begin\+: float percentage starting area (0 is starting by weakest) \+:param ending\+: float ending area (1 is starting by fitt est) \+:return\+: List\mbox{[}\hyperlink{namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster}{Cluster}\mbox{]} sorted by fitness 
+
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector}!get\+\_\+genomes\+\_\+in\+\_\+cluster@{get\+\_\+genomes\+\_\+in\+\_\+cluster}}
 \index{get\+\_\+genomes\+\_\+in\+\_\+cluster@{get\+\_\+genomes\+\_\+in\+\_\+cluster}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector}}
 \subsubsection[{\texorpdfstring{get\+\_\+genomes\+\_\+in\+\_\+cluster}{get_genomes_in_cluster}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Analyst.\+Genome\+Selector.\+Genome\+Selector.\+get\+\_\+genomes\+\_\+in\+\_\+cluster (
@@ -94,7 +102,11 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1Gen
 \item[{}]{cluster\+\_\+id}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector_aae7092166920c907176530a60deda37d}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector_aae7092166920c907176530a60deda37d}
-\index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector}!select\+\_\+cluster\+\_\+combinations@{select\+\_\+cluster\+\_\+combinations}}
+
+
+Selects and Area of genomes in \hyperlink{namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster}{Cluster} given by input offspring. 
+
+\+:param cluster\+\_\+id\+: Object\+Id to load Genomes \+:return\+: \mbox{[}Storage\+Genome\mbox{]} \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector}!select\+\_\+cluster\+\_\+combinations@{select\+\_\+cluster\+\_\+combinations}}
 \index{select\+\_\+cluster\+\_\+combinations@{select\+\_\+cluster\+\_\+combinations}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector}}
 \subsubsection[{\texorpdfstring{select\+\_\+cluster\+\_\+combinations}{select_cluster_combinations}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Analyst.\+Genome\+Selector.\+Genome\+Selector.\+select\+\_\+cluster\+\_\+combinations (
 \begin{DoxyParamCaption}
@@ -102,6 +114,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1Gen
 \item[{}]{cluster1}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector_a08b5d1264a5dadc1ec98affabf1ab76d}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector_a08b5d1264a5dadc1ec98affabf1ab76d}
+
+
+\+:param cluster1\+: \hyperlink{namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster}{Cluster} to choose 1 \+:param cluster2\+: \hyperlink{namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster}{Cluster} to choose 2 \+:param genome\+\_\+count\+: int number of seats which should be filled \+:return\+: List\mbox{[}Tuple\mbox{[}Storage\+Genome\mbox{]}\mbox{]} combination from given cluster 
+
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector}!select\+\_\+clusters\+\_\+for\+\_\+combination@{select\+\_\+clusters\+\_\+for\+\_\+combination}}
 \index{select\+\_\+clusters\+\_\+for\+\_\+combination@{select\+\_\+clusters\+\_\+for\+\_\+combination}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector}}
 \subsubsection[{\texorpdfstring{select\+\_\+clusters\+\_\+for\+\_\+combination(self)}{select_clusters_for_combination(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Analyst.\+Genome\+Selector.\+Genome\+Selector.\+select\+\_\+clusters\+\_\+for\+\_\+combination (
@@ -125,6 +141,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1Gen
 \item[{}]{Cluster}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector_a1016a10b5301bd2a1fd770dceda6644b}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector_a1016a10b5301bd2a1fd770dceda6644b}
+
+
+select x percentage (given by selection.\+conf \char`\"{}discarding\+\_\+by\+\_\+cluster\+\_\+fitness\char`\"{}) of \hyperlink{namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster}{Cluster} sorted ascending by fitness \+:return\+: List of \hyperlink{namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster}{Cluster} wanted to be discarded 
+
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector}!select\+\_\+genomes\+\_\+for\+\_\+breeding@{select\+\_\+genomes\+\_\+for\+\_\+breeding}}
 \index{select\+\_\+genomes\+\_\+for\+\_\+breeding@{select\+\_\+genomes\+\_\+for\+\_\+breeding}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector}}
 \subsubsection[{\texorpdfstring{select\+\_\+genomes\+\_\+for\+\_\+breeding}{select_genomes_for_breeding}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Analyst.\+Genome\+Selector.\+Genome\+Selector.\+select\+\_\+genomes\+\_\+for\+\_\+breeding (
@@ -133,6 +153,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1Gen
 \item[{}]{breeding\+\_\+percentage}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector_a938d385b8d73983a5e9abf75a80f03f5}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector_a938d385b8d73983a5e9abf75a80f03f5}
+
+
+Selects genomes for breeding currently best two from all Clusters \+:type breeding\+\_\+percentage\+: float \+:return\+: tuple(\+Storage) 
+
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector}!select\+\_\+genomes\+\_\+for\+\_\+discarding@{select\+\_\+genomes\+\_\+for\+\_\+discarding}}
 \index{select\+\_\+genomes\+\_\+for\+\_\+discarding@{select\+\_\+genomes\+\_\+for\+\_\+discarding}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector}}
 \subsubsection[{\texorpdfstring{select\+\_\+genomes\+\_\+for\+\_\+discarding(self)}{select_genomes_for_discarding(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Analyst.\+Genome\+Selector.\+Genome\+Selector.\+select\+\_\+genomes\+\_\+for\+\_\+discarding (
@@ -142,6 +166,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1Gen
 \item[{}]{Storage\+Genome}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector_af7cd898b9a5bbc1e2e407256a385f865}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector_af7cd898b9a5bbc1e2e407256a385f865}
+
+
+select \char`\"{}discarding\+\_\+by\+\_\+genome\+\_\+fitness\char`\"{} percentage (in every \hyperlink{namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1Cluster}{Cluster}) of genomes sorted ascending by fitness \+:return\+: List of Genomes wanted to be discarded 
+
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector}!select\+\_\+genomes\+\_\+for\+\_\+mutation@{select\+\_\+genomes\+\_\+for\+\_\+mutation}}
 \index{select\+\_\+genomes\+\_\+for\+\_\+mutation@{select\+\_\+genomes\+\_\+for\+\_\+mutation}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Analyst\+::\+Genome\+Selector\+::\+Genome\+Selector}}
 \subsubsection[{\texorpdfstring{select\+\_\+genomes\+\_\+for\+\_\+mutation}{select_genomes_for_mutation}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Analyst.\+Genome\+Selector.\+Genome\+Selector.\+select\+\_\+genomes\+\_\+for\+\_\+mutation (
@@ -150,6 +178,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1Gen
 \item[{}]{mutation\+\_\+percentage}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector_af335a5342b0a1695c52d61274c83b0bf}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeSelector_1_1GenomeSelector_af335a5342b0a1695c52d61274c83b0bf}
+
+
+Selects genome for mutation currently the best from all Clusters \+:param mutation\+\_\+percentage\+: float \+:return\+: Storage\+Genome the most fit. 
+
 
 
 \subsection{Member Data Documentation}

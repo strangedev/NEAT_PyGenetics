@@ -95,6 +95,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">NEAT_PyGenetics.NEAT.GenomeStructures.StorageStructure.StorageGenome.StorageGenome Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A data structure for storing genome information in a compact way.  
+ <a href="classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1StorageStructure_1_1StorageGenome_1_1StorageGenome.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for NEAT_PyGenetics.NEAT.GenomeStructures.StorageStructure.StorageGenome.StorageGenome:</div>
 <div class="dyncontent">
@@ -107,6 +110,7 @@ Inheritance diagram for NEAT_PyGenetics.NEAT.GenomeStructures.StorageStructure.S
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8b7615cf97ad4ce4c3805ecde57637c8"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1StorageStructure_1_1StorageGenome_1_1StorageGenome.html#a8b7615cf97ad4ce4c3805ecde57637c8">__init__</a></td></tr>
+<tr class="memdesc:a8b7615cf97ad4ce4c3805ecde57637c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">:param genome: If genome is given, its inputs are copied (except for id) :param inputs: A list of strings, representing the inputs nodes' labels  <a href="#a8b7615cf97ad4ce4c3805ecde57637c8">More...</a><br /></td></tr>
 <tr class="separator:a8b7615cf97ad4ce4c3805ecde57637c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d0ae3acf7162d05cb40fe5eaff9ada9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1StorageStructure_1_1StorageGenome_1_1StorageGenome.html#a0d0ae3acf7162d05cb40fe5eaff9ada9">__eq__</a></td></tr>
 <tr class="separator:a0d0ae3acf7162d05cb40fe5eaff9ada9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,7 +134,10 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:a4d31fdd32df12f7c1d9c6848b4ae1bcc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1StorageStructure_1_1StorageGenome_1_1StorageGenome.html#a4d31fdd32df12f7c1d9c6848b4ae1bcc">cluster</a></td></tr>
 <tr class="separator:a4d31fdd32df12f7c1d9c6848b4ae1bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A data structure for storing genome information in a compact way. </p>
+<p>Attributes: genome_id (_id): The Genome's ID, unique in the population. inputs: A list of the ids of the input nodes. There has to be at least one gene per input that is connected to it. Represented as a list of tuples of the form (Input_Label, Node-ID). outputs: A list of the ids of the output nodes. There has to be at least one gene per output that is connected to it. Represented as a list of tuples of the form (Output_Label, Node-ID). genes: A list of all genes, that make up the genome. Presented as a tu- ple of Gene-ID, a boolean that is true, if the gene is disabled and a Fraction that stores the weight of the gene. analysis_result: A result object that is generated when analyzing the genome. This is empty per default. cluster: The cluster to which the Genome belongs. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a8b7615cf97ad4ce4c3805ecde57637c8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -154,6 +161,8 @@ Static Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>:param genome: If genome is given, its inputs are copied (except for id) :param inputs: A list of strings, representing the inputs nodes' labels </p>
 
 </div>
 </div>

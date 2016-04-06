@@ -1,5 +1,10 @@
 \hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1Node}{}\section{N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Genome\+Structures.\+Simulation\+Structure.\+Simulation\+Nodes.\+Node Class Reference}
 \label{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1Node}\index{N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Genome\+Structures.\+Simulation\+Structure.\+Simulation\+Nodes.\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Genome\+Structures.\+Simulation\+Structure.\+Simulation\+Nodes.\+Node}}
+
+
+A single node in a \hyperlink{namespaceNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationGenome}{Simulation\+Genome}.  
+
+
 Inheritance diagram for N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Genome\+Structures.\+Simulation\+Structure.\+Simulation\+Nodes.\+Node\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,17 +15,17 @@ Inheritance diagram for N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Genome\+St
 \begin{DoxyCompactItemize}
 \item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1Node_adc4a4683c2a06deaf2804d6f2745df3c}{\+\_\+\+\_\+init\+\_\+\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em Successors are stored in a set to prevent adding the same successor mul-\/ tiple times. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1Node_a97ac70897d562bce07c8395c17fe2a1b}{add\+\_\+successor}
-\item 
+\begin{DoxyCompactList}\small\item\em Adds a successor\+\_\+node to the list of stored successors. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1Node_a101dbc625ef502856902d623193e2901}{add\+\_\+successors}
-\item 
+\begin{DoxyCompactList}\small\item\em Adds all nodes in a given iterable structure to the node successors. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1Node_ae2ad3e79c3b1a95bffd61b932f54f566}{reset} (self)
-\item 
+\begin{DoxyCompactList}\small\item\em Resets the value to the initial\+\_\+value. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1Node_abc0a976efab6982a2630d01489554fde}{fire} (self)
-\item 
+\begin{DoxyCompactList}\small\item\em Adds the currently stored value multiplied with the specific weights to each successor. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1Node_aecc180ca33b3e3acd7601a3ad3e63b7d}{add\+\_\+value}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Adds the given value to the currently stored value. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -34,6 +39,11 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationSt
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+A single node in a \hyperlink{namespaceNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationGenome}{Simulation\+Genome}. 
+
+Stores information about its successors and a current value and has methods for propagating its value to its successors. 
+
 \subsection{Constructor \& Destructor Documentation}
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
 \index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node}}
@@ -45,6 +55,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationSt
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1Node_adc4a4683c2a06deaf2804d6f2745df3c}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1Node_adc4a4683c2a06deaf2804d6f2745df3c}
 
 
+Successors are stored in a set to prevent adding the same successor mul-\/ tiple times. 
+
+Weights are stored separately and are accessed with the successor as the key. \+:param initial\+\_\+value\+: Optional initial value. May or may not be over-\/ written when starting a simulation-\/step. \+:return\+: 
+
 \subsection{Member Function Documentation}
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node}!add\+\_\+successor@{add\+\_\+successor}}
 \index{add\+\_\+successor@{add\+\_\+successor}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node}}
@@ -54,7 +68,11 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationSt
 \item[{}]{successor\+\_\+node}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1Node_a97ac70897d562bce07c8395c17fe2a1b}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1Node_a97ac70897d562bce07c8395c17fe2a1b}
-\index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node}!add\+\_\+successors@{add\+\_\+successors}}
+
+
+Adds a successor\+\_\+node to the list of stored successors. 
+
+\+:param successor\+\_\+node\+: A new node to be added as a successor \+:param weight\+: The weight of the edge to the new node \+:raises\+: Value\+Error, if the weight of the given nodes is not in the interval \mbox{[}0,1\mbox{]}. \+:raises\+: Exception, if the given successor\+\_\+node already exists in the stored list of successors. \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node}!add\+\_\+successors@{add\+\_\+successors}}
 \index{add\+\_\+successors@{add\+\_\+successors}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node}}
 \subsubsection[{\texorpdfstring{add\+\_\+successors}{add_successors}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Genome\+Structures.\+Simulation\+Structure.\+Simulation\+Nodes.\+Node.\+add\+\_\+successors (
 \begin{DoxyParamCaption}
@@ -62,7 +80,11 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationSt
 \item[{}]{successor\+\_\+nodes}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1Node_a101dbc625ef502856902d623193e2901}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1Node_a101dbc625ef502856902d623193e2901}
-\index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node}!add\+\_\+value@{add\+\_\+value}}
+
+
+Adds all nodes in a given iterable structure to the node successors. 
+
+\+:param successor\+\_\+nodes\+: \+:raises\+: Value\+Error, if the weight of one of the given nodes is not in the interval \mbox{[}0,1\mbox{]}. All nodes up to the conflicting node will still be added. \+:raises\+: Exception, if one of the given nodes already exists in the stored list of successors. All nodes up to the conflicting node will still be added. \+:return\+: \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node}!add\+\_\+value@{add\+\_\+value}}
 \index{add\+\_\+value@{add\+\_\+value}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node}}
 \subsubsection[{\texorpdfstring{add\+\_\+value}{add_value}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Genome\+Structures.\+Simulation\+Structure.\+Simulation\+Nodes.\+Node.\+add\+\_\+value (
 \begin{DoxyParamCaption}
@@ -70,7 +92,11 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationSt
 \item[{}]{value}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1Node_aecc180ca33b3e3acd7601a3ad3e63b7d}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1Node_aecc180ca33b3e3acd7601a3ad3e63b7d}
-\index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node}!fire@{fire}}
+
+
+Adds the given value to the currently stored value. 
+
+\+:param value\+: The value to be added. \+:return\+: \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node}!fire@{fire}}
 \index{fire@{fire}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node}}
 \subsubsection[{\texorpdfstring{fire(self)}{fire(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Genome\+Structures.\+Simulation\+Structure.\+Simulation\+Nodes.\+Node.\+fire (
 \begin{DoxyParamCaption}
@@ -78,7 +104,11 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationSt
 \item[{}]{None}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1Node_abc0a976efab6982a2630d01489554fde}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1Node_abc0a976efab6982a2630d01489554fde}
-\index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node}!reset@{reset}}
+
+
+Adds the currently stored value multiplied with the specific weights to each successor. 
+
+\+:return\+: \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node}!reset@{reset}}
 \index{reset@{reset}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node}}
 \subsubsection[{\texorpdfstring{reset(self)}{reset(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Genome\+Structures.\+Simulation\+Structure.\+Simulation\+Nodes.\+Node.\+reset (
 \begin{DoxyParamCaption}
@@ -87,6 +117,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationSt
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1Node_ae2ad3e79c3b1a95bffd61b932f54f566}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationNodes_1_1Node_ae2ad3e79c3b1a95bffd61b932f54f566}
 
+
+Resets the value to the initial\+\_\+value. 
+
+\+:return\+: 
 
 \subsection{Member Data Documentation}
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Nodes\+::\+Node}!initial\+\_\+value@{initial\+\_\+value}}

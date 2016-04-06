@@ -107,8 +107,10 @@ Inheritance diagram for NEAT_PyGenetics.NEAT.Analyst.GenomeAnalyst.GenomeAnalyst
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2b9e3334de517a0555177ee6bcc0ac04"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeAnalyst_1_1GenomeAnalyst.html#a2b9e3334de517a0555177ee6bcc0ac04">__init__</a> (self)</td></tr>
+<tr class="memdesc:a2b9e3334de517a0555177ee6bcc0ac04"><td class="mdescLeft">&#160;</td><td class="mdescRight">_node_visited: _node_visited[i] = 0 =&gt; node with id i was not visited yet _node_visited[i] = 1 =&gt; node with id i was visited :return:  <a href="#a2b9e3334de517a0555177ee6bcc0ac04">More...</a><br /></td></tr>
 <tr class="separator:a2b9e3334de517a0555177ee6bcc0ac04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afdd3b4e6b0b8275dd62677b8d5a18933"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1GenomeAnalyst_1_1GenomeAnalyst.html#afdd3b4e6b0b8275dd62677b8d5a18933">analyze</a></td></tr>
+<tr class="memdesc:afdd3b4e6b0b8275dd62677b8d5a18933"><td class="mdescLeft">&#160;</td><td class="mdescRight">Analysis method.  <a href="#afdd3b4e6b0b8275dd62677b8d5a18933">More...</a><br /></td></tr>
 <tr class="separator:afdd3b4e6b0b8275dd62677b8d5a18933"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
@@ -134,6 +136,8 @@ Static Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>_node_visited: _node_visited[i] = 0 =&gt; node with id i was not visited yet _node_visited[i] = 1 =&gt; node with id i was visited :return: </p>
 
 </div>
 </div>
@@ -161,6 +165,10 @@ Static Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Analysis method. </p>
+<p>Runs depth first search on the graph in order to find cycles and sort the graph topologically. Creates an <a class="el" href="namespaceNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1AnalysisResult.html">AnalysisResult</a> object which can be accessed through AnalysisGenome.result.</p>
+<p>:param genome: :return: None </p>
 
 </div>
 </div>

@@ -1,5 +1,10 @@
 \hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationGenome_1_1SimulationGenome}{}\section{N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Genome\+Structures.\+Simulation\+Structure.\+Simulation\+Genome.\+Simulation\+Genome Class Reference}
 \label{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationGenome_1_1SimulationGenome}\index{N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Genome\+Structures.\+Simulation\+Structure.\+Simulation\+Genome.\+Simulation\+Genome@{N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Genome\+Structures.\+Simulation\+Structure.\+Simulation\+Genome.\+Simulation\+Genome}}
+
+
+The \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationGenome_1_1SimulationGenome}{Simulation\+Genome} is a structural representation of a genome\textquotesingle{}s genepool.  
+
+
 Inheritance diagram for N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Genome\+Structures.\+Simulation\+Structure.\+Simulation\+Genome.\+Simulation\+Genome\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,11 +15,11 @@ Inheritance diagram for N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Genome\+St
 \begin{DoxyCompactItemize}
 \item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationGenome_1_1SimulationGenome_a9e3d21a710e6b90ca8d6332fbdc8faa2}{\+\_\+\+\_\+init\+\_\+\+\_\+}
-\item 
+\begin{DoxyCompactList}\small\item\em \+:param Gene\+Repository gene\+\_\+repository\+: Needed for access to the node storage. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationGenome_1_1SimulationGenome_af8bbfbec0e15a55d7a889ba9859f034a}{output} (self)
 \begin{DoxyCompactList}\small\item\em \+:return\+: Dict of the output nodes\textquotesingle{} values of the form label\+:value \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationGenome_1_1SimulationGenome_ae35fc2d42a8f79cf1cf7cf65b40910b6}{calculate\+\_\+step}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Sets inputs. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -32,6 +37,15 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationSt
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+The \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationGenome_1_1SimulationGenome}{Simulation\+Genome} is a structural representation of a genome\textquotesingle{}s genepool. 
+
+It is optimized for the purpose of simulating a neural network and is gene-\/ rated from a given Storage\+Genome.
+
+Attributes\+: \+\_\+gene\+\_\+repository\+: Access to information about the node ids in the Storage\+Genome \+\_\+output\+: Contains the results of the last calculation process. \+\_\+input\+\_\+layer\+: A set of Nodes as the input layer. These are identical in number and ids with the input ids in the Storage\+Genome. \+\_\+output\+\_\+layer\+: A set of Nodes as the output layer. These are identical in number and ids with the output ids in the Storage\+Genome. \+\_\+hidden\+\_\+layer\+: A hidden layer. This consists of a list of nodes which are calcula-\/ ted in the order of the list. This list is taken from the topologi-\/ cally sorted node list in the given Storage\+Genome\textquotesingle{}s Analysis\+Result. So to ensure a functioning neural network, that list has to be cor-\/ rect. \+\_\+cycle\+\_\+nodes\+: A list of Cycle\+Nodes, topologically sorted (like the hidden layer). These are nodes that have outgoing links that close a cycle. These nodes have to be treated separately, because the cycle closing edges have to be calculated first. For this initial calculation the last calculation value is used as the outgoing base value. If the genome was not simulated yet. a default value is used as the initial value.
+
+Usage\+: insert Storage\+Genome call calculate\+\_\+step have fun 
+
 \subsection{Constructor \& Destructor Documentation}
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Genome\+::\+Simulation\+Genome@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Genome\+::\+Simulation\+Genome}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
 \index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Genome\+::\+Simulation\+Genome@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Genome\+::\+Simulation\+Genome}}
@@ -43,6 +57,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationSt
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationGenome_1_1SimulationGenome_a9e3d21a710e6b90ca8d6332fbdc8faa2}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationGenome_1_1SimulationGenome_a9e3d21a710e6b90ca8d6332fbdc8faa2}
 
 
+\+:param Gene\+Repository gene\+\_\+repository\+: Needed for access to the node storage. 
+
+Is used when generating the structure. \+:param Storage\+Genome storage\+\_\+genome\+: The Storage\+Genome from which the \hyperlink{namespaceNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure}{Simulation\+Structure} is generated. 
+
 \subsection{Member Function Documentation}
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Genome\+::\+Simulation\+Genome@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Genome\+::\+Simulation\+Genome}!calculate\+\_\+step@{calculate\+\_\+step}}
 \index{calculate\+\_\+step@{calculate\+\_\+step}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Genome\+::\+Simulation\+Genome@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Genome\+::\+Simulation\+Genome}}
@@ -52,7 +70,11 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationSt
 \item[{}]{inputs}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationGenome_1_1SimulationGenome_ae35fc2d42a8f79cf1cf7cf65b40910b6}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationGenome_1_1SimulationGenome_ae35fc2d42a8f79cf1cf7cf65b40910b6}
-\index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Genome\+::\+Simulation\+Genome@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Genome\+::\+Simulation\+Genome}!output@{output}}
+
+
+Sets inputs. 
+
+Resets all values in the hidden and output layers. Iterates over cycle nodes, then input nodes, then hidden nodes and cal-\/ culates each. Preserves the values of the Cycle Nodes. Returns the output nodes\textquotesingle{} values. \+:param inputs\+: List of tuples of the form (node\+\_\+label, value) \+:return\+: Dict of output node labels and their current values. \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Genome\+::\+Simulation\+Genome@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Genome\+::\+Simulation\+Genome}!output@{output}}
 \index{output@{output}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Genome\+::\+Simulation\+Genome@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Genome\+Structures\+::\+Simulation\+Structure\+::\+Simulation\+Genome\+::\+Simulation\+Genome}}
 \subsubsection[{\texorpdfstring{output(self)}{output(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Genome\+Structures.\+Simulation\+Structure.\+Simulation\+Genome.\+Simulation\+Genome.\+output (
 \begin{DoxyParamCaption}

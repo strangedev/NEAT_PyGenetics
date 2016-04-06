@@ -95,6 +95,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">NEAT_PyGenetics.NEAT.GenomeStructures.SimulationStructure.SimulationGenome.SimulationGenome Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The <a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationGenome_1_1SimulationGenome.html" title="The SimulationGenome is a structural representation of a genome&#39;s genepool. ">SimulationGenome</a> is a structural representation of a genome's genepool.  
+ <a href="classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationGenome_1_1SimulationGenome.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for NEAT_PyGenetics.NEAT.GenomeStructures.SimulationStructure.SimulationGenome.SimulationGenome:</div>
 <div class="dyncontent">
@@ -107,11 +110,13 @@ Inheritance diagram for NEAT_PyGenetics.NEAT.GenomeStructures.SimulationStructur
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9e3d21a710e6b90ca8d6332fbdc8faa2"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationGenome_1_1SimulationGenome.html#a9e3d21a710e6b90ca8d6332fbdc8faa2">__init__</a></td></tr>
+<tr class="memdesc:a9e3d21a710e6b90ca8d6332fbdc8faa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">:param GeneRepository gene_repository: Needed for access to the node storage.  <a href="#a9e3d21a710e6b90ca8d6332fbdc8faa2">More...</a><br /></td></tr>
 <tr class="separator:a9e3d21a710e6b90ca8d6332fbdc8faa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8bbfbec0e15a55d7a889ba9859f034a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationGenome_1_1SimulationGenome.html#af8bbfbec0e15a55d7a889ba9859f034a">output</a> (self)</td></tr>
 <tr class="memdesc:af8bbfbec0e15a55d7a889ba9859f034a"><td class="mdescLeft">&#160;</td><td class="mdescRight">:return: Dict of the output nodes' values of the form label:value  <a href="#af8bbfbec0e15a55d7a889ba9859f034a">More...</a><br /></td></tr>
 <tr class="separator:af8bbfbec0e15a55d7a889ba9859f034a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae35fc2d42a8f79cf1cf7cf65b40910b6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationGenome_1_1SimulationGenome.html#ae35fc2d42a8f79cf1cf7cf65b40910b6">calculate_step</a></td></tr>
+<tr class="memdesc:ae35fc2d42a8f79cf1cf7cf65b40910b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets inputs.  <a href="#ae35fc2d42a8f79cf1cf7cf65b40910b6">More...</a><br /></td></tr>
 <tr class="separator:ae35fc2d42a8f79cf1cf7cf65b40910b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
@@ -129,7 +134,12 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:a27b218236fdf7a6526bdddef382a38e9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationGenome_1_1SimulationGenome.html#a27b218236fdf7a6526bdddef382a38e9">value</a></td></tr>
 <tr class="separator:a27b218236fdf7a6526bdddef382a38e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure_1_1SimulationGenome_1_1SimulationGenome.html" title="The SimulationGenome is a structural representation of a genome&#39;s genepool. ">SimulationGenome</a> is a structural representation of a genome's genepool. </p>
+<p>It is optimized for the purpose of simulating a neural network and is gene- rated from a given StorageGenome.</p>
+<p>Attributes: _gene_repository: Access to information about the node ids in the StorageGenome _output: Contains the results of the last calculation process. _input_layer: A set of Nodes as the input layer. These are identical in number and ids with the input ids in the StorageGenome. _output_layer: A set of Nodes as the output layer. These are identical in number and ids with the output ids in the StorageGenome. _hidden_layer: A hidden layer. This consists of a list of nodes which are calcula- ted in the order of the list. This list is taken from the topologi- cally sorted node list in the given StorageGenome's AnalysisResult. So to ensure a functioning neural network, that list has to be cor- rect. _cycle_nodes: A list of CycleNodes, topologically sorted (like the hidden layer). These are nodes that have outgoing links that close a cycle. These nodes have to be treated separately, because the cycle closing edges have to be calculated first. For this initial calculation the last calculation value is used as the outgoing base value. If the genome was not simulated yet. a default value is used as the initial value.</p>
+<p>Usage: insert StorageGenome call calculate_step have fun </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a9e3d21a710e6b90ca8d6332fbdc8faa2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -153,6 +163,9 @@ Static Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>:param GeneRepository gene_repository: Needed for access to the node storage. </p>
+<p>Is used when generating the structure. :param StorageGenome storage_genome: The StorageGenome from which the <a class="el" href="namespaceNEAT__PyGenetics_1_1NEAT_1_1GenomeStructures_1_1SimulationStructure.html">SimulationStructure</a> is generated. </p>
 
 </div>
 </div>
@@ -180,6 +193,9 @@ Static Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sets inputs. </p>
+<p>Resets all values in the hidden and output layers. Iterates over cycle nodes, then input nodes, then hidden nodes and cal- culates each. Preserves the values of the Cycle Nodes. Returns the output nodes' values. :param inputs: List of tuples of the form (node_label, value) :return: Dict of output node labels and their current values. </p>
 
 </div>
 </div>

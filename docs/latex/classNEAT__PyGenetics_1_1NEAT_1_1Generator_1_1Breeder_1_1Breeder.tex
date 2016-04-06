@@ -12,9 +12,9 @@ Inheritance diagram for N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Generator.
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Generator_1_1Breeder_1_1Breeder_a99ffddd6afb3f995598605e165772515}{\+\_\+\+\_\+init\+\_\+\+\_\+}
 \item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Generator_1_1Breeder_1_1Breeder_a6e78ccec465831c858910b1319e75076}{breed\+\_\+genomes}
-\item 
+\begin{DoxyCompactList}\small\item\em Generates a new genome based on two input genomes. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Generator_1_1Breeder_1_1Breeder_a761995541d6d9ff88e2ee112a57dff0f}{should\+\_\+gene\+\_\+be\+\_\+enabled} (self, instance\+\_\+one, instance\+\_\+two=None)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Decides whether the inherited variant of a gene should be enabled in the offspring genome based on both parents\textquotesingle{} instances of the gene. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -68,7 +68,13 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Generator_1_1Breeder_1_1Breeder_
 \item[{}]{genome\+\_\+one}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Generator_1_1Breeder_1_1Breeder_a6e78ccec465831c858910b1319e75076}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Generator_1_1Breeder_1_1Breeder_a6e78ccec465831c858910b1319e75076}
-\index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Generator\+::\+Breeder\+::\+Breeder@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Generator\+::\+Breeder\+::\+Breeder}!should\+\_\+gene\+\_\+be\+\_\+enabled@{should\+\_\+gene\+\_\+be\+\_\+enabled}}
+
+
+Generates a new genome based on two input genomes. 
+
+Matching genes are inherited randomly from one of the parents. Differing genes are inherited from the fitter parent. If the fitness value difference is below fitness\+\_\+difference\+\_\+threshold, the differing genes are inherited randomly as well.
+
+\+:param genome\+\_\+one\+: \+:param genome\+\_\+two\+: \+:return\+: \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Generator\+::\+Breeder\+::\+Breeder@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Generator\+::\+Breeder\+::\+Breeder}!should\+\_\+gene\+\_\+be\+\_\+enabled@{should\+\_\+gene\+\_\+be\+\_\+enabled}}
 \index{should\+\_\+gene\+\_\+be\+\_\+enabled@{should\+\_\+gene\+\_\+be\+\_\+enabled}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Generator\+::\+Breeder\+::\+Breeder@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Generator\+::\+Breeder\+::\+Breeder}}
 \subsubsection[{\texorpdfstring{should\+\_\+gene\+\_\+be\+\_\+enabled(self, instance\+\_\+one, instance\+\_\+two=\+None)}{should_gene_be_enabled(self, instance_one, instance_two=None)}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Generator.\+Breeder.\+Breeder.\+should\+\_\+gene\+\_\+be\+\_\+enabled (
 \begin{DoxyParamCaption}
@@ -78,6 +84,10 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Generator_1_1Breeder_1_1Breeder_
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Generator_1_1Breeder_1_1Breeder_a761995541d6d9ff88e2ee112a57dff0f}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Generator_1_1Breeder_1_1Breeder_a761995541d6d9ff88e2ee112a57dff0f}
 
+
+Decides whether the inherited variant of a gene should be enabled in the offspring genome based on both parents\textquotesingle{} instances of the gene. 
+
+\+:param instance\+\_\+one\+: The first gene instance \+:param instance\+\_\+two\+: The second gene instance \+:return\+: Whether the inherited gene should be enabled 
 
 \subsection{Member Data Documentation}
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Generator\+::\+Breeder\+::\+Breeder@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Generator\+::\+Breeder\+::\+Breeder}!all\+\_\+gene\+\_\+ids@{all\+\_\+gene\+\_\+ids}}

@@ -1,5 +1,10 @@
 \hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Config_1_1NEATConfig_1_1NEATConfig}{}\section{N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Config.\+N\+E\+A\+T\+Config.\+N\+E\+A\+T\+Config Class Reference}
 \label{classNEAT__PyGenetics_1_1NEAT_1_1Config_1_1NEATConfig_1_1NEATConfig}\index{N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Config.\+N\+E\+A\+T\+Config.\+N\+E\+A\+T\+Config@{N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Config.\+N\+E\+A\+T\+Config.\+N\+E\+A\+T\+Config}}
+
+
+A huge configuration object which loads it\textquotesingle{}s parameters from disk, or reverts to default values whenever a configuration file isn\textquotesingle{}t found or can\textquotesingle{}t be opened.  
+
+
 Inheritance diagram for N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Config.\+N\+E\+A\+T\+Config.\+N\+E\+A\+T\+Config\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -12,9 +17,9 @@ Inheritance diagram for N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Config.\+N
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Config_1_1NEATConfig_1_1NEATConfig_a88504e0a5c56f166a3ee5898ae3e0dea}{\+\_\+\+\_\+init\+\_\+\+\_\+} (self, config\+\_\+path=None)
 \item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Config_1_1NEATConfig_1_1NEATConfig_aa6843226e3a017a384c8244f4e62e0f5}{load\+\_\+config} (self)
-\item 
+\begin{DoxyCompactList}\small\item\em Tries to initialize self.\+parameters with data from the configuration files. \end{DoxyCompactList}\item 
 def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Config_1_1NEATConfig_1_1NEATConfig_a2669153b4f4160d33477fc89d16dd716}{load\+\_\+defaults} (self)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This method is called by {\bfseries init} after the config files are loaded. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -27,6 +32,15 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Config_1_1NEATConfig_1_1NEATConf
 \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Config_1_1NEATConfig_1_1NEATConfig_a1e2b0edc6558d673c7f7a197d2faa72e}{config\+\_\+categories}
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+A huge configuration object which loads it\textquotesingle{}s parameters from disk, or reverts to default values whenever a configuration file isn\textquotesingle{}t found or can\textquotesingle{}t be opened. 
+
+\hyperlink{namespaceNEAT__PyGenetics_1_1NEAT_1_1Config}{Config} files are in J\+S\+ON notation.
+
+Configuration files are listed in self.\+config\+\_\+categories and should be present as C\+A\+T\+E\+G\+O\+R\+Y\+N\+A\+M\+E.\+conf in the provided config\+\_\+path. If no config path is specified, the builtin config files in N\+E\+A\+T/\+Config are used.
+
+All config files except one can be loaded from defaults. The only exception is genomes.\+conf, the config file specifying the input and output nodes of the genomes to use, because it is dependent on the simulation. 
 
 \subsection{Constructor \& Destructor Documentation}
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Config\+::\+N\+E\+A\+T\+Config\+::\+N\+E\+A\+T\+Config@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Config\+::\+N\+E\+A\+T\+Config\+::\+N\+E\+A\+T\+Config}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
@@ -47,7 +61,13 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Config_1_1NEATConfig_1_1NEATConf
 \item[{}]{self}
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Config_1_1NEATConfig_1_1NEATConfig_aa6843226e3a017a384c8244f4e62e0f5}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Config_1_1NEATConfig_1_1NEATConfig_aa6843226e3a017a384c8244f4e62e0f5}
-\index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Config\+::\+N\+E\+A\+T\+Config\+::\+N\+E\+A\+T\+Config@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Config\+::\+N\+E\+A\+T\+Config\+::\+N\+E\+A\+T\+Config}!load\+\_\+defaults@{load\+\_\+defaults}}
+
+
+Tries to initialize self.\+parameters with data from the configuration files. 
+
+It uses the base file names from self.\+config\+\_\+categories and is agnostic to the number and names of the existing categories. \hyperlink{namespaceNEAT__PyGenetics_1_1NEAT_1_1Config}{Config} files need to be in J\+S\+ON notation.
+
+\+:return\+: None \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Config\+::\+N\+E\+A\+T\+Config\+::\+N\+E\+A\+T\+Config@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Config\+::\+N\+E\+A\+T\+Config\+::\+N\+E\+A\+T\+Config}!load\+\_\+defaults@{load\+\_\+defaults}}
 \index{load\+\_\+defaults@{load\+\_\+defaults}!N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Config\+::\+N\+E\+A\+T\+Config\+::\+N\+E\+A\+T\+Config@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Config\+::\+N\+E\+A\+T\+Config\+::\+N\+E\+A\+T\+Config}}
 \subsubsection[{\texorpdfstring{load\+\_\+defaults(self)}{load_defaults(self)}}]{\setlength{\rightskip}{0pt plus 5cm}def N\+E\+A\+T\+\_\+\+Py\+Genetics.\+N\+E\+A\+T.\+Config.\+N\+E\+A\+T\+Config.\+N\+E\+A\+T\+Config.\+load\+\_\+defaults (
 \begin{DoxyParamCaption}
@@ -55,6 +75,14 @@ def \hyperlink{classNEAT__PyGenetics_1_1NEAT_1_1Config_1_1NEATConfig_1_1NEATConf
 \end{DoxyParamCaption}
 )}\hypertarget{classNEAT__PyGenetics_1_1NEAT_1_1Config_1_1NEATConfig_1_1NEATConfig_a2669153b4f4160d33477fc89d16dd716}{}\label{classNEAT__PyGenetics_1_1NEAT_1_1Config_1_1NEATConfig_1_1NEATConfig_a2669153b4f4160d33477fc89d16dd716}
 
+
+This method is called by {\bfseries init} after the config files are loaded. 
+
+It\textquotesingle{}s job is to test whether the config files were loaded by self.\+load\+\_\+config() and provide the appropriate default values (or crash if there are no defaults) for the missing config parameters.
+
+Because this error-\/handling method cannot rely on file I/O, the defaults are hard-\/coded.
+
+\+:return\+: None 
 
 \subsection{Member Data Documentation}
 \index{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Config\+::\+N\+E\+A\+T\+Config\+::\+N\+E\+A\+T\+Config@{N\+E\+A\+T\+\_\+\+Py\+Genetics\+::\+N\+E\+A\+T\+::\+Config\+::\+N\+E\+A\+T\+Config\+::\+N\+E\+A\+T\+Config}!config\+\_\+categories@{config\+\_\+categories}}

@@ -110,6 +110,7 @@ Inheritance diagram for NEAT_PyGenetics.NEAT.Analyst.AnalysisResult.AnalysisResu
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a76e2ba4c3bec7e93ab1c78e281a8504d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1AnalysisResult_1_1AnalysisResult.html#a76e2ba4c3bec7e93ab1c78e281a8504d">__init__</a></td></tr>
+<tr class="memdesc:a76e2ba4c3bec7e93ab1c78e281a8504d"><td class="mdescLeft">&#160;</td><td class="mdescRight">:param analysis_result: If analysis_result is given, its contents are copied.  <a href="#a76e2ba4c3bec7e93ab1c78e281a8504d">More...</a><br /></td></tr>
 <tr class="separator:a76e2ba4c3bec7e93ab1c78e281a8504d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6145154aa0f23413e57312a78cc12f91"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1AnalysisResult_1_1AnalysisResult.html#a6145154aa0f23413e57312a78cc12f91">__eq__</a></td></tr>
 <tr class="separator:a6145154aa0f23413e57312a78cc12f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -121,18 +122,15 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a8ad8be788715b6298240055bbd835d5e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1AnalysisResult_1_1AnalysisResult.html#a8ad8be788715b6298240055bbd835d5e">gene_closes_cycle_map</a></td></tr>
-<tr class="memdesc:a8ad8be788715b6298240055bbd835d5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">a dict that consists of gene id's (ints) as keys  <a href="#a8ad8be788715b6298240055bbd835d5e">More...</a><br /></td></tr>
 <tr class="separator:a8ad8be788715b6298240055bbd835d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5dec17c624dfc418d21b543b366413e2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1AnalysisResult_1_1AnalysisResult.html#a5dec17c624dfc418d21b543b366413e2">topologically_sorted_nodes</a></td></tr>
-<tr class="memdesc:a5dec17c624dfc418d21b543b366413e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">a list of all nodes in the analyzed graph in  <a href="#a5dec17c624dfc418d21b543b366413e2">More...</a><br /></td></tr>
 <tr class="separator:a5dec17c624dfc418d21b543b366413e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acca98f28e97dddad4c4ee0c86d499e58"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classNEAT__PyGenetics_1_1NEAT_1_1Analyst_1_1AnalysisResult_1_1AnalysisResult.html#acca98f28e97dddad4c4ee0c86d499e58">topologically_sorted_cycle_nodes</a></td></tr>
-<tr class="memdesc:acca98f28e97dddad4c4ee0c86d499e58"><td class="mdescLeft">&#160;</td><td class="mdescRight">a list of all cycle closing nodes (at  <a href="#acca98f28e97dddad4c4ee0c86d499e58">More...</a><br /></td></tr>
 <tr class="separator:acca98f28e97dddad4c4ee0c86d499e58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Object used to store results of graph analysis. </p>
-<p>the source of the closing edge) in topological order. This is a sub- set of topologically_sorted_nodes. </p>
+<p>Attributes: gene_closes_cycle_map: a dict that consists of gene id's (ints) as keys a boolean value that is true, if the gene closes a circle in the a- nalyzed graph. topologically_sorted_nodes: a list of all nodes in the analyzed graph in topological order. topologically_sorted_cycle_nodes: a list of all cycle closing nodes (at the source of the closing edge) in topological order. This is a sub- set of topologically_sorted_nodes. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a76e2ba4c3bec7e93ab1c78e281a8504d"></a>
 <div class="memitem">
@@ -157,6 +155,9 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>:param analysis_result: If analysis_result is given, its contents are copied. </p>
+<p>:return: </p>
 
 </div>
 </div>
@@ -256,8 +257,6 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>a dict that consists of gene id's (ints) as keys </p>
-
 </div>
 </div>
 <a class="anchor" id="acca98f28e97dddad4c4ee0c86d499e58"></a>
@@ -270,8 +269,6 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>a list of all cycle closing nodes (at </p>
-
 </div>
 </div>
 <a class="anchor" id="a5dec17c624dfc418d21b543b366413e2"></a>
@@ -283,8 +280,6 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>a list of all nodes in the analyzed graph in </p>
 
 </div>
 </div>
