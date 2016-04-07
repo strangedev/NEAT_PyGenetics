@@ -114,6 +114,8 @@ class GenomeClusterer(object):
                            if gene_id not in matching_genes]
 
         n = len(bigger_genome.genes)
+        if n == 0:
+            return 0
 
         disjoint_count, excess_count = self.calculate_disjoint_excess_count(smaller_genome_gene_ids, differing_genes)
 
