@@ -2,6 +2,9 @@ from NEAT.Networking.Commands.BaseCommand import BaseCommand
 from NEAT.Networking.Commands.AnnounceSessionCommand import AnnounceSessionCommand
 from NEAT.Networking.Commands.GetBlockCommand import GetBlockCommand
 from NEAT.Networking.Commands.SetInputsCommand import SetInputsCommand
+from NEAT.Networking.Commands.GetOutputsCommand import GetOutputsCommand
+from NEAT.Networking.Commands.SetFitnessValuesCommand import SetFitnessValuesCommand
+from NEAT.Networking.Commands.AdvanceGenerationCommand import AdvanceGenerationCommand
 
 class CommandTranscoder(object):
 
@@ -10,7 +13,10 @@ class CommandTranscoder(object):
             "BaseCommand": BaseCommand,
             "AnnounceSession": AnnounceSessionCommand,
             "GetBlock": GetBlockCommand,
-            "SetInputs": SetInputsCommand
+            "SetInputs": SetInputsCommand,
+            "GetOutputs": GetOutputsCommand,
+            "SetFitnessValues": SetFitnessValuesCommand,
+            "AdvanceGeneration": AdvanceGenerationCommand
         }
     )
 
