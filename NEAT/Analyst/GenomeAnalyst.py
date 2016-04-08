@@ -57,7 +57,12 @@ class GenomeAnalyst(object):
         # sult
         # store found cycle_edges locally for further processing
         self._result.topologically_sorted_nodes, cycle_edges = \
-            self._dfs(sorted(genome.input_nodes.values()))
+            self._dfs(
+                sorted(
+                    list(genome.input_nodes.values()) + \
+                    list(genome.output_nodes.values())
+                )
+            )
 
         for _, targets in cycle_edges.items():
             for _, gene_id in targets:
