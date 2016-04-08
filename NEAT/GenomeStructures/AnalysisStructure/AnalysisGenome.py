@@ -67,7 +67,7 @@ class AnalysisGenome(Generic[GenomeStructure]):
         :param label: The node's label.
         :return:
         """
-        self.nodes.add(node_id)
+        self._nodes.add(node_id)
         self._output_nodes[label] = node_id
 
     def _add_edge(self, source: int, target: int, gene_id: int) -> None:

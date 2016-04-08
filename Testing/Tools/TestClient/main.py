@@ -5,7 +5,7 @@ cli = SimulationClient("127.0.0.1", 8081)
 
 print("Announcing session...")
 cli.announce_session(
-    "testSession2",
+    "testSession3",
     "./NEAT/Config",
     1
 )
