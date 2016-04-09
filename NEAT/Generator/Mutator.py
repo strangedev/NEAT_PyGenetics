@@ -1,6 +1,4 @@
-import copy
 import random
-from fractions import Fraction
 from typing import Tuple
 
 from NEAT.GenomeStructures.AnalysisStructure.AnalysisGenome import AnalysisGenome
@@ -157,9 +155,9 @@ class Mutator(object):
 
     @staticmethod
     def perturb_weight(
-            gene: Tuple[bool, Fraction]
-    ) -> Tuple[bool, Fraction]:
+            gene: Tuple[bool, float]
+    ) -> Tuple[bool, float]:
 
         random.seed()
-        new_weight = Fraction(gene[1] * random.random())
+        new_weight = gene[1] * random.random()
         return gene[0], new_weight

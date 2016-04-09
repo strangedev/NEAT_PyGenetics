@@ -1,4 +1,3 @@
-from fractions import Fraction
 from typing import Iterable, Tuple, List
 
 from NEAT.Repository.DatabaseConnector import DatabaseConnector
@@ -148,7 +147,7 @@ class GenomeRepository(object):
             result.append(genome)
         return self.update_genomes(result)
 
-    def update_genome_fitness(self, genome_id: ObjectId, fitness: Fraction) -> dict:
+    def update_genome_fitness(self, genome_id: ObjectId, fitness: float) -> dict:
         """
 
         :param genome_id: ObjectId from genomes to update fitness
@@ -159,7 +158,7 @@ class GenomeRepository(object):
         genome.fitness = fitness
         return self.update_genome(genome)
 
-    def update_genomes_fitness(self, genome_fitness: List[Tuple[ObjectId, Fraction]]) -> dict:
+    def update_genomes_fitness(self, genome_fitness: List[Tuple[ObjectId, float]]) -> dict:
         """
 
         :param genome_fitness: List[Tuple[ObjectId, Fraction]] genome_id and fitness to update

@@ -2,8 +2,6 @@ from NEAT.GenomeStructures.SimulationStructure.SimulationGenome import Simulatio
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 from NEAT.Repository.GeneRepository import GeneRepository
 from typing import Dict
-from fractions import Fraction
-from bson import ObjectId
 
 
 class Simulator(object):
@@ -20,5 +18,5 @@ class Simulator(object):
             self._gene_repository,
             storage_genome
         )
-        inputs = {k: Fraction(v) for k, v in inputs.items()} #  TODO: use fractions all the way
+        inputs = {k: v for k, v in inputs.items()} #  TODO: use fractions all the way
         return simulation_genome.calculate_step(inputs)

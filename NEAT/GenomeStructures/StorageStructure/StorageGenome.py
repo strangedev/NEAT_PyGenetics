@@ -1,6 +1,5 @@
 from copy import deepcopy
 from typing import List, Tuple, Dict
-from fractions import Fraction
 
 from bson.objectid import ObjectId
 

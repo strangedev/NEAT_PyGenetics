@@ -1,4 +1,3 @@
-from fractions import Fraction
 from unittest import TestCase
 from unittest.mock import MagicMock
 
@@ -83,7 +82,7 @@ class TestGenomeRepository(TestCase):
 
         self.genome_repository.get_genome_by_id = lambda x: genome
         self.genome_repository.update_genome = lambda x: x
-        self.assertEqual(Fraction(2.0), self.genome_repository.update_genome_fitness(genome._id, Fraction(2.0)).fitness)
+        self.assertEqual(2.0, self.genome_repository.update_genome_fitness(genome._id, 2.0).fitness)
 
     def test_updateGenomesFitness(self):
         genomes = []

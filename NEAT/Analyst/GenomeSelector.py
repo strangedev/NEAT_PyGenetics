@@ -1,4 +1,3 @@
-from fractions import Fraction
 from typing import List, Tuple
 
 from bson.objectid import ObjectId
@@ -31,7 +30,7 @@ class GenomeSelector(object):
     def get_genomes_in_cluster(
             self,
             cluster_id: ObjectId
-    ) -> List[Tuple[StorageGenome, Fraction]]:
+    ) -> List[Tuple[StorageGenome, float]]:
         """
         Selects and Area of genomes in Cluster given by input
         offspring.

@@ -53,9 +53,11 @@ class SimulationClient(object):
 
     def set_fitness_values(
             self,
-            fitness_values: Dict[ObjectId, float]
+            fitness_values: Dict[ObjectId, float],
+            block_id: int
     ) -> SetFitnessValuesCommand:
         command = SetFitnessValuesCommand()
+        command.set_block_id(block_id)
         command.set_fitness_values(fitness_values)
         response = self._client.run_command(command)
         if not response.result["acknowledged"]:

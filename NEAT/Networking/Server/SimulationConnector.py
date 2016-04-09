@@ -185,12 +185,15 @@ class SimulationConnector(object):
         :return: None
         """
         get_command = self._listen_for_command("GetOutputs", {"block_id": block_id})
+
         for key, value in outputs.items():
             del outputs[key]
             outputs[key.__str__()] = value
 
-        get_command.result["outputs"] = outputs
-        self._respond_to_command(get_command)
+        result = {
+            "outputs": outputs
+        }
+        self._respond_to_command(get_command, result)
 
     def get_fitness_values(
             self,

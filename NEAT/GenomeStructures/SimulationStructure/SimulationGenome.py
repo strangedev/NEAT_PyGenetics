@@ -1,5 +1,4 @@
-from typing import Tuple, Generic, Dict, List
-from fractions import Fraction
+from typing import Generic, Dict
 
 from NEAT.ErrorHandling.Exceptions.InputMissingException import \
     InputMissingException
@@ -73,7 +72,7 @@ class SimulationGenome(Generic[GenomeStructure]):
         cycle_nodes = {}  # type: Dict[int, CycleNode]
         for node_id in \
                 storage_genome.analysis_result.topologically_sorted_cycle_nodes:
-            cycle_nodes[node_id] = CycleNode(Fraction(0))
+            cycle_nodes[node_id] = CycleNode(0.0)
 
         # Create all Node Objects excluding previously created CycleNodes
         hidden_layer = {}  # type: Dict[int, Node]
@@ -122,7 +121,7 @@ class SimulationGenome(Generic[GenomeStructure]):
 
     def _set_inputs(
             self,
-            inputs: Dict[str, Fraction]
+            inputs: Dict[str, float]
     ) -> None:
         """
         Sets the values of all input nodes to the corresponding values in the
@@ -139,7 +138,7 @@ class SimulationGenome(Generic[GenomeStructure]):
             self._input_layer[node_id].value = inputs[node_id]
 
     @property
-    def output(self) -> Dict[str, Fraction]:
+    def output(self) -> Dict[str, float]:
         """
         :return: Dict of the output nodes' values of the form label:value
         """
@@ -147,8 +146,8 @@ class SimulationGenome(Generic[GenomeStructure]):
 
     def calculate_step(
             self,
-            inputs: Dict[str, Fraction]
-    ) -> Dict[str, Fraction]:
+            inputs: Dict[str, float]
+    ) -> Dict[str, float]:
         """
         Sets inputs.
         Resets all values in the hidden and output layers.

@@ -45,7 +45,7 @@ class TestSimulationNode(unittest.TestCase):
         :return:
         """
         node = Node()
-        node.value = Fraction(7, 10)
+        node.value = float(Fraction(7, 10))
         node.reset()
         self.assertEqual(0, node.value)
 
@@ -55,10 +55,10 @@ class TestSimulationNode(unittest.TestCase):
         its value to that initial value.
         :return:
         """
-        node_with_initial_value = Node(Fraction(1, 5))
-        node_with_initial_value.value = Fraction(1, 2)
+        node_with_initial_value = Node(float(Fraction(1, 5)))
+        node_with_initial_value.value = float(Fraction(1, 2))
         node_with_initial_value.reset()
-        self.assertEqual(Fraction(1, 5), node_with_initial_value.value)
+        self.assertEqual(float(Fraction(1, 5)), node_with_initial_value.value)
 
     def test_addSuccessor(self):
         """
@@ -87,8 +87,8 @@ class TestSimulationNode(unittest.TestCase):
         test_node = Node()
         add_node = Node()
         with self.assertRaises(Exception):
-            test_node.add_successor(add_node, Fraction(0))
-            test_node.add_successor(add_node, Fraction(0))
+            test_node.add_successor(add_node, float(Fraction(0)))
+            test_node.add_successor(add_node, float(Fraction(0)))
 
     def test_addSuccessors(self):
         """
@@ -98,7 +98,7 @@ class TestSimulationNode(unittest.TestCase):
         """
         test_node = Node()
         test_node.add_successor = MagicMock()
-        node_list = [(Node(), Fraction(0)) for _ in range(10)]
+        node_list = [(Node(), float(Fraction(0))) for _ in range(10)]
         test_node.add_successors(node_list)
         for elem in node_list:
             self.assertIn((elem,), test_node.add_successor.call_args_list)
@@ -111,9 +111,9 @@ class TestSimulationNode(unittest.TestCase):
         """
         test_node = Node()
         duplicate_node = Node()
-        node_list = [(duplicate_node, Fraction(0))]
-        node_list.extend([(Node(), Fraction(0)) for _ in range(10)])
-        node_list.append((duplicate_node, Fraction(0)))
+        node_list = [(duplicate_node, float(Fraction(0)))]
+        node_list.extend([(Node(), float(Fraction(0))) for _ in range(10)])
+        node_list.append((duplicate_node, float(Fraction(0))))
 
         with self.assertRaises(Exception):
             test_node.add_successors(node_list)
@@ -129,7 +129,7 @@ class TestSimulationNode(unittest.TestCase):
         # TODO: check for transformation function
         value_list = [self.rand.uniform(0, 1) for _ in range(100)]
         node_list = [(Node(), Fraction.from_float(val)) for val in value_list]
-        test_node = Node(Fraction(1, 2))
+        test_node = Node(float(Fraction(1, 2)))
         test_node.add_successors(node_list)
 
         # Creates a copy of the node list and manually calculates their values
@@ -154,8 +154,8 @@ class TestSimulationNode(unittest.TestCase):
         :return:
         """
         node = Node()
-        node.add_value(Fraction(1, 5))
-        self.assertEqual(Fraction(1, 5), node.value)
+        node.add_value(float(Fraction(1, 5)))
+        self.assertEqual(float(Fraction(1, 5)), node.value)
 
 
 class TestSimulationCycleNode(unittest.TestCase):
@@ -164,20 +164,20 @@ class TestSimulationCycleNode(unittest.TestCase):
         self.rand.seed(1337)
 
     def test_createNode(self):
-        cycle_node = CycleNode(Fraction(1, 5))
-        self.assertEqual(Fraction(1, 5), cycle_node.memory_value)
+        cycle_node = CycleNode(float(Fraction(1, 5)))
+        self.assertEqual(float(Fraction(1, 5)), cycle_node.memory_value)
         self.assertListEqual([], cycle_node.cycle_successors)
         self.assertDictEqual({}, cycle_node.cycle_weights)
 
     def test_preserveMemory(self):
-        cycle_node = CycleNode(Fraction(2, 10))
+        cycle_node = CycleNode(float(Fraction(2, 10)))
         cycle_node.preserve_memory()
-        self.assertEqual(Fraction(0), cycle_node.memory_value)
+        self.assertEqual(float(Fraction(0)), cycle_node.memory_value)
 
     def test_preserveMemoryWithInitialValue(self):
-        cycle_node = CycleNode(Fraction(2, 10), Fraction(3, 10))
+        cycle_node = CycleNode(float(Fraction(2, 10)), float(Fraction(3, 10)))
         cycle_node.preserve_memory()
-        self.assertEqual(Fraction(3, 10), cycle_node.memory_value)
+        self.assertEqual(float(Fraction(3, 10)), cycle_node.memory_value)
 
     def test_addCycleSuccessor(self):
         """
@@ -187,7 +187,7 @@ class TestSimulationCycleNode(unittest.TestCase):
         ValueError is raised.
         :return:
         """
-        test_node = CycleNode(Fraction(0))
+        test_node = CycleNode(float(Fraction(0)))
         for val in [self.rand.uniform(-1, 2) for _ in range(100)]:
             new_node = Node()
             if val < 0 or val > 1:
@@ -209,11 +209,11 @@ class TestSimulationCycleNode(unittest.TestCase):
         :return:
         """
         # TODO: Specify type of Exception.
-        test_node = CycleNode(Fraction(0))
-        add_node = CycleNode(Fraction(0))
+        test_node = CycleNode(float(Fraction(0)))
+        add_node = CycleNode(float(Fraction(0)))
         with self.assertRaises(Exception):
-            test_node.add_cycle_successor(add_node, Fraction(0))
-            test_node.add_cycle_successor(add_node, Fraction(0))
+            test_node.add_cycle_successor(add_node, float(Fraction(0)))
+            test_node.add_cycle_successor(add_node, float(Fraction(0)))
 
     def test_addCycleSuccessors(self):
         """
@@ -221,9 +221,9 @@ class TestSimulationCycleNode(unittest.TestCase):
         add_successor was called for every node.
         :return:
         """
-        test_node = CycleNode(Fraction(0))
+        test_node = CycleNode(float(Fraction(0)))
         test_node.add_cycle_successor = MagicMock()
-        node_list = [(Node(), Fraction(0)) for _ in range(10)]
+        node_list = [(Node(), float(Fraction(0))) for _ in range(10)]
         test_node.add_cycle_successors(node_list)
         for elem in node_list:
             self.assertIn((elem,), test_node.add_cycle_successor.call_args_list)
@@ -234,13 +234,13 @@ class TestSimulationCycleNode(unittest.TestCase):
         Then checks, if appending the list to a node raises an Exception.
         :return:
         """
-        test_node = CycleNode(Fraction(0))
-        duplicate_node = CycleNode(Fraction(0))
-        node_list = [(duplicate_node, Fraction(0))]
+        test_node = CycleNode(float(Fraction(0)))
+        duplicate_node = CycleNode(float(Fraction(0)))
+        node_list = [(duplicate_node, float(Fraction(0)))]
         node_list.extend(
-            [(CycleNode(Fraction(0)), Fraction(0)) for _ in range(10)]
+            [(CycleNode(float(Fraction(0))), float(Fraction(0))) for _ in range(10)]
         )
-        node_list.append((duplicate_node, Fraction(0)))
+        node_list.append((duplicate_node, float(Fraction(0))))
 
         with self.assertRaises(Exception):
             test_node.add_cycle_successors(node_list)
@@ -257,10 +257,10 @@ class TestSimulationCycleNode(unittest.TestCase):
         # TODO: check for transformation function
         value_list = [self.rand.uniform(0, 1) for _ in range(100)]
         node_list = [
-            (CycleNode(Fraction(0)), Fraction.from_float(val))
+            (CycleNode(float(Fraction(0))), Fraction.from_float(val))
             for val in value_list
             ]
-        test_node = CycleNode(Fraction(0), Fraction(1, 2))
+        test_node = CycleNode(float(Fraction(0)), float(Fraction(1, 2)))
         test_node.add_successors(node_list)
 
         # Creates a copy of the node list and manually calculates their values

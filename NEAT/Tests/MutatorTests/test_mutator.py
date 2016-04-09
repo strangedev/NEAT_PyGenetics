@@ -2,8 +2,6 @@ from unittest import TestCase
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 from NEAT.GenomeStructures.AnalysisStructure.AnalysisGenome import AnalysisGenome
 from NEAT.Generator.Mutator import Mutator
-from NEAT.Tests.MockClasses.mock_GeneRepository import mock_GeneRepository
-from fractions import Fraction
 from unittest.mock import MagicMock
 
 class TestMutator(TestCase):
@@ -107,7 +105,7 @@ class TestMutator(TestCase):
 
     def test_perturb_weight(self):
 
-         gene = (True, Fraction(0.1337))
+         gene = (True, 0.1337)
          perturbed_gene = self.mutator.perturb_weight(gene)
 
          self.assertNotEqual(

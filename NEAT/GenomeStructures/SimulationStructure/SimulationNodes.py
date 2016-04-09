@@ -1,5 +1,4 @@
 from typing import Dict, List, Iterable, Tuple
-from fractions import Fraction
 
 
 class Node(object):
@@ -8,7 +7,7 @@ class Node(object):
      and a current value and has methods for propagating its value to its
      successors.
     """
-    def __init__(self, initial_value: Fraction = Fraction(0)) -> None:
+    def __init__(self, initial_value: float = 0.0) -> None:
         """
         Successors are stored in a set to prevent adding the same successor mul-
         tiple times. Weights are stored separately and are accessed with the
@@ -21,14 +20,14 @@ class Node(object):
             raise ValueError("SimulationNodes.Node's initial_value has to be "
                              .join("in the interval [0,1]."))
         self.successors = []  # type: List[Node]
-        self.weights = {}  # type: Dict[Node, Fraction]
+        self.weights = {}  # type: Dict[Node, float]
         self.initial_value = initial_value
         self.value = initial_value
 
     def add_successor(
             self,
             successor_node: 'Node',
-            weight: Fraction
+            weight: float
     ) -> None:
         """
         Adds a successor_node to the list of stored successors.
@@ -53,7 +52,7 @@ class Node(object):
 
     def add_successors(
             self,
-            successor_nodes: Iterable[Tuple['Node', Fraction]]
+            successor_nodes: Iterable[Tuple['Node', float]]
     ) -> None:
         """
         Adds all nodes in a given iterable structure to the node successors.
@@ -88,7 +87,7 @@ class Node(object):
         for successor in self.successors:
             successor.add_value(self.value * self.weights[successor])
 
-    def add_value(self, value: Fraction) -> None:
+    def add_value(self, value: float) -> None:
         """
         Adds the given value to the currently stored value.
         :param value: The value to be added.
@@ -100,8 +99,8 @@ class Node(object):
 class CycleNode(Node):
     def __init__(
             self,
-            initial_memory_value: Fraction,
-            initial_value: Fraction = Fraction(0)
+            initial_memory_value: float,
+            initial_value: float = 0.0
     ) -> None:
         """
         Unlike in Node here the initial_value is mandatory. It is used for the
@@ -111,11 +110,11 @@ class CycleNode(Node):
         """
         super().__init__(initial_value)
         self.cycle_successors = []  # type: List[Node]
-        self.cycle_weights = {}  # type: Dict[Node, Fraction]
+        self.cycle_weights = {}  # type: Dict[Node, float]
         self.memory_value = initial_memory_value
 
     def add_cycle_successor(self, successor_node: Node,
-                            weight: Fraction) -> None:
+                            weight: float) -> None:
         """
         Adds a cycle successor to the list. Throws an Exception otherwise.
         :param successor_node:
@@ -140,7 +139,7 @@ class CycleNode(Node):
 
     def add_cycle_successors(
             self,
-            successor_nodes: Iterable[Tuple[Node, Fraction]]
+            successor_nodes: Iterable[Tuple[Node, float]]
     ) -> None:
         """
         Adds multiple successor_nodes to the list.

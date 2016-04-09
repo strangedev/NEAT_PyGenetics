@@ -8,6 +8,7 @@ class SetFitnessValuesCommand(BaseCommand):
         super().__init__()
         self._type = "SetFitnessValues"
         self.parameters["fitness_values"] = dict({})
+        self.parameters["block_id"] = 1
 
     def set_fitness_values(
             self,
@@ -21,3 +22,6 @@ class SetFitnessValuesCommand(BaseCommand):
             fitness_value: float
     ):
         self.parameters["fitness_values"][genome_id] = fitness_value
+
+    def set_block_id(self, block_id: int):
+        self.parameters["block_id"] = block_id

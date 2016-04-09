@@ -1,7 +1,7 @@
-from unittest import TestCase, mock
+from unittest import TestCase
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 from NEAT.Generator.Breeder import Breeder
-from fractions import Fraction
+
 
 class TestBreeder(TestCase):
 
@@ -23,12 +23,12 @@ class TestBreeder(TestCase):
         fitter_genome.fitness = 22.74
         fitter_genome.genes = {
 
-            0: (True, Fraction(0.21)),
-            1: (True, Fraction(-0.56)),
-            2: (True, Fraction(0.354)),
-            3: (True, Fraction(0.98)),
-            7: (True, Fraction(0.47)),
-            8: (True, Fraction(-0.13))
+            0: (True, 0.21),
+            1: (True, -0.56),
+            2: (True, 0.354),
+            3: (True, 0.98),
+            7: (True, 0.47),
+            8: (True, -0.13)
 
         }
 
@@ -36,12 +36,12 @@ class TestBreeder(TestCase):
         other_genome.fitness = 19.233
         other_genome.genes = {
 
-            0: (True, Fraction(0.1)),
-            1: (True, Fraction(0.1)),
-            2: (True, Fraction(0.1)),
-            4: (True, Fraction(0.1)),
-            5: (True, Fraction(-0.1)),
-            6: (True, Fraction(-0.1))
+            0: (True, 0.1),
+            1: (True, 0.1),
+            2: (True, 0.1),
+            4: (True, 0.1),
+            5: (True, -0.1),
+            6: (True, -0.1)
 
         }
 
@@ -49,12 +49,12 @@ class TestBreeder(TestCase):
         similar_genome.fitness = 21.83
         similar_genome.genes = {
 
-            0: (True, Fraction(0.1)),
-            1: (True, Fraction(0.1)),
-            2: (True, Fraction(0.1)),
-            4: (True, Fraction(0.1)),
-            5: (True, Fraction(-0.1)),
-            6: (True, Fraction(-0.1))
+            0: (True, 0.1),
+            1: (True, 0.1),
+            2: (True, 0.1),
+            4: (True, 0.1),
+            5: (True, -0.1),
+            6: (True, -0.1)
 
         }
 

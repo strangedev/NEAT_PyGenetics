@@ -1,4 +1,3 @@
-from fractions import Fraction
 from unittest import TestCase
 from unittest.mock import MagicMock
 
@@ -98,18 +97,18 @@ class TestGenomeClusterer(TestCase):
         genome_two = StorageGenome()
         genome_three = StorageGenome()
         genome_one.genes = {
-            1: (True, Fraction(1.1)),
-            3: (True, Fraction(2.2)),
-            2: (False, Fraction(1.1))
+            1: (True, 1.1),
+            3: (True, 2.2),
+            2: (False, 1.1)
         }
         genome_two.genes = {
-            2: (False, Fraction(1.1)),
-            3: (True, Fraction(2.2)),
-            4: (False, Fraction(2.2))
+            2: (False, 1.1),
+            3: (True, 2.2),
+            4: (False, 2.2)
         }
         genome_three.genes = {
-            2: (False, Fraction(1.1)),
-            5: (True, Fraction(3.3))
+            2: (False, 1.1),
+            5: (True, 3.3)
         }
 
         smaller1 = [1, 2, 3]
@@ -147,15 +146,15 @@ class TestGenomeClusterer(TestCase):
         genome_one = StorageGenome()
         genome_two = StorageGenome()
         genome_one.genes = {
-            2: (False, Fraction(12.1)),
-            3: (True, Fraction(2.2)),
-            4: (False, Fraction(2.2)),
-            6: (True, Fraction(2.3))
+            2: (False, 12.1),
+            3: (True, 2.2),
+            4: (False, 2.2),
+            6: (True, 2.3)
         }
         genome_two.genes = {
-            2: (False, Fraction(1.1)),
-            5: (True, Fraction(3.3)),
-            6: (True, Fraction(2.3))
+            2: (False, 1.1),
+            5: (True, 3.3),
+            6: (True, 2.3)
         }
         matching_genes = [2, 6]
         self.assertEqual(60.5, self.genome_clusterer.calculate_average_weight_difference(genome_one,

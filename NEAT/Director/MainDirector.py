@@ -301,7 +301,7 @@ class MainDirector(Director):
         genomes = list(self.genome_repository.get_current_population())
         block_count = math.ceil(len(genomes) / self._session["block_size"])
         genome_index = 0
-        fitness_values = []
+        fitness_values = {}
 
         for block_id in range(block_count):
 
@@ -312,13 +312,15 @@ class MainDirector(Director):
                 self.compute_genome_outputs(block_inputs),
                 block_id
             )
-            fitness_values.append(
-                self.simulation_connector.get_fitness_values(block_id)
-            )
+            fitness_values = {
+                **fitness_values,
+                **self.simulation_connector.get_fitness_values(block_id)
+            }
+
             genome_index += self._session["block_size"]
 
         self.update_fitness_values(
-            itertools.chain(*fitness_values)
+            fitness_values
         )
         return self.simulation_connector.get_advance_generation()
 
@@ -337,7 +339,7 @@ class MainDirector(Director):
             self,
             fitness_values: Dict[ObjectId, float]
     ) -> None:
-        for genome_id, fitness_value in fitness_values:
+        for genome_id, fitness_value in fitness_values.items():
             self.genome_repository.update_genome_fitness(
                 genome_id,
                 fitness_value
