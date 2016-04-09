@@ -41,14 +41,14 @@ class SimulationClient(object):
         command.set_inputs(inputs, block_id)
         response = self._client.run_command(command)
         if not response.result["acknowledged"]:
-            raise NetworkProtocolException
+            raise NetworkProtocolException("Couldn't set block inputs.")
 
     def get_block_outputs(self, block_id: int) -> GetOutputsCommand:
         command = GetOutputsCommand()
         command.set_block_id(block_id)
         response = self._client.run_command(command)
         if not response.result["acknowledged"]:
-            raise NetworkProtocolException
+            raise NetworkProtocolException("Couldn't get block outputs.")
         return response.result["outputs"]
 
     def set_fitness_values(
@@ -61,18 +61,18 @@ class SimulationClient(object):
         command.set_fitness_values(fitness_values)
         response = self._client.run_command(command)
         if not response.result["acknowledged"]:
-            raise NetworkProtocolException
+            raise NetworkProtocolException("Couldn't set fitness values.")
 
     def advance_generation(self) -> AdvanceGenerationCommand:
         command = AdvanceGenerationCommand()
         command.set_advance_generation(True)
         response = self._client.run_command(command)
         if not response.result["acknowledged"]:
-            raise NetworkProtocolException
+            raise NetworkProtocolException("Couldn't advance generation.")
 
     def archive_session(self):
         command = AdvanceGenerationCommand()
         command.set_advance_generation(False)
         response = self._client.run_command(command)
         if not response.result["acknowledged"]:
-            raise NetworkProtocolException
+            raise NetworkProtocolException("Couldn't archive session.")

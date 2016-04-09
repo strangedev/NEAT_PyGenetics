@@ -56,7 +56,13 @@ class SimulationConnector(object):
 
         if not command.type == command_type:
             self._respond_to_command(command, acknowledged=False)
-            raise NetworkProtocolException("Wrong command type encountered")
+            raise NetworkProtocolException(
+                "Wrong command type encountered: " +
+                command._type +
+                ", expected " +
+                command_type +
+                "."
+            )
 
         if parameter_filter:
             for key, value in parameter_filter.items():

@@ -214,6 +214,8 @@ class GenomeClusterer(object):
 
         for genome in genomes:
             cluster_fitness += genome.fitness
+        if cluster_fitness == 0:
+            return 0
 
         return cluster_fitness / len(list(genomes))
 
@@ -243,9 +245,12 @@ class GenomeClusterer(object):
         cluster_fitness_sum = sum([cluster.fitness for cluster in clusters])
 
         for cluster in clusters:
-            cluster.offspring = int(
-                round((cluster.fitness / cluster_fitness_sum) * to_replace)
-            )
+            if cluster_fitness_sum == 0:
+                cluster.offspring = 0
+            else:
+                cluster.offspring = int(
+                    round((cluster.fitness / cluster_fitness_sum) * to_replace)
+                )
             self.cluster_repository.update_offspring_for_cluster(
                 cluster.cluster_id,
                 cluster.offspring

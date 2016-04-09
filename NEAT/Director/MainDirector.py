@@ -127,7 +127,7 @@ class MainDirector(Director):
         # it needs the gene_repository to register new genes and to look up used
         # ones
         self.mutator = Mutator(
-            self.genome_repository,
+            self.gene_repository,
             self.config.parameters["mutating"]
         )
         # Analyst analyzes a given genome and creates an AnalysisResult based on
@@ -185,8 +185,9 @@ class MainDirector(Director):
 
             # 1. Simulation / wait for client
             timeout_count = 0
-            advance_generation = False
-            while timeout_count < self._maximum_timeouts:
+            advance_generation = None
+            while (timeout_count < self._maximum_timeouts) and \
+                    advance_generation is None:
                 try:
                     advance_generation = self.perform_simulation_io()
                 except NetworkTimeoutException:
@@ -199,7 +200,8 @@ class MainDirector(Director):
             #   * go on with loop, generate next generation
             #   * save database for later use, hand out session id to client
             if not advance_generation:
-                exit()  # TODO: archive session
+                print("Exiting...")
+                exit()  # TODO: archive session / signal worker threads
 
             # 2. Calculate offspring values
 

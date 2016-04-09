@@ -30,7 +30,7 @@ class DecisionMaker(object):
         return (
             self._time %
             self._decision_making_parameters["inter_cluster_breeding_interval"] == 0
-        )
+        ) if self._time > 0 else False
 
     def _cutoff_function(self, x, cutoff_point):
         return (1 / math.exp(x /
