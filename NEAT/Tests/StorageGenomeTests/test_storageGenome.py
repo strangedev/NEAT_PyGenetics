@@ -29,9 +29,9 @@ class StorageGenomeTestCase(unittest.TestCase):
         s1.inputs['eaiu'] = 2
         s1.outputs['nrtd'] = 3
         s1.outputs['dtrn'] = 4
-        s1.genes[2] = (True, Fraction(15, 11))
-        s1.genes[5] = (True, Fraction(135, 9))
-        s1.genes[12] = (True, Fraction(17, 81))
+        s1.genes[2] = (True, float(Fraction(15, 11)))
+        s1.genes[5] = (True, float(Fraction(135, 9)))
+        s1.genes[12] = (True, float(Fraction(17, 81)))
         s1.analysis_result.topologically_sorted_nodes = [1, 5, 7, 2, 3, 8]
         s1.analysis_result.topologically_sorted_cycle_nodes = [3, 2, 8, 1]
         s1.analysis_result.gene_closes_cycle_map[5] = True
