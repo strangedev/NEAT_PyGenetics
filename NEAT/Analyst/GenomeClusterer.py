@@ -127,8 +127,8 @@ class GenomeClusterer(object):
 
     @staticmethod
     def calculate_disjoint_excess_count(
-            smaller_genome_gene_ids: List[int],
-            differing_genes: List[int]
+            smaller_genome_gene_ids: List[ObjectId],
+            differing_gene_ids: List[ObjectId]
     ) -> Tuple[int, int]:
         """
         Calculates the amount of excess and disjoint genes
@@ -139,18 +139,32 @@ class GenomeClusterer(object):
         :return: The amount of excess and disjoint genes as tuple.
         """
 
-        smaller_genome_range = 0  # type: int
+        smaller_genome_timestamps = [
+            gene_id.generation_time
+            for gene_id in smaller_genome_gene_ids
+        ]
 
-        for gene_id in smaller_genome_gene_ids:
+        if len(smaller_genome_timestamps) > 0:
+            max_timestamp = smaller_genome_timestamps[0] # type: 'ObjectID'
+        else:
+            return 0, 0
 
-            if gene_id > smaller_genome_range:
-                smaller_genome_range = gene_id
+        for timestamp in smaller_genome_gene_ids:
 
-        excess_genes = [gene_id for gene_id in differing_genes
-                        if gene_id > smaller_genome_range]
+            if timestamp > max_timestamp:
+                max_timestamp = timestamp
 
-        disjoint_genes = [gene_id for gene_id in differing_genes
-                          if gene_id not in excess_genes]
+        excess_genes = [
+            gene_id
+            for gene_id in differing_gene_ids
+            if gene_id.generation_time > max_timestamp
+        ]
+
+        disjoint_genes = [
+            gene_id
+            for gene_id in differing_gene_ids
+            if gene_id not in excess_genes
+        ]
 
         return len(disjoint_genes), len(excess_genes)
 
@@ -158,7 +172,7 @@ class GenomeClusterer(object):
     def calculate_average_weight_difference(
             genome_one: StorageGenome,
             genome_two: StorageGenome,
-            matching_genes: List[int]
+            matching_genes: List[ObjectId]
     ) -> float:
         """
         Calculates the average quadratic weight differences

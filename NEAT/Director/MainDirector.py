@@ -22,6 +22,8 @@ from bson.objectid import ObjectId
 from typing import Dict
 import itertools
 
+debug = True
+
 
 class MainDirector(Director):
     def __init__(self, **kwargs):
@@ -74,7 +76,6 @@ class MainDirector(Director):
         Standard method that will be executed if local startup is done.
         In this state, the Director will wait for the client.
         """
-
         self._session = self.simulation_connector.get_session()
 
         # Session tokens will identify a client.
@@ -84,6 +85,11 @@ class MainDirector(Director):
         # sessions can be loaded from storage.
 
         self.dynamic_init()  # This can be called after the client has connected
+
+        if debug:
+            self.database_connector.clear_collection("genomes")
+            self.database_connector.clear_collection("clusters")
+            self.database_connector.clear_collection("genes")
 
         # In case of simulation run:
         self.run()

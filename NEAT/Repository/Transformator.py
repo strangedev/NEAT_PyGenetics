@@ -19,6 +19,11 @@ class Transformator(object):
         try:
             dictionary = copy.deepcopy(analysis_result.__dict__)
             dictionary.__setitem__('_type', 'AnalysisResult')
+            dictionary["gene_closes_cycle_map"] = {
+                str(gene_id): boolean_flag
+                for gene_id, boolean_flag
+                in dictionary["gene_closes_cycle_map"].items()
+            }
             return dictionary
         except KeyError:
             return None
@@ -33,7 +38,11 @@ class Transformator(object):
         try:
             if document['_type'] == 'AnalysisResult':
                 document.pop('_type')
-
+                document["gene_closes_cycle_map"] = {
+                    ObjectId(gene_id_as_str): boolean_flag
+                    for gene_id_as_str, boolean_flag
+                    in document["gene_closes_cycle_map"].items()
+                }
                 result = AnalysisResult()
                 result.__dict__ = document
 
@@ -50,6 +59,11 @@ class Transformator(object):
         """
         try:
             dictionary = copy.deepcopy(storage_genome.__dict__)
+            dictionary["genes"] = {
+                str(gene_id): gene_tuple
+                for gene_id, gene_tuple
+                in dictionary["genes"].items()
+            }
             analysis_res = dictionary.__getitem__('analysis_result')
             analysis_result = Transformator.encode_AnalysisResult(analysis_res)
             dictionary.__setitem__('analysis_result', analysis_result)
@@ -66,13 +80,17 @@ class Transformator(object):
         :return: StorageGenome
         """
         try:
-            if document['_type'] == 'StorageGenome':
-                document.pop('_type')
-                analysis_result = Transformator.decode_AnalysisResult(document['analysis_result'])
-                document.__setitem__('analysis_result', analysis_result)
-                storage_genome = StorageGenome()
-                storage_genome.__dict__ = document
-                return storage_genome
+            document["genes"] = {
+                ObjectId(gene_id_as_str): gene_tuple
+                for gene_id_as_str, gene_tuple
+                in document["genes"].items()
+            }
+            document.pop('_type')
+            analysis_result = Transformator.decode_AnalysisResult(document['analysis_result'])
+            document.__setitem__('analysis_result', analysis_result)
+            storage_genome = StorageGenome()
+            storage_genome.__dict__ = document
+            return storage_genome
         except KeyError:
             return None
 
