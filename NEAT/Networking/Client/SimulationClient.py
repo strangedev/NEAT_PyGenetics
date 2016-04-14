@@ -29,9 +29,7 @@ class SimulationClient(object):
     def get_block(self, block_id: int) -> Dict[ObjectId, Dict[str, float]]:
         command = GetBlockCommand()
         command.set_block_id(block_id)
-        print("Sending GetBlock...")
         response = self._client.run_command(command)
-        print("Got response: ", response)
         if not response.result["acknowledged"]:
             raise NetworkProtocolException("Couldn't get block.")
         return response.result["block"]

@@ -29,7 +29,6 @@ class NEATClient(object):
             self._server_port + 1
         )
         try:
-            print("Trying to receive dict...")
             dictionary = socket.receive_dict()
         except Exception as e:
             print(e)
@@ -44,6 +43,5 @@ class NEATClient(object):
     def run_command(self, command):
         message_sent = self._send_command(command)
         if message_sent:
-            print("Message has been sent.")
             return self._receive_result()
         return None

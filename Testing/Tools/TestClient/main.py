@@ -11,7 +11,11 @@ cli.announce_session(
 
 for generation_number in range(10):
 
+    print("\n\n###: Generation number:", generation_number)
+
     for i in range(10):
+
+        print("\nNext Block! ", i)
 
         print(">> Getting block...")
         block = cli.get_block(i)

@@ -149,7 +149,7 @@ class GenomeClusterer(object):
         else:
             return 0, 0
 
-        for timestamp in smaller_genome_gene_ids:
+        for timestamp in smaller_genome_timestamps:
 
             if timestamp > max_timestamp:
                 max_timestamp = timestamp
