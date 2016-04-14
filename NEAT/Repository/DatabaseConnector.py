@@ -177,3 +177,15 @@ class DatabaseConnector(object):
             except Exception as e:
                 raise Exception(" remove_many, DatabaseConnector") from e
         return result
+
+    def clear_collection(self, collection_name: str) -> None:
+        """
+        Clears Collection given by name
+        Args:
+            collection_name: name of Collection to clear
+        Returns: None
+
+        """
+        self._database.drop_collection(collection_name)
+
+
