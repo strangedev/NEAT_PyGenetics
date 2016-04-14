@@ -8,7 +8,7 @@ from NEAT.Analyst.GenomeClusterer import GenomeClusterer
 from NEAT.GenomeStructures.StorageStructure.StorageGenome import StorageGenome
 from NEAT.Repository.ClusterRepository import ClusterRepository
 from NEAT.Repository.GenomeRepository import GenomeRepository
-
+import time
 
 # noinspection PyUnresolvedReferences
 class TestGenomeClusterer(TestCase):
@@ -135,10 +135,18 @@ class TestGenomeClusterer(TestCase):
         )
 
     def test_calculate_disjoint_excess_count(self):
-        smaller_genome_gene_ids = [1, 2]
-        differing_genes = [2, 3, 4]
+        id1 = ObjectId()
+        time.sleep(1)
+        id2 = ObjectId()
+        time.sleep(1)
+        id3 = ObjectId()
+        time.sleep(1)
+        id4 = ObjectId()
+        self.assertTrue(id1.generation_time < id2.generation_time)
+        smaller_genome_gene_ids = [id1, id2]
+        differing_genes = [id1, id2, id3, id4]
         self.assertEqual(
-            (1, 2),
+            (2, 2),
             self.genome_clusterer.calculate_disjoint_excess_count(smaller_genome_gene_ids, differing_genes)
         )
 
