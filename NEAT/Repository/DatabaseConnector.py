@@ -10,6 +10,7 @@ class DatabaseConnector(object):
     def __init__(self, database_name: str, client: MongoClient = MongoClient()):
         self._client = client
         self._database = self._client[database_name]
+        self.query = {}
 
     def get_collection(self, collection_name: str):
         # self._database[collection_name].find() # don't see why we need this
@@ -19,37 +20,33 @@ class DatabaseConnector(object):
             self,
             collection_name: str,
             document: dict
-    ) -> ObjectId:
+    ) -> None:
         """
         Inserts a single object into the given collection in the database.
         :param collection_name:
         :param document:
         :return:
         """
-        try:
-            return self._database[collection_name].insert(document)
-        except Exception as e:
-            raise Exception(" insert_one, DatabaseConnector") from e
+        if collection_name not in self.query.keys():
+            self.query[collection_name] = [document]
+        else:
+            self.query[collection_name].append(document)
 
     def insert_many(
             self,
             collection_name: str,
             documents: Iterable[object]
-    ) -> List[ObjectId]:
+    ) -> None:
         """
         Inserts multiple objects into the given collection in the database.
         :param collection_name:
         :param documents:
         :return:
         """
-        result_ids = []
-        for document in documents:
-            try:
-                i = self._database[collection_name].insert(document)
-                result_ids.append(i)
-            except Exception as e:
-                raise Exception(" insert_many, DatabaseConnector") from e
-        return result_ids
+        if collection_name not in self.query.keys():
+            self.query[collection_name] = documents
+        else:
+            self.query[collection_name].extend(documents)
 
     def find_one(
             self,
@@ -188,4 +185,18 @@ class DatabaseConnector(object):
         """
         self._database.drop_collection(collection_name)
 
-
+    def insert_query(self, collection_name: str) -> [ObjectId]:
+        """
+        Inserts query in db.
+        Args:
+            collection_name: name of Collection want to insert
+        :return: [ObjectId] from insert
+        """
+        result_ids = []
+        for document in self.query[collection_name]:
+            try:
+                i = self._database[collection_name].insert(document)
+                result_ids.append(i)
+            except Exception as e:
+                raise Exception(" insert_many, DatabaseConnector") from e
+        return result_ids

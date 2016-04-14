@@ -120,3 +120,9 @@ class ClusterRepository(object):
                 cluster
             )
         )
+
+    def insert_query(self):
+        self._database_connector.insert_query("clusters")
+
+    def clear_collection(self):
+        self._database_connector.clear_collection("clusters")

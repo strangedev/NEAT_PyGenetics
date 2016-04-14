@@ -185,3 +185,9 @@ class GenomeRepository(object):
         genome = self.get_genome_by_id(genome_id)
         genome.cluster = cluster_id
         return self.update_genome(genome)
+
+    def insert_query(self):
+        self._database_connector.insert_query("genomes")
+
+    def clear_collection(self):
+        self._database_connector.clear_collection("genomes")

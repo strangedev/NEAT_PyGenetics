@@ -11,23 +11,23 @@ class DatabaseConnectorTest(unittest.TestCase):
         client['testbase'] = MagicMock()
         self.db = client['testbase']
         self.collection = self.db['testbase']
-
-        self.database_connector = DatabaseConnector("testBase", client)
+        self.database_connector = DatabaseConnector("testbase", client)
 
     def test_getCollection(self):
         self.assertTrue(self.collection.__eq__(\
                             self.database_connector.get_collection('testbase')))
 
     def test_insertOne(self):
-        self.collection.insert = (lambda x: x)
-        self.assertDictEqual({}, self.database_connector.insert_one('testbase', {}))
+        self.database_connector.insert_one('testbase', "blubb")
+        self.assertListEqual(["blubb"], self.database_connector.query["testbase"])
+        self.database_connector.insert_one('testbase', "test")
+        self.assertListEqual(["blubb", "test"], self.database_connector.query["testbase"])
 
     def test_insertMany(self):
-        self.collection.insert = (lambda x: x)
-        test_list = []
-        for i in range(1, 10):
-            test_list.append({})
-        self.assertListEqual(test_list, self.database_connector.insert_many("testbase", test_list))
+        self.database_connector.insert_many('testbase', ["blubb", 2, 3])
+        self.assertListEqual(["blubb", 2, 3], self.database_connector.query["testbase"])
+        self.database_connector.insert_many('testbase', ["test", 4, 5])
+        self.assertListEqual(["blubb", 2, 3, "test", 4, 5], self.database_connector.query["testbase"])
 
     def test_findOne(self):
         self.collection.find_one = (lambda x: x)
@@ -70,3 +70,17 @@ class DatabaseConnectorTest(unittest.TestCase):
         self.collection.remove = (lambda x: True)
         for i in self.database_connector.remove_many('testbase', [12, 2, 3]):
                 self.assertTrue(i)
+
+    def test_clearCollection(self):
+        self.db.drop_collection = MagicMock()
+        self.database_connector.clear_collection("testbase")
+        self.db.drop_collection.assert_called_once_with("testbase")
+
+    def test_insertQuery(self):
+        self.database_connector._database["testbase"].insert = MagicMock(return_value=True)
+        self.database_connector.query = {"testbase": [1,2,3,4]}
+        self.assertListEqual([True, True, True, True], self.database_connector.insert_query("testbase"))
+        self.database_connector._database["testbase"].insert.assert_any_call(1)
+        self.database_connector._database["testbase"].insert.assert_any_call(2)
+        self.database_connector._database["testbase"].insert.assert_any_call(3)
+        self.database_connector._database["testbase"].insert.assert_any_call(4)
