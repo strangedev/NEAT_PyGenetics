@@ -31,9 +31,11 @@ class TestDecisionMaker(TestCase):
 
     def test_inter_cluster_breeding_time(self):
         self.selection_parameter.__setitem__('inter_cluster_breeding_interval', 2)
-        self.assertTrue(self.decision_maker.inter_cluster_breeding_time)
-        self.decision_maker._time = 1
         self.assertFalse(self.decision_maker.inter_cluster_breeding_time)
+        self.decision_maker.advance_time()
+        self.assertFalse(self.decision_maker.inter_cluster_breeding_time)
+        self.decision_maker.advance_time()
+        self.assertTrue(self.decision_maker.inter_cluster_breeding_time)
 
     def test__cutoff_function(self):
         self.assertEqual(1, self.decision_maker._cutoff_function(1, 1))
