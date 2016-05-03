@@ -87,7 +87,7 @@ class GenomeAnalyst(object):
         self._result.clear()
 
     def _set_working_graph(self, nodes: Set[int],
-                           edges: Dict[int, List[int]]) -> None:
+                           edges: Dict[int, List[Tuple[int, int]]]) -> None:
         """
         Creates a working copy of the graph to be analyzed in order
         to preserve the original graph.
@@ -100,7 +100,7 @@ class GenomeAnalyst(object):
         self._working_edges = edges
 
     def _dfs(self, entry_points: Iterable[int]) \
-            -> Tuple[List[int], Dict[int, List[int]]]:
+            -> Tuple[List[int], Dict[int, List[Tuple[int, int]]]]:
         """
         Performs depth first search on _working_edges.
         Classifies back-edges while encountering them and creates
