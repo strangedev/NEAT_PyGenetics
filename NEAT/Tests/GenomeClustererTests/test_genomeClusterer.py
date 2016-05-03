@@ -38,9 +38,12 @@ class TestGenomeClusterer(TestCase):
 
         genome = StorageGenome()
         self.genome_clusterer.cluster_genome(genome)
-        self.mock_cluster_repository.add_cluster_with_representative.assert_called_with(genome.genome_id)
-        self.mock_genome_repository.update_genome_cluster.assert_any_call(cluster.cluster_id)
-        self.mock_genome_repository.update_genome_cluster.assert_any_call(genome.genome_id)
+        self.mock_cluster_repository.add_cluster_with_representative\
+            .assert_called_with(genome.genome_id)
+        self.mock_genome_repository.update_genome_cluster.assert_any_call(
+            genome.genome_id,
+            cluster.cluster_id
+        )
         self.assertFalse(self.genome_clusterer._no_clusters)
 
     def test_cluster_genome_no_delta_less(self):
