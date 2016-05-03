@@ -61,7 +61,8 @@ class TestGenomeAnalyst(TestCase):
         analysis_genome._graph_initialized = True
 
         topologically_sorted_nodes = [4, 3, 12, 13, 2, 11, 16, 19, 23, 18, 17,
-                                      20, 24, 1, 10, 9, 15, 22, 14, 21]
+                                      20, 24, 8, 7, 1, 10, 9, 15, 22, 14, 21,
+                                      6, 5]
         topologically_sorted_cycle_nodes = [24, 23, 22, 21, 17]
 
         gene_closes_cycle_map = defaultdict(bool)
